@@ -1,0 +1,1179 @@
+[
+  {
+    "id": "ultra_enhanced",
+    "name": "米家全效空气净化器 Ultra 增强版",
+    "tier": "旗舰",
+    "official_price": 5799,
+    "second_hand": "2500-3800",
+    "filter_price": "全套约1299",
+    "filter_life": "12-18月",
+    "cadr_pm": 800,
+    "cadr_hcho": 400,
+    "area": "57-97㎡",
+    "noise": "32-66dB",
+    "power": "130W",
+    "wifi": "✅",
+    "sensor": "PM2.5+甲醛+VOC+CO₂+PM1",
+    "display": "4.3寸LCD彩屏",
+    "filter_layers": "10级(5层滤芯)",
+    "size": "400×400×900mm",
+    "weight": "23.7kg",
+    "cert": "母婴/医护/除过敏原",
+    "year": 2024,
+    "pros": [
+      "除醛最强",
+      "10层滤芯",
+      "UV+离子",
+      "万向轮"
+    ],
+    "cons": [
+      "体积大",
+      "价高",
+      "滤芯贵"
+    ],
+    "tags": [
+      "新房除醛",
+      "母婴",
+      "大户型"
+    ],
+    "img": "ultra_enhanced.jpg"
+  },
+  {
+    "id": "ultra_std",
+    "name": "米家全效空气净化器 Ultra",
+    "tier": "旗舰",
+    "official_price": 3999,
+    "second_hand": "2200-3200",
+    "filter_price": "约899",
+    "filter_life": "12-18月",
+    "cadr_pm": 750,
+    "cadr_hcho": 400,
+    "area": "52-90㎡",
+    "noise": "35.3-65dB",
+    "power": "110W",
+    "wifi": "✅",
+    "sensor": "PM10/PM2.5/甲醛/温湿度",
+    "display": "LCD彩屏",
+    "filter_layers": "7重(醛能解催化)",
+    "size": "400×400×900mm",
+    "weight": "22kg",
+    "cert": "母婴/医护/除过敏原",
+    "year": 2022,
+    "pros": [
+      "醛能解分解式除醛",
+      "滤芯自洁",
+      "7重净化"
+    ],
+    "cons": [
+      "体积大",
+      "滤芯贵"
+    ],
+    "tags": [
+      "新房除醛",
+      "大户型",
+      "母婴"
+    ],
+    "img": "ultra_std.jpg"
+  },
+  {
+    "id": "6_max",
+    "name": "米家空气净化器 6 Max",
+    "tier": "旗舰",
+    "official_price": 3999,
+    "second_hand": "3200-3700",
+    "filter_price": "装修套装约699",
+    "filter_life": "12-18月",
+    "cadr_pm": 960,
+    "cadr_hcho": 700,
+    "area": "67-115㎡",
+    "noise": "28-65dB",
+    "power": "120W",
+    "wifi": "✅",
+    "sensor": "九维(PM1/PM2.5/甲醛/VOC/CO₂)",
+    "display": "LCD彩屏",
+    "filter_layers": "双电机三叶轮+UV模组",
+    "size": "A3试卷大小占地",
+    "weight": "约18kg",
+    "cert": "母婴/除过敏原/睡眠级",
+    "year": 2026,
+    "pros": [
+      "双电机",
+      "双滤芯套装",
+      "风量最大",
+      "3分钟净化客厅"
+    ],
+    "cons": [
+      "较重",
+      "价格偏高"
+    ],
+    "tags": [
+      "大户型",
+      "新房全周期",
+      "双电机"
+    ],
+    "img": "6_max.jpg"
+  },
+  {
+    "id": "6_pro",
+    "name": "米家空气净化器 6 Pro",
+    "tier": "高端",
+    "official_price": 2399,
+    "second_hand": "1200-1800",
+    "filter_price": "约399(双模组)",
+    "filter_life": "8-14月",
+    "cadr_pm": 1461,
+    "cadr_hcho": 1000,
+    "area": "87-150㎡",
+    "noise": "32-65dB",
+    "power": "92W",
+    "wifi": "✅",
+    "sensor": "六大高精(PM1/PM2.5/粉尘/甲醛)",
+    "display": "LCD彩屏+曲线",
+    "filter_layers": "13重(双芯双效)",
+    "size": "纤细机身",
+    "weight": "约12kg",
+    "cert": "母婴/医护/SGS除醛",
+    "year": 2025,
+    "pros": [
+      "除醛1000CADR",
+      "双芯架构",
+      "一级能效",
+      "性价比高"
+    ],
+    "cons": [
+      "滤芯略贵"
+    ],
+    "tags": [
+      "大户型",
+      "强力除醛",
+      "母婴"
+    ],
+    "img": "6_pro.jpg"
+  },
+  {
+    "id": "5_pro",
+    "name": "米家空气净化器 5 Pro",
+    "tier": "高端",
+    "official_price": 2499,
+    "second_hand": "1500-2000",
+    "filter_price": "约399",
+    "filter_life": "10-12月",
+    "cadr_pm": 1050,
+    "cadr_hcho": 720,
+    "area": "56-96㎡",
+    "noise": "33-65dB",
+    "power": "50W",
+    "wifi": "✅",
+    "sensor": "PM1/PM2.5/甲醛/粉尘/温湿度",
+    "display": "LED大屏",
+    "filter_layers": "六层复合净化矩阵+UV",
+    "size": "320×320×785mm",
+    "weight": "约10kg",
+    "cert": "母婴/医护/SGS除过敏原",
+    "year": 2025,
+    "pros": [
+      "双风机",
+      "体积紧凑",
+      "除醛强",
+      "功耗低"
+    ],
+    "cons": [
+      "最大档噪音偏大"
+    ],
+    "tags": [
+      "中大户型",
+      "除醛",
+      "省电"
+    ],
+    "img": "5_pro.jpg"
+  },
+  {
+    "id": "quanxiao_std",
+    "name": "米家全效空气净化器(标准版)",
+    "tier": "高端",
+    "official_price": 3699,
+    "second_hand": "1800-2800",
+    "filter_price": "约699",
+    "filter_life": "12-18月",
+    "cadr_pm": 700,
+    "cadr_hcho": 390,
+    "area": "49-84㎡",
+    "noise": "33-65dB",
+    "power": "70W",
+    "wifi": "✅",
+    "sensor": "颗粒物+甲醛双传感",
+    "display": "LCD彩屏",
+    "filter_layers": "醛能解催化+UV+HEPA",
+    "size": "350×350×736mm",
+    "weight": "14kg",
+    "cert": "母婴/医护",
+    "year": 2023,
+    "pros": [
+      "Ultra同款除醛科技",
+      "性价比高于Ultra",
+      "万向轮"
+    ],
+    "cons": [
+      "体积偏大"
+    ],
+    "tags": [
+      "新房除醛",
+      "中大户型"
+    ],
+    "img": "quanxiao_std.jpg"
+  },
+  {
+    "id": "4_pro_h",
+    "name": "米家空气净化器 4 Pro H",
+    "tier": "中端",
+    "official_price": 1999,
+    "second_hand": "900-1400",
+    "filter_price": "约349",
+    "filter_life": "10-14月",
+    "cadr_pm": 600,
+    "cadr_hcho": 300,
+    "area": "42-72㎡",
+    "noise": "23-64dB",
+    "power": "50W",
+    "wifi": "✅",
+    "sensor": "瑞士进口甲醛传感+激光颗粒物",
+    "display": "圆形触控彩屏",
+    "filter_layers": "六层复合滤芯+UV",
+    "size": "310×310×756mm",
+    "weight": "9.6kg",
+    "cert": "母婴/医护",
+    "year": 2023,
+    "pros": [
+      "瑞士甲醛传感器(0.001精度)",
+      "负离子",
+      "万向轮",
+      "静音好"
+    ],
+    "cons": [
+      "体积偏大"
+    ],
+    "tags": [
+      "甲醛精准监测",
+      "中户型",
+      "母婴"
+    ],
+    "img": "4_pro_h.jpg"
+  },
+  {
+    "id": "6",
+    "name": "米家空气净化器 6",
+    "tier": "中端",
+    "official_price": 1399,
+    "second_hand": "700-1100",
+    "filter_price": "约299(双滤芯)",
+    "filter_life": "8-12月",
+    "cadr_pm": 812,
+    "cadr_hcho": 610,
+    "area": "56-84㎡",
+    "noise": "26.6-63dB",
+    "power": "55W",
+    "wifi": "✅",
+    "sensor": "六大高精传感",
+    "display": "LCD彩屏",
+    "filter_layers": "六重复合净化+UV",
+    "size": "纤细机身",
+    "weight": "约9kg",
+    "cert": "母婴/医护/除过敏原",
+    "year": 2026,
+    "pros": [
+      "双滤芯3倍除醛",
+      "超静音26.6dB",
+      "顶部可置物",
+      "万向轮"
+    ],
+    "cons": [
+      "适用面积中等"
+    ],
+    "tags": [
+      "中户型",
+      "静音",
+      "除醛"
+    ],
+    "img": "6.jpg"
+  },
+  {
+    "id": "5s",
+    "name": "米家空气净化器 5S",
+    "tier": "中端",
+    "official_price": 1599,
+    "second_hand": "800-1200",
+    "filter_price": "约269",
+    "filter_life": "10-12月",
+    "cadr_pm": 540,
+    "cadr_hcho": 255,
+    "area": "36-62㎡",
+    "noise": "30.4-65dB",
+    "power": "45W",
+    "wifi": "✅",
+    "sensor": "固态甲醛传感+激光颗粒物",
+    "display": "彩屏(甲醛数显)",
+    "filter_layers": "初效+抗菌+HEPA+除醛+活性炭+UV",
+    "size": "275×275×680mm",
+    "weight": "约7kg",
+    "cert": "医护/母婴",
+    "year": 2025,
+    "pros": [
+      "甲醛数显",
+      "除醛96.95%",
+      "紫外UVC",
+      "负离子"
+    ],
+    "cons": [
+      "适用面积偏小"
+    ],
+    "tags": [
+      "甲醛数显",
+      "中小户型",
+      "除过敏原"
+    ],
+    "img": "5s.jpg"
+  },
+  {
+    "id": "pet",
+    "name": "米家宠物空气净化器",
+    "tier": "入门",
+    "official_price": 1439,
+    "second_hand": "700-1200",
+    "filter_price": "约269",
+    "filter_life": "8-12月",
+    "cadr_pm": 230,
+    "cadr_hcho": "—",
+    "area": "16-27㎡",
+    "noise": "30-60dB",
+    "power": "27W",
+    "wifi": "✅",
+    "sensor": "激光颗粒物",
+    "display": "LED显示屏",
+    "filter_layers": "三重(初效+HEPA+宠物专用活性炭)",
+    "size": "圆柱造型",
+    "weight": "约5kg",
+    "cert": "SGS/ITS宠物认证",
+    "year": 2025,
+    "pros": [
+      "360°进风吸毛",
+      "宠物专用活性炭",
+      "宠物安全锁"
+    ],
+    "cons": [
+      "CADR偏低",
+      "仅适合小空间"
+    ],
+    "tags": [
+      "养宠家庭",
+      "除异味",
+      "除毛"
+    ],
+    "img": "pet.jpg"
+  },
+  {
+    "id": "4_pro",
+    "name": "米家空气净化器 4 Pro",
+    "tier": "入门",
+    "official_price": 1499,
+    "second_hand": "600-1000",
+    "filter_price": "约269",
+    "filter_life": "8-12月",
+    "cadr_pm": 500,
+    "cadr_hcho": 200,
+    "area": "35-60㎡",
+    "noise": "32-64dB",
+    "power": "38W",
+    "wifi": "✅",
+    "sensor": "激光颗粒物+OLED屏",
+    "display": "OLED触控屏",
+    "filter_layers": "初效+HEPA+活性炭",
+    "size": "250×250×650mm",
+    "weight": "6.5kg",
+    "cert": "基础认证",
+    "year": 2022,
+    "pros": [
+      "OLED屏",
+      "体积小",
+      "滤芯便宜"
+    ],
+    "cons": [
+      "除醛一般",
+      "无甲醛数显"
+    ],
+    "tags": [
+      "中小户型",
+      "基础净化"
+    ],
+    "img": "4_pro.jpg"
+  },
+  {
+    "id": "5",
+    "name": "米家空气净化器 5",
+    "tier": "入门",
+    "official_price": 879,
+    "second_hand": "400-650",
+    "filter_price": "约199",
+    "filter_life": "10-12月",
+    "cadr_pm": 400,
+    "cadr_hcho": 150,
+    "area": "28-48㎡",
+    "noise": "30.1-62dB",
+    "power": "30W",
+    "wifi": "✅",
+    "sensor": "粉尘传感+激光颗粒物",
+    "display": "LCD彩屏(PM2.5/PM10)",
+    "filter_layers": "抗菌抗病毒双涂层+UV+HEPA+活性炭",
+    "size": "250×250×555mm",
+    "weight": "5.1kg",
+    "cert": "母婴",
+    "year": 2025,
+    "pros": [
+      "粉尘传感器",
+      "顶盖可拆卸清洁",
+      "199元滤芯便宜",
+      "一级能效"
+    ],
+    "cons": [
+      "除醛一般",
+      "无甲醛数显"
+    ],
+    "tags": [
+      "小户型",
+      "粉尘",
+      "性价比"
+    ],
+    "img": "5.jpg"
+  },
+  {
+    "id": "4",
+    "name": "米家空气净化器 4",
+    "tier": "入门",
+    "official_price": 899,
+    "second_hand": "350-600",
+    "filter_price": "约199",
+    "filter_life": "6-12月",
+    "cadr_pm": 400,
+    "cadr_hcho": 150,
+    "area": "28-48㎡",
+    "noise": "31.9-63dB",
+    "power": "30W",
+    "wifi": "✅",
+    "sensor": "激光颗粒物",
+    "display": "OLED屏+三色灯条",
+    "filter_layers": "初效+HEPA+活性炭+负离子",
+    "size": "250×250×555mm",
+    "weight": "5.5kg",
+    "cert": "一级能效",
+    "year": 2022,
+    "pros": [
+      "负离子",
+      "可清洁风道",
+      "性价比高"
+    ],
+    "cons": [
+      "除醛一般"
+    ],
+    "tags": [
+      "小户型",
+      "基础净化",
+      "性价比"
+    ],
+    "img": "4.jpg"
+  },
+  {
+    "id": "4_lite",
+    "name": "米家空气净化器 4 Lite",
+    "tier": "入门",
+    "official_price": 599,
+    "second_hand": "250-400",
+    "filter_price": "约149",
+    "filter_life": "6-10月",
+    "cadr_pm": 320,
+    "cadr_hcho": "—",
+    "area": "22-40㎡",
+    "noise": "32-60dB",
+    "power": "25W",
+    "wifi": "✅",
+    "sensor": "基础颗粒物",
+    "display": "LED指示灯",
+    "filter_layers": "初效+HEPA+活性炭",
+    "size": "220×220×480mm",
+    "weight": "4.2kg",
+    "cert": "基础认证",
+    "year": 2023,
+    "pros": [
+      "最便宜",
+      "占地<A4纸",
+      "99.99%抗菌"
+    ],
+    "cons": [
+      "无甲醛CADR",
+      "无屏幕"
+    ],
+    "tags": [
+      "极小户型",
+      "预算有限",
+      "卧室"
+    ],
+    "img": "4_lite.jpg"
+  },
+  {
+    "id": "4_compact",
+    "name": "米家空气净化器 4 Compact",
+    "tier": "入门",
+    "official_price": 799,
+    "second_hand": "300-500",
+    "filter_price": "约169",
+    "filter_life": "6-10月",
+    "cadr_pm": 360,
+    "cadr_hcho": "—",
+    "area": "25-43㎡",
+    "noise": "30-62dB",
+    "power": "28W",
+    "wifi": "✅",
+    "sensor": "激光颗粒物",
+    "display": "LED屏",
+    "filter_layers": "初效+HEPA+活性炭",
+    "size": "紧凑机身",
+    "weight": "4.5kg",
+    "cert": "基础认证",
+    "year": 2023,
+    "pros": [
+      "体积小巧",
+      "滤芯便宜",
+      "一级能效"
+    ],
+    "cons": [
+      "无甲醛CADR"
+    ],
+    "tags": [
+      "小户型",
+      "卧室",
+      "书房"
+    ],
+    "img": "4_compact.jpg"
+  },
+  {
+    "id": "f1",
+    "name": "米家桌面空气净化器",
+    "tier": "入门",
+    "official_price": 399,
+    "second_hand": "150-280",
+    "filter_price": "约89",
+    "filter_life": "3-6月",
+    "cadr_pm": 52,
+    "cadr_hcho": "—",
+    "area": "3-8㎡",
+    "noise": "28-50dB",
+    "power": "12W",
+    "wifi": "✅",
+    "sensor": "基础",
+    "display": "LED指示灯",
+    "filter_layers": "HEPA+活性炭",
+    "size": "桌面级",
+    "weight": "1.2kg",
+    "cert": "基础认证",
+    "year": 2021,
+    "pros": [
+      "桌面级",
+      "最便宜",
+      "可调节出风角度"
+    ],
+    "cons": [
+      "仅限桌面",
+      "CADR极低"
+    ],
+    "tags": [
+      "桌面",
+      "办公室",
+      "个人"
+    ],
+    "img": "f1.jpg"
+  },
+  {
+    "id": "pro_tower",
+    "name": "米家空气净化器 Pro(塔式)",
+    "tier": "停产",
+    "official_price": 1499,
+    "second_hand": "400-800",
+    "filter_price": "约199",
+    "filter_life": "6-12月",
+    "cadr_pm": 500,
+    "cadr_hcho": "—",
+    "area": "35-60㎡",
+    "noise": "32-64dB",
+    "power": "40W",
+    "wifi": "✅",
+    "sensor": "激光颗粒物+OLED+温湿度",
+    "display": "OLED屏",
+    "filter_layers": "塔式360°进风+HEPA+活性炭",
+    "size": "塔式圆柱",
+    "weight": "9.7kg",
+    "cert": "已停产",
+    "year": 2017,
+    "pros": [
+      "经典塔式设计",
+      "OLED屏",
+      "温湿度传感"
+    ],
+    "cons": [
+      "已停产",
+      "无甲醛传感",
+      "滤芯技术老"
+    ],
+    "tags": [
+      "经典",
+      "二手捡漏"
+    ],
+    "img": "pro_tower.jpg"
+  },
+  {
+    "id": "2s",
+    "name": "米家空气净化器 2S",
+    "tier": "停产",
+    "official_price": 699,
+    "second_hand": "150-350",
+    "filter_price": "约129",
+    "filter_life": "6-12月",
+    "cadr_pm": 310,
+    "cadr_hcho": "—",
+    "area": "21-37㎡",
+    "noise": "32-64dB",
+    "power": "29W",
+    "wifi": "✅",
+    "sensor": "激光颗粒物",
+    "display": "OLED屏",
+    "filter_layers": "初效+HEPA H11+活性炭",
+    "size": "240×240×520mm",
+    "weight": "4.8kg",
+    "cert": "已停产",
+    "year": 2017,
+    "pros": [
+      "经典款",
+      "滤芯便宜",
+      "OLED屏"
+    ],
+    "cons": [
+      "已停产",
+      "除醛弱",
+      "滤芯技术老"
+    ],
+    "tags": [
+      "经典",
+      "二手捡漏"
+    ],
+    "img": "2s.jpg"
+  },
+  {
+    "id": "3",
+    "name": "米家空气净化器 3",
+    "tier": "停产",
+    "official_price": 899,
+    "second_hand": "250-450",
+    "filter_price": "约149",
+    "filter_life": "6-12月",
+    "cadr_pm": 400,
+    "cadr_hcho": "—",
+    "area": "28-48㎡",
+    "noise": "32.1-64dB",
+    "power": "38W",
+    "wifi": "✅",
+    "sensor": "激光颗粒物+OLED触控",
+    "display": "OLED触控屏",
+    "filter_layers": "初效+HEPA+活性炭",
+    "size": "240×240×520mm",
+    "weight": "4.8kg",
+    "cert": "已停产",
+    "year": 2019,
+    "pros": [
+      "触控OLED",
+      "体积小",
+      "滤芯通用2S"
+    ],
+    "cons": [
+      "已停产",
+      "无甲醛传感"
+    ],
+    "tags": [
+      "经典",
+      "小户型"
+    ],
+    "img": "3.jpg"
+  },
+  {
+    "id": "max",
+    "name": "米家空气净化器 MAX",
+    "tier": "停产",
+    "official_price": 1999,
+    "second_hand": "600-1200",
+    "filter_price": "约399",
+    "filter_life": "12-18月",
+    "cadr_pm": 1000,
+    "cadr_hcho": "—",
+    "area": "70-120㎡",
+    "noise": "35-64dB",
+    "power": "86W",
+    "wifi": "✅",
+    "sensor": "激光颗粒物",
+    "display": "LED大屏",
+    "filter_layers": "桶形复合滤芯",
+    "size": "386×386×965mm",
+    "weight": "18kg",
+    "cert": "已停产",
+    "year": 2017,
+    "pros": [
+      "CADR破千",
+      "大户型王者",
+      "滤芯大"
+    ],
+    "cons": [
+      "已停产",
+      "无甲醛传感",
+      "重"
+    ],
+    "tags": [
+      "大户型",
+      "经典旗舰"
+    ],
+    "img": "max.jpg"
+  },
+  {
+    "id": "max_enhanced",
+    "name": "米家空气净化器 MAX 增强版",
+    "tier": "停产",
+    "official_price": 2499,
+    "second_hand": "800-1500",
+    "filter_price": "约449",
+    "filter_life": "12-18月",
+    "cadr_pm": 1200,
+    "cadr_hcho": "—",
+    "area": "84-144㎡",
+    "noise": "36-65dB",
+    "power": "95W",
+    "wifi": "✅",
+    "sensor": "激光颗粒物+温湿度",
+    "display": "LED大屏",
+    "filter_layers": "桶形复合滤芯增强版",
+    "size": "386×386×965mm",
+    "weight": "18.5kg",
+    "cert": "已停产",
+    "year": 2018,
+    "pros": [
+      "CADR 1200历史最高",
+      "超大滤芯",
+      "大户型终极"
+    ],
+    "cons": [
+      "已停产",
+      "无甲醛传感",
+      "极重"
+    ],
+    "tags": [
+      "大户型",
+      "经典旗舰",
+      "二手捡漏"
+    ],
+    "img": "max_enhanced.jpg"
+  },
+  {
+    "id": "x",
+    "name": "米家空气净化器 X",
+    "tier": "停产",
+    "official_price": 1799,
+    "second_hand": "500-1000",
+    "filter_price": "约299",
+    "filter_life": "8-12月",
+    "cadr_pm": 600,
+    "cadr_hcho": "—",
+    "area": "42-72㎡",
+    "noise": "33-65dB",
+    "power": "55W",
+    "wifi": "✅",
+    "sensor": "激光颗粒物",
+    "display": "LED屏",
+    "filter_layers": "初效+HEPA+活性炭+UV",
+    "size": "300×300×700mm",
+    "weight": "8kg",
+    "cert": "已停产",
+    "year": 2018,
+    "pros": [
+      "UV除菌",
+      "性价比高",
+      "体积适中"
+    ],
+    "cons": [
+      "已停产",
+      "无甲醛传感"
+    ],
+    "tags": [
+      "经典",
+      "中户型",
+      "二手捡漏"
+    ],
+    "img": "x.jpg"
+  },
+  {
+    "id": "6_dual",
+    "name": "米家空气净化器 6 双芯除醛",
+    "tier": "高端",
+    "official_price": 1399,
+    "second_hand": "1000-1100",
+    "filter_price": "299元/只×2",
+    "filter_life": "6-12月",
+    "cadr_pm": 812,
+    "cadr_hcho": 610,
+    "area": "60-96㎡",
+    "noise": "26.6-67dB",
+    "power": "61W",
+    "wifi": "✅",
+    "sensor": "PM1+粉尘+PM2.5+温湿度+固态甲醛",
+    "display": "LCD彩屏(PM2.5)",
+    "filter_layers": "双滤芯+6重净化+UVC",
+    "size": "290×290×760mm",
+    "weight": "9.7kg",
+    "cert": "母婴级/一级能效",
+    "year": 2026,
+    "pros": [
+      "双芯除醛CADR610",
+      "颗粒物812",
+      "UVC杀菌",
+      "轻音26.6dB",
+      "6大传感"
+    ],
+    "cons": [
+      "双芯耗材贵",
+      "最高档67dB",
+      "新品二手未明"
+    ],
+    "tags": [
+      "双芯除醛",
+      "新房",
+      "大户型"
+    ],
+    "img": null
+  },
+  {
+    "id": "pro_h",
+    "name": "米家空气净化器 Pro H",
+    "tier": "中端",
+    "official_price": 1699,
+    "second_hand": "400-600",
+    "filter_price": "149元",
+    "filter_life": "10-14月",
+    "cadr_pm": 600,
+    "cadr_hcho": 220,
+    "area": "42-72㎡",
+    "noise": "≤65dB",
+    "power": "70W",
+    "wifi": "✅",
+    "sensor": "激光PM2.5+温湿度",
+    "display": "OLED屏",
+    "filter_layers": "360°桶形复合滤芯",
+    "size": "310×310×738mm",
+    "weight": "9.6kg",
+    "cert": "双高效能效/P4/F4",
+    "year": 2019,
+    "pros": [
+      "整屋除醛经典款",
+      "滤芯寿命长14月",
+      "CCM容尘量大",
+      "性价比高"
+    ],
+    "cons": [
+      "无甲醛传感器",
+      "甲醛CADR偏低",
+      "上市较早",
+      "无UVC"
+    ],
+    "tags": [
+      "整屋除醛",
+      "OLED",
+      "经典款",
+      "中户型"
+    ],
+    "img": null
+  },
+  {
+    "id": "4_max",
+    "name": "米家空气净化器 4 Max",
+    "tier": "旗舰",
+    "official_price": 3299,
+    "second_hand": "800-1200",
+    "filter_price": "499元",
+    "filter_life": "6-12月",
+    "cadr_pm": 800,
+    "cadr_hcho": 400,
+    "area": "56-96㎡",
+    "noise": "31.7-64dB",
+    "power": "75W",
+    "wifi": "✅",
+    "sensor": "固态甲醛+PM2.5+温湿度",
+    "display": "LCD双数显(甲醛/PM2.5)",
+    "filter_layers": "上下双滤芯+复合滤网",
+    "size": "386×386×975mm",
+    "weight": "18kg",
+    "cert": "除醛超国标8倍/99.99%灭菌",
+    "year": 2022,
+    "pros": [
+      "超大96㎡空间",
+      "固态甲醛双数显",
+      "除醛强",
+      "双滤芯大容尘"
+    ],
+    "cons": [
+      "体积大重量18kg",
+      "滤芯499元贵",
+      "二级能效"
+    ],
+    "tags": [
+      "大空间",
+      "甲醛双数显",
+      "双滤芯",
+      "宠物适用"
+    ],
+    "img": null
+  },
+  {
+    "id": "circulation",
+    "name": "米家循环风空气净化器",
+    "tier": "高端",
+    "official_price": 2499,
+    "second_hand": "800-1200",
+    "filter_price": "200元",
+    "filter_life": "3-6月",
+    "cadr_pm": 510,
+    "cadr_hcho": 300,
+    "area": "60㎡",
+    "noise": "≤65dB",
+    "power": "50W",
+    "wifi": "✅",
+    "sensor": "VOC+PM2.5+温湿度",
+    "display": "OLED屏",
+    "filter_layers": "三层滤网(初效+HEPA+活性炭)",
+    "size": "320×320×732mm",
+    "weight": "4.8kg",
+    "cert": "P4/F4/99.9%除菌",
+    "year": 2020,
+    "pros": [
+      "循环扇+净化二合一",
+      "8米送风四季通用",
+      "占地小",
+      "大空间均匀净化"
+    ],
+    "cons": [
+      "滤芯寿命短3-6月",
+      "CADR同价位偏低",
+      "功能小众"
+    ],
+    "tags": [
+      "循环风",
+      "四季通用",
+      "创新品类"
+    ],
+    "img": null
+  },
+  {
+    "id": "gen1",
+    "name": "小米空气净化器 1代",
+    "tier": "停产",
+    "official_price": 899,
+    "second_hand": "150-250",
+    "filter_price": "149元",
+    "filter_life": "3-6月",
+    "cadr_pm": 406,
+    "cadr_hcho": "—",
+    "area": "28-49㎡",
+    "noise": "32-68dB",
+    "power": "1.5-82W",
+    "wifi": "✅",
+    "sensor": "夏普颗粒物传感",
+    "display": "无屏(指示灯)",
+    "filter_layers": "360°三层(PET+H11HEPA+活性炭)",
+    "size": "260×260×735mm",
+    "weight": "8kg",
+    "cert": "已停产",
+    "year": 2014,
+    "pros": [
+      "小米首款净化器",
+      "双风机四通道",
+      "CADR 406性能强",
+      "打破行业暴利"
+    ],
+    "cons": [
+      "噪音大68dB",
+      "功耗高82W",
+      "体积大重",
+      "无显示屏"
+    ],
+    "tags": [
+      "首代",
+      "双风机",
+      "已停产"
+    ],
+    "img": null
+  },
+  {
+    "id": "gen2",
+    "name": "小米空气净化器 2代",
+    "tier": "停产",
+    "official_price": 699,
+    "second_hand": "200-300",
+    "filter_price": "149元",
+    "filter_life": "3-6月",
+    "cadr_pm": 310,
+    "cadr_hcho": "—",
+    "area": "23-39㎡",
+    "noise": "31-66dB",
+    "power": "1.5-31W",
+    "wifi": "✅",
+    "sensor": "神荣空气质量+盛思锐温湿度",
+    "display": "无屏(指示灯)",
+    "filter_layers": "360°三层(空气增压系统)",
+    "size": "240×240×520mm",
+    "weight": "4.8kg",
+    "cert": "已停产",
+    "year": 2015,
+    "pros": [
+      "体积比1代减40%",
+      "功耗仅4.8W",
+      "静音",
+      "Nidec定制电机"
+    ],
+    "cons": [
+      "CADR降至310",
+      "无显示屏",
+      "传感器非激光",
+      "除醛弱"
+    ],
+    "tags": [
+      "低功耗",
+      "静音",
+      "性价比",
+      "已停产"
+    ],
+    "img": null
+  },
+  {
+    "id": "pro_v1",
+    "name": "米家空气净化器 Pro（初代）",
+    "tier": "停产",
+    "official_price": 1499,
+    "second_hand": "300-400",
+    "filter_price": "149元",
+    "filter_life": "3-6月",
+    "cadr_pm": 500,
+    "cadr_hcho": "—",
+    "area": "35-60㎡",
+    "noise": "32-65dB",
+    "power": "1.5-66W",
+    "wifi": "✅",
+    "sensor": "激光颗粒物+温湿度+光线",
+    "display": "OLED屏(首款)",
+    "filter_layers": "360°桶形三层(双风机)",
+    "size": "260×260×735mm",
+    "weight": "9.7kg",
+    "cert": "已停产",
+    "year": 2016,
+    "pros": [
+      "首款OLED显示屏",
+      "激光传感器精准",
+      "CADR 500比2代提升61%",
+      "双风机双电机"
+    ],
+    "cons": [
+      "体积大重9.7kg",
+      "功耗较高66W",
+      "价格偏贵",
+      "无甲醛传感"
+    ],
+    "tags": [
+      "首款OLED",
+      "激光传感",
+      "大CADR",
+      "已停产"
+    ],
+    "img": null
+  },
+  {
+    "id": "gen3h",
+    "name": "小米空气净化器 3H",
+    "tier": "停产",
+    "official_price": 789,
+    "second_hand": "300-450",
+    "filter_price": "149元",
+    "filter_life": "3-6月",
+    "cadr_pm": 400,
+    "cadr_hcho": "—",
+    "area": "28-48㎡",
+    "noise": "32-64dB",
+    "power": "38W",
+    "wifi": "✅",
+    "sensor": "高精度激光颗粒物",
+    "display": "OLED触控屏",
+    "filter_layers": "360°桶形+RFID智能识别",
+    "size": "240×240×520mm",
+    "weight": "4.8kg",
+    "cert": "已停产",
+    "year": 2019,
+    "pros": [
+      "OLED触控屏交互好",
+      "激光传感器精准",
+      "CADR 400性能强",
+      "机身小巧",
+      "RFID滤芯识别"
+    ],
+    "cons": [
+      "适用面积中端",
+      "无甲醛专项增强",
+      "已停产"
+    ],
+    "tags": [
+      "OLED触控",
+      "RFID",
+      "激光传感",
+      "已停产"
+    ],
+    "img": null
+  },
+  {
+    "id": "gen2h",
+    "name": "小米空气净化器 2H（海外版）",
+    "tier": "停产",
+    "official_price": 449,
+    "second_hand": "—",
+    "filter_price": "149元",
+    "filter_life": "3-6月",
+    "cadr_pm": 260,
+    "cadr_hcho": "—",
+    "area": "18-31㎡",
+    "noise": "≤66dB",
+    "power": "4.8-31W",
+    "wifi": "✅",
+    "sensor": "神荣颗粒物+盛思锐温湿度",
+    "display": "无屏(LED指示灯)",
+    "filter_layers": "360°桶形三层一体",
+    "size": "240×240×520mm",
+    "weight": "5.2kg",
+    "cert": "已停产",
+    "year": 2019,
+    "pros": [
+      "功耗极低4.8W",
+      "静音",
+      "Wi-Fi智能控制",
+      "体积小巧"
+    ],
+    "cons": [
+      "无OLED屏",
+      "CADR低仅260",
+      "仅海外销售",
+      "除醛弱"
+    ],
+    "tags": [
+      "海外版",
+      "超低功耗",
+      "静音",
+      "小户型"
+    ],
+    "img": null
+  }
+]
