@@ -1,0 +1,62 @@
+{
+  "id": "air-purifier",
+  "name": "空气净化器",
+  "subtitle": "米家空气净化器全型号横评",
+  "imageBase": "images/air-purifier",
+
+  "groupBy": {
+    "key": "tier",
+    "label": "档位",
+    "order": ["旗舰", "高端", "中端", "入门", "停产"],
+    "colors": {
+      "旗舰": "#e74c3c",
+      "高端": "#f39c12",
+      "中端": "#27ae60",
+      "入门": "#3498db",
+      "停产": "#95a5a6"
+    }
+  },
+
+  "searchFields": ["name", "tags", "pros"],
+  "primaryMetric": "official_price",
+
+  "fields": [
+    { "key": "name", "label": "型号", "type": "text", "card": "title", "compare": true },
+    { "key": "tier", "label": "档位", "type": "text", "compare": true },
+
+    { "key": "official_price", "label": "官方价", "type": "number", "prefix": "¥", "card": "chip", "compare": true, "sortable": true, "stat": true },
+    { "key": "second_hand", "label": "二手价", "type": "text", "card": "chip", "compare": true, "stat": true },
+    { "key": "filter_price", "label": "滤芯价", "type": "text", "card": "chip", "compare": true, "stat": true },
+    { "key": "filter_life", "label": "滤芯寿命", "type": "text", "card": "chip", "compare": true },
+
+    { "key": "cadr_pm", "label": "颗粒物CADR", "unit": "m³/h", "type": "number", "card": "grid", "compare": true, "sortable": true },
+    { "key": "cadr_hcho", "label": "甲醛CADR", "unit": "m³/h", "type": "number", "card": "grid", "compare": true, "sortable": true },
+    { "key": "area", "label": "适用面积", "type": "text", "card": "grid", "compare": true },
+    { "key": "noise", "label": "噪音", "type": "text", "card": "grid", "compare": true },
+    { "key": "power", "label": "功率", "type": "text", "card": "grid", "compare": true },
+    { "key": "wifi", "label": "联网", "type": "text", "card": "grid", "compare": true },
+    { "key": "sensor", "label": "传感", "type": "text", "card": "grid", "compare": true },
+    { "key": "display", "label": "屏幕", "type": "text", "card": "grid", "compare": true },
+    { "key": "filter_layers", "label": "滤芯结构", "type": "text", "card": "grid", "compare": true },
+    { "key": "size", "label": "尺寸", "type": "text", "card": "grid", "compare": true },
+    { "key": "weight", "label": "重量", "type": "text", "card": "grid", "compare": true },
+    { "key": "cert", "label": "认证", "type": "text", "card": "grid", "compare": true },
+    { "key": "year", "label": "上市", "unit": "年", "type": "number", "card": "grid", "compare": true, "sortable": true },
+
+    { "key": "pros", "label": "优点", "type": "tags", "card": "tag", "tagVariant": "green", "tagPrefix": "✔" },
+    { "key": "cons", "label": "缺点", "type": "tags", "card": "tag", "tagVariant": "red", "tagPrefix": "✘" },
+    { "key": "tags", "label": "标签", "type": "tags", "card": "tag", "tagVariant": "blue" }
+  ],
+
+  "guide": {
+    "title": "按场景选购建议",
+    "items": [
+      { "scene": "新房除醛", "advice": "Ultra增强版 / 6 Max / 全效标准版（甲醛CADR≥390）" },
+      { "scene": "养宠家庭", "advice": "宠物净化器（360°吸毛+专用活性炭）" },
+      { "scene": "母婴/过敏", "advice": "6 Pro / 5 Pro / 4 Pro H（医护级认证）" },
+      { "scene": "卧室小空间", "advice": "4 Lite / 4 Compact / 5（静音+便宜）" },
+      { "scene": "大户型客厅", "advice": "6 Max / 6 Pro / MAX增强版（CADR≥700）" },
+      { "scene": "预算有限", "advice": "4 Lite(599) / 2S二手(150起) / 桌面款(399)" }
+    ]
+  }
+}

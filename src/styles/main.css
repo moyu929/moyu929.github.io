@@ -1,0 +1,136 @@
+:root {
+  /* 品牌色 —— 沿用原页面配色 */
+  --brand: #6c5ce7;
+  --brand-soft: #f0edff;
+  --brand-surface: #f8f7ff;
+  --danger: #e74c3c;
+  --success: #27ae60;
+
+  --bg: #f0f2f5;
+  --surface: #fff;
+  --surface-alt: #fafafa;
+  --header-from: #1a1a2e;
+  --header-to: #16213e;
+
+  --text: #333;
+  --text-muted: #666;
+  --text-faint: #999;
+  --border: #e8e8e8;
+  --border-soft: #f0f0f0;
+
+  --tag-blue-bg: #eef2ff;
+  --tag-blue-fg: #4a56e2;
+  --tag-red-bg: #fef0f0;
+  --tag-red-fg: #e74c3c;
+  --tag-green-bg: #e8f8f0;
+  --tag-green-fg: #27ae60;
+
+  --shadow-sm: 0 1px 3px rgb(0 0 0 / 5%);
+  --shadow-md: 0 4px 16px rgb(0 0 0 / 18%);
+
+  --radius: 8px;
+  --radius-sm: 5px;
+
+  /* 头部与工具条高度，供 sticky 定位计算 */
+  --header-h: 60px;
+  --toolbar-h: 44px;
+
+  --page-max: 1440px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14151a;
+    --surface: #1e1f26;
+    --surface-alt: #24252d;
+    --text: #e6e6ea;
+    --text-muted: #a8a8b3;
+    --text-faint: #7c7c88;
+    --border: #32333d;
+    --border-soft: #2a2b34;
+    --brand-soft: #2a2545;
+    --brand-surface: #232040;
+
+    --tag-blue-bg: #23294a;
+    --tag-blue-fg: #93a0ff;
+    --tag-red-bg: #3d2224;
+    --tag-red-fg: #ff8a80;
+    --tag-green-bg: #1e372a;
+    --tag-green-fg: #6ee7a8;
+
+    --shadow-sm: 0 1px 3px rgb(0 0 0 / 40%);
+    --shadow-md: 0 4px 16px rgb(0 0 0 / 55%);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input {
+  font-family: inherit;
+}
+
+/* 页面内容的统一宽度约束 */
+.container {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 0 6px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+}
+
+/* 屏幕阅读器专用文本 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 键盘焦点可见 */
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
