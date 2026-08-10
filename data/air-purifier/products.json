@@ -36,7 +36,8 @@
       "母婴",
       "大户型"
     ],
-    "img": "ultra_enhanced.jpg"
+    "img": "ultra_enhanced.jpg",
+    "month": 11
   },
   {
     "id": "ultra_std",
@@ -73,7 +74,8 @@
       "大户型",
       "母婴"
     ],
-    "img": "ultra_std.jpg"
+    "img": "ultra_std.jpg",
+    "month": 9
   },
   {
     "id": "6_max",
@@ -111,7 +113,8 @@
       "新房全周期",
       "双电机"
     ],
-    "img": "6_max.jpg"
+    "img": "6_max.jpg",
+    "month": 3
   },
   {
     "id": "6_pro",
@@ -148,7 +151,8 @@
       "强力除醛",
       "母婴"
     ],
-    "img": "6_pro.jpg"
+    "img": "6_pro.jpg",
+    "month": 2
   },
   {
     "id": "5_pro",
@@ -185,7 +189,8 @@
       "除醛",
       "省电"
     ],
-    "img": "5_pro.jpg"
+    "img": "5_pro.jpg",
+    "month": 5
   },
   {
     "id": "quanxiao_std",
@@ -220,7 +225,8 @@
       "新房除醛",
       "中大户型"
     ],
-    "img": "quanxiao_std.jpg"
+    "img": "quanxiao_std.jpg",
+    "month": 4
   },
   {
     "id": "4_pro_h",
@@ -257,7 +263,8 @@
       "中户型",
       "母婴"
     ],
-    "img": "4_pro_h.jpg"
+    "img": "4_pro_h.jpg",
+    "month": 6
   },
   {
     "id": "6",
@@ -294,7 +301,8 @@
       "静音",
       "除醛"
     ],
-    "img": "6.jpg"
+    "img": "6.jpg",
+    "month": 6
   },
   {
     "id": "5s",
@@ -331,7 +339,8 @@
       "中小户型",
       "除过敏原"
     ],
-    "img": "5s.jpg"
+    "img": "5s.jpg",
+    "month": 8
   },
   {
     "id": "pet",
@@ -368,7 +377,8 @@
       "除异味",
       "除毛"
     ],
-    "img": "pet.jpg"
+    "img": "pet.jpg",
+    "month": 10
   },
   {
     "id": "4_pro",
@@ -404,7 +414,8 @@
       "中小户型",
       "基础净化"
     ],
-    "img": "4_pro.jpg"
+    "img": "4_pro.jpg",
+    "month": 3
   },
   {
     "id": "5",
@@ -442,7 +453,8 @@
       "粉尘",
       "性价比"
     ],
-    "img": "5.jpg"
+    "img": "5.jpg",
+    "month": 11
   },
   {
     "id": "4",
@@ -478,7 +490,8 @@
       "基础净化",
       "性价比"
     ],
-    "img": "4.jpg"
+    "img": "4.jpg",
+    "month": 1
   },
   {
     "id": "4_lite",
@@ -515,7 +528,8 @@
       "预算有限",
       "卧室"
     ],
-    "img": "4_lite.jpg"
+    "img": "4_lite.jpg",
+    "month": 7
   },
   {
     "id": "4_compact",
@@ -551,7 +565,8 @@
       "卧室",
       "书房"
     ],
-    "img": "4_compact.jpg"
+    "img": "4_compact.jpg",
+    "month": 5
   },
   {
     "id": "f1",
@@ -588,7 +603,8 @@
       "办公室",
       "个人"
     ],
-    "img": "f1.jpg"
+    "img": "f1.jpg",
+    "month": 12
   },
   {
     "id": "pro_tower",
@@ -625,7 +641,8 @@
       "经典",
       "二手捡漏"
     ],
-    "img": "pro_tower.jpg"
+    "img": "pro_tower.jpg",
+    "month": 8
   },
   {
     "id": "2s",
@@ -662,7 +679,8 @@
       "经典",
       "二手捡漏"
     ],
-    "img": "2s.jpg"
+    "img": "2s.jpg",
+    "month": 4
   },
   {
     "id": "3",
@@ -698,7 +716,8 @@
       "经典",
       "小户型"
     ],
-    "img": "3.jpg"
+    "img": "3.jpg",
+    "month": 6
   },
   {
     "id": "max",
@@ -735,7 +754,8 @@
       "大户型",
       "经典旗舰"
     ],
-    "img": "max.jpg"
+    "img": "max.jpg",
+    "month": 3
   },
   {
     "id": "max_enhanced",
@@ -773,7 +793,8 @@
       "经典旗舰",
       "二手捡漏"
     ],
-    "img": "max_enhanced.jpg"
+    "img": "max_enhanced.jpg",
+    "month": 9
   },
   {
     "id": "x",
@@ -810,7 +831,8 @@
       "中户型",
       "二手捡漏"
     ],
-    "img": "x.jpg"
+    "img": "x.jpg",
+    "month": 7
   },
   {
     "id": "6_dual",
@@ -850,7 +872,8 @@
       "新房",
       "大户型"
     ],
-    "img": null
+    "img": null,
+    "month": 9
   },
   {
     "id": "pro_h",
@@ -891,7 +914,8 @@
       "经典款",
       "中户型"
     ],
-    "img": null
+    "img": null,
+    "month": 11
   },
   {
     "id": "4_max",
@@ -931,7 +955,8 @@
       "双滤芯",
       "宠物适用"
     ],
-    "img": null
+    "img": null,
+    "month": 12
   },
   {
     "id": "circulation",
@@ -970,7 +995,8 @@
       "四季通用",
       "创新品类"
     ],
-    "img": null
+    "img": null,
+    "month": 4
   },
   {
     "id": "gen1",
@@ -1010,7 +1036,8 @@
       "双风机",
       "已停产"
     ],
-    "img": null
+    "img": null,
+    "month": 12
   },
   {
     "id": "gen2",
@@ -1051,7 +1078,8 @@
       "性价比",
       "已停产"
     ],
-    "img": null
+    "img": null,
+    "month": 11
   },
   {
     "id": "pro_v1",
@@ -1092,7 +1120,8 @@
       "大CADR",
       "已停产"
     ],
-    "img": null
+    "img": null,
+    "month": 9
   },
   {
     "id": "gen3h",
@@ -1133,7 +1162,8 @@
       "激光传感",
       "已停产"
     ],
-    "img": null
+    "img": null,
+    "month": 6
   },
   {
     "id": "gen2h",
@@ -1174,6 +1204,7 @@
       "静音",
       "小户型"
     ],
-    "img": null
+    "img": null,
+    "month": 5
   }
 ]

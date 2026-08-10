@@ -59,13 +59,25 @@ export function useProductFilter(data: Ref<CategoryData | null>) {
     if (key && sortDirection.value !== 'default') {
       const sign = sortDirection.value === 'asc' ? 1 : -1
       list.sort((a, b) => {
+        // 主排序键：year 等数值字段
         const av = numberOf(a, key)
         const bv = numberOf(b, key)
         // 无法比较的值沉底，不参与排序竞争
         if (av === null && bv === null) return 0
         if (av === null) return 1
         if (bv === null) return -1
-        return (av - bv) * sign
+        const cmp = (av - bv) * sign
+        if (cmp !== 0) return cmp
+        // 同一年时按月份进一步排序（month 缺失沉底），仅对上市时间等含月份字段生效
+        if (key === 'year') {
+          const am = numberOf(a, 'month')
+          const bm = numberOf(b, 'month')
+          if (am === null && bm === null) return 0
+          if (am === null) return 1
+          if (bm === null) return -1
+          return (am - bm) * sign
+        }
+        return 0
       })
     } else {
       // 默认排序：按分组顺序，组内按主指标降序

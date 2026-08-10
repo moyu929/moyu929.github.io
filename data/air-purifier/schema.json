@@ -42,6 +42,7 @@
     { "key": "weight", "label": "重量", "type": "text", "card": "grid", "compare": true },
     { "key": "cert", "label": "认证", "type": "text", "card": "grid", "compare": true },
     { "key": "year", "label": "上市", "unit": "年", "type": "number", "card": "grid", "compare": true, "sortable": true },
+    { "key": "month", "label": "上市月份", "type": "number", "comment": "可选，1-12；查不到具体月份的旧产品留空或 null" },
 
     { "key": "pros", "label": "优点", "type": "tags", "card": "tag", "tagVariant": "green", "tagPrefix": "✔" },
     { "key": "cons", "label": "缺点", "type": "tags", "card": "tag", "tagVariant": "red", "tagPrefix": "✘" },

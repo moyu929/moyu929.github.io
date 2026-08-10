@@ -1,7 +1,28 @@
+# ============ 依赖与构建产物 ============
 node_modules/
 dist/
+*.tsbuildinfo
 *.local
-.DS_Store
+
+# ============ 本地/环境配置 ============
+.env
+.env.*
+!.env.example
+
+# ============ 编辑器 & 系统文件 ============
 .vscode/*
 !.vscode/extensions.json
-*.tsbuildinfo
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ============ 缓存 & 临时目录 ============
+.cache/
+.temp/
+.tmp/
+*.log
+
+# ============ 项目辅助数据（非源码） ============
+.codebuddy/
