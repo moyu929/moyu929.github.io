@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, watch, onMounted, onBeforeUnmount, nextTick } from 'vue'
+import type { CSSProperties } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
 import type { CategoryData } from '../types'
 import { loadCategory } from '../data'
@@ -176,7 +177,7 @@ try {
   /* 忽略损坏的存储 */
 }
 
-const fabStyle = computed(() => ({
+const fabStyle = computed<CSSProperties>(() => ({
   position: 'fixed',
   right: 'auto',
   transform: 'none',
