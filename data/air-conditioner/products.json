@@ -1,0 +1,482 @@
+[
+  {
+    "id": "jso_pro_1p",
+    "name": "米家空调 巨省电Pro 大1匹",
+    "model_code": "KFR-26GW-NA20/V1A1",
+    "type": "挂机",
+    "official_price": 2199,
+    "second_hand": "—",
+    "pishu": "大1匹",
+    "energy": "超一级(APF5.65)",
+    "area": "10-15㎡",
+    "cool_cap": 2650,
+    "heat_cap": 4550,
+    "cool_power": 580,
+    "airflow": 730,
+    "noise": "内34-40 / 外49dB",
+    "size_indoor": "840×311×200mm",
+    "size_outdoor": "804×551×311mm",
+    "weight": "内10 / 外24kg",
+    "year": 2025,
+    "pros": [
+      "超一级能效",
+      "电辅热PTC",
+      "静音"
+    ],
+    "cons": [
+      "小匹数适用面积有限"
+    ],
+    "tags": [
+      "巨省电Pro",
+      "卧室",
+      "超一级"
+    ],
+    "img": null
+  },
+  {
+    "id": "jso_pro_15p",
+    "name": "米家空调 巨省电Pro 1.5匹",
+    "model_code": "KFR-35GW/V1A1",
+    "type": "挂机",
+    "official_price": 2399,
+    "second_hand": "—",
+    "pishu": "1.5匹",
+    "energy": "超一级(APF5.65)",
+    "area": "16-20㎡",
+    "cool_cap": 3520,
+    "heat_cap": 5110,
+    "cool_power": 790,
+    "airflow": 680,
+    "noise": "内37-41 / 外49dB",
+    "size_indoor": "840×311×200mm",
+    "size_outdoor": "860×551×331mm",
+    "weight": "内10 / 外27kg",
+    "year": null,
+    "pros": [
+      "超一级能效",
+      "电辅热PTC",
+      "主流匹数"
+    ],
+    "cons": [
+      "循环风量一般"
+    ],
+    "tags": [
+      "巨省电Pro",
+      "主卧",
+      "超一级"
+    ],
+    "img": null
+  },
+  {
+    "id": "jso_pro_2p",
+    "name": "米家空调 巨省电Pro 2匹",
+    "model_code": "KFR-50GW-NA30/V1A1",
+    "type": "挂机",
+    "official_price": 3299,
+    "second_hand": "—",
+    "pishu": "2匹",
+    "energy": "一级(APF5.1)",
+    "area": "20-30㎡",
+    "cool_cap": 5050,
+    "heat_cap": 7220,
+    "cool_power": 1190,
+    "airflow": 1300,
+    "noise": "内40-44 / 外52dB",
+    "size_indoor": "1080×330×249mm",
+    "size_outdoor": "860×551×331mm",
+    "weight": "内14.5 / 外28.5kg",
+    "year": 2025,
+    "pros": [
+      "2匹大冷量",
+      "循环风量1300",
+      "挂机省空间"
+    ],
+    "cons": [
+      "体积较大"
+    ],
+    "tags": [
+      "巨省电Pro",
+      "客卧两用",
+      "大匹数挂机"
+    ],
+    "img": null
+  },
+  {
+    "id": "jso_15p",
+    "name": "米家空调 巨省电 1.5匹",
+    "model_code": "KFR-35GW/N1A1",
+    "type": "挂机",
+    "official_price": 1899,
+    "second_hand": "—",
+    "pishu": "1.5匹",
+    "energy": "新一级(APF5.27)",
+    "area": "12-23㎡",
+    "cool_cap": 3500,
+    "heat_cap": 5000,
+    "cool_power": 860,
+    "airflow": 680,
+    "noise": "内23-40-42dB",
+    "size_indoor": "840×311×200mm",
+    "size_outdoor": "860×551×331mm",
+    "weight": "内10 / 外25kg",
+    "year": 2024,
+    "pros": [
+      "价格亲民",
+      "新一级能效",
+      "低噪23dB"
+    ],
+    "cons": [
+      "制冷上限口径有分歧"
+    ],
+    "tags": [
+      "巨省电",
+      "性价比",
+      "入门"
+    ],
+    "img": null
+  },
+  {
+    "id": "fresh_15p",
+    "name": "米家新风空调 1.5匹",
+    "model_code": "KFR-35GW/F2A1",
+    "type": "挂机",
+    "official_price": 2399,
+    "second_hand": "—",
+    "pishu": "1.5匹",
+    "energy": "新一级(APF5.13)",
+    "area": "16-20㎡",
+    "cool_cap": 3500,
+    "heat_cap": 4900,
+    "cool_power": 800,
+    "airflow": 600,
+    "fresh_air": 40,
+    "noise": "内23-42 / 外52dB",
+    "size_indoor": "965×325×213mm",
+    "size_outdoor": "860×551×331mm",
+    "weight": "内12.5 / 外26kg",
+    "year": null,
+    "pros": [
+      "新风量40m³/h",
+      "新一级能效",
+      "低噪"
+    ],
+    "cons": [
+      "循环风量偏低"
+    ],
+    "tags": [
+      "新风",
+      "换气",
+      "卧室"
+    ],
+    "img": null
+  },
+  {
+    "id": "fresh_zunxiang_15p",
+    "name": "米家新风空调 尊享版 1.5匹",
+    "model_code": "KFR-35GW/F1A1",
+    "type": "挂机",
+    "official_price": null,
+    "second_hand": "—",
+    "pishu": "1.5匹",
+    "energy": "新一级(APF5.13)",
+    "area": "查不到",
+    "cool_cap": 3500,
+    "heat_cap": 5000,
+    "cool_power": 820,
+    "airflow": 630,
+    "fresh_air": 40,
+    "noise": "内23-42 / 外52dB",
+    "size_indoor": "960×323×213mm",
+    "size_outdoor": "795×550×305mm",
+    "weight": "内13 / 外26.5kg",
+    "year": null,
+    "pros": [
+      "新风量40m³/h",
+      "新一级能效",
+      "低噪"
+    ],
+    "cons": [
+      "官方未标适用面积"
+    ],
+    "tags": [
+      "新风",
+      "尊享版",
+      "卧室"
+    ],
+    "img": null
+  },
+  {
+    "id": "jso_pro_cab_3p",
+    "name": "米家空调 巨省电Pro 立式大3匹",
+    "model_code": "72LW-NA10/N2A1(W)",
+    "type": "柜机",
+    "official_price": null,
+    "second_hand": "—",
+    "pishu": "大3匹",
+    "energy": "一级(APF5.01)",
+    "area": "约40㎡",
+    "cool_cap": 7360,
+    "heat_cap": 10400,
+    "cool_power": 1930,
+    "airflow": 1752,
+    "noise": "内42-46 / 外54dB",
+    "size_indoor": "346×1863×434mm",
+    "size_outdoor": "943×670×396mm",
+    "weight": "内33.5 / 外40kg",
+    "year": 2025,
+    "pros": [
+      "大3匹强冷",
+      "循环风量1752",
+      "超一级能效"
+    ],
+    "cons": [
+      "柜机占地大"
+    ],
+    "tags": [
+      "巨省电Pro",
+      "客厅",
+      "柜机"
+    ],
+    "img": null
+  },
+  {
+    "id": "jso_cab_3p",
+    "name": "米家空调 巨省电 立式3匹",
+    "model_code": "72LW-PL30/N1A1(W)",
+    "type": "柜机",
+    "official_price": 4099,
+    "second_hand": "—",
+    "pishu": "3匹",
+    "energy": "新一级",
+    "area": "约32-50㎡",
+    "cool_cap": 7360,
+    "heat_cap": 10020,
+    "cool_power": 1960,
+    "airflow": 1755,
+    "noise": "内46 / 外56dB",
+    "size_indoor": "346×1868×434mm",
+    "size_outdoor": "943×670×396mm",
+    "weight": "内29.5 / 外39-45kg",
+    "year": 2025,
+    "pros": [
+      "3匹柜机",
+      "循环风量大",
+      "性价比"
+    ],
+    "cons": [
+      "更高效比口径有分歧"
+    ],
+    "tags": [
+      "巨省电",
+      "客厅",
+      "柜机"
+    ],
+    "img": null
+  },
+  {
+    "id": "fresh_pro_cab_3p",
+    "name": "米家空调 新风Pro 双出风 立式3匹",
+    "model_code": "72LW-NA11/F1A1(W)",
+    "type": "柜机",
+    "official_price": 7199,
+    "second_hand": "—",
+    "pishu": "3匹",
+    "energy": "一级(APF5.01)",
+    "area": "查不到",
+    "cool_cap": 7320,
+    "heat_cap": 9850,
+    "cool_power": 1930,
+    "airflow": 1710,
+    "fresh_air": 125,
+    "noise": "内42-52 / 外54dB",
+    "size_indoor": "340×1863×441mm",
+    "size_outdoor": "943×670×396mm",
+    "weight": "内34 / 外40kg",
+    "year": 2025,
+    "pros": [
+      "新风量125m³/h(免扩孔)",
+      "双出风",
+      "超一级能效"
+    ],
+    "cons": [
+      "价格高"
+    ],
+    "tags": [
+      "新风Pro",
+      "客厅",
+      "双出风"
+    ],
+    "img": null
+  },
+  {
+    "id": "fresh_cab_3p",
+    "name": "米家新风空调 立式3匹",
+    "model_code": "KFR-72LW/F2A1",
+    "type": "柜机",
+    "official_price": 6949,
+    "second_hand": "—",
+    "pishu": "3匹",
+    "energy": "新一级",
+    "area": "约27-42㎡",
+    "cool_cap": 7290,
+    "heat_cap": 9710,
+    "cool_power": null,
+    "airflow": 1200,
+    "fresh_air": 215,
+    "noise": "内22-47 / 外56dB",
+    "size_indoor": "428×1833×359mm",
+    "size_outdoor": "907×410×700mm",
+    "weight": "查不到",
+    "year": null,
+    "pros": [
+      "新风量215m³/h",
+      "3匹柜机",
+      "低噪22dB"
+    ],
+    "cons": [
+      "制冷功率官方未公开"
+    ],
+    "tags": [
+      "新风",
+      "客厅",
+      "柜机"
+    ],
+    "img": null
+  },
+  {
+    "id": "duct_3p",
+    "name": "米家中央空调 巨省电 风管机 大3匹",
+    "model_code": "75FW-OC20/N3B1",
+    "type": "中央空调",
+    "official_price": null,
+    "second_hand": "—",
+    "pishu": "大3匹",
+    "energy": "一级(APF4.72)",
+    "area": "查不到",
+    "cool_cap": 7560,
+    "heat_cap": 9850,
+    "cool_power": 2150,
+    "airflow": 1350,
+    "noise": "内20-33 / 外54dB",
+    "size_indoor": "1250×198×450mm",
+    "size_outdoor": "943×670×396mm",
+    "weight": "内22 / 外40kg",
+    "year": null,
+    "pros": [
+      "隐藏式安装",
+      "大3匹",
+      "低噪20dB"
+    ],
+    "cons": [
+      "需吊顶安装"
+    ],
+    "tags": [
+      "中央空调",
+      "风管机",
+      "客厅"
+    ],
+    "img": null
+  },
+  {
+    "id": "duct_4p",
+    "name": "米家中央空调 巨省电 风管机 4匹",
+    "model_code": "90FW-OC20/N2B1",
+    "type": "中央空调",
+    "official_price": null,
+    "second_hand": "—",
+    "pishu": "4匹",
+    "energy": "一级(APF4.50)",
+    "area": "查不到",
+    "cool_cap": 9060,
+    "heat_cap": 11400,
+    "cool_power": 2770,
+    "airflow": 1580,
+    "noise": "内21-35 / 外55dB",
+    "size_indoor": "1250×198×450mm",
+    "size_outdoor": "943×670×396mm",
+    "weight": "内23 / 外41kg",
+    "year": null,
+    "pros": [
+      "隐藏式安装",
+      "4匹大冷量",
+      "循环风量1580"
+    ],
+    "cons": [
+      "需吊顶安装"
+    ],
+    "tags": [
+      "中央空调",
+      "风管机",
+      "大空间"
+    ],
+    "img": null
+  },
+  {
+    "id": "duct_pro_15p",
+    "name": "米家中央空调 风管机Pro 1.5匹",
+    "model_code": "36FW-OC10/N1B1",
+    "type": "中央空调",
+    "official_price": null,
+    "second_hand": "—",
+    "pishu": "1.5匹",
+    "energy": "一级(APF4.70)",
+    "area": "查不到",
+    "cool_cap": 3600,
+    "heat_cap": 4250,
+    "cool_power": 980,
+    "airflow": 650,
+    "noise": "内18-29 / 外49dB",
+    "size_indoor": "700×198×450mm",
+    "size_outdoor": "804×555×311mm",
+    "weight": "内13 / 外24.5kg",
+    "year": null,
+    "pros": [
+      "隐藏式安装",
+      "超低噪18dB",
+      "小户型适用"
+    ],
+    "cons": [
+      "需吊顶安装"
+    ],
+    "tags": [
+      "中央空调",
+      "风管机Pro",
+      "卧室"
+    ],
+    "img": null
+  },
+  {
+    "id": "duct_pro_3p",
+    "name": "米家中央空调 风管机Pro 3匹",
+    "model_code": "75FW-OC20/N1B1",
+    "type": "中央空调",
+    "official_price": null,
+    "second_hand": "—",
+    "pishu": "3匹",
+    "energy": "一级(APF4.60)",
+    "area": "约30-40㎡",
+    "cool_cap": 7500,
+    "heat_cap": 9700,
+    "cool_power": 2050,
+    "airflow": 1250,
+    "noise": "内22-33 / 外54dB",
+    "size_indoor": "1250×198×450mm",
+    "size_outdoor": "943×670×396mm",
+    "weight": "内22 / 外40kg",
+    "year": null,
+    "pros": [
+      "隐藏式安装",
+      "3匹",
+      "低噪22dB"
+    ],
+    "cons": [
+      "需吊顶安装"
+    ],
+    "tags": [
+      "中央空调",
+      "风管机Pro",
+      "客厅"
+    ],
+    "img": null
+  }
+]

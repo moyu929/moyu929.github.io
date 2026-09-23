@@ -4,5 +4,11 @@
     "name": "空气净化器",
     "icon": "💨",
     "description": "米家全型号横评 · CADR / 滤芯成本 / 噪音"
+  },
+  {
+    "id": "air-conditioner",
+    "name": "空调",
+    "icon": "❄️",
+    "description": "米家全型号横评 · 匹数 / 能效 / 制冷制热量"
   }
 ]
