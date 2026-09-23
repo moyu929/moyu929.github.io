@@ -29,8 +29,10 @@
     { "key": "filter_price", "label": "滤芯价", "type": "text", "card": "chip", "compare": true, "stat": true },
     { "key": "filter_life", "label": "滤芯寿命", "type": "text", "card": "chip", "compare": true },
 
-    { "key": "cadr_pm", "label": "颗粒物CADR", "unit": "m³/h", "type": "number", "card": "grid", "compare": true, "sortable": true },
-    { "key": "cadr_hcho", "label": "甲醛CADR", "unit": "m³/h", "type": "number", "card": "grid", "compare": true, "sortable": true },
+    { "key": "cadr_pm", "label": "颗粒物CADR(额定)", "unit": "m³/h", "type": "number", "card": "grid", "compare": true, "sortable": true },
+    { "key": "cadr_pm_real", "label": "颗粒物CADR(实测)", "unit": "m³/h", "type": "text", "card": "grid", "compare": true },
+    { "key": "cadr_hcho", "label": "甲醛CADR(额定)", "unit": "m³/h", "type": "number", "card": "grid", "compare": true, "sortable": true },
+    { "key": "cadr_hcho_real", "label": "甲醛CADR(实测)", "unit": "m³/h", "type": "text", "card": "grid", "compare": true },
     { "key": "area", "label": "适用面积", "type": "text", "card": "grid", "compare": true },
     { "key": "noise", "label": "噪音", "type": "text", "card": "grid", "compare": true },
     { "key": "power", "label": "功率", "type": "text", "card": "grid", "compare": true },
