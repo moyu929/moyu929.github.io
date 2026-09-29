@@ -1,7 +1,7 @@
 [
   {
     "id": "jso_pro_1p",
-    "name": "米家空调 巨省电Pro 大1匹",
+    "name": "米家空调 巨省电Pro 大1匹（2025款）",
     "model_code": "KFR-26GW-NA20/V1A1",
     "type": "挂机",
     "official_price": 2199,
@@ -35,7 +35,7 @@
   },
   {
     "id": "jso_pro_15p",
-    "name": "米家空调 巨省电Pro 1.5匹",
+    "name": "米家空调 巨省电Pro 1.5匹（2024款）",
     "model_code": "KFR-35GW/V1A1",
     "type": "挂机",
     "official_price": 2399,
@@ -69,7 +69,7 @@
   },
   {
     "id": "jso_pro_2p",
-    "name": "米家空调 巨省电Pro 2匹",
+    "name": "米家空调 巨省电Pro 2匹（2025款）",
     "model_code": "KFR-50GW-NA30/V1A1",
     "type": "挂机",
     "official_price": 3299,
@@ -103,7 +103,7 @@
   },
   {
     "id": "jso_15p",
-    "name": "米家空调 巨省电 1.5匹",
+    "name": "米家空调 巨省电 1.5匹（2024款）",
     "model_code": "KFR-35GW/N1A1",
     "type": "挂机",
     "official_price": 1899,
@@ -207,7 +207,7 @@
   },
   {
     "id": "jso_pro_cab_3p",
-    "name": "米家空调 巨省电Pro 立式大3匹",
+    "name": "米家空调 巨省电Pro 立式大3匹（2025款）",
     "model_code": "72LW-NA10/N2A1(W)",
     "type": "柜机",
     "official_price": null,
@@ -241,7 +241,7 @@
   },
   {
     "id": "jso_cab_3p",
-    "name": "米家空调 巨省电 立式3匹",
+    "name": "米家空调 巨省电 立式3匹（2025款）",
     "model_code": "72LW-PL30/N1A1(W)",
     "type": "柜机",
     "official_price": 4099,
