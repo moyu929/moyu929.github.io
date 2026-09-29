@@ -1,0 +1,63 @@
+{
+  "id": "air-conditioner",
+  "name": "空调",
+  "subtitle": "米家空调全型号横评",
+  "imageBase": "images/air-conditioner",
+
+  "groupBy": {
+    "key": "type",
+    "label": "机型",
+    "order": ["挂机", "柜机", "中央空调"],
+    "colors": {
+      "挂机": "#3498db",
+      "柜机": "#e67e22",
+      "中央空调": "#9b59b6"
+    }
+  },
+
+  "searchFields": ["name", "model_code", "tags", "pros"],
+  "primaryMetric": "official_price",
+
+  "fields": [
+    { "key": "name", "label": "型号", "type": "text", "card": "title", "compare": true },
+    { "key": "model_code", "label": "产品型号", "type": "text", "card": "grid", "compare": true },
+    { "key": "type", "label": "机型", "type": "text", "compare": true },
+
+    { "key": "official_price", "label": "官方价", "type": "number", "prefix": "¥", "card": "chip", "compare": true, "sortable": true, "stat": true },
+    { "key": "second_hand", "label": "二手价", "type": "text", "card": "chip", "compare": true, "stat": true },
+
+    { "key": "pishu", "label": "匹数", "type": "text", "card": "grid", "compare": true },
+    { "key": "energy", "label": "能效", "type": "text", "card": "grid", "compare": true },
+    { "key": "area", "label": "适用面积", "type": "text", "card": "grid", "compare": true },
+
+    { "key": "cool_cap", "label": "制冷量", "unit": "W", "type": "number", "card": "grid", "compare": true, "sortable": true },
+    { "key": "heat_cap", "label": "制热量", "unit": "W", "type": "number", "card": "grid", "compare": true, "sortable": true },
+    { "key": "cool_power", "label": "制冷功率", "unit": "W", "type": "number", "card": "grid", "compare": true, "sortable": true },
+    { "key": "airflow", "label": "循环风量", "unit": "m³/h", "type": "number", "card": "grid", "compare": true, "sortable": true },
+    { "key": "fresh_air", "label": "新风量", "unit": "m³/h", "type": "number", "card": "grid", "compare": true },
+
+    { "key": "noise", "label": "噪音", "type": "text", "card": "grid", "compare": true },
+    { "key": "size_indoor", "label": "内机尺寸", "type": "text", "card": "grid", "compare": true },
+    { "key": "size_outdoor", "label": "外机尺寸", "type": "text", "card": "grid", "compare": true },
+    { "key": "weight", "label": "重量", "type": "text", "card": "grid", "compare": true },
+
+    { "key": "year", "label": "上市", "unit": "年", "type": "number", "card": "grid", "compare": true, "sortable": true },
+    { "key": "month", "label": "上市月份", "type": "number", "comment": "可选，1-12；查不到具体月份的旧产品留空或 null" },
+
+    { "key": "pros", "label": "优点", "type": "tags", "card": "tag", "tagVariant": "green", "tagPrefix": "✔" },
+    { "key": "cons", "label": "缺点", "type": "tags", "card": "tag", "tagVariant": "red", "tagPrefix": "✘" },
+    { "key": "tags", "label": "标签", "type": "tags", "card": "tag", "tagVariant": "blue" }
+  ],
+
+  "guide": {
+    "title": "按场景选购建议",
+    "items": [
+      { "scene": "卧室/小房间", "advice": "巨省电Pro 1匹 / 1.5匹（16-20㎡）" },
+      { "scene": "客厅大空间", "advice": "巨省电Pro 立式大3匹 / 新风Pro 立式3匹" },
+      { "scene": "新房通风换气", "advice": "新风系列（挂机40m³/h · 立式125-215m³/h）" },
+      { "scene": "极致省电", "advice": "巨省电Pro 超一级能效（APF≥5.1）" },
+      { "scene": "全屋隐藏安装", "advice": "中央空调 风管机（Pro 1.5/3匹 · 巨省电 大3/4匹）" },
+      { "scene": "预算优先", "advice": "巨省电 1.5匹（¥1899 起）" }
+    ]
+  }
+}
