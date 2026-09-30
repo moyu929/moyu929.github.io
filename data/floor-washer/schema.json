@@ -1,0 +1,236 @@
+{
+  "id": "floor-washer",
+  "name": "洗地机",
+  "subtitle": "米家洗地机全型号横评",
+  "imageBase": "images/floor-washer",
+  "groupBy": {
+    "key": "series",
+    "label": "代际系列",
+    "order": [
+      "初代与衍生",
+      "2 代",
+      "3 代",
+      "4 代",
+      "5 代"
+    ],
+    "colors": {
+      "初代与衍生": "#95a5a6",
+      "2 代": "#e67e22",
+      "3 代": "#3498db",
+      "4 代": "#9b59b6",
+      "5 代": "#16a085"
+    }
+  },
+  "searchFields": [
+    "name",
+    "model_code",
+    "tags",
+    "pros"
+  ],
+  "primaryMetric": "official_price",
+  "fields": [
+    {
+      "key": "name",
+      "label": "型号",
+      "type": "text",
+      "card": "title",
+      "compare": true
+    },
+    {
+      "key": "model_code",
+      "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "miot_model",
+      "label": "MIoT 型号",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "series",
+      "label": "代际系列",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "official_price",
+      "label": "官方价",
+      "type": "number",
+      "card": "chip",
+      "compare": true,
+      "sortable": true,
+      "stat": true,
+      "prefix": "¥"
+    },
+    {
+      "key": "second_hand",
+      "label": "二手价",
+      "type": "text",
+      "card": "chip",
+      "compare": true
+    },
+    {
+      "key": "motor",
+      "label": "电机类型",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "battery",
+      "label": "电池容量",
+      "type": "number",
+      "unit": "mAh",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "charge",
+      "label": "充电时间",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "runtime",
+      "label": "续航",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "noise",
+      "label": "工作噪音",
+      "type": "number",
+      "unit": "dB",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "clean_tank",
+      "label": "清水箱",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "dirty_tank",
+      "label": "污水箱",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "weight",
+      "label": "主机净重",
+      "type": "number",
+      "unit": "kg",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "size",
+      "label": "整机尺寸",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "year",
+      "label": "上市",
+      "type": "number",
+      "unit": "年",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "pros",
+      "label": "优点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "green",
+      "tagPrefix": "✔"
+    },
+    {
+      "key": "cons",
+      "label": "缺点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "red",
+      "tagPrefix": "✘"
+    },
+    {
+      "key": "tags",
+      "label": "标签",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "blue"
+    },
+    {
+      "key": "verify_status",
+      "label": "核查状态",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "verify_date",
+      "label": "核查时间",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "verify_source",
+      "label": "信息来源",
+      "type": "tags",
+      "compare": true,
+      "tagVariant": "blue"
+    },
+    {
+      "key": "verify_url",
+      "label": "来源链接",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "change_log",
+      "label": "修改记录",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "updated_at",
+      "label": "最近更新",
+      "type": "text",
+      "compare": true
+    }
+  ],
+  "guide": {
+    "title": "按场景选购建议",
+    "items": [
+      {
+        "scene": "预算入门（千元内）",
+        "advice": "无线洗地机4C（¥899）或 5C（¥999），基础洗拖吸一体"
+      },
+      {
+        "scene": "长发/宠物家庭",
+        "advice": "3 代起机型配备较大污水箱（700ml），4 代标配无刷电机"
+      },
+      {
+        "scene": "大户型长续航",
+        "advice": "4 Max（续航 45min）/ 5 MAX（60min），5 MAX 主机净重 6.9kg 属偏重"
+      },
+      {
+        "scene": "静音要求",
+        "advice": "5 Pro / 5 MAX 标称 45dB，明显低于 4C、2C 的 78dB"
+      },
+      {
+        "scene": "老款捡漏",
+        "advice": "初代与 2 代已停售，参数残缺且无官方在售价，仅作历史参考"
+      }
+    ]
+  }
+}

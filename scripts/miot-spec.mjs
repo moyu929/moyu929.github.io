@@ -40,6 +40,8 @@ const KEYWORDS = {
   'robot-vacuum': '扫地机器人',
   dishwasher: '洗碗机',
   vacuum: '吸尘器',
+  'floor-washer': '洗地机',
+  'bath-heater': '浴霸',
   'water-purifier': '净水器',
   'rice-cooker': '电饭煲',
   'air-fryer': '空气炸锅',

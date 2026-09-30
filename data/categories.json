@@ -138,10 +138,22 @@
     "description": "米家全型号横评 · 吸力 / UV杀菌 / 热风"
   },
   {
+    "id": "floor-washer",
+    "name": "洗地机",
+    "icon": "🧽",
+    "description": "米家全型号横评 · 代际 / 续航 / 水箱"
+  },
+  {
     "id": "water-heater",
     "name": "热水器",
     "icon": "🚿",
     "description": "米家全型号横评 · 升数 / 恒温 / 能效"
+  },
+  {
+    "id": "bath-heater",
+    "name": "浴霸",
+    "icon": "🛁",
+    "description": "米家全型号横评 · 风暖功率 / 开孔 / 智能联动"
   },
   {
     "id": "water-dispenser",

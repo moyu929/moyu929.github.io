@@ -1,0 +1,34 @@
+{
+  "_说明": "太平洋产品报价（pconline）规格页抓取清单。urlId 取自 https://g.pconline.com.cn/product/<path>/mijia/ 品牌型号索引页；path 是该站的品类目录名。抓取结果写入 data/_cache/pconline-<品类>-<产品>.json，仅作第三方交叉印证。",
+  "floor-washer": {
+    "fw_1": { "name": "米家无线洗地机", "path": "cleaning_machine", "urlId": 1551607 },
+    "fw_2": { "name": "米家无线洗地机2", "path": "cleaning_machine", "urlId": 1787807 },
+    "fw_2lite": { "name": "米家无线洗地机2 Lite", "path": "cleaning_machine", "urlId": 1762407 },
+    "fw_2c": { "name": "米家无线洗地机2C", "path": "cleaning_machine", "urlId": 1976467 },
+    "fw_3pro": { "name": "米家无线洗地机3 Pro", "path": "cleaning_machine", "urlId": 2171039 },
+    "fw_3max": { "name": "米家无线洗地机3 Max", "path": "cleaning_machine", "urlId": 2231879 },
+    "fw_4": { "name": "米家无线洗地机4", "path": "cleaning_machine", "urlId": 2700439 },
+    "fw_4c": { "name": "米家无线洗地机4C", "path": "cleaning_machine", "urlId": 2463919 },
+    "fw_4pro": { "name": "米家无线洗地机4 Pro", "path": "cleaning_machine", "urlId": 2629519 },
+    "fw_4max": { "name": "米家无线洗地机4 Max", "path": "cleaning_machine", "urlId": 2641219 },
+    "fw_5": { "name": "米家无线洗地机 5", "path": "cleaning_machine", "urlId": 2940871 },
+    "fw_5c": { "name": "米家无线洗地机 5C", "path": "cleaning_machine", "urlId": 2995682 },
+    "fw_5pro": { "name": "米家无线洗地机 5 Pro", "path": "cleaning_machine", "urlId": 2891931 },
+    "fw_5pro_foam": { "name": "米家无线洗地机 5 Pro泡沫版", "path": "cleaning_machine", "urlId": 2995642 },
+    "fw_5max": { "name": "米家无线洗地机 5 MAX", "path": "cleaning_machine", "urlId": 2866611 },
+    "fw_hightemp": { "name": "米家高温无线洗地机", "path": "cleaning_machine", "urlId": 1443427 },
+    "mop_dual": { "name": "米家双刷无线拖地机", "path": "cleaning_machine", "urlId": 1762367 }
+  },
+  "bath-heater": {
+    "bath_base": { "name": "米家智能浴霸", "path": "yuba", "urlId": 1759727 },
+    "bath_pro": { "name": "米家智能浴霸Pro", "path": "yuba", "urlId": 1759747 },
+    "bath_s1": { "name": "米家智能浴霸S1", "path": "yuba", "urlId": 2362119 },
+    "bath_n1": { "name": "米家智能浴霸N1", "path": "yuba", "urlId": 2364759 },
+    "bath_p1": { "name": "米家智能浴霸P1", "path": "yuba", "urlId": 2629079 },
+    "bath_p1_human": { "name": "米家智能浴霸P1 人感版", "path": "yuba", "urlId": 2997202 },
+    "bath_g10": { "name": "米家智能浴霸G10", "path": "yuba", "urlId": 2997122 },
+    "bath_g20": { "name": "米家智能浴霸G20", "path": "yuba", "urlId": 2994802 },
+    "bath_2": { "name": "米家智能浴霸2", "path": "yuba", "urlId": 2997222 },
+    "bath_2c": { "name": "米家智能浴霸2C", "path": "yuba", "urlId": 2997242 }
+  }
+}

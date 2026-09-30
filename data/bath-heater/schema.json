@@ -1,0 +1,239 @@
+{
+  "id": "bath-heater",
+  "name": "浴霸",
+  "subtitle": "米家浴霸全型号横评",
+  "imageBase": "images/bath-heater",
+  "groupBy": {
+    "key": "series",
+    "label": "系列",
+    "order": [
+      "初代款",
+      "S/N 系列",
+      "P 系列",
+      "G 系列",
+      "2 代系列",
+      "双核/变频款"
+    ],
+    "colors": {
+      "初代款": "#95a5a6",
+      "S/N 系列": "#3498db",
+      "P 系列": "#9b59b6",
+      "G 系列": "#e67e22",
+      "2 代系列": "#16a085",
+      "双核/变频款": "#34495e"
+    }
+  },
+  "searchFields": [
+    "name",
+    "model_code",
+    "tags",
+    "pros"
+  ],
+  "primaryMetric": "official_price",
+  "fields": [
+    {
+      "key": "name",
+      "label": "型号",
+      "type": "text",
+      "card": "title",
+      "compare": true
+    },
+    {
+      "key": "model_code",
+      "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "miot_model",
+      "label": "MIoT 型号",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "series",
+      "label": "系列",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "official_price",
+      "label": "官方价",
+      "type": "number",
+      "card": "chip",
+      "compare": true,
+      "sortable": true,
+      "stat": true,
+      "prefix": "¥"
+    },
+    {
+      "key": "second_hand",
+      "label": "二手价",
+      "type": "text",
+      "card": "chip",
+      "compare": true
+    },
+    {
+      "key": "warm_mode",
+      "label": "取暖方式",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "heat_power",
+      "label": "风暖功率",
+      "type": "number",
+      "unit": "W",
+      "card": "grid",
+      "compare": true,
+      "sortable": true,
+      "stat": true
+    },
+    {
+      "key": "light_power",
+      "label": "照明功率",
+      "type": "number",
+      "unit": "W",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "fan_power",
+      "label": "风扇功率",
+      "type": "number",
+      "unit": "W",
+      "compare": true
+    },
+    {
+      "key": "vent_power",
+      "label": "换气功率",
+      "type": "number",
+      "unit": "W",
+      "compare": true
+    },
+    {
+      "key": "control",
+      "label": "控制方式",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "open_size",
+      "label": "开孔尺寸",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "weight",
+      "label": "产品重量",
+      "type": "number",
+      "unit": "kg",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "voltage",
+      "label": "电源规格",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "year",
+      "label": "上市",
+      "type": "number",
+      "unit": "年",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "pros",
+      "label": "优点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "green",
+      "tagPrefix": "✔"
+    },
+    {
+      "key": "cons",
+      "label": "缺点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "red",
+      "tagPrefix": "✘"
+    },
+    {
+      "key": "tags",
+      "label": "标签",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "blue"
+    },
+    {
+      "key": "verify_status",
+      "label": "核查状态",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "verify_date",
+      "label": "核查时间",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "verify_source",
+      "label": "信息来源",
+      "type": "tags",
+      "compare": true,
+      "tagVariant": "blue"
+    },
+    {
+      "key": "verify_url",
+      "label": "来源链接",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "change_log",
+      "label": "修改记录",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "updated_at",
+      "label": "最近更新",
+      "type": "text",
+      "compare": true
+    }
+  ],
+  "guide": {
+    "title": "按场景选购建议",
+    "items": [
+      {
+        "scene": "小浴室基础取暖",
+        "advice": "米家智能浴霸（¥529，风暖 2400W）或双核浴霸（¥505）"
+      },
+      {
+        "scene": "老房 300×600 吊顶",
+        "advice": "除 P 系列箱体较厚外，各型号开孔多为 300×600mm，装前需复核厚度"
+      },
+      {
+        "scene": "速热大功率",
+        "advice": "G20 / Pro / S1 标称风暖 2800W，N1 为 2600W"
+      },
+      {
+        "scene": "智能联动",
+        "advice": "G10、N1、S1 等支持 APP/语音控制，2C 仅遥控式"
+      },
+      {
+        "scene": "套装更划算",
+        "advice": "官方在售多为「浴霸 + 花洒」两件套，单独购机前先比套装价"
+      }
+    ]
+  }
+}

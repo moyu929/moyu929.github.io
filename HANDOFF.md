@@ -1,9 +1,53 @@
 # 交接文档：家电横评站点 —— 品类扩充与数据订正
 
-> 交接背景：当前环境不稳定（会话多次中断、文件写入偶发截断），上一轮工作把「洗衣机 / 冰箱 / 扫地机器人」三个新品类的**产品数据**写好了，但**字段定义（schema）和品类注册没做完**，站点上还看不到这三个品类。
-> 接手人请按本文第 5 节的顺序把剩余步骤做完即可。
+> 交接背景：站点已扩到 **41 个品类 / 418 款产品**，全部走「schema 驱动」零前端改动。最近一轮做了三件事：给**全部产品加审核标注字段**、接入 **miot 第三方产品库**核验停产型号、新增**洗地机与浴霸**两个品类。详见第 0.1 节。
 >
 > 数据采集/核验的完整规范见 [.trae/skills/appliance-data-curation/SKILL.md](file:///workspace/.trae/skills/appliance-data-curation/SKILL.md)，**动手前务必先读它**。
+
+## 0.1 最近一轮进展（2026-10-01）
+
+**审核标注字段（全量 418 款）** —— 每款产品新增 6 个字段，用于回答「这条数据凭什么可信、什么时候核的、改动过什么」：
+
+| 字段 | 含义 |
+| --- | --- |
+| `verify_status` | 核查状态：`已核验（多源）` / `已核验（官方商城）` / `待核验` |
+| `verify_date` | 核查时间 |
+| `verify_source` | 信息来源（标签数组，如 小米商城 / 太平洋电脑网 / 米家产品库） |
+| `verify_url` | 首选来源链接 |
+| `change_log` | 修改记录（本轮补了什么、依据什么） |
+| `updated_at` | 最近更新日期 |
+
+判定依据**可追溯**，不是手填：`data/_sources/provenance.json` 记录逐条溯源（来源 + 链接 + 备注），
+`data/_sources/patches/*.json` 记录了参数补丁，脚本据此生成状态；没有可追溯来源的早期条目一律标 `待核验`（当前 60 款）。
+
+**miot 第三方产品库接入** —— `scripts/miot-spec.mjs`（home.miot-spec.com）：
+
+```bash
+node scripts/miot-spec.mjs crawl [关键词...]   # 按品类整库抓取（分页/并发 4/增量落盘），38+ 关键词 → 2585 条本地索引
+node scripts/miot-spec.mjs search <关键词...>  # 只抓首页
+node scripts/miot-spec.mjs product <model...>  # 取某型号固件能力项
+node scripts/miot-spec.mjs match [--apply]     # 用本地索引补 miot_model
+```
+
+- 该站是 Inertia 应用，数据在 `<script data-page="app" type="application/json">{…}</script>` 里，需按 JSON 括号配平解析。
+- **单次请求约 3.5 秒**，串行会误判为「卡死」；务必用并发 + 日志（`data/_cache/miot-crawl.log`）。
+- 实测**没有反爬**：连续 6 次请求全部 HTTP 200。慢是因为站点本身慢。
+- 由此为 **146 款**产品写入 `miot_model`（协议型号，如 `xiaomi.airp.sa6`）。
+  ⚠️ **miot 型号 ≠ 零售型号代码**，所以用**独立字段** `miot_model` 存放，绝不覆盖 `model_code`。
+- ⚠️ 该站 `verified_time` 是**协议认证时间**，不是上市时间；收录不完整且含固件改版重复条目，**缺失不作为型号不存在的依据**。
+
+**太平洋规格表工具** —— `scripts/pconline-specs.py` + `data/_sources/pconline-targets.json`：
+
+- 小米商城商品页参数表由 JS 动态加载，纯 HTTP 抓不到（浏览器渲染后正文仅 1.3k 字，无规格区）；
+  而太平洋的 `_detail.html` 是服务端渲染的结构化表格，可作第二来源。
+- 抓取清单里按 `urlId` 指定型号页；结果落 `data/_cache/pconline-<品类>-<产品>.json`。
+- ⚠️ **该站有系统性字段错标**（把「风暖功率」写成 `28W`、把 `2600W` 标成「灯暖功率」、把 `L` 写成 `ml`、`约.6kg` 缺位），
+  因此写库时有**异常值剔除规则**（见 `data/_sources/provenance.json` 与生成脚本注释），可疑值一律写 `查不到`。
+
+**新增品类**：洗地机 `floor-washer`（17 款）、浴霸 `bath-heater`（12 款）。
+
+**当前缺口**：41 款无产品图；`model_code` 大面积缺失（miot 补的是另一个字段）；60 款仍为 `待核验`；
+洗地机的「吸力/真空度」因源数据单位混乱（Kpa / 毫巴 / 缺零）**本轮故意不收录**。
 
 ---
 
