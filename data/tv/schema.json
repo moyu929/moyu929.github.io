@@ -1,0 +1,177 @@
+{
+  "id": "tv",
+  "name": "电视",
+  "subtitle": "电视全型号横评",
+  "imageBase": "images/tv",
+  "groupBy": {
+    "key": "series",
+    "label": "系列",
+    "order": [
+      "S Pro Mini LED",
+      "S Mini LED",
+      "S 系列"
+    ],
+    "colors": {
+      "S Pro Mini LED": "#e67e22",
+      "S Mini LED": "#3498db",
+      "S 系列": "#7f8c8d"
+    }
+  },
+  "searchFields": [
+    "name",
+    "model_code",
+    "tags",
+    "pros"
+  ],
+  "primaryMetric": "official_price",
+  "fields": [
+    {
+      "key": "name",
+      "label": "型号",
+      "type": "text",
+      "card": "title",
+      "compare": true
+    },
+    {
+      "key": "model_code",
+      "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "series",
+      "label": "系列",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "official_price",
+      "label": "官方价",
+      "type": "number",
+      "prefix": "¥",
+      "card": "chip",
+      "compare": true,
+      "sortable": true,
+      "stat": true
+    },
+    {
+      "key": "second_hand",
+      "label": "二手价",
+      "type": "text",
+      "card": "chip",
+      "compare": true
+    },
+    {
+      "key": "size_inch",
+      "label": "尺寸",
+      "type": "number",
+      "unit": "英寸",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "resolution",
+      "label": "分辨率",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "refresh",
+      "label": "刷新率",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "backlight",
+      "label": "背光",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "mem",
+      "label": "内存/存储",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "hdmi",
+      "label": "HDMI 2.1",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "size",
+      "label": "整机尺寸",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "year",
+      "label": "上市",
+      "type": "number",
+      "unit": "年",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "pros",
+      "label": "优点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "green",
+      "tagPrefix": "✔"
+    },
+    {
+      "key": "cons",
+      "label": "缺点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "red",
+      "tagPrefix": "✘"
+    },
+    {
+      "key": "tags",
+      "label": "标签",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "blue"
+    }
+  ],
+  "guide": {
+    "title": "按场景选购建议",
+    "items": [
+      {
+        "scene": "客厅主力观影",
+        "advice": "小米电视 S Pro Mini LED（分区与亮度更高）"
+      },
+      {
+        "scene": "预算中端",
+        "advice": "小米电视 S Mini LED"
+      },
+      {
+        "scene": "游戏主机",
+        "advice": "选支持 HDMI 2.1 与高刷的机型"
+      },
+      {
+        "scene": "白天客厅光亮",
+        "advice": "优先高亮度 + 低反屏"
+      },
+      {
+        "scene": "大客厅巨幕",
+        "advice": "百吋大屏电视"
+      },
+      {
+        "scene": "卧室/次卧",
+        "advice": "55-65 英寸 S 系列即可"
+      }
+    ]
+  }
+}

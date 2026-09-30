@@ -30,16 +30,16 @@
     "description": "米家全型号横评 · 风量 / 噪音 / 功耗"
   },
   {
+    "id": "heater",
+    "name": "电暖器",
+    "icon": "♨️",
+    "description": "米家全型号横评 · 功率 / 加热方式 / 适用面积"
+  },
+  {
     "id": "refrigerator",
     "name": "冰箱",
     "icon": "🧊",
     "description": "米家全型号横评 · 容积 / 制冷方式 / 能耗"
-  },
-  {
-    "id": "washing-machine",
-    "name": "洗衣机",
-    "icon": "🌀",
-    "description": "米家全型号横评 · 容量 / 洗净比 / 洗烘一体"
   },
   {
     "id": "dishwasher",
@@ -60,16 +60,40 @@
     "description": "米家全型号横评 · 加热方式 / 容量 / 内胆"
   },
   {
+    "id": "pressure-cooker",
+    "name": "电压力锅",
+    "icon": "🍲",
+    "description": "米家全型号横评 · 容量 / 压力 / 内胆"
+  },
+  {
     "id": "air-fryer",
     "name": "空气炸锅",
     "icon": "🍟",
     "description": "米家全型号横评 · 容量 / 功率 / 蒸汽烘烤"
   },
   {
+    "id": "induction-cooker",
+    "name": "电磁炉",
+    "icon": "🍳",
+    "description": "米家全型号横评 · 功率 / 面板 / 火力档位"
+  },
+  {
+    "id": "blender",
+    "name": "破壁机",
+    "icon": "🥤",
+    "description": "米家全型号横评 · 容量 / 功率 / 降噪"
+  },
+  {
     "id": "kettle",
     "name": "电水壶",
     "icon": "🫖",
     "description": "米家全型号横评 · 容量 / 功率 / 恒温"
+  },
+  {
+    "id": "washing-machine",
+    "name": "洗衣机",
+    "icon": "🌀",
+    "description": "米家全型号横评 · 容量 / 洗净比 / 洗烘一体"
   },
   {
     "id": "robot-vacuum",
@@ -84,6 +108,30 @@
     "description": "米家全型号横评 · 吸入功率 / 续航 / 尘杯"
   },
   {
+    "id": "mite-remover",
+    "name": "除螨仪",
+    "icon": "🛏️",
+    "description": "米家全型号横评 · 吸力 / UV杀菌 / 热风"
+  },
+  {
+    "id": "water-heater",
+    "name": "热水器",
+    "icon": "🚿",
+    "description": "米家全型号横评 · 升数 / 恒温 / 能效"
+  },
+  {
+    "id": "hair-dryer",
+    "name": "吹风机",
+    "icon": "💇",
+    "description": "米家全型号横评 · 风速 / 负离子 / 护发"
+  },
+  {
+    "id": "toothbrush",
+    "name": "电动牙刷",
+    "icon": "🪥",
+    "description": "米家全型号横评 · 震频 / 续航 / 充电方式"
+  },
+  {
     "id": "water-purifier",
     "name": "净水器",
     "icon": "💧",
@@ -96,15 +144,21 @@
     "description": "小米全型号横评 · 锁体 / 开锁方式 / 续航"
   },
   {
+    "id": "tv",
+    "name": "电视",
+    "icon": "📺",
+    "description": "小米电视全型号横评 · 尺寸 / 分区 / 刷新率"
+  },
+  {
     "id": "projector",
     "name": "投影仪",
     "icon": "📽️",
     "description": "米家全型号横评 · 亮度 / 分辨率 / 对焦"
   },
   {
-    "id": "toothbrush",
-    "name": "电动牙刷",
-    "icon": "🪥",
-    "description": "米家全型号横评 · 震频 / 续航 / 充电方式"
+    "id": "speaker",
+    "name": "智能音箱",
+    "icon": "🔊",
+    "description": "小米全型号横评 · 音质 / 屏幕 / 语音"
   }
 ]

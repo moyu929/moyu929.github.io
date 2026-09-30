@@ -1,0 +1,177 @@
+{
+  "id": "hair-dryer",
+  "name": "吹风机",
+  "subtitle": "吹风机全型号横评",
+  "imageBase": "images/hair-dryer",
+  "groupBy": {
+    "key": "tier",
+    "label": "档位",
+    "order": [
+      "旗舰",
+      "主流",
+      "入门"
+    ],
+    "colors": {
+      "旗舰": "#e67e22",
+      "主流": "#3498db",
+      "入门": "#7f8c8d"
+    }
+  },
+  "searchFields": [
+    "name",
+    "model_code",
+    "tags",
+    "pros"
+  ],
+  "primaryMetric": "official_price",
+  "fields": [
+    {
+      "key": "name",
+      "label": "型号",
+      "type": "text",
+      "card": "title",
+      "compare": true
+    },
+    {
+      "key": "model_code",
+      "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "tier",
+      "label": "档位",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "official_price",
+      "label": "官方价",
+      "type": "number",
+      "prefix": "¥",
+      "card": "chip",
+      "compare": true,
+      "sortable": true,
+      "stat": true
+    },
+    {
+      "key": "second_hand",
+      "label": "二手价",
+      "type": "text",
+      "card": "chip",
+      "compare": true
+    },
+    {
+      "key": "power",
+      "label": "额定功率",
+      "type": "number",
+      "unit": "W",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "speed",
+      "label": "风速",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "motor",
+      "label": "马达转速",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "anion",
+      "label": "负离子/水离子",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "temp_ctrl",
+      "label": "温控",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "weight",
+      "label": "机身重量",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "size",
+      "label": "整机尺寸",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "year",
+      "label": "上市",
+      "type": "number",
+      "unit": "年",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "pros",
+      "label": "优点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "green",
+      "tagPrefix": "✔"
+    },
+    {
+      "key": "cons",
+      "label": "缺点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "red",
+      "tagPrefix": "✘"
+    },
+    {
+      "key": "tags",
+      "label": "标签",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "blue"
+    }
+  ],
+  "guide": {
+    "title": "按场景选购建议",
+    "items": [
+      {
+        "scene": "长发快速吹干",
+        "advice": "高速吹风机 H501 / H501 SE（11 万转高速马达）"
+      },
+      {
+        "scene": "护发要求高",
+        "advice": "高速水离子吹风机系列（水离子补水）"
+      },
+      {
+        "scene": "差旅便携",
+        "advice": "米家便携吹风机 H101（可折叠）"
+      },
+      {
+        "scene": "预算优先",
+        "advice": "米家负离子吹风机 H301 / 速干 H300"
+      },
+      {
+        "scene": "发量多/厚",
+        "advice": "优先高风速而非单纯大功率"
+      },
+      {
+        "scene": "怕烫头皮",
+        "advice": "选带智能温控（NTC 每秒测温）的机型"
+      }
+    ]
+  }
+}

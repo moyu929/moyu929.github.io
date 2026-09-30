@@ -1,0 +1,170 @@
+{
+  "id": "induction-cooker",
+  "name": "电磁炉",
+  "subtitle": "电磁炉全型号横评",
+  "imageBase": "images/induction-cooker",
+  "groupBy": {
+    "key": "type",
+    "label": "类型",
+    "order": [
+      "超薄",
+      "常规",
+      "青春版"
+    ],
+    "colors": {
+      "超薄": "#9b59b6",
+      "常规": "#3498db",
+      "青春版": "#e67e22"
+    }
+  },
+  "searchFields": [
+    "name",
+    "model_code",
+    "tags",
+    "pros"
+  ],
+  "primaryMetric": "official_price",
+  "fields": [
+    {
+      "key": "name",
+      "label": "型号",
+      "type": "text",
+      "card": "title",
+      "compare": true
+    },
+    {
+      "key": "model_code",
+      "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "type",
+      "label": "类型",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "official_price",
+      "label": "官方价",
+      "type": "number",
+      "prefix": "¥",
+      "card": "chip",
+      "compare": true,
+      "sortable": true,
+      "stat": true
+    },
+    {
+      "key": "second_hand",
+      "label": "二手价",
+      "type": "text",
+      "card": "chip",
+      "compare": true
+    },
+    {
+      "key": "power",
+      "label": "额定功率",
+      "type": "number",
+      "unit": "W",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "gear",
+      "label": "火力档位",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "panel",
+      "label": "面板材质",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "preset",
+      "label": "预设菜单",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "app",
+      "label": "智能联动",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "size",
+      "label": "整机尺寸",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "year",
+      "label": "上市",
+      "type": "number",
+      "unit": "年",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "pros",
+      "label": "优点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "green",
+      "tagPrefix": "✔"
+    },
+    {
+      "key": "cons",
+      "label": "缺点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "red",
+      "tagPrefix": "✘"
+    },
+    {
+      "key": "tags",
+      "label": "标签",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "blue"
+    }
+  ],
+  "guide": {
+    "title": "按场景选购建议",
+    "items": [
+      {
+        "scene": "小厨房收纳",
+        "advice": "米家智能超薄电磁炉（机身更薄，便于立放收纳）"
+      },
+      {
+        "scene": "日常家用",
+        "advice": "米家电磁炉 2（常规款，火力档位与预设菜单更全）"
+      },
+      {
+        "scene": "预算优先",
+        "advice": "米家电磁炉青春版 / 电磁炉 N1"
+      },
+      {
+        "scene": "爱煲汤/打火锅",
+        "advice": "关注大功率与低功率持续加热能力"
+      },
+      {
+        "scene": "想远程控制",
+        "advice": "选支持米家 APP 的型号，可调火力与定时"
+      },
+      {
+        "scene": "面板耐脏",
+        "advice": "微晶/黑晶面板优于普通玻璃面板"
+      }
+    ]
+  }
+}

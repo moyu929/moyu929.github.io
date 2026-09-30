@@ -1,0 +1,168 @@
+{
+  "id": "mite-remover",
+  "name": "除螨仪",
+  "subtitle": "除螨仪全型号横评",
+  "imageBase": "images/mite-remover",
+  "groupBy": {
+    "key": "tier",
+    "label": "档位",
+    "order": [
+      "Pro",
+      "标准"
+    ],
+    "colors": {
+      "Pro": "#e67e22",
+      "标准": "#3498db"
+    }
+  },
+  "searchFields": [
+    "name",
+    "model_code",
+    "tags",
+    "pros"
+  ],
+  "primaryMetric": "official_price",
+  "fields": [
+    {
+      "key": "name",
+      "label": "型号",
+      "type": "text",
+      "card": "title",
+      "compare": true
+    },
+    {
+      "key": "model_code",
+      "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "tier",
+      "label": "档位",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "official_price",
+      "label": "官方价",
+      "type": "number",
+      "prefix": "¥",
+      "card": "chip",
+      "compare": true,
+      "sortable": true,
+      "stat": true
+    },
+    {
+      "key": "second_hand",
+      "label": "二手价",
+      "type": "text",
+      "card": "chip",
+      "compare": true
+    },
+    {
+      "key": "suction",
+      "label": "吸力",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "power",
+      "label": "额定功率",
+      "type": "number",
+      "unit": "W",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "uv",
+      "label": "UV杀菌",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "heat",
+      "label": "热风除湿",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "filter",
+      "label": "过滤",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "size",
+      "label": "整机尺寸",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "year",
+      "label": "上市",
+      "type": "number",
+      "unit": "年",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "pros",
+      "label": "优点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "green",
+      "tagPrefix": "✔"
+    },
+    {
+      "key": "cons",
+      "label": "缺点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "red",
+      "tagPrefix": "✘"
+    },
+    {
+      "key": "tags",
+      "label": "标签",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "blue"
+    }
+  ],
+  "guide": {
+    "title": "按场景选购建议",
+    "items": [
+      {
+        "scene": "过敏/鼻炎人群",
+        "advice": "选带 UV 杀菌 + 热风除湿的机型"
+      },
+      {
+        "scene": "预算优先",
+        "advice": "米家除螨仪 2"
+      },
+      {
+        "scene": "深层清洁床垫",
+        "advice": "除螨仪 3 Pro / 除螨仪 Pro（吸力更大）"
+      },
+      {
+        "scene": "养宠家庭",
+        "advice": "优先大吸力 + 拍打频率高的型号"
+      },
+      {
+        "scene": "长期成本",
+        "advice": "留意滤芯单价与更换周期"
+      },
+      {
+        "scene": "有线 vs 无线",
+        "advice": "有线吸力更稳定，无线更灵活"
+      }
+    ]
+  }
+}

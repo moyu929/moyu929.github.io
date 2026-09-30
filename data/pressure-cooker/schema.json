@@ -1,0 +1,170 @@
+{
+  "id": "pressure-cooker",
+  "name": "电压力锅",
+  "subtitle": "电压力锅全型号横评",
+  "imageBase": "images/pressure-cooker",
+  "groupBy": {
+    "key": "tier",
+    "label": "档位",
+    "order": [
+      "大容量",
+      "小容量"
+    ],
+    "colors": {
+      "大容量": "#3498db",
+      "小容量": "#e67e22"
+    }
+  },
+  "searchFields": [
+    "name",
+    "model_code",
+    "tags",
+    "pros"
+  ],
+  "primaryMetric": "official_price",
+  "fields": [
+    {
+      "key": "name",
+      "label": "型号",
+      "type": "text",
+      "card": "title",
+      "compare": true
+    },
+    {
+      "key": "model_code",
+      "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "tier",
+      "label": "档位",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "official_price",
+      "label": "官方价",
+      "type": "number",
+      "prefix": "¥",
+      "card": "chip",
+      "compare": true,
+      "sortable": true,
+      "stat": true
+    },
+    {
+      "key": "second_hand",
+      "label": "二手价",
+      "type": "text",
+      "card": "chip",
+      "compare": true
+    },
+    {
+      "key": "capacity",
+      "label": "容量",
+      "type": "number",
+      "unit": "L",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "power",
+      "label": "额定功率",
+      "type": "number",
+      "unit": "W",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "pressure",
+      "label": "压力",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "inner_pot",
+      "label": "内胆",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "preset",
+      "label": "预设菜单",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "size",
+      "label": "整机尺寸",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "year",
+      "label": "上市",
+      "type": "number",
+      "unit": "年",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "pros",
+      "label": "优点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "green",
+      "tagPrefix": "✔"
+    },
+    {
+      "key": "cons",
+      "label": "缺点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "red",
+      "tagPrefix": "✘"
+    },
+    {
+      "key": "tags",
+      "label": "标签",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "blue"
+    }
+  ],
+  "guide": {
+    "title": "按场景选购建议",
+    "items": [
+      {
+        "scene": "3-5 人家庭",
+        "advice": "米家智能电压力锅 5L（¥379）"
+      },
+      {
+        "scene": "1-2 人",
+        "advice": "米家智能电压力锅 2.5L（¥279）"
+      },
+      {
+        "scene": "炖肉要快",
+        "advice": "关注工作压力，压力越高炖煮越快"
+      },
+      {
+        "scene": "一锅多用",
+        "advice": "压力锅 2 Pro 支持更多预设菜单"
+      },
+      {
+        "scene": "怕糊底",
+        "advice": "选厚底不粘内胆"
+      },
+      {
+        "scene": "厨房收纳",
+        "advice": "2.5L 机身更小，适合台面局促的厨房"
+      }
+    ]
+  }
+}

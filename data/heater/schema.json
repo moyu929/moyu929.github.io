@@ -1,0 +1,179 @@
+{
+  "id": "heater",
+  "name": "电暖器",
+  "subtitle": "电暖器全型号横评",
+  "imageBase": "images/heater",
+  "groupBy": {
+    "key": "type",
+    "label": "类型",
+    "order": [
+      "踢脚线",
+      "暖风机",
+      "油汀",
+      "电热毯"
+    ],
+    "colors": {
+      "踢脚线": "#e67e22",
+      "暖风机": "#3498db",
+      "油汀": "#9b59b6",
+      "电热毯": "#16a085"
+    }
+  },
+  "searchFields": [
+    "name",
+    "model_code",
+    "tags",
+    "pros"
+  ],
+  "primaryMetric": "official_price",
+  "fields": [
+    {
+      "key": "name",
+      "label": "型号",
+      "type": "text",
+      "card": "title",
+      "compare": true
+    },
+    {
+      "key": "model_code",
+      "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "type",
+      "label": "类型",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "official_price",
+      "label": "官方价",
+      "type": "number",
+      "prefix": "¥",
+      "card": "chip",
+      "compare": true,
+      "sortable": true,
+      "stat": true
+    },
+    {
+      "key": "second_hand",
+      "label": "二手价",
+      "type": "text",
+      "card": "chip",
+      "compare": true
+    },
+    {
+      "key": "power",
+      "label": "额定功率",
+      "type": "number",
+      "unit": "W",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "coverage",
+      "label": "适用面积",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "gear",
+      "label": "档位",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "material",
+      "label": "发热/材质",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "safety",
+      "label": "安全防护",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "ipx",
+      "label": "防水等级",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "size",
+      "label": "整机尺寸",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "year",
+      "label": "上市",
+      "type": "number",
+      "unit": "年",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "pros",
+      "label": "优点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "green",
+      "tagPrefix": "✔"
+    },
+    {
+      "key": "cons",
+      "label": "缺点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "red",
+      "tagPrefix": "✘"
+    },
+    {
+      "key": "tags",
+      "label": "标签",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "blue"
+    }
+  ],
+  "guide": {
+    "title": "按场景选购建议",
+    "items": [
+      {
+        "scene": "卧室长时间开",
+        "advice": "踢脚线电暖器 2 / 石墨烯踢脚线电暖器 2，对流不干燥"
+      },
+      {
+        "scene": "快速升温",
+        "advice": "石墨烯暖风机（热风直吹，开机即热）"
+      },
+      {
+        "scene": "整屋均匀取暖",
+        "advice": "石墨烯油汀取暖器，蓄热久但升温慢"
+      },
+      {
+        "scene": "铺床/沙发用",
+        "advice": "米家智能电热毯（单人款/双人款）"
+      },
+      {
+        "scene": "浴室使用",
+        "advice": "优先选带防水等级的机型"
+      },
+      {
+        "scene": "颜值/氛围",
+        "advice": "石墨烯踢脚线电暖器 仿真火焰版"
+      }
+    ]
+  }
+}
