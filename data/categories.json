@@ -66,6 +66,12 @@
     "description": "米家全型号横评 · 容量 / 压力 / 内胆"
   },
   {
+    "id": "steamer",
+    "name": "电蒸锅",
+    "icon": "🥟",
+    "description": "米家全型号横评 · 容量 / 功率 / 蒸格"
+  },
+  {
     "id": "air-fryer",
     "name": "空气炸锅",
     "icon": "🍟",
@@ -84,6 +90,12 @@
     "description": "米家全型号横评 · 容量 / 功率 / 降噪"
   },
   {
+    "id": "coffee-machine",
+    "name": "咖啡机",
+    "icon": "☕",
+    "description": "米家全型号横评 · 压力 / 胶囊系统 / 奶泡"
+  },
+  {
     "id": "kettle",
     "name": "电水壶",
     "icon": "🫖",
@@ -94,6 +106,18 @@
     "name": "洗衣机",
     "icon": "🌀",
     "description": "米家全型号横评 · 容量 / 洗净比 / 洗烘一体"
+  },
+  {
+    "id": "dryer-rack",
+    "name": "晾衣机",
+    "icon": "🧺",
+    "description": "米家全型号横评 · 承重 / 长度 / 烘干"
+  },
+  {
+    "id": "garment-steamer",
+    "name": "挂烫机",
+    "icon": "👔",
+    "description": "米家全型号横评 · 蒸汽量 / 功率 / 预热"
   },
   {
     "id": "robot-vacuum",
@@ -120,16 +144,58 @@
     "description": "米家全型号横评 · 升数 / 恒温 / 能效"
   },
   {
+    "id": "water-dispenser",
+    "name": "即热饮水机",
+    "icon": "🚰",
+    "description": "米家全型号横评 · 温度档 / 出水 / 滤芯"
+  },
+  {
     "id": "hair-dryer",
     "name": "吹风机",
     "icon": "💇",
     "description": "米家全型号横评 · 风速 / 负离子 / 护发"
   },
   {
+    "id": "shaver",
+    "name": "剃须刀",
+    "icon": "🪒",
+    "description": "米家全型号横评 · 刀头 / 续航 / 防水"
+  },
+  {
     "id": "toothbrush",
     "name": "电动牙刷",
     "icon": "🪥",
     "description": "米家全型号横评 · 震频 / 续航 / 充电方式"
+  },
+  {
+    "id": "hair-clipper",
+    "name": "理发器",
+    "icon": "✂️",
+    "description": "米家全型号横评 · 续航 / 刀头 / 显示"
+  },
+  {
+    "id": "foot-spa",
+    "name": "足浴器",
+    "icon": "🦶",
+    "description": "米家全型号横评 · 气囊 / 杀菌 / 加热"
+  },
+  {
+    "id": "massage-gun",
+    "name": "筋膜枪",
+    "icon": "💪",
+    "description": "米家全型号横评 · 振幅 / 推力 / 续航"
+  },
+  {
+    "id": "body-scale",
+    "name": "体脂秤",
+    "icon": "⚖️",
+    "description": "米家全型号横评 · 电极 / 测量项 / 精度"
+  },
+  {
+    "id": "camera",
+    "name": "智能摄像机",
+    "icon": "📹",
+    "description": "小米全型号横评 · 分辨率 / 夜视 / AI"
   },
   {
     "id": "water-purifier",

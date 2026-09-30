@@ -1,0 +1,161 @@
+{
+  "id": "body-scale",
+  "name": "体脂秤",
+  "subtitle": "体脂秤全型号横评",
+  "imageBase": "images/body-scale",
+  "groupBy": {
+    "key": "type",
+    "label": "类型",
+    "order": [
+      "八电极",
+      "四电极",
+      "体重秤"
+    ],
+    "colors": {
+      "八电极": "#9b59b6",
+      "四电极": "#3498db",
+      "体重秤": "#7f8c8d"
+    }
+  },
+  "searchFields": [
+    "name",
+    "model_code",
+    "tags",
+    "pros"
+  ],
+  "primaryMetric": "official_price",
+  "fields": [
+    {
+      "key": "name",
+      "label": "型号",
+      "type": "text",
+      "card": "title",
+      "compare": true
+    },
+    {
+      "key": "model_code",
+      "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "type",
+      "label": "类型",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "official_price",
+      "label": "官方价",
+      "type": "number",
+      "prefix": "¥",
+      "card": "chip",
+      "compare": true,
+      "sortable": true,
+      "stat": true
+    },
+    {
+      "key": "second_hand",
+      "label": "二手价",
+      "type": "text",
+      "card": "chip",
+      "compare": true
+    },
+    {
+      "key": "electrodes",
+      "label": "电极",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "measure",
+      "label": "测量项",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "range",
+      "label": "测量范围",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "app",
+      "label": "数据同步",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "size",
+      "label": "整机尺寸",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "year",
+      "label": "上市",
+      "type": "number",
+      "unit": "年",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "pros",
+      "label": "优点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "green",
+      "tagPrefix": "✔"
+    },
+    {
+      "key": "cons",
+      "label": "缺点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "red",
+      "tagPrefix": "✘"
+    },
+    {
+      "key": "tags",
+      "label": "标签",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "blue"
+    }
+  ],
+  "guide": {
+    "title": "按场景选购建议",
+    "items": [
+      {
+        "scene": "只称体重",
+        "advice": "米家体重秤 S200"
+      },
+      {
+        "scene": "想看体脂趋势",
+        "advice": "米家体脂秤 S400 / S400 Pro"
+      },
+      {
+        "scene": "专业体成分",
+        "advice": "米家八电极体脂秤 S800（分段测量）"
+      },
+      {
+        "scene": "家庭多人使用",
+        "advice": "支持米家 APP 自动识别成员"
+      },
+      {
+        "scene": "健身增肌",
+        "advice": "关注体脂率、肌肉量、基础代谢等项"
+      },
+      {
+        "scene": "小户型收纳",
+        "advice": "选超薄机身、可立于墙边"
+      }
+    ]
+  }
+}

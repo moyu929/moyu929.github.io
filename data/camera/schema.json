@@ -1,0 +1,175 @@
+{
+  "id": "camera",
+  "name": "智能摄像机",
+  "subtitle": "智能摄像机全型号横评",
+  "imageBase": "images/camera",
+  "groupBy": {
+    "key": "type",
+    "label": "类型",
+    "order": [
+      "室内",
+      "室外",
+      "母婴/通话"
+    ],
+    "colors": {
+      "室内": "#3498db",
+      "室外": "#e67e22",
+      "母婴/通话": "#9b59b6"
+    }
+  },
+  "searchFields": [
+    "name",
+    "model_code",
+    "tags",
+    "pros"
+  ],
+  "primaryMetric": "official_price",
+  "fields": [
+    {
+      "key": "name",
+      "label": "型号",
+      "type": "text",
+      "card": "title",
+      "compare": true
+    },
+    {
+      "key": "model_code",
+      "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "type",
+      "label": "类型",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "official_price",
+      "label": "官方价",
+      "type": "number",
+      "prefix": "¥",
+      "card": "chip",
+      "compare": true,
+      "sortable": true,
+      "stat": true
+    },
+    {
+      "key": "second_hand",
+      "label": "二手价",
+      "type": "text",
+      "card": "chip",
+      "compare": true
+    },
+    {
+      "key": "resolution",
+      "label": "分辨率",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "fov",
+      "label": "视角",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "night",
+      "label": "夜视",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "ai",
+      "label": "AI 侦测",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "store",
+      "label": "存储",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "power",
+      "label": "供电",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "size",
+      "label": "整机尺寸",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "year",
+      "label": "上市",
+      "type": "number",
+      "unit": "年",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "pros",
+      "label": "优点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "green",
+      "tagPrefix": "✔"
+    },
+    {
+      "key": "cons",
+      "label": "缺点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "red",
+      "tagPrefix": "✘"
+    },
+    {
+      "key": "tags",
+      "label": "标签",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "blue"
+    }
+  ],
+  "guide": {
+    "title": "按场景选购建议",
+    "items": [
+      {
+        "scene": "看家",
+        "advice": "小米智能摄像机 4 / 4C（室内 2.5K-3K）"
+      },
+      {
+        "scene": "院子/门口",
+        "advice": "小米智能室外摄像机 4 / 4C（防水防尘）"
+      },
+      {
+        "scene": "看护老人小孩",
+        "advice": "小米智能摄像机 视频通话版 / 母婴看护版"
+      },
+      {
+        "scene": "夜间清晰",
+        "advice": "关注全彩夜视与补光灯"
+      },
+      {
+        "scene": "免布线",
+        "advice": "选电池/太阳能供电的室外型号"
+      },
+      {
+        "scene": "本地存储",
+        "advice": "支持 microSD 卡可省云存储费"
+      }
+    ]
+  }
+}

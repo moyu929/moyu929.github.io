@@ -1,0 +1,166 @@
+{
+  "id": "dryer-rack",
+  "name": "晾衣机",
+  "subtitle": "晾衣机全型号横评",
+  "imageBase": "images/dryer-rack",
+  "groupBy": {
+    "key": "type",
+    "label": "类型",
+    "order": [
+      "电动晾衣机",
+      "隐形晾衣机"
+    ],
+    "colors": {
+      "电动晾衣机": "#3498db",
+      "隐形晾衣机": "#9b59b6"
+    }
+  },
+  "searchFields": [
+    "name",
+    "model_code",
+    "tags",
+    "pros"
+  ],
+  "primaryMetric": "official_price",
+  "fields": [
+    {
+      "key": "name",
+      "label": "型号",
+      "type": "text",
+      "card": "title",
+      "compare": true
+    },
+    {
+      "key": "model_code",
+      "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "type",
+      "label": "类型",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "official_price",
+      "label": "官方价",
+      "type": "number",
+      "prefix": "¥",
+      "card": "chip",
+      "compare": true,
+      "sortable": true,
+      "stat": true
+    },
+    {
+      "key": "second_hand",
+      "label": "二手价",
+      "type": "text",
+      "card": "chip",
+      "compare": true
+    },
+    {
+      "key": "load",
+      "label": "承重",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "length",
+      "label": "晾杆长度",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "light",
+      "label": "照明",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "dry",
+      "label": "风干/烘干",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "app",
+      "label": "智能联动",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "size",
+      "label": "整机尺寸",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "year",
+      "label": "上市",
+      "type": "number",
+      "unit": "年",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "pros",
+      "label": "优点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "green",
+      "tagPrefix": "✔"
+    },
+    {
+      "key": "cons",
+      "label": "缺点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "red",
+      "tagPrefix": "✘"
+    },
+    {
+      "key": "tags",
+      "label": "标签",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "blue"
+    }
+  ],
+  "guide": {
+    "title": "按场景选购建议",
+    "items": [
+      {
+        "scene": "阳台空间小",
+        "advice": "米家智能隐形晾衣机（嵌入吊顶不占空间）"
+      },
+      {
+        "scene": "衣物多",
+        "advice": "米家智能晾衣机 3 / 双控晾衣机 2"
+      },
+      {
+        "scene": "回南天",
+        "advice": "选带风干/烘干功能的型号"
+      },
+      {
+        "scene": "阳台照明",
+        "advice": "选带 LED 照明的一体机型"
+      },
+      {
+        "scene": "遥控/语音",
+        "advice": "支持米家 APP 与小爱语音的型号"
+      },
+      {
+        "scene": "老房加装",
+        "advice": "电动款需预留电源，隐形款需吊顶条件"
+      }
+    ]
+  }
+}

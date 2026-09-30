@@ -1,0 +1,168 @@
+{
+  "id": "coffee-machine",
+  "name": "咖啡机",
+  "subtitle": "咖啡机全型号横评",
+  "imageBase": "images/coffee-machine",
+  "groupBy": {
+    "key": "type",
+    "label": "类型",
+    "order": [
+      "半自动",
+      "胶囊",
+      "便携"
+    ],
+    "colors": {
+      "半自动": "#9b59b6",
+      "胶囊": "#3498db",
+      "便携": "#e67e22"
+    }
+  },
+  "searchFields": [
+    "name",
+    "model_code",
+    "tags",
+    "pros"
+  ],
+  "primaryMetric": "official_price",
+  "fields": [
+    {
+      "key": "name",
+      "label": "型号",
+      "type": "text",
+      "card": "title",
+      "compare": true
+    },
+    {
+      "key": "model_code",
+      "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "type",
+      "label": "类型",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "official_price",
+      "label": "官方价",
+      "type": "number",
+      "prefix": "¥",
+      "card": "chip",
+      "compare": true,
+      "sortable": true,
+      "stat": true
+    },
+    {
+      "key": "second_hand",
+      "label": "二手价",
+      "type": "text",
+      "card": "chip",
+      "compare": true
+    },
+    {
+      "key": "pressure",
+      "label": "泵压",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "tank",
+      "label": "水箱容量",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "capsule",
+      "label": "胶囊系统",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "milk",
+      "label": "奶泡功能",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "power",
+      "label": "额定功率",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "size",
+      "label": "整机尺寸",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "year",
+      "label": "上市",
+      "type": "number",
+      "unit": "年",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "pros",
+      "label": "优点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "green",
+      "tagPrefix": "✔"
+    },
+    {
+      "key": "cons",
+      "label": "缺点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "red",
+      "tagPrefix": "✘"
+    },
+    {
+      "key": "tags",
+      "label": "标签",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "blue"
+    }
+  ],
+  "guide": {
+    "title": "按场景选购建议",
+    "items": [
+      {
+        "scene": "想自己压粉玩意式",
+        "advice": "米家智能意式半自动咖啡机 Pro"
+      },
+      {
+        "scene": "一键出咖啡",
+        "advice": "米家胶囊咖啡机 S1 / G100 / N1"
+      },
+      {
+        "scene": "差旅随身",
+        "advice": "米家便携咖啡机"
+      },
+      {
+        "scene": "常喝拿铁",
+        "advice": "关注是否自带奶泡功能"
+      },
+      {
+        "scene": "预算优先",
+        "advice": "胶囊机 N1（胶囊成本更低）"
+      },
+      {
+        "scene": "办公室",
+        "advice": "胶囊机免清洗，比拼装半自动更省事"
+      }
+    ]
+  }
+}

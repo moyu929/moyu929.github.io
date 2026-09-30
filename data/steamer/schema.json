@@ -1,0 +1,170 @@
+{
+  "id": "steamer",
+  "name": "电蒸锅",
+  "subtitle": "电蒸锅全型号横评",
+  "imageBase": "images/steamer",
+  "groupBy": {
+    "key": "tier",
+    "label": "档位",
+    "order": [
+      "大容量",
+      "小容量"
+    ],
+    "colors": {
+      "大容量": "#3498db",
+      "小容量": "#e67e22"
+    }
+  },
+  "searchFields": [
+    "name",
+    "model_code",
+    "tags",
+    "pros"
+  ],
+  "primaryMetric": "official_price",
+  "fields": [
+    {
+      "key": "name",
+      "label": "型号",
+      "type": "text",
+      "card": "title",
+      "compare": true
+    },
+    {
+      "key": "model_code",
+      "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "tier",
+      "label": "档位",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "official_price",
+      "label": "官方价",
+      "type": "number",
+      "prefix": "¥",
+      "card": "chip",
+      "compare": true,
+      "sortable": true,
+      "stat": true
+    },
+    {
+      "key": "second_hand",
+      "label": "二手价",
+      "type": "text",
+      "card": "chip",
+      "compare": true
+    },
+    {
+      "key": "capacity",
+      "label": "容量",
+      "type": "number",
+      "unit": "L",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "power",
+      "label": "额定功率",
+      "type": "number",
+      "unit": "W",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "tray",
+      "label": "蒸格",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "preset",
+      "label": "预设菜单",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "app",
+      "label": "智能联动",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "size",
+      "label": "整机尺寸",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "year",
+      "label": "上市",
+      "type": "number",
+      "unit": "年",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "pros",
+      "label": "优点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "green",
+      "tagPrefix": "✔"
+    },
+    {
+      "key": "cons",
+      "label": "缺点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "red",
+      "tagPrefix": "✘"
+    },
+    {
+      "key": "tags",
+      "label": "标签",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "blue"
+    }
+  ],
+  "guide": {
+    "title": "按场景选购建议",
+    "items": [
+      {
+        "scene": "一次蒸一桌",
+        "advice": "多功能电蒸锅 S1 13L"
+      },
+      {
+        "scene": "小家庭",
+        "advice": "多功能电蒸锅 N1 / 智能电蒸锅 12L"
+      },
+      {
+        "scene": "想吃火锅",
+        "advice": "多功能电煮锅 1.5L 与电蒸锅可搭配使用"
+      },
+      {
+        "scene": "蒸鱼不腥",
+        "advice": "关注大蒸汽量与快速上汽"
+      },
+      {
+        "scene": "预约早餐",
+        "advice": "选支持 APP 预约的智能款"
+      },
+      {
+        "scene": "收纳空间小",
+        "advice": "优先可叠放蒸格设计"
+      }
+    ]
+  }
+}

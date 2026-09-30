@@ -1,0 +1,168 @@
+{
+  "id": "foot-spa",
+  "name": "足浴器",
+  "subtitle": "足浴器全型号横评",
+  "imageBase": "images/foot-spa",
+  "groupBy": {
+    "key": "type",
+    "label": "类型",
+    "order": [
+      "气囊按摩",
+      "杀菌款"
+    ],
+    "colors": {
+      "气囊按摩": "#9b59b6",
+      "杀菌款": "#3498db"
+    }
+  },
+  "searchFields": [
+    "name",
+    "model_code",
+    "tags",
+    "pros"
+  ],
+  "primaryMetric": "official_price",
+  "fields": [
+    {
+      "key": "name",
+      "label": "型号",
+      "type": "text",
+      "card": "title",
+      "compare": true
+    },
+    {
+      "key": "model_code",
+      "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "type",
+      "label": "类型",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "official_price",
+      "label": "官方价",
+      "type": "number",
+      "prefix": "¥",
+      "card": "chip",
+      "compare": true,
+      "sortable": true,
+      "stat": true
+    },
+    {
+      "key": "second_hand",
+      "label": "二手价",
+      "type": "text",
+      "card": "chip",
+      "compare": true
+    },
+    {
+      "key": "power",
+      "label": "额定功率",
+      "type": "number",
+      "unit": "W",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "massage",
+      "label": "按摩方式",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "heat",
+      "label": "加热恒温",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "sterilize",
+      "label": "杀菌",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "drain",
+      "label": "排水方式",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "size",
+      "label": "整机尺寸",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "year",
+      "label": "上市",
+      "type": "number",
+      "unit": "年",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "pros",
+      "label": "优点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "green",
+      "tagPrefix": "✔"
+    },
+    {
+      "key": "cons",
+      "label": "缺点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "red",
+      "tagPrefix": "✘"
+    },
+    {
+      "key": "tags",
+      "label": "标签",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "blue"
+    }
+  ],
+  "guide": {
+    "title": "按场景选购建议",
+    "items": [
+      {
+        "scene": "放松足底",
+        "advice": "米家智能气囊足浴器 2（气囊挤压按摩）"
+      },
+      {
+        "scene": "可升降/免弯腰",
+        "advice": "米家智能气囊足浴器 2 Pro 升降款"
+      },
+      {
+        "scene": "卫生要求高",
+        "advice": "米家智能杀菌足浴器 / 杀菌足浴器 2（带杀菌）"
+      },
+      {
+        "scene": "怕倒水麻烦",
+        "advice": "选带下排水或电动排水的型号"
+      },
+      {
+        "scene": "冬天泡脚",
+        "advice": "关注恒温功率，功率越高保温越稳"
+      },
+      {
+        "scene": "搭配药包",
+        "advice": "可用日常元素草本足浴包"
+      }
+    ]
+  }
+}

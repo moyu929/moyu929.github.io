@@ -1,0 +1,170 @@
+{
+  "id": "garment-steamer",
+  "name": "挂烫机",
+  "subtitle": "挂烫机全型号横评",
+  "imageBase": "images/garment-steamer",
+  "groupBy": {
+    "key": "type",
+    "label": "类型",
+    "order": [
+      "手持",
+      "增压蒸汽",
+      "熨烫机"
+    ],
+    "colors": {
+      "手持": "#3498db",
+      "增压蒸汽": "#9b59b6",
+      "熨烫机": "#e67e22"
+    }
+  },
+  "searchFields": [
+    "name",
+    "model_code",
+    "tags",
+    "pros"
+  ],
+  "primaryMetric": "official_price",
+  "fields": [
+    {
+      "key": "name",
+      "label": "型号",
+      "type": "text",
+      "card": "title",
+      "compare": true
+    },
+    {
+      "key": "model_code",
+      "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "type",
+      "label": "类型",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "official_price",
+      "label": "官方价",
+      "type": "number",
+      "prefix": "¥",
+      "card": "chip",
+      "compare": true,
+      "sortable": true,
+      "stat": true
+    },
+    {
+      "key": "second_hand",
+      "label": "二手价",
+      "type": "text",
+      "card": "chip",
+      "compare": true
+    },
+    {
+      "key": "power",
+      "label": "额定功率",
+      "type": "number",
+      "unit": "W",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "steam",
+      "label": "蒸汽量",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "warmup",
+      "label": "预热时间",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "tank",
+      "label": "水箱容量",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "fold",
+      "label": "折叠/收纳",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "size",
+      "label": "整机尺寸",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "year",
+      "label": "上市",
+      "type": "number",
+      "unit": "年",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "pros",
+      "label": "优点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "green",
+      "tagPrefix": "✔"
+    },
+    {
+      "key": "cons",
+      "label": "缺点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "red",
+      "tagPrefix": "✘"
+    },
+    {
+      "key": "tags",
+      "label": "标签",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "blue"
+    }
+  ],
+  "guide": {
+    "title": "按场景选购建议",
+    "items": [
+      {
+        "scene": "出差随手熨",
+        "advice": "米家手持挂烫机 2"
+      },
+      {
+        "scene": "厚衣物/大衣",
+        "advice": "米家增压蒸汽熨烫机（蒸汽穿透更强）"
+      },
+      {
+        "scene": "家里常熨",
+        "advice": "米家熨烫机 2（水箱更大，连续熨烫更久）"
+      },
+      {
+        "scene": "收纳空间小",
+        "advice": "选手持折叠款"
+      },
+      {
+        "scene": "怕烫伤",
+        "advice": "关注是否有防烫面板与自动断电"
+      },
+      {
+        "scene": "真丝/羊毛",
+        "advice": "选多档蒸汽可调、低温档位"
+      }
+    ]
+  }
+}

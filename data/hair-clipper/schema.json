@@ -1,0 +1,168 @@
+{
+  "id": "hair-clipper",
+  "name": "理发器",
+  "subtitle": "理发器全型号横评",
+  "imageBase": "images/hair-clipper",
+  "groupBy": {
+    "key": "type",
+    "label": "类型",
+    "order": [
+      "成人款",
+      "儿童款",
+      "套装版"
+    ],
+    "colors": {
+      "成人款": "#3498db",
+      "儿童款": "#e67e22",
+      "套装版": "#9b59b6"
+    }
+  },
+  "searchFields": [
+    "name",
+    "model_code",
+    "tags",
+    "pros"
+  ],
+  "primaryMetric": "official_price",
+  "fields": [
+    {
+      "key": "name",
+      "label": "型号",
+      "type": "text",
+      "card": "title",
+      "compare": true
+    },
+    {
+      "key": "model_code",
+      "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "type",
+      "label": "类型",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "official_price",
+      "label": "官方价",
+      "type": "number",
+      "prefix": "¥",
+      "card": "chip",
+      "compare": true,
+      "sortable": true,
+      "stat": true
+    },
+    {
+      "key": "second_hand",
+      "label": "二手价",
+      "type": "text",
+      "card": "chip",
+      "compare": true
+    },
+    {
+      "key": "runtime",
+      "label": "续航",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "blades",
+      "label": "刀头",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "waterproof",
+      "label": "防水",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "display",
+      "label": "显示/限位梳",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "power",
+      "label": "供电",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "size",
+      "label": "整机尺寸",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "year",
+      "label": "上市",
+      "type": "number",
+      "unit": "年",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "pros",
+      "label": "优点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "green",
+      "tagPrefix": "✔"
+    },
+    {
+      "key": "cons",
+      "label": "缺点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "red",
+      "tagPrefix": "✘"
+    },
+    {
+      "key": "tags",
+      "label": "标签",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "blue"
+    }
+  ],
+  "guide": {
+    "title": "按场景选购建议",
+    "items": [
+      {
+        "scene": "大人理发",
+        "advice": "米家理发器 2"
+      },
+      {
+        "scene": "给小孩剪",
+        "advice": "米家理发器 儿童版（刀头更温和）"
+      },
+      {
+        "scene": "一家人都用",
+        "advice": "米家理发器 2 套装版（配件更全）"
+      },
+      {
+        "scene": "自己剪短发",
+        "advice": "关注限位梳档位与定长精度"
+      },
+      {
+        "scene": "清洗方便",
+        "advice": "选刀头可水洗机型"
+      },
+      {
+        "scene": "差旅",
+        "advice": "选 Type-C 充电长续航款"
+      }
+    ]
+  }
+}

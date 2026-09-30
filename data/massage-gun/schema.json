@@ -1,0 +1,177 @@
+{
+  "id": "massage-gun",
+  "name": "筋膜枪",
+  "subtitle": "筋膜枪全型号横评",
+  "imageBase": "images/massage-gun",
+  "groupBy": {
+    "key": "type",
+    "label": "类型",
+    "order": [
+      "标准款",
+      "迷你款",
+      "长柄款",
+      "热敷款"
+    ],
+    "colors": {
+      "标准款": "#3498db",
+      "迷你款": "#e67e22",
+      "长柄款": "#9b59b6",
+      "热敷款": "#16a085"
+    }
+  },
+  "searchFields": [
+    "name",
+    "model_code",
+    "tags",
+    "pros"
+  ],
+  "primaryMetric": "official_price",
+  "fields": [
+    {
+      "key": "name",
+      "label": "型号",
+      "type": "text",
+      "card": "title",
+      "compare": true
+    },
+    {
+      "key": "model_code",
+      "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "type",
+      "label": "类型",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "official_price",
+      "label": "官方价",
+      "type": "number",
+      "prefix": "¥",
+      "card": "chip",
+      "compare": true,
+      "sortable": true,
+      "stat": true
+    },
+    {
+      "key": "second_hand",
+      "label": "二手价",
+      "type": "text",
+      "card": "chip",
+      "compare": true
+    },
+    {
+      "key": "amplitude",
+      "label": "振幅",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "force",
+      "label": "推力",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "speed",
+      "label": "档位/转速",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "heads",
+      "label": "按摩头",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "battery",
+      "label": "续航",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "heat",
+      "label": "热敷",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "size",
+      "label": "整机尺寸",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "year",
+      "label": "上市",
+      "type": "number",
+      "unit": "年",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "pros",
+      "label": "优点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "green",
+      "tagPrefix": "✔"
+    },
+    {
+      "key": "cons",
+      "label": "缺点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "red",
+      "tagPrefix": "✘"
+    },
+    {
+      "key": "tags",
+      "label": "标签",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "blue"
+    }
+  ],
+  "guide": {
+    "title": "按场景选购建议",
+    "items": [
+      {
+        "scene": "健身放松",
+        "advice": "米家筋膜枪 3 / 多头筋膜枪 3（振幅更深）"
+      },
+      {
+        "scene": "随身携带",
+        "advice": "米家筋膜枪 3 迷你版 / 热敷筋膜枪 H3 迷你版"
+      },
+      {
+        "scene": "打背部够不着",
+        "advice": "米家长柄筋膜枪 3"
+      },
+      {
+        "scene": "冬天/怕冷",
+        "advice": "米家热敷筋膜枪 H3（热敷头）"
+      },
+      {
+        "scene": "力量训练后",
+        "advice": "优先高推力机型，推力比转速更关键"
+      },
+      {
+        "scene": "噪音敏感",
+        "advice": "关注静音档位与无刷电机"
+      }
+    ]
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "id": "shaver",
+  "name": "剃须刀",
+  "subtitle": "剃须刀全型号横评",
+  "imageBase": "images/shaver",
+  "groupBy": {
+    "key": "tier",
+    "label": "档位",
+    "order": [
+      "旗舰",
+      "主流",
+      "入门",
+      "便携"
+    ],
+    "colors": {
+      "旗舰": "#9b59b6",
+      "主流": "#3498db",
+      "入门": "#7f8c8d",
+      "便携": "#e67e22"
+    }
+  },
+  "searchFields": [
+    "name",
+    "model_code",
+    "tags",
+    "pros"
+  ],
+  "primaryMetric": "official_price",
+  "fields": [
+    {
+      "key": "name",
+      "label": "型号",
+      "type": "text",
+      "card": "title",
+      "compare": true
+    },
+    {
+      "key": "model_code",
+      "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "tier",
+      "label": "档位",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "official_price",
+      "label": "官方价",
+      "type": "number",
+      "prefix": "¥",
+      "card": "chip",
+      "compare": true,
+      "sortable": true,
+      "stat": true
+    },
+    {
+      "key": "second_hand",
+      "label": "二手价",
+      "type": "text",
+      "card": "chip",
+      "compare": true
+    },
+    {
+      "key": "blades",
+      "label": "刀头",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "waterproof",
+      "label": "防水",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "runtime",
+      "label": "续航",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "charge",
+      "label": "充电方式",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "wet_dry",
+      "label": "干湿两用",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "size",
+      "label": "整机尺寸",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "year",
+      "label": "上市",
+      "type": "number",
+      "unit": "年",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "pros",
+      "label": "优点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "green",
+      "tagPrefix": "✔"
+    },
+    {
+      "key": "cons",
+      "label": "缺点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "red",
+      "tagPrefix": "✘"
+    },
+    {
+      "key": "tags",
+      "label": "标签",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "blue"
+    }
+  ],
+  "guide": {
+    "title": "按场景选购建议",
+    "items": [
+      {
+        "scene": "追求剃净度",
+        "advice": "米家电动剃须刀 Pro / S700（多刀头 + 高转速）"
+      },
+      {
+        "scene": "差旅便携",
+        "advice": "米家便携电动剃须刀 Pro"
+      },
+      {
+        "scene": "预算优先",
+        "advice": "米家电动剃须刀 S100 / S101 快刀客"
+      },
+      {
+        "scene": "喜欢湿剃",
+        "advice": "选支持干湿两用并全身水洗的型号"
+      },
+      {
+        "scene": "胡须浓密",
+        "advice": "优先往复式或三刀头以上"
+      },
+      {
+        "scene": "鼻毛/理容",
+        "advice": "可搭配米家电动鼻毛修剪器"
+      }
+    ]
+  }
+}

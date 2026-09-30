@@ -1,0 +1,168 @@
+{
+  "id": "water-dispenser",
+  "name": "即热饮水机",
+  "subtitle": "即热饮水机全型号横评",
+  "imageBase": "images/water-dispenser",
+  "groupBy": {
+    "key": "type",
+    "label": "类型",
+    "order": [
+      "即热",
+      "冷热",
+      "管线"
+    ],
+    "colors": {
+      "即热": "#3498db",
+      "冷热": "#9b59b6",
+      "管线": "#e67e22"
+    }
+  },
+  "searchFields": [
+    "name",
+    "model_code",
+    "tags",
+    "pros"
+  ],
+  "primaryMetric": "official_price",
+  "fields": [
+    {
+      "key": "name",
+      "label": "型号",
+      "type": "text",
+      "card": "title",
+      "compare": true
+    },
+    {
+      "key": "model_code",
+      "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "type",
+      "label": "类型",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "official_price",
+      "label": "官方价",
+      "type": "number",
+      "prefix": "¥",
+      "card": "chip",
+      "compare": true,
+      "sortable": true,
+      "stat": true
+    },
+    {
+      "key": "second_hand",
+      "label": "二手价",
+      "type": "text",
+      "card": "chip",
+      "compare": true
+    },
+    {
+      "key": "temp",
+      "label": "温度档位",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "volume",
+      "label": "出水控制",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "tank",
+      "label": "水箱/直连",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "filter",
+      "label": "滤芯",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "power",
+      "label": "额定功率",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "size",
+      "label": "整机尺寸",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "year",
+      "label": "上市",
+      "type": "number",
+      "unit": "年",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "pros",
+      "label": "优点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "green",
+      "tagPrefix": "✔"
+    },
+    {
+      "key": "cons",
+      "label": "缺点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "red",
+      "tagPrefix": "✘"
+    },
+    {
+      "key": "tags",
+      "label": "标签",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "blue"
+    }
+  ],
+  "guide": {
+    "title": "按场景选购建议",
+    "items": [
+      {
+        "scene": "冲奶/泡茶",
+        "advice": "即热饮水机系列（多档温度 3 秒出水）"
+      },
+      {
+        "scene": "想喝冰水",
+        "advice": "米家智能冷热饮水机 / 台式净饮机制冰版"
+      },
+      {
+        "scene": "已装净水器",
+        "advice": "米家即热管线机（直接接净水）"
+      },
+      {
+        "scene": "办公室",
+        "advice": "即热饮水机 Max（大容量）"
+      },
+      {
+        "scene": "差旅便携",
+        "advice": "米家便携即热饮水机"
+      },
+      {
+        "scene": "免安装",
+        "advice": "台式净饮机插电即用"
+      }
+    ]
+  }
+}
