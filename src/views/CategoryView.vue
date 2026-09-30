@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { computed, ref, watch, onMounted, onBeforeUnmount, nextTick } from 'vue'
-import type { CSSProperties } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
 import type { CategoryData } from '../types'
 import { loadCategory } from '../data'
@@ -12,6 +11,7 @@ import FilterBar from '../components/FilterBar.vue'
 import ProductCard from '../components/ProductCard.vue'
 import TimelineView from '../components/TimelineView.vue'
 import CompareDrawer from '../components/CompareDrawer.vue'
+import LiquidGlass from '../components/LiquidGlass.vue'
 
 const route = useRoute()
 const categoryId = computed(() => String(route.params.categoryId))
@@ -151,87 +151,6 @@ onBeforeUnmount(() => {
 watch(data, () => {
   nextTick(syncHeaderHeight)
 })
-
-// ============================================
-// 全局对比浮标（FAB）：始终显示，默认左侧，可长按拖动到任意位置
-// ============================================
-const fabRef = ref<HTMLElement | null>(null)
-const fabDragging = ref(false)
-const fabPos = ref<{ x: number; y: number } | null>(null)
-let fabOff = { x: 0, y: 0 }
-let fabStart = { x: 0, y: 0 }
-let fabPressed = false
-const FAB_DRAG_THRESHOLD = 6
-
-const FAB_POS_KEY = 'compareFabPos'
-const FAB_SIZE = 56
-
-// 读取持久化的位置
-try {
-  const raw = localStorage.getItem(FAB_POS_KEY)
-  if (raw) {
-    const p = JSON.parse(raw)
-    if (typeof p?.x === 'number' && typeof p?.y === 'number') fabPos.value = p
-  }
-} catch {
-  /* 忽略损坏的存储 */
-}
-
-const fabStyle = computed<CSSProperties>(() => ({
-  position: 'fixed',
-  right: 'auto',
-  transform: 'none',
-  ...(fabPos.value
-    ? { left: `${fabPos.value.x}px`, top: `${fabPos.value.y}px`, bottom: 'auto' }
-    : { left: '16px', bottom: '24px', top: 'auto' }),
-}))
-
-/**
- * 按下即准备：一旦指针移动超过阈值立即进入拖动态（无长按延迟，跟手）。
- * 若全程未达阈值则视为点击，打开对比抽屉。
- */
-function onFabDown(e: PointerEvent) {
-  if (e.pointerType === 'mouse' && e.button !== 0) return
-  fabPressed = true
-  fabStart = { x: e.clientX, y: e.clientY }
-  fabDragging.value = false
-  window.addEventListener('pointermove', onFabMove)
-  window.addEventListener('pointerup', onFabUp, { once: true })
-  window.addEventListener('pointercancel', onFabUp, { once: true })
-}
-
-function onFabMove(e: PointerEvent) {
-  if (!fabPressed) return
-  if (!fabDragging.value) {
-    const dx = e.clientX - fabStart.x
-    const dy = e.clientY - fabStart.y
-    if (Math.hypot(dx, dy) < FAB_DRAG_THRESHOLD) return
-    // 越过阈值，进入拖动态：以当前指针与浮标左上角的偏移为基准
-    fabDragging.value = true
-    const r = (fabRef.value as HTMLElement).getBoundingClientRect()
-    fabOff = { x: e.clientX - r.left, y: e.clientY - r.top }
-  }
-  e.preventDefault()
-  const x = Math.max(0, Math.min(e.clientX - fabOff.x, window.innerWidth - FAB_SIZE))
-  const y = Math.max(0, Math.min(e.clientY - fabOff.y, window.innerHeight - FAB_SIZE))
-  fabPos.value = { x, y }
-}
-
-function onFabUp() {
-  window.removeEventListener('pointermove', onFabMove)
-  if (!fabPressed) return
-  fabPressed = false
-  if (fabDragging.value) {
-    fabDragging.value = false
-    try {
-      localStorage.setItem(FAB_POS_KEY, JSON.stringify(fabPos.value))
-    } catch {
-      /* 忽略写入失败 */
-    }
-  } else {
-    openCompare()
-  }
-}
 </script>
 
 <template>
@@ -362,23 +281,13 @@ function onFabUp() {
       </template>
     </main>
 
-    <!-- FAB -->
+    <!-- 液态玻璃对比浮标（可拖动） -->
     <Transition name="fab">
-      <button
-        ref="fabRef"
-        class="fab"
-        :class="{ dragging: fabDragging }"
-        :style="fabStyle"
-        @pointerdown="onFabDown"
-      >
-        <span class="fab-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 6h18M3 12h18M3 18h18" />
-          </svg>
-        </span>
-        <span class="fab-text">对比</span>
-        <span v-if="compareCount > 0" class="fab-badge">{{ compareCount }}</span>
-      </button>
+      <LiquidGlass
+        :badge="compareCount"
+        default-pos="left"
+        @activate="openCompare"
+      />
     </Transition>
 
     <!-- Toast -->
@@ -671,73 +580,6 @@ function onFabUp() {
 .guide b {
   color: var(--text);
   font-weight: 600;
-}
-
-/* ============ FAB ============ */
-.fab {
-  position: fixed;
-  z-index: 300;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1px;
-  width: 56px;
-  height: 56px;
-  border-radius: var(--radius-full);
-  background: var(--brand-gradient);
-  color: #fff;
-  font-size: 16px;
-  box-shadow: var(--shadow-brand-lg);
-  animation: fabPulse 2.5s ease-in-out infinite;
-  transition: transform var(--dur-fast) var(--ease-spring);
-  touch-action: none; /* 长按拖动时禁止页面滚动 */
-  cursor: grab;
-  user-select: none;
-}
-
-.fab.dragging {
-  animation: none;
-  transition: none;
-  cursor: grabbing;
-  box-shadow: 0 12px 30px rgba(99, 102, 241, 0.5);
-}
-
-.fab:hover {
-  filter: brightness(1.08);
-}
-
-.fab:active {
-  filter: brightness(0.95);
-}
-
-.fab-icon svg {
-  width: 20px;
-  height: 20px;
-}
-
-.fab-text {
-  font-size: 9px;
-  font-weight: 600;
-}
-
-.fab-badge {
-  position: absolute;
-  top: -4px;
-  right: -4px;
-  min-width: 20px;
-  height: 20px;
-  border-radius: var(--radius-full);
-  background: var(--danger);
-  color: #fff;
-  font-size: 11px;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 5px;
-  border: 2px solid var(--bg);
-  animation: bounce 1s ease infinite;
 }
 
 /* ============ Toast ============ */

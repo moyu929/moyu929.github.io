@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onBeforeUnmount, watch } from 'vue'
 import type { CategorySchema, Product } from '../types'
 import { allSame, formatValue, numberOf } from '../format'
 import { imageUrl } from '../data'
@@ -46,6 +46,21 @@ function groupOf(p: Product) {
 function colorOf(p: Product) {
   return props.schema.groupBy.colors[groupOf(p)] ?? '#999'
 }
+
+// 全屏模态抽屉：支持 Esc 关闭
+function onKeydown(e: KeyboardEvent) {
+  if (e.key === 'Escape') emit('close')
+}
+
+watch(
+  () => props.open,
+  (open) => {
+    if (open) document.addEventListener('keydown', onKeydown)
+    else document.removeEventListener('keydown', onKeydown)
+  },
+)
+
+onBeforeUnmount(() => document.removeEventListener('keydown', onKeydown))
 </script>
 
 <template>
