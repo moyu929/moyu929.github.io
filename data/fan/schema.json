@@ -1,0 +1,57 @@
+{
+  "id": "fan",
+  "name": "电风扇",
+  "subtitle": "米家风扇全型号横评",
+  "imageBase": "images/fan",
+
+  "groupBy": {
+    "key": "type",
+    "label": "类型",
+    "order": ["落地扇", "台扇/桌面", "循环扇"],
+    "colors": {
+      "落地扇": "#3498db",
+      "台扇/桌面": "#e67e22",
+      "循环扇": "#9b59b6"
+    }
+  },
+
+  "searchFields": ["name", "model_code", "tags", "pros"],
+  "primaryMetric": "official_price",
+
+  "fields": [
+    { "key": "name", "label": "型号", "type": "text", "card": "title", "compare": true },
+    { "key": "model_code", "label": "产品型号", "type": "text", "card": "grid", "compare": true },
+    { "key": "type", "label": "类型", "type": "text", "compare": true },
+
+    { "key": "official_price", "label": "官方价", "type": "number", "prefix": "¥", "card": "chip", "compare": true, "sortable": true, "stat": true },
+    { "key": "second_hand", "label": "二手价", "type": "text", "card": "chip", "compare": true },
+
+    { "key": "power", "label": "额定功率", "unit": "W", "type": "number", "card": "grid", "compare": true, "sortable": true },
+    { "key": "airflow", "label": "输出风量", "unit": "m³/min", "type": "number", "card": "grid", "compare": true, "sortable": true },
+    { "key": "speeds", "label": "风力档位", "type": "text", "card": "grid", "compare": true },
+    { "key": "noise", "label": "噪音", "unit": "dB(A)", "type": "number", "card": "grid", "compare": true, "sortable": true },
+    { "key": "throw_dist", "label": "送风距离", "unit": "m", "type": "number", "card": "grid", "compare": true, "sortable": true },
+    { "key": "battery", "label": "电池/供电", "type": "text", "card": "grid", "compare": true },
+
+    { "key": "swing", "label": "摇头", "type": "text", "compare": true },
+    { "key": "size", "label": "整机尺寸", "type": "text", "compare": true },
+
+    { "key": "year", "label": "上市", "unit": "年", "type": "number", "card": "grid", "compare": true, "sortable": true },
+
+    { "key": "pros", "label": "优点", "type": "tags", "card": "tag", "tagVariant": "green", "tagPrefix": "✔" },
+    { "key": "cons", "label": "缺点", "type": "tags", "card": "tag", "tagVariant": "red", "tagPrefix": "✘" },
+    { "key": "tags", "label": "标签", "type": "tags", "card": "tag", "tagVariant": "blue" }
+  ],
+
+  "guide": {
+    "title": "按场景选购建议",
+    "items": [
+      { "scene": "卧室/怕吵", "advice": "直流变频落地扇 1X 标称 26.6dB(A)，7 片翼型羽叶风感柔和" },
+      { "scene": "客厅大空间", "advice": "1X 支持 14 米送风、140° 超宽送风幅度" },
+      { "scene": "停电/无插座可用", "advice": "变频直流落地扇（电池版）2800mAh，续航 11 小时" },
+      { "scene": "桌面/宿舍", "advice": "桌面移动风扇（4000mAh，18.5 小时，90° 摆头）" },
+      { "scene": "预算优先", "advice": "BPLDS04DM（¥229 参考价，台地两用）或桌面移动风扇（¥109）" },
+      { "scene": "省电长期开", "advice": "直流变频机型功率多为 15-24W，远低于传统交流扇" }
+    ]
+  }
+}

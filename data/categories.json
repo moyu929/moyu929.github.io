@@ -30,6 +30,12 @@
     "description": "米家全型号横评 · 套数 / 烘干 / 水效"
   },
   {
+    "id": "microwave",
+    "name": "微波炉",
+    "icon": "🔥",
+    "description": "米家全型号横评 · 容量 / 微波功率 / 烧烤"
+  },
+  {
     "id": "robot-vacuum",
     "name": "扫地机器人",
     "icon": "🤖",
@@ -54,9 +60,33 @@
     "description": "米家全型号横评 · 加湿量 / 水箱 / 噪音"
   },
   {
+    "id": "fan",
+    "name": "电风扇",
+    "icon": "🌬️",
+    "description": "米家全型号横评 · 风量 / 噪音 / 功耗"
+  },
+  {
     "id": "rice-cooker",
     "name": "电饭煲",
     "icon": "🍚",
     "description": "米家全型号横评 · 加热方式 / 容量 / 内胆"
+  },
+  {
+    "id": "air-fryer",
+    "name": "空气炸锅",
+    "icon": "🍟",
+    "description": "米家全型号横评 · 容量 / 功率 / 蒸汽烘烤"
+  },
+  {
+    "id": "projector",
+    "name": "投影仪",
+    "icon": "📽️",
+    "description": "米家全型号横评 · 亮度 / 分辨率 / 对焦"
+  },
+  {
+    "id": "toothbrush",
+    "name": "电动牙刷",
+    "icon": "🪥",
+    "description": "米家全型号横评 · 震频 / 续航 / 充电方式"
   }
 ]

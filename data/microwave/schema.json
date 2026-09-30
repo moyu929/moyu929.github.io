@@ -1,0 +1,58 @@
+{
+  "id": "microwave",
+  "name": "微波炉",
+  "subtitle": "米家微波炉 / 电烤箱全型号横评",
+  "imageBase": "images/microwave",
+
+  "groupBy": {
+    "key": "type",
+    "label": "类型",
+    "order": ["微烤一体", "微波炉", "电烤箱"],
+    "colors": {
+      "微烤一体": "#9b59b6",
+      "微波炉": "#3498db",
+      "电烤箱": "#e67e22"
+    }
+  },
+
+  "searchFields": ["name", "model_code", "tags", "pros"],
+  "primaryMetric": "official_price",
+
+  "fields": [
+    { "key": "name", "label": "型号", "type": "text", "card": "title", "compare": true },
+    { "key": "model_code", "label": "产品型号", "type": "text", "card": "grid", "compare": true },
+    { "key": "type", "label": "类型", "type": "text", "compare": true },
+
+    { "key": "official_price", "label": "官方价", "type": "number", "prefix": "¥", "card": "chip", "compare": true, "sortable": true, "stat": true },
+    { "key": "second_hand", "label": "二手价", "type": "text", "card": "chip", "compare": true },
+
+    { "key": "capacity", "label": "容量", "unit": "L", "type": "number", "card": "grid", "compare": true, "sortable": true },
+    { "key": "mw_power", "label": "微波功率", "unit": "W", "type": "number", "card": "grid", "compare": true, "sortable": true },
+    { "key": "grill_power", "label": "烧烤功率", "unit": "W", "type": "number", "card": "grid", "compare": true, "sortable": true },
+    { "key": "input_power", "label": "额定输入功率", "unit": "W", "type": "number", "card": "grid", "compare": true, "sortable": true },
+    { "key": "heating", "label": "加热方式", "type": "text", "card": "grid", "compare": true },
+    { "key": "control", "label": "操控方式", "type": "text", "card": "grid", "compare": true },
+    { "key": "noise", "label": "噪音", "unit": "dB", "type": "number", "card": "grid", "compare": true, "sortable": true },
+    { "key": "energy", "label": "能效", "type": "text", "card": "grid", "compare": true },
+
+    { "key": "size", "label": "整机尺寸", "type": "text", "compare": true },
+
+    { "key": "year", "label": "上市", "unit": "年", "type": "number", "card": "grid", "compare": true, "sortable": true },
+
+    { "key": "pros", "label": "优点", "type": "tags", "card": "tag", "tagVariant": "green", "tagPrefix": "✔" },
+    { "key": "cons", "label": "缺点", "type": "tags", "card": "tag", "tagVariant": "red", "tagPrefix": "✘" },
+    { "key": "tags", "label": "标签", "type": "tags", "card": "tag", "tagVariant": "blue" }
+  ],
+
+  "guide": {
+    "title": "按场景选购建议",
+    "items": [
+      { "scene": "只需热饭热菜", "advice": "米家微波炉 20L（¥399，700W 输出功率）" },
+      { "scene": "想同时能烤", "advice": "微波炉烤箱一体机 23L（WK001，800W 微波 + 1000W 烧烤）" },
+      { "scene": "烘焙为主", "advice": "米家小米电烤箱 23L（¥499，平板加热受热更均匀）" },
+      { "scene": "小厨房", "advice": "20L 机身 456×343×264mm，台面占位更小" },
+      { "scene": "在意能效", "advice": "选节能版型号（二级能效）优于早期三级能效版本" },
+      { "scene": "怕吵", "advice": "微波炉噪音约 60dB，属正常水平，不需作为主要筛选条件" }
+    ]
+  }
+}
