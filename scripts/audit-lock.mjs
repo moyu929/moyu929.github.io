@@ -152,7 +152,9 @@ function cmdSnapshot(args) {
     process.exit(1)
   }
 
-  const withFields = keys.length <= MAX_FIELD_HASH_PRODUCTS
+  // 字段级指纹默认在范围 ≤150 款时记录（文件别太大）；全站级快照可用 --fields 强制开启，
+  // 代价是快照文件会显著变大（418 款 × 约 30 字段 ≈ 上万条哈希），换来越界时能直接定位到字段。
+  const withFields = args.fields === true || keys.length <= MAX_FIELD_HASH_PRODUCTS
   const hashes = {}
   for (const k of keys) {
     const p = all.get(k).product
