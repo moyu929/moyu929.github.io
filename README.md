@@ -33,7 +33,10 @@ src/
 └─ views/                    首页、品类页
 scripts/
 ├─ extract-legacy.mjs        从旧单文件 HTML 提取数据（一次性迁移）
-└─ validate-data.mjs         数据校验
+├─ validate-data.mjs         数据校验
+├─ mi-store.mjs              小米商城采集流水线（enumerate/detail/specs/images/apply）
+└─ mi-store-enumerate.py     同一流水线的 Python 版枚举入口（只装了 Python Playwright 时用）
+data/_sources/              采集源清单（人工维护）：images.json 图片清单、patches/ 字段补丁与出处
 ```
 
 ## 日常维护
@@ -105,6 +108,33 @@ scripts/
 ```
 
 不需要写任何 Vue 代码 —— 卡片、对比表、筛选排序都由 schema 驱动生成。
+
+## 数据采集流水线
+
+新增品类或补数据时，用 `scripts/mi-store.mjs` 从官方渠道取数，避免手抄：
+
+```bash
+npm run mi:enumerate -- 洗碗机 净水器        # 枚举在售商品（需 Playwright）
+python scripts/mi-store-enumerate.py 空调    # 等价入口（只有 Python Playwright 时用）
+npm run mi:detail -- 19142 24615            # 官方商品详情（名称/现价/划线价/官方图）
+npm run mi:specs -- https://www.mi.com/induction-cooker/specs   # 官方规格页 → 参数表
+npm run mi:images                            # 按 data/_sources/images.json 下载产品图
+npm run mi:apply -- data/_sources/patches/xxx.json              # 写入字段补丁
+```
+
+- 枚举结果缓存在 `data/_cache/`（已 gitignore），可反复复查。
+- 字段补丁放在 `data/_sources/patches/`，文件内用 `_来源` 记录出处；`mi:apply` 按 `品类/产品id` 定位写入，越界会报错而不是写歪。
+- 采集与核验规则见 `.trae/skills/appliance-data-curation/SKILL.md`（来源优先级、禁止估算、去重口径等）。
+
+### 产品图压缩
+
+官方图通常是 1000px 以上的 PNG，直接入库会让仓库膨胀。入库前统一压成 ≤640px JPEG：
+
+```bash
+python -c "from PIL import Image;import pathlib;[ (lambda im,f: (im.convert('RGB').thumbnail((640,640), Image.LANCZOS), im.convert('RGB').save(f.with_suffix('.jpg'),'JPEG',quality=82,optimize=True)))(Image.open(f), f) for f in pathlib.Path('public/images').rglob('*.png') ]"
+```
+
+压缩后记得把 `products.json` 里对应的 `img` 字段从 `.png` 改成 `.jpg`（`mi:images` 会自动处理新下载的图）。
 
 ## 部署
 

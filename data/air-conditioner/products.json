@@ -45,7 +45,7 @@
     "pros": ["超一级能效", "电辅热PTC", "主流匹数"],
     "cons": ["循环风量一般"],
     "tags": ["巨省电Pro", "主卧", "超一级"],
-    "img": null
+    "img": "jso_pro_15p.png"
   },
   {
     "id": "jso_pro_2p",
@@ -93,7 +93,7 @@
     "pros": ["价格亲民", "新一级能效", "低噪23dB"],
     "cons": ["制冷上限口径有分歧"],
     "tags": ["巨省电", "性价比", "入门"],
-    "img": null
+    "img": "jso_15p.png"
   },
   {
     "id": "fresh_15p",
@@ -167,7 +167,7 @@
     "pros": ["大3匹强冷", "循环风量1752", "超一级能效"],
     "cons": ["柜机占地大"],
     "tags": ["巨省电Pro", "客厅", "柜机"],
-    "img": null
+    "img": "jso_pro_cab_3p.png"
   },
   {
     "id": "jso_cab_3p",
@@ -191,7 +191,7 @@
     "pros": ["3匹柜机", "循环风量大", "性价比"],
     "cons": ["更高效比口径有分歧"],
     "tags": ["巨省电", "客厅", "柜机"],
-    "img": null
+    "img": "jso_cab_3p.png"
   },
   {
     "id": "fresh_pro_cab_3p",
@@ -216,7 +216,7 @@
     "pros": ["新风量125m³/h(免扩孔)", "双出风", "超一级能效"],
     "cons": ["价格高"],
     "tags": ["新风Pro", "客厅", "双出风"],
-    "img": null
+    "img": "fresh_pro_cab_3p.png"
   },
   {
     "id": "fresh_cab_3p",
@@ -337,6 +337,6 @@
     "pros": ["隐藏式安装", "3匹", "低噪22dB"],
     "cons": ["需吊顶安装"],
     "tags": ["中央空调", "风管机Pro", "客厅"],
-    "img": null
+    "img": "duct_pro_3p.png"
   }
 ]

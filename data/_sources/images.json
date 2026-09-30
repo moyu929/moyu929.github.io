@@ -1,0 +1,11 @@
+{
+  "_说明": "产品图下载清单：品类id/产品id → 图片URL（官方小米商城 CDN）。运行 npm run mi:images 下载并回写 img 字段。已人工逐条比对商城名称与产品名称，只保留确认匹配的条目。",
+  "air-conditioner/jso_pro_15p": "https://cdn.cnbj1.fds.api.mi-img.com/nr-upload-outer/D00BC218727165D1C69762CCE61FB3A6_1772252226841.png",
+  "air-conditioner/jso_15p": "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202506251716_b022b657c6bc88191817d8adf5196108.png",
+  "air-conditioner/jso_pro_cab_3p": "https://cdn.cnbj1.fds.api.mi-img.com/nr-upload-outer/E046A7BC3B2B8C2A35A2445BFC0E038A_1772260172563.png",
+  "air-conditioner/jso_cab_3p": "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202512041003_13be929c60478818f6e5aaf8ca861f37.png",
+  "air-conditioner/fresh_pro_cab_3p": "https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202506251737_7877c02efd60b2b1aa3f9d8e0ec0301c.png",
+  "air-conditioner/duct_pro_3p": "https://cdn.cnbj1.fds.api.mi-img.com/nr-upload-outer/CF25B1A3130FEE64EA7C80DA6F8903CF_1783933787638.png",
+  "refrigerator/frig_636_side": "https://cdn.cnbj1.fds.api.mi-img.com/nr-upload-outer/87864A86C4898966D046A998F5DF1074_1767860397166.png",
+  "washing-machine/wave_pro_229": "https://cdn.cnbj1.fds.api.mi-img.com/nr-upload-outer/AA1693EAC590D9B7C04C58E031C5AF12_1778807537725.png"
+}

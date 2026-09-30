@@ -23,6 +23,7 @@ Thumbs.db
 .temp/
 .tmp/
 *.log
+data/_cache/
 
 # ============ 项目辅助数据（非源码） ============
 .codebuddy/

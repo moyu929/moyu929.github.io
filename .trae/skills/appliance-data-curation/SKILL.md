@@ -84,6 +84,27 @@ public/images/<category-id>/         产品图，文件名 = 产品 id
 6. **校验**：运行 `npm run validate`，必须无 error（warning 如「暂无产品图」「非数值沉底」可接受）。
 7. **（可选）本地预览**：`npm run build` 后 `npm run preview` 检查渲染。
 
+## 采集流水线（已固化到 scripts/）
+
+步骤 2「枚举候选型号」与步骤 3「逐型号取证」可交由 `scripts/mi-store.mjs` 完成，**不要手抄网页**：
+
+| 命令 | 作用 | 依赖 |
+| --- | --- | --- |
+| `npm run mi:enumerate -- <关键词...>` | 打开小米商城搜索页，抽取在售商品的名称/价格/官方图/商品ID，缓存到 `data/_cache/search-<关键词>.json` | Playwright（Node） |
+| `python scripts/mi-store-enumerate.py <关键词...>` | 同上；本机只装了 Python 版 Playwright 时用这个（两者缓存格式一致，可互换） | Playwright（Python） |
+| `npm run mi:detail -- <productId...>` | 拉官方商品详情（名称、现价、划线价、官方图、卖点文案），**纯 HTTP** | 无 |
+| `npm run mi:specs -- <规格页URL...>` | 抓官方规格页并解析成 `{参数名: 值}`，**纯 HTTP** | 无 |
+| `npm run mi:images` | 按 `data/_sources/images.json` 下载官方产品图并回写 `img` | 无 |
+| `npm run mi:apply -- <patch.json>` | 把字段补丁按 `品类/产品id` 精确定位写入 `products.json` | 无 |
+
+要点：
+
+- **枚举必须按容器限定**：商城搜索页里顶部导航/推荐位同样是 `a[href*=product_id]`，只取 `.goods-list .goods-item`，否则会混入手机、平板等无关商品。
+- **规格页是否可用要先探**：`www.mi.com/<slug>/specs` 这类老页多数是服务端渲染的（能解析到参数）；电视/投影等新页是前端渲染的，解析结果为 0 项，需改用其他来源。
+- **回写必须锚定对象边界**：`mi:apply` 会校验「id 与目标字段之间不得再出现 `"id"`」，越界直接报错；不要用「从 id 向后找第一个 `"img": null`」这类正则，目标本身已有图时会写到下一个产品上。
+- **补丁文件留档**：每次写入的 `patch.json` 放进 `data/_sources/patches/`，文件内用 `_来源` 记录每条数据的出处，便于后续复核。
+- **图片**：下载后统一压成 ≤640px JPEG（见 README「产品图压缩」）；文件名 = 产品 id。
+
 ## 维护速查
 
 - 加产品：追加到 `data/<品类>/products.json`，字段照抄同品类其他产品；`tier` 值必须在 `schema.groupBy.order` 内；改完跑 `npm run validate`。
