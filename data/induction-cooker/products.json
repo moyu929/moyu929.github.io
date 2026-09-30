@@ -1,6 +1,4 @@
-[
-{"id":"ic_slim","name":"米家智能超薄电磁炉","model_code":"查不到","type":"超薄","official_price":499.0,"second_hand":"—","power":null,"gear":"查不到","panel":"查不到","preset":"查不到","app":"查不到","size":"查不到","year":null,"pros":[],"cons":[],"tags":["超薄"],"img":"ic_slim.png"},
-{"id":"ic_2","name":"米家电磁炉 2","model_code":"查不到","type":"常规","official_price":279.0,"second_hand":"—","power":null,"gear":"查不到","panel":"查不到","preset":"查不到","app":"查不到","size":"查不到","year":null,"pros":[],"cons":[],"tags":["常规"],"img":"ic_2.jpg"},
-{"id":"ic_n1","name":"米家电磁炉 N1","model_code":"查不到","type":"常规","official_price":179.0,"second_hand":"—","power":null,"gear":"查不到","panel":"查不到","preset":"查不到","app":"查不到","size":"查不到","year":null,"pros":[],"cons":[],"tags":["常规"],"img":"ic_n1.png"},
-{"id":"ic_youth","name":"米家电磁炉青春版","model_code":"查不到","type":"青春版","official_price":179.0,"second_hand":"—","power":null,"gear":"查不到","panel":"查不到","preset":"查不到","app":"查不到","size":"查不到","year":null,"pros":[],"cons":[],"tags":["青春版"],"img":"ic_youth.png"}
-]
+[{"id": "ic_slim","name": "米家智能超薄电磁炉","model_code": "查不到","type": "超薄","official_price": 499.0,"second_hand": "—","power": null,"gear": "查不到","panel": "查不到","preset": "查不到","app": "查不到","size": "查不到","year": null,"pros": [],"cons": [],"tags": ["超薄"],"img": "ic_slim.jpg"},
+{"id": "ic_2","name": "米家电磁炉 2","model_code": "查不到","type": "常规","official_price": 279.0,"second_hand": "—","power": null,"gear": "查不到","panel": "查不到","preset": "查不到","app": "查不到","size": "查不到","year": null,"pros": [],"cons": [],"tags": ["常规"],"img": "ic_2.jpg"},
+{"id": "ic_n1","name": "米家电磁炉 N1","model_code": "查不到","type": "常规","official_price": 179.0,"second_hand": "—","power": null,"gear": "查不到","panel": "查不到","preset": "查不到","app": "查不到","size": "查不到","year": null,"pros": [],"cons": [],"tags": ["常规"],"img": "ic_n1.jpg"},
+{"id": "ic_youth","name": "米家电磁炉青春版","model_code": "查不到","type": "青春版","official_price": 179.0,"second_hand": "—","power": null,"gear": "查不到","panel": "查不到","preset": "查不到","app": "查不到","size": "查不到","year": null,"pros": [],"cons": [],"tags": ["青春版"],"img": "ic_youth.jpg"}]

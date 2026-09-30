@@ -3,11 +3,16 @@
   "name": "冰箱",
   "subtitle": "米家冰箱全型号横评",
   "imageBase": "images/refrigerator",
-
   "groupBy": {
     "key": "door_type",
     "label": "门型",
-    "order": ["法式多门", "十字门", "对开门", "三门", "两门"],
+    "order": [
+      "法式多门",
+      "十字门",
+      "对开门",
+      "三门",
+      "两门"
+    ],
     "colors": {
       "法式多门": "#9b59b6",
       "十字门": "#3498db",
@@ -16,45 +21,182 @@
       "两门": "#7f8c8d"
     }
   },
-
-  "searchFields": ["name", "model_code", "tags", "pros"],
-  "primaryMetric": "official_price",
-
-  "fields": [
-    { "key": "name", "label": "型号", "type": "text", "card": "title", "compare": true },
-    { "key": "model_code", "label": "产品型号", "type": "text", "card": "grid", "compare": true },
-    { "key": "door_type", "label": "门型", "type": "text", "compare": true },
-
-    { "key": "official_price", "label": "官方价", "type": "number", "prefix": "¥", "card": "chip", "compare": true, "sortable": true, "stat": true },
-    { "key": "second_hand", "label": "二手价", "type": "text", "card": "chip", "compare": true, "stat": true },
-
-    { "key": "total_vol", "label": "总容积", "unit": "L", "type": "number", "card": "grid", "compare": true, "sortable": true },
-    { "key": "fridge_vol", "label": "冷藏室", "unit": "L", "type": "number", "card": "grid", "compare": true, "sortable": true },
-    { "key": "freezer_vol", "label": "冷冻室", "unit": "L", "type": "number", "card": "grid", "compare": true, "sortable": true },
-    { "key": "energy", "label": "能效", "type": "text", "card": "grid", "compare": true },
-    { "key": "power_use", "label": "综合耗电", "unit": "kWh/24h", "type": "number", "card": "grid", "compare": true, "sortable": true },
-
-    { "key": "cooling", "label": "制冷方式", "type": "text", "card": "grid", "compare": true },
-    { "key": "sterilize", "label": "除菌净味", "type": "text", "card": "grid", "compare": true },
-    { "key": "noise", "label": "噪音", "type": "text", "card": "grid", "compare": true },
-    { "key": "size", "label": "整机尺寸", "type": "text", "compare": true },
-
-    { "key": "year", "label": "上市", "unit": "年", "type": "number", "card": "grid", "compare": true, "sortable": true },
-
-    { "key": "pros", "label": "优点", "type": "tags", "card": "tag", "tagVariant": "green", "tagPrefix": "✔" },
-    { "key": "cons", "label": "缺点", "type": "tags", "card": "tag", "tagVariant": "red", "tagPrefix": "✘" },
-    { "key": "tags", "label": "标签", "type": "tags", "card": "tag", "tagVariant": "blue" }
+  "searchFields": [
+    "name",
+    "model_code",
+    "tags",
+    "pros"
   ],
-
+  "primaryMetric": "official_price",
+  "fields": [
+    {
+      "key": "name",
+      "label": "型号",
+      "type": "text",
+      "card": "title",
+      "compare": true
+    },
+    {
+      "key": "model_code",
+      "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "door_type",
+      "label": "门型",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "official_price",
+      "label": "官方价",
+      "type": "number",
+      "prefix": "¥",
+      "card": "chip",
+      "compare": true,
+      "sortable": true,
+      "stat": true
+    },
+    {
+      "key": "second_hand",
+      "label": "二手价",
+      "type": "text",
+      "card": "chip",
+      "compare": true,
+      "stat": true
+    },
+    {
+      "key": "total_vol",
+      "label": "总容积",
+      "unit": "L",
+      "type": "number",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "fridge_vol",
+      "label": "冷藏室",
+      "unit": "L",
+      "type": "number",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "freezer_vol",
+      "label": "冷冻室",
+      "unit": "L",
+      "type": "number",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "energy",
+      "label": "能效",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "power_use",
+      "label": "综合耗电",
+      "unit": "kWh/24h",
+      "type": "number",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "cooling",
+      "label": "制冷方式",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "sterilize",
+      "label": "除菌净味",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "noise",
+      "label": "噪音",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "size",
+      "label": "整机尺寸",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "year",
+      "label": "上市",
+      "unit": "年",
+      "type": "number",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "pros",
+      "label": "优点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "green",
+      "tagPrefix": "✔"
+    },
+    {
+      "key": "cons",
+      "label": "缺点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "red",
+      "tagPrefix": "✘"
+    },
+    {
+      "key": "tags",
+      "label": "标签",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "blue"
+    }
+  ],
   "guide": {
     "title": "按场景选购建议",
     "items": [
-      { "scene": "小户型/预算优先", "advice": "186L两门风冷（2020款）¥999 · 风冷无霜" },
-      { "scene": "三门变温需求", "advice": "三门210L（2020款）中门变温 32L，注意能效仅3级" },
-      { "scene": "大容量囤货", "advice": "对开636L（2023款）¥1899 / 十字606L（2024款）¥3499" },
-      { "scene": "拒绝串味", "advice": "双系统机型：法式平嵌560L、十字508L、十字606L" },
-      { "scene": "静音要求高", "advice": "法式平嵌560L 31dB / 对开636L 34dB / 分储鲜Pro 508L 35dB" },
-      { "scene": "橱柜平嵌安装", "advice": "法式平嵌560L（2025款）600mm 深，尺寸 892×600×1912mm" }
+      {
+        "scene": "小户型/预算优先",
+        "advice": "186L两门风冷（2020款）¥999 · 风冷无霜"
+      },
+      {
+        "scene": "三门变温需求",
+        "advice": "三门210L（2020款）中门变温 32L，注意能效仅3级"
+      },
+      {
+        "scene": "大容量囤货",
+        "advice": "对开636L（2023款）¥1899 / 十字606L（2024款）¥3499"
+      },
+      {
+        "scene": "拒绝串味",
+        "advice": "双系统机型：法式平嵌560L、十字508L、十字606L"
+      },
+      {
+        "scene": "静音要求高",
+        "advice": "法式平嵌560L 31dB / 对开636L 34dB / 分储鲜Pro 508L 35dB"
+      },
+      {
+        "scene": "橱柜平嵌安装",
+        "advice": "法式平嵌560L（2025款）600mm 深，尺寸 892×600×1912mm"
+      }
     ]
   }
 }

@@ -3,56 +3,191 @@
   "name": "投影仪",
   "subtitle": "米家投影仪全型号横评",
   "imageBase": "images/projector",
-
   "groupBy": {
     "key": "type",
     "label": "定位",
-    "order": ["旗舰家用", "主流家用", "便携入门"],
+    "order": [
+      "旗舰家用",
+      "主流家用",
+      "便携入门"
+    ],
     "colors": {
       "旗舰家用": "#e67e22",
       "主流家用": "#3498db",
       "便携入门": "#7f8c8d"
     }
   },
-
-  "searchFields": ["name", "model_code", "tags", "pros"],
-  "primaryMetric": "official_price",
-
-  "fields": [
-    { "key": "name", "label": "型号", "type": "text", "card": "title", "compare": true },
-    { "key": "model_code", "label": "产品型号", "type": "text", "card": "grid", "compare": true },
-    { "key": "type", "label": "定位", "type": "text", "compare": true },
-
-    { "key": "official_price", "label": "官方价", "type": "number", "prefix": "¥", "card": "chip", "compare": true, "sortable": true, "stat": true },
-    { "key": "second_hand", "label": "二手价", "type": "text", "card": "chip", "compare": true },
-
-    { "key": "brightness", "label": "亮度", "unit": "ANSI", "type": "number", "card": "grid", "compare": true, "sortable": true },
-    { "key": "resolution", "label": "物理分辨率", "type": "text", "card": "grid", "compare": true },
-    { "key": "dmd", "label": "显示芯片", "type": "text", "card": "grid", "compare": true },
-    { "key": "throw_ratio", "label": "投射比", "type": "text", "card": "grid", "compare": true },
-    { "key": "focus", "label": "对焦", "type": "text", "card": "grid", "compare": true },
-    { "key": "keystone", "label": "梯形校正", "type": "text", "card": "grid", "compare": true },
-    { "key": "speaker", "label": "扬声器", "type": "text", "card": "grid", "compare": true },
-    { "key": "weight", "label": "重量", "unit": "kg", "type": "number", "card": "grid", "compare": true, "sortable": true },
-
-    { "key": "size", "label": "整机尺寸", "type": "text", "compare": true },
-
-    { "key": "year", "label": "上市", "unit": "年", "type": "number", "card": "grid", "compare": true, "sortable": true },
-
-    { "key": "pros", "label": "优点", "type": "tags", "card": "tag", "tagVariant": "green", "tagPrefix": "✔" },
-    { "key": "cons", "label": "缺点", "type": "tags", "card": "tag", "tagVariant": "red", "tagPrefix": "✘" },
-    { "key": "tags", "label": "标签", "type": "tags", "card": "tag", "tagVariant": "blue" }
+  "searchFields": [
+    "name",
+    "model_code",
+    "tags",
+    "pros"
   ],
-
+  "primaryMetric": "official_price",
+  "fields": [
+    {
+      "key": "name",
+      "label": "型号",
+      "type": "text",
+      "card": "title",
+      "compare": true
+    },
+    {
+      "key": "model_code",
+      "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "type",
+      "label": "定位",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "official_price",
+      "label": "官方价",
+      "type": "number",
+      "prefix": "¥",
+      "card": "chip",
+      "compare": true,
+      "sortable": true,
+      "stat": true
+    },
+    {
+      "key": "second_hand",
+      "label": "二手价",
+      "type": "text",
+      "card": "chip",
+      "compare": true
+    },
+    {
+      "key": "brightness",
+      "label": "亮度",
+      "unit": "ANSI",
+      "type": "number",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "resolution",
+      "label": "物理分辨率",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "dmd",
+      "label": "显示芯片",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "throw_ratio",
+      "label": "投射比",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "focus",
+      "label": "对焦",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "keystone",
+      "label": "梯形校正",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "speaker",
+      "label": "扬声器",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "weight",
+      "label": "重量",
+      "unit": "kg",
+      "type": "number",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "size",
+      "label": "整机尺寸",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "year",
+      "label": "上市",
+      "unit": "年",
+      "type": "number",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "pros",
+      "label": "优点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "green",
+      "tagPrefix": "✔"
+    },
+    {
+      "key": "cons",
+      "label": "缺点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "red",
+      "tagPrefix": "✘"
+    },
+    {
+      "key": "tags",
+      "label": "标签",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "blue"
+    }
+  ],
   "guide": {
     "title": "按场景选购建议",
     "items": [
-      { "scene": "客厅主力观影", "advice": "米家投影仪 2 Pro，1300 ANSI + 0.47\" DMD，画质明显优于青春版" },
-      { "scene": "卧室夜晚看剧", "advice": "米家投影仪 2（1080P + 远场语音，¥2999）" },
-      { "scene": "经常搬动/租房", "advice": "青春版 2 仅 1.3kg 无内置电池，便携性最好" },
-      { "scene": "需要侧投摆位", "advice": "青春版 2 支持上下左右 ±45° 梯形校正，青春版仅垂直方向" },
-      { "scene": "白天使用", "advice": "亮度优先：2 Pro（1300）> 米家投影仪（800）> 青春版 2（460）" },
-      { "scene": "预算 2500 元档", "advice": "青春版 / 青春版 2，但注意亮度与芯片尺寸缩水" }
+      {
+        "scene": "客厅主力观影",
+        "advice": "米家投影仪 2 Pro，1300 ANSI + 0.47\" DMD，画质明显优于青春版"
+      },
+      {
+        "scene": "卧室夜晚看剧",
+        "advice": "米家投影仪 2（1080P + 远场语音，¥2999）"
+      },
+      {
+        "scene": "经常搬动/租房",
+        "advice": "青春版 2 仅 1.3kg 无内置电池，便携性最好"
+      },
+      {
+        "scene": "需要侧投摆位",
+        "advice": "青春版 2 支持上下左右 ±45° 梯形校正，青春版仅垂直方向"
+      },
+      {
+        "scene": "白天使用",
+        "advice": "亮度优先：2 Pro（1300）> 米家投影仪（800）> 青春版 2（460）"
+      },
+      {
+        "scene": "预算 2500 元档",
+        "advice": "青春版 / 青春版 2，但注意亮度与芯片尺寸缩水"
+      }
     ]
   }
 }
