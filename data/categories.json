@@ -12,16 +12,34 @@
     "description": "米家全型号横评 · 匹数 / 能效 / 制冷制热量"
   },
   {
-    "id": "washing-machine",
-    "name": "洗衣机",
-    "icon": "🌀",
-    "description": "米家全型号横评 · 容量 / 洗净比 / 洗烘一体"
+    "id": "humidifier",
+    "name": "加湿器",
+    "icon": "🌫️",
+    "description": "米家全型号横评 · 加湿量 / 水箱 / 噪音"
+  },
+  {
+    "id": "dehumidifier",
+    "name": "除湿机",
+    "icon": "🌧️",
+    "description": "米家全型号横评 · 除湿量 / 水箱 / 噪音"
+  },
+  {
+    "id": "fan",
+    "name": "电风扇",
+    "icon": "🌬️",
+    "description": "米家全型号横评 · 风量 / 噪音 / 功耗"
   },
   {
     "id": "refrigerator",
     "name": "冰箱",
     "icon": "🧊",
     "description": "米家全型号横评 · 容积 / 制冷方式 / 能耗"
+  },
+  {
+    "id": "washing-machine",
+    "name": "洗衣机",
+    "icon": "🌀",
+    "description": "米家全型号横评 · 容量 / 洗净比 / 洗烘一体"
   },
   {
     "id": "dishwasher",
@@ -34,6 +52,24 @@
     "name": "微波炉",
     "icon": "🔥",
     "description": "米家全型号横评 · 容量 / 微波功率 / 烧烤"
+  },
+  {
+    "id": "rice-cooker",
+    "name": "电饭煲",
+    "icon": "🍚",
+    "description": "米家全型号横评 · 加热方式 / 容量 / 内胆"
+  },
+  {
+    "id": "air-fryer",
+    "name": "空气炸锅",
+    "icon": "🍟",
+    "description": "米家全型号横评 · 容量 / 功率 / 蒸汽烘烤"
+  },
+  {
+    "id": "kettle",
+    "name": "电水壶",
+    "icon": "🫖",
+    "description": "米家全型号横评 · 容量 / 功率 / 恒温"
   },
   {
     "id": "robot-vacuum",
@@ -54,28 +90,10 @@
     "description": "米家全型号横评 · 通量 / 产水率 / 滤芯寿命"
   },
   {
-    "id": "humidifier",
-    "name": "加湿器",
-    "icon": "🌫️",
-    "description": "米家全型号横评 · 加湿量 / 水箱 / 噪音"
-  },
-  {
-    "id": "fan",
-    "name": "电风扇",
-    "icon": "🌬️",
-    "description": "米家全型号横评 · 风量 / 噪音 / 功耗"
-  },
-  {
-    "id": "rice-cooker",
-    "name": "电饭煲",
-    "icon": "🍚",
-    "description": "米家全型号横评 · 加热方式 / 容量 / 内胆"
-  },
-  {
-    "id": "air-fryer",
-    "name": "空气炸锅",
-    "icon": "🍟",
-    "description": "米家全型号横评 · 容量 / 功率 / 蒸汽烘烤"
+    "id": "smart-lock",
+    "name": "智能门锁",
+    "icon": "🔐",
+    "description": "小米全型号横评 · 锁体 / 开锁方式 / 续航"
   },
   {
     "id": "projector",

@@ -1,0 +1,57 @@
+{
+  "id": "smart-lock",
+  "name": "智能门锁",
+  "subtitle": "小米智能门锁全型号横评",
+  "imageBase": "images/smart-lock",
+
+  "groupBy": {
+    "key": "type",
+    "label": "锁体形式",
+    "order": ["全自动", "推拉式", "半自动"],
+    "colors": {
+      "全自动": "#9b59b6",
+      "推拉式": "#e67e22",
+      "半自动": "#3498db"
+    }
+  },
+
+  "searchFields": ["name", "model_code", "tags", "pros"],
+  "primaryMetric": "official_price",
+
+  "fields": [
+    { "key": "name", "label": "型号", "type": "text", "card": "title", "compare": true },
+    { "key": "model_code", "label": "产品型号", "type": "text", "card": "grid", "compare": true },
+    { "key": "type", "label": "锁体形式", "type": "text", "compare": true },
+
+    { "key": "official_price", "label": "官方价", "type": "number", "prefix": "¥", "card": "chip", "compare": true, "sortable": true, "stat": true },
+    { "key": "second_hand", "label": "二手价", "type": "text", "card": "chip", "compare": true },
+
+    { "key": "unlock", "label": "开锁方式", "type": "text", "card": "grid", "compare": true },
+    { "key": "cat_eye", "label": "猫眼/摄像", "type": "text", "card": "grid", "compare": true },
+    { "key": "connect", "label": "无线连接", "type": "text", "card": "grid", "compare": true },
+    { "key": "lock_core", "label": "锁芯等级", "type": "text", "card": "grid", "compare": true },
+    { "key": "battery", "label": "供电/续航", "type": "text", "card": "grid", "compare": true },
+    { "key": "fingerprint", "label": "指纹容量", "type": "text", "card": "grid", "compare": true },
+
+    { "key": "size", "label": "面板尺寸", "type": "text", "compare": true },
+    { "key": "weight", "label": "净重", "unit": "kg", "type": "number", "compare": true, "sortable": true },
+
+    { "key": "year", "label": "上市", "unit": "年", "type": "number", "card": "grid", "compare": true, "sortable": true },
+
+    { "key": "pros", "label": "优点", "type": "tags", "card": "tag", "tagVariant": "green", "tagPrefix": "✔" },
+    { "key": "cons", "label": "缺点", "type": "tags", "card": "tag", "tagVariant": "red", "tagPrefix": "✘" },
+    { "key": "tags", "label": "标签", "type": "tags", "card": "tag", "tagVariant": "blue" }
+  ],
+
+  "guide": {
+    "title": "按场景选购建议",
+    "items": [
+      { "scene": "预算 700 元内", "advice": "小米智能门锁 5C（¥659）" },
+      { "scene": "老人小孩同住", "advice": "M20 Pro 支持人脸识别，无需抬手刷指纹" },
+      { "scene": "想要无感进门", "advice": "全自动/推拉式锁体（M20 Pro / M30 Pro / 门锁 Pro），关门自动上锁" },
+      { "scene": "不想装蓝牙网关", "advice": "E20 WiFi 版可直连米家，远程查看门锁状态" },
+      { "scene": "出租房/临时密码", "advice": "支持一次性临时密码的型号（E20 WiFi 版、M20 Pro）" },
+      { "scene": "在意续航", "advice": "E2 与 E20 WiFi 版续航可达 12-15 个月" }
+    ]
+  }
+}
