@@ -1,0 +1,58 @@
+{
+  "id": "washing-machine",
+  "name": "洗衣机",
+  "subtitle": "米家洗衣机全型号横评",
+  "imageBase": "images/washing-machine",
+
+  "groupBy": {
+    "key": "type",
+    "label": "类型",
+    "order": ["滚筒洗烘一体", "洗烘套装", "波轮"],
+    "colors": {
+      "滚筒洗烘一体": "#3498db",
+      "洗烘套装": "#9b59b6",
+      "波轮": "#e67e22"
+    }
+  },
+
+  "searchFields": ["name", "model_code", "tags", "pros"],
+  "primaryMetric": "official_price",
+
+  "fields": [
+    { "key": "name", "label": "型号", "type": "text", "card": "title", "compare": true },
+    { "key": "model_code", "label": "产品型号", "type": "text", "card": "grid", "compare": true },
+    { "key": "type", "label": "类型", "type": "text", "compare": true },
+
+    { "key": "official_price", "label": "官方价", "type": "number", "prefix": "¥", "card": "chip", "compare": true, "sortable": true, "stat": true },
+    { "key": "second_hand", "label": "二手价", "type": "text", "card": "chip", "compare": true, "stat": true },
+
+    { "key": "wash_cap", "label": "洗涤容量", "unit": "kg", "type": "number", "card": "grid", "compare": true, "sortable": true },
+    { "key": "dry_cap", "label": "烘干容量", "unit": "kg", "type": "number", "card": "grid", "compare": true, "sortable": true },
+    { "key": "wash_ratio", "label": "洗净比", "type": "number", "card": "grid", "compare": true, "sortable": true },
+    { "key": "spin_rpm", "label": "最高转速", "unit": "r/min", "type": "number", "card": "grid", "compare": true, "sortable": true },
+    { "key": "energy", "label": "能效", "type": "text", "card": "grid", "compare": true },
+
+    { "key": "sterilize", "label": "除菌方式", "type": "text", "card": "grid", "compare": true },
+    { "key": "smart", "label": "智能", "type": "text", "card": "grid", "compare": true },
+    { "key": "noise", "label": "噪音", "type": "text", "card": "grid", "compare": true },
+    { "key": "size", "label": "整机尺寸", "type": "text", "compare": true },
+
+    { "key": "year", "label": "上市", "unit": "年", "type": "number", "card": "grid", "compare": true, "sortable": true },
+
+    { "key": "pros", "label": "优点", "type": "tags", "card": "tag", "tagVariant": "green", "tagPrefix": "✔" },
+    { "key": "cons", "label": "缺点", "type": "tags", "card": "tag", "tagVariant": "red", "tagPrefix": "✘" },
+    { "key": "tags", "label": "标签", "type": "tags", "card": "tag", "tagVariant": "blue" }
+  ],
+
+  "guide": {
+    "title": "按场景选购建议",
+    "items": [
+      { "scene": "预算优先/租房", "advice": "波轮 10kg（2024款）¥849 · 2级能效，基础洗涤够用" },
+      { "scene": "波轮想要高洗净比", "advice": "波轮 Pro 10kg（2025款）洗净比 1.28 · 直驱变频" },
+      { "scene": "小户型洗烘一体", "advice": "超净洗滚筒洗烘一体 10kg（2024款）超薄全嵌 598×570×850mm" },
+      { "scene": "大家庭烘干刚需", "advice": "洗烘套装Pro 蓝氧洗 热泵烘 10kg+10kg（2025款）" },
+      { "scene": "静音要求高", "advice": "互联网直驱洗烘一体（2021款）与超净洗滚筒（2024款）洗涤噪音约 50dB" },
+      { "scene": "米家全屋联动", "advice": "支持米家APP/小爱同学的滚筒与套装机型" }
+    ]
+  }
+}

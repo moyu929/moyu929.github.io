@@ -10,5 +10,23 @@
     "name": "空调",
     "icon": "❄️",
     "description": "米家全型号横评 · 匹数 / 能效 / 制冷制热量"
+  },
+  {
+    "id": "washing-machine",
+    "name": "洗衣机",
+    "icon": "🌀",
+    "description": "米家全型号横评 · 容量 / 洗净比 / 洗烘一体"
+  },
+  {
+    "id": "refrigerator",
+    "name": "冰箱",
+    "icon": "🧊",
+    "description": "米家全型号横评 · 容积 / 制冷方式 / 能耗"
+  },
+  {
+    "id": "robot-vacuum",
+    "name": "扫地机器人",
+    "icon": "🤖",
+    "description": "米家全型号横评 · 吸力 / 基站功能 / 导航"
   }
 ]
