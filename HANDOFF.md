@@ -63,31 +63,28 @@ scripts/validate-data.mjs            数据校验脚本
 | 品类 | products.json | schema.json | 已注册进 categories.json | 图片目录 |
 | --- | :---: | :---: | :---: | :---: |
 | 空气净化器 air-purifier | ✅ 27 款 | ✅ 25 字段 | ✅ | ✅ 20 张图 |
-| 空调 air-conditioner | ✅ 14 款 | ✅ 22 字段 | ✅ | ⚠️ 无图（img 全为 null） |
-| 洗衣机 washing-machine | ✅ 7 款 | ❌ **缺** | ❌ **未注册** | ❌ 无 |
-| 冰箱 refrigerator | ✅ 8 款 | ❌ **缺** | ❌ **未注册** | ❌ 无 |
-| 扫地机器人 robot-vacuum | ✅ 9 款 | ❌ **缺** | ❌ **未注册** | ❌ 无 |
+| 空调 air-conditioner | ✅ 14 款 | ✅ 22 字段 | ✅ | ✅ 目录已建（无图，img 全为 null） |
+| 洗衣机 washing-machine | ✅ 7 款 | ✅ 18 字段 | ✅ | ✅ 目录已建（无图） |
+| 冰箱 refrigerator | ✅ 8 款 | ✅ 18 字段 | ✅ | ✅ 目录已建（无图） |
+| 扫地机器人 robot-vacuum | ✅ 9 款 | ✅ 17 字段 | ✅ | ✅ 目录已建（无图） |
 
 - 空气净化器：已删除海外版、修正错误与缺失数据，共 27 款。
 - 空调：已按版本后缀规范修订名称（补年份后缀），共 14 款。
-- 三个新品类：`products.json` 已写好并提交，但**因为没注册进 categories.json，`npm run validate` 根本不会校验它们**——这也是目前校验「通过」的原因，事实上这三个品类的字段完整性尚未验证。
+- 三个新品类：`schema.json` 已补齐并注册进 `categories.json`，`npm run validate` 现在会校验它们（5 个品类全部通过，0 error）。
+- UI：对比浮标重写为「液态玻璃」组件 `src/components/LiquidGlass.vue`（可拖动 + 位置持久化），`CategoryView.vue` 已改为引用它；同时给对比抽屉补了 Esc 关闭。
 
-### 未完成（交接重点）
+### 未完成（后续可做）
 
-1. 三个新品类**缺 `schema.json`**（`data/washing-machine/`、`data/refrigerator/`、`data/robot-vacuum/`）。
-2. 三个新品类**未写进 `data/categories.json`**。
-3. 三个新品类（以及空调）**缺 `public/images/<category-id>/` 目录**；有图之前 `img` 保持 `null` 即可，但目录建议先建好。
-4. 完成后需跑通 `npm run validate` 与 `npm run build`。
+1. **产品图**：`public/images/<品类>/` 目录已建（含 `.gitkeep`），但三个新品类与空调均无图，`img` 保持 `null`；有图后把文件名填进 `img` 即可。
+2. **数据补全**：部分型号代码/参数仍是「查不到」（如冰箱 Pro 至尊版十字508L、扫地机器人 7C / 3C增强版、洗衣机波轮尊享版等），有官方来源时补齐。
+3. 已跑通 `npm run validate`、`npm run build`、`npm run typecheck`。
+
 
 ---
 
-## 4. 下一步待办（按顺序执行）
+## 4. 本轮已完成（原待办）
 
-### 4.1 创建三个 schema.json
-
-`src/data.ts` 通过 glob 发现品类，但**必须先有 schema.json 且注册进 categories.json**，页面才会加载。
-
-建议骨架（直接复制 `data/air-conditioner/schema.json` 改）：
+### 4.1 三个 schema.json 已创建
 
 | 品类 | id | groupBy.key | groupBy.order | primaryMetric | imageBase |
 | --- | --- | --- | --- | --- | --- |
@@ -95,64 +92,39 @@ scripts/validate-data.mjs            数据校验脚本
 | 冰箱 | `refrigerator` | `door_type` | 法式多门 / 十字门 / 对开门 / 三门 / 两门 | `official_price` | `images/refrigerator` |
 | 扫地机器人 | `robot-vacuum` | `tier` | 入门 / 中端集尘 / 全能基站 / 全能上下水 | `official_price` | `images/robot-vacuum` |
 
-> ⚠️ `groupBy.order` 里必须**列出 products.json 中实际出现的所有分组值**，否则该产品不显示（顺序即界面分组顺序）。
-> ⚠️ schema 里**必须包含 products.json 用到的每一个字段 key**：`name`、`model_code`、`official_price`、`second_hand`、`pros`、`cons`、`tags`、`year`、`img` 是通用的；此外各品类独有字段见下表。
+- `groupBy.order` 已按 products.json 中实际出现的分组值补全（顺序即界面分组顺序）。
+- 全部字段 key 已定义；`official_price` = `number`+`chip`+`sortable`+`stat`，`year` = `number`+`sortable`，`pros/cons/tags` = `tags` + `tagVariant`（green/red/blue）。
+- 三个品类都补了 `guide`（按场景选购建议），文案只引用 products.json 里已有的参数，未新增臆测数据。
 
-各品类 products.json 实际用到的字段 key（schema 需逐一定义）：
+### 4.2 品类已注册
 
-- **洗衣机**：`type`、`wash_cap`、`dry_cap`、`energy`、`wash_ratio`、`spin_rpm`、`sterilize`、`smart`、`size`、`noise`
-- **冰箱**：`door_type`、`total_vol`、`fridge_vol`、`freezer_vol`、`energy`、`power_use`、`noise`、`cooling`、`sterilize`、`size`
-- **扫地机器人**：`tier`、`suction`、`mop_type`、`base_func`、`navigation`、`water_tank`、`battery`、`climb`、`size`
+`data/categories.json` 现为 5 条：空气净化器 / 空调 / 洗衣机 / 冰箱 / 扫地机器人（顺序即首页展示顺序）。
 
-建议把 `year` 设为 `number`+`sortable`；`official_price` 设为 `number`+`chip`+`sortable`+`stat`；`pros/cons/tags` 设为 `tags` 并配 `tagVariant`（green/red/blue）。
+### 4.3 图片目录已建
 
-### 4.2 注册品类
+`public/images/{air-conditioner,washing-machine,refrigerator,robot-vacuum}/` 均已创建（含 `.gitkeep` 占位）。
+产品图文件名必须 = 该产品的 `id`（如 `wash_dry_108.jpg`）+ 后缀，`img` 填文件名；暂无图写 `null`。
 
-在 [data/categories.json](file:///workspace/data/categories.json) 追加三条（顺序即首页展示顺序）：
+### 4.4 液态玻璃对比浮标
 
-```json
-{
-  "id": "washing-machine",
-  "name": "洗衣机",
-  "icon": "🌀",
-  "description": "米家全型号横评 · 容量 / 洗净比 / 洗烘一体"
-},
-{
-  "id": "refrigerator",
-  "name": "冰箱",
-  "icon": "🧊",
-  "description": "米家全型号横评 · 容积 / 制冷方式 / 能耗"
-},
-{
-  "id": "robot-vacuum",
-  "name": "扫地机器人",
-  "icon": "🤖",
-  "description": "米家全型号横评 · 吸力 / 基站功能 / 导航"
-}
-```
+- 新增 `src/components/LiquidGlass.vue`：SVG `feImage` + `feDisplacementMap` 生成位移图，`backdrop-filter: url(#id)` 做折射；支持指针拖动（阈值 6px 区分点击/拖动）、位置写入 `localStorage.compareFabPos`、点击派发 `activate`。
+- `CategoryView.vue` 改用该组件，删除了内联 FAB 的状态与样式。
+- 收尾项：`--lg-size` 改为按 `size` prop 动态注入、层级从 `9999` 调整为 `350`（高于工具条 300、低于对比抽屉 399/400，与旧 FAB 行为一致）、补 `--brand-glass-tint` 明暗主题令牌。
+- 顺带给 `CompareDrawer` 补了 **Esc 关闭**（此前只能点 X 或遮罩）。
 
-`icon` 可自行更换，其余字段名须与「0 节」格式一致。
-
-### 4.3 建图片目录（可选，没图也能先上线）
+### 4.5 校验与构建
 
 ```bash
-mkdir -p public/images/washing-machine public/images/refrigerator public/images/robot-vacuum
+npm run validate    # 5 个品类全部通过，0 error（46 条提示均为「暂无产品图 / 非数值沉底」）
+npm run typecheck   # 通过
+npm run build       # 通过
 ```
 
-产品图的文件名必须 = 该产品的 `id`（如 `wash_dry_108.jpg`）+ 后缀，`img` 填文件名；暂无图写 `null`。
+浏览器实测（Playwright）确认：首页 5 个品类入口正常；三个新品类分别渲染 7 / 8 / 9 款产品，分组、统计（均值·区间）、时间轴视图、对比抽屉（含 3 款产品 15 行参数）、明暗主题均正常，控制台无 error/warning。
 
-### 4.4 校验与构建
+### 4.6 发布
 
-```bash
-npm run validate   # 必须无 error；warning（暂无产品图 / 非数值沉底）可接受
-npm run build      # 必须通过（含 vue-tsc 类型检查）
-```
-
-校验脚本检查项：品类是否同时有 schema+products、id 唯一且可作文件名、`groupBy`/`primaryMetric`/`searchFields` 的 key 是否在 fields 中、`sortable`/`stat` 字段是否数值型、img 文件是否存在、有无 schema 未定义的字段。
-
-### 4.5 发布
-
-把改动推到 `main` 触发部署（当前在 `trae/agent-DtJ63m` 分支，需合并/PR 到 `main`）。
+改动提交到 `main` 即可触发部署（`.github/workflows/deploy.yml`：校验 → 构建 → Pages）。
 
 ---
 
@@ -162,7 +134,7 @@ npm run build      # 必须通过（含 vue-tsc 类型检查）
    - 写大 JSON 时用紧凑格式（一行一对象）分块写入，写完后**立刻 `Read` 回读校验长度与结尾**；
    - 每完成一步就跑一次 `npm run validate` 固化进度；
    - 及时 `git commit`，避免只剩工作区改动时被环境重置。
-2. **三个新品类当前未被校验**：因为没注册进 categories.json，`validate` 不会遍历它们，别被「校验通过」误导。
+2. **别只看「校验通过」**：`validate` 只遍历 `categories.json` 里列出的品类。新品类若忘了注册，脚本根本不会校验它，输出照样是「数据校验通过」。
 3. **数值字段与 `"—"`**：schema 声明为 `number` 却填 `"—"` 的产品排序会沉底，属预期提示，不必强修。
 4. **历史数据坑（供参考）**：
    - 空气净化器宠物款曾误用国际版 `AC-M30-SC`，已改为国内在售 `AC-M31-SC`；
@@ -181,6 +153,8 @@ npm run build      # 必须通过（含 vue-tsc 类型检查）
 **扫地机器人（9 款）**：3C增强版、4、5C（2024款）、M40 S（2025款）、5 Pro（2025款）、6（2025款）、6 Pro（2026款）、6 Max（2026款）、7C（2025款）。
 
 > 注意：以上名称已按版本后缀规范处理，但**部分型号代码/参数仍是「查不到」**（如冰箱 Pro 至尊版十字508L、扫地机器人 7C、3C增强版等），有官方来源时请补齐。
+>
+> 这三个品类目前**都没有产品图**（`img` 全为 `null`），`schema.imageBase` 已分别指向 `images/washing-machine`、`images/refrigerator`、`images/robot-vacuum`。
 
 ---
 
