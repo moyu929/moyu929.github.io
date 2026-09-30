@@ -122,9 +122,18 @@ npm run mi:images                            # 按 data/_sources/images.json 下
 npm run mi:apply -- data/_sources/patches/xxx.json              # 写入字段补丁
 ```
 
+官方渠道拿不到时的两个补充来源（**只作交叉印证，禁止照抄**）：
+
+```bash
+npm run miot:crawl                     # 抓 home.miot-spec.com 型号库（分页/并发，缓存 + 日志）
+npm run miot:match                     # 按官方名精确匹配，补 miot_model 字段
+npm run pconline:specs                 # 抓太平洋规格表（清单：data/_sources/pconline-targets.json）
+```
+
 - 枚举结果缓存在 `data/_cache/`（已 gitignore），可反复复查。
 - 字段补丁放在 `data/_sources/patches/`，文件内用 `_来源` 记录出处；`mi:apply` 按 `品类/产品id` 定位写入，越界会报错而不是写歪。
-- 采集与核验规则见 `.trae/skills/appliance-data-curation/SKILL.md`（来源优先级、禁止估算、去重口径等）。
+- 采集与核验规则见 `skills/appliance-data-curation/SKILL.md`（来源优先级、禁止估算、去重口径、第三方错标陷阱等）。
+- 每条产品都带 6 个审核标注字段（`verify_status` / `verify_date` / `verify_source` / `verify_url` / `change_log` / `updated_at`），逐条溯源记录在 `data/_sources/provenance.json`。
 
 ### 产品图压缩
 
@@ -135,6 +144,36 @@ python -c "from PIL import Image;import pathlib;[ (lambda im,f: (im.convert('RGB
 ```
 
 压缩后记得把 `products.json` 里对应的 `img` 字段从 `.png` 改成 `.jpg`（`mi:images` 会自动处理新下载的图）。
+
+## 多 Agent 并行协作
+
+本仓库可能同时有多个 Agent 在工作（一个采集/更新，一个按用户指令审核）。
+协作规范见 **[AGENTS.md](AGENTS.md)**，核心是「审核冻结协议」：
+
+```bash
+npm run audit:status                   # 动手前先查：哪些产品正被审核冻结
+npm run audit:snapshot -- --label "空气净化器验收" --by agent-b --category air-purifier
+npm run audit:check                    # 检测冻结范围内是否有人越界改过
+npm run audit:release -- <快照id>       # 审核完成，解除冻结
+npm run check                          # = validate + audit:check，推送前跑
+```
+
+被快照覆盖的产品在 `release` 之前**任何一方都不得改动**，避免一方按过期数据审核、另一方已改过。
+审核报告归档在 `docs/audit/`。
+
+## 目录速览
+
+```
+AGENTS.md                 多 Agent 协作规范（先读这个）
+HANDOFF.md                阶段交接记录
+skills/                   技能定义（客户端无关；.trae/.claude 下只放指针）
+docs/audit/               审核报告归档
+data/<品类>/{schema,products}.json
+data/_sources/            溯源、补丁、图片清单（入库）
+data/_cache/              抓取缓存（不入库）
+data/_locks/              审核快照锁（两个 Agent 的共享状态）
+scripts/                  采集、校验、审核锁工具
+```
 
 ## 部署
 

@@ -2,7 +2,7 @@
 
 > 交接背景：站点已扩到 **41 个品类 / 418 款产品**，全部走「schema 驱动」零前端改动。最近一轮做了三件事：给**全部产品加审核标注字段**、接入 **miot 第三方产品库**核验停产型号、新增**洗地机与浴霸**两个品类。详见第 0.1 节。
 >
-> 数据采集/核验的完整规范见 [.trae/skills/appliance-data-curation/SKILL.md](file:///workspace/.trae/skills/appliance-data-curation/SKILL.md)，**动手前务必先读它**。
+> 数据采集/核验的完整规范见 [skills/appliance-data-curation/SKILL.md](skills/appliance-data-curation/SKILL.md)，**动手前务必先读它**。
 
 ## 0.1 最近一轮进展（2026-10-01）
 
@@ -231,7 +231,7 @@ npm run build       # 通过
 
 ## 7. 参考
 
-- 收录规范：[.trae/skills/appliance-data-curation/SKILL.md](file:///workspace/.trae/skills/appliance-data-curation/SKILL.md)
+- 收录规范：[skills/appliance-data-curation/SKILL.md](skills/appliance-data-curation/SKILL.md)
 - 字段/维护说明：[README.md](file:///workspace/README.md)
 - 校验脚本：[scripts/validate-data.mjs](file:///workspace/scripts/validate-data.mjs)
 - 部署流程：[.github/workflows/deploy.yml](file:///workspace/.github/workflows/deploy.yml)

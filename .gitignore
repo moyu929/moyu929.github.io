@@ -27,3 +27,14 @@ data/_cache/
 
 # ============ 项目辅助数据（非源码） ============
 .codebuddy/
+
+# ============ Agent / 编辑器本地产物（不入库，各端生成） ============
+# Trae 分享包、各客户端本地权限与缓存：与项目数据无关，且体积大
+.trae-html-share-packages/
+.trae/*.local.json
+.claude/settings.local.json
+skills/**/*.local.*
+*.zip
+
+# ============ 审核快照锁的临时文件（正式快照要入库，见 AGENTS.md） ============
+data/_locks/*.tmp

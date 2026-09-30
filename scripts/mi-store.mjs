@@ -9,7 +9,7 @@
  *   node scripts/mi-store.mjs images                       # 按 data/_sources/images.json 下载产品图
  *   node scripts/mi-store.mjs apply <patch.json>           # 把字段补丁安全写入 products.json
  *
- * 设计约定（对应 .trae/skills/appliance-data-curation/SKILL.md）：
+ * 设计约定（对应 skills/appliance-data-curation/SKILL.md）：
  *   - 只收录小米/米家国内在售或发布型号；数值必须可溯源，查不到就写「查不到」，禁止估算。
  *   - 本脚本只负责「抓取 + 落地缓存 + 安全回写」，**是否采用某条数据由人判断**。
  *   - 回写 products.json 时严格按 id 定位对象边界，避免「从 id 向后找第一个 img」这类越界写错。

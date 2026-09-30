@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 import ThemeToggle from './components/ThemeToggle.vue'
+import SiteNotice from './components/SiteNotice.vue'
 </script>
 
 <template>
@@ -10,6 +11,7 @@ import ThemeToggle from './components/ThemeToggle.vue'
       <component :is="Component" />
     </Transition>
   </RouterView>
+  <SiteNotice />
 </template>
 
 <style>
