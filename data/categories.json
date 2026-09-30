@@ -24,9 +24,39 @@
     "description": "米家全型号横评 · 容积 / 制冷方式 / 能耗"
   },
   {
+    "id": "dishwasher",
+    "name": "洗碗机",
+    "icon": "🍽️",
+    "description": "米家全型号横评 · 套数 / 烘干 / 水效"
+  },
+  {
     "id": "robot-vacuum",
     "name": "扫地机器人",
     "icon": "🤖",
     "description": "米家全型号横评 · 吸力 / 基站功能 / 导航"
+  },
+  {
+    "id": "vacuum",
+    "name": "无线吸尘器",
+    "icon": "🧹",
+    "description": "米家全型号横评 · 吸入功率 / 续航 / 尘杯"
+  },
+  {
+    "id": "water-purifier",
+    "name": "净水器",
+    "icon": "💧",
+    "description": "米家全型号横评 · 通量 / 产水率 / 滤芯寿命"
+  },
+  {
+    "id": "humidifier",
+    "name": "加湿器",
+    "icon": "🌫️",
+    "description": "米家全型号横评 · 加湿量 / 水箱 / 噪音"
+  },
+  {
+    "id": "rice-cooker",
+    "name": "电饭煲",
+    "icon": "🍚",
+    "description": "米家全型号横评 · 加热方式 / 容量 / 内胆"
   }
 ]

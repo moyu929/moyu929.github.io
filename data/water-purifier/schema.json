@@ -1,0 +1,57 @@
+{
+  "id": "water-purifier",
+  "name": "净水器",
+  "subtitle": "米家净水器全型号横评",
+  "imageBase": "images/water-purifier",
+
+  "groupBy": {
+    "key": "type",
+    "label": "出水方式",
+    "order": ["双出水", "单出水", "台式净饮"],
+    "colors": {
+      "双出水": "#9b59b6",
+      "单出水": "#3498db",
+      "台式净饮": "#e67e22"
+    }
+  },
+
+  "searchFields": ["name", "model_code", "tags", "pros"],
+  "primaryMetric": "official_price",
+
+  "fields": [
+    { "key": "name", "label": "型号", "type": "text", "card": "title", "compare": true },
+    { "key": "model_code", "label": "产品型号", "type": "text", "card": "grid", "compare": true },
+    { "key": "type", "label": "出水方式", "type": "text", "compare": true },
+
+    { "key": "official_price", "label": "官方价", "type": "number", "prefix": "¥", "card": "chip", "compare": true, "sortable": true, "stat": true },
+    { "key": "second_hand", "label": "二手价", "type": "text", "card": "chip", "compare": true },
+
+    { "key": "flux", "label": "通量", "unit": "G", "type": "number", "card": "grid", "compare": true, "sortable": true },
+    { "key": "pure_flow", "label": "纯水流速", "unit": "L/min", "type": "number", "card": "grid", "compare": true, "sortable": true },
+    { "key": "water_rate", "label": "净水产水率", "unit": "%", "type": "number", "card": "grid", "compare": true, "sortable": true },
+    { "key": "rated_vol", "label": "额定净水量", "unit": "L", "type": "number", "card": "grid", "compare": true, "sortable": true },
+    { "key": "ro_life", "label": "RO滤芯寿命", "unit": "年", "type": "number", "card": "grid", "compare": true, "sortable": true },
+
+    { "key": "cert", "label": "水质认证", "type": "text", "card": "grid", "compare": true },
+    { "key": "sterilize", "label": "除菌", "type": "text", "card": "grid", "compare": true },
+    { "key": "size", "label": "整机尺寸", "type": "text", "compare": true },
+
+    { "key": "year", "label": "上市", "unit": "年", "type": "number", "card": "grid", "compare": true, "sortable": true },
+
+    { "key": "pros", "label": "优点", "type": "tags", "card": "tag", "tagVariant": "green", "tagPrefix": "✔" },
+    { "key": "cons", "label": "缺点", "type": "tags", "card": "tag", "tagVariant": "red", "tagPrefix": "✘" },
+    { "key": "tags", "label": "标签", "type": "tags", "card": "tag", "tagVariant": "blue" }
+  ],
+
+  "guide": {
+    "title": "按场景选购建议",
+    "items": [
+      { "scene": "多口之家/直饮需求大", "advice": "Pro 双出水 1600G（¥2999）纯水 4.25L/min" },
+      { "scene": "冲奶/母婴用水", "advice": "S1 系列带母婴级 + 特优级双认证，零陈水 3.0" },
+      { "scene": "预算有限但要大通量", "advice": "S1 1000G 净水产水率 68.9%，性价比口径" },
+      { "scene": "厨房同时要洗菜水", "advice": "双出水机型上龙头直饮、下龙头生活水，两路独立" },
+      { "scene": "在意长期换芯成本", "advice": "RO 滤芯寿命越久越省：Pro 双出水标称 6-8 年" },
+      { "scene": "想少排废水", "advice": "净水产水率越高越好，S1 1000G 68.9% > Pro 双出水 67.6%" }
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "dishwasher",
+  "name": "洗碗机",
+  "subtitle": "米家洗碗机全型号横评",
+  "imageBase": "images/dishwasher",
+
+  "groupBy": {
+    "key": "type",
+    "label": "安装方式",
+    "order": ["嵌入式", "独嵌两用", "台式"],
+    "colors": {
+      "嵌入式": "#3498db",
+      "独嵌两用": "#9b59b6",
+      "台式": "#e67e22"
+    }
+  },
+
+  "searchFields": ["name", "model_code", "tags", "pros"],
+  "primaryMetric": "official_price",
+
+  "fields": [
+    { "key": "name", "label": "型号", "type": "text", "card": "title", "compare": true },
+    { "key": "model_code", "label": "产品型号", "type": "text", "card": "grid", "compare": true },
+    { "key": "type", "label": "安装方式", "type": "text", "compare": true },
+
+    { "key": "official_price", "label": "官方价", "type": "number", "prefix": "¥", "card": "chip", "compare": true, "sortable": true, "stat": true },
+    { "key": "second_hand", "label": "二手价", "type": "text", "card": "chip", "compare": true },
+
+    { "key": "capacity", "label": "容量", "unit": "套", "type": "number", "card": "grid", "compare": true, "sortable": true },
+    { "key": "volume", "label": "内腔容积", "unit": "L", "type": "number", "card": "grid", "compare": true, "sortable": true },
+    { "key": "water_eff", "label": "水效等级", "type": "text", "card": "grid", "compare": true },
+    { "key": "dry", "label": "烘干方式", "type": "text", "card": "grid", "compare": true },
+    { "key": "sterilize", "label": "除菌", "type": "text", "card": "grid", "compare": true },
+    { "key": "store", "label": "长效存储", "type": "text", "card": "grid", "compare": true },
+
+    { "key": "power", "label": "额定功率", "unit": "W", "type": "number", "card": "grid", "compare": true, "sortable": true },
+    { "key": "size", "label": "整机尺寸", "type": "text", "compare": true },
+    { "key": "weight", "label": "净重", "unit": "kg", "type": "number", "compare": true, "sortable": true },
+
+    { "key": "year", "label": "上市", "unit": "年", "type": "number", "card": "grid", "compare": true, "sortable": true },
+
+    { "key": "pros", "label": "优点", "type": "tags", "card": "tag", "tagVariant": "green", "tagPrefix": "✔" },
+    { "key": "cons", "label": "缺点", "type": "tags", "card": "tag", "tagVariant": "red", "tagPrefix": "✘" },
+    { "key": "tags", "label": "标签", "type": "tags", "card": "tag", "tagVariant": "blue" }
+  ],
+
+  "guide": {
+    "title": "按场景选购建议",
+    "items": [
+      { "scene": "大家庭/聚餐多", "advice": "嵌入式 20套（2026款）156L 内腔，一次可洗 144 件餐具" },
+      { "scene": "装修前预留位", "advice": "嵌入式 16套 P1 / 13套 S2，需提前留出橱柜开口" },
+      { "scene": "已装修想加装", "advice": "独嵌两用 16套 P1 / 15套 S1，可独立摆放也可嵌入" },
+      { "scene": "出租房/小厨房", "advice": "台式 4套，免改橱柜" },
+      { "scene": "在意烘干效果", "advice": "P1 三重烘干（自动开关门2.0+热风+余温）优于单一热风" },
+      { "scene": "长期存放餐具", "advice": "20套支持 240 小时智能新风换气" }
+    ]
+  }
+}

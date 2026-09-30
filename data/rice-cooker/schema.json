@@ -1,0 +1,55 @@
+{
+  "id": "rice-cooker",
+  "name": "电饭煲",
+  "subtitle": "米家电饭煲全型号横评",
+  "imageBase": "images/rice-cooker",
+
+  "groupBy": {
+    "key": "type",
+    "label": "加热方式",
+    "order": ["压力IH", "IH电磁", "底盘加热"],
+    "colors": {
+      "压力IH": "#9b59b6",
+      "IH电磁": "#3498db",
+      "底盘加热": "#e67e22"
+    }
+  },
+
+  "searchFields": ["name", "model_code", "tags", "pros"],
+  "primaryMetric": "official_price",
+
+  "fields": [
+    { "key": "name", "label": "型号", "type": "text", "card": "title", "compare": true },
+    { "key": "model_code", "label": "产品型号", "type": "text", "card": "grid", "compare": true },
+    { "key": "type", "label": "加热方式", "type": "text", "compare": true },
+
+    { "key": "official_price", "label": "官方价", "type": "number", "prefix": "¥", "card": "chip", "compare": true, "sortable": true, "stat": true },
+    { "key": "second_hand", "label": "二手价", "type": "text", "card": "chip", "compare": true },
+
+    { "key": "capacity", "label": "容量", "unit": "L", "type": "number", "card": "grid", "compare": true, "sortable": true },
+    { "key": "power", "label": "功率", "unit": "W", "type": "number", "card": "grid", "compare": true, "sortable": true },
+    { "key": "inner_pot", "label": "内胆", "type": "text", "card": "grid", "compare": true },
+    { "key": "pressure", "label": "压力", "type": "text", "card": "grid", "compare": true },
+    { "key": "appoint", "label": "预约", "type": "text", "card": "grid", "compare": true },
+
+    { "key": "size", "label": "整机尺寸", "type": "text", "compare": true },
+
+    { "key": "year", "label": "上市", "unit": "年", "type": "number", "card": "grid", "compare": true, "sortable": true },
+
+    { "key": "pros", "label": "优点", "type": "tags", "card": "tag", "tagVariant": "green", "tagPrefix": "✔" },
+    { "key": "cons", "label": "缺点", "type": "tags", "card": "tag", "tagVariant": "red", "tagPrefix": "✘" },
+    { "key": "tags", "label": "标签", "type": "tags", "card": "tag", "tagVariant": "blue" }
+  ],
+
+  "guide": {
+    "title": "按场景选购建议",
+    "items": [
+      { "scene": "预算优先/出租房", "advice": "电饭煲 C1 3L（¥149，650W）/ N1 3L（¥159）" },
+      { "scene": "1-2 人小家庭", "advice": "3L 容量机型：C1 3L / N1 3L / 智能IH电饭煲 P1 3L" },
+      { "scene": "3-5 人家庭", "advice": "4L 容量机型：N1 4L / 米家IH电饭煲 4L / P1 4L" },
+      { "scene": "口感要求高", "advice": "IH 电磁环绕加热（米家IH电饭煲、P1）优于底盘加热" },
+      { "scene": "追求米饭软糯", "advice": "P1 支持 3D 压力 + 0 氟涂层钛内胆" },
+      { "scene": "米家全屋联动", "advice": "P1 支持 App 互联与 100+ 云食谱" }
+    ]
+  }
+}
