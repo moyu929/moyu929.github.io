@@ -3,53 +3,213 @@
   "name": "电水壶",
   "subtitle": "米家电水壶 / 养生壶全型号横评",
   "imageBase": "images/kettle",
-
   "groupBy": {
     "key": "type",
     "label": "类型",
-    "order": ["养生壶", "电水壶", "电煮壶"],
+    "order": [
+      "养生壶",
+      "电水壶",
+      "电煮壶"
+    ],
     "colors": {
       "养生壶": "#9b59b6",
       "电水壶": "#3498db",
       "电煮壶": "#e67e22"
     }
   },
-
-  "searchFields": ["name", "model_code", "tags", "pros"],
-  "primaryMetric": "official_price",
-
-  "fields": [
-    { "key": "name", "label": "型号", "type": "text", "card": "title", "compare": true },
-    { "key": "model_code", "label": "产品型号", "type": "text", "card": "grid", "compare": true },
-    { "key": "type", "label": "类型", "type": "text", "compare": true },
-
-    { "key": "official_price", "label": "官方价", "type": "number", "prefix": "¥", "card": "chip", "compare": true, "sortable": true, "stat": true },
-    { "key": "second_hand", "label": "二手价", "type": "text", "card": "chip", "compare": true },
-
-    { "key": "capacity", "label": "容量", "unit": "L", "type": "number", "card": "grid", "compare": true, "sortable": true },
-    { "key": "power", "label": "功率", "unit": "W", "type": "number", "card": "grid", "compare": true, "sortable": true },
-    { "key": "material", "label": "壶身材质", "type": "text", "card": "grid", "compare": true },
-    { "key": "temp_ctrl", "label": "温度控制", "type": "text", "card": "grid", "compare": true },
-    { "key": "smart", "label": "智能联动", "type": "text", "card": "grid", "compare": true },
-
-    { "key": "size", "label": "整机尺寸", "type": "text", "compare": true },
-
-    { "key": "year", "label": "上市", "unit": "年", "type": "number", "card": "grid", "compare": true, "sortable": true },
-
-    { "key": "pros", "label": "优点", "type": "tags", "card": "tag", "tagVariant": "green", "tagPrefix": "✔" },
-    { "key": "cons", "label": "缺点", "type": "tags", "card": "tag", "tagVariant": "red", "tagPrefix": "✘" },
-    { "key": "tags", "label": "标签", "type": "tags", "card": "tag", "tagVariant": "blue" }
+  "searchFields": [
+    "name",
+    "model_code",
+    "tags",
+    "pros"
   ],
-
+  "primaryMetric": "official_price",
+  "fields": [
+    {
+      "key": "name",
+      "label": "型号",
+      "type": "text",
+      "card": "title",
+      "compare": true
+    },
+    {
+      "key": "model_code",
+      "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "miot_model",
+      "label": "MIoT 型号",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "type",
+      "label": "类型",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "official_price",
+      "label": "官方价",
+      "type": "number",
+      "prefix": "¥",
+      "card": "chip",
+      "compare": true,
+      "sortable": true,
+      "stat": true
+    },
+    {
+      "key": "second_hand",
+      "label": "二手价",
+      "type": "text",
+      "card": "chip",
+      "compare": true
+    },
+    {
+      "key": "capacity",
+      "label": "容量",
+      "unit": "L",
+      "type": "number",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "power",
+      "label": "功率",
+      "unit": "W",
+      "type": "number",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "material",
+      "label": "壶身材质",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "temp_ctrl",
+      "label": "温度控制",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "smart",
+      "label": "智能联动",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "size",
+      "label": "整机尺寸",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "year",
+      "label": "上市",
+      "unit": "年",
+      "type": "number",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "pros",
+      "label": "优点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "green",
+      "tagPrefix": "✔"
+    },
+    {
+      "key": "cons",
+      "label": "缺点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "red",
+      "tagPrefix": "✘"
+    },
+    {
+      "key": "tags",
+      "label": "标签",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "blue"
+    },
+    {
+      "key": "verify_status",
+      "label": "核查状态",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "verify_date",
+      "label": "核查时间",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "verify_source",
+      "label": "信息来源",
+      "type": "tags",
+      "compare": true,
+      "tagVariant": "blue"
+    },
+    {
+      "key": "verify_url",
+      "label": "来源链接",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "change_log",
+      "label": "修改记录",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "updated_at",
+      "label": "最近更新",
+      "type": "text",
+      "compare": true
+    }
+  ],
   "guide": {
     "title": "按场景选购建议",
     "items": [
-      { "scene": "只烧开水", "advice": "米家电水壶 S1（1.7L / 1800W / ¥129）" },
-      { "scene": "冲奶泡茶要恒温", "advice": "米家恒温电水壶 钛钢版（¥139）" },
-      { "scene": "煮茶/炖汤", "advice": "养生壶 N1（1.5L / 880W / ¥99）或智能养生壶 P1" },
-      { "scene": "宿舍/单人", "advice": "多功能电煮壶（1.5L，可煮面煮粥）" },
-      { "scene": "USB 桌面办公", "advice": "养生壶更适合长时间保温，电水壶注重大功率速热" },
-      { "scene": "米家全屋联动", "advice": "选带 WiFi 的智能款（P1 / 电煮壶），可 App 调火力" }
+      {
+        "scene": "只烧开水",
+        "advice": "米家电水壶 S1（1.7L / 1800W / ¥129）"
+      },
+      {
+        "scene": "冲奶泡茶要恒温",
+        "advice": "米家恒温电水壶 钛钢版（¥139）"
+      },
+      {
+        "scene": "煮茶/炖汤",
+        "advice": "养生壶 N1（1.5L / 880W / ¥99）或智能养生壶 P1"
+      },
+      {
+        "scene": "宿舍/单人",
+        "advice": "多功能电煮壶（1.5L，可煮面煮粥）"
+      },
+      {
+        "scene": "USB 桌面办公",
+        "advice": "养生壶更适合长时间保温，电水壶注重大功率速热"
+      },
+      {
+        "scene": "米家全屋联动",
+        "advice": "选带 WiFi 的智能款（P1 / 电煮壶），可 App 调火力"
+      }
     ]
   }
 }

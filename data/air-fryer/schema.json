@@ -3,53 +3,215 @@
   "name": "空气炸锅",
   "subtitle": "米家空气炸锅全型号横评",
   "imageBase": "images/air-fryer",
-
   "groupBy": {
     "key": "type",
     "label": "类型",
-    "order": ["蒸烤一体", "可视炸锅", "经典炸锅"],
+    "order": [
+      "蒸烤一体",
+      "可视炸锅",
+      "经典炸锅"
+    ],
     "colors": {
       "蒸烤一体": "#9b59b6",
       "可视炸锅": "#3498db",
       "经典炸锅": "#e67e22"
     }
   },
-
-  "searchFields": ["name", "model_code", "tags", "pros"],
-  "primaryMetric": "official_price",
-
-  "fields": [
-    { "key": "name", "label": "型号", "type": "text", "card": "title", "compare": true },
-    { "key": "model_code", "label": "产品型号", "type": "text", "card": "grid", "compare": true },
-    { "key": "type", "label": "类型", "type": "text", "compare": true },
-
-    { "key": "official_price", "label": "官方价", "type": "number", "prefix": "¥", "card": "chip", "compare": true, "sortable": true, "stat": true },
-    { "key": "second_hand", "label": "二手价", "type": "text", "card": "chip", "compare": true },
-
-    { "key": "capacity", "label": "容量", "unit": "L", "type": "number", "card": "grid", "compare": true, "sortable": true },
-    { "key": "power", "label": "额定功率", "unit": "W", "type": "number", "card": "grid", "compare": true, "sortable": true },
-    { "key": "temp_max", "label": "最高温度", "unit": "℃", "type": "number", "card": "grid", "compare": true, "sortable": true },
-    { "key": "steam", "label": "蒸汽功能", "type": "text", "card": "grid", "compare": true },
-    { "key": "basket", "label": "炸篮/内腔", "type": "text", "card": "grid", "compare": true },
-
-    { "key": "size", "label": "整机尺寸", "type": "text", "compare": true },
-
-    { "key": "year", "label": "上市", "unit": "年", "type": "number", "card": "grid", "compare": true, "sortable": true },
-
-    { "key": "pros", "label": "优点", "type": "tags", "card": "tag", "tagVariant": "green", "tagPrefix": "✔" },
-    { "key": "cons", "label": "缺点", "type": "tags", "card": "tag", "tagVariant": "red", "tagPrefix": "✘" },
-    { "key": "tags", "label": "标签", "type": "tags", "card": "tag", "tagVariant": "blue" }
+  "searchFields": [
+    "name",
+    "model_code",
+    "tags",
+    "pros"
   ],
-
+  "primaryMetric": "official_price",
+  "fields": [
+    {
+      "key": "name",
+      "label": "型号",
+      "type": "text",
+      "card": "title",
+      "compare": true
+    },
+    {
+      "key": "model_code",
+      "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "miot_model",
+      "label": "MIoT 型号",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "type",
+      "label": "类型",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "official_price",
+      "label": "官方价",
+      "type": "number",
+      "prefix": "¥",
+      "card": "chip",
+      "compare": true,
+      "sortable": true,
+      "stat": true
+    },
+    {
+      "key": "second_hand",
+      "label": "二手价",
+      "type": "text",
+      "card": "chip",
+      "compare": true
+    },
+    {
+      "key": "capacity",
+      "label": "容量",
+      "unit": "L",
+      "type": "number",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "power",
+      "label": "额定功率",
+      "unit": "W",
+      "type": "number",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "temp_max",
+      "label": "最高温度",
+      "unit": "℃",
+      "type": "number",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "steam",
+      "label": "蒸汽功能",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "basket",
+      "label": "炸篮/内腔",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "size",
+      "label": "整机尺寸",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "year",
+      "label": "上市",
+      "unit": "年",
+      "type": "number",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "pros",
+      "label": "优点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "green",
+      "tagPrefix": "✔"
+    },
+    {
+      "key": "cons",
+      "label": "缺点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "red",
+      "tagPrefix": "✘"
+    },
+    {
+      "key": "tags",
+      "label": "标签",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "blue"
+    },
+    {
+      "key": "verify_status",
+      "label": "核查状态",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "verify_date",
+      "label": "核查时间",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "verify_source",
+      "label": "信息来源",
+      "type": "tags",
+      "compare": true,
+      "tagVariant": "blue"
+    },
+    {
+      "key": "verify_url",
+      "label": "来源链接",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "change_log",
+      "label": "修改记录",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "updated_at",
+      "label": "最近更新",
+      "type": "text",
+      "compare": true
+    }
+  ],
   "guide": {
     "title": "按场景选购建议",
     "items": [
-      { "scene": "1-2 人小家庭", "advice": "经典炸锅 3.5L（MAF01，1500W）或 N1 5L" },
-      { "scene": "3-5 人家庭", "advice": "可视版 5.5L（1600W）或 Pro 蒸烤版 6.5L" },
-      { "scene": "想要蒸+烤", "advice": "Pro 蒸烤版 6.5L，900W 独立蒸汽发生器，130℃ 直喷" },
-      { "scene": "预算优先", "advice": "空气炸锅 N1 5L（¥249 常促至 ¥179，1200W）" },
-      { "scene": "怕翻面麻烦", "advice": "N1 5L 主打烹饪免翻面 + 可视窗" },
-      { "scene": "厨房台面紧张", "advice": "优先 3.5L/5L 机型，6.5L 体积接近小烤箱" }
+      {
+        "scene": "1-2 人小家庭",
+        "advice": "经典炸锅 3.5L（MAF01，1500W）或 N1 5L"
+      },
+      {
+        "scene": "3-5 人家庭",
+        "advice": "可视版 5.5L（1600W）或 Pro 蒸烤版 6.5L"
+      },
+      {
+        "scene": "想要蒸+烤",
+        "advice": "Pro 蒸烤版 6.5L，900W 独立蒸汽发生器，130℃ 直喷"
+      },
+      {
+        "scene": "预算优先",
+        "advice": "空气炸锅 N1 5L（¥249 常促至 ¥179，1200W）"
+      },
+      {
+        "scene": "怕翻面麻烦",
+        "advice": "N1 5L 主打烹饪免翻面 + 可视窗"
+      },
+      {
+        "scene": "厨房台面紧张",
+        "advice": "优先 3.5L/5L 机型，6.5L 体积接近小烤箱"
+      }
     ]
   }
 }

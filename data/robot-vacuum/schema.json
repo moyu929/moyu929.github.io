@@ -3,11 +3,15 @@
   "name": "扫地机器人",
   "subtitle": "米家扫拖机器人全型号横评",
   "imageBase": "images/robot-vacuum",
-
   "groupBy": {
     "key": "tier",
     "label": "档位",
-    "order": ["入门", "中端集尘", "全能基站", "全能上下水"],
+    "order": [
+      "入门",
+      "中端集尘",
+      "全能基站",
+      "全能上下水"
+    ],
     "colors": {
       "入门": "#7f8c8d",
       "中端集尘": "#3498db",
@@ -15,44 +19,214 @@
       "全能上下水": "#9b59b6"
     }
   },
-
-  "searchFields": ["name", "model_code", "tags", "pros"],
-  "primaryMetric": "official_price",
-
-  "fields": [
-    { "key": "name", "label": "型号", "type": "text", "card": "title", "compare": true },
-    { "key": "model_code", "label": "产品型号", "type": "text", "card": "grid", "compare": true },
-    { "key": "tier", "label": "档位", "type": "text", "compare": true },
-
-    { "key": "official_price", "label": "官方价", "type": "number", "prefix": "¥", "card": "chip", "compare": true, "sortable": true, "stat": true },
-    { "key": "second_hand", "label": "二手价", "type": "text", "card": "chip", "compare": true, "stat": true },
-
-    { "key": "suction", "label": "吸力", "unit": "Pa", "type": "number", "card": "grid", "compare": true, "sortable": true },
-    { "key": "mop_type", "label": "拖布类型", "type": "text", "card": "grid", "compare": true },
-    { "key": "base_func", "label": "基站功能", "type": "text", "card": "grid", "compare": true },
-    { "key": "navigation", "label": "导航避障", "type": "text", "card": "grid", "compare": true },
-
-    { "key": "water_tank", "label": "水箱/尘盒", "type": "text", "compare": true },
-    { "key": "battery", "label": "电池", "type": "text", "card": "grid", "compare": true },
-    { "key": "climb", "label": "越障高度", "unit": "mm", "type": "number", "card": "grid", "compare": true, "sortable": true },
-    { "key": "size", "label": "机身尺寸", "type": "text", "card": "grid", "compare": true },
-
-    { "key": "year", "label": "上市", "unit": "年", "type": "number", "card": "grid", "compare": true, "sortable": true },
-
-    { "key": "pros", "label": "优点", "type": "tags", "card": "tag", "tagVariant": "green", "tagPrefix": "✔" },
-    { "key": "cons", "label": "缺点", "type": "tags", "card": "tag", "tagVariant": "red", "tagPrefix": "✘" },
-    { "key": "tags", "label": "标签", "type": "tags", "card": "tag", "tagVariant": "blue" }
+  "searchFields": [
+    "name",
+    "model_code",
+    "tags",
+    "pros"
   ],
-
+  "primaryMetric": "official_price",
+  "fields": [
+    {
+      "key": "name",
+      "label": "型号",
+      "type": "text",
+      "card": "title",
+      "compare": true
+    },
+    {
+      "key": "model_code",
+      "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "miot_model",
+      "label": "MIoT 型号",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "tier",
+      "label": "档位",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "official_price",
+      "label": "官方价",
+      "type": "number",
+      "prefix": "¥",
+      "card": "chip",
+      "compare": true,
+      "sortable": true,
+      "stat": true
+    },
+    {
+      "key": "second_hand",
+      "label": "二手价",
+      "type": "text",
+      "card": "chip",
+      "compare": true,
+      "stat": true
+    },
+    {
+      "key": "suction",
+      "label": "吸力",
+      "unit": "Pa",
+      "type": "number",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "mop_type",
+      "label": "拖布类型",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "base_func",
+      "label": "基站功能",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "navigation",
+      "label": "导航避障",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "water_tank",
+      "label": "水箱/尘盒",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "battery",
+      "label": "电池",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "climb",
+      "label": "越障高度",
+      "unit": "mm",
+      "type": "number",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "size",
+      "label": "机身尺寸",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "year",
+      "label": "上市",
+      "unit": "年",
+      "type": "number",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "pros",
+      "label": "优点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "green",
+      "tagPrefix": "✔"
+    },
+    {
+      "key": "cons",
+      "label": "缺点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "red",
+      "tagPrefix": "✘"
+    },
+    {
+      "key": "tags",
+      "label": "标签",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "blue"
+    },
+    {
+      "key": "verify_status",
+      "label": "核查状态",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "verify_date",
+      "label": "核查时间",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "verify_source",
+      "label": "信息来源",
+      "type": "tags",
+      "compare": true,
+      "tagVariant": "blue"
+    },
+    {
+      "key": "verify_url",
+      "label": "来源链接",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "change_log",
+      "label": "修改记录",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "updated_at",
+      "label": "最近更新",
+      "type": "text",
+      "compare": true
+    }
+  ],
   "guide": {
     "title": "按场景选购建议",
     "items": [
-      { "scene": "预算优先/首次入门", "advice": "3C增强版 / 4（¥1099）· LDS激光导航，无基站需手洗拖布" },
-      { "scene": "只想免手洗拖布", "advice": "5C（2024款）¥1799 · 自动集尘+洗拖布+烘干" },
-      { "scene": "全能基站体验", "advice": "M40 S / 5 Pro / 6 / 7C（¥2221-3059）" },
-      { "scene": "可接上下水安装", "advice": "6 Pro（2026款）/ 6 Max（2026款）· 需预留上下水" },
-      { "scene": "大吸力刚需", "advice": "6 Max 35000Pa > 6 Pro 30000Pa > 6 28000Pa" },
-      { "scene": "门槛/地毯越障", "advice": "6 Max 6cm 仿生机械足 / 6 与 6 Pro 4cm" }
+      {
+        "scene": "预算优先/首次入门",
+        "advice": "3C增强版 / 4（¥1099）· LDS激光导航，无基站需手洗拖布"
+      },
+      {
+        "scene": "只想免手洗拖布",
+        "advice": "5C（2024款）¥1799 · 自动集尘+洗拖布+烘干"
+      },
+      {
+        "scene": "全能基站体验",
+        "advice": "M40 S / 5 Pro / 6 / 7C（¥2221-3059）"
+      },
+      {
+        "scene": "可接上下水安装",
+        "advice": "6 Pro（2026款）/ 6 Max（2026款）· 需预留上下水"
+      },
+      {
+        "scene": "大吸力刚需",
+        "advice": "6 Max 35000Pa > 6 Pro 30000Pa > 6 28000Pa"
+      },
+      {
+        "scene": "门槛/地毯越障",
+        "advice": "6 Max 6cm 仿生机械足 / 6 与 6 Pro 4cm"
+      }
     ]
   }
 }

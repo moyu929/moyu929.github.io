@@ -3,54 +3,220 @@
   "name": "电动牙刷",
   "subtitle": "米家声波电动牙刷全型号横评",
   "imageBase": "images/toothbrush",
-
   "groupBy": {
     "key": "tier",
     "label": "档位",
-    "order": ["入门", "进阶", "旗舰"],
+    "order": [
+      "入门",
+      "进阶",
+      "旗舰"
+    ],
     "colors": {
       "入门": "#7f8c8d",
       "进阶": "#3498db",
       "旗舰": "#e67e22"
     }
   },
-
-  "searchFields": ["name", "model_code", "tags", "pros"],
-  "primaryMetric": "official_price",
-
-  "fields": [
-    { "key": "name", "label": "型号", "type": "text", "card": "title", "compare": true },
-    { "key": "model_code", "label": "产品型号", "type": "text", "card": "grid", "compare": true },
-    { "key": "tier", "label": "档位", "type": "text", "compare": true },
-
-    { "key": "official_price", "label": "官方价", "type": "number", "prefix": "¥", "card": "chip", "compare": true, "sortable": true, "stat": true },
-    { "key": "second_hand", "label": "二手价", "type": "text", "card": "chip", "compare": true },
-
-    { "key": "freq", "label": "震动频率", "unit": "次/分", "type": "number", "card": "grid", "compare": true, "sortable": true },
-    { "key": "modes", "label": "模式档位", "type": "text", "card": "grid", "compare": true },
-    { "key": "motor", "label": "马达", "type": "text", "card": "grid", "compare": true },
-    { "key": "battery_days", "label": "续航", "unit": "天", "type": "number", "card": "grid", "compare": true, "sortable": true },
-    { "key": "charge", "label": "充电方式", "type": "text", "card": "grid", "compare": true },
-    { "key": "waterproof", "label": "防水", "type": "text", "card": "grid", "compare": true },
-
-    { "key": "size", "label": "整机尺寸", "type": "text", "compare": true },
-
-    { "key": "year", "label": "上市", "unit": "年", "type": "number", "card": "grid", "compare": true, "sortable": true },
-
-    { "key": "pros", "label": "优点", "type": "tags", "card": "tag", "tagVariant": "green", "tagPrefix": "✔" },
-    { "key": "cons", "label": "缺点", "type": "tags", "card": "tag", "tagVariant": "red", "tagPrefix": "✘" },
-    { "key": "tags", "label": "标签", "type": "tags", "card": "tag", "tagVariant": "blue" }
+  "searchFields": [
+    "name",
+    "model_code",
+    "tags",
+    "pros"
   ],
-
+  "primaryMetric": "official_price",
+  "fields": [
+    {
+      "key": "name",
+      "label": "型号",
+      "type": "text",
+      "card": "title",
+      "compare": true
+    },
+    {
+      "key": "model_code",
+      "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "miot_model",
+      "label": "MIoT 型号",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "tier",
+      "label": "档位",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "official_price",
+      "label": "官方价",
+      "type": "number",
+      "prefix": "¥",
+      "card": "chip",
+      "compare": true,
+      "sortable": true,
+      "stat": true
+    },
+    {
+      "key": "second_hand",
+      "label": "二手价",
+      "type": "text",
+      "card": "chip",
+      "compare": true
+    },
+    {
+      "key": "freq",
+      "label": "震动频率",
+      "unit": "次/分",
+      "type": "number",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "modes",
+      "label": "模式档位",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "motor",
+      "label": "马达",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "battery_days",
+      "label": "续航",
+      "unit": "天",
+      "type": "number",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "charge",
+      "label": "充电方式",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "waterproof",
+      "label": "防水",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "size",
+      "label": "整机尺寸",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "year",
+      "label": "上市",
+      "unit": "年",
+      "type": "number",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "pros",
+      "label": "优点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "green",
+      "tagPrefix": "✔"
+    },
+    {
+      "key": "cons",
+      "label": "缺点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "red",
+      "tagPrefix": "✘"
+    },
+    {
+      "key": "tags",
+      "label": "标签",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "blue"
+    },
+    {
+      "key": "verify_status",
+      "label": "核查状态",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "verify_date",
+      "label": "核查时间",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "verify_source",
+      "label": "信息来源",
+      "type": "tags",
+      "compare": true,
+      "tagVariant": "blue"
+    },
+    {
+      "key": "verify_url",
+      "label": "来源链接",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "change_log",
+      "label": "修改记录",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "updated_at",
+      "label": "最近更新",
+      "type": "text",
+      "compare": true
+    }
+  ],
   "guide": {
     "title": "按场景选购建议",
     "items": [
-      { "scene": "预算 50 元内", "advice": "T100（约 16500 次/分，机身直充）" },
-      { "scene": "入门首选", "advice": "T200（31000 次/分 + Type-C 直充，约 30 天续航）" },
-      { "scene": "不想插线充电", "advice": "T300 / T500 / T700 均配无线感应充电底座" },
-      { "scene": "牙龈敏感", "advice": "T700 带 4 档模式（清洁/亮白/敏感/个性）+ 彩屏提示" },
-      { "scene": "差旅频繁", "advice": "Type-C 直充机型（T200/T302）比感应底座更省心" },
-      { "scene": "长期成本", "advice": "刷头按系列专用不通用，买前先看刷头单价与适配型号" }
+      {
+        "scene": "预算 50 元内",
+        "advice": "T100（约 16500 次/分，机身直充）"
+      },
+      {
+        "scene": "入门首选",
+        "advice": "T200（31000 次/分 + Type-C 直充，约 30 天续航）"
+      },
+      {
+        "scene": "不想插线充电",
+        "advice": "T300 / T500 / T700 均配无线感应充电底座"
+      },
+      {
+        "scene": "牙龈敏感",
+        "advice": "T700 带 4 档模式（清洁/亮白/敏感/个性）+ 彩屏提示"
+      },
+      {
+        "scene": "差旅频繁",
+        "advice": "Type-C 直充机型（T200/T302）比感应底座更省心"
+      },
+      {
+        "scene": "长期成本",
+        "advice": "刷头按系列专用不通用，买前先看刷头单价与适配型号"
+      }
     ]
   }
 }

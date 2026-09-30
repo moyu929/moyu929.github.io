@@ -3,54 +3,224 @@
   "name": "除湿机",
   "subtitle": "米家除湿机全型号横评",
   "imageBase": "images/dehumidifier",
-
   "groupBy": {
     "key": "tier",
     "label": "除湿量档位",
-    "order": ["大除湿量(40L+)", "中除湿量(20-30L)", "小除湿量(≤20L)"],
+    "order": [
+      "大除湿量(40L+)",
+      "中除湿量(20-30L)",
+      "小除湿量(≤20L)"
+    ],
     "colors": {
       "大除湿量(40L+)": "#9b59b6",
       "中除湿量(20-30L)": "#3498db",
       "小除湿量(≤20L)": "#7f8c8d"
     }
   },
-
-  "searchFields": ["name", "model_code", "tags", "pros"],
-  "primaryMetric": "official_price",
-
-  "fields": [
-    { "key": "name", "label": "型号", "type": "text", "card": "title", "compare": true },
-    { "key": "model_code", "label": "产品型号", "type": "text", "card": "grid", "compare": true },
-    { "key": "tier", "label": "除湿量档位", "type": "text", "compare": true },
-
-    { "key": "official_price", "label": "官方价", "type": "number", "prefix": "¥", "card": "chip", "compare": true, "sortable": true, "stat": true },
-    { "key": "second_hand", "label": "二手价", "type": "text", "card": "chip", "compare": true },
-
-    { "key": "dehumid", "label": "日除湿量", "unit": "L/天", "type": "number", "card": "grid", "compare": true, "sortable": true },
-    { "key": "tank", "label": "水箱容量", "unit": "L", "type": "number", "card": "grid", "compare": true, "sortable": true },
-    { "key": "power", "label": "额定功率", "unit": "W", "type": "number", "card": "grid", "compare": true, "sortable": true },
-    { "key": "noise", "label": "噪音", "unit": "dB", "type": "number", "card": "grid", "compare": true, "sortable": true },
-    { "key": "compressor", "label": "压缩机类型", "type": "text", "card": "grid", "compare": true },
-    { "key": "purify", "label": "净化/除菌", "type": "text", "card": "grid", "compare": true },
-
-    { "key": "size", "label": "整机尺寸", "type": "text", "compare": true },
-
-    { "key": "year", "label": "上市", "unit": "年", "type": "number", "card": "grid", "compare": true, "sortable": true },
-
-    { "key": "pros", "label": "优点", "type": "tags", "card": "tag", "tagVariant": "green", "tagPrefix": "✔" },
-    { "key": "cons", "label": "缺点", "type": "tags", "card": "tag", "tagVariant": "red", "tagPrefix": "✘" },
-    { "key": "tags", "label": "标签", "type": "tags", "card": "tag", "tagVariant": "blue" }
+  "searchFields": [
+    "name",
+    "model_code",
+    "tags",
+    "pros"
   ],
-
+  "primaryMetric": "official_price",
+  "fields": [
+    {
+      "key": "name",
+      "label": "型号",
+      "type": "text",
+      "card": "title",
+      "compare": true
+    },
+    {
+      "key": "model_code",
+      "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "miot_model",
+      "label": "MIoT 型号",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "tier",
+      "label": "除湿量档位",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "official_price",
+      "label": "官方价",
+      "type": "number",
+      "prefix": "¥",
+      "card": "chip",
+      "compare": true,
+      "sortable": true,
+      "stat": true
+    },
+    {
+      "key": "second_hand",
+      "label": "二手价",
+      "type": "text",
+      "card": "chip",
+      "compare": true
+    },
+    {
+      "key": "dehumid",
+      "label": "日除湿量",
+      "unit": "L/天",
+      "type": "number",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "tank",
+      "label": "水箱容量",
+      "unit": "L",
+      "type": "number",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "power",
+      "label": "额定功率",
+      "unit": "W",
+      "type": "number",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "noise",
+      "label": "噪音",
+      "unit": "dB",
+      "type": "number",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "compressor",
+      "label": "压缩机类型",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "purify",
+      "label": "净化/除菌",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "size",
+      "label": "整机尺寸",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "year",
+      "label": "上市",
+      "unit": "年",
+      "type": "number",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "pros",
+      "label": "优点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "green",
+      "tagPrefix": "✔"
+    },
+    {
+      "key": "cons",
+      "label": "缺点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "red",
+      "tagPrefix": "✘"
+    },
+    {
+      "key": "tags",
+      "label": "标签",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "blue"
+    },
+    {
+      "key": "verify_status",
+      "label": "核查状态",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "verify_date",
+      "label": "核查时间",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "verify_source",
+      "label": "信息来源",
+      "type": "tags",
+      "compare": true,
+      "tagVariant": "blue"
+    },
+    {
+      "key": "verify_url",
+      "label": "来源链接",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "change_log",
+      "label": "修改记录",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "updated_at",
+      "label": "最近更新",
+      "type": "text",
+      "compare": true
+    }
+  ],
   "guide": {
     "title": "按场景选购建议",
     "items": [
-      { "scene": "卧室/小房间", "advice": "13L 机型，噪声与体积更适合长期开机" },
-      { "scene": "客厅/两居室", "advice": "22L（¥1299，原价 ¥1499），可外接排水管免倒水" },
-      { "scene": "三居/回南天重灾区", "advice": "30L 变频机型，除湿量更足且支持压缩机变频" },
-      { "scene": "地下室/别墅", "advice": "50L 或除湿机 Max（变频除湿 + 空气净化一体）" },
-      { "scene": "在意噪音", "advice": "22L 主打五重降噪设计" },
-      { "scene": "不想天天倒水", "advice": "选支持外接排水管的型号（22L/30L 均支持）" }
+      {
+        "scene": "卧室/小房间",
+        "advice": "13L 机型，噪声与体积更适合长期开机"
+      },
+      {
+        "scene": "客厅/两居室",
+        "advice": "22L（¥1299，原价 ¥1499），可外接排水管免倒水"
+      },
+      {
+        "scene": "三居/回南天重灾区",
+        "advice": "30L 变频机型，除湿量更足且支持压缩机变频"
+      },
+      {
+        "scene": "地下室/别墅",
+        "advice": "50L 或除湿机 Max（变频除湿 + 空气净化一体）"
+      },
+      {
+        "scene": "在意噪音",
+        "advice": "22L 主打五重降噪设计"
+      },
+      {
+        "scene": "不想天天倒水",
+        "advice": "选支持外接排水管的型号（22L/30L 均支持）"
+      }
     ]
   }
 }

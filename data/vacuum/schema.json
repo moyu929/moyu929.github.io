@@ -3,56 +3,244 @@
   "name": "无线吸尘器",
   "subtitle": "米家无线吸尘器全型号横评",
   "imageBase": "images/vacuum",
-
   "groupBy": {
     "key": "tier",
     "label": "档位",
-    "order": ["入门", "主流", "旗舰"],
+    "order": [
+      "入门",
+      "主流",
+      "旗舰"
+    ],
     "colors": {
       "入门": "#7f8c8d",
       "主流": "#3498db",
       "旗舰": "#e67e22"
     }
   },
-
-  "searchFields": ["name", "model_code", "tags", "pros"],
-  "primaryMetric": "official_price",
-
-  "fields": [
-    { "key": "name", "label": "型号", "type": "text", "card": "title", "compare": true },
-    { "key": "model_code", "label": "产品型号", "type": "text", "card": "grid", "compare": true },
-    { "key": "tier", "label": "档位", "type": "text", "compare": true },
-
-    { "key": "official_price", "label": "官方价", "type": "number", "prefix": "¥", "card": "chip", "compare": true, "sortable": true, "stat": true },
-    { "key": "second_hand", "label": "二手价", "type": "text", "card": "chip", "compare": true },
-
-    { "key": "suction_aw", "label": "吸入功率", "unit": "AW", "type": "number", "card": "grid", "compare": true, "sortable": true },
-    { "key": "vacuum", "label": "真空度", "unit": "kPa", "type": "number", "card": "grid", "compare": true, "sortable": true },
-    { "key": "power", "label": "额定功率", "unit": "W", "type": "number", "card": "grid", "compare": true, "sortable": true },
-    { "key": "dust_cup", "label": "尘杯容量", "unit": "L", "type": "number", "card": "grid", "compare": true, "sortable": true },
-    { "key": "runtime", "label": "标准档续航", "unit": "min", "type": "number", "card": "grid", "compare": true, "sortable": true },
-    { "key": "noise", "label": "噪音", "unit": "dB(A)", "type": "number", "card": "grid", "compare": true, "sortable": true },
-    { "key": "weight", "label": "整机重量", "unit": "kg", "type": "number", "card": "grid", "compare": true, "sortable": true },
-
-    { "key": "filter", "label": "过滤", "type": "text", "card": "grid", "compare": true },
-    { "key": "size", "label": "整机尺寸", "type": "text", "compare": true },
-
-    { "key": "year", "label": "上市", "unit": "年", "type": "number", "card": "grid", "compare": true, "sortable": true },
-
-    { "key": "pros", "label": "优点", "type": "tags", "card": "tag", "tagVariant": "green", "tagPrefix": "✔" },
-    { "key": "cons", "label": "缺点", "type": "tags", "card": "tag", "tagVariant": "red", "tagPrefix": "✘" },
-    { "key": "tags", "label": "标签", "type": "tags", "card": "tag", "tagVariant": "blue" }
+  "searchFields": [
+    "name",
+    "model_code",
+    "tags",
+    "pros"
   ],
-
+  "primaryMetric": "official_price",
+  "fields": [
+    {
+      "key": "name",
+      "label": "型号",
+      "type": "text",
+      "card": "title",
+      "compare": true
+    },
+    {
+      "key": "model_code",
+      "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "miot_model",
+      "label": "MIoT 型号",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "tier",
+      "label": "档位",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "official_price",
+      "label": "官方价",
+      "type": "number",
+      "prefix": "¥",
+      "card": "chip",
+      "compare": true,
+      "sortable": true,
+      "stat": true
+    },
+    {
+      "key": "second_hand",
+      "label": "二手价",
+      "type": "text",
+      "card": "chip",
+      "compare": true
+    },
+    {
+      "key": "suction_aw",
+      "label": "吸入功率",
+      "unit": "AW",
+      "type": "number",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "vacuum",
+      "label": "真空度",
+      "unit": "kPa",
+      "type": "number",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "power",
+      "label": "额定功率",
+      "unit": "W",
+      "type": "number",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "dust_cup",
+      "label": "尘杯容量",
+      "unit": "L",
+      "type": "number",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "runtime",
+      "label": "标准档续航",
+      "unit": "min",
+      "type": "number",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "noise",
+      "label": "噪音",
+      "unit": "dB(A)",
+      "type": "number",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "weight",
+      "label": "整机重量",
+      "unit": "kg",
+      "type": "number",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "filter",
+      "label": "过滤",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "size",
+      "label": "整机尺寸",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "year",
+      "label": "上市",
+      "unit": "年",
+      "type": "number",
+      "card": "grid",
+      "compare": true,
+      "sortable": true
+    },
+    {
+      "key": "pros",
+      "label": "优点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "green",
+      "tagPrefix": "✔"
+    },
+    {
+      "key": "cons",
+      "label": "缺点",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "red",
+      "tagPrefix": "✘"
+    },
+    {
+      "key": "tags",
+      "label": "标签",
+      "type": "tags",
+      "card": "tag",
+      "tagVariant": "blue"
+    },
+    {
+      "key": "verify_status",
+      "label": "核查状态",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "verify_date",
+      "label": "核查时间",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "verify_source",
+      "label": "信息来源",
+      "type": "tags",
+      "compare": true,
+      "tagVariant": "blue"
+    },
+    {
+      "key": "verify_url",
+      "label": "来源链接",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "change_log",
+      "label": "修改记录",
+      "type": "text",
+      "compare": true
+    },
+    {
+      "key": "updated_at",
+      "label": "最近更新",
+      "type": "text",
+      "compare": true
+    }
+  ],
   "guide": {
     "title": "按场景选购建议",
     "items": [
-      { "scene": "大吸力旗舰", "advice": "米家无线吸尘器 2 Pro（190AW）> K10 Pro / K10（150AW）" },
-      { "scene": "养宠/长发家庭", "advice": "K10 Pro 配防缠绕专利地刷，减少毛发缠绕" },
-      { "scene": "大户型长续航", "advice": "G10 标准档 65 分钟 / 顽固档 30 分钟" },
-      { "scene": "预算 700 元内", "advice": "2 Slim（首发 ¥699）或 Lite（¥499）" },
-      { "scene": "怕吵", "advice": "2 Pro 标称 82dB(A)，几款机型噪音差距不大，优先看吸力" },
-      { "scene": "除螨需求", "advice": "K10 / K10 Pro / Lite 均标配电动除螨刷" }
+      {
+        "scene": "大吸力旗舰",
+        "advice": "米家无线吸尘器 2 Pro（190AW）> K10 Pro / K10（150AW）"
+      },
+      {
+        "scene": "养宠/长发家庭",
+        "advice": "K10 Pro 配防缠绕专利地刷，减少毛发缠绕"
+      },
+      {
+        "scene": "大户型长续航",
+        "advice": "G10 标准档 65 分钟 / 顽固档 30 分钟"
+      },
+      {
+        "scene": "预算 700 元内",
+        "advice": "2 Slim（首发 ¥699）或 Lite（¥499）"
+      },
+      {
+        "scene": "怕吵",
+        "advice": "2 Pro 标称 82dB(A)，几款机型噪音差距不大，优先看吸力"
+      },
+      {
+        "scene": "除螨需求",
+        "advice": "K10 / K10 Pro / Lite 均标配电动除螨刷"
+      }
     ]
   }
 }

@@ -1,0 +1,145 @@
+{
+  "_说明": "逐条溯源记录：本文件不写入数据，只声明某条产品记录的数据来自哪些来源、核验于何时。scripts 侧的审核标注脚本会读取它来生成 verify_status / verify_source / verify_url / change_log。补全后请同时保留原始链接。",
+  "_注意": "标注「港台版页面」的条目，其来源是小米香港/台湾官网——按 SKILL.md 只收录大陆型号，港台页仅作参数旁证，需大陆官方页二次确认。",
+
+  "heater/ht_kick2": {
+    "sources": ["太平洋电脑网", "小米社区"],
+    "url": "https://product.pconline.com.cn/heater/mijia/1934527_detail.html",
+    "note": "型号 TJXDNQ08ZM、2200W、11-15㎡、IPX4、2档、4.2kg"
+  },
+  "blender/bl_3": {
+    "sources": ["IT之家", "新浪"],
+    "url": "https://finance.sina.cn/tech/2026-09-08/detail-inirapyy9203736.d.html",
+    "note": "1.5L、35000rpm、13重降噪(45/51dB)、IPX9 可拆刀座"
+  },
+  "blender/bl_s2": {
+    "sources": ["太平洋电脑网"],
+    "url": "https://product.pconline.com.cn/juicer/mi/2400339_detail.html",
+    "note": "1.5L、搅拌 500W、加热 900W、13 重降噪 41dB"
+  },
+  "blender/bl_p1": {
+    "sources": ["第三方资料"],
+    "url": "https://www.gizmochina.com/",
+    "note": "35000rpm、13 重降噪、699 元（海外站，参数与大陆一致）"
+  },
+  "hair-dryer/hd_h501_std": {
+    "sources": ["IT之家", "百度百科"],
+    "url": "https://www.ithome.com/0/717/341.htm",
+    "note": "11 万转、62m/s、1600W"
+  },
+  "hair-dryer/hd_h501": {
+    "sources": ["中关村在线", "百度百科"],
+    "url": "https://detail.zol.com.cn/electric_hair_dryer/index1629064.shtml",
+    "note": "11 万转 CNC 电机、62-65m/s、338g"
+  },
+  "shaver/sh_s700": {
+    "sources": ["小米商城", "中关村在线"],
+    "url": "https://www.mi.com/buy/detail?product_id=13414",
+    "note": "全向浮动 3 刀头、陶瓷刀片、3500 转/分"
+  },
+  "shaver/sh_pro": {
+    "sources": ["什么值得买"],
+    "url": "https://post.smzdm.com/p/avvzk3w4/",
+    "note": "IPX8 全身防水"
+  },
+  "massage-gun/mg_multi3": {
+    "sources": ["太平洋电脑网"],
+    "url": "http://product.pconline.com.cn/massage/mijia/2244019_detail.html",
+    "note": "型号 MJJMQO5YM、2450mAh、145×64×200mm"
+  },
+  "massage-gun/mg_3mini": {
+    "sources": ["百度百科"],
+    "url": "https://baike.baidu.com/item/米家筋膜枪3迷你版/65390245",
+    "note": "推力 12kg、按摩深度 6mm、1900mAh、续航 30 天、40dB"
+  },
+  "massage-gun/mg_long3": {
+    "sources": ["百度百科"],
+    "url": "https://baike.baidu.com/item/米家筋膜枪3迷你版/65390245",
+    "note": "与 3 系列同代，定频/变频双模式"
+  },
+  "foot-spa/fs_air2_std": {
+    "sources": ["小米官网（米家接入页）"],
+    "url": "https://home.mi.com/webapp/content/baike/product/index.html?model=xiaomi.foot_bath.zyq2",
+    "note": "xiaomi.foot_bath.zyq2：气囊立体按摩、管路 UV 杀菌、DPS 水安全加热"
+  },
+  "foot-spa/fs_air2": {
+    "sources": ["小米官网（米家接入页）", "百度百科"],
+    "url": "https://home.miot-spec.com/p/xiaomi.foot_bath.qn2pro",
+    "note": "xiaomi.foot_bath.qn2pro：一键电动折叠收纳"
+  },
+  "camera/cam_4_std": {
+    "sources": ["百度百科", "中关村在线"],
+    "url": "https://baike.baidu.com/item/小米智能摄像机4/65590140",
+    "note": "MJSXJ27CM、4K 800 万、1Tops AI、10 米无红曝夜视"
+  },
+  "camera/cam_4": {
+    "sources": ["第三方资料"],
+    "url": "https://baijiahao.baidu.com/s?id=1863414194462339516",
+    "note": "3.5K 600 万像素、超微光全彩"
+  },
+  "camera/cam_out4_std": {
+    "sources": ["太平洋电脑网"],
+    "url": "http://product.pconline.com.cn/pccamera/miui/2862891_detail.html",
+    "note": "室外机型防水防尘（同系列 4G 双摄版 MJSXJ13HL 参数可对照）"
+  },
+  "dryer-rack/dr_3": {
+    "sources": ["百度百科", "太平洋电脑网"],
+    "url": "https://baike.baidu.com/item/米家智能晾衣机3/67722298",
+    "note": "MJLYJ5W2、承重 35kg、1345×450×98mm、86W、照明 36W"
+  },
+  "dryer-rack/dr_invisible": {
+    "sources": ["IT之家", "太平洋科技"],
+    "url": "https://www.ithome.com/0/881/497.htm",
+    "note": "双杆 2.4 米、72W 线性灯、分体快拆结构"
+  },
+  "induction-cooker/ic_2": {
+    "sources": ["新浪", "搜狐"],
+    "url": "https://k.sina.com.cn/article_1823348853_6cae187502000woy8.html",
+    "note": "2100W、99 档火力、OLED 旋钮、NFC 智能食谱"
+  },
+  "water-heater/wh_gas2": {
+    "sources": ["百度百科", "IT之家"],
+    "url": "https://baike.baidu.com/item/米家智能燃气热水器 2 恒温 1 级能效 16L/67714104",
+    "note": "16L、1 级能效、无级变频水伺服、最低负载 45dB(A)"
+  },
+  "water-heater/wh_gas_s10": {
+    "sources": ["太平洋电脑网"],
+    "url": "http://product.pconline.com.cn/gas_water/mijia/2886611.html",
+    "note": "型号 JSQ30-MJ05、16L、二级能效、参考价 ¥1499"
+  },
+  "water-heater/wh_gas_p10": {
+    "sources": ["太平洋电脑网"],
+    "url": "http://product.pconline.com.cn/gas_water/mijia/2886591_detail.html",
+    "note": "净垢双循环、16L、参考价 ¥3299"
+  },
+  "garment-steamer/gs_handheld_old": {
+    "sources": ["小米官网（港台版页面）"],
+    "url": "https://buy.mi.com/tw/item/3223708546/",
+    "note": "770g、可折叠、压铸铝面板+陶瓷珐琅涂层 —— 港台版页面，需大陆页二次确认"
+  },
+  "coffee-machine/cf_capsule_s1": {
+    "sources": ["百度百科", "太平洋电脑网"],
+    "url": "https://baike.baidu.com/item/米家胶囊咖啡机S1/65431806",
+    "note": "CMC001、20Bar ULKA、1250W、650mL、25 秒预热"
+  },
+  "water-dispenser/wd_s1": {
+    "sources": ["小米商城", "第三方资料"],
+    "url": "https://www.mi.com/shop/buy/detail?product_id=19507",
+    "note": "3L 水箱、四段水温、3 秒出热水"
+  },
+  "water-dispenser/wd_cold_hot": {
+    "sources": ["小米官网（港台版页面）"],
+    "url": "https://www.mi.com/hk/product/xiaomi-smart-water-dispenser-hot-and-cold/",
+    "note": "3L 水箱、冷热双出水 —— 港台版页面，需大陆页二次确认"
+  },
+  "body-scale/bs_s400": {
+    "sources": ["百度健康", "知乎"],
+    "url": "https://zhuanlan.zhihu.com/p/689411641",
+    "note": "四电极 BIA、25 项数据、0.1-150kg"
+  },
+  "body-scale/bs_s800": {
+    "sources": ["第三方资料"],
+    "url": "https://aiqicha.baidu.com/details/ugknowledge?id=17ee19545748d7a56d9ab9434d155797",
+    "note": "八电极分段测量、40 项身体数据"
+  }
+}
