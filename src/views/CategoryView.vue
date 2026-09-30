@@ -76,6 +76,25 @@ const {
   toggleSort,
 } = useProductFilter(data)
 
+/**
+ * 首屏优先加载的图片：按当前展示顺序取前 6 张**有图的**产品。
+ * 两个坑：
+ *  1. 不能直接用卡片的 index 判断——分组视图下每组都从 0 重新计数，
+ *     会让每组的头几张全被判成「首屏」，高优先级请求互相争抢反而拖慢真正的首屏；
+ *  2. 要跳过没有产品图的条目（占位图不消耗图片带宽），否则前若干个位置可能全被
+ *     无图产品占掉，导致首屏一张图都没被优先加载。
+ */
+const FIRST_SCREEN_IMAGES = 6
+const eagerIds = computed(() => {
+  const ids = new Set<string>()
+  const list = isGrouped.value ? groupedList.value.flatMap((g) => g.products) : filtered.value
+  for (const p of list) {
+    if (ids.size >= FIRST_SCREEN_IMAGES) break
+    if (p.img) ids.add(p.id)
+  }
+  return ids
+})
+
 // 排序/分组状态变化导致分组容器被重建时也要重设监听
 // 否则从平铺切回分组视图后，section.reveal 不会被观察、未滚动到的组保持 opacity:0
 watch(isGrouped, () => {
@@ -242,6 +261,7 @@ watch(data, () => {
                 :show-group-badge="false"
                 :selected="isSelected(p.id)"
                 :index="idx"
+                :eager="eagerIds.has(p.id)"
                 @toggle-compare="onToggleCompare"
               />
             </div>
@@ -257,6 +277,7 @@ watch(data, () => {
             :show-group-badge="true"
             :selected="isSelected(p.id)"
             :index="idx"
+            :eager="eagerIds.has(p.id)"
             @toggle-compare="onToggleCompare"
           />
         </div>

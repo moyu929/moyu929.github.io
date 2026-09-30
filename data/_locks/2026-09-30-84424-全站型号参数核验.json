@@ -1,0 +1,1731 @@
+{
+ "id": "2026-09-30-84424-全站型号参数核验",
+ "label": "全站型号参数核验",
+ "createdBy": "codex",
+ "createdAt": "2026-09-30T20:38:04.424Z",
+ "status": "frozen",
+ "releasedAt": null,
+ "releaseNote": null,
+ "fieldLevel": false,
+ "scope": {
+  "categories": [
+   "air-conditioner",
+   "air-fryer",
+   "air-purifier",
+   "bath-heater",
+   "blender",
+   "body-scale",
+   "camera",
+   "coffee-machine",
+   "dehumidifier",
+   "dishwasher",
+   "dryer-rack",
+   "fan",
+   "floor-washer",
+   "foot-spa",
+   "garment-steamer",
+   "hair-clipper",
+   "hair-dryer",
+   "heater",
+   "humidifier",
+   "induction-cooker",
+   "kettle",
+   "massage-gun",
+   "microwave",
+   "mite-remover",
+   "pressure-cooker",
+   "projector",
+   "refrigerator",
+   "rice-cooker",
+   "robot-vacuum",
+   "shaver",
+   "smart-lock",
+   "speaker",
+   "steamer",
+   "toothbrush",
+   "tv",
+   "vacuum",
+   "washing-machine",
+   "water-dispenser",
+   "water-heater",
+   "water-purifier"
+  ],
+  "keys": [
+   "air-purifier/ultra_enhanced",
+   "air-purifier/ultra_std",
+   "air-purifier/6_max",
+   "air-purifier/6_pro",
+   "air-purifier/5_pro",
+   "air-purifier/quanxiao_std",
+   "air-purifier/4_pro_h",
+   "air-purifier/6",
+   "air-purifier/5s",
+   "air-purifier/pet",
+   "air-purifier/4_pro",
+   "air-purifier/5",
+   "air-purifier/4",
+   "air-purifier/4_lite",
+   "air-purifier/f1",
+   "air-purifier/pro_tower",
+   "air-purifier/2s",
+   "air-purifier/3",
+   "air-purifier/max",
+   "air-purifier/max_enhanced",
+   "air-purifier/x",
+   "air-purifier/6_dual",
+   "air-purifier/pro_h",
+   "air-purifier/4_max",
+   "air-purifier/circulation",
+   "air-purifier/gen1",
+   "air-purifier/gen2",
+   "air-conditioner/jso_pro_1p",
+   "air-conditioner/jso_pro_15p",
+   "air-conditioner/jso_pro_2p",
+   "air-conditioner/jso_15p",
+   "air-conditioner/fresh_15p",
+   "air-conditioner/fresh_zunxiang_15p",
+   "air-conditioner/jso_pro_cab_3p",
+   "air-conditioner/jso_cab_3p",
+   "air-conditioner/fresh_pro_cab_3p",
+   "air-conditioner/fresh_cab_3p",
+   "air-conditioner/duct_3p",
+   "air-conditioner/duct_4p",
+   "air-conditioner/duct_pro_15p",
+   "air-conditioner/duct_pro_3p",
+   "air-conditioner/jso_15p_copper",
+   "air-conditioner/acsens_15p",
+   "air-conditioner/acsens_std_15p",
+   "air-conditioner/acsens_duct_4p",
+   "air-conditioner/acsens_cab_3p",
+   "air-conditioner/roufeng_15p",
+   "air-conditioner/health_15p",
+   "humidifier/hm_fogless_1500",
+   "humidifier/hm_fogless_1200",
+   "humidifier/hm_pure_pro",
+   "humidifier/hm_fogless_600",
+   "humidifier/hm_pure_2lite",
+   "humidifier/hm_fogless_400",
+   "humidifier/hm_fogless_pro3",
+   "humidifier/hm_ultra_3",
+   "humidifier/hm_ultra_ster2",
+   "humidifier/hm_ultra_2",
+   "humidifier/hm_purify3_max",
+   "humidifier/hm_fogless_800",
+   "humidifier/hm_ster_s",
+   "dehumidifier/dh_max",
+   "dehumidifier/dh_50",
+   "dehumidifier/dh_30",
+   "dehumidifier/dh_22",
+   "dehumidifier/dh_13",
+   "dehumidifier/dh_max_vfd",
+   "fan/fan_batt",
+   "fan/fan_bplds08dm",
+   "fan/fan_2",
+   "fan/fan_bplds07dm",
+   "fan/fan_1x",
+   "fan/fan_origin",
+   "fan/fan_bplds04dm",
+   "fan/fan_jllds01dm",
+   "fan/fan_desktop",
+   "fan/fan_season",
+   "fan/fan_handheld",
+   "fan/fan_1x_up",
+   "fan/fan_circ_pro",
+   "fan/fan_circ_desk",
+   "fan/fan_tower2",
+   "fan/fan_evap",
+   "fan/fan_pro_floor",
+   "fan/fan_circ_floor",
+   "fan/fan_circ",
+   "fan/fan_batt_floor",
+   "fan/fan_lamp36",
+   "heater/ht_kick2",
+   "heater/ht_kick_flame",
+   "heater/ht_kick_old",
+   "heater/ht_smart_graphene",
+   "heater/ht_fan_c",
+   "heater/ht_fan_g",
+   "heater/ht_fan_old",
+   "heater/ht_fan_desk",
+   "heater/ht_oil",
+   "heater/ht_blanket",
+   "refrigerator/frig_560_french",
+   "refrigerator/frig_508_cross",
+   "refrigerator/frig_508_ultra",
+   "refrigerator/frig_606_cross",
+   "refrigerator/frig_603_cross",
+   "refrigerator/frig_636_side",
+   "refrigerator/frig_186_two",
+   "refrigerator/frig_210_three",
+   "refrigerator/frig_pro_508",
+   "refrigerator/frig_271_three",
+   "refrigerator/frig_256_three",
+   "refrigerator/frig_425_cross",
+   "refrigerator/frig_pro_600",
+   "refrigerator/frig_pro600_cross",
+   "refrigerator/frig_561_side",
+   "dishwasher/dw_emb_20",
+   "dishwasher/dw_p1_16",
+   "dishwasher/dw_s2_13",
+   "dishwasher/dw_s1_15",
+   "dishwasher/dw_table_4",
+   "dishwasher/dw_table_5s2",
+   "dishwasher/dw_table_6s10",
+   "dishwasher/dw_p2_16",
+   "dishwasher/dw_p20_18",
+   "dishwasher/dw_s20_16",
+   "dishwasher/dw_pro_18",
+   "dishwasher/dw_n1_16",
+   "dishwasher/dw_s10_16",
+   "microwave/mw_oven_23",
+   "microwave/mw_oven_23l",
+   "microwave/mw_smart_20",
+   "microwave/mw_20",
+   "microwave/mw_p1",
+   "microwave/mw_bake_1",
+   "microwave/mw_steam_bake",
+   "microwave/mw_steam_bake_p1",
+   "rice-cooker/rc_p1_4l",
+   "rice-cooker/rc_p1_3l",
+   "rice-cooker/rc_ih_4l",
+   "rice-cooker/rc_n1_4l",
+   "rice-cooker/rc_n1_3l",
+   "rice-cooker/rc_c1_3l",
+   "rice-cooker/rc_ih2",
+   "rice-cooker/rc_weiya",
+   "rice-cooker/rc_bianya_4l",
+   "rice-cooker/rc_s1_3l",
+   "rice-cooker/rc_fast_5l",
+   "rice-cooker/rc_fast_34l",
+   "pressure-cooker/pc_5l",
+   "pressure-cooker/pc_2pro",
+   "pressure-cooker/pc_25l",
+   "steamer/st_s1_13l",
+   "steamer/st_n1",
+   "steamer/st_smart_12l",
+   "air-fryer/af_pro_steam_65",
+   "air-fryer/af_55_visible",
+   "air-fryer/af_n1_5l",
+   "air-fryer/af_pro_4l",
+   "air-fryer/af_maf01",
+   "air-fryer/af_p1_65",
+   "air-fryer/af_s1_6l",
+   "induction-cooker/ic_slim",
+   "induction-cooker/ic_2",
+   "induction-cooker/ic_n1",
+   "induction-cooker/ic_youth",
+   "blender/bl_p1",
+   "blender/bl_s2",
+   "blender/bl_s1",
+   "blender/bl_3",
+   "blender/bl_n1",
+   "blender/bl_soy",
+   "blender/bl_cup2",
+   "coffee-machine/cf_espresso_pro",
+   "coffee-machine/cf_capsule_s1",
+   "coffee-machine/cf_capsule_g100",
+   "coffee-machine/cf_capsule_n1",
+   "coffee-machine/cf_portable",
+   "kettle/kt_ysh_p1",
+   "kettle/kt_ysh_ti",
+   "kettle/kt_s1",
+   "kettle/kt_ysh2",
+   "kettle/kt_ysh_n1",
+   "kettle/kt_cook_mjysh",
+   "kettle/kt_n1",
+   "kettle/kt_3",
+   "kettle/kt_temp_3",
+   "kettle/kt_temp_3pro",
+   "kettle/kt_2",
+   "kettle/kt_c1",
+   "kettle/kt_temp_2",
+   "kettle/kt_temp_2pro",
+   "kettle/kt_ysh_s2",
+   "kettle/kt_bottle_5l",
+   "kettle/kt_bottle_pro",
+   "washing-machine/wash_dry_10",
+   "washing-machine/wash_dry_102s",
+   "washing-machine/wash_dry_108",
+   "washing-machine/wash_set_pro",
+   "washing-machine/wave_zunxiang",
+   "washing-machine/wave_pro_229",
+   "washing-machine/wave_104",
+   "washing-machine/wash_clean",
+   "washing-machine/wash_zone_pro14",
+   "washing-machine/wash_zone_pro14_dry",
+   "washing-machine/wash_electro_12d",
+   "washing-machine/wash_electro_12",
+   "washing-machine/wash_electro_13d",
+   "washing-machine/wash_mini_dry5",
+   "washing-machine/wash_mini_1kg",
+   "washing-machine/wash_mini_12",
+   "washing-machine/wash_3drum_11",
+   "washing-machine/wash_3set_5_12a",
+   "washing-machine/wash_3set_5_12b",
+   "washing-machine/wash_3set_5_13",
+   "washing-machine/wash_care_pro13",
+   "washing-machine/wash_set_3zone",
+   "washing-machine/wash_set_3zone_mini",
+   "washing-machine/wash_set_electro_10",
+   "washing-machine/wash_set_electro_12",
+   "washing-machine/wash_mini_3kg",
+   "washing-machine/wash_wave_8kg",
+   "washing-machine/wash_drum_8kg",
+   "dryer-rack/dr_3",
+   "dryer-rack/dr_2pro",
+   "dryer-rack/dr_pro",
+   "dryer-rack/dr_3c",
+   "dryer-rack/dr_dual2",
+   "dryer-rack/dr_invisible",
+   "garment-steamer/gs_handheld2",
+   "garment-steamer/gs_boost",
+   "garment-steamer/gs_handheld_old",
+   "garment-steamer/gs_2",
+   "robot-vacuum/rv_3c",
+   "robot-vacuum/rv_4",
+   "robot-vacuum/rv_5c",
+   "robot-vacuum/rv_m40s",
+   "robot-vacuum/rv_5pro",
+   "robot-vacuum/rv_6",
+   "robot-vacuum/rv_6pro",
+   "robot-vacuum/rv_6max",
+   "robot-vacuum/rv_7c",
+   "robot-vacuum/rv_5_tank",
+   "vacuum/vc_k10_pro",
+   "vacuum/vc_2pro",
+   "vacuum/vc_k10",
+   "vacuum/vc_g10",
+   "vacuum/vc_g20",
+   "vacuum/vc_2slim",
+   "vacuum/vc_lite",
+   "vacuum/vc_4",
+   "vacuum/vc_4pro",
+   "vacuum/vc_4max",
+   "vacuum/vc_4c",
+   "vacuum/vc_3c",
+   "vacuum/vc_3_dock",
+   "vacuum/vc_2lite",
+   "vacuum/vc_light",
+   "vacuum/vc_handheld",
+   "vacuum/vc_wired",
+   "vacuum/vc_car",
+   "mite-remover/mr_3pro",
+   "mite-remover/mr_2pro",
+   "mite-remover/mr_pro",
+   "mite-remover/mr_2",
+   "floor-washer/fw_1",
+   "floor-washer/fw_hightemp",
+   "floor-washer/mop_dual",
+   "floor-washer/fw_2",
+   "floor-washer/fw_2lite",
+   "floor-washer/fw_2c",
+   "floor-washer/fw_3pro",
+   "floor-washer/fw_3max",
+   "floor-washer/fw_4",
+   "floor-washer/fw_4c",
+   "floor-washer/fw_4pro",
+   "floor-washer/fw_4max",
+   "floor-washer/fw_5",
+   "floor-washer/fw_5c",
+   "floor-washer/fw_5pro",
+   "floor-washer/fw_5pro_foam",
+   "floor-washer/fw_5max",
+   "water-heater/wh_gas2",
+   "water-heater/wh_gas_pro",
+   "water-heater/wh_gas_s10",
+   "water-heater/wh_gas_p10",
+   "water-heater/wh_ele_pro",
+   "water-heater/wh_ele_2",
+   "water-heater/wh_ele_n1",
+   "water-heater/wh_ele_c",
+   "water-heater/wh_ele_s1",
+   "water-heater/wh_ele_p1",
+   "bath-heater/bath_base",
+   "bath-heater/bath_pro",
+   "bath-heater/bath_s1",
+   "bath-heater/bath_n1",
+   "bath-heater/bath_p1",
+   "bath-heater/bath_p1_human",
+   "bath-heater/bath_g10",
+   "bath-heater/bath_g20",
+   "bath-heater/bath_2",
+   "bath-heater/bath_2c",
+   "bath-heater/bath_dual",
+   "bath-heater/bath_vf",
+   "water-dispenser/wd_pro",
+   "water-dispenser/wd_max",
+   "water-dispenser/wd_s1",
+   "water-dispenser/wd_cold_hot",
+   "water-dispenser/wd_portable",
+   "water-dispenser/wd_pipe",
+   "water-dispenser/wd_pipe_ice",
+   "water-dispenser/wd_desk_nfc",
+   "hair-dryer/hd_h501",
+   "hair-dryer/hd_h501_std",
+   "hair-dryer/hd_pro",
+   "hair-dryer/hd_water_ion",
+   "hair-dryer/hd_water_ion_std",
+   "hair-dryer/hd_h701",
+   "hair-dryer/hd_h301",
+   "hair-dryer/hd_h300",
+   "hair-dryer/hd_h101",
+   "shaver/sh_s700",
+   "shaver/sh_pro",
+   "shaver/sh_portable_pro",
+   "shaver/sh_s600",
+   "shaver/sh_s302",
+   "shaver/sh_s301",
+   "shaver/sh_s200",
+   "shaver/sh_s101",
+   "shaver/sh_s100",
+   "toothbrush/tb_pro_multi",
+   "toothbrush/tb_multi",
+   "toothbrush/tb_t700",
+   "toothbrush/tb_servo_pro",
+   "toothbrush/tb_t302",
+   "toothbrush/tb_origin",
+   "toothbrush/tb_t200c",
+   "toothbrush/tb_t100",
+   "toothbrush/tb_sweep_pro",
+   "toothbrush/tb_sweep",
+   "toothbrush/tb_t501",
+   "toothbrush/tb_t302_cushion",
+   "hair-clipper/hc_2",
+   "hair-clipper/hc_2_set",
+   "hair-clipper/hc_kids",
+   "foot-spa/fs_air2",
+   "foot-spa/fs_air2_std",
+   "foot-spa/fs_ster2",
+   "foot-spa/fs_ster_smart",
+   "foot-spa/fs_ster_old",
+   "massage-gun/mg_multi3",
+   "massage-gun/mg_3mini",
+   "massage-gun/mg_h3mini",
+   "massage-gun/mg_h3",
+   "massage-gun/mg_long3",
+   "massage-gun/mg_pro",
+   "body-scale/bs_s800",
+   "body-scale/bs_s400pro",
+   "body-scale/bs_s400",
+   "body-scale/bs_s200",
+   "camera/cam_4",
+   "camera/cam_4_std",
+   "camera/cam_call2",
+   "camera/cam_call",
+   "camera/cam_baby",
+   "camera/cam_out4",
+   "camera/cam_out4_std",
+   "water-purifier/wp2pro_1600",
+   "water-purifier/wp2pro_1200",
+   "water-purifier/wp_instant_1600",
+   "water-purifier/wp2_1600",
+   "water-purifier/wp2_1200",
+   "water-purifier/wp2_boil",
+   "water-purifier/wp_dual_core",
+   "water-purifier/wp_rich2",
+   "water-purifier/wp_n1_800",
+   "water-purifier/wp_faucet2",
+   "water-purifier/wp_prefilter",
+   "water-purifier/wp_prefilter_pro",
+   "water-purifier/wp_pro_1600",
+   "water-purifier/wp_pro_1200",
+   "water-purifier/wp_s1_1600",
+   "water-purifier/wp_s1_1000",
+   "water-purifier/wp_1000g",
+   "smart-lock/lock_m30pro",
+   "smart-lock/lock_m20pro",
+   "smart-lock/lock_pro",
+   "smart-lock/lock_e20_wifi",
+   "smart-lock/lock_e2",
+   "smart-lock/lock_5c",
+   "smart-lock/lock_5max",
+   "smart-lock/lock_2_cateye",
+   "smart-lock/lock_4pro",
+   "smart-lock/lock_m40pro",
+   "smart-lock/lock_m40",
+   "smart-lock/lock_e30",
+   "smart-lock/lock_g300",
+   "smart-lock/lock_g500",
+   "smart-lock/lock_2_vein",
+   "smart-lock/lock_2pro",
+   "smart-lock/lock_m20_cateye",
+   "tv/tv_spromini",
+   "tv/tv_smini",
+   "tv/tv_100",
+   "tv/tv_spromini_2027",
+   "tv/tv_spromini_2025",
+   "tv/tv_smini_2025",
+   "projector/pj_2pro",
+   "projector/pj_2",
+   "projector/pj_origin",
+   "projector/pj_youth2",
+   "projector/pj_youth",
+   "projector/pj_2s",
+   "projector/pj_laser2",
+   "projector/pj_laser3",
+   "projector/pj_lasertv_1s",
+   "speaker/sp_family10",
+   "speaker/sp_sound",
+   "speaker/sp_ai",
+   "speaker/sp_play_enh",
+   "speaker/sp_play"
+  ]
+ },
+ "hashes": {
+  "air-purifier/ultra_enhanced": {
+   "_": "83f721cd9232"
+  },
+  "air-purifier/ultra_std": {
+   "_": "3cd0920e08b2"
+  },
+  "air-purifier/6_max": {
+   "_": "81b4445ce3cb"
+  },
+  "air-purifier/6_pro": {
+   "_": "4041b9579358"
+  },
+  "air-purifier/5_pro": {
+   "_": "4fc7921262a3"
+  },
+  "air-purifier/quanxiao_std": {
+   "_": "28ce38e6f1e7"
+  },
+  "air-purifier/4_pro_h": {
+   "_": "76f6ebbddc35"
+  },
+  "air-purifier/6": {
+   "_": "28caea7b2ecc"
+  },
+  "air-purifier/5s": {
+   "_": "56ab9e95c868"
+  },
+  "air-purifier/pet": {
+   "_": "b606aeb017c9"
+  },
+  "air-purifier/4_pro": {
+   "_": "edd1be72f6cd"
+  },
+  "air-purifier/5": {
+   "_": "46b391af4888"
+  },
+  "air-purifier/4": {
+   "_": "36178d0aa474"
+  },
+  "air-purifier/4_lite": {
+   "_": "a84e8c7c8cb3"
+  },
+  "air-purifier/f1": {
+   "_": "5cd8ae59e22b"
+  },
+  "air-purifier/pro_tower": {
+   "_": "ad0f21bb4f96"
+  },
+  "air-purifier/2s": {
+   "_": "e206b118d0a2"
+  },
+  "air-purifier/3": {
+   "_": "cb77e9e2d678"
+  },
+  "air-purifier/max": {
+   "_": "a30e978d5b96"
+  },
+  "air-purifier/max_enhanced": {
+   "_": "93a8147e2705"
+  },
+  "air-purifier/x": {
+   "_": "3efecca037a2"
+  },
+  "air-purifier/6_dual": {
+   "_": "bf8674994d96"
+  },
+  "air-purifier/pro_h": {
+   "_": "969b5becd85a"
+  },
+  "air-purifier/4_max": {
+   "_": "6bb871383a64"
+  },
+  "air-purifier/circulation": {
+   "_": "15a6efb43fc3"
+  },
+  "air-purifier/gen1": {
+   "_": "bf778e89d843"
+  },
+  "air-purifier/gen2": {
+   "_": "dce7ce9661ab"
+  },
+  "air-conditioner/jso_pro_1p": {
+   "_": "083332c48e6f"
+  },
+  "air-conditioner/jso_pro_15p": {
+   "_": "689c795fe93e"
+  },
+  "air-conditioner/jso_pro_2p": {
+   "_": "54a9b44c2285"
+  },
+  "air-conditioner/jso_15p": {
+   "_": "2627df4ec749"
+  },
+  "air-conditioner/fresh_15p": {
+   "_": "7ebd8d3b575e"
+  },
+  "air-conditioner/fresh_zunxiang_15p": {
+   "_": "a7cbddc5fbb2"
+  },
+  "air-conditioner/jso_pro_cab_3p": {
+   "_": "26c0bd06e6cc"
+  },
+  "air-conditioner/jso_cab_3p": {
+   "_": "f0779631a55c"
+  },
+  "air-conditioner/fresh_pro_cab_3p": {
+   "_": "b2c525df0be6"
+  },
+  "air-conditioner/fresh_cab_3p": {
+   "_": "35669555119d"
+  },
+  "air-conditioner/duct_3p": {
+   "_": "03eb4cb85b43"
+  },
+  "air-conditioner/duct_4p": {
+   "_": "474f8aa43de7"
+  },
+  "air-conditioner/duct_pro_15p": {
+   "_": "20262b51c2a0"
+  },
+  "air-conditioner/duct_pro_3p": {
+   "_": "56f4d6145b3e"
+  },
+  "air-conditioner/jso_15p_copper": {
+   "_": "97062f1ec045"
+  },
+  "air-conditioner/acsens_15p": {
+   "_": "135ad4b0c885"
+  },
+  "air-conditioner/acsens_std_15p": {
+   "_": "96f4236c9222"
+  },
+  "air-conditioner/acsens_duct_4p": {
+   "_": "87656ed0b719"
+  },
+  "air-conditioner/acsens_cab_3p": {
+   "_": "d80d1551b1e9"
+  },
+  "air-conditioner/roufeng_15p": {
+   "_": "45dedaaeeeb4"
+  },
+  "air-conditioner/health_15p": {
+   "_": "b76f445a6f6f"
+  },
+  "humidifier/hm_fogless_1500": {
+   "_": "ffb870c3f4d3"
+  },
+  "humidifier/hm_fogless_1200": {
+   "_": "d3f80eefa1dd"
+  },
+  "humidifier/hm_pure_pro": {
+   "_": "d2abf5b5feb5"
+  },
+  "humidifier/hm_fogless_600": {
+   "_": "0555ba7ff863"
+  },
+  "humidifier/hm_pure_2lite": {
+   "_": "2a66e10d4dcd"
+  },
+  "humidifier/hm_fogless_400": {
+   "_": "0f9ee1488835"
+  },
+  "humidifier/hm_fogless_pro3": {
+   "_": "4c7cfea941bc"
+  },
+  "humidifier/hm_ultra_3": {
+   "_": "776340e8dc3e"
+  },
+  "humidifier/hm_ultra_ster2": {
+   "_": "51464ae7ffd4"
+  },
+  "humidifier/hm_ultra_2": {
+   "_": "f88f216ac6a5"
+  },
+  "humidifier/hm_purify3_max": {
+   "_": "0873617f360a"
+  },
+  "humidifier/hm_fogless_800": {
+   "_": "9d6ff34cab4c"
+  },
+  "humidifier/hm_ster_s": {
+   "_": "db1614a44d58"
+  },
+  "dehumidifier/dh_max": {
+   "_": "ea173889679a"
+  },
+  "dehumidifier/dh_50": {
+   "_": "95961aadb1dc"
+  },
+  "dehumidifier/dh_30": {
+   "_": "865cce78a165"
+  },
+  "dehumidifier/dh_22": {
+   "_": "e870fb888694"
+  },
+  "dehumidifier/dh_13": {
+   "_": "05890baa5826"
+  },
+  "dehumidifier/dh_max_vfd": {
+   "_": "3fd2b4affbe7"
+  },
+  "fan/fan_batt": {
+   "_": "2e5e91a05fe1"
+  },
+  "fan/fan_bplds08dm": {
+   "_": "7db49e9fde04"
+  },
+  "fan/fan_2": {
+   "_": "3e71c6420a4f"
+  },
+  "fan/fan_bplds07dm": {
+   "_": "a8b6a8bed439"
+  },
+  "fan/fan_1x": {
+   "_": "0cf173f1a8d1"
+  },
+  "fan/fan_origin": {
+   "_": "571750a80440"
+  },
+  "fan/fan_bplds04dm": {
+   "_": "058c014f8c09"
+  },
+  "fan/fan_jllds01dm": {
+   "_": "87d1d0db1e8e"
+  },
+  "fan/fan_desktop": {
+   "_": "1ae00c3fa664"
+  },
+  "fan/fan_season": {
+   "_": "f6f2a6e7b99f"
+  },
+  "fan/fan_handheld": {
+   "_": "e157a2bbebac"
+  },
+  "fan/fan_1x_up": {
+   "_": "11293bdc2af6"
+  },
+  "fan/fan_circ_pro": {
+   "_": "10ef6a52b6d2"
+  },
+  "fan/fan_circ_desk": {
+   "_": "b3b3cf9feef4"
+  },
+  "fan/fan_tower2": {
+   "_": "bb721e74cf38"
+  },
+  "fan/fan_evap": {
+   "_": "ef2ebce9c6a1"
+  },
+  "fan/fan_pro_floor": {
+   "_": "2b843dbf55e3"
+  },
+  "fan/fan_circ_floor": {
+   "_": "853fb800e3e8"
+  },
+  "fan/fan_circ": {
+   "_": "823a96b3b0b6"
+  },
+  "fan/fan_batt_floor": {
+   "_": "a985f4f4e9d4"
+  },
+  "fan/fan_lamp36": {
+   "_": "e5602b4ce24b"
+  },
+  "heater/ht_kick2": {
+   "_": "4ad21a0e57bf"
+  },
+  "heater/ht_kick_flame": {
+   "_": "4076574e8f64"
+  },
+  "heater/ht_kick_old": {
+   "_": "fa523a3269f2"
+  },
+  "heater/ht_smart_graphene": {
+   "_": "85a3eac6235e"
+  },
+  "heater/ht_fan_c": {
+   "_": "33bd160328bc"
+  },
+  "heater/ht_fan_g": {
+   "_": "9d86e8493ff9"
+  },
+  "heater/ht_fan_old": {
+   "_": "cc70b4cf025e"
+  },
+  "heater/ht_fan_desk": {
+   "_": "1058581695f9"
+  },
+  "heater/ht_oil": {
+   "_": "dc18566d19b5"
+  },
+  "heater/ht_blanket": {
+   "_": "8c949696fbce"
+  },
+  "refrigerator/frig_560_french": {
+   "_": "35ad297efdf3"
+  },
+  "refrigerator/frig_508_cross": {
+   "_": "f6e652840007"
+  },
+  "refrigerator/frig_508_ultra": {
+   "_": "4a652eb0fc3e"
+  },
+  "refrigerator/frig_606_cross": {
+   "_": "dd7214efdadb"
+  },
+  "refrigerator/frig_603_cross": {
+   "_": "59a6c9e2f7f4"
+  },
+  "refrigerator/frig_636_side": {
+   "_": "482e56fbb0a5"
+  },
+  "refrigerator/frig_186_two": {
+   "_": "127127ab96b8"
+  },
+  "refrigerator/frig_210_three": {
+   "_": "d448fdfc8776"
+  },
+  "refrigerator/frig_pro_508": {
+   "_": "6f134cd7298d"
+  },
+  "refrigerator/frig_271_three": {
+   "_": "8174c33b43b7"
+  },
+  "refrigerator/frig_256_three": {
+   "_": "eb034761b73e"
+  },
+  "refrigerator/frig_425_cross": {
+   "_": "0650084cc8ae"
+  },
+  "refrigerator/frig_pro_600": {
+   "_": "a0eb4c0f20b1"
+  },
+  "refrigerator/frig_pro600_cross": {
+   "_": "dd2d8fa40263"
+  },
+  "refrigerator/frig_561_side": {
+   "_": "7a05608f1cac"
+  },
+  "dishwasher/dw_emb_20": {
+   "_": "188d806fcd81"
+  },
+  "dishwasher/dw_p1_16": {
+   "_": "99ea752419e3"
+  },
+  "dishwasher/dw_s2_13": {
+   "_": "a0104b1be26a"
+  },
+  "dishwasher/dw_s1_15": {
+   "_": "c3e0b00ef999"
+  },
+  "dishwasher/dw_table_4": {
+   "_": "f5f987a42f36"
+  },
+  "dishwasher/dw_table_5s2": {
+   "_": "8b197a494092"
+  },
+  "dishwasher/dw_table_6s10": {
+   "_": "b54534243a53"
+  },
+  "dishwasher/dw_p2_16": {
+   "_": "8f9406797434"
+  },
+  "dishwasher/dw_p20_18": {
+   "_": "5fd7f9e6f020"
+  },
+  "dishwasher/dw_s20_16": {
+   "_": "793397aec57f"
+  },
+  "dishwasher/dw_pro_18": {
+   "_": "0784b96a4d7a"
+  },
+  "dishwasher/dw_n1_16": {
+   "_": "b57ebe6e6388"
+  },
+  "dishwasher/dw_s10_16": {
+   "_": "0a5e017ff075"
+  },
+  "microwave/mw_oven_23": {
+   "_": "07194ab0e089"
+  },
+  "microwave/mw_oven_23l": {
+   "_": "ae024352ebc5"
+  },
+  "microwave/mw_smart_20": {
+   "_": "78f4de1063c4"
+  },
+  "microwave/mw_20": {
+   "_": "59e278127aa7"
+  },
+  "microwave/mw_p1": {
+   "_": "54c77d894e33"
+  },
+  "microwave/mw_bake_1": {
+   "_": "dc1b3ff5da93"
+  },
+  "microwave/mw_steam_bake": {
+   "_": "55bc9792f2c9"
+  },
+  "microwave/mw_steam_bake_p1": {
+   "_": "f13f62d9a833"
+  },
+  "rice-cooker/rc_p1_4l": {
+   "_": "5b5ee45ac369"
+  },
+  "rice-cooker/rc_p1_3l": {
+   "_": "4f787221187f"
+  },
+  "rice-cooker/rc_ih_4l": {
+   "_": "2ca409327f0f"
+  },
+  "rice-cooker/rc_n1_4l": {
+   "_": "decbe0e8575c"
+  },
+  "rice-cooker/rc_n1_3l": {
+   "_": "dba0ced781d1"
+  },
+  "rice-cooker/rc_c1_3l": {
+   "_": "1cf8f0acebe1"
+  },
+  "rice-cooker/rc_ih2": {
+   "_": "123af4cdee09"
+  },
+  "rice-cooker/rc_weiya": {
+   "_": "940caefe5559"
+  },
+  "rice-cooker/rc_bianya_4l": {
+   "_": "9cdc1f5dbfc4"
+  },
+  "rice-cooker/rc_s1_3l": {
+   "_": "01051c3e1ca8"
+  },
+  "rice-cooker/rc_fast_5l": {
+   "_": "bdb959d0966e"
+  },
+  "rice-cooker/rc_fast_34l": {
+   "_": "ab452c0bae6f"
+  },
+  "pressure-cooker/pc_5l": {
+   "_": "5a52cd7f93f8"
+  },
+  "pressure-cooker/pc_2pro": {
+   "_": "6f9ec6a450dc"
+  },
+  "pressure-cooker/pc_25l": {
+   "_": "220ab5e4858f"
+  },
+  "steamer/st_s1_13l": {
+   "_": "ed7feb839234"
+  },
+  "steamer/st_n1": {
+   "_": "9a489919fe5f"
+  },
+  "steamer/st_smart_12l": {
+   "_": "8cae2c55179c"
+  },
+  "air-fryer/af_pro_steam_65": {
+   "_": "2ed88bbd22e4"
+  },
+  "air-fryer/af_55_visible": {
+   "_": "80b16211fcd1"
+  },
+  "air-fryer/af_n1_5l": {
+   "_": "136e90bc8a76"
+  },
+  "air-fryer/af_pro_4l": {
+   "_": "d85296e9f9a6"
+  },
+  "air-fryer/af_maf01": {
+   "_": "829b2d82c749"
+  },
+  "air-fryer/af_p1_65": {
+   "_": "a4a50697be21"
+  },
+  "air-fryer/af_s1_6l": {
+   "_": "4c7044cc996d"
+  },
+  "induction-cooker/ic_slim": {
+   "_": "0e6ad7924690"
+  },
+  "induction-cooker/ic_2": {
+   "_": "9056684ff0c9"
+  },
+  "induction-cooker/ic_n1": {
+   "_": "3474ab095e53"
+  },
+  "induction-cooker/ic_youth": {
+   "_": "87bc38984a8e"
+  },
+  "blender/bl_p1": {
+   "_": "9f4b800e9711"
+  },
+  "blender/bl_s2": {
+   "_": "aead2ca8f934"
+  },
+  "blender/bl_s1": {
+   "_": "99bde4b9237b"
+  },
+  "blender/bl_3": {
+   "_": "b79de6374f18"
+  },
+  "blender/bl_n1": {
+   "_": "3f1ceb89c3b2"
+  },
+  "blender/bl_soy": {
+   "_": "d3a7c0b87f9a"
+  },
+  "blender/bl_cup2": {
+   "_": "3a3e0da776e6"
+  },
+  "coffee-machine/cf_espresso_pro": {
+   "_": "ec1920451ad7"
+  },
+  "coffee-machine/cf_capsule_s1": {
+   "_": "60dd94b45ccf"
+  },
+  "coffee-machine/cf_capsule_g100": {
+   "_": "1c6aa3da1c13"
+  },
+  "coffee-machine/cf_capsule_n1": {
+   "_": "a5654d6f4bf9"
+  },
+  "coffee-machine/cf_portable": {
+   "_": "54c777974f82"
+  },
+  "kettle/kt_ysh_p1": {
+   "_": "d5131499643b"
+  },
+  "kettle/kt_ysh_ti": {
+   "_": "314d09783c79"
+  },
+  "kettle/kt_s1": {
+   "_": "171705dadaeb"
+  },
+  "kettle/kt_ysh2": {
+   "_": "3961a7b86c6d"
+  },
+  "kettle/kt_ysh_n1": {
+   "_": "763407c759b6"
+  },
+  "kettle/kt_cook_mjysh": {
+   "_": "353bdb0dbc6d"
+  },
+  "kettle/kt_n1": {
+   "_": "865cf34fdbc5"
+  },
+  "kettle/kt_3": {
+   "_": "141087bb95fd"
+  },
+  "kettle/kt_temp_3": {
+   "_": "4c3bdcef2dca"
+  },
+  "kettle/kt_temp_3pro": {
+   "_": "e5df3db184bd"
+  },
+  "kettle/kt_2": {
+   "_": "7a113071ee8d"
+  },
+  "kettle/kt_c1": {
+   "_": "71c401ca7b98"
+  },
+  "kettle/kt_temp_2": {
+   "_": "9e4b465b4bfb"
+  },
+  "kettle/kt_temp_2pro": {
+   "_": "e51d7d17e554"
+  },
+  "kettle/kt_ysh_s2": {
+   "_": "2f661e06f169"
+  },
+  "kettle/kt_bottle_5l": {
+   "_": "8f78d227a075"
+  },
+  "kettle/kt_bottle_pro": {
+   "_": "f81d1b94c419"
+  },
+  "washing-machine/wash_dry_10": {
+   "_": "ae42742bbafb"
+  },
+  "washing-machine/wash_dry_102s": {
+   "_": "6e594eba2d29"
+  },
+  "washing-machine/wash_dry_108": {
+   "_": "42cfe2936d59"
+  },
+  "washing-machine/wash_set_pro": {
+   "_": "37ec0f9497f4"
+  },
+  "washing-machine/wave_zunxiang": {
+   "_": "07fbb5aa0f35"
+  },
+  "washing-machine/wave_pro_229": {
+   "_": "c1c3cce3fefa"
+  },
+  "washing-machine/wave_104": {
+   "_": "b8e88664abbc"
+  },
+  "washing-machine/wash_clean": {
+   "_": "09ed15077eb1"
+  },
+  "washing-machine/wash_zone_pro14": {
+   "_": "afb39d78dc6f"
+  },
+  "washing-machine/wash_zone_pro14_dry": {
+   "_": "b198867b3ac6"
+  },
+  "washing-machine/wash_electro_12d": {
+   "_": "bc34f6d700d4"
+  },
+  "washing-machine/wash_electro_12": {
+   "_": "f679bdc61b71"
+  },
+  "washing-machine/wash_electro_13d": {
+   "_": "4b90e9f07d70"
+  },
+  "washing-machine/wash_mini_dry5": {
+   "_": "f14942729d72"
+  },
+  "washing-machine/wash_mini_1kg": {
+   "_": "8b8027289619"
+  },
+  "washing-machine/wash_mini_12": {
+   "_": "9fce2960cf20"
+  },
+  "washing-machine/wash_3drum_11": {
+   "_": "3e57002df200"
+  },
+  "washing-machine/wash_3set_5_12a": {
+   "_": "ac8bda63a6b0"
+  },
+  "washing-machine/wash_3set_5_12b": {
+   "_": "205d6ba4c72c"
+  },
+  "washing-machine/wash_3set_5_13": {
+   "_": "1614da3c5bb1"
+  },
+  "washing-machine/wash_care_pro13": {
+   "_": "73fac9d6bbeb"
+  },
+  "washing-machine/wash_set_3zone": {
+   "_": "83f8f9bfdd3c"
+  },
+  "washing-machine/wash_set_3zone_mini": {
+   "_": "3c2a806657db"
+  },
+  "washing-machine/wash_set_electro_10": {
+   "_": "59e2b509d27c"
+  },
+  "washing-machine/wash_set_electro_12": {
+   "_": "f2ca1a3ba09c"
+  },
+  "washing-machine/wash_mini_3kg": {
+   "_": "afd63f9807b8"
+  },
+  "washing-machine/wash_wave_8kg": {
+   "_": "b32de5501ce9"
+  },
+  "washing-machine/wash_drum_8kg": {
+   "_": "014c88a95e5f"
+  },
+  "dryer-rack/dr_3": {
+   "_": "55cd67e0c8c1"
+  },
+  "dryer-rack/dr_2pro": {
+   "_": "a7f57a6021e5"
+  },
+  "dryer-rack/dr_pro": {
+   "_": "28fc43999aa5"
+  },
+  "dryer-rack/dr_3c": {
+   "_": "b1cc15c229a9"
+  },
+  "dryer-rack/dr_dual2": {
+   "_": "ffc2e3b36725"
+  },
+  "dryer-rack/dr_invisible": {
+   "_": "4ed2bc505b8e"
+  },
+  "garment-steamer/gs_handheld2": {
+   "_": "9dd953747849"
+  },
+  "garment-steamer/gs_boost": {
+   "_": "3e9f3a04ab90"
+  },
+  "garment-steamer/gs_handheld_old": {
+   "_": "bca09ab70850"
+  },
+  "garment-steamer/gs_2": {
+   "_": "cdc2ebff7ba3"
+  },
+  "robot-vacuum/rv_3c": {
+   "_": "fd99aee5af7b"
+  },
+  "robot-vacuum/rv_4": {
+   "_": "882317f41524"
+  },
+  "robot-vacuum/rv_5c": {
+   "_": "23a9b648ce30"
+  },
+  "robot-vacuum/rv_m40s": {
+   "_": "79c917adc843"
+  },
+  "robot-vacuum/rv_5pro": {
+   "_": "267d02a49f7c"
+  },
+  "robot-vacuum/rv_6": {
+   "_": "a1575541177b"
+  },
+  "robot-vacuum/rv_6pro": {
+   "_": "8dfc1452b6b5"
+  },
+  "robot-vacuum/rv_6max": {
+   "_": "c2e665855e96"
+  },
+  "robot-vacuum/rv_7c": {
+   "_": "7645decea8dc"
+  },
+  "robot-vacuum/rv_5_tank": {
+   "_": "47f5de42f7fa"
+  },
+  "vacuum/vc_k10_pro": {
+   "_": "0c38b18c1dd0"
+  },
+  "vacuum/vc_2pro": {
+   "_": "e9b0bf6f9a83"
+  },
+  "vacuum/vc_k10": {
+   "_": "3b866d3fbdf2"
+  },
+  "vacuum/vc_g10": {
+   "_": "12dcdffcab0c"
+  },
+  "vacuum/vc_g20": {
+   "_": "5a9085baf287"
+  },
+  "vacuum/vc_2slim": {
+   "_": "bca0f190e94f"
+  },
+  "vacuum/vc_lite": {
+   "_": "f1c0f052c974"
+  },
+  "vacuum/vc_4": {
+   "_": "4ef2ca1ed815"
+  },
+  "vacuum/vc_4pro": {
+   "_": "3f5bb9f4798d"
+  },
+  "vacuum/vc_4max": {
+   "_": "6453f2fb9daf"
+  },
+  "vacuum/vc_4c": {
+   "_": "bdb345fc4570"
+  },
+  "vacuum/vc_3c": {
+   "_": "cb9c4780fb60"
+  },
+  "vacuum/vc_3_dock": {
+   "_": "bf1b444343db"
+  },
+  "vacuum/vc_2lite": {
+   "_": "a242de7e82b1"
+  },
+  "vacuum/vc_light": {
+   "_": "0831db89bfe0"
+  },
+  "vacuum/vc_handheld": {
+   "_": "888947918649"
+  },
+  "vacuum/vc_wired": {
+   "_": "6901cb8673f0"
+  },
+  "vacuum/vc_car": {
+   "_": "cfcdeab3f24c"
+  },
+  "mite-remover/mr_3pro": {
+   "_": "159e0fa0869a"
+  },
+  "mite-remover/mr_2pro": {
+   "_": "4b196e8220da"
+  },
+  "mite-remover/mr_pro": {
+   "_": "1ebb3146ce30"
+  },
+  "mite-remover/mr_2": {
+   "_": "3feec59ab313"
+  },
+  "floor-washer/fw_1": {
+   "_": "b46129384e5d"
+  },
+  "floor-washer/fw_hightemp": {
+   "_": "a5174cd213ee"
+  },
+  "floor-washer/mop_dual": {
+   "_": "d20aba313ca0"
+  },
+  "floor-washer/fw_2": {
+   "_": "7b3c6d679189"
+  },
+  "floor-washer/fw_2lite": {
+   "_": "69f161d29721"
+  },
+  "floor-washer/fw_2c": {
+   "_": "c3ce18fbd5ef"
+  },
+  "floor-washer/fw_3pro": {
+   "_": "ef18b598396b"
+  },
+  "floor-washer/fw_3max": {
+   "_": "b11784d16eb4"
+  },
+  "floor-washer/fw_4": {
+   "_": "c7084e809b3b"
+  },
+  "floor-washer/fw_4c": {
+   "_": "edbdd0ec9edd"
+  },
+  "floor-washer/fw_4pro": {
+   "_": "17c3b0fb8027"
+  },
+  "floor-washer/fw_4max": {
+   "_": "c62e0212a375"
+  },
+  "floor-washer/fw_5": {
+   "_": "8c2dd72e7ccf"
+  },
+  "floor-washer/fw_5c": {
+   "_": "ed87f8dbb24b"
+  },
+  "floor-washer/fw_5pro": {
+   "_": "545812755e8e"
+  },
+  "floor-washer/fw_5pro_foam": {
+   "_": "99c52c38d122"
+  },
+  "floor-washer/fw_5max": {
+   "_": "c593457ae5d6"
+  },
+  "water-heater/wh_gas2": {
+   "_": "5e29329b898c"
+  },
+  "water-heater/wh_gas_pro": {
+   "_": "49cc51f89456"
+  },
+  "water-heater/wh_gas_s10": {
+   "_": "2312a644aaee"
+  },
+  "water-heater/wh_gas_p10": {
+   "_": "6e5a8b94ada3"
+  },
+  "water-heater/wh_ele_pro": {
+   "_": "b9511cde473e"
+  },
+  "water-heater/wh_ele_2": {
+   "_": "000c55033b4c"
+  },
+  "water-heater/wh_ele_n1": {
+   "_": "8cdc44ec47b0"
+  },
+  "water-heater/wh_ele_c": {
+   "_": "34834be7aefd"
+  },
+  "water-heater/wh_ele_s1": {
+   "_": "3e2e518df914"
+  },
+  "water-heater/wh_ele_p1": {
+   "_": "6613e92775d5"
+  },
+  "bath-heater/bath_base": {
+   "_": "7ea3221d9674"
+  },
+  "bath-heater/bath_pro": {
+   "_": "59da7cd6ef21"
+  },
+  "bath-heater/bath_s1": {
+   "_": "566d9add78df"
+  },
+  "bath-heater/bath_n1": {
+   "_": "9fe8ab9fe9cc"
+  },
+  "bath-heater/bath_p1": {
+   "_": "5fab4f2d50fc"
+  },
+  "bath-heater/bath_p1_human": {
+   "_": "0db2888e8a1e"
+  },
+  "bath-heater/bath_g10": {
+   "_": "8ef3428611b0"
+  },
+  "bath-heater/bath_g20": {
+   "_": "6c932b86b158"
+  },
+  "bath-heater/bath_2": {
+   "_": "4cb8496be7ec"
+  },
+  "bath-heater/bath_2c": {
+   "_": "1728d3368674"
+  },
+  "bath-heater/bath_dual": {
+   "_": "637cf76cfb40"
+  },
+  "bath-heater/bath_vf": {
+   "_": "ceecbbd22caf"
+  },
+  "water-dispenser/wd_pro": {
+   "_": "d3a5b662a7e5"
+  },
+  "water-dispenser/wd_max": {
+   "_": "afa2fa7be6ad"
+  },
+  "water-dispenser/wd_s1": {
+   "_": "95b386d9ac8f"
+  },
+  "water-dispenser/wd_cold_hot": {
+   "_": "0e8384e4122b"
+  },
+  "water-dispenser/wd_portable": {
+   "_": "1cf06e0d85a2"
+  },
+  "water-dispenser/wd_pipe": {
+   "_": "41388df8c777"
+  },
+  "water-dispenser/wd_pipe_ice": {
+   "_": "75d5557fdcf1"
+  },
+  "water-dispenser/wd_desk_nfc": {
+   "_": "f3ff5cef1388"
+  },
+  "hair-dryer/hd_h501": {
+   "_": "f055df98a841"
+  },
+  "hair-dryer/hd_h501_std": {
+   "_": "095e935cf970"
+  },
+  "hair-dryer/hd_pro": {
+   "_": "10d5129433d7"
+  },
+  "hair-dryer/hd_water_ion": {
+   "_": "a9eed05fdd80"
+  },
+  "hair-dryer/hd_water_ion_std": {
+   "_": "39ba15e62c7a"
+  },
+  "hair-dryer/hd_h701": {
+   "_": "b9a2351dd362"
+  },
+  "hair-dryer/hd_h301": {
+   "_": "6ece0066bfd8"
+  },
+  "hair-dryer/hd_h300": {
+   "_": "87b2f628c93e"
+  },
+  "hair-dryer/hd_h101": {
+   "_": "2cbf13178455"
+  },
+  "shaver/sh_s700": {
+   "_": "ebff404e1610"
+  },
+  "shaver/sh_pro": {
+   "_": "f0dbe66483c9"
+  },
+  "shaver/sh_portable_pro": {
+   "_": "0321dc51b14a"
+  },
+  "shaver/sh_s600": {
+   "_": "cb05861f181e"
+  },
+  "shaver/sh_s302": {
+   "_": "7b5bc33e2317"
+  },
+  "shaver/sh_s301": {
+   "_": "551cca33bbcd"
+  },
+  "shaver/sh_s200": {
+   "_": "c52b6aa2b30d"
+  },
+  "shaver/sh_s101": {
+   "_": "d92f74053c12"
+  },
+  "shaver/sh_s100": {
+   "_": "2c9b43155cde"
+  },
+  "toothbrush/tb_pro_multi": {
+   "_": "a8dd8f69cb4a"
+  },
+  "toothbrush/tb_multi": {
+   "_": "da51c0896733"
+  },
+  "toothbrush/tb_t700": {
+   "_": "249042ada6c1"
+  },
+  "toothbrush/tb_servo_pro": {
+   "_": "3b9fb5a94bbb"
+  },
+  "toothbrush/tb_t302": {
+   "_": "124707323746"
+  },
+  "toothbrush/tb_origin": {
+   "_": "529f2d36e903"
+  },
+  "toothbrush/tb_t200c": {
+   "_": "6e1d29683f84"
+  },
+  "toothbrush/tb_t100": {
+   "_": "b9e746b43fb5"
+  },
+  "toothbrush/tb_sweep_pro": {
+   "_": "5ddcbdbcee64"
+  },
+  "toothbrush/tb_sweep": {
+   "_": "d96208a9ec99"
+  },
+  "toothbrush/tb_t501": {
+   "_": "4a176dbd174e"
+  },
+  "toothbrush/tb_t302_cushion": {
+   "_": "f0ecd34d8cac"
+  },
+  "hair-clipper/hc_2": {
+   "_": "2a5581b8a3ee"
+  },
+  "hair-clipper/hc_2_set": {
+   "_": "a8e58b9ff26f"
+  },
+  "hair-clipper/hc_kids": {
+   "_": "5a7cee6f3d5d"
+  },
+  "foot-spa/fs_air2": {
+   "_": "e7fddc2cf8c5"
+  },
+  "foot-spa/fs_air2_std": {
+   "_": "fa2bdd2d6366"
+  },
+  "foot-spa/fs_ster2": {
+   "_": "ba913aa34c5d"
+  },
+  "foot-spa/fs_ster_smart": {
+   "_": "3dd58b0fecc1"
+  },
+  "foot-spa/fs_ster_old": {
+   "_": "cc02ecf131ed"
+  },
+  "massage-gun/mg_multi3": {
+   "_": "c705e8ec3e0e"
+  },
+  "massage-gun/mg_3mini": {
+   "_": "719d21cc165f"
+  },
+  "massage-gun/mg_h3mini": {
+   "_": "ff4eb2efec55"
+  },
+  "massage-gun/mg_h3": {
+   "_": "dfaef31982b8"
+  },
+  "massage-gun/mg_long3": {
+   "_": "72312b252c43"
+  },
+  "massage-gun/mg_pro": {
+   "_": "c3078296421c"
+  },
+  "body-scale/bs_s800": {
+   "_": "9533dcc82d20"
+  },
+  "body-scale/bs_s400pro": {
+   "_": "a0457ecf70e2"
+  },
+  "body-scale/bs_s400": {
+   "_": "5c168c14ab4e"
+  },
+  "body-scale/bs_s200": {
+   "_": "694334ba281c"
+  },
+  "camera/cam_4": {
+   "_": "467ed5ef90e0"
+  },
+  "camera/cam_4_std": {
+   "_": "0c7d8d9a1933"
+  },
+  "camera/cam_call2": {
+   "_": "1e0a79c93a71"
+  },
+  "camera/cam_call": {
+   "_": "d35a0cd3f8e5"
+  },
+  "camera/cam_baby": {
+   "_": "6d617164b424"
+  },
+  "camera/cam_out4": {
+   "_": "daed9c642871"
+  },
+  "camera/cam_out4_std": {
+   "_": "b05e7aa8fc1a"
+  },
+  "water-purifier/wp2pro_1600": {
+   "_": "189fedf936ef"
+  },
+  "water-purifier/wp2pro_1200": {
+   "_": "9b3cf1d78c33"
+  },
+  "water-purifier/wp_instant_1600": {
+   "_": "ae4145a2f732"
+  },
+  "water-purifier/wp2_1600": {
+   "_": "1e83dd664cac"
+  },
+  "water-purifier/wp2_1200": {
+   "_": "71729ea0ca34"
+  },
+  "water-purifier/wp2_boil": {
+   "_": "ef46995d2bad"
+  },
+  "water-purifier/wp_dual_core": {
+   "_": "2e4191285862"
+  },
+  "water-purifier/wp_rich2": {
+   "_": "c8f5587ea7a0"
+  },
+  "water-purifier/wp_n1_800": {
+   "_": "e0a2fd2fb51c"
+  },
+  "water-purifier/wp_faucet2": {
+   "_": "2a9eca170b41"
+  },
+  "water-purifier/wp_prefilter": {
+   "_": "0b80381940e2"
+  },
+  "water-purifier/wp_prefilter_pro": {
+   "_": "db534bdbc08b"
+  },
+  "water-purifier/wp_pro_1600": {
+   "_": "ecb1978332bd"
+  },
+  "water-purifier/wp_pro_1200": {
+   "_": "d415bbd58a7c"
+  },
+  "water-purifier/wp_s1_1600": {
+   "_": "3f1e2dbdfc9c"
+  },
+  "water-purifier/wp_s1_1000": {
+   "_": "9d6c22c4bef0"
+  },
+  "water-purifier/wp_1000g": {
+   "_": "8baab55bf63f"
+  },
+  "smart-lock/lock_m30pro": {
+   "_": "cfbde1a22f16"
+  },
+  "smart-lock/lock_m20pro": {
+   "_": "cc9423a129a7"
+  },
+  "smart-lock/lock_pro": {
+   "_": "5a382d20815f"
+  },
+  "smart-lock/lock_e20_wifi": {
+   "_": "5bbd5d484756"
+  },
+  "smart-lock/lock_e2": {
+   "_": "0958c72712ee"
+  },
+  "smart-lock/lock_5c": {
+   "_": "06e3c840bf0d"
+  },
+  "smart-lock/lock_5max": {
+   "_": "a508ca66f45d"
+  },
+  "smart-lock/lock_2_cateye": {
+   "_": "1d07db1f291d"
+  },
+  "smart-lock/lock_4pro": {
+   "_": "12a1125adb99"
+  },
+  "smart-lock/lock_m40pro": {
+   "_": "4bf26feaacc4"
+  },
+  "smart-lock/lock_m40": {
+   "_": "a3a7f6e7ed59"
+  },
+  "smart-lock/lock_e30": {
+   "_": "5e6af80053b7"
+  },
+  "smart-lock/lock_g300": {
+   "_": "7066c914ed68"
+  },
+  "smart-lock/lock_g500": {
+   "_": "30ace9a7369d"
+  },
+  "smart-lock/lock_2_vein": {
+   "_": "d2d23d6b780b"
+  },
+  "smart-lock/lock_2pro": {
+   "_": "aea9c9211e15"
+  },
+  "smart-lock/lock_m20_cateye": {
+   "_": "921b580f6d26"
+  },
+  "tv/tv_spromini": {
+   "_": "4ebaf465c5b6"
+  },
+  "tv/tv_smini": {
+   "_": "a6ed7f020b76"
+  },
+  "tv/tv_100": {
+   "_": "63a87b3ffbca"
+  },
+  "tv/tv_spromini_2027": {
+   "_": "aa23ae8462ed"
+  },
+  "tv/tv_spromini_2025": {
+   "_": "e7397261ebe2"
+  },
+  "tv/tv_smini_2025": {
+   "_": "45b8a79b2db8"
+  },
+  "projector/pj_2pro": {
+   "_": "21a4992ae61c"
+  },
+  "projector/pj_2": {
+   "_": "b6aae62ca202"
+  },
+  "projector/pj_origin": {
+   "_": "e601c0aafed7"
+  },
+  "projector/pj_youth2": {
+   "_": "213e3c45c354"
+  },
+  "projector/pj_youth": {
+   "_": "3c5ad3adf5df"
+  },
+  "projector/pj_2s": {
+   "_": "555b80fa30ef"
+  },
+  "projector/pj_laser2": {
+   "_": "b0cbe325d69d"
+  },
+  "projector/pj_laser3": {
+   "_": "8e223028c1bd"
+  },
+  "projector/pj_lasertv_1s": {
+   "_": "f27a5954ef27"
+  },
+  "speaker/sp_family10": {
+   "_": "51092b1ea82d"
+  },
+  "speaker/sp_sound": {
+   "_": "d18156e65d31"
+  },
+  "speaker/sp_ai": {
+   "_": "cbb79c13fbf0"
+  },
+  "speaker/sp_play_enh": {
+   "_": "f90828e2ed0f"
+  },
+  "speaker/sp_play": {
+   "_": "38523d072b61"
+  }
+ },
+ "_说明": "审核快照锁。冻结期内任何 Agent 不得修改 scope.keys 内产品的字段。审核完成后用 npm run audit:release -- <id> 解除。检测越界用 npm run audit:check。"
+}

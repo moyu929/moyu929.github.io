@@ -225,6 +225,8 @@ function valueWithMonth(field: FieldDef, p: Product): string {
                   v-if="imageUrl(schema, p)"
                   :src="imageUrl(schema, p)!"
                   :alt="p.name"
+                  width="320"
+                  height="320"
                   loading="lazy"
                   decoding="async"
                 />

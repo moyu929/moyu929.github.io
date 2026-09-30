@@ -339,30 +339,41 @@ async function cmdImages() {
     process.exit(1)
   }
   const patch = {}
+  const pending = []
   for (const [target, url] of Object.entries(manifest)) {
     if (target.startsWith('_')) continue
     const [cat, pid] = target.split('/')
-    const dir = path.join(ROOT, 'public', 'images', cat)
-    ensureDir(dir)
-    const ext = /\.jpe?g($|\?)/i.test(url) ? '.jpg' : '.png'
-    const file = path.join(dir, `${pid}${ext}`)
-    if (fs.existsSync(file)) {
-      patch[target] = { img: `${pid}${ext}` }
+    // 站上只保留 ≤320px WebP（最大展示位 96×112 CSS px，见 scripts/shrink-images.py）
+    const webp = path.join(ROOT, 'public', 'images', cat, `${pid}.webp`)
+    if (fs.existsSync(webp)) {
+      patch[target] = { img: `${pid}.webp` }
       continue
     }
-    try {
-      fs.writeFileSync(file, await fetchBinary(url))
-      patch[target] = { img: `${pid}${ext}` }
-      console.log(`  ✓ ${target} → ${pid}${ext} (${(fs.statSync(file).size / 1024).toFixed(0)}KB)`)
-    } catch (e) {
-      console.log(`  ✗ ${target}: ${e.message}`)
+    // 官方原图先落到 data/_cache/img-raw/（不入库），再由 img:webp 统一转换入库
+    const ext = /\.jpe?g($|\?)/i.test(url) ? '.jpg' : '.png'
+    const rawDir = path.join(CACHE, 'img-raw', cat)
+    ensureDir(rawDir)
+    const raw = path.join(rawDir, `${pid}${ext}`)
+    if (!fs.existsSync(raw)) {
+      try {
+        fs.writeFileSync(raw, await fetchBinary(url))
+        console.log(
+          `  ✓ ${target} → 原图缓存 ${path.relative(ROOT, raw)} (${(fs.statSync(raw).size / 1024).toFixed(0)}KB)`,
+        )
+      } catch (e) {
+        console.log(`  ✗ ${target}: ${e.message}`)
+        continue
+      }
+      await new Promise((r) => setTimeout(r, 200))
     }
-    await new Promise((r) => setTimeout(r, 200))
+    pending.push(target)
   }
   const { errors } = applyPatches(patch)
   for (const e of errors) console.log(`  ! ${e}`)
-  console.log(`图片清单处理完成，共 ${Object.keys(patch).length} 条`)
-  console.log('提示：图片统一压缩见 README「产品图压缩」一节（≤640px JPEG）')
+  console.log(`已就绪 ${Object.keys(patch).length} 条`)
+  if (pending.length) {
+    console.log(`另有 ${pending.length} 条只有原图：跑 npm run img:webp 转成 ≤320px WebP 后就会写入 img 字段`)
+  }
 }
 
 // ---------------------------------------------------------------- 入口

@@ -135,15 +135,29 @@ npm run pconline:specs                 # 抓太平洋规格表（清单：data/_
 - 采集与核验规则见 `skills/appliance-data-curation/SKILL.md`（来源优先级、禁止估算、去重口径、第三方错标陷阱等）。
 - 每条产品都带 6 个审核标注字段（`verify_status` / `verify_date` / `verify_source` / `verify_url` / `change_log` / `updated_at`），逐条溯源记录在 `data/_sources/provenance.json`。
 
-### 产品图压缩
+### 产品图规格：≤320px WebP
 
-官方图通常是 1000px 以上的 PNG，直接入库会让仓库膨胀。入库前统一压成 ≤640px JPEG：
+站上图片统一存 **WebP、长边 ≤320px、质量 80**，实测比同内容的 640px JPEG 小 **85%**。
+
+尺寸不是拍脑袋定的：全站最大的图片展示位是卡片缩略图 **96×112 CSS px**（`ProductCard.vue`），
+按 DPR 3 计需要 288px 宽；时间轴缩略图 56×64、对比抽屉 80×68 都更小。
+此前存 640px 属于过采样（像素面积约 4 倍）。
 
 ```bash
-python -c "from PIL import Image;import pathlib;[ (lambda im,f: (im.convert('RGB').thumbnail((640,640), Image.LANCZOS), im.convert('RGB').save(f.with_suffix('.jpg'),'JPEG',quality=82,optimize=True)))(Image.open(f), f) for f in pathlib.Path('public/images').rglob('*.png') ]"
+npm run mi:images     # 1) 按 data/_sources/images.json 下载官方原图 → data/_cache/img-raw/（不入库）
+npm run img:webp      # 2) 转成 ≤320px WebP 写入 public/images/ 并回写 img 字段
 ```
 
-压缩后记得把 `products.json` 里对应的 `img` 字段从 `.png` 改成 `.jpg`（`mi:images` 会自动处理新下载的图）。
+- 转换脚本 `scripts/shrink-images.py`；不会放大小图（168×168 的官方缩略图保持原样）。
+- 站上**只保留一份**图：需要更大尺寸时按 `images.json` 重新拉取即可，不做双份存储。
+- 图片不写前端代码，`img` 字段始终是「文件名 = 产品 id」。
+
+### 图片加载策略
+
+- 首屏前 6 张卡片用 `loading="eager"` + `fetchpriority="high"`，其余 `loading="lazy"`；
+  全部懒加载会让首屏图片排在关键渲染之后，出现可见的空白闪烁。
+- 所有 `<img>` 都带 `width`/`height`（内在 320×320）与 `decoding="async"`，配合 `.thumb` 固定尺寸避免布局抖动。
+- 缩略图容器自带底色（`--surface-alt`），图片未到时不会白闪。
 
 ## 多 Agent 并行协作
 

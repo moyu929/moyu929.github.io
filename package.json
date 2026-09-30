@@ -15,6 +15,7 @@
     "mi:detail": "node scripts/mi-store.mjs detail",
     "mi:specs": "node scripts/mi-store.mjs specs",
     "mi:images": "node scripts/mi-store.mjs images",
+    "img:webp": "python scripts/shrink-images.py",
     "mi:apply": "node scripts/mi-store.mjs apply",
     "miot:crawl": "node scripts/miot-spec.mjs crawl",
     "miot:search": "node scripts/miot-spec.mjs search",

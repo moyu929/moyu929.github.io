@@ -133,7 +133,10 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKeydown))
                       v-if="imageUrl(schema, p)"
                       :src="imageUrl(schema, p)!"
                       :alt="p.name"
+                      width="320"
+                      height="320"
                       loading="lazy"
+                      decoding="async"
                     />
                     <div v-else class="ph" aria-hidden="true">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">

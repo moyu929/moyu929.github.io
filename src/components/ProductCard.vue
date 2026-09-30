@@ -12,6 +12,8 @@ const props = defineProps<{
   selected: boolean
   /** 在列表中的索引，用于入场动画交错延迟 */
   index?: number
+  /** 是否属于首屏可见范围：决定图片是 eager+高优先级还是 lazy */
+  eager?: boolean
 }>()
 
 const emit = defineEmits<{ toggleCompare: [id: string] }>()
@@ -39,6 +41,12 @@ const groupName = computed(() => String(props.product[props.schema.groupBy.key] 
 const groupColor = computed(() => props.schema.groupBy.colors[groupName.value] ?? '#999')
 const img = computed(() => imageUrl(props.schema, props.product))
 
+/**
+ * 首屏图片走 eager + 高优先级，其余懒加载：全部 lazy 会让首屏图排在关键渲染之后、出现空白闪烁；
+ * 而优先级给多了又会互相争抢带宽，所以由父组件按当前展示顺序传入（见 CategoryView 的 eagerIds）。
+ */
+const eagerImg = computed(() => props.eager ?? false)
+
 const cardStyle = computed(() => ({
   animationDelay: props.index !== undefined ? `${Math.min(props.index * 0.05, 0.4)}s` : '0s',
 }))
@@ -63,7 +71,16 @@ const cardStyle = computed(() => ({
 
     <div class="top">
       <div class="thumb">
-        <img v-if="img" :src="img" :alt="product.name" loading="lazy" decoding="async" />
+        <img
+          v-if="img"
+          :src="img"
+          :alt="product.name"
+          width="320"
+          height="320"
+          :loading="eagerImg ? 'eager' : 'lazy'"
+          :fetchpriority="eagerImg ? 'high' : 'auto'"
+          decoding="async"
+        />
         <span v-else class="no-img" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
