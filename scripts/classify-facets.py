@@ -41,21 +41,33 @@ TYPE_KW = {
                ('美式', '滴滤'), ('滴滤', '滴滤')],
     'water_dispenser': [('管线', '管线'), ('茶吧', '茶吧机'), ('冷热', '冷热'),
                         ('直饮', '即热'), ('智能', '即热'), ('温热', '即热'), ('单热', '即热')],
+    'heater': [('踢脚', '踢脚线'), ('油汀', '油汀'), ('电热毯', '电热毯'),
+               ('暖风机', '暖风机'), ('小太阳', '暖风机'), ('取暖器', '暖风机')],
     'washer': [('干衣', '洗烘套装'), ('烘洗', '滚筒洗烘一体'), ('洗烘', '滚筒洗烘一体'),
                ('滚筒', '滚筒洗烘一体'), ('波轮', '波轮')],
 }
 
 
 def load_cache(pc):
+    """读该 pconline 目录下的全部品牌缓存（含 fetch-missing-specs.py 补抓的 -extra）。
+
+    同一 id 多次出现时合并字段，不覆盖 —— 先到的是原抓取（字段多），
+    后到的是补抓（可能补上原抓没拿到的分类字段）。
+    """
     out = {}
-    for f in glob.glob('data/_cache/brand-%s-*.json' % pc):
+    for f in sorted(glob.glob('data/_cache/brand-%s-*.json' % pc)):
         try:
             d = json.load(open(f, encoding='utf-8'))
         except Exception:
             continue
         for it in d:
-            if it.get('id'):
-                out[str(it['id'])] = it.get('specs') or {}
+            k = str(it.get('id') or '')
+            if not k:
+                continue
+            merged = dict(out.get(k) or {})
+            for sk, sv in (it.get('specs') or {}).items():
+                merged.setdefault(sk, sv)
+            out[k] = merged
     return out
 
 
@@ -291,6 +303,123 @@ def rule_waterdisp(p, sp):
     return by_kw('water_dispenser', sp, ['产品类型'], '第三方产品类型')
 
 
+def rule_waterheater2(p, sp):
+    """补充：林内 RUS 为燃气热水器国标前缀；ES 为电热。"""
+    n = p['name']
+    if re.search(r'RUS|JSQ', n):
+        return '燃气', '型号含 RUS/JSQ（燃气热水器国标前缀）'
+    t = str(sp.get('产品类型', ''))
+    if re.search(r'储水|即热|速热', t):
+        return '电热', '第三方产品类型=%s' % t
+    return rule_waterheater(p, sp)
+
+
+def rule_heater2(p, sp):
+    """补充：第三方「产品类型」字段优先（踢脚线取暖器/电油汀等）。"""
+    got = by_kw('heater', sp, ['产品类型'], '第三方产品类型')
+    if got:
+        return got
+    return rule_heater(p, sp)
+
+
+def rule_fridge2(p, sp):
+    """补充：海尔 LC 系列（单冷藏室占比高、按容积判门型）。"""
+    got = rule_fridge(p, sp)
+    if got:
+        return got
+    n = p['name']
+    total = num(p.get('total_vol'))
+    fridge = num(p.get('fridge_vol'))
+    if 'LC-' in n and total:
+        if fridge and fridge / total >= 0.75:
+            return '两门', '型号 LC 系列且冷藏占比 %.0f%%（≥75%%，冷冻室小）' % (fridge / total * 100)
+        return '三门', '型号 LC 系列且总容积 %sL' % total
+    return None
+
+
+def rule_humidifier2(p, sp):
+    """补充：按尺寸与加湿量区分——超声波机型普遍带独立水箱且功率低。"""
+    got = rule_humidifier(p, sp)
+    if got:
+        return got
+    rate = num(p.get('humid_rate'))
+    power = num(p.get('power'))
+    size = str(p.get('size') or '')
+    if rate and size and power:
+        if rate >= 600:
+            return '无雾冷蒸发', '加湿量 %s ml/h（≥600 且带水箱，属蒸发式）' % rate
+        return '超声波', '加湿量 %s ml/h、功率 %sW、带水箱（超声波机型特征）' % (rate, power)
+    return None
+
+
+def rule_kettle2(p, sp):
+    """补充：无名称特征时按容量分档。"""
+    v = num(p.get('capacity') or sp.get('产品容量'))
+    if v is None:
+        return None
+    if v >= 3:
+        return '养生壶', '容量 %sL（≥3L 属养生壶区间）' % v
+    if v < 1.2:
+        return '电煮壶', '容量 %sL（<1.2L）' % v
+    return '电水壶', '容量 %sL' % v
+
+
+def rule_microwave2(p, sp):
+    """补充：无分类字段时按容量与形态推断（≥40L 多为嵌入式蒸烤一体）。"""
+    got = rule_microwave(p, sp)
+    if got:
+        return got
+    size = str(p.get('size') or '')
+    n = p['name']
+    if '嵌入' in n or re.search(r'59\d\s*x\s*59\d', size):
+        return '微烤一体', '尺寸 %s 或名称含嵌入（嵌入式一体机）' % (size or '查不到')
+    if re.search(r'烤', n):
+        return '电烤箱', '名称含烤'
+    return None
+
+
+def rule_bathheater(p, sp):
+    """浴霸副分组改为「控制方式」——原 series 是小米专属系列名，竞品无法归入。"""
+    c = str(p.get('control') or '')
+    if '触摸智能' in c or '智能控制' in c:
+        return '触摸智能控制', '控制方式=%s' % c
+    if re.search(r'APP|语音|遥控.*触控|多功能', c):
+        return 'APP/语音/遥控多模', '控制方式=%s' % c
+    if '触控' in c:
+        return '触控式', '控制方式=%s' % c
+    if '遥控' in c:
+        return '遥控式', '控制方式=%s' % c
+    return None
+
+
+def rule_tv(p, sp):
+    """电视副分组改为「尺寸段」——原 series 是小米 S 系列命名，竞品无法归入。"""
+    v = num(p.get('size_inch'))
+    if v is None:
+        return None
+    if v >= 98:
+        return '百吋巨幕(≥98")', '尺寸 %s 英寸' % v
+    if v >= 85:
+        return '超大(85-97")', '尺寸 %s 英寸' % v
+    if v >= 75:
+        return '大(75-84")', '尺寸 %s 英寸' % v
+    if v >= 65:
+        return '主流(65-74")', '尺寸 %s 英寸' % v
+    return '小(≤64")', '尺寸 %s 英寸' % v
+
+
+def rule_floorwasher(p, sp):
+    """洗地机副分组改为「清水箱容量」——原 series 是米家代际，竞品无法归入。"""
+    v = num(p.get('clean_tank') or sp.get('净水箱容量'))
+    if v is None:
+        return None
+    if v >= 1000:
+        return '大容量(≥1000ml)', '清水箱 %sml' % v
+    if v >= 800:
+        return '中容量(800-999ml)', '清水箱 %sml' % v
+    return '小容量(<800ml)', '清水箱 %sml' % v
+
+
 def rule_airpur(p, sp):
     cadr = num(p.get('cadr_pm'))
     if cadr is not None:
@@ -303,13 +432,14 @@ def rule_airpur(p, sp):
 RULES = {
     'air-conditioner': rule_aircon, 'air-fryer': rule_airfryer, 'air-purifier': rule_airpur,
     'blender': rule_blender, 'coffee-machine': rule_coffee, 'dehumidifier': rule_dehumid,
-    'dishwasher': rule_dishwasher, 'fan': rule_fan, 'heater': rule_heater,
-    'humidifier': rule_humidifier, 'induction-cooker': rule_induction, 'kettle': rule_kettle,
-    'microwave': rule_microwave, 'pressure-cooker': rule_pressurecooker,
-    'projector': rule_projector, 'refrigerator': rule_fridge, 'rice-cooker': rule_ricecooker,
+    'dishwasher': rule_dishwasher, 'fan': rule_fan, 'heater': rule_heater2,
+    'humidifier': rule_humidifier2, 'induction-cooker': rule_induction, 'kettle': rule_kettle,
+    'microwave': rule_microwave2, 'pressure-cooker': rule_pressurecooker,
+    'projector': rule_projector, 'refrigerator': rule_fridge2, 'rice-cooker': rule_ricecooker,
     'robot-vacuum': rule_robotvac, 'vacuum': rule_vacuum, 'washing-machine': rule_washer,
     'water-dispenser': rule_waterdisp, 'water-heater': rule_waterheater,
     'water-purifier': rule_waterpur,
+    'bath-heater': rule_bathheater, 'tv': rule_tv, 'floor-washer': rule_floorwasher,
 }
 
 
