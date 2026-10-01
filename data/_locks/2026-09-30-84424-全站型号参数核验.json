@@ -3,9 +3,9 @@
  "label": "全站型号参数核验",
  "createdBy": "codex",
  "createdAt": "2026-09-30T20:38:04.424Z",
- "status": "frozen",
- "releasedAt": null,
- "releaseNote": null,
+ "status": "released",
+ "releasedAt": "2026-10-01T06:51:50.413Z",
+ "releaseNote": "审核范围发生扩展：当前工作区已从快照时 418 款扩展到 1092 款；旧快照仅保留历史记录，重新冻结当前全量范围",
  "fieldLevel": false,
  "scope": {
   "categories": [
@@ -1727,5 +1727,6 @@
    "_": "38523d072b61"
   }
  },
- "_说明": "审核快照锁。冻结期内任何 Agent 不得修改 scope.keys 内产品的字段。审核完成后用 npm run audit:release -- <id> 解除。检测越界用 npm run audit:check。"
+ "_说明": "审核快照锁。冻结期内任何 Agent 不得修改 scope.keys 内产品的字段。审核完成后用 npm run audit:release -- <id> 解除。检测越界用 npm run audit:check。",
+ "violationsAtRelease": 0
 }

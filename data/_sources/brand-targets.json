@@ -362,5 +362,124 @@
       "coverage": ["适用面积"],
       "gear": ["可选档位"]
     }
+  },
+
+  "air-purifier": {
+    "path": "jinghuaqi",
+    "groupKey": "tier",
+    "groupValue": "竞品",
+    "pick": 5,
+    "brands": { "honeywell": "霍尼韦尔", "midea": "美的", "haier": "海尔", "dreame": "追觅", "dyson": "戴森" },
+    "map": {
+      "area": ["适用面积"],
+      "cadr_pm": ["固态污染物CADR", "CADR"],
+      "cadr_hcho": ["甲醛CADR", "气态污染物CADR"],
+      "power": ["额定功率"],
+      "noise": ["产品噪音"],
+      "filter_life": ["滤网寿命"],
+      "wifi": ["WiFi", "智能"],
+      "size": ["外形尺寸", "产品尺寸"]
+    }
+  },
+
+  "robot-vacuum": {
+    "path": "sweepingrobot",
+    "groupKey": "tier",
+    "groupValue": "竞品",
+    "pick": 6,
+    "brands": { "stone": "石头", "ecovacs": "科沃斯", "dji": "大疆", "dreame": "追觅", "haier": "海尔", "yunjing": "云鲸" },
+    "map": {
+      "suction": ["真空度"],
+      "base_func": ["集尘方式"],
+      "navigation": ["导航方式"],
+      "water_tank": ["水箱容量"],
+      "battery": ["电池容量"],
+      "noise": ["产品噪音"],
+      "power": ["产品功率"],
+      "size": ["外形尺寸"]
+    }
+  },
+
+  "dehumidifier": {
+    "path": "chushiji",
+    "groupKey": "tier",
+    "groupValue": "竞品",
+    "pick": 6,
+    "brands": { "songjing": "松井", "deye": "德业", "midea": "美的", "tcl": "TCL", "gree": "格力", "dorosin": "多乐信", "oujing": "欧井" },
+    "map": {
+      "dehumid": ["日除湿量"],
+      "area": ["适用面积"],
+      "noise": ["运转噪音"],
+      "power": ["额定功率"],
+      "tank": ["水箱容量"],
+      "compressor": ["压缩机"],
+      "purify": ["净化方式"],
+      "size": ["产品尺寸"]
+    }
+  },
+
+  "shaver": {
+    "path": "shaving_razor",
+    "groupKey": "tier",
+    "groupValue": "竞品",
+    "pick": 6,
+    "brands": { "feilipu": "飞利浦", "feike": "飞科", "chaoren": "超人", "bolang": "博朗", "laifen": "徕芬", "songxia": "松下", "povos": "奔腾", "honor": "荣耀" },
+    "map": {
+      "blades": ["刀头数量"],
+      "waterproof": ["防水", "防水等级"],
+      "runtime": ["续航", "使用时间"],
+      "charge": ["充电时间"],
+      "wet_dry": ["干湿两用"],
+      "power": ["功率性能"],
+      "size": ["产品尺寸"]
+    }
+  },
+
+  "toothbrush": {
+    "path": "electrical_toothbrush",
+    "groupKey": "tier",
+    "groupValue": "竞品",
+    "pick": 5,
+    "brands": { "songxia": "松下", "baier": "拜尔", "jingzao": "京造", "dreame": "追觅" },
+    "map": {
+      "freq": ["转动次数"],
+      "modes": ["清洁模式", "主要功能"],
+      "motor": ["马达", "电机"],
+      "battery_days": ["续航", "电池续航"],
+      "charge": ["充电时间"],
+      "waterproof": ["防水等级"],
+      "size": ["产品尺寸"]
+    }
+  },
+
+  "hair-dryer": {
+    "path": "hair_dryer",
+    "groupKey": "tier",
+    "groupValue": "竞品",
+    "pick": 6,
+    "brands": { "dreame": "追觅", "leifin": "徕芬", "kangfu": "康夫", "dyson": "戴森", "panasonic": "松下", "midea": "美的", "aux": "奥克斯", "flyco": "飞科" },
+    "map": {
+      "power": ["产品功率"],
+      "speed": ["风速选择", "风速"],
+      "motor": ["电机", "马达"],
+      "anion": ["负离子"],
+      "temp_ctrl": ["温控", "温度调节"],
+      "weight": ["产品重量"],
+      "size": ["产品尺寸"]
+    }
+  },
+
+  "speaker": {
+    "path": "soundbox",
+    "groupKey": "tier",
+    "groupValue": "竞品",
+    "pick": 6,
+    "brands": { "edifier": "漫步者", "hivi": "惠威", "harmankardon": "哈曼卡顿", "jbl": "JBL", "baidu": "百度", "fenda": "奋达", "huawei": "华为", "marshall": "马歇尔" },
+    "map": {
+      "speaker": ["喇叭单元"],
+      "voice": ["语音助手", "功能特点"],
+      "screen": ["屏幕"],
+      "size": ["产品尺寸"]
+    }
   }
 }
