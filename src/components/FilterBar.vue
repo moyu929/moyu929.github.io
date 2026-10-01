@@ -175,9 +175,16 @@ function sortIcon(key: string) {
 .sorts {
   display: flex;
   gap: 6px;
-  flex: 0 0 auto;
+  flex: 0 1 auto;
+  min-width: 0;
   overflow-x: auto;
   scrollbar-width: none;
+  /* 排序项可以横向滚，不把搜索框挤扁 */
+  scroll-snap-type: x proximity;
+}
+
+.sorts::-webkit-scrollbar {
+  display: none;
 }
 
 .sorts::-webkit-scrollbar {
@@ -218,8 +225,10 @@ function sortIcon(key: string) {
 
 /* ============ 搜索框 ============ */
 .search {
-  flex: 1;
-  min-width: 140px;
+  /* 排序项多的时候（除湿机有 6 个）搜索框容易被挤到只剩 140px。
+     给一个更宽松的基准宽度，并允许它换到下一行独占整行 */
+  flex: 1 1 260px;
+  min-width: 220px;
   position: relative;
 }
 

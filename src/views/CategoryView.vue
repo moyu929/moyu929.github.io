@@ -425,7 +425,7 @@ watch(data, () => {
 
 .titles p {
   font-size: 11px;
-  color: var(--header-text-muted);
+  color: var(--header-muted);
   animation: fadeInUp 0.5s var(--ease-out) 0.1s both;
 }
 
@@ -458,7 +458,7 @@ watch(data, () => {
 
 .stat-label {
   font-size: 9px;
-  color: var(--header-text-muted);
+  color: var(--header-muted);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -471,7 +471,7 @@ watch(data, () => {
 .stat-value small {
   font-size: 10px;
   font-weight: 500;
-  color: var(--header-text-muted);
+  color: var(--header-muted);
   margin-left: 1px;
 }
 

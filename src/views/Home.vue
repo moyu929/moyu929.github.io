@@ -28,9 +28,6 @@ function pad2(n: number) {
   return String(n).padStart(2, '0')
 }
 
-/** 全部品类总数，hero 上展示 */
-const total = computed(() => categoryGroups.reduce((n, g) => n + g.categories.length, 0))
-
 /**
  * 键盘可达性：左右/上下方向键在分组间移动。
  * 用 roving tabindex 让整列只有一个可 Tab 项，方向键负责在其余项间移动。
@@ -68,7 +65,7 @@ onBeforeUnmount(() => {})
         <p class="hero-eyebrow">跨品牌家电参数横评</p>
         <h1>
           <span class="hero-line">按使用场景查</span>
-          <span class="hero-line hero-accent">{{ total }} 个家电品类</span>
+          <span class="hero-line hero-accent">全品类参数对照</span>
         </h1>
         <p class="hero-sub">
           参数逐条标注来源与核查时间，支持品牌与型号横向对比。
@@ -104,10 +101,10 @@ onBeforeUnmount(() => {})
 
       <section
         v-if="activeGroup"
-        class="panel"
+        class="cat-panel"
         :aria-labelledby="`group-${activeGroup.id}`"
       >
-        <header class="panel-head">
+        <header class="cat-head">
           <h2>{{ activeGroup.name }}</h2>
           <p>{{ activeGroup.description }}</p>
         </header>
@@ -159,13 +156,14 @@ onBeforeUnmount(() => {})
   position: relative;
   max-width: var(--page-max);
   margin: 0 auto;
+  text-align: center;
 }
 
 .hero-eyebrow {
+  display: inline-block;
   font-size: 11.5px;
   font-weight: 600;
   letter-spacing: 0.18em;
-  text-transform: uppercase;
   color: var(--brand);
   margin-bottom: 12px;
 }
@@ -179,6 +177,7 @@ onBeforeUnmount(() => {})
   display: flex;
   flex-direction: column;
   gap: 2px;
+  align-items: center;
 }
 
 .hero-line {
@@ -199,6 +198,7 @@ onBeforeUnmount(() => {})
   font-size: 13.5px;
   color: var(--header-muted);
   max-width: 56ch;
+  margin-inline: auto;
   animation: titleIn 0.6s var(--ease-out) both;
   animation-delay: 0.16s;
 }
@@ -323,11 +323,11 @@ onBeforeUnmount(() => {})
 }
 
 /* ---- 右侧面板 ---- */
-.panel {
+.cat-panel {
   min-width: 0;
 }
 
-.panel-head {
+.cat-head {
   display: flex;
   align-items: baseline;
   gap: 10px;
@@ -336,14 +336,14 @@ onBeforeUnmount(() => {})
   border-bottom: 1px solid var(--border);
 }
 
-.panel-head h2 {
+.cat-head h2 {
   font-family: var(--font-display);
   font-size: 19px;
   font-weight: 700;
   letter-spacing: -0.01em;
 }
 
-.panel-head p {
+.cat-head p {
   font-size: 12.5px;
   color: var(--text-faint);
 }

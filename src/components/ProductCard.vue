@@ -214,7 +214,7 @@ const cardStyle = computed(() => {
   gap: 6px;
   margin-bottom: 5px;
   /* 给右上角的对比按钮留出空间，避免标题/徽章被遮挡 */
-  padding-right: 64px;
+  padding-right: 34px;
 }
 
 .head h3 {
@@ -340,43 +340,55 @@ const cardStyle = computed(() => {
 /* ============ 对比按钮（右上角浮层） ============ */
 .cmp-btn {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 8px;
+  right: 8px;
   z-index: 2;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  font-size: 10.5px;
-  padding: 4px 10px;
+  gap: 0;
+  width: 26px;
+  height: 26px;
+  justify-content: center;
   border-radius: var(--radius-xs);
-  border: 1.5px solid var(--brand);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-faint);
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  transition:
+    width var(--dur-normal) var(--ease-out),
+    background var(--dur-fast) var(--ease-smooth),
+    border-color var(--dur-fast) var(--ease-smooth),
+    color var(--dur-fast) var(--ease-smooth);
+}
+
+/* 平时只是一个小图标，不跟标题抢视线；hover 卡片时才展开成带文字的按钮 */
+.card:hover .cmp-btn:not(.active) {
+  width: auto;
+  padding: 0 9px;
+  gap: 4px;
+  border-color: var(--border-brand);
   background: var(--brand-surface);
   color: var(--brand);
-  font-weight: 600;
-  white-space: nowrap;
-  flex-shrink: 0;
-  transition: all var(--dur-fast) var(--ease-spring);
 }
 
-.cmp-icon {
-  width: 12px;
-  height: 12px;
+.cmp-btn:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+  border-color: var(--border-brand);
+  background: var(--brand-surface);
+  color: var(--brand);
 }
 
-.cmp-btn:hover {
-  background: var(--brand-soft);
-  transform: scale(1.05);
-}
-
-.cmp-btn:active {
-  transform: scale(0.95);
-}
-
+/* 已加入对比：常驻展开的实心态，必须一眼可见（用户要确认自己选了什么） */
 .cmp-btn.active {
-  background: var(--brand-gradient);
+  width: auto;
+  padding: 0 9px;
+  gap: 4px;
+  background: var(--brand);
   color: #fff;
   border-color: transparent;
-  box-shadow: var(--shadow-brand);
 }
 
 .cmp-btn.active:hover {

@@ -1,16 +1,18 @@
 <script setup lang="ts">
 /**
- * 站点须知（叠甲）——数据来源、合规、非官方与观点声明。
- * 全站页脚常驻一行摘要，点击展开完整条款；条款文案集中在本文件的 NOTICE 常量里，改文案只改这里。
+ * 数据来源与免责声明。
+ *
+ * 两部分：
+ *  - 页脚只留一行居中的定性文案，不再塞按钮（原来按钮和文案挤在一行，
+ *    文案长时就换行错位）
+ *  - 弹窗由外部触发（见 App.vue 右上角操作组），或首页首次访问自动弹出
+ *
+ * 关闭动画走 macOS 的「神奇效果」（genie effect）：窗口不是简单淡出缩小，
+ * 而是被吸进底部按钮方向 —— 下边缘先收、上边缘后收，形成一个漏斗。
+ * 纯 CSS 用两段 clip-path + 圆角形变近似，不需要逐帧 JS 驱动。
  */
-import { onBeforeUnmount, ref, watch } from 'vue'
-
-const open = ref(false)
-
-interface Section {
-  title: string
-  items: string[]
-}
+import { onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
 
 const NOTICE: Section[] = [
   {
@@ -70,41 +72,108 @@ const NOTICE: Section[] = [
   },
 ]
 
+interface Section {
+  title: string
+  items: string[]
+}
+
+/**
+ * 「今日不再弹出」的标记键（值是当天日期 YYYY-MM-DD）。
+ * 只有点过这个按钮，当天内的首页访问才不再自动弹；否则每次访问首页都会弹。
+ */
+const DISMISS_KEY = 'app-notice-dismissed-on'
+
+function today(): string {
+  const d = new Date()
+  const p = (n: number) => String(n).padStart(2, '0')
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`
+}
+
+const open = ref(false)
+const closing = ref(false)
+
+function readStore(key: string): string | null {
+  try {
+    return localStorage.getItem(key)
+  } catch {
+    return null
+  }
+}
+
+function writeStore(key: string, value: string) {
+  try {
+    localStorage.setItem(key, value)
+  } catch {
+    /* 隐私模式下写入会失败，降级为「本次会话不自动弹」即可 */
+  }
+}
+
 function close() {
-  open.value = false
+  if (closing.value) return
+  closing.value = true
+  // 等收起动画播完再卸载，避免动画中途元素消失变成生硬淡出
+  setTimeout(() => {
+    open.value = false
+    closing.value = false
+  }, 420)
+}
+
+/** 「今日不再弹出」：今天内首页不再自动弹，但仍可从右上角按钮打开 */
+function dismissForToday() {
+  writeStore(DISMISS_KEY, today())
+  close()
+}
+
+/** 打开声明（右上角按钮） */
+function show() {
+  open.value = true
 }
 
 function onKeydown(e: KeyboardEvent) {
   if (e.key === 'Escape' && open.value) close()
 }
 
-watch(open, (v) => {
-  document.documentElement.style.overflow = v ? 'hidden' : ''
-  if (v) document.addEventListener('keydown', onKeydown)
-  else document.removeEventListener('keydown', onKeydown)
+/** 首页自动弹窗：今天点过「今日不再弹出」就不再弹 */
+function maybeAutoShow() {
+  if (readStore(DISMISS_KEY) === today()) return
+  open.value = true
+}
+
+const route = useRoute()
+
+onMounted(() => {
+  document.addEventListener('keydown', onKeydown)
 })
+
+// 自动弹出只发生在首页。组件挂在 App 上不会随路由切换重新 mount，
+// 所以每次路由变化都要重新判断：进首页且当天没点过「今日不再弹出」就弹。
+watch(
+  () => route.path,
+  (path) => {
+    if (path === '/' || path === '') maybeAutoShow()
+    // 离开首页时若弹窗还开着（用户没点就点了品类卡），立即关掉
+    else if (open.value) close()
+  },
+  { immediate: true },
+)
 
 onBeforeUnmount(() => {
   document.removeEventListener('keydown', onKeydown)
-  document.documentElement.style.overflow = ''
 })
+
+defineExpose({ show })
 </script>
 
 <template>
   <footer class="notice-bar">
-    <div class="bar-inner">
-      <p class="bar-text">
-        本站为个人整理的多品牌家电参数库，非任何厂商官方 · 数据来自公开渠道并逐条标注来源 · 评价与建议仅代表个人观点
-      </p>
-      <button class="bar-btn" type="button" @click="open = true">
-        数据来源与免责声明
-      </button>
-    </div>
+    <p class="bar-text">
+      本站为个人整理的多品牌家电参数库，非任何厂商官方 · 数据来自公开渠道并逐条标注来源 · 评价与建议仅代表个人观点
+    </p>
   </footer>
 
   <Teleport to="body">
-    <Transition name="fade">
-      <div v-if="open" class="overlay" @click.self="close">
+    <Transition name="modal">
+      <div v-if="open" class="overlay" :class="{ closing }" @click.self="close">
         <div
           class="panel"
           role="dialog"
@@ -133,6 +202,16 @@ onBeforeUnmount(() => {
             </section>
             <p class="stamp">以上须知随站点数据同步更新 · 最近更新 2026-10-01</p>
           </div>
+
+          <!-- 按钮区固定在面板底部：与滚动主体分离，滚多长都在原位 -->
+          <footer class="panel-foot">
+            <button class="foot-btn ghost" type="button" @click="dismissForToday">
+              今日不再弹出
+            </button>
+            <button class="foot-btn solid" type="button" @click="close">
+              关闭声明
+            </button>
+          </footer>
         </div>
       </div>
     </Transition>
@@ -140,57 +219,30 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
+/* ============ 页脚文案（只留一行，居中） ============ */
 .notice-bar {
   border-top: 1px solid var(--border-soft);
   background: var(--surface-alt);
-  padding: 20px 16px 28px;
-}
-
-.bar-inner {
-  max-width: var(--page-max);
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
+  padding: 18px 16px 22px;
   text-align: center;
 }
 
 .bar-text {
   font-size: 12px;
-  line-height: 1.7;
   color: var(--text-faint);
+  line-height: 1.7;
+  max-width: 68ch;
+  margin: 0 auto;
 }
 
-.bar-btn {
-  font: inherit;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--brand);
-  background: var(--brand-surface);
-  border: 1px solid var(--border-brand);
-  border-radius: var(--radius-sm);
-  padding: 6px 16px;
-  cursor: pointer;
-  transition: background var(--dur-fast) var(--ease-smooth),
-              transform var(--dur-fast) var(--ease-out);
-}
-
-.bar-btn:hover {
-  background: var(--brand-soft);
-  transform: translateY(-1px);
-}
-
-.bar-btn:active {
-  transform: translateY(0);
-}
-
+/* ============ 弹窗 ============ */
 .overlay {
   position: fixed;
   inset: 0;
   z-index: 500;
-  background: rgba(20, 18, 40, 0.45);
+  background: rgba(20, 18, 14, 0.5);
   backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -199,7 +251,7 @@ onBeforeUnmount(() => {
 
 .panel {
   width: 100%;
-  max-width: 720px;
+  max-width: 680px;
   max-height: 86vh;
   display: flex;
   flex-direction: column;
@@ -208,18 +260,22 @@ onBeforeUnmount(() => {
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   box-shadow: var(--shadow-lg);
   overflow: hidden;
+  /* genie 动画要作用在 transform/clip-path 上，这里给个变换原点 */
+  transform-origin: 50% 100%;
 }
 
 .panel-head {
+  flex-shrink: 0;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 12px;
-  padding: 20px 20px 14px;
+  padding: 18px 18px 14px;
   border-bottom: 1px solid var(--border-soft);
 }
 
 .panel-head h2 {
+  font-family: var(--font-display);
   font-size: 17px;
   font-weight: 700;
 }
@@ -232,33 +288,91 @@ onBeforeUnmount(() => {
 
 .close {
   flex-shrink: 0;
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   display: grid;
   place-items: center;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   background: var(--surface);
   color: var(--text-muted);
-  cursor: pointer;
-  transition: background var(--dur-fast) var(--ease-smooth);
+  transition:
+    background var(--dur-fast) var(--ease-smooth),
+    color var(--dur-fast) var(--ease-smooth);
 }
 
 .close:hover {
   background: var(--surface-hover);
+  color: var(--text);
 }
 
 .close svg {
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
 }
 
+/* 主体独立滚动，按钮区因此永远在底部 */
 .panel-body {
-  padding: 8px 20px 24px;
+  flex: 1;
+  min-height: 0;
+  padding: 6px 18px 20px;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
 
+/* ============ 底部按钮区 ============ */
+.panel-foot {
+  flex-shrink: 0;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  padding: 12px 18px;
+  border-top: 1px solid var(--border-soft);
+  background: var(--surface-alt);
+}
+
+.foot-btn {
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition:
+    background var(--dur-fast) var(--ease-smooth),
+    border-color var(--dur-fast) var(--ease-smooth),
+    color var(--dur-fast) var(--ease-smooth),
+    transform var(--dur-fast) var(--ease-out);
+}
+
+.foot-btn:active {
+  transform: scale(0.98);
+}
+
+.foot-btn.ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.foot-btn.ghost:hover {
+  background: var(--surface);
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+
+.foot-btn.solid {
+  background: var(--brand);
+  border: 1px solid var(--brand);
+  color: #fff;
+}
+
+.foot-btn.solid:hover {
+  background: var(--brand-dark);
+  border-color: var(--brand-dark);
+}
+
+/* ============ 条款正文 ============ */
 .block {
   padding: 14px 0;
   border-bottom: 1px dashed var(--border-soft);
@@ -271,7 +385,7 @@ onBeforeUnmount(() => {
 .block h3 {
   font-size: 13px;
   font-weight: 700;
-  color: var(--brand-dark);
+  color: var(--brand);
   margin-bottom: 8px;
   display: flex;
   align-items: center;
@@ -283,7 +397,7 @@ onBeforeUnmount(() => {
   width: 3px;
   height: 13px;
   border-radius: 2px;
-  background: var(--brand-gradient);
+  background: var(--brand);
 }
 
 .block ul {
@@ -307,7 +421,7 @@ onBeforeUnmount(() => {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: var(--brand-light);
+  background: var(--text-faint);
 }
 
 .stamp {
@@ -317,23 +431,82 @@ onBeforeUnmount(() => {
   color: var(--text-faint);
 }
 
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity var(--dur-normal) var(--ease-smooth);
+/* ============ 进出动画 ============ */
+
+/* 进入：底部升起，模仿窗口从 Dock 展开 */
+.modal-enter-active .panel {
+  animation: panelRise 0.34s var(--ease-out) both;
 }
 
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
+.modal-enter-active .overlay {
+  animation: fadeIn 0.24s var(--ease-smooth) both;
+}
+
+@keyframes panelRise {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scaleY(0.86);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 退出：macOS 神奇效果。
+   真 genie 是窗口被吸向 Dock 按钮，形状沿路径拉伸 —— 这里用
+   「下边缘不动、上边缘向下收窄 + 整体缩放」近似出漏斗形。 */
+.closing .panel {
+  animation: genieClose 0.4s cubic-bezier(0.5, 0, 0.75, 0) both;
+}
+
+@keyframes genieClose {
+  0% {
+    transform: translateY(0) scaleY(1);
+    transform-origin: 50% 100%;
+  }
+  55% {
+    transform: translateY(10px) scaleY(0.28) scaleX(0.72);
+    transform-origin: 50% 100%;
+  }
+  100% {
+    transform: translateY(18px) scaleY(0.02) scaleX(0.12);
+    transform-origin: 50% 100%;
+  }
+}
+
+.closing {
+  animation: fadeOut 0.4s var(--ease-smooth) both;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modal-enter-active .panel,
+  .closing .panel,
+  .modal-enter-active .overlay,
+  .closing {
+    animation: none;
+  }
 }
 
 @media (min-width: 768px) {
-  .bar-inner {
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
-  }
-
   .overlay {
     align-items: center;
     padding: 24px;
@@ -345,11 +518,11 @@ onBeforeUnmount(() => {
   }
 
   .panel-head {
-    padding: 24px 28px 16px;
+    padding: 22px 26px 16px;
   }
 
   .panel-body {
-    padding: 8px 28px 28px;
+    padding: 8px 26px 26px;
   }
 
   .block li {
