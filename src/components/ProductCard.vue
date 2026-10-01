@@ -149,7 +149,7 @@ const cardStyle = computed(() => {
   display: flex;
   flex-direction: column;
   opacity: 0;
-  animation: fadeInUp 0.5s var(--ease-out) forwards;
+  animation: fadeInUp 0.42s var(--ease-out) forwards;
   transition: transform var(--dur-normal) var(--ease-out),
               box-shadow var(--dur-normal) var(--ease-smooth),
               border-color var(--dur-normal) var(--ease-smooth);
@@ -218,6 +218,7 @@ const cardStyle = computed(() => {
 }
 
 .head h3 {
+  font-family: var(--font-display);
   font-size: 13.5px;
   font-weight: 700;
   line-height: 1.3;
@@ -260,16 +261,24 @@ const cardStyle = computed(() => {
 }
 
 .chip b {
-  color: var(--danger);
+  /* 价格用强调色而非 danger 红 —— 红色在本站是「缺点」标签的语义，
+     价格标红会被误读成警示 */
+  color: var(--brand);
   font-weight: 700;
+  font-variant-numeric: tabular-nums;
 }
 
 .params {
   display: grid;
   grid-template-columns: auto 1fr;
-  font-size: 10.5px;
-  line-height: 1.7;
-  margin-top: 2px;
+  gap: 0 10px;
+  font-size: 11px;
+  line-height: 1.75;
+  margin-top: 4px;
+  font-variant-numeric: tabular-nums;
+  /* 每行之间一道极淡的横线，参数一多才不至于糊成一片 */
+  border-top: 1px solid var(--border-soft);
+  padding-top: 5px;
 }
 
 .params dt {
@@ -387,6 +396,7 @@ const cardStyle = computed(() => {
   }
 
   .head h3 {
+  font-family: var(--font-display);
     font-size: 15px;
   }
 

@@ -198,11 +198,6 @@ watch(data, () => {
   <div class="page">
     <!-- 动画头部 -->
     <header ref="headerRef" class="head header-gradient">
-      <div class="head-bg" aria-hidden="true">
-        <span class="orb orb-a"></span>
-        <span class="orb orb-b"></span>
-      </div>
-
       <div class="container head-inner">
         <RouterLink to="/" class="back" aria-label="返回首页">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -248,7 +243,7 @@ watch(data, () => {
       @update:timeline-order="timelineOrder = $event"
     />
 
-    <main class="container body">
+    <main id="main" class="container body">
       <p v-if="error" class="notice">{{ error }}</p>
       <div v-else-if="!data" class="loading">
         <span class="spinner"></span>
@@ -370,45 +365,12 @@ watch(data, () => {
 .head {
   position: relative;
   background: var(--header-gradient);
-  background-size: 200% 200%;
   color: var(--header-text);
   position: sticky;
   top: 0;
   z-index: 200;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
   padding-block: 12px 10px;
-  overflow: hidden;
-  animation: gradientFlow 12s ease infinite;
-}
-
-.head-bg {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(30px);
-}
-
-.orb-a {
-  width: 200px;
-  height: 200px;
-  background: var(--header-orb-1);
-  top: -40px;
-  right: -20px;
-  animation: orbDrift1 14s ease-in-out infinite;
-}
-
-.orb-b {
-  width: 150px;
-  height: 150px;
-  background: var(--header-orb-2);
-  bottom: -30px;
-  left: 30%;
-  animation: orbDrift2 18s ease-in-out infinite;
+  border-bottom: 1px solid var(--border);
 }
 
 .head-inner {

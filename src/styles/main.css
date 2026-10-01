@@ -1,147 +1,154 @@
 /* ============================================================
    设计令牌 —— 浅色主题（默认）
+
+   配色取向：工业规格手册。暖石墨中性底 + 陶土红单一强调色。
+   刻意避开高饱和紫蓝渐变 —— 那是生成式站点的通用指纹，且在一屏几十个
+   参数卡片上会持续制造视觉噪音。家电参数站需要的是「读得久」的低刺激配色，
+   强调色只留给交互态与关键数字。
    ============================================================ */
 :root {
-  /* 品牌色 */
-  --brand: #6c5ce7;
-  --brand-light: #a29bfe;
-  --brand-dark: #5849c4;
-  --brand-gradient: linear-gradient(135deg, #6c5ce7, #a29bfe);
-  --brand-gradient-hover: linear-gradient(135deg, #5849c4, #6c5ce7);
-  --brand-soft: #f0edff;
-  --brand-surface: #f8f7ff;
-  --brand-glow: rgba(108, 92, 231, 0.25);
-  --brand-glass-tint: rgba(108, 92, 231, 0.1);
+  /* 强调色：陶土红（印刷/工程图配色），饱和度受控，与中性底同色温 */
+  --brand: #a8452e;
+  --brand-light: #c96a53;
+  --brand-dark: #7d3223;
+  /* 单一强调色，不做渐变 —— 渐变是生成式站点最明显的指纹 */
+  --brand-gradient: var(--brand);
+  --brand-gradient-hover: var(--brand-dark);
+  --brand-soft: #f6ebe7;
+  --brand-surface: #fbf5f3;
+  --brand-glow: rgba(168, 69, 46, 0.16);
+  --brand-glass-tint: rgba(168, 69, 46, 0.08);
 
-  --danger: #e74c3c;
-  --success: #27ae60;
-  --warning: #f39c12;
+  --danger: #b23c2c;
+  --success: #4a7c59;
+  --warning: #9a6b1f;
 
-  /* 背景与表面 */
-  --bg: #eef1f6;
-  --bg-mesh-1: rgba(108, 92, 231, 0.06);
-  --bg-mesh-2: rgba(162, 155, 254, 0.05);
-  --bg-mesh-3: rgba(39, 174, 96, 0.03);
-  --surface: #ffffff;
-  --surface-alt: #f8f9fb;
-  --surface-hover: #f0f2f5;
-  --surface-glass: rgba(255, 255, 255, 0.7);
-  --header-from: #e8e4ff;
-  --header-to: #f5f3ff;
-  --header-gradient: linear-gradient(135deg, #e8e4ff 0%, #f0edff 50%, #f5f3ff 100%);
-  --header-text: #1a1a2e;
-  --header-text-muted: rgba(26, 26, 46, 0.6);
-  --header-surface: rgba(108, 92, 231, 0.1);
-  --header-surface-border: rgba(108, 92, 231, 0.12);
-  --header-orb-1: rgba(108, 92, 231, 0.35);
-  --header-orb-2: rgba(162, 155, 254, 0.3);
-  --header-orb-3: rgba(15, 52, 96, 0.12);
+  /* 背景与表面：暖灰纸感，非纯白非冷灰 */
+  --bg: #f4f2ee;
+  --surface: #fdfcfa;
+  --surface-alt: #f0ede7;
+  --surface-hover: #e8e4dc;
+  --surface-glass: rgba(253, 252, 250, 0.82);
+  --header-from: #efece6;
+  --header-to: #f7f5f1;
+  --header-gradient: linear-gradient(180deg, #efece6 0%, #f7f5f1 100%);
+  --header-text: #1d1a16;
+  --header-muted: #6b6459;
+  --header-surface: rgba(255, 255, 255, 0.5);
+  --header-surface-border: rgba(29, 26, 22, 0.1);
+  --header-orb-1: rgba(168, 69, 46, 0.07);
 
   /* 文本 */
-  --text: #1a1a2e;
-  --text-muted: #555a6e;
-  --text-faint: #99a0b0;
+  --text: #1d1a16;
+  --text-muted: #56504a;
+  --text-faint: #8d867c;
 
-  /* 边框 */
-  --border: rgba(0, 0, 0, 0.08);
-  --border-soft: rgba(0, 0, 0, 0.04);
-  --border-brand: rgba(108, 92, 231, 0.3);
+  /* 边框：比纯灰偏暖，避免冷调 */
+  --border: rgba(29, 26, 22, 0.12);
+  --border-soft: rgba(29, 26, 22, 0.07);
+  --border-strong: rgba(29, 26, 22, 0.22);
+  --border-brand: rgba(168, 69, 46, 0.4);
 
-  /* 标签配色 */
-  --tag-blue-bg: #eef2ff;
-  --tag-blue-fg: #4a56e2;
-  --tag-red-bg: #fef0f0;
-  --tag-red-fg: #e74c3c;
-  --tag-green-bg: #e8f8f0;
-  --tag-green-fg: #27ae60;
+  /* 标签：低饱和淡底，文字对比够但不刺眼 */
+  --tag-blue-bg: #e8ecf0;
+  --tag-blue-fg: #40546b;
+  --tag-red-bg: #f7e9e6;
+  --tag-red-fg: #9c3628;
+  --tag-green-bg: #e7efe9;
+  --tag-green-fg: #3f6b4d;
 
-  /* 阴影 */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.12);
-  --shadow-brand: 0 8px 24px rgba(108, 92, 231, 0.25);
-  --shadow-brand-lg: 0 12px 36px rgba(108, 92, 231, 0.35);
+  /* 阴影：带暖色调，不使用纯黑 */
+  --shadow-sm: 0 1px 2px rgba(64, 52, 38, 0.06), 0 2px 6px rgba(64, 52, 38, 0.04);
+  --shadow-md: 0 2px 6px rgba(64, 52, 38, 0.06), 0 8px 20px rgba(64, 52, 38, 0.07);
+  --shadow-lg: 0 4px 12px rgba(64, 52, 38, 0.08), 0 18px 44px rgba(64, 52, 38, 0.1);
+  --shadow-brand: 0 2px 10px rgba(168, 69, 46, 0.18);
+  --shadow-brand-lg: 0 6px 22px rgba(168, 69, 46, 0.24);
 
-  /* 圆角 */
-  --radius: 12px;
-  --radius-sm: 8px;
-  --radius-xs: 5px;
-  --radius-lg: 16px;
+  /* 圆角：容器柔和、控件收紧，不用胶囊 */
+  --radius: 10px;
+  --radius-sm: 7px;
+  --radius-xs: 4px;
+  --radius-lg: 14px;
   --radius-full: 9999px;
 
   /* 布局 */
-  --header-h: 64px;
+  --header-h: 60px;
   --toolbar-h: 52px;
-  --page-max: 1440px;
+  --page-max: 1320px;
 
   /* 动画 */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-spring: cubic-bezier(0.34, 1.4, 0.64, 1);
   --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
   --dur-fast: 0.15s;
-  --dur-normal: 0.3s;
-  --dur-slow: 0.5s;
+  --dur-normal: 0.24s;
+  --dur-slow: 0.42s;
+
+  /* 字体：衬线标题走系统衬线（零加载成本，立刻脱离无衬线通用感）；
+     正文系统无衬线；数字启用等宽数字，参数对齐才读得下去 */
+  --font-display: 'Songti SC', 'Source Han Serif SC', 'Noto Serif CJK SC', 'STSong',
+                  Georgia, 'Times New Roman', serif;
+  --font-body: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB',
+               'Microsoft YaHei', 'Helvetica Neue', sans-serif;
+  --font-mono: 'SF Mono', 'JetBrains Mono', Menlo, Consolas, 'Courier New', monospace;
 
   color-scheme: light;
 }
 
 /* ============================================================
-   设计令牌 —— 深色主题
+   设计令牌 —— 深色主题（同色温的暗调，不跳到冷蓝黑）
    ============================================================ */
 [data-theme="dark"] {
-  --brand: #a29bfe;
-  --brand-light: #d4ceff;
-  --brand-dark: #6c5ce7;
-  --brand-gradient: linear-gradient(135deg, #6c5ce7, #a29bfe);
-  --brand-gradient-hover: linear-gradient(135deg, #5849c4, #a29bfe);
-  --brand-soft: rgba(108, 92, 231, 0.15);
-  --brand-surface: rgba(108, 92, 231, 0.08);
-  --brand-glow: rgba(162, 155, 254, 0.2);
-  --brand-glass-tint: rgba(162, 155, 254, 0.16);
+  --brand: #d3775c;
+  --brand-light: #e0977f;
+  --brand-dark: #a8452e;
+  /* 单一强调色，不做渐变 —— 渐变是生成式站点最明显的指纹 */
+  --brand-gradient: var(--brand);
+  --brand-gradient-hover: var(--brand-dark);
+  --brand-soft: rgba(211, 119, 92, 0.16);
+  --brand-surface: rgba(211, 119, 92, 0.09);
+  --brand-glow: rgba(211, 119, 92, 0.2);
+  --brand-glass-tint: rgba(211, 119, 92, 0.12);
 
-  --danger: #ff6b6b;
-  --success: #51cf66;
-  --warning: #ffd43b;
+  --danger: #e07361;
+  --success: #7fae8d;
+  --warning: #cfa14e;
 
-  --bg: #0d1117;
-  --bg-mesh-1: rgba(108, 92, 231, 0.08);
-  --bg-mesh-2: rgba(162, 155, 254, 0.06);
-  --bg-mesh-3: rgba(39, 174, 96, 0.04);
-  --surface: #161b22;
-  --surface-alt: #1c2333;
-  --surface-hover: #242b3d;
-  --surface-glass: rgba(22, 27, 34, 0.7);
-  --header-from: #0a0e1a;
-  --header-to: #111626;
-  --header-gradient: linear-gradient(135deg, #0a0e1a 0%, #161b2e 50%, #1a1f3a 100%);
-  --header-text: #ffffff;
-  --header-text-muted: rgba(255, 255, 255, 0.6);
-  --header-surface: rgba(255, 255, 255, 0.1);
-  --header-surface-border: rgba(255, 255, 255, 0.1);
-  --header-orb-1: rgba(108, 92, 231, 0.4);
-  --header-orb-2: rgba(162, 155, 254, 0.3);
-  --header-orb-3: rgba(15, 52, 96, 0.5);
+  --bg: #171512;
+  --surface: #1e1c18;
+  --surface-alt: #262320;
+  --surface-hover: #2f2b26;
+  --surface-glass: rgba(30, 28, 24, 0.82);
+  --header-from: #141210;
+  --header-to: #1b1815;
+  --header-gradient: linear-gradient(180deg, #141210 0%, #1b1815 100%);
+  --header-text: #f0ece5;
+  --header-muted: #9c948a;
+  --header-surface: rgba(255, 255, 255, 0.06);
+  --header-surface-border: rgba(255, 255, 255, 0.09);
+  --header-orb-1: rgba(211, 119, 92, 0.09);
 
-  --text: #e6edf3;
-  --text-muted: #8b949e;
-  --text-faint: #6e7681;
+  --text: #ede8e0;
+  --text-muted: #a49c91;
+  --text-faint: #7a736a;
 
-  --border: rgba(255, 255, 255, 0.08);
-  --border-soft: rgba(255, 255, 255, 0.04);
-  --border-brand: rgba(162, 155, 254, 0.3);
+  --border: rgba(237, 232, 224, 0.11);
+  --border-soft: rgba(237, 232, 224, 0.06);
+  --border-strong: rgba(237, 232, 224, 0.2);
+  --border-brand: rgba(211, 119, 92, 0.45);
 
-  --tag-blue-bg: rgba(74, 86, 226, 0.15);
-  --tag-blue-fg: #93a0ff;
-  --tag-red-bg: rgba(231, 76, 60, 0.15);
-  --tag-red-fg: #ff8a80;
-  --tag-green-bg: rgba(39, 174, 96, 0.15);
-  --tag-green-fg: #6ee7a8;
+  --tag-blue-bg: rgba(140, 160, 180, 0.14);
+  --tag-blue-fg: #9db3c7;
+  --tag-red-bg: rgba(200, 90, 70, 0.16);
+  --tag-red-fg: #e59b8a;
+  --tag-green-bg: rgba(110, 160, 125, 0.16);
+  --tag-green-fg: #9cc7a8;
 
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);
-  --shadow-brand: 0 8px 24px rgba(162, 155, 254, 0.15);
-  --shadow-brand-lg: 0 12px 36px rgba(162, 155, 254, 0.2);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 6px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 2px 6px rgba(0, 0, 0, 0.32), 0 8px 20px rgba(0, 0, 0, 0.26);
+  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.34), 0 18px 44px rgba(0, 0, 0, 0.32);
+  --shadow-brand: 0 2px 10px rgba(211, 119, 92, 0.16);
+  --shadow-brand-lg: 0 6px 22px rgba(211, 119, 92, 0.22);
 
   color-scheme: dark;
 }
@@ -160,41 +167,57 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue', sans-serif;
+  font-family: var(--font-body);
   background: var(--bg);
   color: var(--text);
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
-  min-height: 100vh;
+  min-height: 100dvh;
+  /* 参数站的数字要能上下对齐才好比较 */
+  font-variant-numeric: tabular-nums;
 }
 
 /* overflow-x 放在 html 上裁剪横向溢出，避免放在 body 上使 body 变成
    滚动容器、进而破坏内部 position: sticky 的吸顶（如顶部栏与筛选栏） */
 html {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
-/* 动态背景渐变网格 */
+/* 纸纹：极淡的斜向细纹 + 一层噪点。
+   目的是给大面积纯色一点物质感，纯平涂在数据密集页上会显得发死。 */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
   z-index: -1;
-  background:
-    radial-gradient(ellipse 600px 400px at 15% 10%, var(--bg-mesh-1), transparent),
-    radial-gradient(ellipse 500px 500px at 85% 80%, var(--bg-mesh-2), transparent),
-    radial-gradient(ellipse 400px 300px at 50% 50%, var(--bg-mesh-3), transparent);
   pointer-events: none;
-  animation: meshFloat 20s ease-in-out infinite;
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 23px,
+      color-mix(in srgb, var(--text) 3%, transparent) 23px 24px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 23px,
+      color-mix(in srgb, var(--text) 3%, transparent) 23px 24px
+    );
+  opacity: 0.5;
 }
 
-@keyframes meshFloat {
-  0%, 100% { transform: scale(1) rotate(0deg); }
-  33% { transform: scale(1.05) rotate(1deg); }
-  66% { transform: scale(0.98) rotate(-1deg); }
+/* 噪点：内联 SVG 湍流滤镜，无外部请求 */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.35;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.32'/%3E%3C/svg%3E");
 }
 
 a {
@@ -240,10 +263,70 @@ input {
   border: 0;
 }
 
+/* 跳过导航：键盘用户第一个 Tab 就能跳过顶栏 */
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -60px;
+  z-index: 1000;
+  padding: 10px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  transition: top var(--dur-fast) var(--ease-smooth);
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
 /* 键盘焦点 */
 :focus-visible {
   outline: 2px solid var(--brand);
   outline-offset: 2px;
+}
+
+/* ============================================================
+   排版基线
+   ============================================================ */
+
+/* 页面级标题用衬线。规格手册的语感来自衬线标题 + 无衬线正文 +
+   等宽数字的组合，这套排版本身就和「通用渐变卡片站」区分开。 */
+h1,
+h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+h3,
+h4 {
+  letter-spacing: -0.01em;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* 正文里的数字、型号、单位用等宽，宽窄一致才好比对 */
+.num,
+[style*="tabular-nums"] {
+  font-variant-numeric: tabular-nums;
+}
+
+code,
+kbd,
+samp {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+}
+
+/* 段落宽度上限，长文本不铺满整行 */
+.prose p {
+  max-width: 68ch;
 }
 
 /* ============================================================

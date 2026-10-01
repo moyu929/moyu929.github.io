@@ -73,7 +73,6 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKeydown))
       <section v-if="open" class="drawer drawer-surface" role="dialog" aria-label="参数对比" aria-modal="true">
         <header class="head header-gradient">
           <div class="head-bg" aria-hidden="true">
-            <span class="orb"></span>
           </div>
           <h2>
             <svg class="head-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -194,7 +193,7 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKeydown))
   align-items: center;
   justify-content: space-between;
   padding: 14px 16px;
-  background: var(--header-gradient);
+  background: var(--surface);
   color: var(--header-text);
   flex-shrink: 0;
   overflow: hidden;
@@ -206,17 +205,6 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKeydown))
   pointer-events: none;
 }
 
-.orb {
-  position: absolute;
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  background: var(--header-orb-1);
-  filter: blur(40px);
-  top: -40px;
-  right: 10%;
-  animation: orbDrift1 14s ease-in-out infinite;
-}
 
 .head h2 {
   position: relative;

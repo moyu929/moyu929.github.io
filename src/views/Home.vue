@@ -23,6 +23,11 @@ const counts = computed(() =>
   Object.fromEntries(categoryGroups.map((g) => [g.id, g.categories.length])),
 )
 
+/** 分组序号补零到两位，像规格手册的目录编号 */
+function pad2(n: number) {
+  return String(n).padStart(2, '0')
+}
+
 /** 全部品类总数，hero 上展示 */
 const total = computed(() => categoryGroups.reduce((n, g) => n + g.categories.length, 0))
 
@@ -59,25 +64,20 @@ onBeforeUnmount(() => {})
   <div class="home">
     <!-- Hero -->
     <header class="hero">
-      <div class="hero-bg" aria-hidden="true">
-        <span class="orb orb-1"></span>
-        <span class="orb orb-2"></span>
-        <span class="orb orb-3"></span>
-      </div>
-      <div class="hero-content">
+      <div class="hero-inner">
         <p class="hero-eyebrow">跨品牌家电参数横评</p>
         <h1>
-          <span class="hero-title-line" style="animation-delay: 0.1s">按场景找</span>
-          <span class="hero-title-line gradient" style="animation-delay: 0.25s">{{ total }} 个品类</span>
+          <span class="hero-line">按使用场景查</span>
+          <span class="hero-line hero-accent">{{ total }} 个家电品类</span>
         </h1>
-        <p class="subtitle" style="animation-delay: 0.4s">
-          参数逐条标注来源 · 支持品牌与型号横向对比
+        <p class="hero-sub">
+          参数逐条标注来源与核查时间，支持品牌与型号横向对比。
         </p>
       </div>
     </header>
 
     <!-- 一级品类导航 + 该组品类 -->
-    <main class="container browse">
+    <main id="main" class="container browse">
       <nav class="groups" aria-label="一级品类">
         <p class="groups-label">按使用场景</p>
         <ul class="group-list">
@@ -92,7 +92,7 @@ onBeforeUnmount(() => {})
               @click="selectGroup(g.id)"
               @keydown="onGroupKeydown($event, i)"
             >
-              <span class="group-icon" aria-hidden="true">{{ g.icon }}</span>
+              <span class="group-index" aria-hidden="true">{{ pad2(i + 1) }}</span>
               <span class="group-text">
                 <span class="group-name">{{ g.name }}</span>
                 <span class="group-count">{{ counts[g.id] }} 个品类</span>
@@ -102,13 +102,14 @@ onBeforeUnmount(() => {})
         </ul>
       </nav>
 
-      <section v-if="activeGroup" class="panel" :aria-labelledby="`group-${activeGroup.id}`">
+      <section
+        v-if="activeGroup"
+        class="panel"
+        :aria-labelledby="`group-${activeGroup.id}`"
+      >
         <header class="panel-head">
-          <span class="panel-icon" aria-hidden="true">{{ activeGroup.icon }}</span>
-          <div>
-            <h2>{{ activeGroup.name }}</h2>
-            <p>{{ activeGroup.description }}</p>
-          </div>
+          <h2>{{ activeGroup.name }}</h2>
+          <p>{{ activeGroup.description }}</p>
         </header>
 
         <div class="grid">
@@ -118,18 +119,13 @@ onBeforeUnmount(() => {})
             class="card reveal"
             :to="`/${c.id}`"
           >
-            <div class="card-icon">
-              <span aria-hidden="true">{{ c.icon }}</span>
-            </div>
-            <div class="card-body">
-              <h3>{{ c.name }}</h3>
-              <p>{{ c.description }}</p>
-            </div>
-            <div class="card-arrow" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <h3>{{ c.name }}</h3>
+            <p>{{ c.description }}</p>
+            <span class="card-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M9 18l6-6-6-6" />
               </svg>
-            </div>
+            </span>
           </RouterLink>
         </div>
       </section>
@@ -138,127 +134,101 @@ onBeforeUnmount(() => {})
 </template>
 
 <style scoped>
-/* ============ Hero ============ */
+/* ============================================================
+   Hero —— 规格手册的题头，不是营销页的大图
+   ============================================================ */
 .hero {
   position: relative;
   background: var(--header-gradient);
-  background-size: 200% 200%;
   color: var(--header-text);
-  padding: 72px 16px 64px;
-  text-align: center;
+  padding: 64px 16px 52px;
+  border-bottom: 1px solid var(--border);
+  /* 顶部一道细的强调色横线，代替渐变色球 */
   overflow: hidden;
-  animation: gradientFlow 12s ease infinite;
 }
 
-.hero-bg {
+.hero::before {
+  content: '';
   position: absolute;
-  inset: 0;
-  pointer-events: none;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: var(--brand);
 }
 
-.orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(40px);
-}
-
-.orb-1 {
-  width: 300px;
-  height: 300px;
-  background: var(--header-orb-1);
-  top: -60px;
-  left: -40px;
-  animation: orbDrift1 16s ease-in-out infinite;
-}
-
-.orb-2 {
-  width: 250px;
-  height: 250px;
-  background: var(--header-orb-2);
-  bottom: -50px;
-  right: -30px;
-  animation: orbDrift2 20s ease-in-out infinite;
-}
-
-.orb-3 {
-  width: 200px;
-  height: 200px;
-  background: var(--header-orb-3);
-  top: 40%;
-  left: 60%;
-  animation: orbDrift3 24s ease-in-out infinite;
-}
-
-.hero-content {
+.hero-inner {
   position: relative;
-  z-index: 1;
-  max-width: 720px;
+  max-width: var(--page-max);
   margin: 0 auto;
 }
 
 .hero-eyebrow {
-  display: inline-block;
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--header-muted);
-  margin-bottom: 14px;
-  padding: 5px 14px;
-  border: 1px solid var(--header-border);
-  border-radius: var(--radius-full);
+  color: var(--brand);
+  margin-bottom: 12px;
 }
 
 .hero h1 {
-  font-size: clamp(30px, 6vw, 46px);
-  font-weight: 800;
-  line-height: 1.15;
+  font-family: var(--font-display);
+  font-size: clamp(30px, 5.6vw, 46px);
+  font-weight: 700;
+  line-height: 1.12;
   letter-spacing: -0.02em;
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
 
-.hero-title-line {
+.hero-line {
   display: block;
-  animation: titleIn 0.7s var(--ease-out) both;
+  animation: titleIn 0.6s var(--ease-out) both;
 }
 
-.hero-title-line.gradient {
-  background: var(--brand-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.hero-line:nth-child(2) {
+  animation-delay: 0.08s;
 }
 
-.subtitle {
-  margin-top: 16px;
-  font-size: 14px;
+.hero-accent {
+  color: var(--brand);
+}
+
+.hero-sub {
+  margin-top: 14px;
+  font-size: 13.5px;
   color: var(--header-muted);
-  animation: titleIn 0.7s var(--ease-out) both;
+  max-width: 56ch;
+  animation: titleIn 0.6s var(--ease-out) both;
+  animation-delay: 0.16s;
 }
 
-/* ============ 浏览区：左导航 + 右面板 ============ */
+/* ============================================================
+   浏览区：左分组导航 + 右品类面板
+   ============================================================ */
 .browse {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
-  padding-block: 32px 72px;
+  gap: 22px;
+  padding-block: 28px 72px;
+}
+
+.groups {
+  min-width: 0;
 }
 
 .groups-label {
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   color: var(--text-faint);
-  text-transform: uppercase;
-  padding: 0 4px;
+  padding: 0 2px;
   margin-bottom: 10px;
 }
 
 .group-list {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   overflow-x: auto;
   padding-bottom: 4px;
   scrollbar-width: none;
@@ -269,36 +239,43 @@ onBeforeUnmount(() => {})
   display: none;
 }
 
+/* 分组项：编号 + 名称，像规格手册的目录 */
 .group-item {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 10px 14px;
+  padding: 9px 13px;
   min-width: max-content;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--surface);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
   color: var(--text-muted);
   font: inherit;
   font-size: 13px;
   text-align: left;
   cursor: pointer;
   transition:
-    border-color var(--dur-fast) var(--ease-smooth),
     background var(--dur-fast) var(--ease-smooth),
-    color var(--dur-fast) var(--ease-smooth);
+    color var(--dur-fast) var(--ease-smooth),
+    border-color var(--dur-fast) var(--ease-smooth);
 }
 
 .group-item:hover {
-  border-color: var(--border-brand);
   background: var(--surface-hover);
+  color: var(--text);
 }
 
 .group-item.active {
   background: var(--brand-surface);
+  border-color: var(--border-brand);
+  color: var(--brand);
+}
+
+/* 选中项左侧一道实心竖条，替代填充色块 */
+.group-item.active .group-index {
+  background: var(--brand);
   border-color: var(--brand);
-  color: var(--brand-dark);
-  font-weight: 700;
+  color: #fff;
 }
 
 .group-item:focus-visible {
@@ -306,24 +283,41 @@ onBeforeUnmount(() => {})
   outline-offset: 2px;
 }
 
-.group-icon {
-  font-size: 17px;
-  line-height: 1;
+/* 序号用等宽数字，像目录编号 */
+.group-index {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xs);
+  background: var(--surface);
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+  transition:
+    background var(--dur-fast) var(--ease-smooth),
+    color var(--dur-fast) var(--ease-smooth),
+    border-color var(--dur-fast) var(--ease-smooth);
 }
 
 .group-text {
   display: flex;
   flex-direction: column;
-  gap: 1px;
+  gap: 0;
+  line-height: 1.35;
 }
 
 .group-name {
+  font-weight: 550;
   white-space: nowrap;
 }
 
 .group-count {
   font-size: 11px;
-  font-weight: 400;
   color: var(--text-faint);
   white-space: nowrap;
 }
@@ -335,26 +329,16 @@ onBeforeUnmount(() => {})
 
 .panel-head {
   display: flex;
-  align-items: center;
-  gap: 12px;
-  padding-bottom: 14px;
-  margin-bottom: 16px;
-  border-bottom: 1px solid var(--border-soft);
-}
-
-.panel-icon {
-  display: grid;
-  place-items: center;
-  width: 40px;
-  height: 40px;
-  font-size: 20px;
-  border-radius: var(--radius);
-  background: var(--brand-surface);
-  flex-shrink: 0;
+  align-items: baseline;
+  gap: 10px;
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--border);
 }
 
 .panel-head h2 {
-  font-size: 18px;
+  font-family: var(--font-display);
+  font-size: 19px;
   font-weight: 700;
   letter-spacing: -0.01em;
 }
@@ -362,60 +346,48 @@ onBeforeUnmount(() => {})
 .panel-head p {
   font-size: 12.5px;
   color: var(--text-faint);
-  margin-top: 2px;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(228px, 1fr));
+  gap: 8px;
 }
 
+/* 品类卡：靠底色与内边距分层，不靠边框+阴影堆叠。
+   卡片数量多（一屏十几个），阴影一多就全是噪音。 */
 .card {
   position: relative;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 14px 40px 14px 14px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+  display: block;
+  padding: 13px 34px 13px 14px;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-sm);
   background: var(--surface);
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
   transition:
-    transform var(--dur-normal) var(--ease-out),
-    border-color var(--dur-normal) var(--ease-smooth),
-    box-shadow var(--dur-normal) var(--ease-smooth);
+    background var(--dur-fast) var(--ease-smooth),
+    border-color var(--dur-fast) var(--ease-smooth),
+    transform var(--dur-fast) var(--ease-out);
 }
 
 .card:hover {
-  transform: translateY(-2px);
+  background: var(--brand-surface);
   border-color: var(--border-brand);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
 }
 
-.card-icon {
-  display: grid;
-  place-items: center;
-  width: 38px;
-  height: 38px;
-  font-size: 19px;
-  border-radius: var(--radius-sm);
-  background: var(--surface-alt);
-  flex-shrink: 0;
+.card:active {
+  transform: translateY(0);
 }
 
-.card-body {
-  min-width: 0;
-}
-
-.card-body h3 {
+.card h3 {
   font-size: 14px;
-  font-weight: 650;
-  letter-spacing: -0.01em;
+  font-weight: 600;
+  letter-spacing: -0.005em;
 }
 
-.card-body p {
+.card p {
   font-size: 11.5px;
   color: var(--text-faint);
   margin-top: 3px;
@@ -429,17 +401,18 @@ onBeforeUnmount(() => {})
 
 .card-arrow {
   position: absolute;
-  right: 14px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 16px;
-  height: 16px;
+  right: 13px;
+  top: 14px;
+  width: 14px;
+  height: 14px;
   color: var(--text-faint);
-  transition: transform var(--dur-normal) var(--ease-spring);
+  transition:
+    transform var(--dur-normal) var(--ease-out),
+    color var(--dur-fast) var(--ease-smooth);
 }
 
 .card:hover .card-arrow {
-  transform: translateY(-50%) translateX(3px);
+  transform: translateX(3px);
   color: var(--brand);
 }
 
@@ -451,7 +424,7 @@ onBeforeUnmount(() => {})
 @keyframes titleIn {
   from {
     opacity: 0;
-    transform: translateY(14px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -459,51 +432,11 @@ onBeforeUnmount(() => {})
   }
 }
 
-@keyframes gradientFlow {
-  0%,
-  100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-@keyframes orbDrift1 {
-  0%,
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
-  50% {
-    transform: translate(40px, 30px) scale(1.1);
-  }
-}
-
-@keyframes orbDrift2 {
-  0%,
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
-  50% {
-    transform: translate(-35px, -25px) scale(1.15);
-  }
-}
-
-@keyframes orbDrift3 {
-  0%,
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
-  50% {
-    transform: translate(25px, -35px) scale(0.95);
-  }
-}
-
-/* ---- 宽屏：左导航固定竖排，右面板占满 ---- */
+/* ---- 宽屏：左导航固定竖排 ---- */
 @media (min-width: 900px) {
   .browse {
-    grid-template-columns: 216px minmax(0, 1fr);
-    gap: 32px;
+    grid-template-columns: 218px minmax(0, 1fr);
+    gap: 36px;
     align-items: start;
   }
 
@@ -515,25 +448,26 @@ onBeforeUnmount(() => {})
   .group-list {
     flex-direction: column;
     overflow: visible;
-    gap: 4px;
+    gap: 2px;
   }
 
   .group-item {
     width: 100%;
     min-width: 0;
+    border-radius: var(--radius-xs);
   }
 }
 
 @media (min-width: 1200px) {
   .browse {
-    grid-template-columns: 236px minmax(0, 1fr);
-    gap: 40px;
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 44px;
   }
 }
 
 @media (max-width: 899px) {
   .hero {
-    padding: 52px 16px 44px;
+    padding: 44px 16px 36px;
   }
 }
 </style>
