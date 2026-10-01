@@ -348,7 +348,7 @@ const cardStyle = computed(() => {
   gap: 4px;
   font-size: 10.5px;
   padding: 4px 10px;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-xs);
   border: 1.5px solid var(--brand);
   background: var(--brand-surface);
   color: var(--brand);

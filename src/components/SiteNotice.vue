@@ -169,7 +169,7 @@ onBeforeUnmount(() => {
   color: var(--brand);
   background: var(--brand-surface);
   border: 1px solid var(--border-brand);
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-sm);
   padding: 6px 16px;
   cursor: pointer;
   transition: background var(--dur-fast) var(--ease-smooth),

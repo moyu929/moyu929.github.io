@@ -212,7 +212,7 @@ onBeforeUnmount(() => {
   font-weight: 400;
   background: var(--surface-alt);
   padding: 1px 6px;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-xs);
 }
 
 .option.active .count {

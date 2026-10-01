@@ -128,9 +128,6 @@ function onMove(e: PointerEvent) {
     dragging.value = true
     const r = (rootRef.value as HTMLElement).getBoundingClientRect()
     off = { x: e.clientX - r.left, y: e.clientY - r.top }
-    // 拖动期禁用 backdrop-filter 折射——它是拖动卡顿的最大来源，
-    // 每帧重算整个背景的位移贴图。松手后自动恢复。
-    rootRef.value?.classList.add('is-dragging')
   }
   e.preventDefault()
   pendingX = clamp(e.clientX - off.x, window.innerWidth - SIZE.value)
@@ -333,21 +330,21 @@ onBeforeUnmount(() => {
   cursor: grab;
   user-select: none;
   touch-action: none;
-  background: var(--brand-glass-tint, rgba(108, 92, 231, 0.08));
+  background: var(--brand-glass-tint);
   overflow: hidden;
   box-shadow:
     0 4px 8px rgba(0, 0, 0, 0.25),
     0 -10px 25px inset rgba(0, 0, 0, 0.15),
-    inset 0 0 0 1px rgba(108, 92, 231, 0.2);
+    inset 0 0 0 1px var(--border-brand);
   transition: transform var(--dur-fast, 0.15s) var(--ease-spring, ease),
               box-shadow var(--dur-normal, 0.3s) var(--ease-smooth, ease);
 }
 
 .liquid-glass:hover {
   box-shadow:
-    0 6px 16px rgba(108, 92, 231, 0.3),
+    0 6px 16px var(--brand-glow),
     0 -10px 25px inset rgba(0, 0, 0, 0.15),
-    inset 0 0 0 1px rgba(108, 92, 231, 0.35);
+    inset 0 0 0 1px var(--brand);
 }
 
 .liquid-glass:active {
@@ -361,7 +358,7 @@ onBeforeUnmount(() => {
   cursor: grabbing;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
-  background: rgba(108, 92, 231, 0.22);
+  background: var(--brand-soft);
   will-change: transform;
 }
 
@@ -376,14 +373,14 @@ onBeforeUnmount(() => {
   width: 100%;
   height: 100%;
   color: #fff;
-  text-shadow: 0 1px 3px rgba(108, 92, 231, 0.5);
+  text-shadow: 0 1px 3px var(--brand-glow);
   font-weight: 700;
 }
 
 .glass-icon {
   width: 16px;
   height: 16px;
-  filter: drop-shadow(0 0 4px rgba(162, 155, 254, 0.4));
+  filter: drop-shadow(0 0 4px var(--brand-glow));
 }
 
 .glass-text {
@@ -400,7 +397,7 @@ onBeforeUnmount(() => {
   height: 16px;
   padding: 0 4px;
   border-radius: 9999px;
-  background: var(--brand, #6c5ce7);
+  background: var(--brand);
   color: #fff;
   font-size: 10px;
   font-weight: 700;

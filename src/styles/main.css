@@ -395,14 +395,8 @@ body,
     box-shadow: 0 4px 14px var(--brand-glow);
   }
   50% {
-    box-shadow: 0 4px 28px var(--brand-glow), 0 0 0 8px rgba(108, 92, 231, 0.08);
+    box-shadow: 0 4px 28px var(--brand-glow), 0 0 0 8px var(--brand-soft);
   }
-}
-
-/* 渐变流动 */
-@keyframes gradientFlow {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
 }
 
 /* 浮动 */
@@ -492,16 +486,6 @@ body,
     transform: none;
     transition: none;
   }
-}
-
-/* ============================================================
-   工具类
-   ============================================================ */
-.gradient-text {
-  background: var(--brand-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .glass {
