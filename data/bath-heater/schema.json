@@ -12,7 +12,8 @@
       "P 系列",
       "G 系列",
       "2 代系列",
-      "双核/变频款"
+      "双核/变频款",
+      "竞品"
     ],
     "colors": {
       "初代款": "#95a5a6",
@@ -46,6 +47,13 @@
       "compare": true
     },
     {
+      "key": "brand",
+      "label": "品牌",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
       "key": "miot_model",
       "label": "MIoT 型号",
       "type": "text",
@@ -66,6 +74,14 @@
       "sortable": true,
       "stat": true,
       "prefix": "¥"
+    },
+    {
+      "key": "ref_price",
+      "label": "参考价",
+      "type": "number",
+      "prefix": "¥",
+      "compare": true,
+      "sortable": true
     },
     {
       "key": "second_hand",

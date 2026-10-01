@@ -10,7 +10,8 @@
       "双出水",
       "单出水",
       "即热",
-      "龙头/前置"
+      "龙头/前置",
+      "竞品"
     ],
     "colors": {
       "双出水": "#9b59b6",
@@ -42,6 +43,13 @@
       "compare": true
     },
     {
+      "key": "brand",
+      "label": "品牌",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
       "key": "miot_model",
       "label": "MIoT 型号",
       "type": "text",
@@ -62,6 +70,14 @@
       "compare": true,
       "sortable": true,
       "stat": true
+    },
+    {
+      "key": "ref_price",
+      "label": "参考价",
+      "type": "number",
+      "prefix": "¥",
+      "compare": true,
+      "sortable": true
     },
     {
       "key": "second_hand",
