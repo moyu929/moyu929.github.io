@@ -247,12 +247,14 @@
       "order": [
         "S Pro Mini LED",
         "S Mini LED",
-        "S 系列"
+        "S 系列",
+        "未归类"
       ],
       "colors": {
         "S Pro Mini LED": "#e67e22",
         "S Mini LED": "#3498db",
-        "S 系列": "#7f8c8d"
+        "S 系列": "#7f8c8d",
+        "未归类": "#95a5a6"
       }
     }
   ]
