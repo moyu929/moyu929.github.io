@@ -112,6 +112,13 @@
       "sortable": true
     },
     {
+      "key": "var_vol",
+      "label": "变温室",
+      "unit": "L",
+      "type": "number",
+      "compare": true
+    },
+    {
       "key": "energy",
       "label": "能效",
       "type": "text",
