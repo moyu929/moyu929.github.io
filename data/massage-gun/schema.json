@@ -4,23 +4,18 @@
   "subtitle": "筋膜枪全型号横评",
   "imageBase": "images/massage-gun",
   "groupBy": {
-    "key": "type",
-    "label": "类型",
+    "key": "brand",
+    "label": "品牌",
     "order": [
-      "标准款",
-      "迷你款",
-      "长柄款",
-      "热敷款"
+      "小米"
     ],
     "colors": {
-      "标准款": "#3498db",
-      "迷你款": "#e67e22",
-      "长柄款": "#9b59b6",
-      "热敷款": "#16a085"
+      "小米": "#6c5ce7"
     }
   },
   "searchFields": [
     "name",
+    "brand",
     "model_code",
     "tags",
     "pros"
@@ -37,6 +32,13 @@
     {
       "key": "model_code",
       "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "brand",
+      "label": "品牌",
       "type": "text",
       "card": "grid",
       "compare": true
@@ -216,5 +218,23 @@
         "advice": "关注静音档位与无刷电机"
       }
     ]
-  }
+  },
+  "facets": [
+    {
+      "key": "type",
+      "label": "类型",
+      "order": [
+        "标准款",
+        "迷你款",
+        "长柄款",
+        "热敷款"
+      ],
+      "colors": {
+        "标准款": "#3498db",
+        "迷你款": "#e67e22",
+        "长柄款": "#9b59b6",
+        "热敷款": "#16a085"
+      }
+    }
+  ]
 }

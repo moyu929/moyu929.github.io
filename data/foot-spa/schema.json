@@ -4,19 +4,18 @@
   "subtitle": "足浴器全型号横评",
   "imageBase": "images/foot-spa",
   "groupBy": {
-    "key": "type",
-    "label": "类型",
+    "key": "brand",
+    "label": "品牌",
     "order": [
-      "气囊按摩",
-      "杀菌款"
+      "小米"
     ],
     "colors": {
-      "气囊按摩": "#9b59b6",
-      "杀菌款": "#3498db"
+      "小米": "#6c5ce7"
     }
   },
   "searchFields": [
     "name",
+    "brand",
     "model_code",
     "tags",
     "pros"
@@ -33,6 +32,13 @@
     {
       "key": "model_code",
       "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "brand",
+      "label": "品牌",
       "type": "text",
       "card": "grid",
       "compare": true
@@ -207,5 +213,19 @@
         "advice": "可用日常元素草本足浴包"
       }
     ]
-  }
+  },
+  "facets": [
+    {
+      "key": "type",
+      "label": "类型",
+      "order": [
+        "气囊按摩",
+        "杀菌款"
+      ],
+      "colors": {
+        "气囊按摩": "#9b59b6",
+        "杀菌款": "#3498db"
+      }
+    }
+  ]
 }

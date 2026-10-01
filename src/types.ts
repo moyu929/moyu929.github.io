@@ -34,7 +34,7 @@ export interface FieldDef {
   tagPrefix?: string
 }
 
-/** 分组维度定义，如空净的「档位」 */
+/** 分组维度定义，如「品牌」 */
 export interface GroupByDef {
   key: string
   label: string
@@ -43,6 +43,12 @@ export interface GroupByDef {
   /** 各分组的主题色 */
   colors: Record<string, string>
 }
+
+/**
+ * 副分组维度：在主分组（品牌）之上叠加的细分筛选，如空净的「档位」、风扇的「类型」。
+ * 结构与主分组相同，筛选项由 CategoryView 按需渲染。
+ */
+export type FacetDef = GroupByDef
 
 export interface GuideItem {
   scene: string
@@ -56,6 +62,8 @@ export interface CategorySchema {
   /** 图片目录，相对于 public/ */
   imageBase: string
   groupBy: GroupByDef
+  /** 叠加在品牌之上的副分组维度（可选） */
+  facets?: FacetDef[]
   /** 参与关键词搜索的字段 */
   searchFields: string[]
   /** 默认排序所用的数值字段 */

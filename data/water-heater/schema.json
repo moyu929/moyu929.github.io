@@ -4,20 +4,24 @@
   "subtitle": "热水器全型号横评",
   "imageBase": "images/water-heater",
   "groupBy": {
-    "key": "type",
-    "label": "类型",
+    "key": "brand",
+    "label": "品牌",
     "order": [
-      "燃气",
-      "电热",
-      "竞品"
+      "小米",
+      "海尔",
+      "美的",
+      "林内"
     ],
     "colors": {
-      "燃气": "#e67e22",
-      "电热": "#3498db"
+      "小米": "#6c5ce7",
+      "海尔": "#00b894",
+      "美的": "#e17055",
+      "林内": "#0984e3"
     }
   },
   "searchFields": [
     "name",
+    "brand",
     "model_code",
     "tags",
     "pros"
@@ -221,5 +225,19 @@
         "advice": "支持 APP 预约的机型"
       }
     ]
-  }
+  },
+  "facets": [
+    {
+      "key": "type",
+      "label": "类型",
+      "order": [
+        "燃气",
+        "电热"
+      ],
+      "colors": {
+        "燃气": "#e67e22",
+        "电热": "#3498db"
+      }
+    }
+  ]
 }

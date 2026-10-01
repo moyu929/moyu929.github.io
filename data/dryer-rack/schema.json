@@ -4,19 +4,18 @@
   "subtitle": "晾衣机全型号横评",
   "imageBase": "images/dryer-rack",
   "groupBy": {
-    "key": "type",
-    "label": "类型",
+    "key": "brand",
+    "label": "品牌",
     "order": [
-      "电动晾衣机",
-      "隐形晾衣机"
+      "小米"
     ],
     "colors": {
-      "电动晾衣机": "#3498db",
-      "隐形晾衣机": "#9b59b6"
+      "小米": "#6c5ce7"
     }
   },
   "searchFields": [
     "name",
+    "brand",
     "model_code",
     "tags",
     "pros"
@@ -33,6 +32,13 @@
     {
       "key": "model_code",
       "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "brand",
+      "label": "品牌",
       "type": "text",
       "card": "grid",
       "compare": true
@@ -205,5 +211,19 @@
         "advice": "电动款需预留电源，隐形款需吊顶条件"
       }
     ]
-  }
+  },
+  "facets": [
+    {
+      "key": "type",
+      "label": "类型",
+      "order": [
+        "电动晾衣机",
+        "隐形晾衣机"
+      ],
+      "colors": {
+        "电动晾衣机": "#3498db",
+        "隐形晾衣机": "#9b59b6"
+      }
+    }
+  ]
 }

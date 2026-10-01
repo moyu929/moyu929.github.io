@@ -1,25 +1,25 @@
 {
   "id": "projector",
   "name": "投影仪",
-  "subtitle": "米家投影仪全型号横评",
+  "subtitle": "投影仪全型号横评",
   "imageBase": "images/projector",
   "groupBy": {
-    "key": "type",
-    "label": "定位",
+    "key": "brand",
+    "label": "品牌",
     "order": [
-      "旗舰家用",
-      "主流家用",
-      "便携入门",
-      "竞品"
+      "小米",
+      "坚果",
+      "当贝"
     ],
     "colors": {
-      "旗舰家用": "#e67e22",
-      "主流家用": "#3498db",
-      "便携入门": "#7f8c8d"
+      "小米": "#6c5ce7",
+      "坚果": "#00b894",
+      "当贝": "#e17055"
     }
   },
   "searchFields": [
     "name",
+    "brand",
     "model_code",
     "tags",
     "pros"
@@ -248,5 +248,21 @@
         "advice": "青春版 / 青春版 2，但注意亮度与芯片尺寸缩水"
       }
     ]
-  }
+  },
+  "facets": [
+    {
+      "key": "type",
+      "label": "定位",
+      "order": [
+        "旗舰家用",
+        "主流家用",
+        "便携入门"
+      ],
+      "colors": {
+        "旗舰家用": "#e67e22",
+        "主流家用": "#3498db",
+        "便携入门": "#7f8c8d"
+      }
+    }
+  ]
 }

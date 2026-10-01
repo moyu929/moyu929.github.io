@@ -4,21 +4,18 @@
   "subtitle": "智能音箱全型号横评",
   "imageBase": "images/speaker",
   "groupBy": {
-    "key": "tier",
-    "label": "形态",
+    "key": "brand",
+    "label": "品牌",
     "order": [
-      "触屏",
-      "标准",
-      "入门"
+      "小米"
     ],
     "colors": {
-      "触屏": "#9b59b6",
-      "标准": "#3498db",
-      "入门": "#7f8c8d"
+      "小米": "#6c5ce7"
     }
   },
   "searchFields": [
     "name",
+    "brand",
     "model_code",
     "tags",
     "pros"
@@ -35,6 +32,13 @@
     {
       "key": "model_code",
       "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "brand",
+      "label": "品牌",
       "type": "text",
       "card": "grid",
       "compare": true
@@ -200,5 +204,21 @@
         "advice": "可搭配条形音箱提升观影音效"
       }
     ]
-  }
+  },
+  "facets": [
+    {
+      "key": "tier",
+      "label": "形态",
+      "order": [
+        "触屏",
+        "标准",
+        "入门"
+      ],
+      "colors": {
+        "触屏": "#9b59b6",
+        "标准": "#3498db",
+        "入门": "#7f8c8d"
+      }
+    }
+  ]
 }

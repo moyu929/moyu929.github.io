@@ -4,24 +4,18 @@
   "subtitle": "剃须刀全型号横评",
   "imageBase": "images/shaver",
   "groupBy": {
-    "key": "tier",
-    "label": "档位",
+    "key": "brand",
+    "label": "品牌",
     "order": [
-      "旗舰",
-      "主流",
-      "入门",
-      "便携",
-      "竞品"
+      "小米"
     ],
     "colors": {
-      "旗舰": "#9b59b6",
-      "主流": "#3498db",
-      "入门": "#7f8c8d",
-      "便携": "#e67e22"
+      "小米": "#6c5ce7"
     }
   },
   "searchFields": [
     "name",
+    "brand",
     "model_code",
     "tags",
     "pros"
@@ -225,5 +219,23 @@
         "advice": "可搭配米家电动鼻毛修剪器"
       }
     ]
-  }
+  },
+  "facets": [
+    {
+      "key": "tier",
+      "label": "档位",
+      "order": [
+        "旗舰",
+        "主流",
+        "入门",
+        "便携"
+      ],
+      "colors": {
+        "旗舰": "#9b59b6",
+        "主流": "#3498db",
+        "入门": "#7f8c8d",
+        "便携": "#e67e22"
+      }
+    }
+  ]
 }

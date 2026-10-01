@@ -26,7 +26,7 @@ useScrollReveal()
           <span class="hero-title-line gradient" style="animation-delay: 0.25s">横评数据库</span>
         </h1>
         <p class="subtitle" style="animation-delay: 0.4s">
-          手工整理的家电参数 · 多维对比 · 选购参考
+          跨品牌家电参数横评 · 多维对比 · 选购参考
         </p>
       </div>
     </header>

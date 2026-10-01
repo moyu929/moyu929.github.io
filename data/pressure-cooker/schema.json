@@ -4,20 +4,24 @@
   "subtitle": "电压力锅全型号横评",
   "imageBase": "images/pressure-cooker",
   "groupBy": {
-    "key": "tier",
-    "label": "档位",
+    "key": "brand",
+    "label": "品牌",
     "order": [
-      "大容量",
-      "小容量",
-      "竞品"
+      "美的",
+      "苏泊尔",
+      "九阳",
+      "小米"
     ],
     "colors": {
-      "大容量": "#3498db",
-      "小容量": "#e67e22"
+      "美的": "#6c5ce7",
+      "苏泊尔": "#00b894",
+      "九阳": "#e17055",
+      "小米": "#0984e3"
     }
   },
   "searchFields": [
     "name",
+    "brand",
     "model_code",
     "tags",
     "pros"
@@ -225,5 +229,19 @@
         "advice": "2.5L 机身更小，适合台面局促的厨房"
       }
     ]
-  }
+  },
+  "facets": [
+    {
+      "key": "tier",
+      "label": "档位",
+      "order": [
+        "大容量",
+        "小容量"
+      ],
+      "colors": {
+        "大容量": "#3498db",
+        "小容量": "#e67e22"
+      }
+    }
+  ]
 }

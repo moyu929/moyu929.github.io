@@ -1,24 +1,21 @@
 {
   "id": "toothbrush",
   "name": "电动牙刷",
-  "subtitle": "米家声波电动牙刷全型号横评",
+  "subtitle": "声波电动牙刷全型号横评",
   "imageBase": "images/toothbrush",
   "groupBy": {
-    "key": "tier",
-    "label": "档位",
+    "key": "brand",
+    "label": "品牌",
     "order": [
-      "入门",
-      "进阶",
-      "旗舰"
+      "小米"
     ],
     "colors": {
-      "入门": "#7f8c8d",
-      "进阶": "#3498db",
-      "旗舰": "#e67e22"
+      "小米": "#6c5ce7"
     }
   },
   "searchFields": [
     "name",
+    "brand",
     "model_code",
     "tags",
     "pros"
@@ -35,6 +32,13 @@
     {
       "key": "model_code",
       "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "brand",
+      "label": "品牌",
       "type": "text",
       "card": "grid",
       "compare": true
@@ -218,5 +222,21 @@
         "advice": "刷头按系列专用不通用，买前先看刷头单价与适配型号"
       }
     ]
-  }
+  },
+  "facets": [
+    {
+      "key": "tier",
+      "label": "档位",
+      "order": [
+        "入门",
+        "进阶",
+        "旗舰"
+      ],
+      "colors": {
+        "入门": "#7f8c8d",
+        "进阶": "#3498db",
+        "旗舰": "#e67e22"
+      }
+    }
+  ]
 }

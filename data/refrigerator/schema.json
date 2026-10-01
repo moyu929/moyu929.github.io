@@ -1,29 +1,23 @@
 {
   "id": "refrigerator",
   "name": "冰箱",
-  "subtitle": "米家冰箱全型号横评",
+  "subtitle": "冰箱全型号横评",
   "imageBase": "images/refrigerator",
   "groupBy": {
-    "key": "door_type",
-    "label": "门型",
+    "key": "brand",
+    "label": "品牌",
     "order": [
-      "法式多门",
-      "十字门",
-      "对开门",
-      "三门",
-      "两门",
-      "竞品"
+      "小米",
+      "海尔"
     ],
     "colors": {
-      "法式多门": "#9b59b6",
-      "十字门": "#3498db",
-      "对开门": "#16a085",
-      "三门": "#e67e22",
-      "两门": "#7f8c8d"
+      "小米": "#6c5ce7",
+      "海尔": "#00b894"
     }
   },
   "searchFields": [
     "name",
+    "brand",
     "model_code",
     "tags",
     "pros"
@@ -257,5 +251,25 @@
         "advice": "法式平嵌560L（2025款）600mm 深，尺寸 892×600×1912mm"
       }
     ]
-  }
+  },
+  "facets": [
+    {
+      "key": "door_type",
+      "label": "门型",
+      "order": [
+        "法式多门",
+        "十字门",
+        "对开门",
+        "三门",
+        "两门"
+      ],
+      "colors": {
+        "法式多门": "#9b59b6",
+        "十字门": "#3498db",
+        "对开门": "#16a085",
+        "三门": "#e67e22",
+        "两门": "#7f8c8d"
+      }
+    }
+  ]
 }

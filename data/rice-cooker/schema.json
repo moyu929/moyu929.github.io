@@ -1,25 +1,29 @@
 {
   "id": "rice-cooker",
   "name": "电饭煲",
-  "subtitle": "米家电饭煲全型号横评",
+  "subtitle": "电饭煲全型号横评",
   "imageBase": "images/rice-cooker",
   "groupBy": {
-    "key": "type",
-    "label": "加热方式",
+    "key": "brand",
+    "label": "品牌",
     "order": [
-      "压力IH",
-      "IH电磁",
-      "底盘加热",
-      "竞品"
+      "小米",
+      "美的",
+      "苏泊尔",
+      "九阳",
+      "松下"
     ],
     "colors": {
-      "压力IH": "#9b59b6",
-      "IH电磁": "#3498db",
-      "底盘加热": "#e67e22"
+      "小米": "#6c5ce7",
+      "美的": "#00b894",
+      "苏泊尔": "#e17055",
+      "九阳": "#0984e3",
+      "松下": "#d63031"
     }
   },
   "searchFields": [
     "name",
+    "brand",
     "model_code",
     "tags",
     "pros"
@@ -227,5 +231,21 @@
         "advice": "P1 支持 App 互联与 100+ 云食谱"
       }
     ]
-  }
+  },
+  "facets": [
+    {
+      "key": "type",
+      "label": "加热方式",
+      "order": [
+        "压力IH",
+        "IH电磁",
+        "底盘加热"
+      ],
+      "colors": {
+        "压力IH": "#9b59b6",
+        "IH电磁": "#3498db",
+        "底盘加热": "#e67e22"
+      }
+    }
+  ]
 }

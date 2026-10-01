@@ -4,21 +4,18 @@
   "subtitle": "吹风机全型号横评",
   "imageBase": "images/hair-dryer",
   "groupBy": {
-    "key": "tier",
-    "label": "档位",
+    "key": "brand",
+    "label": "品牌",
     "order": [
-      "旗舰",
-      "主流",
-      "入门"
+      "小米"
     ],
     "colors": {
-      "旗舰": "#e67e22",
-      "主流": "#3498db",
-      "入门": "#7f8c8d"
+      "小米": "#6c5ce7"
     }
   },
   "searchFields": [
     "name",
+    "brand",
     "model_code",
     "tags",
     "pros"
@@ -35,6 +32,13 @@
     {
       "key": "model_code",
       "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "brand",
+      "label": "品牌",
       "type": "text",
       "card": "grid",
       "compare": true
@@ -216,5 +220,21 @@
         "advice": "选带智能温控（NTC 每秒测温）的机型"
       }
     ]
-  }
+  },
+  "facets": [
+    {
+      "key": "tier",
+      "label": "档位",
+      "order": [
+        "旗舰",
+        "主流",
+        "入门"
+      ],
+      "colors": {
+        "旗舰": "#e67e22",
+        "主流": "#3498db",
+        "入门": "#7f8c8d"
+      }
+    }
+  ]
 }

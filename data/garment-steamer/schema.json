@@ -4,21 +4,18 @@
   "subtitle": "挂烫机全型号横评",
   "imageBase": "images/garment-steamer",
   "groupBy": {
-    "key": "type",
-    "label": "类型",
+    "key": "brand",
+    "label": "品牌",
     "order": [
-      "手持",
-      "增压蒸汽",
-      "熨烫机"
+      "小米"
     ],
     "colors": {
-      "手持": "#3498db",
-      "增压蒸汽": "#9b59b6",
-      "熨烫机": "#e67e22"
+      "小米": "#6c5ce7"
     }
   },
   "searchFields": [
     "name",
+    "brand",
     "model_code",
     "tags",
     "pros"
@@ -35,6 +32,13 @@
     {
       "key": "model_code",
       "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "brand",
+      "label": "品牌",
       "type": "text",
       "card": "grid",
       "compare": true
@@ -209,5 +213,21 @@
         "advice": "选多档蒸汽可调、低温档位"
       }
     ]
-  }
+  },
+  "facets": [
+    {
+      "key": "type",
+      "label": "类型",
+      "order": [
+        "手持",
+        "增压蒸汽",
+        "熨烫机"
+      ],
+      "colors": {
+        "手持": "#3498db",
+        "增压蒸汽": "#9b59b6",
+        "熨烫机": "#e67e22"
+      }
+    }
+  ]
 }

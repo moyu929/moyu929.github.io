@@ -1,24 +1,21 @@
 {
   "id": "smart-lock",
   "name": "智能门锁",
-  "subtitle": "小米智能门锁全型号横评",
+  "subtitle": "智能门锁全型号横评",
   "imageBase": "images/smart-lock",
   "groupBy": {
-    "key": "type",
-    "label": "锁体形式",
+    "key": "brand",
+    "label": "品牌",
     "order": [
-      "全自动",
-      "推拉式",
-      "半自动"
+      "小米"
     ],
     "colors": {
-      "全自动": "#9b59b6",
-      "推拉式": "#e67e22",
-      "半自动": "#3498db"
+      "小米": "#6c5ce7"
     }
   },
   "searchFields": [
     "name",
+    "brand",
     "model_code",
     "tags",
     "pros"
@@ -35,6 +32,13 @@
     {
       "key": "model_code",
       "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "brand",
+      "label": "品牌",
       "type": "text",
       "card": "grid",
       "compare": true
@@ -222,5 +226,21 @@
         "advice": "E2 与 E20 WiFi 版续航可达 12-15 个月"
       }
     ]
-  }
+  },
+  "facets": [
+    {
+      "key": "type",
+      "label": "锁体形式",
+      "order": [
+        "全自动",
+        "推拉式",
+        "半自动"
+      ],
+      "colors": {
+        "全自动": "#9b59b6",
+        "推拉式": "#e67e22",
+        "半自动": "#3498db"
+      }
+    }
+  ]
 }

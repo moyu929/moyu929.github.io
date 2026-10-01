@@ -4,21 +4,18 @@
   "subtitle": "理发器全型号横评",
   "imageBase": "images/hair-clipper",
   "groupBy": {
-    "key": "type",
-    "label": "类型",
+    "key": "brand",
+    "label": "品牌",
     "order": [
-      "成人款",
-      "儿童款",
-      "套装版"
+      "小米"
     ],
     "colors": {
-      "成人款": "#3498db",
-      "儿童款": "#e67e22",
-      "套装版": "#9b59b6"
+      "小米": "#6c5ce7"
     }
   },
   "searchFields": [
     "name",
+    "brand",
     "model_code",
     "tags",
     "pros"
@@ -35,6 +32,13 @@
     {
       "key": "model_code",
       "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "brand",
+      "label": "品牌",
       "type": "text",
       "card": "grid",
       "compare": true
@@ -207,5 +211,21 @@
         "advice": "选 Type-C 充电长续航款"
       }
     ]
-  }
+  },
+  "facets": [
+    {
+      "key": "type",
+      "label": "类型",
+      "order": [
+        "成人款",
+        "儿童款",
+        "套装版"
+      ],
+      "colors": {
+        "成人款": "#3498db",
+        "儿童款": "#e67e22",
+        "套装版": "#9b59b6"
+      }
+    }
+  ]
 }

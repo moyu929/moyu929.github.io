@@ -1,23 +1,29 @@
 {
   "id": "humidifier",
   "name": "加湿器",
-  "subtitle": "米家加湿器全型号横评",
+  "subtitle": "加湿器全型号横评",
   "imageBase": "images/humidifier",
   "groupBy": {
-    "key": "type",
-    "label": "加湿方式",
+    "key": "brand",
+    "label": "品牌",
     "order": [
-      "无雾冷蒸发",
-      "超声波",
-      "竞品"
+      "小米",
+      "德尔玛",
+      "飞利浦",
+      "美的",
+      "352"
     ],
     "colors": {
-      "无雾冷蒸发": "#3498db",
-      "超声波": "#e67e22"
+      "小米": "#6c5ce7",
+      "德尔玛": "#00b894",
+      "飞利浦": "#e17055",
+      "美的": "#0984e3",
+      "352": "#d63031"
     }
   },
   "searchFields": [
     "name",
+    "brand",
     "model_code",
     "tags",
     "pros"
@@ -238,5 +244,19 @@
         "advice": "米家智能车载加湿器（≤32dB，30mL/h 二档）"
       }
     ]
-  }
+  },
+  "facets": [
+    {
+      "key": "type",
+      "label": "加湿方式",
+      "order": [
+        "无雾冷蒸发",
+        "超声波"
+      ],
+      "colors": {
+        "无雾冷蒸发": "#3498db",
+        "超声波": "#e67e22"
+      }
+    }
+  ]
 }

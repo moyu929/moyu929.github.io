@@ -4,21 +4,18 @@
   "subtitle": "智能摄像机全型号横评",
   "imageBase": "images/camera",
   "groupBy": {
-    "key": "type",
-    "label": "类型",
+    "key": "brand",
+    "label": "品牌",
     "order": [
-      "室内",
-      "室外",
-      "母婴/通话"
+      "小米"
     ],
     "colors": {
-      "室内": "#3498db",
-      "室外": "#e67e22",
-      "母婴/通话": "#9b59b6"
+      "小米": "#6c5ce7"
     }
   },
   "searchFields": [
     "name",
+    "brand",
     "model_code",
     "tags",
     "pros"
@@ -35,6 +32,13 @@
     {
       "key": "model_code",
       "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "brand",
+      "label": "品牌",
       "type": "text",
       "card": "grid",
       "compare": true
@@ -214,5 +218,21 @@
         "advice": "支持 microSD 卡可省云存储费"
       }
     ]
-  }
+  },
+  "facets": [
+    {
+      "key": "type",
+      "label": "类型",
+      "order": [
+        "室内",
+        "室外",
+        "母婴/通话"
+      ],
+      "colors": {
+        "室内": "#3498db",
+        "室外": "#e67e22",
+        "母婴/通话": "#9b59b6"
+      }
+    }
+  ]
 }

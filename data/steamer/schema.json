@@ -4,19 +4,18 @@
   "subtitle": "电蒸锅全型号横评",
   "imageBase": "images/steamer",
   "groupBy": {
-    "key": "tier",
-    "label": "档位",
+    "key": "brand",
+    "label": "品牌",
     "order": [
-      "大容量",
-      "小容量"
+      "小米"
     ],
     "colors": {
-      "大容量": "#3498db",
-      "小容量": "#e67e22"
+      "小米": "#6c5ce7"
     }
   },
   "searchFields": [
     "name",
+    "brand",
     "model_code",
     "tags",
     "pros"
@@ -33,6 +32,13 @@
     {
       "key": "model_code",
       "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "brand",
+      "label": "品牌",
       "type": "text",
       "card": "grid",
       "compare": true
@@ -209,5 +215,19 @@
         "advice": "优先可叠放蒸格设计"
       }
     ]
-  }
+  },
+  "facets": [
+    {
+      "key": "tier",
+      "label": "档位",
+      "order": [
+        "大容量",
+        "小容量"
+      ],
+      "colors": {
+        "大容量": "#3498db",
+        "小容量": "#e67e22"
+      }
+    }
+  ]
 }

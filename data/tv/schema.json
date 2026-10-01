@@ -4,22 +4,28 @@
   "subtitle": "电视全型号横评",
   "imageBase": "images/tv",
   "groupBy": {
-    "key": "series",
-    "label": "系列",
+    "key": "brand",
+    "label": "品牌",
     "order": [
-      "S Pro Mini LED",
-      "S Mini LED",
-      "S 系列",
-      "竞品"
+      "小米",
+      "海信",
+      "TCL",
+      "创维",
+      "索尼",
+      "海尔"
     ],
     "colors": {
-      "S Pro Mini LED": "#e67e22",
-      "S Mini LED": "#3498db",
-      "S 系列": "#7f8c8d"
+      "小米": "#6c5ce7",
+      "海信": "#00b894",
+      "TCL": "#e17055",
+      "创维": "#0984e3",
+      "索尼": "#d63031",
+      "海尔": "#e84393"
     }
   },
   "searchFields": [
     "name",
+    "brand",
     "model_code",
     "tags",
     "pros"
@@ -232,5 +238,21 @@
         "advice": "55-65 英寸 S 系列即可"
       }
     ]
-  }
+  },
+  "facets": [
+    {
+      "key": "series",
+      "label": "系列",
+      "order": [
+        "S Pro Mini LED",
+        "S Mini LED",
+        "S 系列"
+      ],
+      "colors": {
+        "S Pro Mini LED": "#e67e22",
+        "S Mini LED": "#3498db",
+        "S 系列": "#7f8c8d"
+      }
+    }
+  ]
 }

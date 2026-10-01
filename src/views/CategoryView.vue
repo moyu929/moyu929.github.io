@@ -49,6 +49,8 @@ watch(
     resetCompare()
     try {
       data.value = await loadCategory(id)
+      // 副分组维度的选项值各品类不同，切品类后旧的选中项多半已失效
+      for (const key of Object.keys(activeFacets.value)) setFacet(key, '全部')
       // 数据加载后重新设置滚动监听
       requestAnimationFrame(() => setupReveal())
     } catch (e) {
@@ -65,11 +67,14 @@ watch(viewMode, () => {
 
 const {
   activeGroup,
+  activeFacets,
   keyword,
   sortKey,
   sortDirection,
   sortableFields,
   groupCounts,
+  facetCounts,
+  setFacet,
   filtered,
   isGrouped,
   groupedList,
@@ -211,14 +216,18 @@ watch(data, () => {
       v-model:active-group="activeGroup"
       v-model:keyword="keyword"
       v-model:view-mode="viewMode"
-      :group-by="data.schema.groupBy"
+      :group-options="data.schema.groupBy.order"
       :group-counts="groupCounts"
+      :facets="data.schema.facets ?? []"
+      :facet-counts="facetCounts"
+      :active-facets="activeFacets"
       :total-count="data.products.length"
       :sort-key="sortKey"
       :sort-direction="sortDirection"
       :sortable-fields="sortableFields"
       :timeline-order="timelineOrder"
       @toggle-sort="toggleSort"
+      @update:active-facet="setFacet($event.key, $event.value)"
       @update:timeline-order="timelineOrder = $event"
     />
 

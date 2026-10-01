@@ -4,21 +4,18 @@
   "subtitle": "体脂秤全型号横评",
   "imageBase": "images/body-scale",
   "groupBy": {
-    "key": "type",
-    "label": "类型",
+    "key": "brand",
+    "label": "品牌",
     "order": [
-      "八电极",
-      "四电极",
-      "体重秤"
+      "小米"
     ],
     "colors": {
-      "八电极": "#9b59b6",
-      "四电极": "#3498db",
-      "体重秤": "#7f8c8d"
+      "小米": "#6c5ce7"
     }
   },
   "searchFields": [
     "name",
+    "brand",
     "model_code",
     "tags",
     "pros"
@@ -35,6 +32,13 @@
     {
       "key": "model_code",
       "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "brand",
+      "label": "品牌",
       "type": "text",
       "card": "grid",
       "compare": true
@@ -200,5 +204,21 @@
         "advice": "选超薄机身、可立于墙边"
       }
     ]
-  }
+  },
+  "facets": [
+    {
+      "key": "type",
+      "label": "类型",
+      "order": [
+        "八电极",
+        "四电极",
+        "体重秤"
+      ],
+      "colors": {
+        "八电极": "#9b59b6",
+        "四电极": "#3498db",
+        "体重秤": "#7f8c8d"
+      }
+    }
+  ]
 }
