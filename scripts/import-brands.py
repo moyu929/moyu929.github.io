@@ -234,7 +234,8 @@ def resolve_group(cfg, specs):
         for k, v in gmap.items():
             if k in raw:
                 return v
-    return cfg.get("groupValue") or "竞品"
+    # 主分组已改为 brand，副分组默认「—」（未归类）；不再使用「竞品」这一分组值
+    return cfg.get("groupValue") or "—"
 
 
 def build_product(cat_id, cfg, slug, brand_cn, m, specs, group_value):

@@ -1,485 +1,1056 @@
 {
-  "_说明": "他品牌型号导入清单（供 scripts/import-brands.py 使用）。小米商城只覆盖小米/米家，收录其他品牌改用太平洋产品报价（服务端渲染可结构化抓取）。字段含义：path=太平洋品类目录；brands={slug: 中文品牌名}；pick=每个品牌取几款（按报价从高到低）；groupKey/groupValue=本站分组字段与分组值（不在 order 里的值会被自动追加）；groupSource+groupMap=按第三方字段的值映射到本站分组；map={本站字段: [第三方参数名候选]}，取不到写「查不到」。❗第三方报价只写 ref_price，不写 official_price。",
-
+  "_说明": "他品牌型号导入清单（供 scripts/import-brands.py 使用）。小米商城只覆盖小米/米家，收录其他品牌改用太平洋产品报价（服务端渲染可结构化抓取）。字段含义：path=太平洋品类目录；brands={slug: 中文品牌名}；pick=每个品牌取几款（按报价从高到低）；groupKey/groupValue=本站**副分组**字段与分组值（主分组固定为 brand，副分组不在 order 里时会自动追加）。❗自 2026-10-01 起本站主分组为品牌，不再设「竞品」分组：groupValue 统一写「—」表示未归类，各品牌产品在主分组 brand 下与小米产品同级。❗第三方报价只写 ref_price，不写 official_price。",
   "floor-washer": {
     "path": "cleaning_machine",
     "groupKey": "series",
-    "groupValue": "竞品",
+    "groupValue": "—",
     "pick": 6,
-    "brands": { "tineco": "添可", "roborock": "石头", "dreame": "追觅", "narwal": "云鲸", "mova": "MOVA" },
+    "brands": {
+      "tineco": "添可",
+      "roborock": "石头",
+      "dreame": "追觅",
+      "narwal": "云鲸",
+      "mova": "MOVA"
+    },
     "map": {
-      "motor": ["电机类型", "电池规格"],
-      "battery": ["电池容量"],
-      "charge": ["充电时间"],
-      "runtime": ["续航时间", "连续使用时间"],
-      "noise": ["工作噪音"],
-      "clean_tank": ["净水箱容量"],
-      "dirty_tank": ["污水箱容量"],
-      "weight": ["主机净重"],
-      "size": ["主机尺寸", "外观尺寸"]
+      "motor": [
+        "电机类型",
+        "电池规格"
+      ],
+      "battery": [
+        "电池容量"
+      ],
+      "charge": [
+        "充电时间"
+      ],
+      "runtime": [
+        "续航时间",
+        "连续使用时间"
+      ],
+      "noise": [
+        "工作噪音"
+      ],
+      "clean_tank": [
+        "净水箱容量"
+      ],
+      "dirty_tank": [
+        "污水箱容量"
+      ],
+      "weight": [
+        "主机净重"
+      ],
+      "size": [
+        "主机尺寸",
+        "外观尺寸"
+      ]
     }
   },
-
   "vacuum": {
     "path": "vacuum_cleaner",
     "groupKey": "tier",
-    "groupValue": "竞品",
+    "groupValue": "—",
     "pick": 6,
-    "brands": { "dyson": "戴森", "dreame": "追觅", "roborock": "石头", "supor": "苏泊尔", "philips": "飞利浦", "karcher": "卡赫" },
+    "brands": {
+      "dyson": "戴森",
+      "dreame": "追觅",
+      "roborock": "石头",
+      "supor": "苏泊尔",
+      "philips": "飞利浦",
+      "karcher": "卡赫"
+    },
     "map": {
-      "suction_aw": ["真空度"],
-      "power": ["产品功率"],
-      "dust_cup": ["尘杯容量"],
-      "runtime": ["连续使用时间"],
-      "noise": ["噪音强度"],
-      "weight": ["产品重量"],
-      "filter": ["集尘方式"],
-      "size": ["外形尺寸"]
+      "suction_aw": [
+        "真空度"
+      ],
+      "power": [
+        "产品功率"
+      ],
+      "dust_cup": [
+        "尘杯容量"
+      ],
+      "runtime": [
+        "连续使用时间"
+      ],
+      "noise": [
+        "噪音强度"
+      ],
+      "weight": [
+        "产品重量"
+      ],
+      "filter": [
+        "集尘方式"
+      ],
+      "size": [
+        "外形尺寸"
+      ]
     }
   },
-
   "washing-machine": {
     "path": "washer",
     "groupKey": "type",
-    "groupValue": "竞品",
+    "groupValue": "—",
     "pick": 6,
-    "brands": { "haier": "海尔", "midea": "美的", "littleswan": "小天鹅", "siemens": "西门子", "panasonic": "松下", "gree": "格力" },
+    "brands": {
+      "haier": "海尔",
+      "midea": "美的",
+      "littleswan": "小天鹅",
+      "siemens": "西门子",
+      "panasonic": "松下",
+      "gree": "格力"
+    },
     "map": {
-      "wash_cap": ["洗涤容量"],
-      "dry_cap": ["烘干容量"],
-      "wash_ratio": ["洗净比"],
-      "spin_rpm": ["甩干脱水速度"],
-      "energy": ["能耗等级"],
-      "noise": ["洗涤/脱水噪音"],
-      "size": ["外型尺寸"],
-      "smart": ["控制方式"]
+      "wash_cap": [
+        "洗涤容量"
+      ],
+      "dry_cap": [
+        "烘干容量"
+      ],
+      "wash_ratio": [
+        "洗净比"
+      ],
+      "spin_rpm": [
+        "甩干脱水速度"
+      ],
+      "energy": [
+        "能耗等级"
+      ],
+      "noise": [
+        "洗涤/脱水噪音"
+      ],
+      "size": [
+        "外型尺寸"
+      ],
+      "smart": [
+        "控制方式"
+      ]
     }
   },
-
   "refrigerator": {
     "path": "refrigerator",
     "groupKey": "door_type",
-    "groupValue": "竞品",
+    "groupValue": "—",
     "pick": 6,
-    "brands": { "haier": "海尔", "midea": "美的", "rongshen": "容声", "siemens": "西门子", "panasonic": "松下", "hisense": "海信" },
+    "brands": {
+      "haier": "海尔",
+      "midea": "美的",
+      "rongshen": "容声",
+      "siemens": "西门子",
+      "panasonic": "松下",
+      "hisense": "海信"
+    },
     "map": {
-      "total_vol": ["总容积"],
-      "fridge_vol": ["冷藏室容积"],
-      "power_use": ["额定耗电量"],
-      "cooling": ["制冷剂"],
-      "size": ["外形尺寸"]
+      "total_vol": [
+        "总容积"
+      ],
+      "fridge_vol": [
+        "冷藏室容积"
+      ],
+      "power_use": [
+        "额定耗电量"
+      ],
+      "cooling": [
+        "制冷剂"
+      ],
+      "size": [
+        "外形尺寸"
+      ]
     }
   },
-
   "dishwasher": {
     "path": "xiwanji",
     "groupKey": "type",
-    "groupValue": "竞品",
+    "groupValue": "—",
     "groupSource": "安装方式",
-    "groupMap": { "嵌入式": "嵌入式", "组合嵌入式": "独嵌两用", "独嵌": "独嵌两用", "独立式": "独嵌两用", "台式": "台式" },
+    "groupMap": {
+      "嵌入式": "嵌入式",
+      "组合嵌入式": "独嵌两用",
+      "独嵌": "独嵌两用",
+      "独立式": "独嵌两用",
+      "台式": "台式"
+    },
     "pick": 6,
-    "brands": { "midea": "美的", "siemens": "西门子", "fangtai": "方太", "robam": "老板", "panasonic": "松下", "haier": "海尔" },
+    "brands": {
+      "midea": "美的",
+      "siemens": "西门子",
+      "fangtai": "方太",
+      "robam": "老板",
+      "panasonic": "松下",
+      "haier": "海尔"
+    },
     "map": {
-      "capacity": ["餐具容量"],
-      "water_eff": ["耗水量"],
-      "dry": ["干燥方式"],
-      "sterilize": ["消毒方式"],
-      "power": ["功率"],
-      "size": ["产品尺寸"],
-      "weight": ["重量"]
+      "capacity": [
+        "餐具容量"
+      ],
+      "water_eff": [
+        "耗水量"
+      ],
+      "dry": [
+        "干燥方式"
+      ],
+      "sterilize": [
+        "消毒方式"
+      ],
+      "power": [
+        "功率"
+      ],
+      "size": [
+        "产品尺寸"
+      ],
+      "weight": [
+        "重量"
+      ]
     }
   },
-
   "water-purifier": {
     "path": "water_purifier",
     "groupKey": "type",
-    "groupValue": "竞品",
+    "groupValue": "—",
     "pick": 5,
-    "brands": { "qinyuan": "沁园", "angel": "安吉尔", "midea": "美的", "haier": "海尔", "3m": "3M" },
+    "brands": {
+      "qinyuan": "沁园",
+      "angel": "安吉尔",
+      "midea": "美的",
+      "haier": "海尔",
+      "3m": "3M"
+    },
     "map": {
-      "flux": ["净水流量"],
-      "pure_flow": ["纯水流量"],
-      "water_rate": ["产水率", "废水比"],
-      "rated_vol": ["额定净水量"],
-      "ro_life": ["滤芯寿命", "RO膜寿命"],
-      "sterilize": ["杀菌方式", "除菌方式"],
-      "size": ["产品尺寸"]
+      "flux": [
+        "净水流量"
+      ],
+      "pure_flow": [
+        "纯水流量"
+      ],
+      "water_rate": [
+        "产水率",
+        "废水比"
+      ],
+      "rated_vol": [
+        "额定净水量"
+      ],
+      "ro_life": [
+        "滤芯寿命",
+        "RO膜寿命"
+      ],
+      "sterilize": [
+        "杀菌方式",
+        "除菌方式"
+      ],
+      "size": [
+        "产品尺寸"
+      ]
     }
   },
-
   "rice-cooker": {
     "path": "rice_cooker",
     "groupKey": "type",
-    "groupValue": "竞品",
+    "groupValue": "—",
     "pick": 5,
-    "brands": { "midea": "美的", "supor": "苏泊尔", "joyoung": "九阳", "panasonic": "松下", "tiger": "虎牌" },
+    "brands": {
+      "midea": "美的",
+      "supor": "苏泊尔",
+      "joyoung": "九阳",
+      "panasonic": "松下",
+      "tiger": "虎牌"
+    },
     "map": {
-      "capacity": ["容积大小", "容量", "内胆容量"],
-      "power": ["额定功率", "产品功率"],
-      "inner_pot": ["内胆材质"],
-      "pressure": ["压力"],
-      "size": ["外形尺寸", "产品尺寸"]
+      "capacity": [
+        "容积大小",
+        "容量",
+        "内胆容量"
+      ],
+      "power": [
+        "额定功率",
+        "产品功率"
+      ],
+      "inner_pot": [
+        "内胆材质"
+      ],
+      "pressure": [
+        "压力"
+      ],
+      "size": [
+        "外形尺寸",
+        "产品尺寸"
+      ]
     }
   },
-
   "bath-heater": {
     "path": "yuba",
     "groupKey": "series",
-    "groupValue": "竞品",
+    "groupValue": "—",
     "pick": 5,
-    "brands": { "aupu": "奥普", "opple": "欧普", "panasonic": "松下", "nvc": "雷士", "midea": "美的" },
+    "brands": {
+      "aupu": "奥普",
+      "opple": "欧普",
+      "panasonic": "松下",
+      "nvc": "雷士",
+      "midea": "美的"
+    },
     "map": {
-      "heat_power": ["风暖功率"],
-      "light_power": ["照明功率"],
-      "fan_power": ["风扇功率"],
-      "vent_power": ["换气功率"],
-      "control": ["控制方式"],
-      "open_size": ["安装开孔尺寸", "开孔尺寸"],
-      "weight": ["产品重量"],
-      "voltage": ["电源规格", "电压"]
+      "heat_power": [
+        "风暖功率"
+      ],
+      "light_power": [
+        "照明功率"
+      ],
+      "fan_power": [
+        "风扇功率"
+      ],
+      "vent_power": [
+        "换气功率"
+      ],
+      "control": [
+        "控制方式"
+      ],
+      "open_size": [
+        "安装开孔尺寸",
+        "开孔尺寸"
+      ],
+      "weight": [
+        "产品重量"
+      ],
+      "voltage": [
+        "电源规格",
+        "电压"
+      ]
     }
   },
-
   "water-heater": {
     "path": "water_heater",
     "groupKey": "type",
-    "groupValue": "竞品",
+    "groupValue": "—",
     "groupSource": "产品类型",
-    "groupMap": { "燃气": "燃气", "电": "电热", "电热": "电热" },
+    "groupMap": {
+      "燃气": "燃气",
+      "电": "电热",
+      "电热": "电热"
+    },
     "pick": 5,
-    "brands": { "haier": "海尔", "midea": "美的", "aosmith": "A.O.史密斯", "rinnai": "林内", "noritz": "能率" },
+    "brands": {
+      "haier": "海尔",
+      "midea": "美的",
+      "aosmith": "A.O.史密斯",
+      "rinnai": "林内",
+      "noritz": "能率"
+    },
     "map": {
-      "capacity": ["产品容量"],
-      "power": ["产品功率"],
-      "energy": ["能效等级"],
-      "size": ["产品尺寸"]
+      "capacity": [
+        "产品容量"
+      ],
+      "power": [
+        "产品功率"
+      ],
+      "energy": [
+        "能效等级"
+      ],
+      "size": [
+        "产品尺寸"
+      ]
     }
   },
-
   "kettle": {
     "path": "electric_kettle",
     "groupKey": "type",
-    "groupValue": "竞品",
+    "groupValue": "—",
     "pick": 5,
-    "brands": { "midea": "美的", "supor": "苏泊尔", "joyoung": "九阳", "zojirushi": "象印", "philips": "飞利浦" },
+    "brands": {
+      "midea": "美的",
+      "supor": "苏泊尔",
+      "joyoung": "九阳",
+      "zojirushi": "象印",
+      "philips": "飞利浦"
+    },
     "map": {
-      "capacity": ["产品容量"],
-      "power": ["产品功率"],
-      "material": ["内胆材质", "材质"],
-      "temp_ctrl": ["保温功能"],
-      "smart": ["控制方式"],
-      "size": ["产品尺寸"]
+      "capacity": [
+        "产品容量"
+      ],
+      "power": [
+        "产品功率"
+      ],
+      "material": [
+        "内胆材质",
+        "材质"
+      ],
+      "temp_ctrl": [
+        "保温功能"
+      ],
+      "smart": [
+        "控制方式"
+      ],
+      "size": [
+        "产品尺寸"
+      ]
     }
   },
-
   "fan": {
     "path": "fan",
     "groupKey": "type",
-    "groupValue": "竞品",
+    "groupValue": "—",
     "pick": 5,
-    "brands": { "midea": "美的", "airmate": "艾美特", "dyson": "戴森", "gree": "格力", "panasonic": "松下" },
+    "brands": {
+      "midea": "美的",
+      "airmate": "艾美特",
+      "dyson": "戴森",
+      "gree": "格力",
+      "panasonic": "松下"
+    },
     "map": {
-      "power": ["产品功率"],
-      "speeds": ["风力档位"],
-      "noise": ["噪音"],
-      "swing": ["摇头方式"],
-      "airflow": ["风量"],
-      "size": ["外形尺寸"]
+      "power": [
+        "产品功率"
+      ],
+      "speeds": [
+        "风力档位"
+      ],
+      "noise": [
+        "噪音"
+      ],
+      "swing": [
+        "摇头方式"
+      ],
+      "airflow": [
+        "风量"
+      ],
+      "size": [
+        "外形尺寸"
+      ]
     }
   },
-
   "humidifier": {
     "path": "humidifier",
     "groupKey": "type",
-    "groupValue": "竞品",
+    "groupValue": "—",
     "pick": 5,
-    "brands": { "deerma": "德尔玛", "philips": "飞利浦", "zhimi": "智米", "midea": "美的", "352": "352" },
+    "brands": {
+      "deerma": "德尔玛",
+      "philips": "飞利浦",
+      "zhimi": "智米",
+      "midea": "美的",
+      "352": "352"
+    },
     "map": {
-      "humid_rate": ["加湿量"],
-      "tank": ["水箱容量"],
-      "runtime": ["加湿时长", "续航时间"],
-      "noise": ["噪音"],
-      "power": ["额定功率", "功率"],
-      "sterilize": ["除菌方式", "杀菌方式"],
-      "size": ["外形尺寸", "产品尺寸"]
+      "humid_rate": [
+        "加湿量"
+      ],
+      "tank": [
+        "水箱容量"
+      ],
+      "runtime": [
+        "加湿时长",
+        "续航时间"
+      ],
+      "noise": [
+        "噪音"
+      ],
+      "power": [
+        "额定功率",
+        "功率"
+      ],
+      "sterilize": [
+        "除菌方式",
+        "杀菌方式"
+      ],
+      "size": [
+        "外形尺寸",
+        "产品尺寸"
+      ]
     }
   },
-
   "projector": {
     "path": "projector",
     "groupKey": "type",
-    "groupValue": "竞品",
+    "groupValue": "—",
     "pick": 5,
-    "brands": { "xgimi": "极米", "jmgo": "坚果", "dangbei": "当贝", "epson": "爱普生", "benq": "明基" },
+    "brands": {
+      "xgimi": "极米",
+      "jmgo": "坚果",
+      "dangbei": "当贝",
+      "epson": "爱普生",
+      "benq": "明基"
+    },
     "map": {
-      "brightness": ["亮度", "标称亮度"],
-      "resolution": ["分辨率", "标准分辨率"],
-      "dmd": ["显示芯片"],
-      "throw_ratio": ["投射比"],
-      "focus": ["对焦方式"],
-      "keystone": ["梯形校正"],
-      "weight": ["重量", "产品重量"],
-      "size": ["外形尺寸", "产品尺寸"]
+      "brightness": [
+        "亮度",
+        "标称亮度"
+      ],
+      "resolution": [
+        "分辨率",
+        "标准分辨率"
+      ],
+      "dmd": [
+        "显示芯片"
+      ],
+      "throw_ratio": [
+        "投射比"
+      ],
+      "focus": [
+        "对焦方式"
+      ],
+      "keystone": [
+        "梯形校正"
+      ],
+      "weight": [
+        "重量",
+        "产品重量"
+      ],
+      "size": [
+        "外形尺寸",
+        "产品尺寸"
+      ]
     }
   },
-
   "induction-cooker": {
     "path": "induction_cooker",
     "groupKey": "type",
-    "groupValue": "竞品",
+    "groupValue": "—",
     "pick": 5,
-    "brands": { "midea": "美的", "supor": "苏泊尔", "joyoung": "九阳", "galanz": "格兰仕" },
+    "brands": {
+      "midea": "美的",
+      "supor": "苏泊尔",
+      "joyoung": "九阳",
+      "galanz": "格兰仕"
+    },
     "map": {
-      "power": ["额定功率", "功率"],
-      "gear": ["火力档位", "档位"],
-      "panel": ["面板材质"],
-      "size": ["外形尺寸", "产品尺寸"]
+      "power": [
+        "额定功率",
+        "功率"
+      ],
+      "gear": [
+        "火力档位",
+        "档位"
+      ],
+      "panel": [
+        "面板材质"
+      ],
+      "size": [
+        "外形尺寸",
+        "产品尺寸"
+      ]
     }
   },
-
   "microwave": {
     "path": "oven",
     "groupKey": "type",
-    "groupValue": "竞品",
+    "groupValue": "—",
     "pick": 5,
-    "brands": { "midea": "美的", "galanz": "格兰仕", "robam": "老板", "panasonic": "松下" },
+    "brands": {
+      "midea": "美的",
+      "galanz": "格兰仕",
+      "robam": "老板",
+      "panasonic": "松下"
+    },
     "map": {
-      "capacity": ["容量", "容积"],
-      "power": ["额定功率", "功率"],
-      "size": ["外形尺寸", "产品尺寸"]
+      "capacity": [
+        "容量",
+        "容积"
+      ],
+      "power": [
+        "额定功率",
+        "功率"
+      ],
+      "size": [
+        "外形尺寸",
+        "产品尺寸"
+      ]
     }
   },
-
   "tv": {
     "path": "lcd_tv",
     "groupKey": "series",
-    "groupValue": "竞品",
+    "groupValue": "—",
     "pick": 5,
-    "brands": { "hisense": "海信", "tcl": "TCL", "skyworth": "创维", "sony": "索尼", "haier": "海尔" },
+    "brands": {
+      "hisense": "海信",
+      "tcl": "TCL",
+      "skyworth": "创维",
+      "sony": "索尼",
+      "haier": "海尔"
+    },
     "map": {
-      "size_inch": ["屏幕尺寸"],
-      "refresh": ["屏幕刷新频率"],
-      "resolution": ["分辨率"],
-      "size": ["机身尺寸"],
-      "backlight": ["背光类型"],
-      "mem": ["运行内存"],
-      "hdmi": ["HDMI接口"]
+      "size_inch": [
+        "屏幕尺寸"
+      ],
+      "refresh": [
+        "屏幕刷新频率"
+      ],
+      "resolution": [
+        "分辨率"
+      ],
+      "size": [
+        "机身尺寸"
+      ],
+      "backlight": [
+        "背光类型"
+      ],
+      "mem": [
+        "运行内存"
+      ],
+      "hdmi": [
+        "HDMI接口"
+      ]
     }
   },
-
   "air-conditioner": {
     "path": "air_condition",
     "groupKey": "type",
-    "groupValue": "竞品",
+    "groupValue": "—",
     "pick": 6,
-    "brands": { "midea": "美的", "gree": "格力", "haier": "海尔", "hisense": "海信", "changhong": "长虹" },
+    "brands": {
+      "midea": "美的",
+      "gree": "格力",
+      "haier": "海尔",
+      "hisense": "海信",
+      "changhong": "长虹"
+    },
     "map": {
-      "area": ["适用面积"],
-      "energy": ["能效等级"],
-      "cool_cap": ["制冷量"],
-      "heat_cap": ["制热量"],
-      "cool_power": ["产品功率", "功率"],
-      "airflow": ["循环风量"],
-      "noise": ["室内机噪音"],
-      "size_indoor": ["室内机尺寸"]
+      "area": [
+        "适用面积"
+      ],
+      "energy": [
+        "能效等级"
+      ],
+      "cool_cap": [
+        "制冷量"
+      ],
+      "heat_cap": [
+        "制热量"
+      ],
+      "cool_power": [
+        "产品功率",
+        "功率"
+      ],
+      "airflow": [
+        "循环风量"
+      ],
+      "noise": [
+        "室内机噪音"
+      ],
+      "size_indoor": [
+        "室内机尺寸"
+      ]
     }
   },
-
   "water-dispenser": {
     "path": "water_dispenser",
     "groupKey": "type",
-    "groupValue": "竞品",
+    "groupValue": "—",
     "pick": 5,
-    "brands": { "meide": "美迪", "anjier": "安吉尔", "supor": "苏泊尔", "meiling": "美菱", "aux": "奥克斯" },
+    "brands": {
+      "meide": "美迪",
+      "anjier": "安吉尔",
+      "supor": "苏泊尔",
+      "meiling": "美菱",
+      "aux": "奥克斯"
+    },
     "map": {
-      "power": ["额定总功率"],
-      "tank": ["水箱容积"],
-      "volume": ["容量", "容积"]
+      "power": [
+        "额定总功率"
+      ],
+      "tank": [
+        "水箱容积"
+      ],
+      "volume": [
+        "容量",
+        "容积"
+      ]
     }
   },
-
   "air-fryer": {
     "path": "airfryer",
     "groupKey": "type",
-    "groupValue": "竞品",
+    "groupValue": "—",
     "pick": 5,
-    "brands": { "midea": "美的", "supor": "苏泊尔", "joyoung": "九阳", "haier": "海尔", "philips": "飞利浦" },
+    "brands": {
+      "midea": "美的",
+      "supor": "苏泊尔",
+      "joyoung": "九阳",
+      "haier": "海尔",
+      "philips": "飞利浦"
+    },
     "map": {
-      "capacity": ["产品容量"],
-      "power": ["额定功率"],
-      "basket": ["锅体材质"]
+      "capacity": [
+        "产品容量"
+      ],
+      "power": [
+        "额定功率"
+      ],
+      "basket": [
+        "锅体材质"
+      ]
     }
   },
-
   "pressure-cooker": {
     "path": "pressure_cooker",
     "groupKey": "tier",
-    "groupValue": "竞品",
+    "groupValue": "—",
     "pick": 5,
-    "brands": { "midea": "美的", "supor": "苏泊尔", "joyoung": "九阳" },
+    "brands": {
+      "midea": "美的",
+      "supor": "苏泊尔",
+      "joyoung": "九阳"
+    },
     "map": {
-      "capacity": ["产品容量"],
-      "power": ["额定功率"],
-      "inner_pot": ["内胆材质"]
+      "capacity": [
+        "产品容量"
+      ],
+      "power": [
+        "额定功率"
+      ],
+      "inner_pot": [
+        "内胆材质"
+      ]
     }
   },
-
   "blender": {
     "path": "juicer",
     "groupKey": "type",
-    "groupValue": "竞品",
+    "groupValue": "—",
     "pick": 5,
-    "brands": { "supor": "苏泊尔", "joyoung": "九阳", "midea": "美的", "bear": "小熊" },
+    "brands": {
+      "supor": "苏泊尔",
+      "joyoung": "九阳",
+      "midea": "美的",
+      "bear": "小熊"
+    },
     "map": {
-      "capacity": ["产品容量"],
-      "power": ["搅拌功率", "加热功率"],
-      "heat": ["加热功率"],
-      "speed": ["转速", "档位"]
+      "capacity": [
+        "产品容量"
+      ],
+      "power": [
+        "搅拌功率",
+        "加热功率"
+      ],
+      "heat": [
+        "加热功率"
+      ],
+      "speed": [
+        "转速",
+        "档位"
+      ]
     }
   },
-
   "coffee-machine": {
     "path": "coffee",
     "groupKey": "type",
-    "groupValue": "竞品",
+    "groupValue": "—",
     "pick": 5,
-    "brands": { "aca": "北美电器", "krups": "克鲁伯", "stelang": "雪特朗", "philips": "飞利浦", "panasonic": "松下" },
+    "brands": {
+      "aca": "北美电器",
+      "krups": "克鲁伯",
+      "stelang": "雪特朗",
+      "philips": "飞利浦",
+      "panasonic": "松下"
+    },
     "map": {
-      "power": ["产品功率"],
-      "pressure": ["泵压"],
-      "tank": ["水箱容量"]
+      "power": [
+        "产品功率"
+      ],
+      "pressure": [
+        "泵压"
+      ],
+      "tank": [
+        "水箱容量"
+      ]
     }
   },
-
   "heater": {
     "path": "heater",
     "groupKey": "type",
-    "groupValue": "竞品",
+    "groupValue": "—",
     "pick": 5,
-    "brands": { "aucma": "澳柯玛", "gree": "格力", "philips": "飞利浦", "panasonic": "松下", "bear": "小熊" },
+    "brands": {
+      "aucma": "澳柯玛",
+      "gree": "格力",
+      "philips": "飞利浦",
+      "panasonic": "松下",
+      "bear": "小熊"
+    },
     "map": {
-      "power": ["输入功率", "产品功率"],
-      "coverage": ["适用面积"],
-      "gear": ["可选档位"]
+      "power": [
+        "输入功率",
+        "产品功率"
+      ],
+      "coverage": [
+        "适用面积"
+      ],
+      "gear": [
+        "可选档位"
+      ]
     }
   },
-
   "air-purifier": {
     "path": "jinghuaqi",
     "groupKey": "tier",
-    "groupValue": "竞品",
+    "groupValue": "—",
     "pick": 5,
-    "brands": { "honeywell": "霍尼韦尔", "midea": "美的", "haier": "海尔", "dreame": "追觅", "dyson": "戴森" },
+    "brands": {
+      "honeywell": "霍尼韦尔",
+      "midea": "美的",
+      "haier": "海尔",
+      "dreame": "追觅",
+      "dyson": "戴森"
+    },
     "map": {
-      "area": ["适用面积"],
-      "cadr_pm": ["固态污染物CADR", "CADR"],
-      "cadr_hcho": ["甲醛CADR", "气态污染物CADR"],
-      "power": ["额定功率"],
-      "noise": ["产品噪音"],
-      "filter_life": ["滤网寿命"],
-      "wifi": ["WiFi", "智能"],
-      "size": ["外形尺寸", "产品尺寸"]
+      "area": [
+        "适用面积"
+      ],
+      "cadr_pm": [
+        "固态污染物CADR",
+        "CADR"
+      ],
+      "cadr_hcho": [
+        "甲醛CADR",
+        "气态污染物CADR"
+      ],
+      "power": [
+        "额定功率"
+      ],
+      "noise": [
+        "产品噪音"
+      ],
+      "filter_life": [
+        "滤网寿命"
+      ],
+      "wifi": [
+        "WiFi",
+        "智能"
+      ],
+      "size": [
+        "外形尺寸",
+        "产品尺寸"
+      ]
     }
   },
-
   "robot-vacuum": {
     "path": "sweepingrobot",
     "groupKey": "tier",
-    "groupValue": "竞品",
+    "groupValue": "—",
     "pick": 6,
-    "brands": { "stone": "石头", "ecovacs": "科沃斯", "dji": "大疆", "dreame": "追觅", "haier": "海尔", "yunjing": "云鲸" },
+    "brands": {
+      "stone": "石头",
+      "ecovacs": "科沃斯",
+      "dji": "大疆",
+      "dreame": "追觅",
+      "haier": "海尔",
+      "yunjing": "云鲸"
+    },
     "map": {
-      "suction": ["真空度"],
-      "base_func": ["集尘方式"],
-      "navigation": ["导航方式"],
-      "water_tank": ["水箱容量"],
-      "battery": ["电池容量"],
-      "noise": ["产品噪音"],
-      "power": ["产品功率"],
-      "size": ["外形尺寸"]
+      "suction": [
+        "真空度"
+      ],
+      "base_func": [
+        "集尘方式"
+      ],
+      "navigation": [
+        "导航方式"
+      ],
+      "water_tank": [
+        "水箱容量"
+      ],
+      "battery": [
+        "电池容量"
+      ],
+      "noise": [
+        "产品噪音"
+      ],
+      "power": [
+        "产品功率"
+      ],
+      "size": [
+        "外形尺寸"
+      ]
     }
   },
-
   "dehumidifier": {
     "path": "chushiji",
     "groupKey": "tier",
-    "groupValue": "竞品",
+    "groupValue": "—",
     "pick": 6,
-    "brands": { "songjing": "松井", "deye": "德业", "midea": "美的", "tcl": "TCL", "gree": "格力", "dorosin": "多乐信", "oujing": "欧井" },
+    "brands": {
+      "songjing": "松井",
+      "deye": "德业",
+      "midea": "美的",
+      "tcl": "TCL",
+      "gree": "格力",
+      "dorosin": "多乐信",
+      "oujing": "欧井"
+    },
     "map": {
-      "dehumid": ["日除湿量"],
-      "area": ["适用面积"],
-      "noise": ["运转噪音"],
-      "power": ["额定功率"],
-      "tank": ["水箱容量"],
-      "compressor": ["压缩机"],
-      "purify": ["净化方式"],
-      "size": ["产品尺寸"]
+      "dehumid": [
+        "日除湿量"
+      ],
+      "area": [
+        "适用面积"
+      ],
+      "noise": [
+        "运转噪音"
+      ],
+      "power": [
+        "额定功率"
+      ],
+      "tank": [
+        "水箱容量"
+      ],
+      "compressor": [
+        "压缩机"
+      ],
+      "purify": [
+        "净化方式"
+      ],
+      "size": [
+        "产品尺寸"
+      ]
     }
   },
-
   "shaver": {
     "path": "shaving_razor",
     "groupKey": "tier",
-    "groupValue": "竞品",
+    "groupValue": "—",
     "pick": 6,
-    "brands": { "feilipu": "飞利浦", "feike": "飞科", "chaoren": "超人", "bolang": "博朗", "laifen": "徕芬", "songxia": "松下", "povos": "奔腾", "honor": "荣耀" },
+    "brands": {
+      "feilipu": "飞利浦",
+      "feike": "飞科",
+      "chaoren": "超人",
+      "bolang": "博朗",
+      "laifen": "徕芬",
+      "songxia": "松下",
+      "povos": "奔腾",
+      "honor": "荣耀"
+    },
     "map": {
-      "blades": ["刀头数量"],
-      "waterproof": ["防水", "防水等级"],
-      "runtime": ["续航", "使用时间"],
-      "charge": ["充电时间"],
-      "wet_dry": ["干湿两用"],
-      "power": ["功率性能"],
-      "size": ["产品尺寸"]
+      "blades": [
+        "刀头数量"
+      ],
+      "waterproof": [
+        "防水",
+        "防水等级"
+      ],
+      "runtime": [
+        "续航",
+        "使用时间"
+      ],
+      "charge": [
+        "充电时间"
+      ],
+      "wet_dry": [
+        "干湿两用"
+      ],
+      "power": [
+        "功率性能"
+      ],
+      "size": [
+        "产品尺寸"
+      ]
     }
   },
-
   "toothbrush": {
     "path": "electrical_toothbrush",
     "groupKey": "tier",
-    "groupValue": "竞品",
+    "groupValue": "—",
     "pick": 5,
-    "brands": { "songxia": "松下", "baier": "拜尔", "jingzao": "京造", "dreame": "追觅" },
+    "brands": {
+      "songxia": "松下",
+      "baier": "拜尔",
+      "jingzao": "京造",
+      "dreame": "追觅"
+    },
     "map": {
-      "freq": ["转动次数"],
-      "modes": ["清洁模式", "主要功能"],
-      "motor": ["马达", "电机"],
-      "battery_days": ["续航", "电池续航"],
-      "charge": ["充电时间"],
-      "waterproof": ["防水等级"],
-      "size": ["产品尺寸"]
+      "freq": [
+        "转动次数"
+      ],
+      "modes": [
+        "清洁模式",
+        "主要功能"
+      ],
+      "motor": [
+        "马达",
+        "电机"
+      ],
+      "battery_days": [
+        "续航",
+        "电池续航"
+      ],
+      "charge": [
+        "充电时间"
+      ],
+      "waterproof": [
+        "防水等级"
+      ],
+      "size": [
+        "产品尺寸"
+      ]
     }
   },
-
   "hair-dryer": {
     "path": "hair_dryer",
     "groupKey": "tier",
-    "groupValue": "竞品",
+    "groupValue": "—",
     "pick": 6,
-    "brands": { "dreame": "追觅", "leifin": "徕芬", "kangfu": "康夫", "dyson": "戴森", "panasonic": "松下", "midea": "美的", "aux": "奥克斯", "flyco": "飞科" },
+    "brands": {
+      "dreame": "追觅",
+      "leifin": "徕芬",
+      "kangfu": "康夫",
+      "dyson": "戴森",
+      "panasonic": "松下",
+      "midea": "美的",
+      "aux": "奥克斯",
+      "flyco": "飞科"
+    },
     "map": {
-      "power": ["产品功率"],
-      "speed": ["风速选择", "风速"],
-      "motor": ["电机", "马达"],
-      "anion": ["负离子"],
-      "temp_ctrl": ["温控", "温度调节"],
-      "weight": ["产品重量"],
-      "size": ["产品尺寸"]
+      "power": [
+        "产品功率"
+      ],
+      "speed": [
+        "风速选择",
+        "风速"
+      ],
+      "motor": [
+        "电机",
+        "马达"
+      ],
+      "anion": [
+        "负离子"
+      ],
+      "temp_ctrl": [
+        "温控",
+        "温度调节"
+      ],
+      "weight": [
+        "产品重量"
+      ],
+      "size": [
+        "产品尺寸"
+      ]
     }
   },
-
   "speaker": {
     "path": "soundbox",
     "groupKey": "tier",
-    "groupValue": "竞品",
+    "groupValue": "—",
     "pick": 6,
-    "brands": { "edifier": "漫步者", "hivi": "惠威", "harmankardon": "哈曼卡顿", "jbl": "JBL", "baidu": "百度", "fenda": "奋达", "huawei": "华为", "marshall": "马歇尔" },
+    "brands": {
+      "edifier": "漫步者",
+      "hivi": "惠威",
+      "harmankardon": "哈曼卡顿",
+      "jbl": "JBL",
+      "baidu": "百度",
+      "fenda": "奋达",
+      "huawei": "华为",
+      "marshall": "马歇尔"
+    },
     "map": {
-      "speaker": ["喇叭单元"],
-      "voice": ["语音助手", "功能特点"],
-      "screen": ["屏幕"],
-      "size": ["产品尺寸"]
+      "speaker": [
+        "喇叭单元"
+      ],
+      "voice": [
+        "语音助手",
+        "功能特点"
+      ],
+      "screen": [
+        "屏幕"
+      ],
+      "size": [
+        "产品尺寸"
+      ]
     }
   }
 }
