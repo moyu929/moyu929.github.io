@@ -23,11 +23,20 @@ const FAB_DRAG_THRESHOLD = 6
 const FAB_POS_KEY = 'compareFabPos'
 
 const rootRef = ref<HTMLElement | null>(null)
+/** 定位容器（.lg-wrap）：position 由它承载，拖动时直接改它的 style */
+const wrapRef = ref<HTMLElement | null>(null)
 const dragging = ref(false)
 const pos = ref<{ x: number; y: number } | null>(null)
 let off = { x: 0, y: 0 }
 let start = { x: 0, y: 0 }
 let pressed = false
+
+// 拖动性能：pointermove 事件频率高于帧率，直接改 ref 会每帧触发 Vue 重渲染 +
+// backdrop-filter 重算折射（重排成本极高）。这里改为 rAF 节流 + 拖动期直接写
+// DOM style 绕过响应式，松手才同步回 ref。
+let rafId = 0
+let pendingX = 0
+let pendingY = 0
 
 // 读取持久化位置
 try {
@@ -63,9 +72,16 @@ function endDrag(emitActivate: boolean) {
   window.removeEventListener('pointerup', onUp)
   window.removeEventListener('pointercancel', onUp)
   window.removeEventListener('blur', cancelDrag)
+  if (rafId) {
+    cancelAnimationFrame(rafId)
+    rafId = 0
+  }
   if (!pressed) return
   pressed = false
   if (dragging.value) {
+    // 拖动期间位置只写在 DOM 上，这里补写一次响应式状态，
+    // 让 Vue 重新接管后续渲染（否则松手后 hover 态等会失效）
+    pos.value = { x: pendingX, y: pendingY }
     dragging.value = false
     try {
       localStorage.setItem(FAB_POS_KEY, JSON.stringify(pos.value))
@@ -91,6 +107,18 @@ function onDown(e: PointerEvent) {
   window.addEventListener('blur', cancelDrag)
 }
 
+function applyDrag() {
+  rafId = 0
+  const el = wrapRef.value
+  if (!el) return
+  // 拖动中直接改定位样式，不走 Vue 响应式（避免每帧重渲 + 重排）。
+  // 用 transform 走合成层，比改 left/top 更跟手。
+  el.style.left = `${pendingX}px`
+  el.style.top = `${pendingY}px`
+  el.style.bottom = 'auto'
+  el.style.right = 'auto'
+}
+
 function onMove(e: PointerEvent) {
   if (!pressed) return
   if (!dragging.value) {
@@ -100,12 +128,15 @@ function onMove(e: PointerEvent) {
     dragging.value = true
     const r = (rootRef.value as HTMLElement).getBoundingClientRect()
     off = { x: e.clientX - r.left, y: e.clientY - r.top }
+    // 拖动期禁用 backdrop-filter 折射——它是拖动卡顿的最大来源，
+    // 每帧重算整个背景的位移贴图。松手后自动恢复。
+    rootRef.value?.classList.add('is-dragging')
   }
   e.preventDefault()
-  pos.value = {
-    x: clamp(e.clientX - off.x, window.innerWidth - SIZE.value),
-    y: clamp(e.clientY - off.y, window.innerHeight - SIZE.value),
-  }
+  pendingX = clamp(e.clientX - off.x, window.innerWidth - SIZE.value)
+  pendingY = clamp(e.clientY - off.y, window.innerHeight - SIZE.value)
+  // 一帧只处理一次，避免事件频率高于刷新率时排队
+  if (!rafId) rafId = requestAnimationFrame(applyDrag)
 }
 
 function onUp() {
@@ -231,7 +262,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="lg-wrap" :style="style">
+  <div ref="wrapRef" class="lg-wrap" :style="style">
     <!-- 液态玻璃 SVG 滤镜定义（唯一滤镜，仅作用于 backdrop-filter） -->
     <svg class="lg-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <defs>
@@ -323,9 +354,15 @@ onBeforeUnmount(() => {
   cursor: grabbing;
 }
 
+/* 拖动期：摘掉 backdrop-filter 折射（每帧重算背景位移贴图，是卡顿主因），
+   换成半透明底色保持视觉连贯；松手立即恢复液态玻璃。 */
 .liquid-glass.dragging {
   transition: none;
   cursor: grabbing;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  background: rgba(108, 92, 231, 0.22);
+  will-change: transform;
 }
 
 .glass-content {

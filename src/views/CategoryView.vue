@@ -140,6 +140,21 @@ const stats = computed(() => {
 
 const overLimitHint = ref(false)
 
+/** 入场动画的全局序号：按分组在列表中的累计位置算，保证跨组单调递增 */
+const groupOffsets = computed(() => {
+  const map: Record<string, number> = {}
+  let acc = 0
+  for (const g of groupedList.value) {
+    map[g.group] = acc
+    acc += g.products.length
+  }
+  return map
+})
+
+function cardSeq(group: string, idx: number) {
+  return (groupOffsets.value[group] ?? 0) + idx
+}
+
 function onToggleCompare(id: string) {
   if (!toggleCompareId(id)) {
     overLimitHint.value = true
@@ -253,7 +268,9 @@ watch(data, () => {
 
         <!-- 经典模式 -->
         <template v-else-if="isGrouped">
-          <section v-for="g in groupedList" :key="g.group" class="reveal">
+          <!-- 分组 section 不挂 .reveal：每组独立触发会让整块随滚动上下移动，
+               行间距看起来忽宽忽窄。入场动画交给内部卡片各自交错。 -->
+          <section v-for="g in groupedList" :key="g.group">
             <h2 class="group-title">
               <span
                 class="dot"
@@ -272,6 +289,7 @@ watch(data, () => {
                 :show-group-badge="false"
                 :selected="isSelected(p.id)"
                 :index="idx"
+                :seq="cardSeq(g.group, idx)"
                 :eager="eagerIds.has(p.id)"
                 @toggle-compare="onToggleCompare"
               />

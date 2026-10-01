@@ -373,10 +373,15 @@ body,
 
 /* ============================================================
    滚动揭示动画类
+   ------------------------------------------------------------
+   只用于「一次性、不影响阅读节奏」的元素（首页品类卡、时间轴年份组）。
+   ⚠️ 品类页的分组 <section> 不要挂 .reveal —— 每个分组独立触发，
+   进入视口时整块上移会造成「翻页到哪、哪块才动一下」，行间距看起来忽宽忽窄。
+   卡片入场改用 ProductCard 自己的 fadeInUp 交错动画。
    ============================================================ */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
+  transform: translateY(12px);
   transition: opacity var(--dur-slow) var(--ease-out),
               transform var(--dur-slow) var(--ease-out);
 }
@@ -384,6 +389,26 @@ body,
 .reveal.revealed {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* 无位移的纯淡入：给不希望引起布局位移感的容器用 */
+.reveal-fade {
+  opacity: 0;
+  transition: opacity var(--dur-slow) var(--ease-out);
+}
+
+.reveal-fade.revealed {
+  opacity: 1;
+}
+
+/* 尊重系统的「减少动态效果」设置 */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-fade {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 /* ============================================================

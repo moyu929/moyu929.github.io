@@ -41,10 +41,32 @@ function readJson(file) {
   }
 }
 
-const categories = readJson(path.join(DATA_DIR, 'categories.json'))
-if (!Array.isArray(categories)) {
+const groups = readJson(path.join(DATA_DIR, 'categories.json'))
+if (!Array.isArray(groups)) {
   console.error('categories.json 必须是数组')
   process.exit(1)
+}
+
+// categories.json 是两层结构：一级品类分组 -> 小品类。校验只关心小品类。
+const categories = groups.flatMap((g) => {
+  if (!Array.isArray(g?.categories)) {
+    errors.push(`一级品类「${g?.id ?? '未知'}」缺少 categories 数组`)
+    return []
+  }
+  if (!g.id || !g.name) errors.push(`一级品类缺少 id 或 name`)
+  return g.categories
+})
+{
+  // 分组只做结构校验，字段校验都在下面的品类循环里
+  const ids = categories.map((c) => c.id)
+  const dup = ids.filter((id, i) => ids.indexOf(id) !== i)
+  if (dup.length) errors.push(`品类 id 重复：${[...new Set(dup)].join('、')}`)
+  // 反向检查：data/ 下每个品类目录都要登记进 categories.json，否则前端入口缺一块
+  for (const entry of fs.readdirSync(DATA_DIR, { withFileTypes: true })) {
+    if (!entry.isDirectory()) continue
+    if (entry.name.startsWith('_')) continue
+    if (!ids.includes(entry.name)) errors.push(`data/${entry.name} 未登记进 categories.json`)
+  }
 }
 
 for (const category of categories) {

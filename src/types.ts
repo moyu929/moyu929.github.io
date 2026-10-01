@@ -84,12 +84,24 @@ export interface Product {
   [key: string]: unknown
 }
 
-/** categories.json 中的品类条目 */
+/** categories.json 中的品类条目（小品类） */
 export interface CategoryMeta {
   id: string
   name: string
   icon: string
   description: string
+}
+
+/**
+ * 一级品类（分组）。categories.json 是两层结构：先按使用场景分组，
+ * 组内再列具体品类；首页左侧竖排一级品类，右侧展示该组的品类。
+ */
+export interface CategoryGroup {
+  id: string
+  name: string
+  icon: string
+  description: string
+  categories: CategoryMeta[]
 }
 
 /** 一个品类的完整数据 */

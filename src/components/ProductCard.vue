@@ -12,6 +12,8 @@ const props = defineProps<{
   selected: boolean
   /** 在列表中的索引，用于入场动画交错延迟 */
   index?: number
+  /** 全局单调序号；分组视图下用它替代 index，避免每组都从 0 重新交错 */
+  seq?: number
   /** 是否属于首屏可见范围：决定图片是 eager+高优先级还是 lazy */
   eager?: boolean
 }>()
@@ -47,9 +49,15 @@ const img = computed(() => imageUrl(props.schema, props.product))
  */
 const eagerImg = computed(() => props.eager ?? false)
 
-const cardStyle = computed(() => ({
-  animationDelay: props.index !== undefined ? `${Math.min(props.index * 0.05, 0.4)}s` : '0s',
-}))
+/**
+ * 入场动画的延迟。
+ * 分组视图里 index 是「组内序号」，每组都从 0 重新交错 —— 滚动到哪一组
+ * 就看到哪一组还在播动画，视觉上像页面在动。seq 传全局单调序号即可避免。
+ */
+const cardStyle = computed(() => {
+  const n = props.seq ?? props.index ?? 0
+  return { animationDelay: `${Math.min(n * 0.03, 0.24)}s` }
+})
 </script>
 
 <template>

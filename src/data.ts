@@ -1,14 +1,15 @@
-import type { CategoryData, CategoryMeta, Product, CategorySchema } from './types'
+import type { CategoryData, CategoryGroup, Product, CategorySchema } from './types'
 import categoriesJson from '@data/categories.json'
 
 /**
  * 品类数据通过 glob 懒加载：新增一个品类只需在 data/ 下建目录并放两个 JSON，
- * 再往 categories.json 里加一行，无需改动任何代码。
+ * 再往 categories.json 对应的一级品类里加一条，无需改动任何代码。
  */
 const schemaModules = import.meta.glob<{ default: CategorySchema }>('../data/*/schema.json')
 const productModules = import.meta.glob<{ default: Product[] }>('../data/*/products.json')
 
-export const categories = categoriesJson as CategoryMeta[]
+/** 一级品类分组，供首页左侧导航使用 */
+export const categoryGroups = categoriesJson as CategoryGroup[]
 
 const cache = new Map<string, CategoryData>()
 
