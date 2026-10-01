@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { computed, ref, watch, onMounted, onBeforeUnmount, nextTick } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
-import type { CategoryData } from '../types'
+import type { CategoryData, Product } from '../types'
 import { loadCategory } from '../data'
-import { numberOf } from '../format'
+import { numberOf, priceOf } from '../format'
 import { useProductFilter } from '../useProductFilter'
 import { useCompare } from '../useCompare'
 import { useScrollReveal } from '../useScrollReveal'
@@ -118,8 +118,10 @@ const stats = computed(() => {
   const metric = current.schema.primaryMetric
   const field = current.schema.fields.find((f) => f.key === metric)
   const prefix = field?.prefix ?? ''
+  // 价格类主指标回退到 ref_price，否则只有参考价的非小米产品会被统计排除
+  const read = (p: Product) => (metric === 'official_price' ? priceOf(p) : numberOf(p, metric))
   const values = filtered.value
-    .map((p) => numberOf(p, metric))
+    .map(read)
     .filter((v): v is number => v !== null)
 
   const items = [

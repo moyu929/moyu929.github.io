@@ -75,7 +75,8 @@
       "type": "number",
       "prefix": "¥",
       "compare": true,
-      "sortable": true
+      "sortable": true,
+      "card": "chip"
     },
     {
       "key": "second_hand",

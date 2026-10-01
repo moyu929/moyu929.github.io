@@ -30,6 +30,18 @@ export function numberOf(product: Product, key: string): number | null {
   return null
 }
 
+/**
+ * 取用于排序/统计的价位：优先 official_price（品牌官方在售价），
+ * 缺失时回退 ref_price（参考价）。
+ *
+ * 原因：非小米品牌往往没有可核验的官方商城在售价，只有权威第三方规格站给的参考价，
+ * 而竞品在多数品类里占多数。若只认 official_price，这些产品会在默认排序里全部沉底、
+ * 顶部均价与区间也只剩小米部分 —— 相当于把多品牌横评又变回小米单品牌榜。
+ */
+export function priceOf(product: Product): number | null {
+  return numberOf(product, 'official_price') ?? numberOf(product, 'ref_price')
+}
+
 /** 对比表判断某行各产品的值是否全部相同 */
 export function allSame(values: string[]): boolean {
   return values.every((v) => v === values[0])

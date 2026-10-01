@@ -1,6 +1,6 @@
 import { computed, ref, type Ref } from 'vue'
 import type { CategoryData, Product } from './types'
-import { numberOf } from './format'
+import { numberOf, priceOf } from './format'
 
 export type SortDirection = 'default' | 'asc' | 'desc'
 
@@ -99,9 +99,11 @@ export function useProductFilter(data: Ref<CategoryData | null>) {
     if (key && sortDirection.value !== 'default') {
       const sign = sortDirection.value === 'asc' ? 1 : -1
       list.sort((a, b) => {
-        // 主排序键：year 等数值字段
-        const av = numberOf(a, key)
-        const bv = numberOf(b, key)
+        // 主排序键：year 等数值字段；价格键回退到 ref_price
+        const metricOf = (p: Product) =>
+          key === 'official_price' ? priceOf(p) : numberOf(p, key)
+        const av = metricOf(a)
+        const bv = metricOf(b)
         // 无法比较的值沉底，不参与排序竞争
         if (av === null && bv === null) return 0
         if (av === null) return 1
@@ -123,11 +125,13 @@ export function useProductFilter(data: Ref<CategoryData | null>) {
       // 默认排序：按分组顺序，组内按主指标降序
       const rank: Record<string, number> = {}
       schema.groupBy.order.forEach((g, i) => (rank[g] = i))
+      const metricOf = (p: Product) =>
+        schema.primaryMetric === 'official_price' ? priceOf(p) : numberOf(p, schema.primaryMetric)
       list.sort((a, b) => {
         const ga = rank[String(a[groupKey] ?? '')] ?? 99
         const gb = rank[String(b[groupKey] ?? '')] ?? 99
         if (ga !== gb) return ga - gb
-        return (numberOf(b, schema.primaryMetric) ?? 0) - (numberOf(a, schema.primaryMetric) ?? 0)
+        return (metricOf(b) ?? 0) - (metricOf(a) ?? 0)
       })
     }
 
