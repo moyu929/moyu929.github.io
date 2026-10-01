@@ -248,5 +248,119 @@
       "power": ["额定功率", "功率"],
       "size": ["外形尺寸", "产品尺寸"]
     }
+  },
+
+  "tv": {
+    "path": "lcd_tv",
+    "groupKey": "series",
+    "groupValue": "竞品",
+    "pick": 5,
+    "brands": { "hisense": "海信", "tcl": "TCL", "skyworth": "创维", "sony": "索尼", "haier": "海尔" },
+    "map": {
+      "size_inch": ["屏幕尺寸"],
+      "refresh": ["屏幕刷新频率"],
+      "resolution": ["分辨率"],
+      "size": ["机身尺寸"],
+      "backlight": ["背光类型"],
+      "mem": ["运行内存"],
+      "hdmi": ["HDMI接口"]
+    }
+  },
+
+  "air-conditioner": {
+    "path": "air_condition",
+    "groupKey": "type",
+    "groupValue": "竞品",
+    "pick": 6,
+    "brands": { "midea": "美的", "gree": "格力", "haier": "海尔", "hisense": "海信", "changhong": "长虹" },
+    "map": {
+      "area": ["适用面积"],
+      "energy": ["能效等级"],
+      "cool_cap": ["制冷量"],
+      "heat_cap": ["制热量"],
+      "cool_power": ["产品功率", "功率"],
+      "airflow": ["循环风量"],
+      "noise": ["室内机噪音"],
+      "size_indoor": ["室内机尺寸"]
+    }
+  },
+
+  "water-dispenser": {
+    "path": "water_dispenser",
+    "groupKey": "type",
+    "groupValue": "竞品",
+    "pick": 5,
+    "brands": { "meide": "美迪", "anjier": "安吉尔", "supor": "苏泊尔", "meiling": "美菱", "aux": "奥克斯" },
+    "map": {
+      "power": ["额定总功率"],
+      "tank": ["水箱容积"],
+      "volume": ["容量", "容积"]
+    }
+  },
+
+  "air-fryer": {
+    "path": "airfryer",
+    "groupKey": "type",
+    "groupValue": "竞品",
+    "pick": 5,
+    "brands": { "midea": "美的", "supor": "苏泊尔", "joyoung": "九阳", "haier": "海尔", "philips": "飞利浦" },
+    "map": {
+      "capacity": ["产品容量"],
+      "power": ["额定功率"],
+      "basket": ["锅体材质"]
+    }
+  },
+
+  "pressure-cooker": {
+    "path": "pressure_cooker",
+    "groupKey": "tier",
+    "groupValue": "竞品",
+    "pick": 5,
+    "brands": { "midea": "美的", "supor": "苏泊尔", "joyoung": "九阳" },
+    "map": {
+      "capacity": ["产品容量"],
+      "power": ["额定功率"],
+      "inner_pot": ["内胆材质"]
+    }
+  },
+
+  "blender": {
+    "path": "juicer",
+    "groupKey": "type",
+    "groupValue": "竞品",
+    "pick": 5,
+    "brands": { "supor": "苏泊尔", "joyoung": "九阳", "midea": "美的", "bear": "小熊" },
+    "map": {
+      "capacity": ["产品容量"],
+      "power": ["搅拌功率", "加热功率"],
+      "heat": ["加热功率"],
+      "speed": ["转速", "档位"]
+    }
+  },
+
+  "coffee-machine": {
+    "path": "coffee",
+    "groupKey": "type",
+    "groupValue": "竞品",
+    "pick": 5,
+    "brands": { "aca": "北美电器", "krups": "克鲁伯", "stelang": "雪特朗", "philips": "飞利浦", "panasonic": "松下" },
+    "map": {
+      "power": ["产品功率"],
+      "pressure": ["泵压"],
+      "tank": ["水箱容量"]
+    }
+  },
+
+  "heater": {
+    "path": "heater",
+    "groupKey": "type",
+    "groupValue": "竞品",
+    "pick": 5,
+    "brands": { "aucma": "澳柯玛", "gree": "格力", "philips": "飞利浦", "panasonic": "松下", "bear": "小熊" },
+    "map": {
+      "power": ["输入功率", "产品功率"],
+      "coverage": ["适用面积"],
+      "gear": ["可选档位"]
+    }
   }
 }

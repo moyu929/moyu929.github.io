@@ -240,6 +240,8 @@ def resolve_group(cfg, specs):
 def build_product(cat_id, cfg, slug, brand_cn, m, specs, group_value):
     pid = f"{slug}_{m['id']}"
     mapped = map_specs(specs, cfg.get("map"))
+    # 分组字段由 groupValue/groupMap 决定，绝不许被第三方同名参数（如「类别/产品类型」）覆盖
+    mapped.pop(cfg.get("groupKey"), None)
     used = len([v for v in mapped.values() if v != "查不到"])
     product = {
         "id": pid,

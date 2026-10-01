@@ -9,7 +9,8 @@
     "order": [
       "S Pro Mini LED",
       "S Mini LED",
-      "S 系列"
+      "S 系列",
+      "竞品"
     ],
     "colors": {
       "S Pro Mini LED": "#e67e22",
@@ -40,6 +41,13 @@
       "compare": true
     },
     {
+      "key": "brand",
+      "label": "品牌",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
       "key": "miot_model",
       "label": "MIoT 型号",
       "type": "text",
@@ -60,6 +68,14 @@
       "compare": true,
       "sortable": true,
       "stat": true
+    },
+    {
+      "key": "ref_price",
+      "label": "参考价",
+      "type": "number",
+      "prefix": "¥",
+      "compare": true,
+      "sortable": true
     },
     {
       "key": "second_hand",
