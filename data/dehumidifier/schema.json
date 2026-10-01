@@ -146,6 +146,13 @@
       "compare": true
     },
     {
+      "key": "area",
+      "label": "适用面积",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
       "key": "size",
       "label": "整机尺寸",
       "type": "text",

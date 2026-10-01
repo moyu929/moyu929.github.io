@@ -39,6 +39,13 @@
       "compare": true
     },
     {
+      "key": "model_code",
+      "label": "产品型号",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
       "key": "brand",
       "label": "品牌",
       "type": "text",

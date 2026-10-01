@@ -1,5 +1,27 @@
 import type { FieldDef, Product } from './types'
 
+/**
+ * 判断字符串值是否自带单位。
+ *
+ * 竞品数据多来自第三方规格站，常把单位写进值里（「85英寸」「4000mAh」「16套」），
+ * 而 schema 又声明了 unit。两者相加会渲染成「85英寸英寸」，所以先探测再决定是否追加。
+ *
+ * 只认「值里出现了单位写法」这个事实，不试图解析单位边界 —— 单位串本身
+ * 没有统一分隔符，硬解析容易把「4L(4-5人)」这类值切错。
+ */
+function carriesUnit(value: string, unit: string | undefined): boolean {
+  if (!unit) return false
+  const tail = value.trimEnd()
+  // 单位出现在结尾（85英寸 / 4000mAh / 16套），或以「数值+单位」形式出现（0.85Kwh/24h）
+  const u = unit.trim()
+  if (!u) return false
+  if (tail.endsWith(u)) return true
+  const idx = tail.lastIndexOf(u)
+  // 单位前必须是数字结尾的一段（避免「4L(4-5人)」里 L 后面还有别的内容却被误判）
+  if (idx < 0) return false
+  return /^\d/.test(tail.slice(idx + u.length))
+}
+
 /** 按字段定义把原始值渲染成展示文本；空值统一显示为破折号 */
 export function formatValue(field: FieldDef, product: Product): string {
   const raw = product[field.key]
@@ -8,6 +30,11 @@ export function formatValue(field: FieldDef, product: Product): string {
 
   if (Array.isArray(raw)) {
     return raw.length ? raw.join('、') : '—'
+  }
+
+  // 值里已经带了单位就不再追加，避免「85英寸英寸」
+  if (typeof raw === 'string' && carriesUnit(raw, field.unit)) {
+    return `${field.prefix ?? ''}${raw}`
   }
 
   return `${field.prefix ?? ''}${raw}${field.unit ?? ''}`

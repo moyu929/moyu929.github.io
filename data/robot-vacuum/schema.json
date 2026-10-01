@@ -147,6 +147,20 @@
       "sortable": true
     },
     {
+      "key": "power",
+      "label": "额定功率",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
+      "key": "noise",
+      "label": "工作噪音",
+      "type": "text",
+      "card": "grid",
+      "compare": true
+    },
+    {
       "key": "size",
       "label": "机身尺寸",
       "type": "text",

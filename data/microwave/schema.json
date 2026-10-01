@@ -229,6 +229,12 @@
       "label": "最近更新",
       "type": "text",
       "compare": true
+    },
+    {
+      "key": "power",
+      "label": "power",
+      "type": "text",
+      "compare": true
     }
   ],
   "guide": {

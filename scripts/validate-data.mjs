@@ -19,6 +19,19 @@ const PUBLIC_DIR = 'public'
 const errors = []
 const warnings = []
 
+/**
+ * 宽松解析数值：容忍「≤78dB(A)」「约 5.3kg」「0.85Kwh/24h」这类带前缀/后缀的写法。
+ * 与前端 src/format.ts 的 numberOf 同口径。
+ */
+function parseFloatLoose(v) {
+  if (typeof v === 'number') return v
+  if (typeof v !== 'string') return NaN
+  // 「查不到」「—」是规范里的无值占位，不是数据问题
+  if (v === '查不到' || v === '—' || v.trim() === '') return 0
+  const m = v.match(/-?\d+(\.\d+)?/)
+  return m ? Number.parseFloat(m[0]) : NaN
+}
+
 function readJson(file) {
   try {
     return JSON.parse(fs.readFileSync(file, 'utf8'))
@@ -91,7 +104,15 @@ for (const category of categories) {
       const v = p[field.key]
       if (v === undefined || v === null) continue
 
-      if (field.type === 'number' && typeof v !== 'number' && Number.isNaN(Number.parseFloat(v))) {
+      // number 字段的字符串值只要能解析出数字就是合法的带单位值
+      // （竞品数据常把单位写进值里：「85英寸」「4000mAh」「16套」「4L(4-5人)」）。
+      // 展示层 formatValue 会识别并跳过重复的单位追加，排序时 numberOf 也能解析。
+      // 只有连数字都解析不出的（纯文字说明）才告警，因为那种排序时真的会沉底。
+      if (
+        field.type === 'number' &&
+        typeof v !== 'number' &&
+        !Number.isFinite(parseFloatLoose(v))
+      ) {
         warnings.push(
           `${category.id}/${p.id}：${field.key} 声明为 number，实际是「${v}」，排序时会沉底`,
         )
