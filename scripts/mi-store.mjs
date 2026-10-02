@@ -20,6 +20,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import process from 'node:process'
+import { loadLibrary, saveLibrary } from './lib/library-io.mjs'
 
 const ROOT = path.resolve(import.meta.dirname, '..')
 const CACHE = path.join(ROOT, 'data', '_cache')
@@ -85,63 +86,16 @@ export function normalizeName(name) {
   return s.replace(/[\s()[\]（）【】「」·,，。.、:：;；!！?？\-—_/｜|+*#~～"']/g, '')
 }
 
-// ------------------------------------------------- 安全回写（对象边界守卫）
+// ------------------------------------------------- 安全回写
 
 /**
- * 在 products.json 文本中定位某个 id 的对象，替换其中一个字段。
- * 若 id 与目标字段之间出现了新的 "id"，说明跨过了对象边界，直接报错而不是硬写。
+ * 补丁回写已入库区。
+ *
+ * 2026-10-03 起改为「按 id 定位对象 → 改字段 → 经 library-io 整数组写回」，
+ * 取代了原先的「在 JSON 文本里做字节级替换」。理由是后者需要自己解析值的边界
+ * （曾因此把空图写到下一个产品上），而按对象改字段在结构上不可能越界；
+ * 写回统一走 library-io，顺带获得规范序列化与写前指纹守卫（方案 P1-1）。
  */
-export function patchFieldInText(text, id, key, valueLiteral) {
-  const idToken = `"id": "${id}"`
-  const idTokenAlt = `"id":"${id}"`
-  const start = text.indexOf(idToken) >= 0 ? text.indexOf(idToken) : text.indexOf(idTokenAlt)
-  if (start < 0) throw new Error(`未找到产品 id：${id}`)
-
-  const keyRe = new RegExp(`"${key}"\\s*:\\s*`)
-  const km = keyRe.exec(text.slice(start))
-  if (!km) throw new Error(`${id} 中未找到字段 ${key}`)
-
-  const valueStart = start + km.index + km[0].length
-  const between = text.slice(start + idToken.length, valueStart)
-  if (/"id"\s*:/.test(between)) {
-    throw new Error(`${id}.${key} 定位越界（中间出现新的 id），已中止`)
-  }
-
-  // 找到值的结束位置：字符串 / null / 数字 / 数组 / 对象
-  const rest = text.slice(valueStart)
-  let end
-  if (rest.startsWith('[')) end = matchBalanced(rest, '[', ']')
-  else if (rest.startsWith('{')) end = matchBalanced(rest, '{', '}')
-  else if (rest.startsWith('"')) end = matchString(rest)
-  else end = /^(null|true|false|-?\d+(\.\d+)?)/.exec(rest)?.[0]?.length ?? 0
-  if (!end) throw new Error(`${id}.${key} 值解析失败`)
-
-  return text.slice(0, valueStart) + valueLiteral + text.slice(valueStart + end)
-}
-
-function matchString(s) {
-  for (let i = 1; i < s.length; i++) {
-    if (s[i] === '\\') i++
-    else if (s[i] === '"') return i + 1
-  }
-  return 0
-}
-
-function matchBalanced(s, open, close) {
-  let depth = 0
-  for (let i = 0; i < s.length; i++) {
-    if (s[i] === '"') {
-      i += matchString(s.slice(i)) - 1
-      continue
-    }
-    if (s[i] === open) depth++
-    else if (s[i] === close) {
-      depth--
-      if (depth === 0) return i + 1
-    }
-  }
-  return 0
-}
 
 /** 把补丁写回 products.json：{ "<category>/<productId>": { key: value, ... } } */
 export function applyPatches(patch) {
@@ -162,23 +116,30 @@ export function applyPatches(patch) {
       errors.push(`品类不存在：${cat}`)
       continue
     }
-    let before = fs.readFileSync(file, 'utf8')
+    const lib = loadLibrary(file)
+    const byId = new Map(lib.products.map((p) => [p.id, p]))
+    let hit = 0
     for (const [pid, fields] of items) {
-      let text = fs.readFileSync(file, 'utf8')
-      for (const [key, value] of Object.entries(fields)) {
-        try {
-          text = patchFieldInText(text, pid, key, JSON.stringify(value))
-          changed++
-        } catch (e) {
-          errors.push(`${cat}/${pid}.${key}: ${e.message}`)
-        }
+      const product = byId.get(pid)
+      if (!product) {
+        errors.push(`${cat}/${pid}：库里没有这个 id`)
+        continue
       }
-      fs.writeFileSync(file, text, 'utf8')
+      for (const [key, value] of Object.entries(fields)) {
+        product[key] = value
+        changed++
+        hit++
+      }
     }
-    const products = JSON.parse(fs.readFileSync(file, 'utf8'))
-    const dup = products.map((p) => p.id).filter((v, i, a) => a.indexOf(v) !== i)
+    if (!hit) continue
+    try {
+      saveLibrary(file, lib.products, { expectHash: lib.hash })
+    } catch (e) {
+      errors.push(`${cat}：写库被拒绝 —— ${e.message}`)
+      continue
+    }
+    const dup = lib.products.map((p) => p.id).filter((v, i, a) => a.indexOf(v) !== i)
     if (dup.length) errors.push(`${cat} id 重复：${dup.join(', ')}`)
-    if (before === fs.readFileSync(file, 'utf8')) continue
     console.log(`  ✓ ${cat}：更新 ${items.length} 款`)
   }
   return { changed, errors }

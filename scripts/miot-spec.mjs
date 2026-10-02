@@ -21,6 +21,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import process from 'node:process'
+import { loadLibrary, saveLibrary } from './lib/library-io.mjs'
 
 const ROOT = path.resolve(import.meta.dirname, '..')
 const CACHE = path.join(ROOT, 'data', '_cache')
@@ -271,7 +272,8 @@ function cmdMatch(args) {
   let none = 0
   for (const c of cats) {
     const file = path.join(ROOT, 'data', c.id, 'products.json')
-    const prods = JSON.parse(fs.readFileSync(file, 'utf8'))
+    const lib = loadLibrary(file)
+    const prods = lib.products
     let changed = false
     for (const p of prods) {
       const n = squash(p.name)
@@ -317,7 +319,10 @@ function cmdMatch(args) {
         }
       }
     }
-    if (apply && changed) fs.writeFileSync(file, JSON.stringify(prods, null, 1) + '\n', 'utf8')
+    if (apply && changed) {
+      // 库写入统一走 lib/library-io.mjs：规范序列化 + 写前指纹守卫（方案 P1-1）
+      saveLibrary(file, prods, { expectHash: lib.hash })
+    }
   }
   fs.writeFileSync(path.join(CACHE, 'miot-match.json'), JSON.stringify(report, null, 1), 'utf8')
   log(`匹配完成：精确 ${exact}，模糊 ${loose}，无结果 ${none}；明细 data/_cache/miot-match.json${apply ? '（已写入）' : ''}`)

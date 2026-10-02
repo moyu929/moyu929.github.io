@@ -107,6 +107,34 @@ export function checkProduct(catId, schema, p) {
   return { errors, warnings }
 }
 
+/**
+ * 品类级校验：schema 合法性 + 产品 id 唯一 + 逐产品校验。
+ *
+ * 供 validate-data.mjs（全站校验）与 flow.mjs（入库后的品类复检）共用。
+ * 之所以单独抽出来：这两处曾经各写一份品类循环，改一处忘另一处就会造成
+ * 「npm run validate 通过但 flow:publish 失败」（反之亦然）的口径漂移。
+ */
+export function checkCategory(catId, schema, products) {
+  const errors = []
+  const warnings = []
+  if (!schema) {
+    errors.push(`${catId}：schema.json 不存在`)
+    return { errors, warnings }
+  }
+  errors.push(...checkSchema(catId, schema))
+  const seen = new Set()
+  for (const p of products ?? []) {
+    if (p?.id) {
+      if (seen.has(p.id)) errors.push(`${catId}：产品 id 重复 —— ${p.id}`)
+      seen.add(p.id)
+    }
+    const r = checkProduct(catId, schema, p)
+    errors.push(...r.errors)
+    warnings.push(...r.warnings)
+  }
+  return { errors, warnings }
+}
+
 /** 每款产品必带的 6 个审核标注字段（见 skills/appliance-data-curation/SKILL.md） */
 export const AUDIT_FIELDS = ['verify_status', 'verify_date', 'verify_source', 'verify_url', 'change_log', 'updated_at']
 

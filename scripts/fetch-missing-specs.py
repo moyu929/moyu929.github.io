@@ -6,6 +6,15 @@
 import json, glob, os, re, sys, subprocess, collections
 from concurrent.futures import ThreadPoolExecutor
 
+# 仓库根目录：按脚本自身位置解析，不依赖 cwd（见方案 P0-1）
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+def dp(rel):
+    """仓库相对路径 → 绝对路径"""
+    return os.path.join(ROOT, rel)
+
+
 sys.stdout.reconfigure(encoding='utf-8')
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
@@ -63,14 +72,14 @@ def fetch_specs(url):
 def main():
     # 收集所有未归类竞品的 (品类, id, url)
     todo = []
-    for f in sorted(glob.glob('data/*/schema.json')):
+    for f in sorted(glob.glob(dp('data/*/schema.json'))):
         cid = os.path.dirname(f).replace('\\', '/').split('/')[-1]
         s = json.load(open(f, encoding='utf-8'))
         facets = s.get('facets') or []
         if not facets:
             continue
         fk = facets[0]['key']
-        pp = 'data/%s/products.json' % cid
+        pp = dp('data/%s/products.json' % cid)
         for p in json.load(open(pp, encoding='utf-8')):
             if p.get('brand') == '小米':
                 continue
@@ -102,7 +111,7 @@ def main():
 
     for cid, data in results.items():
         pc = CAT2PC.get(cid, cid)
-        out = 'data/_cache/brand-%s-extra.json' % pc
+        out = dp('data/_cache/brand-%s-extra.json' % pc)
         json.dump([{'id': k, 'specs': v} for k, v in data.items()],
                   open(out, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
         print('%-20s 抓到 %3d -> %s' % (cid, len(data), out))

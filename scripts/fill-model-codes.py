@@ -31,6 +31,15 @@ pconline 恢复后可补跑一次校验。
 import json, os, re, sys, glob, argparse
 from collections import Counter
 
+# 仓库根目录：按脚本自身位置解析，不依赖 cwd（见方案 P0-1）
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+def dp(rel):
+    """仓库相对路径 → 绝对路径"""
+    return os.path.join(ROOT, rel)
+
+
 sys.stdout.reconfigure(encoding='utf-8')
 D = '2026-10-03'
 BLANK = {'查不到', '—', '', None, 'None'}
@@ -116,12 +125,12 @@ def main():
 
     hits, ambiguous, none = [], [], []
     seen = set()
-    for f in sorted(glob.glob('data/*/schema.json')):
-        cid = os.path.dirname(f).split(os.sep)[1]
+    for f in sorted(glob.glob(dp('data/*/schema.json'))):
+        cid = os.path.basename(os.path.dirname(f))
         s = json.load(open(f, encoding='utf-8'))
         if 'model_code' not in [x['key'] for x in s['fields']]:
             continue
-        for p in json.load(open('data/%s/products.json' % cid, encoding='utf-8')):
+        for p in json.load(open(dp('data/%s/products.json' % cid), encoding='utf-8')):
             if p.get('model_code') not in BLANK:
                 seen.add((cid, str(p['model_code'])))    # 已入库的型号参与重号检查
                 continue
@@ -163,9 +172,9 @@ def main():
         return
 
     for cid, pid, name, m in hits:
-        d = 'data/_draft/%s' % cid
+        d = dp('data/_draft/%s' % cid)
         os.makedirs(d, exist_ok=True)
-        cur = json.load(open('data/%s/products.json' % cid, encoding='utf-8'))
+        cur = json.load(open(dp('data/%s/products.json' % cid), encoding='utf-8'))
         base = next(x for x in cur if x['id'] == pid)
         item = dict(base)
         item['model_code'] = m

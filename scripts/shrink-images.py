@@ -35,12 +35,42 @@ MAX_EDGE = 320
 QUALITY = 80
 SRC_EXT = (".png", ".jpg", ".jpeg", ".webp")
 
+# 三个流转分区：产品在哪个区，img 就回写到哪个区的文件（图片本来就不走分区）
+ZONES = ("_draft", "_intake", "_review")
 
-def write_products(cat_id: str, prods: list) -> None:
-    (ROOT / "data" / cat_id / "products.json").write_text(
-        "[\n" + ",\n".join(json.dumps(x, ensure_ascii=False, separators=(",", ":")) for x in prods) + "\n]\n",
-        encoding="utf-8",
-    )
+# 库文件的写入统一走 lib/library_io.py：规范序列化 + 写前指纹守卫（方案 P1-1）
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent / "lib"))
+import library_io  # noqa: E402
+
+
+def write_zone(path: pathlib.Path, obj: dict) -> None:
+    """分区文件是缩进 2 空格的 JSON（与 flow.mjs 的 writePretty 同款）"""
+    path.write_text(json.dumps(obj, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def apply_img(p: dict, cat_id: str) -> bool:
+    """把 p['img'] 由旧扩展名改成 .webp；改到了就返回 True"""
+    img = p.get("img")
+    if not img or img.lower().endswith(".webp"):
+        return False
+    stem = pathlib.Path(img).stem
+    if (IMAGES / cat_id / f"{stem}.webp").exists():
+        p["img"] = f"{stem}.webp"
+        return True
+    return False
+
+
+def iter_zone_products(cat_id: str):
+    """产出 (文件路径, 产品对象)；只含实际存在的分区文件"""
+    for zone in ZONES:
+        zd = ROOT / "data" / zone / cat_id
+        if not zd.exists():
+            continue
+        for f in sorted(zd.glob("*.json")):
+            try:
+                yield f, json.loads(f.read_text(encoding="utf-8"))
+            except Exception:  # noqa: BLE001
+                continue
 
 
 def convert(src: pathlib.Path, dest: pathlib.Path, dry: bool) -> tuple[int, int]:
@@ -88,35 +118,44 @@ def main(argv) -> int:
         print("（--dry 模式，未落盘）")
         return 0
 
-    # 回写 img 字段
+    # 回写 img 字段：产品在哪个分区就改哪个分区；库内产品经 library_io（带指纹守卫）
     # categories.json 是两层结构（一级品类 -> 小品类），要摊平后再遍历
     groups = json.loads((ROOT / "data" / "categories.json").read_text(encoding="utf-8"))
     cats = [c for g in groups for c in g.get("categories", [])]
     changed = 0
     for c in cats:
-        pf = ROOT / "data" / c["id"] / "products.json"
-        prods = json.loads(pf.read_text(encoding="utf-8"))
-        hit = False
-        for p in prods:
-            img = p.get("img")
-            if not img or img.lower().endswith(".webp"):
-                continue
-            stem = pathlib.Path(img).stem
-            if (IMAGES / c["id"] / f"{stem}.webp").exists():
-                p["img"] = f"{stem}.webp"
+        cid = c["id"]
+        for f, obj in list(iter_zone_products(cid)):
+            if apply_img(obj, cid):
+                write_zone(f, obj)
                 changed += 1
-                hit = True
+                print(f"  ↻ 分区 {f.relative_to(ROOT)}")
+        pf = ROOT / "data" / cid / "products.json"
+        if not pf.exists():
+            continue
+        lib = library_io.load(pf)
+        hit = 0
+        for p in lib["products"]:
+            if apply_img(p, cid):
+                hit += 1
         if hit:
-            write_products(c["id"], prods)
+            library_io.save(pf, lib["products"], expect_hash=lib["hash"])
+            changed += hit
     print(f"回写 img 字段 {changed} 处")
 
     # 没有残留旧扩展名引用时，才删除旧图
-    leftover = sum(
-        1
-        for c in cats
-        for p in json.loads((ROOT / "data" / c["id"] / "products.json").read_text(encoding="utf-8"))
-        if (p.get("img") or "").lower() in (".png", ".jpg", ".jpeg") or (p.get("img") or "").lower().endswith((".png", ".jpg", ".jpeg"))
-    )
+    leftover = 0
+    for c in cats:
+        cid = c["id"]
+        for _, obj in iter_zone_products(cid):
+            if str(obj.get("img") or "").lower().endswith((".png", ".jpg", ".jpeg")):
+                leftover += 1
+        pf = ROOT / "data" / cid / "products.json"
+        if not pf.exists():
+            continue
+        for p in json.loads(pf.read_text(encoding="utf-8")):
+            if str(p.get("img") or "").lower().endswith((".png", ".jpg", ".jpeg")):
+                leftover += 1
     if leftover:
         print(f"仍有 {leftover} 处旧扩展名引用未转换，保留原文件不删")
         return 1

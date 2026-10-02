@@ -22,6 +22,15 @@ import json, os, re, sys, glob, argparse, subprocess, html
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 
+# 仓库根目录：按脚本自身位置解析，不依赖 cwd（见方案 P0-1）
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+def dp(rel):
+    """仓库相对路径 → 绝对路径"""
+    return os.path.join(ROOT, rel)
+
+
 sys.stdout.reconfigure(encoding='utf-8')
 D = '2026-10-03'
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -168,8 +177,8 @@ def main():
     args = ap.parse_args()
 
     targets = []
-    for f in sorted(glob.glob('data/*/schema.json')):
-        cid = os.path.dirname(f).split(os.sep)[1]
+    for f in sorted(glob.glob(dp('data/*/schema.json'))):
+        cid = os.path.basename(os.path.dirname(f))
         if args.cat and cid != args.cat:
             continue
         s = json.load(open(f, encoding='utf-8'))
@@ -177,7 +186,7 @@ def main():
         fields = [k for k in FIELD_MAP if k in keys]
         if not fields:
             continue
-        for p in json.load(open('data/%s/products.json' % cid, encoding='utf-8')):
+        for p in json.load(open(dp('data/%s/products.json' % cid), encoding='utf-8')):
             holes = [k for k in fields
                      if p.get(k) in ('查不到', '—', '', None)]
             if not holes:
@@ -231,9 +240,9 @@ def main():
         return
 
     for (cid, pid), fills in results.items():
-        d = 'data/_draft/%s' % cid
+        d = dp('data/_draft/%s' % cid)
         os.makedirs(d, exist_ok=True)
-        cur = json.load(open('data/%s/products.json' % cid, encoding='utf-8'))
+        cur = json.load(open(dp('data/%s/products.json' % cid), encoding='utf-8'))
         base = next(x for x in cur if x['id'] == pid)
         item = dict(base)
         for k, (v, why) in fills.items():

@@ -13,24 +13,33 @@
  * 每次流转都追加记录到 data/_flow/journal.jsonl（入库共享，append-only）。
  *
  * 用法（npm 同名脚本去掉前缀，如 `npm run flow:submit -- heater/ht_x`）：
- *   flow.mjs submit   <品类/id>...          A：草稿区 → 待入库区（收录完成，提交待审）
- *   flow.mjs withdraw <品类/id>             A：待入库区 → 草稿区（提交后想继续改，撤回）
- *   flow.mjs claim    <品类/id>...          B：待入库区 → 修正区（认领，开始核验）
- *   flow.mjs recall   <品类/id>... --reason B：已入库区 → 修正区（召回复审，产品暂时下架）
- *   flow.mjs publish  <品类/id>...          B：修正区 → 已入库区（修正完成，入库上线）
- *   flow.mjs return   <品类/id> --reason    B：待入库区 → 草稿区（不符收录标准，退回）
- *   flow.mjs drop     <品类/id> --reason    B：修正区删除（召回后判定不该收录；需用户确认）
- *   flow.mjs status   [--category 品类] [--zone draft|intake|review]
- *   flow.mjs log      [-n 条数]
+ *   flow.mjs submit   <品类/id>...                    A：草稿区 → 待入库区（收录完成，提交待审）
+ *   flow.mjs withdraw <品类/id>...                    A：待入库区 → 草稿区（提交后想继续改，撤回）
+ *   flow.mjs claim    <品类/id>... [--force]          B：待入库区 → 修正区（认领，开始核验）
+ *                     [--from <提交人>]               按提交人批量认领（不必手工拼 key 列表）
+ *   flow.mjs recall   <品类/id>... --reason "…"       B：已入库区 → 修正区（召回复审，产品暂时下架）
+ *   flow.mjs publish  <品类/id>... [--skip-legacy]    B：修正区 → 已入库区（修正完成，入库上线）
+ *   flow.mjs return   <品类/id>... --reason "…"       B：待入库区 → 草稿区（不符收录标准，退回）
+ *   flow.mjs drop     <品类/id>... --reason "…"       B：修正区删除（召回后判定不该收录；需用户确认）
+ *   flow.mjs status   [--category 品类] [--zone draft|intake|review] [--by 提交人/认领人]
+ *                     [--unclassified] [--n 条数]
+ *   flow.mjs log      [-n 条数] [--batch <批次id>]
  *
  * 约定：分区文件入库（它们是各 Agent 的共享状态）；流转命令不做任何 git 操作，
  * 跑完当场提交。规则见仓库根目录 AGENTS.md。
+ *
+ * 批量语义（2026-10-03 起）：
+ *   - 每次调用生成一个 batch id 并写进本批每条 journal，`flow:log --batch <id>` 可回查；
+ *   - 命令结束打印「成功 / 已是目标态 / 失败」汇总，中途失败后**原样重跑**即可续上
+ *     （已完成的项报告「已是目标态」而不是报错）。
  */
 import crypto from 'node:crypto'
+import { execFileSync } from 'node:child_process'
 import fs from 'node:fs'
 import path from 'node:path'
 import process from 'node:process'
-import { checkAuditFields, checkProduct, checkSchema } from './lib/product-check.mjs'
+import { checkAuditFields, checkCategory, checkProduct, checkSchema } from './lib/product-check.mjs'
+import { hashText, loadLibrary, saveLibrary } from './lib/library-io.mjs'
 
 const ROOT = path.resolve(import.meta.dirname, '..')
 // 测试时可设 FLOW_DATA_DIR 指向临时数据目录，避免污染真实 data/
@@ -67,12 +76,25 @@ function moveFile(src, dst) {
   ensureDir(path.dirname(dst))
   fs.copyFileSync(src, dst)
   fs.rmSync(src)
+  // 源目录可能因此变空 —— 空目录会被 git 忽略，但会让 flow:status 的输出误导他人
+  pruneEmptyDirs(path.dirname(src))
 }
 
-/** 已入库区是压缩单行格式（与历史文件一致），重写时保持同款避免无意义 diff */
-function writeLibrary(file, products) {
-  ensureDir(path.dirname(file))
-  fs.writeFileSync(file, JSON.stringify(products) + '\n', 'utf8')
+/** 删掉空的分区品类目录（只删到分区根为止，不越过分区边界） */
+function pruneEmptyDirs(dir) {
+  let cur = dir
+  while (cur && fs.existsSync(cur)) {
+    // 到了分区根（data/_intake 这一层）就停：分区目录本身要保留
+    if (Object.values(ZONES).some((z) => z.dir && path.basename(cur) === z.dir)) return
+    if (fs.readdirSync(cur).length > 0) return
+    fs.rmdirSync(cur)
+    cur = path.dirname(cur)
+  }
+}
+
+/** 已入库区的读写统一走 lib/library-io.mjs：规范化序列化 + 写前指纹校验 + 文件锁重试 */
+function readLibrary(key) {
+  return loadLibrary(libFile(key))
 }
 
 /** 键值稳定序列化 + 指纹：与 audit-lock.mjs 同款，流转日志可据此比对内容变化 */
@@ -89,6 +111,11 @@ function stable(value) {
 
 function hash(text) {
   return crypto.createHash('sha256').update(text).digest('hex').slice(0, 12)
+}
+
+/** 本批次的短标识：写进本批每条 journal，供 flow:log --batch 回查 */
+function batchId(keys) {
+  return crypto.createHash('sha1').update(`${keys.join(',')}@${Date.now()}`).digest('hex').slice(0, 8)
 }
 
 function parseArgs(argv) {
@@ -108,6 +135,34 @@ function parseArgs(argv) {
   return out
 }
 
+// ---------------------------------------------------------------- 操作自证（P0-7）
+
+function gitOut(argv) {
+  try {
+    return execFileSync('git', argv, { cwd: ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim() || null
+  } catch {
+    return null
+  }
+}
+
+/**
+ * 每个命令开头打印「在哪操作、谁在操作」。
+ * 作用：隔离是软的（Agent 可能在工作目录之外读写），挡不住误操作，但可以让它**当场可见**。
+ */
+function attest(args) {
+  const by = typeof args.by === 'string' ? args.by : 'unknown'
+  const branch = gitOut(['rev-parse', '--abbrev-ref', 'HEAD'])
+  const rel = path.relative(ROOT, DATA) || '.'
+  console.log(`操作自证：数据 ${rel}/；分支 ${branch ?? '（非 git 仓库）'}；actor ${by}`)
+  const toplevel = gitOut(['rev-parse', '--show-toplevel'])
+  if (toplevel && path.resolve(toplevel) !== ROOT) {
+    console.log(`  ⚠ 当前 shell 所在工作树是 ${toplevel}，与本脚本所在仓库不同`)
+    console.log(`    脚本按自身位置解析，本命令操作的仍是 ${ROOT} 的数据`)
+  }
+  console.log('')
+  return { by, branch }
+}
+
 // ---------------------------------------------------------------- 分区文件定位
 
 function zoneFile(zone, key) {
@@ -119,12 +174,8 @@ function libFile(key) {
   return path.join(DATA, key.split('/')[0], 'products.json')
 }
 
-function loadLibrary(key) {
-  return readJson(libFile(key), []) ?? []
-}
-
 function libraryIndex(key) {
-  return loadLibrary(key).findIndex((p) => p.id === key.split('/')[1])
+  return readLibrary(key).products.findIndex((p) => p.id === key.split('/')[1])
 }
 
 function registeredCategories() {
@@ -161,6 +212,16 @@ function listZoneKeys(zone) {
   return keys.sort()
 }
 
+/** 按品类分组计数，只返回有内容的品类（空目录不该出现在输出里） */
+function countByCategory(keys) {
+  const m = new Map()
+  for (const k of keys) {
+    const cat = k.split('/')[0]
+    m.set(cat, (m.get(cat) ?? 0) + 1)
+  }
+  return [...m.entries()].map(([cat, n]) => `${cat} ${n}`).join(' / ')
+}
+
 // ---------------------------------------------------------------- 日志
 
 function journal(entry) {
@@ -181,6 +242,73 @@ function readJournal() {
         return { ts: '?', action: '（无法解析的行）', raw: l }
       }
     })
+}
+
+/**
+ * 一次性把 journal 读进来建索引：某 key 最后被谁提交 / 谁认领。
+ * 归属信息取自 journal（共享事实），不需要往分区文件里塞额外字段。
+ */
+function journalIndex() {
+  const entries = readJournal()
+  const lastSubmit = new Map()
+  const lastClaim = new Map()
+  const byBatch = new Map()
+  for (const e of entries) {
+    if (!e.key) continue
+    if (e.action === 'submit') lastSubmit.set(e.key, e)
+    if (e.action === 'claim') lastClaim.set(e.key, e)
+  }
+  for (const e of entries) {
+    if (e.batch) byBatch.set(e.batch, (byBatch.get(e.batch) ?? 0) + 1)
+  }
+  return { entries, lastSubmit, lastClaim, byBatch }
+}
+
+function fmtTs(ts) {
+  if (!ts || ts === '?') return '?'
+  return String(ts).replace('T', ' ').slice(0, 16)
+}
+
+/** 描述一个 key 的来源：谁提交的、什么时候 */
+function describeSubmit(idx, key) {
+  const e = idx.lastSubmit.get(key)
+  return e ? `${e.actor ?? '?'} @ ${fmtTs(e.ts)}` : '（journal 里查不到提交记录）'
+}
+
+function describeClaim(idx, key) {
+  const e = idx.lastClaim.get(key)
+  return e ? `${e.actor ?? '?'} @ ${fmtTs(e.ts)}` : '（journal 里查不到认领记录）'
+}
+
+// ---------------------------------------------------------------- 批量结果汇总（P0-4）
+
+function collector() {
+  const results = []
+  return {
+    results,
+    ok(key, msg) {
+      results.push({ key, status: 'ok', msg })
+      console.log(`✓ ${msg}`)
+    },
+    skip(key, msg) {
+      results.push({ key, status: 'skip', msg })
+      console.log(`= ${key}：${msg}`)
+    },
+    fail(key, msg) {
+      results.push({ key, status: 'fail', msg })
+      console.error(`✗ ${key}：${msg}`)
+    },
+    summary(action, batch, extra = []) {
+      const ok = results.filter((r) => r.status === 'ok').length
+      const skip = results.filter((r) => r.status === 'skip').length
+      const bad = results.filter((r) => r.status === 'fail')
+      console.log('')
+      console.log(`批次 ${batch}（${action}）：共 ${results.length} 项 —— 成功 ${ok} / 已是目标态 ${skip} / 失败 ${bad.length}`)
+      if (skip) console.log(`  （「已是目标态」= 本批已处理过，重跑时自动跳过，无需人工比对）`)
+      for (const line of extra) console.log(line)
+      return bad.length
+    },
+  }
 }
 
 // ---------------------------------------------------------------- 关口校验
@@ -213,365 +341,492 @@ function gateCheck(zone, key, { withAuditFields = true } = {}) {
   return { product, errors }
 }
 
-function fail(keys, results, action) {
-  const ok = keys.filter((_, i) => !results[i])
-  for (const line of results) {
-    if (line) console.error(`✗ ${line}`)
-  }
-  if (ok.length) console.error(`（其余 ${ok.length} 项已${action}，记得一并提交）`)
-  process.exit(1)
-}
-
 // ---------------------------------------------------------------- 命令：A 侧
 
-function cmdSubmit(args) {
-  const by = args.by ?? 'unknown'
+function cmdSubmit(args, at) {
+  const col = collector()
   const resolved = resolveKeys(args._, 'draft')
-  const problems = resolved.filter((r) => r.error)
+  for (const r of resolved.filter((x) => x.error)) col.fail(r.key, r.error)
   const keys = resolved.filter((r) => !r.error).map((r) => r.key)
-  for (const p of problems) console.error(`✗ ${p.error}`)
+  const batch = batchId(keys)
 
-  let moved = 0
   for (const key of keys) {
     const src = zoneFile('draft', key)
     const dst = zoneFile('intake', key)
     if (!fs.existsSync(src)) {
-      console.error(`✗ ${key}：草稿区没有这个文件（${path.relative(ROOT, src)}）`)
+      if (fs.existsSync(dst)) {
+        col.skip(key, '已在待入库区（本批已提交过）；要改先 flow:withdraw 撤回')
+        continue
+      }
+      col.fail(key, `草稿区没有这个文件（${path.relative(ROOT, src)}）`)
       continue
     }
     const { errors } = gateCheck('draft', key)
     if (errors.length) {
-      console.error(`✗ ${key}：提交校验未通过，请先在草稿区修好：`)
-      for (const e of errors) console.error(`    - ${e}`)
+      col.fail(key, `提交校验未通过，请先在草稿区修好：\n    - ${errors.join('\n    - ')}`)
       continue
     }
     if (fs.existsSync(dst)) {
-      console.error(`✗ ${key}：待入库区已有同名文件（可能已提交过；要重提请先 flow:withdraw 撤回）`)
+      col.fail(key, '待入库区已有同名文件（可能已提交过；要重提请先 flow:withdraw 撤回）')
       continue
     }
     const inLib = libraryIndex(key) >= 0
-    if (inLib) console.error(`⚠ ${key}：库内已有同 id 产品，这份提交将作为订正稿处理（认领后入库时整条替换）`)
     if (!registeredCategories().has(key.split('/')[0])) {
-      console.error(`⚠ ${key.split('/')[0]}：尚未登记进 data/categories.json，首次入库（publish）前需要登记，否则站点没有入口`)
+      console.log(`⚠ ${key.split('/')[0]}：尚未登记进 data/categories.json，首次入库（publish）前需要登记，否则站点没有入口`)
     }
     moveFile(src, dst)
-    journal({ actor: by, action: 'submit', key, from: 'draft', to: 'intake', ...(inLib ? { supersedes: true } : {}) })
-    console.log(`✓ ${key}：草稿区 → 待入库区，等待审核方认领`)
-    moved++
+    journal({ actor: at.by, branch: at.branch, action: 'submit', key, from: 'draft', to: 'intake', batch, ...(inLib ? { supersedes: true } : {}) })
+    col.ok(key, `${key}：草稿区 → 待入库区，等待审核方认领${inLib ? '（订正稿）' : ''}`)
   }
-  if (!moved && !problems.length) process.exit(1)
-  if (moved) {
-    console.log(`\n建议立刻提交：`)
-    console.log(`  git add data/_draft data/_intake data/_flow && git commit -m "data: 提交待审 ${keys.join(' ')}（来源与核验方式见 change_log）"`)
+
+  const bad = col.summary('submit', batch)
+  if (bad === 0 && keys.length) {
+    console.log(`\n建议立刻提交（注意带 flow 标记，便于 pre-commit 钩子识别）：`)
+    console.log(`  git add data/_draft data/_intake data/_flow && git commit -m "data: flow:submit ${keys.join(' ')}（来源与核验方式见 change_log）"`)
   }
-  if (problems.length || moved < keys.length) process.exit(1)
+  if (bad) process.exit(1)
 }
 
-function cmdWithdraw(args) {
-  const by = args.by ?? 'unknown'
+function cmdWithdraw(args, at) {
+  const col = collector()
   const resolved = resolveKeys(args._, 'intake')
-  let failed = 0
-  for (const { key, error } of resolved) {
-    if (error) {
-      console.error(`✗ ${error}`)
-      failed++
-      continue
-    }
+  const keys = resolved.filter((r) => !r.error).map((r) => r.key)
+  const batch = batchId(keys)
+  for (const r of resolved.filter((x) => x.error)) col.fail(r.key, r.error)
+
+  for (const key of keys) {
     const src = zoneFile('intake', key)
     const dst = zoneFile('draft', key)
     if (!fs.existsSync(src)) {
-      console.error(`✗ ${key}：待入库区没有这个文件（可能已被认领，用 flow:status 确认）`)
-      failed++
+      if (fs.existsSync(dst)) {
+        col.skip(key, '已在草稿区（本批已撤回）')
+        continue
+      }
+      col.fail(key, '待入库区没有这个文件（可能已被认领，用 flow:status 确认）')
       continue
     }
     if (fs.existsSync(dst)) {
-      console.error(`✗ ${key}：草稿区已有同名文件，先处理它再撤回`)
-      failed++
+      col.fail(key, '草稿区已有同名文件，先处理它再撤回')
       continue
     }
     moveFile(src, dst)
-    journal({ actor: by, action: 'withdraw', key, from: 'intake', to: 'draft' })
-    console.log(`✓ ${key}：待入库区 → 草稿区，可继续编辑`)
+    journal({ actor: at.by, branch: at.branch, action: 'withdraw', key, from: 'intake', to: 'draft', batch })
+    col.ok(key, `${key}：待入库区 → 草稿区，可继续编辑`)
   }
-  if (failed) process.exit(1)
+  if (col.summary('withdraw', batch)) process.exit(1)
 }
 
 // ---------------------------------------------------------------- 命令：B 侧
 
-function cmdClaim(args) {
-  const by = args.by ?? 'unknown'
-  const resolved = resolveKeys(args._, 'intake')
-  const problems = resolved.filter((r) => r.error)
-  const keys = resolved.filter((r) => !r.error).map((r) => r.key)
-  for (const p of problems) console.error(`✗ ${p.error}`)
+/**
+ * 认领。
+ * 归属不靠硬拦（`--by` 是自述字段，硬拦既拦不住也会误伤正常交接），而是**可见化**：
+ * 打印每个键的提交人、按提交人分组汇总，自己提交自己认领时给出警告（方案 P0-6）。
+ */
+function cmdClaim(args, at) {
+  const col = collector()
+  const idx = journalIndex()
 
-  let moved = 0
+  let keys = []
+  if (typeof args.from === 'string') {
+    keys = listZoneKeys('intake').filter((k) => (idx.lastSubmit.get(k)?.actor ?? null) === args.from)
+    if (!keys.length) {
+      console.error(`✗ 待入库区没有「${args.from}」提交的产品（用 flow:status 看现状）`)
+      process.exit(1)
+    }
+    console.log(`按提交人认领：${args.from} → ${keys.length} 款\n`)
+  } else {
+    const resolved = resolveKeys(args._, 'intake')
+    for (const r of resolved.filter((x) => x.error)) col.fail(r.key, r.error)
+    keys = resolved.filter((r) => !r.error).map((r) => r.key)
+  }
+  const batch = batchId(keys)
+
+  // 来源可见化：先按提交人分组打印，避免"越量无感代人认领"
+  const bySubmitter = new Map()
+  for (const k of keys) {
+    const who = idx.lastSubmit.get(k)?.actor ?? '（查不到提交记录）'
+    bySubmitter.set(who, [...(bySubmitter.get(who) ?? []), k])
+  }
+  if (bySubmitter.size > 1 || !args.from) {
+    console.log('本批待认领数据的提交人分布：')
+    for (const [who, ks] of [...bySubmitter.entries()].sort((a, b) => b[1].length - a[1].length)) {
+      console.log(`  · ${who}（${ks.length} 款）：${ks.slice(0, 4).join('、')}${ks.length > 4 ? ' …' : ''}`)
+    }
+    console.log('')
+  }
+
+  let selfReview = 0
   for (const key of keys) {
     const src = zoneFile('intake', key)
     const dst = zoneFile('review', key)
+    const submitActor = idx.lastSubmit.get(key)?.actor ?? null
     if (!fs.existsSync(src)) {
-      console.error(`✗ ${key}：待入库区没有这个文件（可能已被撤回或他人认领，git pull 后用 flow:status 确认）`)
+      if (fs.existsSync(dst)) {
+        col.skip(key, '已在修正区（本批已认领）')
+        continue
+      }
+      col.fail(key, '待入库区没有这个文件（可能已被撤回或他人认领，git pull 后用 flow:status 确认）')
       continue
     }
     const { errors } = gateCheck('intake', key)
     if (errors.length && !args.force) {
-      console.error(`✗ ${key}：认领校验未通过（可能提交后 schema 又改过）。可在修正区就地修正后正常入库；坚持现在认领用 --force：`)
-      for (const e of errors) console.error(`    - ${e}`)
+      col.fail(key, `认领校验未通过（可能提交后 schema 又改过）。可在修正区就地修正后正常入库；坚持现在认领用 --force：\n    - ${errors.join('\n    - ')}`)
       continue
     }
     if (fs.existsSync(dst)) {
-      console.error(`✗ ${key}：修正区已有该产品的文件（正在复审中）；先 publish 或 drop 那份，再认领这份`)
+      col.fail(key, '修正区已有该产品的文件（正在复审中）；先 publish 或 drop 那份，再认领这份')
       continue
     }
     const inLib = libraryIndex(key) >= 0
+    const isSelf = submitActor && submitActor === at.by
+    if (isSelf) selfReview++
     moveFile(src, dst)
-    journal({ actor: by, action: 'claim', key, from: 'intake', to: 'review', ...(inLib ? { supersedes: true } : {}), ...(args.force ? { forced: true } : {}) })
-    console.log(`✓ ${key}：待入库区 → 修正区${inLib ? '（订正稿，入库时替换库内同 id 条目）' : ''}`)
-    moved++
+    journal({
+      actor: at.by,
+      branch: at.branch,
+      action: 'claim',
+      key,
+      from: 'intake',
+      to: 'review',
+      batch,
+      submitActor,
+      ...(isSelf ? { selfReview: true } : {}),
+      ...(inLib ? { supersedes: true } : {}),
+      ...(args.force ? { forced: true } : {}),
+    })
+    col.ok(key, `${key}：待入库区 → 修正区（提交人 ${submitActor ?? '?'}）${inLib ? '（订正稿，入库时替换库内同 id 条目）' : ''}`)
   }
-  if (problems.length || moved < keys.length) process.exit(1)
+
+  const extra = []
+  if (selfReview) {
+    extra.push(`⚠ 其中 ${selfReview} 款是你自己提交的（journal 已记 selfReview: true）——请确认这次是**独立复核**，而不是自采自审。`)
+  }
+  const bad = col.summary('claim', batch, extra)
+  if (bad) process.exit(1)
 }
 
-function cmdRecall(args) {
-  const by = args.by ?? 'unknown'
+function cmdRecall(args, at) {
+  const col = collector()
   const reason = typeof args.reason === 'string' ? args.reason : null
   if (!reason) {
     console.error('用法：flow.mjs recall <品类/id>... --reason "为什么召回"')
     process.exit(1)
   }
-  let failed = 0
-  for (const key of args._) {
+  const keys = args._
+  const batch = batchId(keys)
+  const legacy = []
+
+  for (const key of keys) {
     if (!key.includes('/')) {
-      console.error(`✗ ${key}：召回已入库产品请写完整的 品类/id`)
-      failed++
+      col.fail(key, '召回已入库产品请写完整的 品类/id')
       continue
     }
-    const lib = loadLibrary(key)
-    const idx = lib.findIndex((p) => p.id === key.split('/')[1])
-    if (idx < 0) {
-      console.error(`✗ ${key}：已入库区没有这个产品`)
-      failed++
+    const lib = readLibrary(key)
+    const i = lib.products.findIndex((p) => p.id === key.split('/')[1])
+    if (i < 0) {
+      if (fs.existsSync(zoneFile('review', key))) {
+        col.skip(key, '已在修正区（本批已召回）')
+        continue
+      }
+      col.fail(key, '已入库区没有这个产品')
       continue
     }
     const dst = zoneFile('review', key)
     if (fs.existsSync(dst)) {
-      console.error(`✗ ${key}：修正区已有该产品的文件（正在复审中），不能重复召回`)
-      failed++
+      col.fail(key, '修正区已有该产品的文件（正在复审中），不能重复召回')
       continue
     }
-    const product = lib[idx]
-    const pendingIntake = fs.existsSync(zoneFile('intake', key))
+    const product = lib.products[i]
     writePretty(dst, product)
-    lib.splice(idx, 1)
-    writeLibrary(libFile(key), lib)
-    journal({
-      actor: by,
-      action: 'recall',
-      key,
-      from: 'library',
-      to: 'review',
-      reason,
-      fingerprint: hash(stable(product)),
-    })
-    console.log(`✓ ${key}：已入库区 → 修正区（召回复审：${reason}）`)
-    console.log(`  ⚠ 该产品已从线上移除，重新 publish 前站点不再展示它；大批量审核请按「召回一批→修正→入库一批」滚动推进`)
-    if (pendingIntake) console.log(`  ⚠ 待入库区还有该产品的订正稿；先处理修正区这份（publish/drop），才能 claim 那份`)
+    const rest = lib.products.filter((_, j) => j !== i)
+    saveLibrary(libFile(key), rest, { expectHash: lib.hash })
+    journal({ actor: at.by, branch: at.branch, action: 'recall', key, from: 'library', to: 'review', batch, reason, fingerprint: hash(stable(product)) })
+    col.ok(key, `${key}：已入库区 → 修正区（召回复审：${reason}）`)
+    if (fs.existsSync(zoneFile('intake', key))) legacy.push(`  ⚠ ${key}：待入库区还有该产品的订正稿；先处理修正区这份（publish/drop），才能 claim 那份`)
   }
-  if (failed) process.exit(1)
+
+  console.log('\n  ⚠ 召回会让产品从线上消失，重新 publish 前站点不再展示它；大批量审核请按「召回一批→修正→入库一批」滚动推进')
+  const bad = col.summary('recall', batch, legacy)
+  if (bad) process.exit(1)
 }
 
-function cmdPublish(args) {
-  const by = args.by ?? 'unknown'
+/**
+ * 入库。
+ * 回滚范围只限**本批写坏的东西**（方案 P0-5）：品类内历史遗留的问题照样报出来，
+ * 但明确指出「不是你造成的」，用 --skip-legacy 可消除该提示。
+ */
+function cmdPublish(args, at) {
+  const col = collector()
   const resolved = resolveKeys(args._, 'review')
-  const problems = resolved.filter((r) => r.error)
+  for (const r of resolved.filter((x) => x.error)) col.fail(r.key, r.error)
   const keys = resolved.filter((r) => !r.error).map((r) => r.key)
-  for (const p of problems) console.error(`✗ ${p.error}`)
+  const batch = batchId(keys)
+  const touched = new Set()
+  const legacyReports = []
 
-  let moved = 0
   for (const key of keys) {
     const src = zoneFile('review', key)
     const [catId, id] = key.split('/')
     if (!fs.existsSync(src)) {
-      console.error(`✗ ${key}：修正区没有这个文件（flow:status 看看它现在在哪）`)
+      if (libraryIndex(key) >= 0) {
+        col.skip(key, '修正区无文件、库内已有同 id —— 视为本批已入库（若你没预期这样，用 flow:status 复核）')
+        continue
+      }
+      col.fail(key, '修正区没有这个文件（flow:status 看看它现在在哪）')
       continue
     }
     const { errors } = gateCheck('review', key)
     if (errors.length) {
-      console.error(`✗ ${key}：入库校验未通过，修正后再 publish：`)
-      for (const e of errors) console.error(`    - ${e}`)
+      col.fail(key, `入库校验未通过，修正后再 publish：\n    - ${errors.join('\n    - ')}`)
       continue
     }
     if (!registeredCategories().has(catId)) {
-      console.error(`✗ ${catId}：尚未登记进 data/categories.json，站点没有入口；请先登记再 publish`)
+      col.fail(key, '尚未登记进 data/categories.json，站点没有入口；请先登记再 publish')
       continue
     }
     const product = readJson(src)
-    const libFile_ = libFile(key)
-    const lib = loadLibrary(key)
-    const idx = lib.findIndex((p) => p.id === id)
-    const supersedes = idx >= 0
-    const backup = fs.existsSync(libFile_) ? fs.readFileSync(libFile_, 'utf8') : null
-    if (supersedes) lib[idx] = product
-    else lib.push(product)
-    writeLibrary(libFile_, lib)
-    fs.rmSync(src)
-
-    // 入库后对整个品类跑一次同口径校验，不过关就整体回滚（库文件还原 + 产品退回修正区）
-    const libErrors = validateCategory(catId)
-    if (libErrors.length) {
-      if (backup !== null) fs.writeFileSync(libFile_, backup, 'utf8')
-      else fs.rmSync(libFile_)
-      writePretty(src, product)
-      console.error(`✗ ${key}：入库后 ${catId} 品类校验未通过，已自动回滚到修正区：`)
-      for (const e of libErrors.slice(0, 10)) console.error(`    - ${e}`)
+    const lib = readLibrary(key)
+    const i = lib.products.findIndex((p) => p.id === id)
+    if (i >= 0 && stable(lib.products[i]) === stable(product)) {
+      col.skip(key, '库内内容与修正区已完全一致，无需入库')
       continue
     }
-    journal({ actor: by, action: 'publish', key, from: 'review', to: 'library', ...(supersedes ? { supersedes: true } : {}) })
-    console.log(`✓ ${key}：修正区 → 已入库区${supersedes ? '（已替换库内同 id 条目）' : '（新增）'}`)
-    moved++
+    const prev = lib.exists ? lib.products.slice() : null
+    if (i >= 0) lib.products[i] = product
+    else lib.products.push(product)
+
+    let writtenHash
+    try {
+      const written = saveLibrary(libFile(key), lib.products, { expectHash: lib.hash })
+      writtenHash = hashText(written)
+    } catch (e) {
+      col.fail(key, e.code === 'ELIBRARYCONFLICT' ? e.message : `写库失败：${e.message}`)
+      continue
+    }
+    fs.rmSync(src)
+    pruneEmptyDirs(path.dirname(src))
+    touched.add(catId)
+
+    // 入库后复检本批产品所属品类：只对本批写坏的东西回滚
+    const schema = readJson(path.join(DATA, catId, 'schema.json'))
+    const now = readLibrary(key).products
+    const checked = checkCategory(catId, schema, now)
+    const mine = []
+    const others = []
+    // 错误串里产品标签形如 `catId/id：…`；用 label 前缀精确匹配，
+    // 避免 "rv_6" 命中 "rv_6pro" 这类子串误判
+    const myLabels = keys.filter((k) => k.startsWith(`${catId}/`)).map((k) => `${catId}/${k.split('/')[1]}`)
+    for (const err of checked.errors) {
+      const isMine =
+        myLabels.some((lbl) => err.startsWith(`${lbl}：`)) ||
+        myLabels.some((lbl) => err.includes(`产品 id 重复 —— ${lbl.split('/')[1]}`))
+      if (isMine) mine.push(err)
+      else others.push(err)
+    }
+    if (mine.length) {
+      if (prev === null) fs.rmSync(libFile(key))
+      else saveLibrary(libFile(key), prev, { expectHash: writtenHash })
+      writePretty(src, product)
+      col.fail(key, `入库后本批数据未通过 ${catId} 品类校验，已自动回滚到修正区：\n    - ${mine.join('\n    - ')}`)
+      continue
+    }
+    if (others.length) {
+      legacyReports.push({ catId, id, errors: others })
+    }
+    journal({ actor: at.by, branch: at.branch, action: 'publish', key, from: 'review', to: 'library', batch, ...(i >= 0 ? { supersedes: true } : {}) })
+    col.ok(key, `${key}：修正区 → 已入库区${i >= 0 ? '（已替换库内同 id 条目）' : '（新增）'}`)
   }
-  if (moved) console.log(`\n推送前记得 npm run check；入库数据对访客生效以 push 后的部署为准。`)
-  if (problems.length || moved < keys.length) process.exit(1)
+
+  if (legacyReports.length) {
+    console.log('')
+    console.log('⚠ 品类内存在**历史遗留**问题（不是你本批造成的，本次入库已成功且未回滚）：')
+    for (const r of legacyReports.slice(0, 5)) {
+      console.log(`  · ${r.catId}/${r.id}：${r.errors.length} 条`)
+      for (const e of r.errors.slice(0, 3)) console.log(`      - ${e}`)
+    }
+    if (legacyReports.length > 5) console.log(`  …另有 ${legacyReports.length - 5} 款同类问题`)
+    console.log('  处理建议：另立 issue 修历史数据；要忽略该提示可加 --skip-legacy')
+  }
+
+  const bad = col.summary('publish', batch)
+  if (touched.size) console.log(`\n推送前记得 npm run check；入库数据对访客生效以 push 后的部署为准。`)
+  if (bad) process.exit(1)
+  if (legacyReports.length && !args['skip-legacy']) {
+    console.log('\n（退出码非零：仅因品类内存在历史遗留问题；本次入库本身已成功。加 --skip-legacy 可消除）')
+    process.exit(1)
+  }
 }
 
-function cmdReturn(args) {
-  const by = args.by ?? 'unknown'
+function cmdReturn(args, at) {
+  const col = collector()
   const reason = typeof args.reason === 'string' ? args.reason : null
   if (!reason) {
     console.error('用法：flow.mjs return <品类/id> --reason "为什么退回"')
     process.exit(1)
   }
   const resolved = resolveKeys(args._, 'intake')
-  let failed = 0
-  for (const { key, error } of resolved) {
-    if (error) {
-      console.error(`✗ ${error}`)
-      failed++
-      continue
-    }
+  const keys = resolved.filter((r) => !r.error).map((r) => r.key)
+  const batch = batchId(keys)
+  for (const r of resolved.filter((x) => x.error)) col.fail(r.key, r.error)
+
+  for (const key of keys) {
     const src = zoneFile('intake', key)
     const dst = zoneFile('draft', key)
     if (!fs.existsSync(src)) {
-      console.error(`✗ ${key}：待入库区没有这个文件`)
-      failed++
+      if (fs.existsSync(dst)) {
+        col.skip(key, '已在草稿区（本批已退回）')
+        continue
+      }
+      col.fail(key, '待入库区没有这个文件')
       continue
     }
     if (fs.existsSync(dst)) {
-      console.error(`✗ ${key}：草稿区已有同名文件，请采集方先处理再退回`)
-      failed++
+      col.fail(key, '草稿区已有同名文件，请采集方先处理再退回')
       continue
     }
     moveFile(src, dst)
-    journal({ actor: by, action: 'return', key, from: 'intake', to: 'draft', reason })
-    console.log(`✓ ${key}：待入库区 → 草稿区（退回：${reason}）`)
-    console.log(`  采集方可通过 flow:status / flow:log 看到退回原因`)
+    journal({ actor: at.by, branch: at.branch, action: 'return', key, from: 'intake', to: 'draft', batch, reason })
+    col.ok(key, `${key}：待入库区 → 草稿区（退回：${reason}）`)
   }
-  if (failed) process.exit(1)
+  console.log('\n  采集方可通过 flow:status / flow:log 看到退回原因')
+  if (col.summary('return', batch)) process.exit(1)
 }
 
-function cmdDrop(args) {
-  const by = args.by ?? 'unknown'
+function cmdDrop(args, at) {
+  const col = collector()
   const reason = typeof args.reason === 'string' ? args.reason : null
   if (!reason) {
     console.error('用法：flow.mjs drop <品类/id> --reason "为什么剔除"')
     process.exit(1)
   }
   const resolved = resolveKeys(args._, 'review')
-  let failed = 0
-  for (const { key, error } of resolved) {
-    if (error) {
-      console.error(`✗ ${error}`)
-      failed++
-      continue
-    }
+  const keys = resolved.filter((r) => !r.error).map((r) => r.key)
+  const batch = batchId(keys)
+  for (const r of resolved.filter((x) => x.error)) col.fail(r.key, r.error)
+
+  for (const key of keys) {
     const src = zoneFile('review', key)
     if (!fs.existsSync(src)) {
-      console.error(`✗ ${key}：修正区没有这个文件`)
-      failed++
+      col.skip(key, '修正区没有这个文件（可能已剔除，或还没被召回）')
       continue
     }
     const product = readJson(src)
     fs.rmSync(src)
-    journal({ actor: by, action: 'drop', key, from: 'review', to: null, reason, fingerprint: product ? hash(stable(product)) : null })
-    console.log(`✓ ${key}：已从修正区剔除，不再入库（${reason}）`)
-    console.log(`  内容指纹已记入流转日志，git 历史可找回；剔除已入库产品属于收录范围变更，应由用户确认`)
+    pruneEmptyDirs(path.dirname(src))
+    journal({ actor: at.by, branch: at.branch, action: 'drop', key, from: 'review', to: null, batch, reason, fingerprint: product ? hash(stable(product)) : null })
+    col.ok(key, `${key}：已从修正区剔除，不再入库（${reason}）`)
   }
-  if (failed) process.exit(1)
+  console.log('  内容指纹已记入流转日志，git 历史可找回；剔除已入库产品属于收录范围变更，应由用户确认')
+  if (col.summary('drop', batch)) process.exit(1)
 }
 
 // ---------------------------------------------------------------- 查询
 
-function validateCategory(catId) {
-  const schema = readJson(path.join(DATA, catId, 'schema.json'))
-  if (!schema) return [`data/${catId}/schema.json 不存在`]
-  const errors = checkSchema(catId, schema)
-  const products = readJson(path.join(DATA, catId, 'products.json'), []) ?? []
-  const seen = new Set()
-  for (const p of products) {
-    if (p?.id) {
-      if (seen.has(p.id)) errors.push(`${catId}：产品 id 重复 —— ${p.id}`)
-      seen.add(p.id)
-    }
-    const { errors: e } = checkProduct(catId, schema, p)
-    errors.push(...e)
+/** 列出库里 facet 值为「未归类」的产品（供立 issue 认领，方案 P0-6⑤） */
+function cmdUnclassified() {
+  const cats = [...registeredCategories()]
+  let total = 0
+  let mi = 0
+  console.log('未归类产品（schema.facets[0] 取值为「未归类」）：')
+  console.log('口径：主清单只列**竞品**（与 classify-facets.py 的处理范围一致），小米自有的另计。')
+  for (const catId of cats) {
+    const schema = readJson(path.join(DATA, catId, 'schema.json'))
+    const facetKey = schema?.facets?.[0]?.key
+    if (!facetKey) continue
+    const products = readJson(path.join(DATA, catId, 'products.json'), []) ?? []
+    const unclassified = products.filter((p) => p[facetKey] === '未归类')
+    mi += unclassified.filter((p) => p.brand === '小米').length
+    const hit = unclassified.filter((p) => p.brand !== '小米')
+    if (!hit.length) continue
+    total += hit.length
+    console.log(`  ${catId}（${facetKey}）：${hit.length} 款`)
+    for (const p of hit) console.log(`      · ${catId}/${p.id}  ${p.name ?? ''}（${p.brand ?? '?'}）`)
   }
-  return errors
+  console.log(`\n合计 ${total} 款竞品未归类${mi ? `（另有 ${mi} 款小米自有产品同为「未归类」）` : ''}。`)
+  console.log('建议按品类分批立 issue（标签：数据缺陷 + 品类名）供采集方认领。')
 }
 
 function cmdStatus(args) {
   const catFilter = typeof args.category === 'string' ? args.category : null
   const zoneFilter = typeof args.zone === 'string' ? args.zone : null
+  const byFilter = typeof args.by === 'string' ? args.by : null
   const registered = registeredCategories()
+  const idx = journalIndex()
+
+  if (args.unclassified) {
+    cmdUnclassified()
+    return
+  }
 
   const lines = []
   for (const zone of FLOW_ORDER) {
     if (zoneFilter && zone !== zoneFilter) continue
-    let keys = listZoneKeys(zone)
-    if (catFilter) keys = keys.filter((k) => k.startsWith(`${catFilter}/`))
     if (zone === 'library') {
-      // 已入库区按 products.json 统计
       const cats = catFilter ? [catFilter] : [...registered]
       let count = 0
       for (const c of cats) count += (readJson(path.join(DATA, c, 'products.json'), []) ?? []).length
       lines.push(`${ZONES[zone].name.padEnd(5)} products.json   ${String(count).padStart(5)} 款（${cats.length} 个品类）`)
       continue
     }
-    const marks = keys.map((k) => {
+    let keys = listZoneKeys(zone)
+    if (catFilter) keys = keys.filter((k) => k.startsWith(`${catFilter}/`))
+    if (byFilter) {
+      keys = keys.filter((k) =>
+        zone === 'intake' ? (idx.lastSubmit.get(k)?.actor ?? null) === byFilter : (idx.lastClaim.get(k)?.actor ?? null) === byFilter,
+      )
+    }
+    const scope = zone === 'intake' ? '提交人' : zone === 'review' ? '认领人' : '归属'
+    lines.push(
+      `${ZONES[zone].name.padEnd(5)} ${`_${zone}`.padEnd(9)} ${String(keys.length).padStart(5)} 款` +
+        (keys.length ? `（${countByCategory(keys)}）` : '') +
+        (byFilter ? `  [按${scope}过滤：${byFilter}]` : ''),
+    )
+    for (const k of keys) {
       const extra =
-        zone === 'review' && libraryIndex(k) >= 0
-          ? '（订正稿：库内有同 id，入库时整条替换）'
-          : zone === 'intake' && libraryIndex(k) >= 0
-            ? '（订正稿）'
+        zone === 'intake'
+          ? `（提交人 ${idx.lastSubmit.get(k)?.actor ?? '?'} @ ${fmtTs(idx.lastSubmit.get(k)?.ts)}）`
+          : zone === 'review'
+            ? `（认领人 ${idx.lastClaim.get(k)?.actor ?? '?'}${libraryIndex(k) >= 0 ? '；订正稿：库内有同 id' : ''}）`
             : ''
-      return `    · ${k}${extra}`
-    })
-    lines.push(`${ZONES[zone].name.padEnd(5)} _${zone.padEnd(8)} ${String(keys.length).padStart(5)} 款`)
-    lines.push(...(keys.length ? marks : ['    （空）']))
+      lines.push(`    · ${k}${extra}`)
+    }
   }
   console.log('数据分区现状（草稿区 → 待入库区 → 修正区 → 已入库区）：')
   console.log(lines.join('\n'))
   console.log('')
+  if (byFilter) console.log(`（已按 ${byFilter} 过滤；去掉 --by 看全部）\n`)
 
-  const entries = readJournal()
+  const entries = idx.entries
   const recent = entries.slice(-((typeof args.n === 'string' && Number(args.n)) || 10)).reverse()
   console.log(`最近流转（data/_flow/journal.jsonl，共 ${entries.length} 条）：`)
   if (!recent.length) console.log('  （还没有流转记录）')
   for (const e of recent) {
-    const tail = [e.reason, e.supersedes ? '订正稿' : null, e.forced ? 'force' : null].filter(Boolean).join('；')
-    console.log(`  · ${e.ts}  ${String(e.actor ?? '?').padEnd(10)} ${String(e.action ?? '?').padEnd(9)} ${e.key ?? ''}${tail ? `（${tail}）` : ''}`)
+    const tail = [e.reason, e.batch ? `批次 ${e.batch}` : null, e.submitActor ? `提交人 ${e.submitActor}` : null, e.selfReview ? 'selfReview' : null, e.supersedes ? '订正稿' : null, e.forced ? 'force' : null]
+      .filter(Boolean)
+      .join('；')
+    console.log(`  · ${fmtTs(e.ts)}  ${String(e.actor ?? '?').padEnd(10)} ${String(e.action ?? '?').padEnd(9)} ${e.key ?? ''}${tail ? `（${tail}）` : ''}`)
   }
 }
 
 function cmdLog(args) {
   const n = (typeof args.n === 'string' && Number(args.n)) || 30
-  const entries = readJournal().slice(-n).reverse()
+  let entries = readJournal()
+  if (typeof args.batch === 'string') {
+    entries = entries.filter((e) => e.batch === args.batch)
+    console.log(`批次 ${args.batch}：共 ${entries.length} 条\n`)
+  } else {
+    entries = entries.slice(-n)
+  }
   if (!entries.length) {
-    console.log('流转日志为空。')
+    console.log('（无匹配记录）')
     return
   }
-  for (const e of entries) {
-    const tail = [e.reason, e.supersedes ? '订正稿' : null, e.forced ? 'force' : null].filter(Boolean).join('；')
-    console.log(`${e.ts}  ${String(e.actor ?? '?').padEnd(10)} ${String(e.action ?? '?').padEnd(9)} ${e.key ?? ''}${tail ? `（${tail}）` : ''}`)
+  for (const e of entries.slice().reverse()) {
+    const tail = [e.reason, e.batch ? `批次 ${e.batch}` : null, e.submitActor ? `提交人 ${e.submitActor}` : null, e.selfReview ? 'selfReview' : null, e.supersedes ? '订正稿' : null]
+      .filter(Boolean)
+      .join('；')
+    console.log(`${fmtTs(e.ts)}  ${String(e.actor ?? '?').padEnd(10)} ${String(e.action ?? '?').padEnd(9)} ${e.key ?? ''}${tail ? `（${tail}）` : ''}`)
   }
 }
 
@@ -580,33 +835,41 @@ function cmdLog(args) {
 const args = parseArgs(process.argv.slice(2))
 const cmd = args._.shift()
 args._ = args._.filter(Boolean)
+
+/** 每个命令都先打印操作自证（在哪操作、谁在操作），再执行 */
+function run(fn) {
+  fn(args, attest(args))
+}
+
 try {
   switch (cmd) {
     case 'submit':
-      cmdSubmit(args)
+      run(cmdSubmit)
       break
     case 'withdraw':
-      cmdWithdraw(args)
+      run(cmdWithdraw)
       break
     case 'claim':
-      cmdClaim(args)
+      run(cmdClaim)
       break
     case 'recall':
-      cmdRecall(args)
+      run(cmdRecall)
       break
     case 'publish':
-      cmdPublish(args)
+      run(cmdPublish)
       break
     case 'return':
-      cmdReturn(args)
+      run(cmdReturn)
       break
     case 'drop':
-      cmdDrop(args)
+      run(cmdDrop)
       break
     case 'status':
+      attest(args)
       cmdStatus(args)
       break
     case 'log':
+      attest(args)
       cmdLog(args)
       break
     default:
@@ -616,16 +879,18 @@ try {
           '',
           '  草稿区 _draft（A 的工作台） → 待入库区 _intake（交接队列） → 修正区 _review（B 的工作台） → 已入库区 products.json',
           '',
-          '  submit   <品类/id>...            A：草稿区 → 待入库区',
-          '  withdraw <品类/id>...            A：待入库区 → 草稿区（撤回继续改）',
-          '  claim    <品类/id>... [--force]  B：待入库区 → 修正区',
-          '  recall   <品类/id>... --reason   B：已入库区 → 修正区（召回复审）',
-          '  publish  <品类/id>...            B：修正区 → 已入库区',
-          '  return   <品类/id>... --reason   B：待入库区 → 草稿区（退回）',
-          '  drop     <品类/id>... --reason   B：修正区剔除（需用户确认）',
-          '  status   [--category 品类] [--zone draft|intake|review] [--n 条数]',
-          '  log      [-n 条数]',
+          '  submit   <品类/id>...                    A：草稿区 → 待入库区',
+          '  withdraw <品类/id>...                    A：待入库区 → 草稿区（撤回继续改）',
+          '  claim    <品类/id>... [--force]          B：待入库区 → 修正区',
+          '           --from <提交人>                 按提交人批量认领',
+          '  recall   <品类/id>... --reason           B：已入库区 → 修正区（召回复审）',
+          '  publish  <品类/id>... [--skip-legacy]    B：修正区 → 已入库区',
+          '  return   <品类/id>... --reason           B：待入库区 → 草稿区（退回）',
+          '  drop     <品类/id>... --reason           B：修正区剔除（需用户确认）',
+          '  status   [--category 品类] [--zone draft|intake|review] [--by 提交人/认领人] [--unclassified] [--n 条数]',
+          '  log      [-n 条数] [--batch <批次id>]',
           '',
+          '  所有命令都支持 --by <名字> 标注操作者。批量命令会生成 batch id；中途失败原样重跑即可续上。',
           '  测试可用 FLOW_DATA_DIR=<目录> 把流转指向临时数据副本。',
         ].join('\n'),
       )

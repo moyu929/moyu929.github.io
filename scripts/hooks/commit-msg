@@ -1,0 +1,44 @@
+#!/bin/sh
+# 分区流转提交闸门 —— 随仓库走（方案 P0-8）
+# ------------------------------------------------------------------
+# 规则：一次提交里含有 data/_intake/** 或 data/_review/** 的文件时，
+#       提交信息必须含 `flow` 字样。
+#
+#   ✅ data: flow:submit heater/ht_x（来源：小米商城规格页 + 太平洋）
+#   ✅ data: flow:publish heater/ht_x（依据：官方规格页）
+#   ❌ data: 从产品名回填 517 条竞品零售型号      ← 若夹带了别人的分区文件，会被拒
+#
+# 为什么用 commit-msg 而不是 pre-commit：
+#   pre-commit **拿不到提交信息**（git 不把它传给这个钩子），无法做信息判据；
+#   commit-msg 能拿到信息文件，且能显式放行合并提交（见下）。
+#
+# 边界（如实记录，不要指望它万能）：
+#   1. **合并提交不检查**：分支模型下的合并由 PR + CI 把关；
+#      这里用 MERGE_HEAD 是否存在于 .git 目录来判断"正在合并"。
+#   2. **可用 `git commit --no-verify` 绕过**：它是本地防线，真正的门是 P2 的 CI。
+#   3. **每个 clone / worktree 各需启用一次**：`npm run hooks:install`
+#      （等价于 `git config core.hooksPath scripts/hooks`）。
+#      .git/hooks/ 不被 git 跟踪，所以钩子必须放在 scripts/ 下才能随仓库分发。
+set -e
+
+git_dir=$(git rev-parse --git-dir 2>/dev/null || echo .git)
+# 合并提交放行（git merge / git pull 产生的提交）
+[ -f "$git_dir/MERGE_HEAD" ] && exit 0
+
+zones=$(git diff --cached --name-only | grep -E '^data/(_intake|_review)/' || true)
+[ -z "$zones" ] && exit 0
+
+msg_file="$1"
+if [ -n "$msg_file" ] && grep -q 'flow' "$msg_file" 2>/dev/null; then
+  exit 0
+fi
+
+echo "✗ commit-msg：本次提交包含分区流转文件，但提交信息不含 flow 标记 —— 已拒绝。"
+echo "$zones" | sed 's/^/      /'
+echo ""
+echo "  请把提交信息写成：data: flow:<动作> <品类/id>（来源/原因…）"
+echo ""
+echo "  若这些分区文件不是你本批流转的结果（典型的「顺手 git add -A」带进来的），"
+echo "  请改成显式指定路径后重新提交，例如："
+echo "      git add data/_review/<品类>/<id>.json data/<品类>/products.json data/_flow"
+exit 1

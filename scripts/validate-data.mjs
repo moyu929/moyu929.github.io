@@ -15,7 +15,7 @@
  */
 import fs from 'node:fs'
 import path from 'node:path'
-import { checkProduct, checkSchema } from './lib/product-check.mjs'
+import { checkCategory, checkProduct } from './lib/product-check.mjs'
 
 const DATA_DIR = 'data'
 const PUBLIC_DIR = 'public'
@@ -83,19 +83,11 @@ for (const category of categories) {
   const products = readJson(productsFile)
   if (!schema || !products) continue
 
-  errors.push(...checkSchema(category.id, schema))
-
-  const seenIds = new Set()
-  for (const p of products) {
-    if (p.id && seenIds.has(p.id)) {
-      errors.push(`${category.id}：产品 id 重复 —— ${p.id}`)
-    }
-    seenIds.add(p.id)
-
-    const { errors: e, warnings: w } = checkProduct(category.id, schema, p)
-    errors.push(...e)
-    warnings.push(...w)
-  }
+  // 品类级校验（schema 合法性 + id 唯一 + 逐产品）统一走共享实现，
+  // 与 flow:publish 的复检同口径，避免两处漂移
+  const checked = checkCategory(category.id, schema, products)
+  errors.push(...checked.errors)
+  warnings.push(...checked.warnings)
 
   console.log(`✓ ${category.name}（${category.id}）：${products.length} 款产品，${schema.fields.length} 个字段`)
 }

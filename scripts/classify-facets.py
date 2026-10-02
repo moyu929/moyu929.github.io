@@ -8,6 +8,19 @@
 """
 import json, glob, os, re, sys, collections
 
+# 仓库根目录：按脚本自身位置解析，不依赖 cwd（见方案 P0-1）
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# 库文件的写入统一走 lib/library_io.py：规范序列化 + 写前指纹守卫（方案 P1-1）
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'lib'))
+import library_io  # noqa: E402
+
+
+def dp(rel):
+    """仓库相对路径 → 绝对路径"""
+    return os.path.join(ROOT, rel)
+
+
 sys.stdout.reconfigure(encoding='utf-8')
 D = '2026-10-01'
 
@@ -60,7 +73,7 @@ def load_cache(pc):
     后到的是补抓（可能补上原抓没拿到的分类字段）。
     """
     out = {}
-    for f in sorted(glob.glob('data/_cache/brand-%s-*.json' % pc)):
+    for f in sorted(glob.glob(dp('data/_cache/brand-%s-*.json' % pc))):
         try:
             d = json.load(open(f, encoding='utf-8'))
         except Exception:
@@ -84,7 +97,7 @@ def load_evidence():
     字段名加前缀区分来源（p_ = pconline，z_ = zol），供 by_kw 一起匹配。
     """
     out = {}
-    path = 'data/_cache/facet-evidence/evidence.json'
+    path = dp('data/_cache/facet-evidence/evidence.json')
     try:
         items = json.load(open(path, encoding='utf-8'))
     except Exception:
@@ -550,7 +563,7 @@ def main():
     unresolved = collections.defaultdict(list)
     done = 0
     for cid, rule in sorted(RULES.items()):
-        sp_path = 'data/%s/schema.json' % cid
+        sp_path = dp('data/%s/schema.json' % cid)
         if not os.path.exists(sp_path):
             continue
         s = json.load(open(sp_path, encoding='utf-8'))
@@ -560,8 +573,9 @@ def main():
         fk = facets[0]['key']
         valid = set(facets[0]['order'])
         cache = load_cache(CAT2PC.get(cid, cid))
-        pp = 'data/%s/products.json' % cid
-        ps = json.load(open(pp, encoding='utf-8'))
+        pp = dp('data/%s/products.json' % cid)
+        lib = library_io.load(pp)
+        ps = lib['products']
         changed = 0
         for p in ps:
             if p.get('brand') == '小米':
@@ -586,9 +600,8 @@ def main():
             else:
                 unresolved[cid].append(p['id'])
         if changed:
-            with open(pp, 'w', encoding='utf-8', newline='\n') as f:
-                json.dump(ps, f, ensure_ascii=False, separators=(',', ':'))
-                f.write('\n')
+            # 写前指纹守卫：期间若有别的写入者改过库，会抛 LibraryConflict 而不是静默覆盖
+            library_io.save(pp, ps, expect_hash=lib['hash'])
         done += changed
         print('%-18s 新归类 %3d  仍未解 %3d' % (cid, changed, len(unresolved[cid])))
 

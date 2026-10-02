@@ -9,6 +9,8 @@
     "preview": "vite preview",
     "typecheck": "vue-tsc --build",
     "validate": "node scripts/validate-data.mjs",
+    "selftest": "node scripts/selftest.mjs",
+    "hooks:install": "node scripts/hooks-install.mjs",
     "check": "npm run validate && npm run audit:check",
     "extract:legacy": "node scripts/extract-legacy.mjs",
     "mi:enumerate": "node scripts/mi-store.mjs enumerate",

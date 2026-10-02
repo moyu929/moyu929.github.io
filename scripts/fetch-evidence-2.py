@@ -10,9 +10,19 @@ from concurrent.futures import ThreadPoolExecutor
 
 sys.stdout.reconfigure(encoding='utf-8')
 
+# 仓库根目录：按脚本自身位置解析，不依赖 cwd。
+# 多 Agent 各自 worktree 时，从别处的 cwd 调用不会再把数据写到别的树（见方案 P0-1）。
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+def dp(rel):
+    """仓库相对路径 → 绝对路径"""
+    return os.path.join(ROOT, rel)
+
+
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
-EVIDENCE = 'data/_cache/facet-evidence/evidence.json'
+EVIDENCE = dp('data/_cache/facet-evidence/evidence.json')
 
 # 只留对分类/参数判定有用的字段，噪声字段（包装清单、电线长度、颜色…）不要
 WANT = re.compile(
@@ -61,14 +71,14 @@ def main():
 
     # 找仍未归类且尚无证据的产品
     todo = []
-    for f in sorted(glob.glob('data/*/schema.json')):
-        cid = os.path.dirname(f).split(os.sep)[1]
+    for f in sorted(glob.glob(dp('data/*/schema.json'))):
+        cid = os.path.basename(os.path.dirname(f))
         schema = json.load(open(f, encoding='utf-8'))
         facets = schema.get('facets') or []
         if not facets:
             continue
         fk = facets[0]['key']
-        for p in json.load(open('data/%s/products.json' % cid, encoding='utf-8')):
+        for p in json.load(open(dp('data/%s/products.json' % cid), encoding='utf-8')):
             if p.get('brand') == '小米':
                 continue
             if p.get(fk) not in (None, '未归类', '查不到'):

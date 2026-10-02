@@ -32,6 +32,10 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 CACHE = ROOT / "data" / "_cache"
 TARGETS = DATA / "_sources" / "brand-targets.json"
+
+# 库文件的写入统一走 lib/library_io.py：规范序列化 + 写前指纹守卫（方案 P1-1）
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent / "lib"))
+import library_io  # noqa: E402
 DESK = "https://product.pconline.com.cn"
 MOBILE = "https://g.pconline.com.cn/product"
 UA = (
@@ -69,11 +73,13 @@ def load_json(p):
     return json.loads(pathlib.Path(p).read_text(encoding="utf-8"))
 
 
-def write_products(cat, prods):
-    (DATA / cat / "products.json").write_text(
-        "[\n" + ",\n".join(json.dumps(x, ensure_ascii=False, separators=(",", ":")) for x in prods) + "\n]\n",
-        encoding="utf-8",
-    )
+def write_products(cat, prods, expect_hash):
+    """写库（唯一允许的方式）：规范序列化 + 写前指纹校验。
+
+    expect_hash 是脚本开头载入时的指纹；若中途有别的写入者改过库，library_io 会
+    抛 LibraryConflict 拒绝覆盖，而不是静默丢掉对方的改动（方案 P1-1）。
+    """
+    library_io.save(DATA / cat / "products.json", prods, expect_hash=expect_hash)
 
 
 # ---------------------------------------------------------------- 抓取
@@ -276,7 +282,8 @@ def enrich(cat_id, cfg, dry=False):
     只作用于**本脚本新增**的产品（带 brand 且 id 形如 <品牌slug>_<id>），
     这些条目不在审核快照范围内，因此可以安全更新（可用 audit:check 验证）。
     """
-    prods = load_json(DATA / cat_id / "products.json")
+    lib = library_io.load(DATA / cat_id / "products.json")
+    prods = lib["products"]
     slugs = set((cfg.get("brands") or {}).keys())
     by_id = {p["id"]: p for p in prods}
     changed = 0
@@ -299,13 +306,14 @@ def enrich(cat_id, cfg, dry=False):
         if before != {k: p.get(k) for k in mapped}:
             changed += 1
     if not dry and changed:
-        write_products(cat_id, prods)
+        write_products(cat_id, prods, lib["hash"])
     print(f"  {cat_id}：回补 {changed} 条")
     return changed
 
 
 def run(cat_id, cfg, dry=False):
-    prods = load_json(DATA / cat_id / "products.json")
+    lib = library_io.load(DATA / cat_id / "products.json")
+    prods = lib["products"]
     existing = {p["id"] for p in prods}
     # 可能用到的分组值（默认 + groupMap 里的所有映射目标）都要并进 groupBy.order，否则前端不显示
     possible = [cfg.get("groupValue"), *(cfg.get("appendGroups") or [])]
@@ -347,7 +355,7 @@ def run(cat_id, cfg, dry=False):
             added += 1
             print(f"    + {pid}  {m['name'][:40]}  ¥{m['price']}")
     if not dry and added:
-        write_products(cat_id, prods)
+        write_products(cat_id, prods, lib["hash"])
     print(f"  {cat_id}：新增 {added}，跳过已存在 {skipped}")
 
 
