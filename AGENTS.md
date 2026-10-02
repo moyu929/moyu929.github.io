@@ -3,6 +3,10 @@
 > 本文件对本仓库的**所有协作者**生效：不论你是 CodeBuddy、Trae、Claude Code 还是别的客户端，也不论你是人类。
 > 技能定义在 [`skills/`](skills/)（客户端无关）；各客户端的私有目录（`.trae/`、`.claude/`）里只放指向 `skills/` 的指针。
 > 数据采集/核验的详细规范在 [`skills/appliance-data-curation/SKILL.md`](skills/appliance-data-curation/SKILL.md)，**动手前先读它**。
+>
+> ⚠️ 本仓库的口径**多次演进过**（多品牌收录、分区流转、状态枚举都变过）。`docs/audit/` 下的历史报告
+> 不删不改，但结论可能已过时 —— **以本文档与 `SKILL.md` 为准**。哪些旧口径已被取代，见
+> [`HANDOFF.md`](HANDOFF.md) 第 8 节「口径变更历史」。
 
 ---
 

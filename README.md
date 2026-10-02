@@ -4,6 +4,19 @@
 
 线上地址：https://moyu929.github.io
 
+## 当前规模
+
+| 项 | 数值 |
+| --- | ---: |
+| 一级品类 / 小品类 | 6 / 40 |
+| 产品 | 1036 |
+| 品牌 | 51（小米 418 · 其他 618） |
+| 有产品图 | 369 |
+| 核查状态 | 已核验（多源）152 · 已核验（官方商城）199 · 已核验（第三方）618 · 待核验 67 |
+
+本站是**多品牌横评**：小米/米家与主流家电品牌同等收录、同等展示，分组维度是品牌而不是「小米 vs 竞品」。
+数据成熟度与待补项见 [HANDOFF.md](HANDOFF.md)。
+
 ## 本地开发
 
 ```bash
@@ -18,49 +31,86 @@ npm run preview    # 预览构建产物
 
 ```
 data/
-├─ categories.json           品类清单（首页入口）
-└─ air-purifier/
-   ├─ schema.json            字段定义：显示位置、单位、能否排序
-   └─ products.json          产品数据（日常只改这个）
-public/images/air-purifier/  产品图，文件名 = 产品 id
+├─ categories.json           品类清单（两层：一级品类 → 小品类，首页入口）
+├─ air-purifier/
+│  ├─ schema.json            字段定义：显示位置、单位、能否排序
+│  └─ products.json          已入库区：线上唯一数据源（不可直接手改，见下方「多 Agent 并行协作」）
+├─ _draft/<品类>/<id>.json    草稿区：收录中的半成品（采集方工作台）
+├─ _intake/<品类>/<id>.json   待入库区：收录完成、等待认领（交接队列）
+├─ _review/<品类>/<id>.json   修正区：审核修正中（审核方工作台）
+├─ _flow/journal.jsonl       流转日志：谁在何时把什么搬到了哪
+├─ _sources/                 采集源清单（人工维护）：images.json 图片清单、patches/ 字段补丁与出处
+└─ _cache/                   抓取缓存（gitignored，不入库）
+public/images/air-purifier/  产品图，文件名 = 产品 id（不随分区流转）
 src/
 ├─ types.ts                  schema 与产品的类型定义
 ├─ data.ts                   品类数据懒加载
 ├─ format.ts                 字段值格式化
-├─ useProductFilter.ts       筛选 / 排序 / 搜索
+├─ useProductFilter.ts       筛选 / 排序 / 搜索 / 分组
 ├─ useCompare.ts             对比队列
-├─ components/               卡片、工具条、对比抽屉
+├─ components/               卡片、工具条、对比抽屉、分组下拉
 └─ views/                    首页、品类页
 scripts/
-├─ extract-legacy.mjs        从旧单文件 HTML 提取数据（一次性迁移）
+├─ flow.mjs                  分区流转（submit/claim/recall/publish/return/drop）
+├─ audit-lock.mjs            审核快照锁（已降级为结构冻结工具）
 ├─ validate-data.mjs         数据校验
+├─ lib/product-check.mjs     校验规则库（validate 与 flow 复用）
 ├─ mi-store.mjs              小米商城采集流水线（enumerate/detail/specs/images/apply）
-└─ mi-store-enumerate.py     同一流水线的 Python 版枚举入口（只装了 Python Playwright 时用）
-data/_sources/              采集源清单（人工维护）：images.json 图片清单、patches/ 字段补丁与出处
+├─ mi-store-enumerate.py     同一流水线的 Python 版枚举入口（只装了 Python Playwright 时用）
+├─ miot-spec.mjs             MIoT 型号库抓取与匹配
+├─ pconline-specs.py         太平洋规格表抓取
+├─ classify-facets.py        竞品副分组批量归类
+├─ fetch-evidence-2.py       为未归类竞品补抓分类证据（幂等可重跑）
+└─ shrink-images.py          图片转 ≤320px WebP
 ```
 
 ## 日常维护
 
 ### 添加一款产品
 
-编辑 `data/<品类>/products.json`，追加一个对象。字段照抄同品类的其他产品即可：
+**`data/<品类>/products.json` 是已入库区，任何人都不可直接手改。** 产品数据按状态放在四个物理分区，
+文件的位置就是它的状态：
+
+```bash
+npm run flow:status                          # 动手前先看各区现状
+# 1. 采集方：在 data/_draft/<品类>/<id>.json 写产品（半成品，随便改）
+# 2. 提交待审
+npm run flow:submit -- air-purifier/7pro --by <你>
+# 3. 审核方：认领 → 在 data/_review/<品类>/<id>.json 核验修正 → 入库
+npm run flow:claim   -- air-purifier/7pro --by <你>
+npm run flow:publish -- air-purifier/7pro --by <你>
+```
+
+每个流转命令跑完**当场提交**（含 `data/_flow/journal.jsonl` 日志）。规则见 [AGENTS.md](AGENTS.md) 第 3 节。
+
+草稿区里的产品长这样，字段照抄同品类的其他产品即可：
 
 ```json
 {
   "id": "7pro",
-  "img": "7pro.jpg",
+  "img": "7pro.webp",
   "name": "米家空气净化器 7 Pro",
+  "brand": "小米",
   "tier": "旗舰",
   "official_price": 2299,
-  "cadr_pm": 800
+  "cadr_pm": 800,
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-03",
+  "verify_source": ["小米商城"],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230802338",
+  "change_log": "2026-10-03 建条：参数取自小米商城规格页",
+  "updated_at": "2026-10-03"
 }
 ```
 
-- `id` 必须唯一，只用字母数字和 `._-`，它同时也是图片文件名
+- `id` 必须唯一，只用字母数字和 `._-`，它同时是图片文件名与分区文件名
+- **`brand` 必填**，`groupBy.key` 固定为 `brand`；品牌值必须在 `schema.groupBy.order` 里
+- 品类自身的细分维度（`tier`/`type`/`series` 等）在 `schema.facets[0].order` 里，取值同样要落在其中
 - 产品图放到 `public/images/<品类>/`，`img` 填文件名；暂时没图就写 `null`
-- `tier` 的值必须在 `schema.json` 的 `groupBy.order` 里，否则不会显示
+- 后 6 个审核标注字段（`verify_*` / `change_log` / `updated_at`）是**提交与入库的硬性校验项**，
+  `flow:submit` 与 `flow:publish` 会拒绝缺字段的数据
 
-改完跑 `npm run validate` 检查。
+跑 `npm run validate` 检查数据合法性。
 
 ### 添加一个字段
 
@@ -92,22 +142,56 @@ data/_sources/              采集源清单（人工维护）：images.json 图�
 | `tagVariant` | `tags` 类型的配色：`green` / `red` / `blue` |
 | `tagPrefix` | `tags` 类型每个标签的前缀符号 |
 
-### 添加一个新品类
+### 分组维度：`groupBy` 与 `facets`
 
-1. 新建 `data/<品类id>/schema.json` 和 `products.json`，可复制 `air-purifier/` 改
-2. 新建 `public/images/<品类id>/` 放产品图
-3. 在 `data/categories.json` 里加一行：
+界面上有两级筛选：**品牌**（主分组）+ **品类细分维度**（副分组）。
 
-```json
+```jsonc
 {
-  "id": "refrigerator",
-  "name": "冰箱",
-  "icon": "🧊",
-  "description": "容积 / 能耗 / 制冷方式"
+  "groupBy": {
+    "key": "brand",          // 主分组固定为品牌
+    "label": "品牌",
+    "order": ["小米", "美的", "格力"],   // 品牌取值顺序 + 徽章配色来源
+    "colors": { "小米": "#a8452e" }
+  },
+  "facets": [                // 副分组，可选，结构与 groupBy 相同
+    {
+      "key": "tier",
+      "label": "档位",
+      "order": ["旗舰", "高端", "中端", "入门"],
+      "colors": { "旗舰": "#e67e22" }
+    }
+  ]
 }
 ```
 
-不需要写任何 Vue 代码 —— 卡片、对比表、筛选排序都由 schema 驱动生成。
+- 产品的 `brand` 值必须在 `groupBy.order` 里，品类维度的值必须在 `facets[0].order` 里，否则不显示
+- 本站是多品牌横评，**主分组只能是 `brand`**；不要把品牌以外的维度放进 `groupBy`
+- 某维度若有两种以上真实取值，加进 `order` 即可（`validate` 会拦住不在 `order` 里的值）
+
+### 添加一个新品类
+
+1. 新建 `data/<品类id>/schema.json`，可复制 `air-purifier/` 改（此时可以还没有 `products.json`，
+   `validate` 对这种未登记目录只提示不报错）
+2. 新建 `public/images/<品类id>/` 放产品图
+3. 在 `data/categories.json` 里登记。**它是两层结构**：一级品类分组 → 组内小品类。
+   新品类挂到语义合适的一级品类下：
+
+```jsonc
+{
+  "id": "kitchen-big",
+  "name": "厨房大家电",
+  "icon": "🍳",
+  "description": "需要嵌入或占地的厨房与洗衣大宗家电",
+  "categories": [
+    { "id": "refrigerator", "name": "冰箱", "icon": "🧊", "description": "容积 / 能耗 / 制冷方式" }
+  ]
+}
+```
+
+新建一级品类时才加一个顶层对象（含 `categories` 数组）；只是新增小品类时，往对应分组的
+`categories` 数组里追加一项即可。首页左侧竖排一级品类、右侧显示该组小品类，由 `src/data.ts`
+的 `categoryGroups` 驱动，**不需要写任何 Vue 代码** —— 卡片、对比表、筛选排序都由 schema 驱动生成。
 
 ## 数据采集流水线
 
@@ -122,18 +206,24 @@ npm run mi:images                            # 按 data/_sources/images.json 下
 npm run mi:apply -- data/_sources/patches/xxx.json              # 写入字段补丁
 ```
 
-官方渠道拿不到时的两个补充来源（**只作交叉印证，禁止照抄**）：
+官方渠道拿不到时的补充来源（**禁止照抄，需按异常阈值过滤**）：
 
 ```bash
 npm run miot:crawl                     # 抓 home.miot-spec.com 型号库（分页/并发，缓存 + 日志）
 npm run miot:match                     # 按官方名精确匹配，补 miot_model 字段
 npm run pconline:specs                 # 抓太平洋规格表（清单：data/_sources/pconline-targets.json）
+python scripts/import-brands.py        # 从太平洋批量导入竞品（清单：data/_sources/brand-targets.json）
+python scripts/classify-facets.py      # 竞品副分组批量归类（无依据的保持「未归类」）
+python scripts/fetch-evidence-2.py     # 为未归类的竞品补抓分类证据（幂等可重跑）
 ```
 
 - 枚举结果缓存在 `data/_cache/`（已 gitignore），可反复复查。
 - 字段补丁放在 `data/_sources/patches/`，文件内用 `_来源` 记录出处；`mi:apply` 按 `品类/产品id` 定位写入，越界会报错而不是写歪。
-- 采集与核验规则见 `skills/appliance-data-curation/SKILL.md`（来源优先级、禁止估算、去重口径、第三方错标陷阱等）。
+- 采集与核验规则见 `skills/appliance-data-curation/SKILL.md`（来源优先级、禁止估算、去重口径、第三方错标陷阱与同义叫法对照表）。
 - 每条产品都带 6 个审核标注字段（`verify_status` / `verify_date` / `verify_source` / `verify_url` / `change_log` / `updated_at`），逐条溯源记录在 `data/_sources/provenance.json`。
+  `verify_status` 的合法取值是 `已核验（多源）` / `已核验（官方商城）` / `已核验（第三方）` / `待核验` ——
+  其中 `已核验（第三方）` 指参数来自单一权威第三方规格站，是非小米品牌（往往没有可抓的官方规格页）的正常状态，
+  但每个值仍须通过字段白名单与异常阈值校验，通不过的写 `查不到`。
 
 ### 产品图规格：≤320px WebP
 
@@ -154,8 +244,11 @@ npm run img:webp      # 2) 转成 ≤320px WebP 写入 public/images/ 并回写 
 
 ### 图片加载策略
 
-- 首屏前 6 张卡片用 `loading="eager"` + `fetchpriority="high"`，其余 `loading="lazy"`；
+- 首屏按展示顺序取前 6 张**有图**的卡片用 `loading="eager"` + `fetchpriority="high"`，其余 `loading="lazy"`；
   全部懒加载会让首屏图片排在关键渲染之后，出现可见的空白闪烁。
+  ⚠️ 两个坑（`CategoryView.vue` 的 `eagerIds` 有注释）：**不能按卡片自己的 `index` 判断** ——
+  分组视图下每组都从 0 重新计数；也**不能按前 6 个产品判断** —— 占位图不消耗带宽，
+  6 个产品恰好都没图时首屏会一张 eager 都没有。
 - 所有 `<img>` 都带 `width`/`height`（内在 320×320）与 `decoding="async"`，配合 `.thumb` 固定尺寸避免布局抖动。
 - 缩略图容器自带底色（`--surface-alt`），图片未到时不会白闪。
 
