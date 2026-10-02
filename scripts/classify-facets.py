@@ -169,8 +169,8 @@ def by_price(p, tiers, why):
 
 def rule_aircon(p, sp):
     n, t = p['name'], str(field(sp, '空调类型') or '')
-    if re.search(r'风管|天花|中央|多联', n + t):
-        return '中央空调', '名称/空调类型含风管或中央'
+    if re.search(r'风管|天花|中央|多联|嵌入', n + t):
+        return '中央空调', '名称/空调类型含风管/中央/嵌入'
     if '立式' in t or re.search(r'72\s*L?W', n):
         return '柜机', '空调类型=%s 或型号含 72LW' % t
     if '挂式' in t or re.search(r'(26|35|50|72)\s*G?W', n):
@@ -179,7 +179,13 @@ def rule_aircon(p, sp):
 
 
 def rule_fan(p, sp):
-    return by_kw('fan', sp, ['产品类型'], '第三方产品类型')
+    got = by_kw('fan', sp, ['产品类型'], '第三方产品类型')
+    if got:
+        return got
+    t = str(field(sp, '产品类型') or '')
+    if 'USB' in t or 'USB' in p['name']:
+        return '台扇/桌面', '第三方产品类型=%s（USB 小风扇属桌面类）' % t
+    return None
 
 
 def rule_microwave(p, sp):
@@ -193,7 +199,19 @@ def rule_microwave(p, sp):
 
 def rule_dishwasher(p, sp):
     got = by_kw('xiwanji', sp, ['产品类型', '安装方式'], '第三方类型/安装方式')
-    return got
+    if got:
+        return got
+    # 西门子/博世洗碗机的型号段位本身就编码了安装方式：
+    # SN = 全嵌入式，SJ = 半嵌入（下拉式），SK = 台下式。
+    # 型号前面通常带中文品牌名，所以不锚定行首，取型号主体里的段位码。
+    m = re.search(r'(SN|SJ|SK)(\d{2})', p['name'])
+    if m:
+        seg = {'SN': '嵌入式', 'SJ': '嵌入式', 'SK': '台式'}[m.group(1)]
+        return seg, '型号段位 %s%s（西门子/博世洗碗机型号编码惯例）' % (m.group(1), m.group(2))
+    # 松下 NP-/NW- 系列为嵌入式（窄型）洗碗机
+    if re.search(r'\bNP-|\bNW-', p['name']):
+        return '嵌入式', '型号段位 NP/NW（松下嵌入式洗碗机系列）'
+    return None
 
 
 def rule_waterheater(p, sp):
@@ -381,10 +399,17 @@ def rule_waterheater2(p, sp):
 
 
 def rule_heater2(p, sp):
-    """补充：第三方「产品类型」字段优先（踢脚线取暖器/电油汀等）。"""
+    """补充：第三方「产品类型」优先（踢脚线取暖器/电油汀等），
+    再按「加热方式/摆放方式」补——油汀类普遍标「铝片散热式」。"""
     got = by_kw('heater', sp, ['产品类型'], '第三方产品类型')
     if got:
         return got
+    how = str(field(sp, '加热方式') or '')
+    if '铝片' in how or '导热' in how:
+        return '油汀', '第三方加热方式=%s（铝片散热为油汀典型结构）' % how
+    place = str(field(sp, '摆放方式') or field(sp, '使用方式') or '')
+    if '立式' in place or '落地' in place:
+        return '暖风机', '第三方摆放/使用方式=%s' % place
     return rule_heater(p, sp)
 
 
