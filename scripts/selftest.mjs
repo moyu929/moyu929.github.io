@@ -246,14 +246,38 @@ function tRecallReturnDrop() {
   check('flow:log --batch 可回查本批', r6.out.includes('testcat/lib1'), r6.out.slice(-300))
 }
 
+function tRecallRestoresPosition() {
+  console.log('\n[P1-2 配套] 召回后入库放回原位（否则尾部追加会与别的分支撞成同一处冲突）')
+  const file = path.join(DATA, 'testcat', 'products.json')
+  const before = readJson(file)
+  const indexBefore = 1
+  const target = before[indexBefore]
+  run(['recall', `testcat/${target.id}`, '--reason', '位置烟测', '--by', 'reviewer'])
+  check('召回后库内少一款', readJson(file).length === before.length - 1 && !readJson(file).some((p) => p.id === target.id))
+  run(['publish', `testcat/${target.id}`, '--by', 'reviewer'])
+  const after = readJson(file)
+  check(
+    '重新入库回到原索引',
+    after[indexBefore]?.id === target.id,
+    `期望 ${target.id}，实际 ${after[indexBefore]?.id}；当前顺序 ${after.map((p) => p.id).join(',')}`,
+  )
+}
+
 function tStatusFilters() {
   console.log('\n[P0-6/7/10] status 归属视图与过滤')
+  // 先放一款在待入库区，让"提交人"断言基于确定的状态（而不是靠 journal 尾部的偶然命中）
+  writeJson(zonePath('draft', 'testcat/w2'), mkProduct('w2'))
+  run(['submit', 'testcat/w2', '--by', 'collect-z'])
   const r1 = run(['status'])
   check('status 打印操作自证', /操作自证：数据/.test(r1.out) && /分支/.test(r1.out), r1.out.slice(0, 200))
   check('按品类计数、空品类不出现', /待入库区/.test(r1.out) && !/air-conditioner/.test(r1.out))
-  check('列出提交人', /提交人 collect-/.test(r1.out))
-  const r2 = run(['status', '--by', 'collect-x'])
-  check('--by 过滤生效', /按提交人过滤：collect-x/.test(r2.out) || /按归属过滤：collect-x/.test(r2.out), r2.out.slice(0, 600))
+  check('待入库区列出提交人', /testcat\/w2（提交人 collect-z/.test(r1.out), r1.out.slice(0, 900))
+  const r2 = run(['status', '--by', 'collect-z'])
+  // 只在"分区现状"段里断言：后面的"最近流转"尾巴总会提到 w2，不能用来判过滤是否生效
+  const zonePart = (out) => out.split('最近流转')[0]
+  check('--by 过滤生效', /按提交人过滤：collect-z/.test(zonePart(r2.out)) && /testcat\/w2/.test(zonePart(r2.out)), zonePart(r2.out).slice(0, 500))
+  const r3 = run(['status', '--by', 'nobody'])
+  check('--by 过滤排除他人', !/testcat\/w2/.test(zonePart(r3.out)), zonePart(r3.out).slice(0, 500))
 }
 
 function tUnclassified() {
@@ -340,6 +364,7 @@ async function main() {
   tLegacy()
   await tConflict()
   tRecallReturnDrop()
+  tRecallRestoresPosition()
   tStatusFilters()
   tUnclassified()
   tPruneEmptyDirs()

@@ -1,0 +1,55 @@
+name: CI（PR 检查）
+
+# 方案 P2-2：PR 上的门。main 的分支保护会要求这个 check 通过才可合并。
+# 本文件在 P2 切换前就已存在，但在没有 PR 之前不会触发（对现状零影响）。
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # 需要 base 才能算变更规模（下面的非阻断提示）
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: 数据校验（schema / 字段 / 图片存在性）
+        run: npm run validate
+
+      - name: 数据一致性（重复型号 / 重复产品名）
+        run: npm run lint
+
+      - name: 流转工具自检（隔离副本，不碰真实数据）
+        run: npm run selftest
+
+      - name: 类型检查
+        run: npm run typecheck
+
+      - name: 构建
+        run: npm run build
+
+      - name: 变更规模提示（非阻断）
+        if: github.event_name == 'pull_request'
+        run: |
+          base="${{ github.event.pull_request.base.sha }}"
+          n=$(git diff --numstat "$base"...HEAD -- 'data/*/products.json' | awk '{a+=$1+$2} END {print a+0}')
+          echo "本 PR 在库文件上共改动 $n 行"
+          if [ "$n" -gt 400 ]; then
+            echo "::warning::库文件改动超过 400 行，可能是一次批量脚本作业；请确认来源与核验方式已在 change_log 里写明"
+          fi

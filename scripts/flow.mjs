@@ -252,16 +252,18 @@ function journalIndex() {
   const entries = readJournal()
   const lastSubmit = new Map()
   const lastClaim = new Map()
+  const lastRecall = new Map()
   const byBatch = new Map()
   for (const e of entries) {
     if (!e.key) continue
     if (e.action === 'submit') lastSubmit.set(e.key, e)
     if (e.action === 'claim') lastClaim.set(e.key, e)
+    if (e.action === 'recall') lastRecall.set(e.key, e)
   }
   for (const e of entries) {
     if (e.batch) byBatch.set(e.batch, (byBatch.get(e.batch) ?? 0) + 1)
   }
-  return { entries, lastSubmit, lastClaim, byBatch }
+  return { entries, lastSubmit, lastClaim, lastRecall, byBatch }
 }
 
 function fmtTs(ts) {
@@ -381,8 +383,9 @@ function cmdSubmit(args, at) {
 
   const bad = col.summary('submit', batch)
   if (bad === 0 && keys.length) {
-    console.log(`\n建议立刻提交（注意带 flow 标记，便于 pre-commit 钩子识别）：`)
-    console.log(`  git add data/_draft data/_intake data/_flow && git commit -m "data: flow:submit ${keys.join(' ')}（来源与核验方式见 change_log）"`)
+    console.log(`\n建议立刻提交（注意带 flow 标记，便于提交闸门识别）：`)
+    console.log(`  git add data/_intake data/_flow && git commit -m "data: flow:submit ${keys.join(' ')}（来源与核验方式见 change_log）"`)
+    console.log(`  （草稿区不入 git，无需 add；见 .gitignore 与 AGENTS.md 3.1）`)
   }
   if (bad) process.exit(1)
 }
@@ -541,7 +544,7 @@ function cmdRecall(args, at) {
     writePretty(dst, product)
     const rest = lib.products.filter((_, j) => j !== i)
     saveLibrary(libFile(key), rest, { expectHash: lib.hash })
-    journal({ actor: at.by, branch: at.branch, action: 'recall', key, from: 'library', to: 'review', batch, reason, fingerprint: hash(stable(product)) })
+    journal({ actor: at.by, branch: at.branch, action: 'recall', key, from: 'library', to: 'review', batch, reason, index: i, fingerprint: hash(stable(product)) })
     col.ok(key, `${key}：已入库区 → 修正区（召回复审：${reason}）`)
     if (fs.existsSync(zoneFile('intake', key))) legacy.push(`  ⚠ ${key}：待入库区还有该产品的订正稿；先处理修正区这份（publish/drop），才能 claim 那份`)
   }
@@ -558,6 +561,7 @@ function cmdRecall(args, at) {
  */
 function cmdPublish(args, at) {
   const col = collector()
+  const idx = journalIndex()
   const resolved = resolveKeys(args._, 'review')
   for (const r of resolved.filter((x) => x.error)) col.fail(r.key, r.error)
   const keys = resolved.filter((r) => !r.error).map((r) => r.key)
@@ -593,7 +597,13 @@ function cmdPublish(args, at) {
       continue
     }
     const prev = lib.exists ? lib.products.slice() : null
+    // 召回后重新入库：尽量放回原位，而不是追加到数组末尾。
+    // 为什么在意：库文件是一行一款，两个分支各自 recall→publish 同一品类的
+    // 不同产品时，若都往尾部追加就会在数组末尾撞成同一个冲突；放回原位则互不干扰。
+    const recalled = idx.lastRecall.get(key)
+    const restoreAt = i < 0 && recalled && Number.isInteger(recalled.index) ? Math.min(recalled.index, lib.products.length) : null
     if (i >= 0) lib.products[i] = product
+    else if (restoreAt !== null) lib.products.splice(restoreAt, 0, product)
     else lib.products.push(product)
 
     let writtenHash
