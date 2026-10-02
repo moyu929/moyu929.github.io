@@ -20,7 +20,8 @@ import path from 'node:path'
 import process from 'node:process'
 
 const ROOT = path.resolve(import.meta.dirname, '..')
-const DATA = path.join(ROOT, 'data')
+// 与 flow.mjs / validate-data.mjs 一致：可用 FLOW_DATA_DIR 指向数据副本做演练
+const DATA = process.env.FLOW_DATA_DIR ? path.resolve(ROOT, process.env.FLOW_DATA_DIR) : path.join(ROOT, 'data')
 const BLANK = new Set(['查不到', '—', '', null, undefined])
 const AUDIT_FIELDS = ['verify_status', 'verify_date', 'verify_source', 'verify_url', 'change_log', 'updated_at']
 
@@ -80,20 +81,15 @@ for (const cat of cats) {
     }
   }
 
-  // ③ 型号未出现在产品名里（提示，不阻断）
-  //    只查非小米品牌：小米/米家的 name 是营销名（如「巨省电Pro」），零售型号本来就不在名字里，
-  //    查了只会产生大量噪音；竞品的 name 通常直接含型号，这一查能发现「抄错行」。
-  for (const p of products) {
-    if (p.brand === '小米') continue
-    const code = p.model_code
-    if (BLANK.has(code)) continue
-    const name = String(p.name ?? '')
-    const normalized = name.replace(/[\s\-_/]/g, '').toUpperCase()
-    const c = String(code).replace(/[\s\-_/]/g, '').toUpperCase()
-    if (c && !normalized.includes(c)) {
-      warnings.push(`${cid}/${p.id}：model_code「${code}」未出现在产品名「${name}」中，请人工确认是否为同一机型`)
-    }
-  }
+  // ③（已撤掉）「型号与产品名一致性」
+  //    乙评 §6.2 提过这项，试过两种启发式，在真实数据上都以误报为主：
+  //      · 「产品名应含 model_code」——小米是营销名（60+ 例误报）、竞品也常见营销名
+  //        （如「TCL小蓝翼Q7Max新风 1.5匹」配型号 KFR-35GW/…）
+  //      · 「同族但不同」（前缀相同、长度相近）——命中 12 例，全是合法后缀变体
+  //        （FLZ-09X63B vs FLZ-09X63Bg、UR-S5676 vs UR-S5676i）
+  //    噪音比 bug 更危险（乙评 §4-① 的同一道理），所以不做成规则。
+  //    型号抄错这类问题靠**参数逐项比对**发现（HANDOFF §0.3 用官方 API 核对制冷量/风量/噪音的做法），
+  //    它不适合自动化成一条字符串规则。
 
   // ④ 审核标注字段覆盖率（报数，不阻断）
   const missing = products.filter((p) => AUDIT_FIELDS.some((f) => !(f in p))).length

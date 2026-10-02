@@ -17,7 +17,9 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { checkCategory, checkProduct } from './lib/product-check.mjs'
 
-const DATA_DIR = 'data'
+const DATA_DIR = process.env.FLOW_DATA_DIR || 'data'
+// 与 flow.mjs 一致：可用 FLOW_DATA_DIR 指向数据副本做演练，不碰真实 data/。
+// （图片仍按真实 public/ 校验——副本里没有图片目录，这是有意的）
 const PUBLIC_DIR = 'public'
 
 const errors = []

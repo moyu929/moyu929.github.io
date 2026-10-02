@@ -22,7 +22,10 @@
 ```bash
 npm install
 npm run dev        # 开发服务器
-npm run validate   # 校验 data/ 下的 JSON
+npm run validate   # 校验 data/ 下的 JSON（schema / 字段 / 图片存在性）
+npm run lint       # 数据一致性（重复型号 / 重复产品名）
+npm run selftest   # 流转工具自检（隔离副本，不碰真实数据）
+npm run check      # = validate + lint + audit:check，推送前跑
 npm run build      # 构建到 dist/
 npm run preview    # 预览构建产物
 ```
@@ -264,12 +267,25 @@ npm run flow:submit -- heater/ht_x     # 采集方：草稿区 → 待入库区�
 npm run flow:claim   -- heater/ht_x    # 审核方：待入库区 → 修正区（认领核验）
 npm run flow:recall  -- heater/ht_x    # 审核方：已入库区 → 修正区（召回复审）
 npm run flow:publish -- heater/ht_x    # 审核方：修正区 → 已入库区（入库上线）
-npm run check                          # = validate + audit:check，推送前跑
+npm run check                          # = validate + lint + audit:check，推送前跑
 ```
 
 线上数据（`products.json`）只能经 `flow:publish` 写入，任何人不直接手改；
 收录中的半成品放在草稿区，审核方拿到的待审数据必然是提交过的成品。
 流转全程记录在 `data/_flow/journal.jsonl`，审核报告归档在 `docs/audit/`。
+
+**2026-10-03 起的三处变化**（详见 [AGENTS.md](AGENTS.md) 与 [HANDOFF.md](HANDOFF.md) 第 0.0.1 节）：
+
+- **库文件改为「一行一款」**：便于 git 按行三方合并；写入必须走
+  `scripts/lib/library-io.mjs` / `library_io.py`（规范序列化 + 写前指纹校验 + 文件锁重试），
+  不要自己 `writeFileSync`。
+- **批量命令可断点续跑**：结束打印「成功 / 已是目标态 / 失败」，中途失败原样重跑即幂等续上；
+  `npm run flow:log --batch <批次id>` 可回查某一批，`flow:status --by <提交人>` 可按归属过滤。
+- **提交闸门**：`npm run hooks:install`（每个 clone / worktree 各一次）后，含
+  `data/_intake` / `data/_review` 文件的提交必须带 `flow` 标记。草稿区 `data/_draft/` 不再入库。
+
+配套命令：`npm run selftest`（47 条断言，在隔离副本上跑，不碰真实数据）、
+`npm run lint`（重复型号 / 重复产品名）。
 
 ## 目录速览
 
