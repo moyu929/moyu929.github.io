@@ -20,25 +20,30 @@ description: "家电参数数据的收录与核验规范：定义字段模型、
 data/categories.json                 品类清单（首页入口）
 data/<category-id>/
   ├─ schema.json                     字段定义：显示位置、单位、能否排序
-  └─ products.json                   产品数据（日常只改这个）
-public/images/<category-id>/         产品图，文件名 = 产品 id
+  └─ products.json                   已入库区：产品数据（线上站点唯一数据源，只经 flow:publish 写入）
+public/images/<category-id>/         产品图，文件名 = 产品 id（不随分区流转）
 ```
 
 ```
+data/_draft/<品类>/<id>.json         草稿区：收录中的半成品（采集方 A 的工作台，只有 A 写）
+data/_intake/<品类>/<id>.json        待入库区：收录完成、等待审核方认领的交接队列
+data/_review/<品类>/<id>.json        修正区：审核修正中的数据（审核方 B 的工作台，只有 B 写）
+data/_flow/journal.jsonl             流转日志：谁在何时把哪个产品搬到了哪个区（append-only）
 data/_sources/                       溯源与工具清单（入库，供复核）
   ├─ provenance.json                 逐条溯源：某产品的数据来自哪些来源、核验于何时
   ├─ patches/*.json                  参数补丁留档（内含 _来源）
   ├─ images.json                     产品图下载清单（品类/产品id → 图片URL）
   └─ pconline-targets.json           第三方规格页抓取清单
-data/_locks/                         审核快照锁（多 Agent 协作的状态，见 AGENTS.md）
+data/_locks/                         审核快照锁（已降级为结构冻结工具，见 AGENTS.md）
 docs/audit/                          审核报告归档
 skills/                              技能定义（客户端无关；各客户端目录只放指针）
 ```
 
-- `category-id`、产品 `id` 只用字母数字和 `._-`，`id` 同时是图片文件名。
-- 新增品类三步：① 建 `data/<id>/{schema,products}.json`（可复制已有品类改）② 建 `public/images/<id>/` ③ 在 `data/categories.json` 追加一行。
+- `category-id`、产品 `id` 只用字母数字和 `._-`，`id` 同时是图片文件名和分区文件名。
+- **产品数据的生命周期**：收录写 `data/_draft/` → `npm run flow:submit` 进待入库区 → 审核方 `flow:claim` 认领到修正区 → 核验修正后 `flow:publish` 入库。规则与命令见 `AGENTS.md`「分区流转协议」。
+- 新增品类三步：① 建 `data/<id>/schema.json`（可复制已有品类改；此时可以还没有 products.json，validate 对这种未登记目录只提示）② 建 `public/images/<id>/` ③ 首批产品 `flow:submit` 的同一提交里在 `data/categories.json` 追加一行。
 - 卡片、对比表、筛选排序全部由 schema 驱动，**不需要写任何 Vue 代码**。
-- 动手改数据前先跑 `npm run audit:status`：**被审核快照冻结的产品不能改**（原因与流程见 `AGENTS.md`）。
+- 动手前先跑 `npm run flow:status` 看清各区现状；**已入库区任何人都不可直接手改**（原因与流程见 `AGENTS.md`）。
 
 ### schema.json 关键结构
 
@@ -125,6 +130,9 @@ skills/                              技能定义（客户端无关；各客户�
 改动数据时同步维护：改了什么就写进 `change_log`，重新核了就更新 `verify_date`，
 新增来源就追加到 `verify_source`，并把新来源登记进 `provenance.json`。
 
+`flow:submit` 与 `flow:publish` 会**强制校验**这 6 个字段是否存在、`verify_status` 是否取规范值，
+缺字段的数据提交不出去、也入不了库。
+
 ## 核心规则（务必遵守）
 
 1. **禁止编造与估算**：任何数值都必须可溯源到具体链接/报告；查不到就明确写「查不到」（或 `"—"`），绝不用推测值填充。
@@ -135,20 +143,21 @@ skills/                              技能定义（客户端无关；各客户�
 5. **海外版甄别**：仅在大陆官方渠道检索不到、且能确认主要面向海外/港台的，判为海外版并排除。
 6. **数值型字段**：schema 声明为 `number` 的字段请填数字；确实无值的旧型号填 `"—"`（校验脚本会提示「排序时沉底」，属已知提示）。
 7. **图片**：暂无产品图时 `img` 填 `null`（校验脚本会提示「暂无产品图」，属已知提示）；有图则文件名 = 产品 id。
-8. **不碰冻结范围**：`npm run audit:status` 显示被审核快照冻结的产品，在快照 `release` 之前一律不得改动
-   （改哪个字段都不行）。确有必须改的理由，先找用户/审核方 `npm run audit:release` 解除，再改。
+8. **不碰已入库区，不越分区**：线上数据（`products.json`）任何人都不可直接手改——审核方修旧数据走
+   `flow:recall → 修正 → flow:publish`；采集方发现库内数据有误，复制到草稿区改好后 `flow:submit`
+   （工具自动识别为订正稿）。确有紧急情况见 `AGENTS.md`「紧急修改」。
 9. **第三方的坑要防**：第三方站有系统性字段错标（详见下文「第三方来源工具」），
    对可疑数值采取「宁缺勿错」——**留空，不猜测、不换算、不补零**。
 
 ## 收录步骤（推荐流程）
 
-1. **建品类骨架**：在 `data/categories.json` 加条目，复制一个已有品类目录改 schema：定 `groupBy`/`order`、`searchFields`、`primaryMetric`、`fields[]`。
+1. **建品类骨架**：在 `data/categories.json` 加条目，复制一个已有品类目录改 schema：定 `groupBy`/`order`、`searchFields`、`primaryMetric`、`fields[]`。新品类收录期间可以只有 schema 没有 products.json（validate 只提示）。
 2. **枚举候选型号**：从官方商城/官网列全该品类国内在售与经典型号；借助参考站核对型号代码与海外版。
 3. **逐型号取证**：优先官方规格页/说明书 PDF；官方缺口再找权威第三方，要求双源印证。
 4. **判定与去重**：剔除海外版、合并固件改版、确认命名歧义。
-5. **写入 products.json**：字段照 schema，缺失写「查不到」，额定/实测分开标。
-6. **校验**：运行 `npm run validate`，必须无 error（warning 如「暂无产品图」「非数值沉底」可接受）。
-7. **（可选）本地预览**：`npm run build` 后 `npm run preview` 检查渲染。
+5. **写入草稿区**：每款产品一个文件 `data/_draft/<品类>/<id>.json`，字段照 schema，缺失写「查不到」，额定/实测分开标。半成品随便放，**只有 flow:submit 校验通过才会进入待审核队列**。
+6. **提交待审**：`npm run flow:submit -- <品类>/<id>...`（校验 schema 合法性 + 6 个审核标注字段），然后按仓库纪律当场提交。
+7. **（可选）本地预览**：`npm run build` 后 `npm run preview` 检查渲染。入库展示由审核方 `flow:publish` 完成，采集方不用管。
 
 ## 采集流水线（已固化到 scripts/）
 
@@ -167,7 +176,8 @@ skills/                              技能定义（客户端无关；各客户�
 | `npm run miot:search -- <关键词...>` | 只抓该站首页结果，快速看型号 | 无 |
 | `npm run miot:match [-- --apply]` | 用本地索引按官方名精确匹配，补 `miot_model` | 无 |
 | `npm run pconline:specs` | 按 `data/_sources/pconline-targets.json` 抓第三方规格表到 `data/_cache/pconline-*.json` | Python 3 |
-| `npm run audit:snapshot/check/status/release` | 审核快照锁，配合另一个 Agent 并行工作（见 `AGENTS.md`） | 无 |
+| `npm run flow:submit/claim/recall/publish/...` | 分区流转：收录完成提交待审、认领、召回复审、入库（见 `AGENTS.md`） | 无 |
+| `npm run audit:snapshot/check/status/release` | 审核快照锁，已降级为结构冻结工具（schema 大改/发版验收前用，见 `AGENTS.md`） | 无 |
 
 要点：
 
@@ -210,13 +220,22 @@ skills/                              技能定义（客户端无关；各客户�
 
 ## 与并行 Agent 的配合
 
-本仓库可能同时有两个 Agent 在工作：一个负责采集/更新，一个按用户指令审核。
-**动手之前先读仓库根目录的 `AGENTS.md`**，尤其是「审核冻结协议」——
-审核方拍过快照的产品在 `release` 之前是冻结的，任何一方都不得改动其字段。
-自检命令：`npm run audit:status`（查是否被冻结）、`npm run audit:check`（查是否有人越界改过）。
+本仓库可能同时有多个 Agent 在工作：一个负责**采集**（A），一个负责**审核修正**（B）。
+**动手之前先读仓库根目录的 `AGENTS.md`**「分区流转协议」——数据按状态放在四个物理分区里，
+各方只写自己的分区：
+
+- **采集（A）**：只写 `data/_draft/`，收录完成后 `npm run flow:submit -- <品类>/<id>...` 提交待审。
+  发现已入库数据有误 → 复制到草稿区改好再 submit（自动按订正稿处理），**绝不直接改 products.json**。
+- **审核修正（B）**：`flow:claim` 认领待入库数据、`flow:recall` 召回已入库数据，在 `data/_review/`
+  核验修正，`flow:publish` 入库；不符收录标准的 `flow:return` 退回或（经用户确认）`flow:drop` 剔除。
+- **谁都可以**：`npm run flow:status` 看四个区现状，`npm run flow:log` 查流转历史。
+
+每个 flow 命令跑完当场提交（命令不做 git 操作），`data/_flow/journal.jsonl` 是跨 Agent 的共享事实。
 
 ## 维护速查
 
-- 加产品：追加到 `data/<品类>/products.json`，字段照抄同品类其他产品；`tier` 值必须在 `schema.groupBy.order` 内；改完跑 `npm run validate`。
-- 加字段：在 `schema.json` 的 `fields` 里加一项，指定 `key`/`label`/`type`/`card`/`compare`/`sortable` 等。
+- 加产品：写入 `data/_draft/<品类>/<id>.json`（字段照抄同品类其他产品；`tier` 等分组值必须在 `schema.groupBy.order` 内），然后 `npm run flow:submit -- <品类>/<id>`。
+- 订正已入库产品：把该产品从 `products.json` 复制到草稿区改好，`flow:submit` 提交（工具自动识别为订正稿，入库时整条替换）。
+- 加字段：在 `schema.json` 的 `fields` 里加一项，指定 `key`/`label`/`type`/`card`/`compare`/`sortable` 等；改前先 `flow:status --category <品类>` 确认该品类没有在修产品。
 - 加品类：见上文「数据模型与文件约定」，无需写 Vue 代码。
+- 流转命令速记：`flow:status` 看现状；A 用 `submit`/`withdraw`；B 用 `claim`/`recall`/`publish`/`return`/`drop`。

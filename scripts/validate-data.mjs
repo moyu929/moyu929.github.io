@@ -9,28 +9,19 @@
  *   - schema 中标记 sortable/stat 的字段确实是数值型
  *   - 产品里出现了 schema 未定义的字段（提示，不算错误）
  *   - img 指向的图片文件真实存在
+ *   - 三个流转分区（_draft 草稿区 / _intake 待入库区 / _review 修正区）里的产品
+ *     同样对照所属品类 schema 校验（流转关口 flow:submit/claim/publish 会拦，
+ *     这里兜底拦「绕过工具的手改」）
  */
 import fs from 'node:fs'
 import path from 'node:path'
+import { checkProduct, checkSchema } from './lib/product-check.mjs'
 
 const DATA_DIR = 'data'
 const PUBLIC_DIR = 'public'
 
 const errors = []
 const warnings = []
-
-/**
- * 宽松解析数值：容忍「≤78dB(A)」「约 5.3kg」「0.85Kwh/24h」这类带前缀/后缀的写法。
- * 与前端 src/format.ts 的 numberOf 同口径。
- */
-function parseFloatLoose(v) {
-  if (typeof v === 'number') return v
-  if (typeof v !== 'string') return NaN
-  // 「查不到」「—」是规范里的无值占位，不是数据问题
-  if (v === '查不到' || v === '—' || v.trim() === '') return 0
-  const m = v.match(/-?\d+(\.\d+)?/)
-  return m ? Number.parseFloat(m[0]) : NaN
-}
 
 function readJson(file) {
   try {
@@ -61,11 +52,20 @@ const categories = groups.flatMap((g) => {
   const ids = categories.map((c) => c.id)
   const dup = ids.filter((id, i) => ids.indexOf(id) !== i)
   if (dup.length) errors.push(`品类 id 重复：${[...new Set(dup)].join('、')}`)
-  // 反向检查：data/ 下每个品类目录都要登记进 categories.json，否则前端入口缺一块
+  // 反向检查：data/ 下每个品类目录都要登记进 categories.json，否则前端入口缺一块。
+  // 例外：只有 schema.json 还没有 products.json 的目录，视为「收录中」（分区流转允许
+  // 草稿先行），降为提示；一旦 products.json 出现就必须登记。
   for (const entry of fs.readdirSync(DATA_DIR, { withFileTypes: true })) {
     if (!entry.isDirectory()) continue
     if (entry.name.startsWith('_')) continue
-    if (!ids.includes(entry.name)) errors.push(`data/${entry.name} 未登记进 categories.json`)
+    if (!ids.includes(entry.name)) {
+      const hasProducts = fs.existsSync(path.join(DATA_DIR, entry.name, 'products.json'))
+      if (hasProducts) {
+        errors.push(`data/${entry.name} 未登记进 categories.json`)
+      } else {
+        warnings.push(`data/${entry.name} 只有 schema.json、未登记进 categories.json（收录中？登记后方可入库展示）`)
+      }
+    }
   }
 }
 
@@ -83,85 +83,63 @@ for (const category of categories) {
   const products = readJson(productsFile)
   if (!schema || !products) continue
 
-  const fieldByKey = new Map(schema.fields.map((f) => [f.key, f]))
-
-  // 分组字段必须在 fields 中定义，否则对比表和徽章取不到值
-  if (!fieldByKey.has(schema.groupBy.key)) {
-    errors.push(`${category.id}：groupBy.key「${schema.groupBy.key}」未在 fields 中定义`)
-  }
-  if (!fieldByKey.has(schema.primaryMetric)) {
-    errors.push(`${category.id}：primaryMetric「${schema.primaryMetric}」未在 fields 中定义`)
-  }
-  for (const key of schema.searchFields) {
-    if (!fieldByKey.has(key)) {
-      errors.push(`${category.id}：searchFields 中的「${key}」未在 fields 中定义`)
-    }
-  }
+  errors.push(...checkSchema(category.id, schema))
 
   const seenIds = new Set()
-  const knownGroups = new Set(schema.groupBy.order)
-
   for (const p of products) {
-    if (!p.id) {
-      errors.push(`${category.id}：存在没有 id 的产品（${p.name ?? '未命名'}）`)
-      continue
-    }
-    if (seenIds.has(p.id)) {
+    if (p.id && seenIds.has(p.id)) {
       errors.push(`${category.id}：产品 id 重复 —— ${p.id}`)
     }
     seenIds.add(p.id)
 
-    if (!/^[a-zA-Z0-9._-]+$/.test(p.id)) {
-      errors.push(`${category.id}：产品 id「${p.id}」含有不适合作文件名的字符`)
-    }
-
-    const group = p[schema.groupBy.key]
-    if (group && !knownGroups.has(String(group))) {
-      errors.push(
-        `${category.id}/${p.id}：${schema.groupBy.key} 值「${group}」不在 groupBy.order 中，将不会显示`,
-      )
-    }
-
-    for (const field of schema.fields) {
-      const v = p[field.key]
-      if (v === undefined || v === null) continue
-
-      // number 字段的字符串值只要能解析出数字就是合法的带单位值
-      // （竞品数据常把单位写进值里：「85英寸」「4000mAh」「16套」「4L(4-5人)」）。
-      // 展示层 formatValue 会识别并跳过重复的单位追加，排序时 numberOf 也能解析。
-      // 只有连数字都解析不出的（纯文字说明）才告警，因为那种排序时真的会沉底。
-      if (
-        field.type === 'number' &&
-        typeof v !== 'number' &&
-        !Number.isFinite(parseFloatLoose(v))
-      ) {
-        warnings.push(
-          `${category.id}/${p.id}：${field.key} 声明为 number，实际是「${v}」，排序时会沉底`,
-        )
-      }
-      if (field.type === 'tags' && !Array.isArray(v)) {
-        errors.push(`${category.id}/${p.id}：${field.key} 声明为 tags，必须是数组`)
-      }
-    }
-
-    for (const key of Object.keys(p)) {
-      if (key === 'id' || key === 'img') continue
-      if (!fieldByKey.has(key)) {
-        warnings.push(`${category.id}/${p.id}：字段「${key}」未在 schema 中定义，不会显示`)
-      }
-    }
-
-    if (p.img) {
-      const imgPath = path.join(PUBLIC_DIR, schema.imageBase, p.img)
-      if (!fs.existsSync(imgPath)) {
-        errors.push(`${category.id}/${p.id}：图片不存在 —— ${imgPath}`)
-      }
-    } else {
-      warnings.push(`${category.id}/${p.id}：暂无产品图`)
-    }
+    const { errors: e, warnings: w } = checkProduct(category.id, schema, p)
+    errors.push(...e)
+    warnings.push(...w)
   }
 
   console.log(`✓ ${category.name}（${category.id}）：${products.length} 款产品，${schema.fields.length} 个字段`)
+}
+
+// ---------------- 流转分区：_draft / _intake / _review ----------------
+
+const ZONES = [
+  ['_draft', '草稿区'],
+  ['_intake', '待入库区'],
+  ['_review', '修正区'],
+]
+const zoneSummary = []
+
+for (const [dir, name] of ZONES) {
+  const zoneDir = path.join(DATA_DIR, dir)
+  let count = 0
+  if (fs.existsSync(zoneDir)) {
+    for (const cat of fs.readdirSync(zoneDir, { withFileTypes: true })) {
+      if (!cat.isDirectory()) continue
+      const catId = cat.name
+      const schemaFile = path.join(DATA_DIR, catId, 'schema.json')
+      const schema = fs.existsSync(schemaFile) ? readJson(schemaFile) : null
+      // 草稿区可以先于 schema（收录刚起步）；进了交接队列就必须有 schema（flow:submit 已强制）
+      if (!schema) {
+        const msg = `${name}/${catId}：data/${catId}/schema.json 不存在，分区内容无法校验`
+        if (dir === '_draft') warnings.push(msg)
+        else errors.push(msg)
+        continue
+      }
+      for (const f of fs.readdirSync(path.join(zoneDir, cat.name))) {
+        if (!f.endsWith('.json')) continue
+        const product = readJson(path.join(zoneDir, cat.name, f))
+        if (!product) continue
+        count++
+        if (product.id && product.id !== f.slice(0, -5)) {
+          errors.push(`${name}/${catId}/${f}：文件名与产品 id「${product.id}」不一致`)
+        }
+        const { errors: e, warnings: w } = checkProduct(catId, schema, product)
+        errors.push(...e.map((x) => `${name}·${x}`))
+        warnings.push(...w.map((x) => `${name}·${x}`))
+      }
+    }
+  }
+  zoneSummary.push(`${name} ${count}`)
 }
 
 if (warnings.length) {
@@ -175,4 +153,5 @@ if (errors.length) {
   process.exit(1)
 }
 
-console.log('\n数据校验通过')
+console.log(`\n流转分区：${zoneSummary.join(' / ')} / 已入库区见上方各品类`)
+console.log('数据校验通过')

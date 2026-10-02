@@ -317,6 +317,11 @@ def rule_humidifier(p, sp):
 
 def rule_waterpur(p, sp):
     t = str(field(sp, '安装方式') or '')
+    # 安装方式是竞品唯一稳定给出的分类维度（第三方普遍不标双出水/单出水）
+    if '厨下' in t:
+        return '厨下式', '第三方安装方式=%s' % t
+    if '壁挂' in t:
+        return '龙头/前置', '第三方安装方式=%s' % t
     n = p['name']
     if re.search(r'龙头|前置', t + n):
         return '龙头/前置', '名称或安装方式含龙头/前置'
@@ -440,7 +445,19 @@ def rule_microwave2(p, sp):
 
 
 def rule_bathheater(p, sp):
-    """浴霸副分组改为「控制方式」——原 series 是小米专属系列名，竞品无法归入。"""
+    """浴霸副分组：按取暖功率档位。竞品第三方规格普遍不给控制方式，
+    但灯暖/风暖/额定功率是稳定字段，也是浴霸的核心选购维度。"""
+    for f in ('heat_power', '额定功率', '灯暖功率', '风暖功率', '取暖功率', '总功率'):
+        v = num(field(p, f))
+        if v is None:
+            v = num(field(sp, f))
+        if v is None:
+            continue
+        if v >= 2800:
+            return '高功率(≥2800W)', '%s=%s' % (f, v)
+        if v >= 2400:
+            return '中功率(2400-2799W)', '%s=%s' % (f, v)
+        return '低功率(<2400W)', '%s=%s' % (f, v)
     c = str(p.get('control') or '')
     if '触摸智能' in c or '智能控制' in c:
         return '触摸智能控制', '控制方式=%s' % c
