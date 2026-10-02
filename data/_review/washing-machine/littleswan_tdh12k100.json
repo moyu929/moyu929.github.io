@@ -1,0 +1,40 @@
+{
+  "id": "littleswan_tdh12k100",
+  "name": "小天鹅TDH12K100",
+  "brand": "小天鹅",
+  "model_code": "TDH12K100",
+  "type": "滚筒洗烘一体",
+  "official_price": 6534,
+  "ref_price": 6534,
+  "wash_cap": "12kg",
+  "dry_cap": "9kg",
+  "wash_ratio": "1.32",
+  "spin_rpm": "1400rpm",
+  "energy": "1级",
+  "smart": "电脑控制",
+  "noise": "查不到",
+  "size": "850×595×599mm",
+  "year": 2026,
+  "pros": [
+    "洗净比1.32",
+    "12kg洗9kg烘",
+    "一级能效",
+    "支持筒自洁"
+  ],
+  "cons": [],
+  "tags": [
+    "小天鹅",
+    "洗烘一体",
+    "水魔方",
+    "2026"
+  ],
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-03",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/washer/ittleswan/2962450_detail.html",
+  "change_log": "2026-10-03 建条：参数取自太平洋电脑网规格表（烘洗一体，洗12kg/烘9kg/洗净比1.32/1400rpm/1级能效/上市2026年）；官方价与参考价取太平洋参考价6534（京东预售同价，媒体印证）；「水魔方」系列名为电商商品标题印证；尺寸按来源原文抄录（疑为高×宽×深序）；副分组归类：滚筒洗烘一体（依据：第三方类型=烘洗一体）",
+  "updated_at": "2026-10-03",
+  "img": null
+}
