@@ -1,0 +1,2 @@
+{"ts":"2026-10-02T09:36:10.022Z","actor":"unknown","action":"recall","key":"heater/panasonic_1648387","from":"library","to":"review","reason":"错放品类：松下 FV- 系列均为浴霸，第三方规格「产品类型=风暖型浴霸、集成吊顶式」，应属 bath-heater 而非 heater","fingerprint":"913329b368f0"}
+{"ts":"2026-10-02T09:40:15.966Z","actor":"claude-code","action":"publish","key":"bath-heater/panasonic_1648387","from":"review","to":"library"}
