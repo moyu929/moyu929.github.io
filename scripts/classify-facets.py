@@ -37,12 +37,17 @@ TYPE_KW = {
                ('榨汁杯', '榨汁杯'), ('榨汁机', '榨汁杯'), ('原汁机', '榨汁杯')],
     'xiwanji': [('水槽', '水槽式'), ('洗消', '洗消一体机'), ('独嵌', '独嵌两用'),
                 ('嵌入', '嵌入式'), ('台式', '台式')],
-    'coffee': [('胶囊', '胶囊'), ('意式', '半自动'), ('半自动', '半自动'),
-               ('美式', '滴滤'), ('滴滤', '滴滤')],
+    # 第三方写的常���「意大利式」而不是「意式」，两种写法都要匹配，
+    # 否则关键词落在字面上却匹配不到（'意式' not in '意大利式'）
+    'coffee': [('胶囊', '胶囊'), ('意式', '半自动'), ('意大利式', '半自动'),
+               ('半自动', '半自动'), ('全自动', '半自动'), ('美式', '滴滤'),
+               ('滴滤', '滴滤'), ('手冲', '滴滤')],
     'water_dispenser': [('管线', '管线'), ('茶吧', '茶吧机'), ('冷热', '冷热'),
                         ('直饮', '即热'), ('智能', '即热'), ('温热', '即热'), ('单热', '即热')],
-    'heater': [('踢脚', '踢脚线'), ('油汀', '油汀'), ('电热毯', '电热毯'),
-               ('暖风机', '暖风机'), ('小太阳', '暖风机'), ('取暖器', '暖风机')],
+    # 「欧式快热炉」是第三方对油汀（电热油汀）的常见叫法，与「油汀」同义
+    'heater': [('踢脚', '踢脚线'), ('油汀', '油汀'), ('欧式快热炉', '油汀'),
+               ('电热毯', '电热毯'), ('暖风机', '暖风机'), ('小太阳', '暖风机'),
+               ('取暖器', '暖风机'), ('电暖炉', '暖风机'), ('对流', '暖风机')],
     'washer': [('干衣', '洗烘套装'), ('烘洗', '滚筒洗烘一体'), ('洗烘', '滚筒洗烘一体'),
                ('滚筒', '滚筒洗烘一体'), ('波轮', '波轮')],
 }
@@ -71,11 +76,56 @@ def load_cache(pc):
     return out
 
 
+def load_evidence():
+    """读 data/_cache/facet-evidence/evidence.json。
+
+    这是为「仍未归类的竞品」补抓的证据：逐条含太平洋规格与 ZOL 参数页。
+    与 load_cache 的字段名不同源，这里统一摊平成 {品类: {产品id: {字段: 值}}}，
+    字段名加前缀区分来源（p_ = pconline，z_ = zol），供 by_kw 一起匹配。
+    """
+    out = {}
+    path = 'data/_cache/facet-evidence/evidence.json'
+    try:
+        items = json.load(open(path, encoding='utf-8'))
+    except Exception:
+        return out
+    for it in items:
+        cat, pid = it.get('cat'), it.get('id')
+        if not cat or not pid:
+            continue
+        flat = {}
+        for k, v in (it.get('pconline') or {}).items():
+            flat['p_' + k] = v
+        for k, v in ((it.get('zol') or {}).get('specs') or {}).items():
+            flat['z_' + k] = v
+        if flat:
+            out.setdefault(cat, {})[pid] = flat
+    return out
+
+
+EVIDENCE = load_evidence()
+
+
 def num(v):
     if v is None:
         return None
     m = re.search(r'(\d+(?:\.\d+)?)', str(v).replace(',', ''))
     return float(m.group(1)) if m else None
+
+
+def field(sp, *names):
+    """从规格 dict 取字段值，兼容 evidence 的来源前缀（p_ 太平洋 / z_ ZOL）。
+
+    所有规则都用它取值，别直接用 dict.get —— evidence 里的键是 p_类别、
+    p_产品容量 这样带前缀的，直取会全部落空。
+    """
+    for n in names:
+        if n in sp and sp[n] not in (None, ''):
+            return sp[n]
+        for pre in ('p_', 'z_'):
+            if pre + n in sp and sp[pre + n] not in (None, ''):
+                return sp[pre + n]
+    return None
 
 
 def pick_id(url):
@@ -84,8 +134,19 @@ def pick_id(url):
 
 
 def by_kw(pc, sp, fields, why_prefix):
-    """按第三方分类字段取值映射到本站 facet 值。"""
-    blob = ''.join(str(sp.get(f, '')) for f in fields)
+    """按第三方分类字段取值映射到本站 facet 值。
+
+    evidence 里的字段带来源前缀（p_ 太平洋 / z_ ZOL），字段名与原缓存不完全一致，
+    所以先按原名取，取不到再回退到前缀名。
+    """
+    def get(f):
+        if f in sp:
+            return str(sp[f])
+        for pre in ('p_', 'z_'):
+            if pre + f in sp:
+                return str(sp[pre + f])
+        return ''
+    blob = ''.join(get(f) for f in fields)
     if not blob.strip():
         return None
     for kw, v in TYPE_KW.get(pc, []):
@@ -107,7 +168,7 @@ def by_price(p, tiers, why):
 # ---------------- 各品类判定规则 ----------------
 
 def rule_aircon(p, sp):
-    n, t = p['name'], str(sp.get('空调类型', ''))
+    n, t = p['name'], str(field(sp, '空调类型') or '')
     if re.search(r'风管|天花|中央|多联', n + t):
         return '中央空调', '名称/空调类型含风管或中央'
     if '立式' in t or re.search(r'72\s*L?W', n):
@@ -141,21 +202,21 @@ def rule_waterheater(p, sp):
         return '燃气', '名称含 JSQ 或燃气（JSQ 为燃气热水器国标前缀）'
     if re.search(r'\bES|电热', n):
         return '电热', '名称含 ES 或电热（ES 为电热水器国标前缀）'
-    t = str(sp.get('产品类型', ''))
+    t = str(field(sp, '产品类型') or '')
     if re.search(r'即热|速热|储水', t):
         return '电热', '第三方产品类型=%s' % t
     return None
 
 
 def rule_pressurecooker(p, sp):
-    v = num(p.get('capacity') or sp.get('产品容量'))
+    v = num(field(sp, 'capacity', '产品容量'))
     if v is None:
         return None
     return ('大容量' if v >= 5 else '小容量'), '标称容量 %sL' % v
 
 
 def rule_dehumid(p, sp):
-    v = num(p.get('dehumid') or sp.get('日除湿量'))
+    v = num(field(sp, 'dehumid', '日除湿量'))
     if v is None:
         return None
     if v >= 40:
@@ -166,7 +227,7 @@ def rule_dehumid(p, sp):
 
 
 def rule_induction(p, sp):
-    n = p['name'] + str(sp.get('其它性能', '')) + str(sp.get('主要特点', ''))
+    n = p['name'] + str(field(sp, '其它性能') or '') + str(field(sp, '主要特点') or '')
     if re.search(r'超薄|纤薄', n):
         return '超薄', '名称或特点含超薄'
     if re.search(r'青春|学生', n):
@@ -182,7 +243,7 @@ def rule_kettle(p, sp):
     n = p['name']
     if '养生' in n:
         return '养生壶', '名称含养生'
-    v = num(p.get('capacity') or sp.get('产品容量'))
+    v = num(field(sp, 'capacity', '产品容量'))
     if v is not None:
         if v >= 3:
             return '养生壶', '容量 %sL（≥3L 属养生壶区间）' % v
@@ -202,7 +263,7 @@ def rule_coffee(p, sp):
 
 
 def rule_airfryer(p, sp):
-    t = str(sp.get('加热方式', ''))
+    t = str(field(sp, '加热方式') or '')
     if re.search(r'蒸汽|烤', t + p['name']):
         return '蒸烤一体', '第三方加热方式=%s' % t
     if '可视' in p['name']:
@@ -212,7 +273,7 @@ def rule_airfryer(p, sp):
 
 def rule_ricecooker(p, sp):
     n = p['name']
-    t = str(sp.get('加热方式', ''))
+    t = str(field(sp, '加热方式') or '')
     if 'IH' in n or 'IH' in t:
         if re.search(r'压力', n + t):
             return '压力IH', '名称/加热方式含压力+IH'
@@ -233,10 +294,10 @@ def rule_washer(p, sp):
 
 
 def rule_robotvac(p, sp):
-    n = p['name'] + str(sp.get('集尘方式', ''))
+    n = p['name'] + str(field(sp, '集尘方式') or '')
     if '上下水' in n:
         return '全能上下水', '名称含上下水'
-    if re.search(r'基站|自清洁|全能', n) or sp.get('集尘方式'):
+    if re.search(r'基站|自清洁|全能', n) or field(sp, '集尘方式'):
         return '全能基站', '名称或集尘方式含基站'
     return None
 
@@ -255,7 +316,7 @@ def rule_humidifier(p, sp):
 
 
 def rule_waterpur(p, sp):
-    t = str(sp.get('安装方式', ''))
+    t = str(field(sp, '安装方式') or '')
     n = p['name']
     if re.search(r'龙头|前置', t + n):
         return '龙头/前置', '名称或安装方式含龙头/前置'
@@ -287,7 +348,7 @@ def rule_projector(p, sp):
 
 
 def rule_heater(p, sp):
-    n, t = p['name'], str(sp.get('加热方式', ''))
+    n, t = p['name'], str(field(sp, '加热方式') or '')
     if '踢脚' in n:
         return '踢脚线', '名称含踢脚线'
     if re.search(r'油汀|油暖', n + t):
@@ -308,7 +369,7 @@ def rule_waterheater2(p, sp):
     n = p['name']
     if re.search(r'RUS|JSQ', n):
         return '燃气', '型号含 RUS/JSQ（燃气热水器国标前缀）'
-    t = str(sp.get('产品类型', ''))
+    t = str(field(sp, '产品类型') or '')
     if re.search(r'储水|即热|速热', t):
         return '电热', '第三方产品类型=%s' % t
     return rule_waterheater(p, sp)
@@ -354,7 +415,7 @@ def rule_humidifier2(p, sp):
 
 def rule_kettle2(p, sp):
     """补充：无名称特征时按容量分档。"""
-    v = num(p.get('capacity') or sp.get('产品容量'))
+    v = num(field(sp, 'capacity', '产品容量'))
     if v is None:
         return None
     if v >= 3:
@@ -410,7 +471,7 @@ def rule_tv(p, sp):
 
 def rule_floorwasher(p, sp):
     """洗地机副分组改为「清水箱容量」——原 series 是米家代际，竞品无法归入。"""
-    v = num(p.get('clean_tank') or sp.get('净水箱容量'))
+    v = num(field(sp, 'clean_tank', '净水箱容量'))
     if v is None:
         return None
     if v >= 1000:
@@ -437,7 +498,7 @@ RULES = {
     'microwave': rule_microwave2, 'pressure-cooker': rule_pressurecooker,
     'projector': rule_projector, 'refrigerator': rule_fridge2, 'rice-cooker': rule_ricecooker,
     'robot-vacuum': rule_robotvac, 'vacuum': rule_vacuum, 'washing-machine': rule_washer,
-    'water-dispenser': rule_waterdisp, 'water-heater': rule_waterheater,
+    'water-dispenser': rule_waterdisp, 'water-heater': rule_waterheater2,
     'water-purifier': rule_waterpur,
     'bath-heater': rule_bathheater, 'tv': rule_tv, 'floor-washer': rule_floorwasher,
 }
@@ -466,6 +527,12 @@ def main():
             if p.get(fk) not in (None, '未归类', '查不到'):
                 continue                      # 已归类，不重复处理
             sp = cache.get(pick_id(p.get('verify_url')), {})
+            # 补抓的 evidence 覆盖同名缓存字段（来源更新、字段更准）
+            ev = EVIDENCE.get(cid, {}).get(p.get('id'), {})
+            if ev:
+                merged = dict(sp)
+                merged.update({k: v for k, v in ev.items() if v not in (None, '')})
+                sp = merged
             got = rule(p, sp)
             if got and got[0] in valid:
                 val, why = got

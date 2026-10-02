@@ -38,3 +38,7 @@ skills/**/*.local.*
 
 # ============ 审核快照锁的临时文件（正式快照要入库，见 AGENTS.md） ============
 data/_locks/*.tmp
+__pycache__/
+*.pyc
+.cache-work/
+.flow-test/
