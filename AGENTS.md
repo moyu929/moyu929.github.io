@@ -44,7 +44,11 @@
 | **修正区** | `data/_review/<品类>/<id>.json` | B 正在核验/修正的数据（新认领的 + 召回复审的） | 只有 B |
 | **已入库区** | `data/<品类>/products.json` | 线上站点的唯一数据源（当前可信的数据） | 只有 B，且只能经 `flow:publish` 写入 |
 
-分区文件与流转日志**全部入库**——它们是各 Agent 之间的共享状态，不入库对方就看不见。前端与构建只读已入库区（`src/data.ts` 的 glob 与 `validate` 都不会碰 `_` 开头的分区目录）。
+分区文件与流转日志**大部分入库**——它们是各 Agent 之间的共享状态，不入库对方就看不见。
+例外是**草稿区**（`data/_draft/`）：它是采集方的私有工作台，按定义无人需要看见，自 2026-10-03 起
+**不进 git**（`.gitignore` 排除其内容，只留 `.gitkeep` 占位）。草稿的备份靠纪律换：
+**能过校验就 `flow:submit`**（进了待入库区即被 git 跟踪），需要继续改再 `flow:withdraw` 撤回。
+前端与构建只读已入库区（`src/data.ts` 的 glob 与 `validate` 都不会碰 `_` 开头的分区目录）。
 
 ### 3.2 状态机与命令
 
@@ -112,12 +116,20 @@
 ## 5. 提交与推送纪律
 
 - 一次提交只做一件事；提交信息前缀：`feat` / `fix` / `data` / `docs` / `chore`。
-- **流转动作随做随提交**：每个 flow 命令跑完就 commit，把分区文件与 `data/_flow/journal.jsonl` 一起提交；建议信息格式：
-  - `data: 提交待审 heater/ht_x（来源：…）`（submit）
-  - `data: 入库 heater/ht_x，订正功率参数（依据：官方规格页）`（publish）
-  - `data: 召回 heater/ht_x 复审（原因：…）`（recall）
+- **流转动作随做随提交**：每个 flow 命令跑完就 commit，把分区文件与 `data/_flow/journal.jsonl` 一起提交；建议信息格式（**注意带 `flow` 标记**，提交闸门据此放行，见下）：
+  - `data: flow:submit heater/ht_x（来源：…）`（submit）
+  - `data: flow:publish heater/ht_x，订正功率参数（依据：官方规格页）`（publish）
+  - `data: flow:recall heater/ht_x 复审（原因：…）`（recall）
+  - `data: flow:claim <提交人> 的 N 款（提交人 …）`（claim）
+- **提交闸门（本机需启用一次）**：`npm run hooks:install` 启用 `scripts/hooks/commit-msg` ——
+  提交里含 `data/_intake/**` 或 `data/_review/**` 的文件时，提交信息**必须含 `flow` 字样**，否则拒绝提交。
+  它挡的是「顺手 `git add -A` 把别人的半成品捎带进自己的提交」这类事故。
+  ⚠️ 边界（不要指望它万能）：**合并提交不检查**（分支合并由 PR + CI 把关）；`git commit --no-verify` 可绕过；
+  它是**本地防线**，真正的门是 PR 上的 CI。每个 clone / worktree 各需启用一次（`core.hooksPath` 是本机配置）。
 - **改数据的提交必须写明来源与核验方式**，例如：
   `data: 补录洗地机 5 Pro 参数（来源：太平洋规格表 + 小米商城在售价）`。
+- **不要用 `git add -A` / `git add .`**：显式列出路径。共享工作树里 `-A` 会扫走别人未提交的分区文件
+  （2026-10-03 实测发生过：两份文档被扫进他人提交，提交信息与内容不符）。
 - 推送前跑 **`npm run check`**（= `validate` + `audit:check`）；有 error 不得推送。
 - 只推 `main` 触发部署；**不 force push `main`**；**不修改 git 配置**。
 - 改动了审核标注字段的提交，在信息里点出「已更新核查状态/来源」。
@@ -128,7 +140,7 @@
 
 | 路径 | 谁能改 | 说明 |
 | --- | --- | --- |
-| `data/_draft/**` | **只有 A** | 草稿区：收录中的半成品 |
+| `data/_draft/**` | **只有 A** | 草稿区：收录中的半成品。**不入库**（见 3.1），备份靠「能过校验就 submit」 |
 | `data/_intake/**` | A 放入、B 取走（仅经 flow 命令） | 待入库区：交接队列，禁止共编 |
 | `data/_review/**` | **只有 B** | 修正区：核验修正中的数据 |
 | `data/<品类>/products.json` | **只有 B**，仅经 `flow:publish` | 已入库区：线上唯一数据源 |

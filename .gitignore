@@ -42,3 +42,11 @@ __pycache__/
 *.pyc
 .cache-work/
 .flow-test/
+
+# ============ 分区流转：草稿区不入库（方案 P1-4） ============
+# data/_draft/ 是采集方 A 的**私有工作台**（半成品随意增删改），其他 Agent 不需要看见它，
+# 因此不进 git；data/_intake/（交接队列）与 data/_review/（召回时的审计物）仍入库。
+# 草稿的备份从哪来？——「能过校验就 submit」：进了 _intake 即被 git 跟踪，
+# 想继续改就用 flow:withdraw 撤回，这样草稿的最长暴露窗口压在一个会话内。
+data/_draft/*
+!data/_draft/.gitkeep

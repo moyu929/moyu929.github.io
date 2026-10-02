@@ -1,0 +1,11 @@
+# git 属性 —— 协作相关（方案 P1-3）
+#
+# 1) 流转日志是 append-only 的共享事实：两个 Agent 各自追加后合并时，
+#    应当保留双方条目，而不是产生冲突让人去手改日志。
+data/_flow/journal.jsonl merge=union
+#
+# 2) 库文件与分区文件统一 LF：规范序列化与写前指纹校验都基于**字节**，
+#    换行符不能跟着平台变（本机 core.autocrlf=true，不钉死会在检出时变成 CRLF）。
+data/*/products.json text eol=lf
+data/_intake/** text eol=lf
+data/_review/** text eol=lf

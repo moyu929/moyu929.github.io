@@ -25,10 +25,10 @@ public/images/<category-id>/         产品图，文件名 = 产品 id（不随�
 ```
 
 ```
-data/_draft/<品类>/<id>.json         草稿区：收录中的半成品（采集方 A 的工作台，只有 A 写）
-data/_intake/<品类>/<id>.json        待入库区：收录完成、等待审核方认领的交接队列
-data/_review/<品类>/<id>.json        修正区：审核修正中的数据（审核方 B 的工作台，只有 B 写）
-data/_flow/journal.jsonl             流转日志：谁在何时把哪个产品搬到了哪个区（append-only）
+data/_draft/<品类>/<id>.json         草稿区：收录中的半成品（采集方 A 的工作台，只有 A 写；**不入 git**）
+data/_intake/<品类>/<id>.json        待入库区：收录完成、等待审核方认领的交接队列（入库）
+data/_review/<品类>/<id>.json        修正区：审核修正中的数据（审核方 B 的工作台，只有 B 写；入库）
+data/_flow/journal.jsonl             流转日志：谁在何时把哪个产品搬到了哪个区（append-only，入库）
 data/_sources/                       溯源与工具清单（入库，供复核）
   ├─ provenance.json                 逐条溯源：某产品的数据来自哪些来源、核验于何时
   ├─ patches/*.json                  参数补丁留档（内含 _来源）
@@ -38,6 +38,10 @@ data/_locks/                         审核快照锁（已降级为结构冻结�
 docs/audit/                          审核报告归档
 skills/                              技能定义（客户端无关；各客户端目录只放指针）
 ```
+
+⚠️ **草稿区不入库**（2026-10-03 起）：`_draft/` 是各采集方的私有工作台，`.gitignore` 排除其内容。
+草稿的备份靠一条纪律换：**能过校验就 `flow:submit`**（进了 `_intake` 即被 git 跟踪），
+需要继续改再 `flow:withdraw` 撤回——把草稿的最长暴露窗口压在一个会话内。
 
 - `category-id`、产品 `id` 只用字母数字和 `._-`，`id` 同时是图片文件名和分区文件名。
 - **产品数据的生命周期**：收录写 `data/_draft/` → `npm run flow:submit` 进待入库区 → 审核方 `flow:claim` 认领到修正区 → 核验修正后 `flow:publish` 入库。规则与命令见 `AGENTS.md`「分区流转协议」。
@@ -179,6 +183,8 @@ skills/                              技能定义（客户端无关；各客户�
 | `npm run miot:match [-- --apply]` | 用本地索引按官方名精确匹配，补 `miot_model` | 无 |
 | `npm run pconline:specs` | 按 `data/_sources/pconline-targets.json` 抓第三方规格表到 `data/_cache/pconline-*.json` | Python 3 |
 | `npm run flow:submit/claim/recall/publish/...` | 分区流转：收录完成提交待审、认领、召回复审、入库（见 `AGENTS.md`） | 无 |
+| `npm run hooks:install` | 启用提交闸门（`scripts/hooks/commit-msg`）：含分区文件的提交必须带 `flow` 标记。**每个 clone / worktree 各启用一次** | 无 |
+| `npm run selftest` | 流转工具自检：在 `.flow-test/` 的隔离副本上跑 43 条断言（含跨语言序列化一致性）。改 `scripts/` 后跑一次 | 无 |
 | `npm run audit:snapshot/check/status/release` | 审核快照锁，已降级为结构冻结工具（schema 大改/发版验收前用，见 `AGENTS.md`） | 无 |
 
 要点：
@@ -241,9 +247,17 @@ skills/                              技能定义（客户端无关；各客户�
   发现已入库数据有误 → 复制到草稿区改好再 submit（自动按订正稿处理），**绝不直接改 products.json**。
 - **审核修正（B）**：`flow:claim` 认领待入库数据、`flow:recall` 召回已入库数据，在 `data/_review/`
   核验修正，`flow:publish` 入库；不符收录标准的 `flow:return` 退回或（经用户确认）`flow:drop` 剔除。
-- **谁都可以**：`npm run flow:status` 看四个区现状，`npm run flow:log` 查流转历史。
+- **谁都可以**：`npm run flow:status` 看四个区现状（`--by <提交人>` 按归属过滤、`--unclassified` 看未归类清单），
+  `npm run flow:log` 查流转历史（`--batch <批次id>` 查某一批）。
 
 每个 flow 命令跑完当场提交（命令不做 git 操作），`data/_flow/journal.jsonl` 是跨 Agent 的共享事实。
+提交信息请带 `flow` 标记（如 `data: flow:submit heater/ht_x（来源：…）`）：`npm run hooks:install` 启用的
+提交闸门会拦住「顺手 `git add -A` 把别人的分区文件捎带进自己提交」这类事故。**不要用 `git add -A`。**
+
+**库文件的写入只有一套规范**：`scripts/lib/library-io.mjs`（Node）与 `scripts/lib/library_io.py`（Python）——
+规范序列化（一行一款、整值浮点归一、非 ASCII 不转义）+ 写前指纹校验（拒绝覆盖别人刚改过的库）+
+文件锁退避重试。**新增写库脚本必须走这两个实现**，不要自己 `writeFileSync` / `write_text`
+（`npm run selftest` 会断言两侧序列化逐字节相同）。
 
 ## 维护速查
 
