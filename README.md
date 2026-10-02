@@ -161,19 +161,22 @@ npm run img:webp      # 2) 转成 ≤320px WebP 写入 public/images/ 并回写 
 
 ## 多 Agent 并行协作
 
-本仓库可能同时有多个 Agent 在工作（一个采集/更新，一个按用户指令审核）。
-协作规范见 **[AGENTS.md](AGENTS.md)**，核心是「审核冻结协议」：
+本仓库可能同时有多个 Agent 在工作（一个**采集**、一个**审核修正**）。
+协作规范见 **[AGENTS.md](AGENTS.md)**，核心是「分区流转协议」——数据按状态放在四个物理分区，
+各方只写自己的分区，文件的位置就是它的状态：
 
 ```bash
-npm run audit:status                   # 动手前先查：哪些产品正被审核冻结
-npm run audit:snapshot -- --label "空气净化器验收" --by agent-b --category air-purifier
-npm run audit:check                    # 检测冻结范围内是否有人越界改过
-npm run audit:release -- <快照id>       # 审核完成，解除冻结
+npm run flow:status                    # 动手前先查：数据现在分布在哪些区
+npm run flow:submit -- heater/ht_x     # 采集方：草稿区 → 待入库区（收录完成，提交待审）
+npm run flow:claim   -- heater/ht_x    # 审核方：待入库区 → 修正区（认领核验）
+npm run flow:recall  -- heater/ht_x    # 审核方：已入库区 → 修正区（召回复审）
+npm run flow:publish -- heater/ht_x    # 审核方：修正区 → 已入库区（入库上线）
 npm run check                          # = validate + audit:check，推送前跑
 ```
 
-被快照覆盖的产品在 `release` 之前**任何一方都不得改动**，避免一方按过期数据审核、另一方已改过。
-审核报告归档在 `docs/audit/`。
+线上数据（`products.json`）只能经 `flow:publish` 写入，任何人不直接手改；
+收录中的半成品放在草稿区，审核方拿到的待审数据必然是提交过的成品。
+流转全程记录在 `data/_flow/journal.jsonl`，审核报告归档在 `docs/audit/`。
 
 ## 目录速览
 
@@ -183,10 +186,14 @@ HANDOFF.md                阶段交接记录
 skills/                   技能定义（客户端无关；.trae/.claude 下只放指针）
 docs/audit/               审核报告归档
 data/<品类>/{schema,products}.json
+data/_draft/              草稿区：收录中的半成品（采集方工作台）
+data/_intake/             待入库区：收录完成、等待认领（交接队列）
+data/_review/             修正区：审核修正中（审核方工作台）
+data/_flow/               流转日志 journal.jsonl（谁把什么搬到了哪）
 data/_sources/            溯源、补丁、图片清单（入库）
 data/_cache/              抓取缓存（不入库）
-data/_locks/              审核快照锁（两个 Agent 的共享状态）
-scripts/                  采集、校验、审核锁工具
+data/_locks/              审核快照锁（已降级为结构冻结工具）
+scripts/                  采集、校验、流转、审核锁工具
 ```
 
 ## 部署
