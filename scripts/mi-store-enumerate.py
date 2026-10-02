@@ -50,7 +50,9 @@ EXTRACT_JS = """
 def main(argv):
     keywords = [a for a in argv if not a.startswith("--")]
     if "--all" in argv:
-        cats = json.loads((ROOT / "data" / "categories.json").read_text(encoding="utf-8"))
+        # categories.json 是两层结构（一级品类 -> 小品类），要摊平后再遍历
+        groups = json.loads((ROOT / "data" / "categories.json").read_text(encoding="utf-8"))
+        cats = [c for g in groups for c in g.get("categories", [])]
         keywords = [c["name"] for c in cats]
     if not keywords:
         print(__doc__)

@@ -89,7 +89,9 @@ def main(argv) -> int:
         return 0
 
     # 回写 img 字段
-    cats = json.loads((ROOT / "data" / "categories.json").read_text(encoding="utf-8"))
+    # categories.json 是两层结构（一级品类 -> 小品类），要摊平后再遍历
+    groups = json.loads((ROOT / "data" / "categories.json").read_text(encoding="utf-8"))
+    cats = [c for g in groups for c in g.get("categories", [])]
     changed = 0
     for c in cats:
         pf = ROOT / "data" / c["id"] / "products.json"

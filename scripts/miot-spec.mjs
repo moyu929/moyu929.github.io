@@ -262,7 +262,9 @@ function cmdMatch(args) {
   const apply = args.includes('--apply')
   const idx = buildIndex()
   if (!idx.size) throw new Error('没有本地索引，先跑：npm run miot:crawl')
-  const cats = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'categories.json'), 'utf8'))
+  // categories.json 是两层结构（一级品类 -> 小品类），要摊平后再遍历
+  const groups = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'categories.json'), 'utf8'))
+  const cats = groups.flatMap((g) => g.categories ?? [])
   const report = []
   let exact = 0
   let loose = 0
