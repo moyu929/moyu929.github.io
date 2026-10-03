@@ -169,6 +169,55 @@ def pick(field, specs):
     return None, None
 
 
+def drop_suspicious_duplicates(results):
+    """剔除「同品牌同尺寸但型号不同」的存疑值。
+
+    实测发现：松井 CFZ-40S（960L/D）与 CFZ-30S（720L/D）是两台不同除湿量的机器，
+    pconline 却给两者同一个「外型尺寸 1567×720×1896mm」——第三方复制粘贴导致的错标。
+    这类值写进库会污染横向比较（用户在按尺寸筛选时会把两款不同机型当成同一款）。
+
+    判定不用「区分性字段」（dehumid/power/flux 这些品类各不相同，枚举维护不起）：
+    **同品类同品牌下，若两款的型号不同却给出完全相同的尺寸，至少有一方是错的，两方都丢。**
+    这是纯结构判定，不依赖任何品类知识，也不会误伤同型号的合法重复收录
+    （那类已被 lint 的「型号共用」规则覆盖）。
+    """
+    by_key = {}
+    for (cid, pid), fills in results.items():
+        if 'size' not in fills:
+            continue
+        p = read_lib(cid).get(pid)
+        if not p:
+            continue
+        key = (cid, p.get('brand'), fills['size'][0])
+        by_key.setdefault(key, []).append((pid, p, fills))
+
+    dropped = []
+    for (cid, brand, size), group in by_key.items():
+        if len(group) < 2:
+            continue
+        for i in range(len(group)):
+            for j in range(i + 1, len(group)):
+                pid_a, pa, fa = group[i]
+                pid_b, pb, fb = group[j]
+                ma = str(pa.get('model_code') or '').strip()
+                mb = str(pb.get('model_code') or '').strip()
+                # 型号相同 -> 可能是同款的合法重复收录，不判；型号为空 -> 无法判，放过
+                if not ma or not mb or ma == mb:
+                    continue
+                for pid, fills in ((pid_a, fa), (pid_b, fb)):
+                    if 'size' in fills:
+                        dropped.append((cid, pid, 'size',
+                                        '与同品牌另一型号「%s」尺寸完全相同，疑第三方错标'
+                                        % (mb if pid == pid_a else ma)))
+                        del fills['size']
+                break
+    return dropped
+
+
+def read_lib(cid):
+    return {p['id']: p for p in json.load(open(dp('data/%s/products.json' % cid), encoding='utf-8'))}
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--dry', action='store_true')
@@ -226,6 +275,12 @@ def main():
         for r in ex.map(job, targets):
             if r:
                 results[(r[0], r[1])] = r[2]
+
+    dropped = drop_suspicious_duplicates(results)
+    if dropped:
+        print('\n⚠ 剔除 %d 处存疑值：' % len(dropped))
+        for cid, pid, fieldname, why in dropped[:10]:
+            print('   %s/%s 的 %s：%s' % (cid, pid, fieldname, why))
 
     nfields = sum(len(v) for v in results.values())
     print('\n可回填：%d 条产品 / %d 个字段' % (len(results), nfields))
