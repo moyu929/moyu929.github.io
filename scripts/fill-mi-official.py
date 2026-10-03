@@ -90,10 +90,31 @@ KEY_MAP = {
     '显示屏': 'display', '屏幕': 'display', '屏幕尺寸': 'size_inch',
     '分辨率': 'resolution', '刷新率': 'refresh',
     '噪音值': 'noise', '待机功率': 'standby_power',
+    # —— 清洁电器（洗地机 / 吸尘器 / 扫地机器人）2026-10-04 实测商城写法
+    '净水容量': 'clean_tank', '清水箱容量': 'clean_tank', '净水箱容量': 'clean_tank',
+    '污水容量': 'dirty_tank', '污水箱容量': 'dirty_tank', '回收箱容量': 'dirty_tank',
+    '主机重量': 'weight', '滚刷类型': 'brush', '洗地介质': 'media',
 }
+
+# `is_page_show` 为真的条目是商城摆在「关键参数」栏的；下面这几个是同一份
+# `class_parameters` 里更靠后的行，商城没给 is_page_show 标记，但都是带单位的
+# 硬参数（不是营销语），单独放行 —— 否则洗地机的水箱 / 重量 / 电池整片丢失。
+EXTRA_PARAM_NAMES = frozenset((
+    '主机重量', '电池标称容量', '滚刷类型', '洗地介质',
+    '自动集尘', '自动上下水', '自动洗拖布',
+))
+KEY_MAP['电池标称容量'] = 'battery'
+KEY_MAP['自动集尘'] = 'auto_dust'
+KEY_MAP['自动上下水'] = 'auto_water'
+KEY_MAP['自动洗拖布'] = 'auto_mop'
 
 # 过滤明显不是「可写入库参数」的营销行
 SKIP_KEYS = re.compile(r'包装清单|保修|产地|颜色|尺寸对照|安装服务|注意事项|常见问题')
+
+# 配件 SKU 关键词：商城商品名里带这些字的多半是耗材/附件，不是整机
+ACCESSORY_RE = re.compile(
+    r'配件|套装附件|地刷|滚刷|尘袋|滤芯|拖布|支架|边刷|电池|收纳|延长杆|'
+    r'清洁液|除螨刷|保护膜|替换|补充装|专用')
 
 
 def product_id_of(p):
@@ -110,21 +131,56 @@ def norm(s):
     return re.sub(r'[\s　（）()·、,，/]', '', s)
 
 
+# 商城搜索结果的颜色后缀：机型名与颜色之间没有分隔符，靠它把
+# 「米家无线吸尘器4 白色 999元 1199元」压回「米家无线吸尘器4」
+COLOR_TOKENS = re.compile(
+    r'白色|黑色|灰色|银灰色|深空灰|浅灰银|浅灰色|深灰色|钛灰银|浅银色|银色|金色|'
+    r'珍珠白|月光白|曜石黑|星空灰|星舰灰|玫瑰金|青竹绿|奶油白')
+
+
+def norm_soft(s):
+    """比 norm 多剥一层：颜色词与「（20XX款）」年份后缀。
+
+    只用于**精确等值**的二次匹配；仍然对不上就当没命中，绝不做包含式匹配
+    （「米家无线吸尘器4」是「米家无线吸尘器4 Pro / 4 Max」的前缀，
+    包含式匹配会把 Pro/Max 的价格写到 4 头上）。
+    """
+    s = re.sub(r'[\d]+\s*元.*$', '', str(s or ''))
+    s = re.sub(r'[（(]\s*(19|20)\d{2}\s*款?\s*[)）]', '', s)
+    s = COLOR_TOKENS.sub('', s)
+    return re.sub(r'[\s　（）()·、,，/]', '', s)
+
+
 def build_name_index():
     """从本地 search-*.json / product-*.json 建 {归一名: product_id}。
 
     222 款小米产品的 `verify_url` 是「查不到」，product_id 拿不到。
     先在已有的商城搜索缓存里按商品名反查，比重新跑 Playwright 枚举便宜得多；
     反查不到再考虑 `npm run mi:enumerate`。
+
+    返回 (精确表, 软归一表)。软表只收非配件 SKU，且一个归一名只允许对应一个
+    product_id —— 同名多 id 说明分不清，宁可留空。
     """
-    idx = {}
+    idx, soft = {}, {}
+    soft_conflict = set()
+
+    def put(skey, pid, raw):
+        if not skey:
+            return
+        if skey in soft and soft[skey] != pid:
+            soft_conflict.add(skey)      # 一名多 id，判定为分不清
+        else:
+            soft[skey] = pid
+        if not ACCESSORY_RE.search(str(raw or '')):
+            idx.setdefault(norm(raw), pid)
+
     for f in glob.glob(dp('data/_cache/product-*.json')):
         try:
             d = json.load(open(f, encoding='utf-8'))
         except Exception:
             continue
         if d.get('productId') and d.get('name'):
-            idx.setdefault(norm(d['name']), str(d['productId']))
+            put(norm_soft(d['name']), str(d['productId']), d['name'])
     for f in glob.glob(dp('data/_cache/search-*.json')):
         try:
             d = json.load(open(f, encoding='utf-8'))
@@ -134,8 +190,10 @@ def build_name_index():
             pid = it.get('productId')
             txt = it.get('text') or ''
             if pid and txt:
-                idx.setdefault(norm(txt), str(pid))
-    return idx
+                put(norm_soft(txt), str(pid), txt)
+    for k in soft_conflict:
+        soft.pop(k, None)
+    return idx, soft
 
 
 def fetch(pid, retry=2):
@@ -200,9 +258,9 @@ def pick_from_params(params, schema_keys):
     """把商城的「关键参数」翻译成本站字段。返回 {字段: (值, 来源说明)}。"""
     out = {}
     for it in param_list(params):
-        if not it.get('is_page_show'):
-            continue
         name = str(it.get('name') or it.get('top_title') or '').strip()
+        if not it.get('is_page_show') and name not in EXTRA_PARAM_NAMES:
+            continue
         val = str(it.get('value') or it.get('bottom_title') or '').strip()
         if not name or not val or SKIP_KEYS.search(name):
             continue
@@ -239,7 +297,7 @@ def main():
     args = ap.parse_args()
 
     cats = args.cat.split(',') if args.cat else None
-    nameidx = build_name_index()
+    nameidx, softidx = build_name_index()
     targets = []
     for f in sorted(glob.glob(dp('data/*/schema.json'))):
         cid = os.path.basename(os.path.dirname(f))
@@ -258,13 +316,16 @@ def main():
             how = 'verify_url'
             if not pid:
                 pid = nameidx.get(norm(p.get('name')))
+                if not pid:
+                    pid = softidx.get(norm_soft(p.get('name')))
                 how = '本地商城缓存按名反查' if pid else None
             if args.report:
                 targets.append((cid, p['id'], pid, how))
                 continue
             if not pid:
                 continue
-            targets.append((cid, p['id'], pid, (keys, types, p.get('name'), how)))
+            targets.append((cid, p['id'], pid, (keys, types, p.get('name'), how,
+                                                p.get('official_price'))))
     if args.report:
         miss = [t for t in targets if not t[2]]
         print('小米产品 %d 款，其中 %d 款反查不到 product_id' % (len(targets), len(miss)))
@@ -282,7 +343,7 @@ def main():
 
     def job(t):
         cid, prod, pid, extra = t
-        keys, types, _name, _how = extra
+        keys, types, _name, _how, _cur = extra
         d = fetch(pid)
         done[0] += 1
         if done[0] % 25 == 0:
@@ -297,11 +358,17 @@ def main():
         gname = str(gi.get('name') or '').strip()
         if gname and _name and norm(gname)[:6] != norm(_name)[:6]:
             return (cid, prod, None)
+        # 配件 SKU 守卫：实测 verify_url 里存过地刷/尘袋/拖布套装的 product_id
+        # （如 vc_2pro 存成了「2Pro 旋转式吸擦一体地刷 399元」），
+        # 只比前 6 个字看不出来，会把整机价写成配件价。这里按配件关键词拦。
+        if gname and _name and ACCESSORY_RE.search(gname) and not ACCESSORY_RE.search(str(_name)):
+            return (cid, prod, None)
         fills = {}
         # 价格：price 现价 -> official_price，market_price 划线价 -> ref_price
         now = num_of(gi.get('price') or '')
         mkt = num_of(gi.get('market_price') or '')
-        if now and 49 <= now <= 999999 and 'official_price' in keys:
+        if (now and 49 <= now <= 999999 and 'official_price' in keys
+                and blank(_cur)):          # 只补空白，不覆盖已有价（见模块 docstring）
             fills['official_price'] = (int(now), '商城 API price=%s' % gi.get('price'))
         # 划线价与现价相同时不是促销价，写进去只是重复，丢掉
         if mkt and now and mkt != now and 'ref_price' in keys:
