@@ -205,7 +205,7 @@ npm run hooks:install   # 启用提交闸门（core.hooksPath 是本机配置，
   写清 `flow` 标记能让「提交信息 ↔ 流转日志」一一对上。
 - **不要用 `git add -A` / `git add .`**：显式列出路径。共享工作树里 `-A` 会扫走别人未提交的分区文件
   （2026-10-03 实测发生过：两份文档被扫进他人提交，提交信息与内容不符）。
-- 推送前跑 **`npm run check`**（= `validate` + `lint` + `audit:check`）；有 error 不得推送。
+- 推送前跑 **`npm run check`**（= `validate` + `lint` + `selftest` + `audit:check`）；有 error 不得推送。
 - **改动一律走分支 + PR，不直推 `main`**（§3.6）：合并 PR 才触发部署；不 force push；不修改 git 配置。
   ⚠️ **`main` 已启用分支保护（2026-10-03）**：直推会被服务器拒绝，且管理员也不能绕过——所以这不是建议，是硬约束。
   已实测确证：`! [remote rejected] HEAD -> main` + `GH006: Changes must be made through a pull request`。

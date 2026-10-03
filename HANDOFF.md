@@ -47,7 +47,8 @@
 | `npm run flow:status` | 四个分区现状 + 最近流转（动手前先跑） |
 | `npm run flow:workers` | 工作者视图：谁在哪个工作台、改动涉及哪些目录 |
 | `npm run flow:log [-n N] [--batch <id>]` | 流转日志（可按批次回查） |
-| `npm run validate` / `lint` / `selftest` / `check` | 数据校验 / 一致性 / 流转工具自检（60 项）/ 三道门 |
+| `npm run validate` / `lint` / `selftest` | 数据校验 / 一致性检查 / 流转工具自检（60 项） |
+| `npm run check` | 推送前总检 = validate + lint + selftest + audit:check |
 | `npm run hooks:install` | 启用提交闸门（每个 clone / worktree 各一次） |
 
 采集流水线（`mi:*` / `miot:*` / `pconline:specs` / `img:webp`）见 SKILL.md「采集流水线」，此处不重复。

@@ -25,7 +25,7 @@ npm run dev        # 开发服务器
 npm run validate   # 校验 data/ 下的 JSON（schema / 字段 / 图片存在性）
 npm run lint       # 数据一致性（重复型号 / 重复产品名）
 npm run selftest   # 流转工具自检（隔离副本，不碰真实数据）
-npm run check      # = validate + lint + audit:check，推送前跑
+npm run check      # = validate + lint + selftest + audit:check，推送前跑
 npm run build      # 构建到 dist/
 npm run preview    # 预览构建产物
 ```
@@ -269,7 +269,7 @@ npm run flow:submit -- heater/ht_x     # 采集方：草稿区 → 待入库区�
 npm run flow:claim   -- heater/ht_x    # 修正方：待入库区 → 修正区（认领核验）
 npm run flow:recall  -- heater/ht_x    # 修正方：已入库区 → 修正区（召回复审）
 npm run flow:publish -- heater/ht_x    # 修正方：修正区 → 已入库区（入库上线）
-npm run check                          # = validate + lint + audit:check，推送前跑
+npm run check                          # = validate + lint + selftest + audit:check，推送前跑
 ```
 
 - **改动走分支 + PR，合并 PR 即上线**：`main` 受分支保护（直推被拒）；合并由编排方代理
