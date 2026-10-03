@@ -1,0 +1,33 @@
+{
+  "id": "midea_2515919",
+  "name": "美的MK-SP1A",
+  "brand": "美的",
+  "model_code": "MK-SP1A",
+  "type": "养生壶",
+  "official_price": 399,
+  "ref_price": 399,
+  "year": "查不到",
+  "pros": [
+    "5L 容量",
+    "1600W 功率",
+    "支持控温"
+  ],
+  "cons": [],
+  "tags": [
+    "美的"
+  ],
+  "capacity": "5L",
+  "power": "1600W",
+  "material": "查不到",
+  "temp_ctrl": "支持",
+  "size": "308×220×331mm",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/electric_kettle/midea/2515919_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（0 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：养生壶（依据：容量 5.0L（≥3L 属养生壶区间））；2026-10-03 回填型号：原「查不到」，产品名「美的MK-SP1A」中的型号串为 MK-SP1A（来源与产品名同源的第三方规格站）；2026-10-04 补 official_price、pros（来源：太平洋电脑网）",
+  "updated_at": "2026-10-04",
+  "smart": "查不到"
+}

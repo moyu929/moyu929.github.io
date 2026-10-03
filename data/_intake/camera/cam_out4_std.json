@@ -1,0 +1,38 @@
+{
+  "id": "cam_out4_std",
+  "name": "小米智能室外摄像机 4",
+  "model_code": "查不到",
+  "miot_model": "isa.camera.cw501",
+  "type": "室外",
+  "official_price": 449,
+  "second_hand": "—",
+  "resolution": "查不到",
+  "fov": "查不到",
+  "night": "红外夜视",
+  "ai": "查不到",
+  "store": "查不到",
+  "power": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+    "室外防水防尘",
+    "支持远程查看"
+  ],
+  "cons": [
+    "查不到分辨率细节"
+  ],
+  "tags": [
+    "室外"
+  ],
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网",
+    "米家产品库(miot-spec)"
+  ],
+  "verify_url": "http://product.pconline.com.cn/pccamera/miui/2862891_detail.html",
+  "change_log": "2026-10-01 补入参数：室外机型防水防尘（同系列 4G 双摄版 MJSXJ13HL 参数可对照）；2026-10-01 核查状态订正：「已核验（多源）」虚标——verify_url 指向 pconline miui 目录（小米手机系统页）而非摄像机品类规格页，来源错挂。改标「待核验」；2026-10-04 补 miot_model（来源：米家产品库(miot-spec)）",
+  "updated_at": "2026-10-04",
+  "img": "cam_out4_std.webp",
+  "brand": "小米"
+}

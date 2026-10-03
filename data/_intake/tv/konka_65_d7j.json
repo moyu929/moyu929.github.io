@@ -1,0 +1,39 @@
+{
+  "id": "konka_65_d7j",
+  "name": "康佳65D7J",
+  "brand": "康佳",
+  "model_code": "65D7J",
+  "series": "未归类",
+  "official_price": 4599,
+  "ref_price": 4599,
+  "second_hand": "—",
+  "size_inch": "65英寸",
+  "refresh": "288Hz",
+  "resolution": "3840×2160",
+  "size": "含底座：1446×896×293mm不含底座：1446×838×86mm",
+  "backlight": "Mini LED",
+  "mem": "4GB+64GB",
+  "hdmi": "2个",
+  "year": 2025,
+  "pros": [
+    "Mini LED 背光",
+    "4GB+64GB 内存",
+    "288Hz 刷新"
+  ],
+  "cons": [
+    "HDMI 仅 2 个"
+  ],
+  "tags": [
+    "康佳"
+  ],
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/lcd_tv/konka/2707479_detail.html",
+  "change_log": "2026-10-03 建条：品牌型号与参数取自太平洋电脑网规格表（分辨率/刷新率/背光/内存/HDMI/整机尺寸/上市时间/报价 8 项）；官方价按当前零售参考价录入，官方商城直连价待核；2026-10-04 补 pros、cons（由已入库参数推导，不引入新数值）",
+  "updated_at": "2026-10-04",
+  "img": null,
+  "facet_group": "主流(65-74\")"
+}

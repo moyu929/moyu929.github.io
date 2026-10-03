@@ -1,0 +1,33 @@
+{
+  "id": "sh_portable_pro",
+  "name": "米家便携电动剃须刀 Pro",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "tier": "便携",
+  "official_price": 296,
+  "second_hand": "—",
+  "blades": "查不到",
+  "waterproof": "查不到",
+  "runtime": "查不到",
+  "charge": "查不到",
+  "wet_dry": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+    "便携机身"
+  ],
+  "cons": [],
+  "tags": [
+    "便携"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城（官方产品图）"
+  ],
+  "verify_url": "查不到",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 补 pros（来源：已入库参数推导）",
+  "updated_at": "2026-10-04",
+  "img": "sh_portable_pro.webp",
+  "brand": "小米"
+}

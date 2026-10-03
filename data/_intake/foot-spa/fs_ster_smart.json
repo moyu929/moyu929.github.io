@@ -1,0 +1,34 @@
+{
+  "id": "fs_ster_smart",
+  "name": "米家智能杀菌足浴器",
+  "model_code": "查不到",
+  "miot_model": "xiaomi.foot_bath.mizs1",
+  "type": "杀菌款",
+  "official_price": 369,
+  "second_hand": "—",
+  "power": null,
+  "massage": "查不到",
+  "heat": "查不到",
+  "sterilize": "查不到",
+  "drain": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+    "杀菌功能"
+  ],
+  "cons": [],
+  "tags": [
+    "杀菌款"
+  ],
+  "verify_status": "已核验（多源）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城（官方产品图）",
+    "米家产品库(miot-spec)"
+  ],
+  "verify_url": "查不到",
+  "change_log": "2026-10-01 经米家产品库(miot-spec)交叉印证存在性并补入协议型号；2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 补 pros（来源：已入库参数推导）",
+  "updated_at": "2026-10-04",
+  "img": "fs_ster_smart.webp",
+  "brand": "小米"
+}

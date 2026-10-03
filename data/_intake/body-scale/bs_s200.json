@@ -1,0 +1,31 @@
+{
+  "id": "bs_s200",
+  "name": "米家体重秤 S200",
+  "model_code": "查不到",
+  "miot_model": "xiaomi.scales.ms112",
+  "type": "体重秤",
+  "official_price": 69,
+  "second_hand": "—",
+  "electrodes": "查不到",
+  "measure": "查不到",
+  "range": "查不到",
+  "app": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [],
+  "cons": [],
+  "tags": [
+    "体重秤"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城（官方产品图）",
+    "米家产品库(miot-spec)"
+  ],
+  "verify_url": "查不到",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 补 miot_model（来源：米家产品库(miot-spec)）",
+  "updated_at": "2026-10-04",
+  "img": "bs_s200.webp",
+  "brand": "小米"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "wp2_boil",
+  "name": "米家净水器 2 沸腾版",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "即热",
+  "official_price": 2549,
+  "second_hand": "—",
+  "flux": null,
+  "pure_flow": null,
+  "water_rate": null,
+  "rated_vol": null,
+  "ro_life": null,
+  "cert": "查不到",
+  "sterilize": "RO反渗透",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+    "即热出热水",
+    "RO 反渗透过滤"
+  ],
+  "cons": [],
+  "tags": [
+    "即热"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230808763",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 补 pros（由已入库参数推导，不引入新数值）",
+  "updated_at": "2026-10-04",
+  "img": "wp2_boil.webp",
+  "brand": "小米"
+}

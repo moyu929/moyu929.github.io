@@ -1,0 +1,30 @@
+{
+  "id": "angel_2537019",
+  "name": "安吉尔AHR3306-1020K2D",
+  "brand": "安吉尔",
+  "model_code": "AHR3306-1020K2D",
+  "type": "未归类",
+  "official_price": 9999,
+  "ref_price": 9999,
+  "year": "查不到",
+  "pros": [],
+  "cons": [],
+  "tags": [
+    "安吉尔"
+  ],
+  "flux": "20L/h",
+  "pure_flow": "查不到",
+  "water_rate": "查不到",
+  "rated_vol": "查不到",
+  "size": "查不到",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/water_purifier/angel/2537019_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（1 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-03 回填型号：原「查不到」，产品名「安吉尔AHR3306-1020K2D」中的型号串为 AHR3306-1020K2D（来源与产品名同源的第三方规格站）；2026-10-04 补 official_price（来源：太平洋电脑网）",
+  "updated_at": "2026-10-04",
+  "ro_life": "查不到",
+  "sterilize": "查不到"
+}

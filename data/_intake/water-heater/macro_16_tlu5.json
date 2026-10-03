@@ -1,0 +1,37 @@
+{
+  "id": "macro_16_tlu5",
+  "name": "万家乐JSLQ27-16TLU5",
+  "brand": "万家乐",
+  "model_code": "JSLQ27-16TLU5",
+  "type": "燃气",
+  "official_price": 1899,
+  "ref_price": "查不到",
+  "second_hand": "—",
+  "capacity": "16L",
+  "power": "电功率 40W",
+  "energy": "一级能效",
+  "constant": "查不到",
+  "app": "APP操控",
+  "size": "340×170×525mm",
+  "year": "查不到",
+  "pros": [
+    "16L 升数",
+    "一级能效",
+    "支持 APP 操控"
+  ],
+  "cons": [
+    "需燃气管道与强排条件"
+  ],
+  "tags": [
+    "万家乐"
+  ],
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/gas_water/wanjiale/2592379_detail.html",
+  "change_log": "2026-10-03 建条：品牌型号与参数取自太平洋电脑网规格表；official_price 记太平洋参考价 ¥1899；额定热负荷表值 26kW 与型号代码 JSLQ27（27kW）矛盾，宁缺勿错予剔除；零售页标题称零冷水（单源线索，未录入字段）；控制方式「触控式，APP操控」，APP操控记入 app；副分组归类：燃气（依据：型号含 JSLQ/JSQ 燃气热水器国标前缀）；2026-10-04 补 pros、cons（由已入库参数推导，不引入新数值）",
+  "updated_at": "2026-10-04",
+  "img": null
+}

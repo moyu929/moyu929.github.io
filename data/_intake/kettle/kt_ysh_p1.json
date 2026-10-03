@@ -1,0 +1,38 @@
+{
+  "id": "kt_ysh_p1",
+  "name": "米家智能多功能养生壶 P1",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "养生壶",
+  "official_price": 199,
+  "second_hand": "—",
+  "capacity": null,
+  "power": null,
+  "material": "玻璃",
+  "temp_ctrl": "多档火力",
+  "smart": "米家APP",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+    "智能养生壶Pro级定位",
+    "多档火力可调",
+    "支持米家APP"
+  ],
+  "cons": [
+    "容量功率等参数查不到"
+  ],
+  "tags": [
+    "养生壶",
+    "智能"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230802240",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 补 official_price（来源：小米商城）",
+  "updated_at": "2026-10-04",
+  "img": "kt_ysh_p1.webp",
+  "brand": "小米"
+}
