@@ -17,7 +17,12 @@
 | `fingerprint` | 内容指纹（召回、剔除时记录，用于事后比对/找回） |
 | `supersedes` | 该产品是订正稿（库内有同 id，入库时整条替换） |
 | `forced` | claim 时带 `--force`（校验不过仍认领，由审核方在修正区处理） |
+| `batch` | 批量命令的批次 id（`npm run flow:log --batch <批次id>` 可回查该批） |
 
-查询方式：`npm run flow:log [-n 条数]`，或 `npm run flow:status` 看各区现状 + 最近流转。
+除 `flow:*` 流转条目外，**批量写库工具**（`mi:apply`、`classify-facets`、`img:webp` 等）会追加
+`action: "batch-write"` 条目（含 `actor` 与 `count`），用于把「提交信息 ↔ 流转日志」对齐。
+工作台（worktree）的占用与最近操作速览见 `npm run flow:workers`。
+
+查询方式：`npm run flow:log [-n 条数] [--batch <批次id>]`，或 `npm run flow:status` 看各区现状 + 最近流转。
 
 规则与协议见仓库根目录 [AGENTS.md](../../AGENTS.md)。

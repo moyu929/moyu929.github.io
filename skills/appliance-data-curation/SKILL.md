@@ -5,7 +5,7 @@ description: "家电参数数据的收录与核验规范：定义字段模型、
 
 # 家电数据收录规范
 
-本仓库是「家电参数横评」静态站：数据全部手写在 `data/` 下的 JSON，推送到 `main` 由 GitHub Actions 构建发布。本 skill 规范**如何采集、核验、录入**数据，保证各品类字段一致、来源可信、可复核。
+本仓库是「家电参数横评」静态站：数据全部手写在 `data/` 下的 JSON，经「分区流转 + 分支 PR」维护，**合并 PR 后**由 GitHub Actions 构建发布。本 skill 规范**如何采集、核验、录入**数据，保证各品类字段一致、来源可信、可复核。
 
 ## 何时使用
 
@@ -193,7 +193,7 @@ skills/                              技能定义（客户端无关；各客户�
 | `npm run pconline:specs` | 按 `data/_sources/pconline-targets.json` 抓第三方规格表到 `data/_cache/pconline-*.json` | Python 3 |
 | `npm run flow:submit/claim/recall/publish/...` | 分区流转：收录完成提交待审、认领、召回复审、入库（见 `AGENTS.md`） | 无 |
 | `npm run hooks:install` | 启用提交闸门（`scripts/hooks/commit-msg`）：含分区文件的提交必须带 `flow` 标记。**每个 clone / worktree 各启用一次** | 无 |
-| `npm run selftest` | 流转工具自检：在 `.flow-test/` 的隔离副本上跑 43 条断言（含跨语言序列化一致性）。改 `scripts/` 后跑一次 | 无 |
+| `npm run selftest` | 流转工具自检：在 `.flow-test/` 的隔离副本上跑 60 条断言（含跨语言序列化一致性、防双领、工作者视图）。改 `scripts/` 后跑一次 | 无 |
 | `npm run audit:snapshot/check/status/release` | 审核快照锁，已降级为结构冻结工具（schema 大改/发版验收前用，见 `AGENTS.md`） | 无 |
 
 要点：
