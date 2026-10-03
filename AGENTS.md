@@ -180,6 +180,11 @@ npm run hooks:install   # 启用提交闸门（core.hooksPath 是本机配置，
   （2026-10-03 实测发生过：两份文档被扫进他人提交，提交信息与内容不符）。
 - 推送前跑 **`npm run check`**（= `validate` + `lint` + `audit:check`）；有 error 不得推送。
 - **改动一律走分支 + PR，不直推 `main`**（§3.6）：合并 PR 才触发部署；不 force push；不修改 git 配置。
+  ⚠️ **`main` 已启用分支保护（2026-10-03）**：直推会被服务器拒绝，且管理员也不能绕过——所以这不是建议，是硬约束。
+  已实测确证：`! [remote rejected] HEAD -> main` + `GH006: Changes must be made through a pull request`。
+  （边界：`gh api .../branches/main/protection` 读不到配置——集成令牌无管理权限；验证锁是否在，只能靠试推。）
+  若某次推送被拒并提示 protected branch，说明你漏走了 PR；**不要**去改设置绕过，按 §3.6 开分支 + PR。
+  一个已知边界：A/B 与本机共用同一套密钥，所以「只有用户能合并 PR」是**协议约束**而非技术强制。
 - 改动了审核标注字段的提交，在信息里点出「已更新核查状态/来源」。
 
 ---
