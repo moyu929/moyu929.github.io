@@ -12,7 +12,7 @@
     "lint": "node scripts/lint-data.mjs",
     "selftest": "node scripts/selftest.mjs",
     "hooks:install": "node scripts/hooks-install.mjs",
-    "check": "npm run validate && npm run lint && npm run audit:check",
+    "check": "npm run validate && npm run lint && npm run selftest && npm run audit:check",
     "mi:enumerate": "node scripts/mi-store.mjs enumerate",
     "mi:detail": "node scripts/mi-store.mjs detail",
     "mi:specs": "node scripts/mi-store.mjs specs",
