@@ -216,11 +216,16 @@ THRESHOLD = {
 #
 # 这条比阈值更早生效、也更准 —— 空调的 `产品功率` 写「1.5匹」、净化器的
 # `产品容量` 写「4.5L」（匹数的另一种写法），数值上都能骗过阈值，只有单位能拦住。
+#
+# ⚠️ 功率类不能只写 `[Ww]`：吸尘器的「310AW」是**吸入功率**不是整机功率，
+# 那台机器的额定功率其实是 500W。这两个单位只差一个 A，纯正则分不开，
+# 所以 AW 值一律走 `suction_aw`，并且禁止进 `power`。
+WATT = r'(?<![Aa])\d\s*[Ww]|瓦'
 NEED_UNIT = {
-    'power': r'[Ww]|瓦', 'power_heat': r'[Ww]|瓦', 'power_cool': r'[Ww]|瓦',
-    'power_mix': r'[Ww]|瓦', 'power_wash': r'[Ww]|瓦', 'power_dehy': r'[Ww]|瓦',
-    'power_fan': r'[Ww]|瓦', 'power_light': r'[Ww]|瓦', 'power_grill': r'[Ww]|瓦',
-    'power_mw': r'[Ww]|瓦',
+    'power': WATT, 'power_heat': WATT, 'power_cool': WATT,
+    'power_mix': WATT, 'power_wash': WATT, 'power_dehy': WATT,
+    'power_fan': WATT, 'power_light': WATT, 'power_grill': WATT,
+    'power_mw': WATT,
     'weight': r'kg|KG|千克|公斤|g$|克',
     'noise': r'dB|分贝',
     'battery': r'mAh|ah|安时',
@@ -305,6 +310,9 @@ def num_of(v):
 def acceptable(field, raw):
     """按单位守卫 + 阈值剔除第三方错标值。返回 (是否可用, 说明)。"""
     s = str(raw)
+    # AW（吸入功率）落在任何 power 列上一律拒：它不是整机功率
+    if field.startswith('power') and re.search(r'\d\s*AW\b', s, re.I):
+        return False, '值「%s」是吸入功率(AW)不是整机功率' % s[:20]
     need = NEED_UNIT.get(field)
     if need and not re.search(need, s):
         return False, '值「%s」不含本字段要求的单位（疑串行错标）' % s[:20]
