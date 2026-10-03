@@ -29,7 +29,7 @@
 
 ## 自查
 
-- [ ] `npm run check` 本地通过（validate + lint + audit:check）
+- [ ] `npm run check` 本地通过（validate + lint + selftest + audit:check）
 - [ ] 我确认为本批的核验负责，且**未直接手改** `data/<品类>/products.json`（只经 `flow:publish`）
 - [ ] 提交信息带 `flow` 标记
 - [ ] 本 PR 不含 `data/_draft/**`（草稿是私有工作台，不入库；`.gitignore` 已排除，若出现在 diff 里说明被强加了）

@@ -6,7 +6,7 @@
 >
 > ⚠️ 本仓库的口径**多次演进过**（多品牌收录、分区流转、状态枚举都变过）。`docs/audit/` 下的历史报告
 > 不删不改，但结论可能已过时 —— **以本文档与 `SKILL.md` 为准**。哪些旧口径已被取代，见
-> [`HANDOFF.md`](HANDOFF.md) 第 8 节「口径变更历史」。
+> [`HANDOFF.md`](HANDOFF.md) 第 6 节「口径变更历史」。
 
 ---
 
@@ -205,7 +205,11 @@ npm run hooks:install   # 启用提交闸门（core.hooksPath 是本机配置，
   写清 `flow` 标记能让「提交信息 ↔ 流转日志」一一对上。
 - **不要用 `git add -A` / `git add .`**：显式列出路径。共享工作树里 `-A` 会扫走别人未提交的分区文件
   （2026-10-03 实测发生过：两份文档被扫进他人提交，提交信息与内容不符）。
-- 推送前跑 **`npm run check`**（= `validate` + `lint` + `audit:check`）；有 error 不得推送。
+- 推送前跑 **`npm run check`**（= `validate` + `lint` + `selftest` + `audit:check`）；有 error 不得推送。
+  ⚠️ **`check` 与 CI 的检查范围不同，这不是遗漏而是取舍**：`check` 刻意只跑**不依赖 `node_modules`** 的项，
+  以便在未 `npm install` 的 worktree 里直接可跑（见 §3.6 引导清单）；`typecheck` 与 `build`（需依赖）
+  **只在 CI 把关**，`audit:check`（需快照锁，无快照时静默通过）只在本地。
+  → 所以**改动 `src/**` 或类型定义时，类型错误只会在 CI 暴露**；本地想提前发现就先 `npm install` 再跑 `npm run typecheck`。
 - **改动一律走分支 + PR，不直推 `main`**（§3.6）：合并 PR 才触发部署；不 force push；不修改 git 配置。
   ⚠️ **`main` 已启用分支保护（2026-10-03）**：直推会被服务器拒绝，且管理员也不能绕过——所以这不是建议，是硬约束。
   已实测确证：`! [remote rejected] HEAD -> main` + `GH006: Changes must be made through a pull request`。

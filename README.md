@@ -1,6 +1,6 @@
 # 家电横评
 
-家电参数对比静态站点，Vite + Vue 3 + TypeScript，数据靠手改 JSON 维护，推送到 `main` 由 GitHub Actions 自动构建发布到 GitHub Pages。
+家电参数对比静态站点，Vite + Vue 3 + TypeScript，数据经「分区流转 + 分支 PR」维护，**合并 PR 后**由 GitHub Actions 自动构建发布到 GitHub Pages。
 
 线上地址：https://moyu929.github.io
 
@@ -25,10 +25,14 @@ npm run dev        # 开发服务器
 npm run validate   # 校验 data/ 下的 JSON（schema / 字段 / 图片存在性）
 npm run lint       # 数据一致性（重复型号 / 重复产品名）
 npm run selftest   # 流转工具自检（隔离副本，不碰真实数据）
-npm run check      # = validate + lint + audit:check，推送前跑
+npm run check      # = validate + lint + selftest + audit:check，推送前跑
 npm run build      # 构建到 dist/
 npm run preview    # 预览构建产物
 ```
+
+> `check` 只跑不依赖 `node_modules` 的项（未 `npm install` 的 worktree 也能跑）；
+> `typecheck` 与 `build` 需要依赖，**只在 CI 把关**——改了 `src/**` 或类型定义时，类型错误只会在 CI 暴露，
+> 想本地提前发现就先 `npm install` 再跑 `npm run typecheck`。
 
 ## 目录结构
 
@@ -205,7 +209,7 @@ npm run mi:enumerate -- 洗碗机 净水器        # 枚举在售商品（需 Pl
 python scripts/mi-store-enumerate.py 空调    # 等价入口（只有 Python Playwright 时用）
 npm run mi:detail -- 19142 24615            # 官方商品详情（名称/现价/划线价/官方图）
 npm run mi:specs -- https://www.mi.com/induction-cooker/specs   # 官方规格页 → 参数表
-npm run mi:images                            # 按 data/_sources/images.json 下载产品图
+npm run mi:images                            # 按 data/_sources/images.json 下载官方原图到 _cache（不入库，见下「产品图规格」）
 npm run mi:apply -- data/_sources/patches/xxx.json              # 写入字段补丁
 ```
 
@@ -257,41 +261,45 @@ npm run img:webp      # 2) 转成 ≤320px WebP 写入 public/images/ 并回写 
 
 ## 多 Agent 并行协作
 
-本仓库可能同时有多个 Agent 在工作（一个**采集**、一个**审核修正**）。
-协作规范见 **[AGENTS.md](AGENTS.md)**，核心是「分区流转协议」——数据按状态放在四个物理分区，
-各方只写自己的分区，文件的位置就是它的状态：
+本仓库支持**多个采集方与修正方同时工作**（每人一个 worktree）。协作规范见 **[AGENTS.md](AGENTS.md)**，两条主线：
+
+- **数据按状态分区（文件位置即状态）**：`_draft` 草稿 → `_intake` 待入库 → `_review` 修正 → `products.json` 已入库。
+  线上数据只能经 `flow:publish` 写入，任何人不直接手改。
 
 ```bash
 npm run flow:status                    # 动手前先查：数据现在分布在哪些区
+npm run flow:workers                   # 再看一眼：谁占了哪个工作台（防互相踩）
 npm run flow:submit -- heater/ht_x     # 采集方：草稿区 → 待入库区（收录完成，提交待审）
-npm run flow:claim   -- heater/ht_x    # 审核方：待入库区 → 修正区（认领核验）
-npm run flow:recall  -- heater/ht_x    # 审核方：已入库区 → 修正区（召回复审）
-npm run flow:publish -- heater/ht_x    # 审核方：修正区 → 已入库区（入库上线）
-npm run check                          # = validate + lint + audit:check，推送前跑
+npm run flow:claim   -- heater/ht_x    # 修正方：待入库区 → 修正区（认领核验）
+npm run flow:recall  -- heater/ht_x    # 修正方：已入库区 → 修正区（召回复审）
+npm run flow:publish -- heater/ht_x    # 修正方：修正区 → 已入库区（入库上线）
+npm run check                          # = validate + lint + selftest + audit:check，推送前跑
 ```
 
-线上数据（`products.json`）只能经 `flow:publish` 写入，任何人不直接手改；
-收录中的半成品放在草稿区，审核方拿到的待审数据必然是提交过的成品。
-流转全程记录在 `data/_flow/journal.jsonl`，审核报告归档在 `docs/audit/`。
+- **改动走分支 + PR，合并 PR 即上线**：`main` 受分支保护（直推被拒）；合并由编排方代理
+  （常规批次 CI 绿即合，剔除/口径类先呈报用户——规则见 AGENTS.md §3.6）。
+- **一人一个 worktree**（`wt-collect-<NN>` / `wt-review-<NN>`）：同一目录被两个会话共用会互相踩分支；
+  开工先跑 `flow:workers` 看谁在工作、改动涉及哪些目录。
 
-**2026-10-03 起的三处变化**（详见 [AGENTS.md](AGENTS.md) 与 [HANDOFF.md](HANDOFF.md) 第 0.0.1 节）：
+关键规范（详见 [AGENTS.md](AGENTS.md) 与 [HANDOFF.md](HANDOFF.md) 第 0 节）：
 
-- **库文件改为「一行一款」**：便于 git 按行三方合并；写入必须走
+- **库文件「一行一款」**：便于 git 按行三方合并；写入必须走
   `scripts/lib/library-io.mjs` / `library_io.py`（规范序列化 + 写前指纹校验 + 文件锁重试），
   不要自己 `writeFileSync`。
 - **批量命令可断点续跑**：结束打印「成功 / 已是目标态 / 失败」，中途失败原样重跑即幂等续上；
   `npm run flow:log --batch <批次id>` 可回查某一批，`flow:status --by <提交人>` 可按归属过滤。
 - **提交闸门**：`npm run hooks:install`（每个 clone / worktree 各一次）后，含
-  `data/_intake` / `data/_review` 文件的提交必须带 `flow` 标记。草稿区 `data/_draft/` 不再入库。
+  `data/_intake` / `data/_review` 文件的提交必须带 `flow` 标记；草稿区 `data/_draft/` 不入库。
+- 流转全程记录在 `data/_flow/journal.jsonl`；审核报告归档在 `docs/audit/`。
 
-配套命令：`npm run selftest`（52 条断言，在隔离副本上跑，不碰真实数据）、
+配套命令：`npm run selftest`（60 条断言，在隔离副本上跑，不碰真实数据）、
 `npm run lint`（重复型号 / 重复产品名）。
 
 ## 目录速览
 
 ```
 AGENTS.md                 多 Agent 协作规范（先读这个）
-HANDOFF.md                阶段交接记录
+HANDOFF.md                当前状态索引（接手先读）
 skills/                   技能定义（客户端无关；.trae/.claude 下只放指针）
 docs/audit/               审核报告归档
 data/<品类>/{schema,products}.json
@@ -307,7 +315,7 @@ scripts/                  采集、校验、流转、审核锁工具
 
 ## 部署
 
-推送到 `main` 即触发 `.github/workflows/deploy.yml`：校验数据 → 构建 → 发布到 Pages。
+**合并 PR** 即触发 `.github/workflows/deploy.yml`：校验数据 → 构建 → 发布到 Pages（直推 `main` 会被分支保护拒绝）。
 
 首次部署需在仓库 **Settings → Pages → Build and deployment → Source** 选择 **GitHub Actions**。
 
