@@ -1828,3 +1828,7 @@
 {"ts":"2026-10-03T21:02:00.988Z","actor":"agent-A-yi","branch":"collect/yi-induction-cooker","action":"submit","key":"induction-cooker/galanz_517605","from":"draft","to":"intake","batch":"11c428a1","supersedes":true}
 {"ts":"2026-10-03T21:02:00.996Z","actor":"agent-A-yi","branch":"collect/yi-induction-cooker","action":"submit","key":"induction-cooker/galanz_624424","from":"draft","to":"intake","batch":"11c428a1","supersedes":true}
 {"ts":"2026-10-03T21:02:01.005Z","actor":"agent-A-yi","branch":"collect/yi-induction-cooker","action":"submit","key":"induction-cooker/galanz_517602","from":"draft","to":"intake","batch":"11c428a1","supersedes":true}
+{"ts":"2026-10-03T21:03:46.318Z","actor":"agent-A-yi","branch":"collect/yi-induction-cooker","action":"withdraw","key":"induction-cooker/ic_2","from":"intake","to":"draft","batch":"930c1ce0"}
+{"ts":"2026-10-03T21:03:46.327Z","actor":"agent-A-yi","branch":"collect/yi-induction-cooker","action":"withdraw","key":"induction-cooker/ic_n1","from":"intake","to":"draft","batch":"930c1ce0"}
+{"ts":"2026-10-03T21:03:48.235Z","actor":"agent-A-yi","branch":"collect/yi-induction-cooker","action":"submit","key":"induction-cooker/ic_2","from":"draft","to":"intake","batch":"07b4714a","supersedes":true}
+{"ts":"2026-10-03T21:03:48.244Z","actor":"agent-A-yi","branch":"collect/yi-induction-cooker","action":"submit","key":"induction-cooker/ic_n1","from":"draft","to":"intake","batch":"07b4714a","supersedes":true}
