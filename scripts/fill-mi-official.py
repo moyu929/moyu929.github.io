@@ -65,7 +65,7 @@ def blank(v):
 #   * CADR 带「（实测值）」的走 *_real，不带的走额定列（见 pick 里的分流）
 KEY_MAP = {
     # —— 通用
-    '能效等级': 'energy',
+    '能效等级': 'energy', '能效': 'energy',
     '噪音': 'noise', '产品噪音': 'noise', '工作噪音': 'noise', '运转噪音': 'noise',
     '产品尺寸': 'size', '机身尺寸': 'size', '外形尺寸': 'size', '外型尺寸': 'size',
     '产品重量': 'weight', '重量': 'weight', '净重': 'weight',
@@ -74,6 +74,11 @@ KEY_MAP = {
     '室内机尺寸': 'size_indoor', '室外机尺寸': 'size_outdoor',
     '循环风量': 'airflow', '风量': 'airflow',
     '制冷量': 'cool_cap', '制热量': 'heat_cap', '制冷功率': 'cool_power',
+    # 空调整机的关键参数把括号写在字段名里（「制冷量（整机）」），
+    # 不是值里，所以只在去空格那步匹配不上，必须显式列出
+    '制冷量（整机）': 'cool_cap', '制热量（整机）': 'heat_cap',
+    '制冷量(整机)': 'cool_cap', '制热量(整机)': 'heat_cap',
+    'APF值': 'energy_apf', 'APF': 'energy_apf',
     '匹数': 'pishu', '建议匹数': 'pishu',
     '适用面积': 'area', '建议最大适用面积': 'area', '适用面积范围': 'area',
     '颗粒物CADR': 'cadr_pm', '固态污染物CADR': 'cadr_pm', '甲醛CADR': 'cadr_hcho',
