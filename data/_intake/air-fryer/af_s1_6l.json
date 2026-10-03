@@ -1,0 +1,38 @@
+{
+  "id": "af_s1_6l",
+  "name": "米家空气炸锅 S1 6L",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "可视炸锅",
+  "official_price": 269,
+  "second_hand": "—",
+  "capacity": 6,
+  "power": null,
+  "temp_max": null,
+  "steam": "查不到",
+  "basket": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+    "可视窗设计",
+    "6L容量适合3-5人",
+    "商城在售¥269"
+  ],
+  "cons": [
+    "功率等关键参数查不到"
+  ],
+  "tags": [
+    "可视炸锅"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230802539",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：official_price=269，ref_price=299；2026-10-04 补全：补卖点/缺点（只引用已入库参数与商城在售价）",
+  "updated_at": "2026-10-04",
+  "img": "af_s1_6l.webp",
+  "brand": "小米",
+  "ref_price": 299
+}
