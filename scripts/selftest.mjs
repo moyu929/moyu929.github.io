@@ -325,6 +325,14 @@ function tBatchTrail() {
   )
 }
 
+function tWorkers() {
+  console.log('\n[多工作者] 工作者视图（flow:workers，只读）')
+  const r = run(['workers'])
+  check('命令可运行且列出至少一个工作台', r.code === 0 && /◆ /.test(r.out), r.out.slice(0, 300))
+  check('每个工作台都显示分支与改动', /分支 /.test(r.out) && /改动 /.test(r.out))
+  check('结尾说明「一人一个 worktree」的前提', /一个 worktree/.test(r.out), r.out.slice(-300))
+}
+
 function tStatusFilters() {
   console.log('\n[P0-6/7/10] status 归属视图与过滤')
   // 先放一款在待入库区，让"提交人"断言基于确定的状态（而不是靠 journal 尾部的偶然命中）
@@ -429,6 +437,7 @@ async function main() {
   tRecallRestoresPosition()
   tBatchTrail()
   tStatusFilters()
+  tWorkers()
   tUnclassified()
   tPruneEmptyDirs()
   tCrossLanguage()

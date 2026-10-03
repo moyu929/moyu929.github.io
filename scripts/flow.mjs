@@ -24,6 +24,7 @@
  *   flow.mjs status   [--category 品类] [--zone draft|intake|review] [--by 提交人/认领人]
  *                     [--unclassified] [--n 条数]
  *   flow.mjs log      [-n 条数] [--batch <批次id>]
+ *   flow.mjs workers                                谁在哪个工作台干活、各自改动什么（只读视图）
  *
  * 约定：分区文件入库（它们是各 Agent 的共享状态）；流转命令不做任何 git 操作，
  * 跑完当场提交。规则见仓库根目录 AGENTS.md。
@@ -287,7 +288,10 @@ function journalIndex() {
 
 function fmtTs(ts) {
   if (!ts || ts === '?') return '?'
-  return String(ts).replace('T', ' ').slice(0, 16)
+  const d = new Date(ts)
+  if (Number.isNaN(d.getTime())) return String(ts).replace('T', ' ').slice(0, 16)
+  // 显示统一用本地时区（journal 存的是 UTC，直接截串会差 8 小时、误导判断）
+  return d.toLocaleString('sv-SE', { hour12: false }).slice(0, 16)
 }
 
 /** 描述一个 key 的来源：谁提交的、什么时候 */
@@ -890,6 +894,107 @@ function cmdLog(args) {
   }
 }
 
+// ---------------------------------------------------------------- 命令：工作者视图
+
+/**
+ * 工作者视图（只读）：当前有哪些工作台、各自在做什么。
+ * worktree 就是天然的 worker 注册表——路径 = 谁在干活、分支 = 在做什么、
+ * 未提交改动 = 活跃证据；再按分支把 journal 里的 actor 最近动作关联上来。
+ * 不建注册表、不改任何状态：开工前跑一次确认地盘（AGENTS.md §3.6「多工作者并行」）。
+ * （2026-10-03 实测：两个会话共用主目录会互相踩分支——本命令用于事前发现。）
+ */
+function cmdWorkers() {
+  let listOut
+  try {
+    listOut = execFileSync('git', ['worktree', 'list', '--porcelain'], { cwd: ROOT, encoding: 'utf8' })
+  } catch {
+    console.error('✗ 无法读取 git worktree 列表（当前目录不是 git 仓库？）')
+    process.exit(1)
+  }
+
+  const trees = []
+  let cur = null
+  for (const line of listOut.split('\n')) {
+    if (line.startsWith('worktree ')) {
+      cur = { path: line.slice(9).trim(), branch: null, detached: false }
+      trees.push(cur)
+    } else if (cur && line.startsWith('branch ')) {
+      cur.branch = line.slice(7).replace('refs/heads/', '').trim()
+    } else if (cur && line.startsWith('detached')) {
+      cur.detached = true
+    }
+  }
+
+  /** 读某个工作台自己的 journal，取某分支的最后一条流转记录（跨分支时各工作台是各自的副本） */
+  const lastActionFor = (journalFile, branch) => {
+    if (!branch) return null
+    let text = ''
+    try {
+      text = fs.readFileSync(journalFile, 'utf8')
+    } catch {
+      return null
+    }
+    let found = null
+    for (const line of text.split('\n')) {
+      if (!line.trim()) continue
+      try {
+        const e = JSON.parse(line)
+        if (e.branch === branch) found = e
+      } catch {
+        /* 坏行忽略 */
+      }
+    }
+    return found
+  }
+
+  console.log(`工作者视图 —— ${fmtTs(new Date().toISOString())}（本地实况 + journal 关联）\n`)
+  for (const t of trees) {
+    const here = path.resolve(t.path) === path.resolve(ROOT) ? '（本工作台）' : ''
+    console.log(`◆ ${t.path}${here}`)
+    console.log(`   分支  ${t.branch ?? (t.detached ? '（detached，未在分支上）' : '（未知）')}`)
+
+    let changed = []
+    let ahead = 0
+    try {
+      const st = execFileSync('git', ['status', '--short', '--branch'], { cwd: t.path, encoding: 'utf8' })
+        .split('\n')
+        .filter((l) => l.trim())
+      for (const l of st) {
+        if (l.startsWith('## ')) {
+          const m = l.match(/\[ahead (\d+)/)
+          if (m) ahead = Number(m[1])
+        } else {
+          changed.push(l)
+        }
+      }
+    } catch {
+      /* worktree 目录可能已失效（prune 前） */
+    }
+    const dirs = [
+      ...new Set(
+        changed.map((l) => {
+          const p = l.replace(/^..\s/, '').trim()
+          const seg = p.split('/')
+          return seg.length > 1 ? `${seg[0]}/${seg[1]}` : seg[0]
+        }),
+      ),
+    ]
+
+    const last = lastActionFor(path.join(t.path, 'data', '_flow', 'journal.jsonl'), t.branch)
+    console.log(
+      `   最近  ${last ? `${last.actor ?? '?'} · ${fmtTs(last.ts)} · ${last.action}${last.reason ? `（${last.reason}）` : ''}` : '（该工作台的 journal 无此分支记录）'}`,
+    )
+    console.log(`   改动  ${changed.length ? `${changed.length} 个文件：${dirs.slice(0, 6).join('、')}${dirs.length > 6 ? ' …' : ''}` : '无'}`)
+    if (ahead > 0) console.log(`   推送  ⚠ 领先远端 ${ahead} 个提交（尚未推送）`)
+    if (changed.length && !last) {
+      console.log('   ⚠ 有改动但 journal 关联不到 actor——若此目录被多个会话共用，请迁到独立 worktree（AGENTS.md §3.6）')
+    }
+    console.log('')
+  }
+  console.log('说明：有未提交改动 = 有人在该工作台干活；「最近」来自 journal，仅覆盖跑过 flow 命令的批次。')
+  console.log('      开工前看本视图，一人一个 worktree——不互相踩的前提。')
+}
+
 // ---------------------------------------------------------------- 入口
 
 const args = parseArgs(process.argv.slice(2))
@@ -932,6 +1037,10 @@ try {
       attest(args)
       cmdLog(args)
       break
+    case 'workers':
+      attest(args)
+      cmdWorkers()
+      break
     default:
       console.log(
         [
@@ -949,6 +1058,7 @@ try {
           '  drop     <品类/id>... --reason           B：修正区剔除（需用户确认）',
           '  status   [--category 品类] [--zone draft|intake|review] [--by 提交人/认领人] [--unclassified] [--n 条数]',
           '  log      [-n 条数] [--batch <批次id>]',
+          '  workers                                  工作者视图：各工作台在干什么、改动涉及哪些目录',
           '',
           '  所有命令都支持 --by <名字> 标注操作者。批量命令会生成 batch id；中途失败原样重跑即可续上。',
           '  测试可用 FLOW_DATA_DIR=<目录> 把流转指向临时数据副本。',
