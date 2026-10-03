@@ -6,16 +6,22 @@
   "type": "超声波",
   "official_price": 279,
   "second_hand": "—",
-  "humid_rate": null,
+  "humid_rate": 450,
   "tank": null,
   "runtime": null,
   "noise": null,
   "power": null,
-  "sterilize": "查不到",
+  "sterilize": "99.9%UV-C杀菌",
   "size": "查不到",
   "year": null,
-  "pros": [],
-  "cons": [],
+  "pros": [
+    "450mL/h加湿量",
+    "99.9%UV-C杀菌",
+    "软水树脂滤芯"
+  ],
+  "cons": [
+    "超声波雾化需定期清洁水箱"
+  ],
   "tags": [
     "超声波"
   ],
@@ -26,7 +32,7 @@
     "米家产品库(miot-spec)"
   ],
   "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230802739",
-  "change_log": "2026-10-01 经米家产品库(miot-spec)交叉印证存在性并补入协议型号；2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：official_price=279，ref_price=299",
+  "change_log": "2026-10-01 经米家产品库(miot-spec)交叉印证存在性并补入协议型号；2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：official_price=279，ref_price=299；2026-10-04 A2 路补录：pros（3 条），cons（1 条），humid_rate=450，sterilize=99.9%UV-C杀菌。依据：小米商城 API product_desc：450ml/h丨99.9%UV-C杀菌丨软水树脂滤芯",
   "updated_at": "2026-10-04",
   "img": "hm_ster_s.webp",
   "brand": "小米",

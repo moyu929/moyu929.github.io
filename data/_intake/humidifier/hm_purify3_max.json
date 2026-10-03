@@ -8,14 +8,22 @@
   "second_hand": "—",
   "humid_rate": null,
   "tank": null,
-  "runtime": null,
+  "runtime": 18,
   "noise": null,
   "power": null,
-  "sterilize": "查不到",
+  "sterilize": "全水路除菌矩阵",
   "size": "查不到",
   "year": null,
-  "pros": [],
-  "cons": [],
+  "pros": [
+    "加湿与空气净化二合一",
+    "全水路除菌矩阵",
+    "18小时长效保湿",
+    "无雾冷蒸发"
+  ],
+  "cons": [
+    "官方未公布加湿量、噪音与水箱容量",
+    "官方价2999元，净化加湿一体机型中属高位"
+  ],
   "tags": [
     "无雾冷蒸发"
   ],
@@ -26,7 +34,7 @@
     "米家产品库(miot-spec)"
   ],
   "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230802654",
-  "change_log": "2026-10-01 经米家产品库(miot-spec)交叉印证存在性并补入协议型号；2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：official_price=2999，ref_price=4299",
+  "change_log": "2026-10-01 经米家产品库(miot-spec)交叉印证存在性并补入协议型号；2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：official_price=2999，ref_price=4299；2026-10-04 A2 路补录：pros（4 条），cons（2 条），runtime=18，sterilize=全水路除菌矩阵。依据：小米商城 API product_desc：加湿、净化双重技术｜全水路除菌矩阵｜18小时长效保湿",
   "updated_at": "2026-10-04",
   "img": "hm_purify3_max.webp",
   "brand": "小米",
