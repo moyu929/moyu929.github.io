@@ -1,0 +1,38 @@
+{
+  "id": "rc_ih2",
+  "name": "米家IH电饭煲2",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "IH电磁",
+  "official_price": 369,
+  "second_hand": "—",
+  "capacity": null,
+  "power": null,
+  "inner_pot": "查不到",
+  "pressure": "查不到",
+  "appoint": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+    "IH电磁加热",
+    "2L/3L/4L/5L 多档容量可选（商城在售档位）",
+    "0氟陶瓷涂层内胆，健康易洁"
+  ],
+  "cons": [
+    "同系列跨容量档位配置有差异，选购需逐档确认",
+    "预约/内胆等参数官方未完整标称"
+  ],
+  "tags": [
+    "IH电磁"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=10050167",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 补全：补写卖点 3 条 pros / 2 条 cons（来源：小米商城商品页文案（product_id=10050167））；2026-10-04 跳过说明：系列条目（2/3/4/5L）：尺寸/型号/功率随容量档位不同，不取单档值（太平洋 2862551/2862571/2862591/2862611 四档各异）",
+  "updated_at": "2026-10-04",
+  "img": "rc_ih2.webp",
+  "brand": "小米"
+}

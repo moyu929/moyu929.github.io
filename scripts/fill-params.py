@@ -32,57 +32,239 @@ def dp(rel):
 
 
 sys.stdout.reconfigure(encoding='utf-8')
-D = '2026-10-03'
+BLANK = ('查不到', '—', '', None, '-')
+D = '2026-10-04'
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
 
 # 本站字段 -> 第三方规格表的字段名候选（按优先级）
+#
+# 2026-10-04 扩表：缓存里实测有 225 个不同的第三方字段名，原先只映射 28 个。
+# 扩充时踩到的坑，逐条记在 SHAPE 里做形状守卫：
+#   * `产品功率` 在空调下写的是「1.5匹」，不是瓦 —— 不能当功率取
+#   * `产品容量` 在空调下写的是「4.5L」（匹数的另一种写法），在破壁机下才是容量
+#   * `吸尘能力` 写的是「28000pa」而本站 `suction` 期望 kPa，两者差 1000 倍
+#   * `噪音强度` 写的是「84dB」，比任何家用品都高，多半是错误行，别当噪音取
 FIELD_MAP = {
-    'power':       ['额定功率', '产品功率', '输入功率', '加热功率', '制冷功率'],
-    'size':        ['产品尺寸', '外形尺寸', '外型尺寸', '机身尺寸', '产品大小', '尺寸'],
-    'weight':      ['产品重量', '净重', '毛重', '重量'],
-    'noise':       ['工作噪音', '室内机噪音', '噪音', '运转噪音', '产品噪音'],
-    'capacity':    ['产品容量', '水箱容量', '水箱容积', '内胆容量', '容量'],
-    'tank':        ['水箱容量', '水箱容积', '集尘箱容量', '清水箱容量'],
-    'energy':      ['能效等级', '能效', '能源效率'],
-    'flux':        ['额定通量', '通量', '制水速度'],
+    # —— 功率：只认带 W 的来源字段。`产品功率` 不在其中（空调写匹数）——
+    'power':       ['额定功率', '额定总功率', '输入功率', '最大额定功率', '功率', '功耗'],
+    # 2026-10-04 微波炉批次新增：烤箱/蒸烤箱/微波炉品类下 pconline 的「产品功率」
+    # 写的就是额定输入功率（如老板 R026 2600W、格兰仕 DG26T-D20 1600W），
+    # 与空调的「1.5匹」不同；NEED_UNIT 的 W 守卫 + 阈值仍然生效。
+    'power_input': ['产品功率'],
+    'power_heat':  ['加热功率'],
+    'power_cool':  ['制冷功率'],
+    'power_mix':   ['搅拌功率'],
+    'power_wash':  ['洗涤功率'],
+    'power_dehy':  ['脱水功率'],
+    'power_fan':   ['风扇功率'],
+    'power_light': ['灯暖功率', '照明功率'],
+    'power_grill': ['烧烤功率'],
+    'power_mw':    ['微波功率'],
+
+    # —— 尺寸：注意室内机/室外机要分开，不能合并进 size
+    'size':        ['产品尺寸', '机身尺寸', '外形尺寸', '外型尺寸', '扫地机器人', '产品大小', '尺寸'],
+    'size_indoor': ['室内机尺寸'],
+    'size_outdoor':['室外机尺寸'],
+    'open_size':   ['安装开孔尺寸', '开孔尺寸'],
+
+    'weight':      ['产品重量', '主机净重', '重量', '净重', '毛重'],
+
+    # —— 噪音：`噪音强度` 不在其中（实测值 84dB，是错行）
+    'noise':       ['室内机噪音', '工作噪音', '运转噪音', '产品噪音', '噪音'],
+    'noise_out':   ['室外机噪音'],
+
+    # —— 容量 / 水箱
+    'capacity':    ['产品容量', '内胆容量', '容积大小', '餐具容量', '洗涤容量', '容量'],
+    'tank':        ['水箱容积', '水箱容量', '集尘箱容量', '清水箱容量', '污水箱容量'],
+    'tank_clean':  ['净水箱容量', '清水箱容量'],
+    'tank_dirty':  ['污水箱容量'],
+
+    'energy':      ['能效等级', '能耗等级', '能源效率', '能效'],
+
+    'flux':        ['额定通量', '净水流量', '通量', '制水速度'],
+
     'runtime':     ['续航时间', '连续使用时间', '工作时间'],
-    'suction':     ['吸力', '真空度', '吸力大小'],
+    'charge_time': ['充电时间'],
     'battery':     ['电池容量', '电池规格'],
+
     'coverage':    ['适用面积', '覆盖面积'],
-    'voltage':     ['额定电压', '电源电压', '电压'],
+    'voltage':     ['额定电压', '电源电压', '额定输入', '电源性能'],
+
     'refresh':     ['屏幕刷新频率', '刷新率'],
+    'response':    ['屏幕响应速度'],
     'resolution':  ['分辨率', '屏幕分辨率'],
+    'screen_size': ['屏幕尺寸'],
+
+    # —— 空调：匹数与能力
     'cool_cap':    ['制冷量'],
     'heat_cap':    ['制热量'],
     'cold_wind':   ['循环风量', '风量', '风量大小'],
+    'fresh_air':   ['新风量'],
+    'pishu':       ['匹数'],
+    'apf':         ['全年能源消耗率(APF)', 'APF'],
+    'seer':        ['能效比(SEER)', 'SEER'],
+    'refrigerant': ['制冷剂'],
+    'inverter':    ['是否变频'],
+    'ac_type':     ['空调类型'],
+    'cold_heat':   ['冷暖类型'],
+
+    # —— 除湿 / 加湿
+    'dehumid':     ['日除湿量'],
+    'humid_rate':  ['加湿量'],
+    'compressor':  ['压缩机'],
+
+    # —— 清洁电器
+    'suction_pa':  ['吸尘能力'],
+    'vacuum':      ['真空度'],
+    'climb':       ['爬坡能力'],
+    'dust_cup':    ['尘杯容量'],
+    'dust_way':    ['集尘方式'],
+    'filter_kind': ['滤芯种类'],
+    'motor':       ['电机类型'],
+
+    # —— 厨房
     'heating':     ['加热方式'],
-    'backlight':   ['面板类型', '背光类型'],
-    'open_size':   ['安装开孔尺寸', '开孔尺寸'],
-    'vent_power':  ['换气功率'],
-    'light_power': ['灯暖功率', '照明功率'],
-    'heat_power':  ['取暖功率', '风暖功率'],
-    'fan_power':   ['风扇功率'],
-    'yield':       ['出汁率', '出浆率'],
-    'gear':        ['档位', '可选档位', '火力档位'],
+    'gear':        ['可选档位', '档位', '火力档位', '风力档位'],
+    'material':    ['锅体材质', '内胆材质', '内筒材料', '面板材质', '搅拌杯材质', '材质'],
+    'speeds':      ['风力档位', '可选档位', '速度调节'],
+    'preset':      ['预约定时煮饭', '预约时间'],
+    'water_yield': ['出汁率', '出浆率'],
+    'net_flow':    ['净水机原理'],
+    'install':     ['安装方式'],
+    'open_way':    ['开门方式'],
+    'water_use':   ['耗水量'],
+    'ipx':         ['产品特性'],
+    'full_auto':   ['全自动'],
+    # 控温方式（电子控温/机械控温）描述的是温控元件，不是操控方式，
+    # 映射进 control 会污染「按键式/旋钮式/触控式」口径 —— 2026-10-04 微波炉批次移除
+    'control':     ['操控方式', '控制方式', '操作方式'],
+    'display':     ['显示屏'],
+    'temp_range':  ['温度范围'],
+
+    # —— 净化器
+    'cadr_pm':     ['固态污染物CADR', '颗粒物CADR'],
+    'cadr_hcho':   ['甲醛CADR'],
+    'filter_layers': ['过滤方式'],
+    'area':        ['适用面积'],
+
+    # —— 型号（2026-10-04 电饭煲批次新增）。太平洋「型号」栏偶发塞产品名
+    #    （SKILL.md 已知坑），acceptable() 里对 model_code 加了专用守卫
+    'model_code':  ['型号'],
+
+    # —— 上市时间与价格（不是规格参数，单独解析）
+    '_上市时间':   ['上市时间'],
+    '_参考价':     ['参考价:', '参考价', '市场价'],
+}
+
+# 源字段族 -> 本站候选字段。
+#
+# 只在**语义相同**时才映射：把「是否变频」写进 `energy`（能效等级 1 级）这类
+# 看似能填、实则污染数据的做法在这里被刻意排除 —— 宁可少一列。
+# 找不到对应 schema 字段的源字段族（如 APF、SEER、制冷剂、开门方式）直接不映射，
+# 等对应字段进了 schema 再回来接。
+ALIAS = {
+    'power_heat':  ['heat_power', 'power'],
+    'power_input': ['input_power'],
+    'power_cool':  ['cool_power', 'power'],
+    'power_mix':   ['power'],
+    'power_wash':  ['power'],
+    'power_dehy':  ['power'],
+    'power_fan':   ['fan_power', 'power'],
+    'power_light': ['light_power', 'power'],
+    'power_grill': ['grill_power', 'power'],
+    'power_mw':    ['mw_power', 'input_power', 'power'],
+    'noise_out':   ['noise'],
+    'tank_clean':  ['clean_tank', 'water_tank', 'tank'],
+    'tank_dirty':  ['dirty_tank', 'water_tank', 'tank'],
+    'cold_wind':   ['airflow', 'cold_wind'],
+    'suction_pa':  ['suction', 'suction_aw'],
+    'filter_kind': ['filter'],
+    'speeds':      ['speeds', 'gear'],
+    'ipx':         ['ipx'],
 }
 
 # 字段级异常阈值：超出即判第三方错标，丢弃
 THRESHOLD = {
     'power':     (5, 6000),      # 家电额定功率 5W~6000W
+    'power_input': (5, 6000),    # 额定输入功率（产品功率）同域
+    'power_heat': (5, 4000),
+    'power_cool': (5, 6000),
+    'power_mix':  (5, 3000),
+    'power_wash': (5, 3000),
+    'power_dehy': (5, 2000),
+    'power_fan':  (1, 500),
+    'power_light': (1, 2000),
+    'power_grill': (5, 4000),
+    'power_mw':   (5, 3000),
     'weight':    (0.05, 100),    # 净重 50g~100kg
     'noise':     (15, 90),       # 噪音 15~90dB
     'battery':   (500, 20000),   # 电池 500~20000mAh
     'coverage':  (3, 200),       # 适用面积 3~200㎡
-    'capacity':  (0.2, 30),      # 通用容量下界
+    'area':      (3, 200),
+    # 2026-10-04 微波炉批次：上限 30 -> 100。本品类含嵌入式蒸烤一体机
+    # （美的 BS50D0W 85L、老板 R026 60L、格兰仕 KDES85TMC-A90 50L），
+    # 30 的上限把真实容量全拦了；下界 0.2 与 L/ml 单位守卫仍然生效。
+    'capacity':  (0.2, 100),     # 通用容量下界
     'tank':      (0.1, 10),
+    'tank_clean': (0.1, 10),
+    'tank_dirty': (0.1, 10),
     'flux':      (0.05, 10),     # 通量 t/h 或 L/min
     'runtime':   (5, 600),       # 续航 5~600min
+    'cool_cap':  (500, 20000),   # 制冷量 W
+    'heat_cap':  (500, 25000),
+    'cold_wind': (100, 30000),   # 风量 m³/h
+    'fresh_air': (30, 1500),
+    'dehumid':   (5, 200),       # L/D，家用机极少破 100
+    'humid_rate': (50, 1200),    # ml/h
+    'dust_cup':  (0.05, 5),      # L
+    'climb':     (1, 30),        # mm
+    'suction_pa': (500, 60000),  # Pa
+    'vacuum':    (1, 40),        # kPa
+    'cadr_pm':   (10, 1500),     # m³/h
+    'cadr_hcho': (5, 800),
+    'pishu':     (0.5, 8),
+    'official_price': (49, 999999),
+}
+
+# 单位守卫：number 字段的值必须自带该单位，否则判第三方错标。
+#
+# 这条比阈值更早生效、也更准 —— 空调的 `产品功率` 写「1.5匹」、净化器的
+# `产品容量` 写「4.5L」（匹数的另一种写法），数值上都能骗过阈值，只有单位能拦住。
+NEED_UNIT = {
+    'power': r'[Ww]|瓦', 'power_heat': r'[Ww]|瓦', 'power_cool': r'[Ww]|瓦',
+    'power_mix': r'[Ww]|瓦', 'power_wash': r'[Ww]|瓦', 'power_dehy': r'[Ww]|瓦',
+    'power_fan': r'[Ww]|瓦', 'power_light': r'[Ww]|瓦', 'power_grill': r'[Ww]|瓦',
+    'power_mw': r'[Ww]|瓦',
+    'weight': r'kg|KG|千克|公斤|g$|克',
+    'noise': r'dB|分贝',
+    'battery': r'mAh|ah|安时',
+    'coverage': r'㎡|m2|平方米|平米|㎡',
+    'area': r'㎡|m2|平方米|平米',
+    'capacity': r'[Ll]|升|ml',
+    'tank': r'[Ll]|升|ml', 'tank_clean': r'[Ll]|升|ml', 'tank_dirty': r'[Ll]|升|ml',
+    'flux': r'升|L/|ml|mL|t/h',
+    'runtime': r'min|分钟|小时|h$',
+    'cool_cap': r'W', 'heat_cap': r'W',
+    'cold_wind': r'm3|m³|立方米',
+    'fresh_air': r'm3|m³',
+    'dehumid': r'[Ll]|升',
+    'humid_rate': r'ml|mL|毫升|升',
+    'dust_cup': r'[Ll]|升|ml',
+    'climb': r'mm|毫米|cm',
+    'suction_pa': r'[Pp]a|帕',
+    'vacuum': r'[Kk][Pp]a|帕',
+    'cadr_pm': r'm3|m³', 'cadr_hcho': r'm3|m³',
+    'pishu': r'匹',
 }
 
 # text 类字段：值保留原文（尺寸「1084×232×232mm」不能只取第一个数字，
 # 那会丢掉尺寸信息），但仍做阈值校验以剔除第三方错标值。
-TEXT_FIELDS = {'size', 'heating', 'backlight', 'open_size', 'resolution'}
+TEXT_FIELDS = {'size', 'size_indoor', 'size_outdoor', 'heating', 'backlight',
+               'open_size', 'resolution', 'material', 'energy', 'ipx',
+               'display', 'control', 'gear', 'speeds', 'preset', 'motor',
+               'compressor', 'filter', 'filter_kind', 'filter_layers',
+               'model_code'}
 
 # 单位归一：把第三方写法换成 schema 声明的单位。系数都是确定的换算，不是猜测。
 # 单位归一：把第三方的中文单位写法换成 schema 声明的单位。
@@ -137,8 +319,22 @@ def num_of(v):
 
 
 def acceptable(field, raw):
-    """按阈值剔除第三方错标值。返回 (是否可用, 说明)。"""
-    n = num_of(raw)
+    """按单位守卫 + 阈值剔除第三方错标值。返回 (是否可用, 说明)。"""
+    s = str(raw)
+    # 2026-10-04 微波炉批次新增：pconline 的「产品容量 26-35L」「产品功率 1201-1600W」
+    # 是**筛选分桶**不是真实参数（NN-SC200W 落在 21-30L 桶，真机 30L；取下界必错）。
+    # number 字段一律拒收区间写法；text 字段（温度范围等）不在此列。
+    if field not in TEXT_FIELDS and re.match(r'^\s*\d+(?:\.\d+)?\s*[-~—]\s*\d+', s):
+        return False, '值「%s」是筛选分桶区间，非具体参数' % s[:20]
+    # 2026-10-04 电饭煲批次：model_code 专用守卫 —— 太平洋「型号」栏偶发塞产品名
+    # （「P1 3L(MFB17AM)」）或带说明文字；真正的型号串应当是干净的单 token。
+    if field == 'model_code':
+        if re.search(r'[（(：:，,、\s/]|产品型号|同左|详见', s) or len(s) > 24:
+            return False, '值「%s」疑为产品名/说明文字，非型号串' % s[:24]
+    need = NEED_UNIT.get(field)
+    if need and not re.search(need, s):
+        return False, '值「%s」不含本字段要求的单位（疑串行错标）' % s[:20]
+    n = num_of(s)
     if n is None:
         return False, '无法解析数值'
     lo, hi = THRESHOLD.get(field, (None, None))
@@ -150,12 +346,21 @@ def acceptable(field, raw):
 def normalize(raw):
     for cn, en in UNIT_PAIRS:
         raw = raw.replace(cn, en)
+    # 尺寸分隔符归一：第三方常写半角 x（595x595x520mm），库内口径是 ×
+    raw = re.sub(r'(?<=\d)\s*[xX]\s*(?=\d)', '×', raw)
     return raw.strip()
 
 
-def pick(field, specs):
-    """按映射表从规格表取值。text 字段保留原文，number 字段取数值。"""
-    for name in FIELD_MAP.get(field, []):
+def pick(field, specs, names=None):
+    """按映射表从规格表取值。text 字段保留原文，number 字段取数值。
+
+    2026-10-04 微波炉批次修了一个潜伏 bug：main() 里算好的 plan
+    （ALIAS 展开，如 产品功率→input_power）从未传进来，pick 一直按
+    FIELD_MAP.get(本站字段名) 字面取源字段族 —— 目标字段名与源字段族名
+    不一致的映射（heat_power、input_power 等）全部静默落空。
+    现在显式传入展开后的源字段名候选。
+    """
+    for name in (names or FIELD_MAP.get(field, [])):
         if name in specs:
             raw = specs[name]
             ok, val = acceptable(field, raw)
@@ -167,6 +372,46 @@ def pick(field, specs):
             n = num_of(val)
             return (int(n) if n == int(n) else n), '%s=%s' % (name, raw)
     return None, None
+
+
+def pick_year(specs):
+    """从「上市时间」解析年份与月份。第三方写法有「2025年,3月」「2025-03」「2025年」几种。"""
+    raw = specs.get('上市时间') or ''
+    m = re.search(r'(19|20)\d{2}', str(raw))
+    if not m:
+        return {}
+    y = int(m.group(0))
+    out = {'year': y}
+    mm = re.search(r'(?:年|,|-|/)\s*(\d{1,2})\s*月?', str(raw)[m.end():])
+    if mm and 1 <= int(mm.group(1)) <= 12:
+        out['month'] = int(mm.group(1))
+    return out
+
+
+def pick_price(specs):
+    """从「参考价」取整数价格。第三方写成「￥2499」「¥2,499 元」。"""
+    for k in ('参考价:', '参考价', '市场价', '价格'):
+        if k in specs:
+            m = re.search(r'(\d[\d,]*(?:\.\d+)?)', str(specs[k]).replace(',', ''))
+            if m:
+                n = float(m.group(1))
+                if 49 <= n <= 999999:
+                    return int(n), '%s=%s' % (k, specs[k])
+    return None, None
+
+
+def plan_for(schema_keys):
+    """把 FIELD_MAP 展开成 {本站字段: [第三方字段名]}，只保留该品类 schema 里存在的 key。"""
+    out = {}
+    for src, names in FIELD_MAP.items():
+        if src.startswith('_'):
+            continue
+        for cand in ALIAS.get(src, [src]):
+            if cand in schema_keys:
+                out.setdefault(cand, [])
+                out[cand].extend(n for n in names if n not in out[cand])
+                break
+    return out
 
 
 def drop_suspicious_duplicates(results):
@@ -218,6 +463,40 @@ def read_lib(cid):
     return {p['id']: p for p in json.load(open(dp('data/%s/products.json' % cid), encoding='utf-8'))}
 
 
+# 本地第三方规格缓存：{pconline 商品 id: {字段: 值}}
+def load_cache():
+    out = {}
+    for f in glob.glob(dp('data/_cache/brand-*.json')):
+        try:
+            d = json.load(open(f, encoding='utf-8'))
+        except Exception:
+            continue
+        for it in (d if isinstance(d, list) else []):
+            if it.get('id') and (it.get('specs') or {}):
+                # 第三方页面里 m³ 会被转义成 m&#179;，不解转义单位守卫会全部失配
+                out.setdefault(str(it['id']), {}).update(
+                    {k: html.unescape(str(v)) for k, v in it['specs'].items()})
+    # 2026-10-04 微波炉批次新增：单品缓存 pconline-<品类>-<品牌>-<id>.json
+    #（此前手工抓取落盘的整页规格，字段比 brand-*.json 全：多「产品尺寸/重量/内腔尺寸」）
+    for f in glob.glob(dp('data/_cache/pconline-*-[0-9]*.json')):
+        m = re.search(r'pconline-[a-z_]+-[a-z]+-(\d+)\.json$', f)
+        if not m:
+            continue
+        try:
+            d = json.load(open(f, encoding='utf-8'))
+        except Exception:
+            continue
+        if isinstance(d, dict) and d:
+            out.setdefault(m.group(1), {}).update(
+                {k: html.unescape(str(v)) for k, v in d.items()})
+    return out
+
+
+def pid_of(url):
+    m = re.search(r'/([0-9]+)_detail\.html', url or '')
+    return m.group(1) if m else None
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--dry', action='store_true')
@@ -228,22 +507,24 @@ def main():
     targets = []
     for f in sorted(glob.glob(dp('data/*/schema.json'))):
         cid = os.path.basename(os.path.dirname(f))
-        if args.cat and cid != args.cat:
+        if args.cat and cid not in args.cat.split(','):
             continue
         s = json.load(open(f, encoding='utf-8'))
         keys = {x['key'] for x in s['fields']}
-        fields = [k for k in FIELD_MAP if k in keys]
-        if not fields:
-            continue
+        plan = plan_for(keys)
+        if 'year' in keys:
+            plan['year'] = ['上市时间']
+        if 'month' in keys:
+            plan['month'] = ['上市时间']
         for p in json.load(open(dp('data/%s/products.json' % cid), encoding='utf-8')):
-            holes = [k for k in fields
-                     if p.get(k) in ('查不到', '—', '', None)]
+            holes = sorted(k for k in plan if p.get(k) in BLANK)
             if not holes:
                 continue
             u = p.get('verify_url') or ''
             if 'g.pconline.com.cn/product/' not in u:
                 continue
-            targets.append((cid, p['id'], u, holes))
+            # 把该品类展开后的映射一起带上：job 里按它取源字段（修 ALIAS 落空 bug）
+            targets.append((cid, p['id'], u, holes, dict(plan)))
     if args.limit:
         seen = Counter()
         keep = []
@@ -252,13 +533,16 @@ def main():
                 keep.append(t); seen[t[0]] += 1
         targets = keep
 
-    print('待处理 %d 条产品' % len(targets))
+    cache = load_cache()
+    hits = sum(1 for t in targets if pid_of(t[2]) in cache)
+    print('待处理 %d 条产品（%d 条缓存已命中，走离线解析；%d 条需联网）'
+          % (len(targets), hits, len(targets) - hits))
     done = [0]
     results = {}
 
     def job(t):
-        cid, pid, url, holes = t
-        specs = fetch_specs(url)
+        cid, pid, url, holes, plan = t
+        specs = cache.get(pid_of(url)) or fetch_specs(url)
         done[0] += 1
         if done[0] % 50 == 0:
             print('  %d/%d' % (done[0], len(targets)), flush=True)
@@ -266,9 +550,22 @@ def main():
             return None
         fills = {}
         for k in holes:
-            v, why = pick(k, specs)
-            if v is not None:
-                fills[k] = (v, why)
+            if k in ('year', 'month'):
+                ym = pick_year(specs)
+                if k in ym:
+                    fills[k] = (ym[k], '上市时间=%s' % specs.get('上市时间'))
+            elif k == 'official_price':
+                v, why = pick_price(specs)
+                if v is not None:
+                    # 2026-10-04 电饭煲批次（口径对齐「竞品副分组归类结项_2026-10-02」）：
+                    # pconline「参考价」是渠道参考价，**禁止冒充官方价**。它只能落
+                    # ref_price —— 目标 ref_price 有空位时改写 ref_price，否则整条放弃。
+                    if 'ref_price' in holes and 'ref_price' not in fills:
+                        fills['ref_price'] = (v, (why or '参考价') + '（pconline 参考价，写入参考价列）')
+            else:
+                v, why = pick(k, specs, plan.get(k))
+                if v is not None:
+                    fills[k] = (v, why)
         return (cid, pid, fills) if fills else None
 
     with ThreadPoolExecutor(max_workers=2) as ex:

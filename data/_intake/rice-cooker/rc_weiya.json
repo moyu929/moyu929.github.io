@@ -1,0 +1,39 @@
+{
+  "id": "rc_weiya",
+  "name": "米家智能电饭煲 微压版",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "压力IH",
+  "official_price": 449,
+  "second_hand": "—",
+  "capacity": 4,
+  "power": null,
+  "inner_pot": "查不到",
+  "pressure": "查不到",
+  "appoint": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+    "IH电磁加热+蓄压球技术，微压焖香",
+    "智显小黑屏，状态一目了然",
+    "NFC 闪连云食谱",
+    "4L 容量"
+  ],
+  "cons": [
+    "微压非全压力，口感层次不及压力IH机型",
+    "内胆材质等参数未完整标称"
+  ],
+  "tags": [
+    "压力IH"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=10000353",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 补全：capacity=4，补写卖点 4 条 pros / 2 条 cons（来源：商城API（商品名「米家智能电饭煲 微压版 4L」→ 容量 4）；小米商城商品页文案（product_id=10000353））；2026-10-04 库内官方价 449 为商城「起价」，锚定商品（product_id=10000353）现价 599，待审核方复核",
+  "updated_at": "2026-10-04",
+  "img": "rc_weiya.webp",
+  "brand": "小米"
+}
