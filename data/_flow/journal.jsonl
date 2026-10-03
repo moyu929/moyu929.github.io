@@ -1804,3 +1804,29 @@
 {"ts":"2026-10-03T15:58:45.675Z","actor":"claude-code","branch":"chore/drop-commercial","action":"recall","key":"dehumidifier/deye_641658","from":"library","to":"review","batch":"3135588d","reason":"工业除湿机（380V 三相电 / 230kg / 480L·D），按 2026-10-03 口径仅收家用","index":6,"fingerprint":"a31960527a32"}
 {"ts":"2026-10-03T15:58:46.051Z","actor":"claude-code","branch":"chore/drop-commercial","action":"drop","key":"dehumidifier/deye_641660","from":"review","to":null,"batch":"0a5e0873","reason":"2026-10-03 用户裁决：仅收录家用家电。第三方规格标注「工业除湿机」","fingerprint":"f27667a34001"}
 {"ts":"2026-10-03T15:58:46.061Z","actor":"claude-code","branch":"chore/drop-commercial","action":"drop","key":"dehumidifier/deye_641658","from":"review","to":null,"batch":"0a5e0873","reason":"2026-10-03 用户裁决：仅收录家用家电。第三方规格标注「工业除湿机」","fingerprint":"a31960527a32"}
+{"ts":"2026-10-03T21:08:21.389Z","actor":"agent-yi","branch":"collect/yi-blender","action":"submit","key":"blender/bl_p1","from":"draft","to":"intake","batch":"b94c3c70","supersedes":true}
+{"ts":"2026-10-03T21:08:21.400Z","actor":"agent-yi","branch":"collect/yi-blender","action":"submit","key":"blender/bl_s2","from":"draft","to":"intake","batch":"b94c3c70","supersedes":true}
+{"ts":"2026-10-03T21:08:21.408Z","actor":"agent-yi","branch":"collect/yi-blender","action":"submit","key":"blender/bl_s1","from":"draft","to":"intake","batch":"b94c3c70","supersedes":true}
+{"ts":"2026-10-03T21:08:21.417Z","actor":"agent-yi","branch":"collect/yi-blender","action":"submit","key":"blender/bl_3","from":"draft","to":"intake","batch":"b94c3c70","supersedes":true}
+{"ts":"2026-10-03T21:08:21.425Z","actor":"agent-yi","branch":"collect/yi-blender","action":"submit","key":"blender/bl_n1","from":"draft","to":"intake","batch":"b94c3c70","supersedes":true}
+{"ts":"2026-10-03T21:08:21.433Z","actor":"agent-yi","branch":"collect/yi-blender","action":"submit","key":"blender/bl_soy","from":"draft","to":"intake","batch":"b94c3c70","supersedes":true}
+{"ts":"2026-10-03T21:08:21.442Z","actor":"agent-yi","branch":"collect/yi-blender","action":"submit","key":"blender/bl_cup2","from":"draft","to":"intake","batch":"b94c3c70","supersedes":true}
+{"ts":"2026-10-03T21:08:21.450Z","actor":"agent-yi","branch":"collect/yi-blender","action":"submit","key":"blender/supor_1659767","from":"draft","to":"intake","batch":"b94c3c70","supersedes":true}
+{"ts":"2026-10-03T21:08:21.458Z","actor":"agent-yi","branch":"collect/yi-blender","action":"submit","key":"blender/supor_1659887","from":"draft","to":"intake","batch":"b94c3c70","supersedes":true}
+{"ts":"2026-10-03T21:08:21.466Z","actor":"agent-yi","branch":"collect/yi-blender","action":"submit","key":"blender/supor_2559119","from":"draft","to":"intake","batch":"b94c3c70","supersedes":true}
+{"ts":"2026-10-03T21:08:21.474Z","actor":"agent-yi","branch":"collect/yi-blender","action":"submit","key":"blender/supor_2765919","from":"draft","to":"intake","batch":"b94c3c70","supersedes":true}
+{"ts":"2026-10-03T21:08:21.482Z","actor":"agent-yi","branch":"collect/yi-blender","action":"submit","key":"blender/supor_2688639","from":"draft","to":"intake","batch":"b94c3c70","supersedes":true}
+{"ts":"2026-10-03T21:08:21.490Z","actor":"agent-yi","branch":"collect/yi-blender","action":"submit","key":"blender/joyoung_2559200","from":"draft","to":"intake","batch":"b94c3c70","supersedes":true}
+{"ts":"2026-10-03T21:08:21.497Z","actor":"agent-yi","branch":"collect/yi-blender","action":"submit","key":"blender/joyoung_2643899","from":"draft","to":"intake","batch":"b94c3c70","supersedes":true}
+{"ts":"2026-10-03T21:08:21.505Z","actor":"agent-yi","branch":"collect/yi-blender","action":"submit","key":"blender/joyoung_2332039","from":"draft","to":"intake","batch":"b94c3c70","supersedes":true}
+{"ts":"2026-10-03T21:08:21.513Z","actor":"agent-yi","branch":"collect/yi-blender","action":"submit","key":"blender/joyoung_2596819","from":"draft","to":"intake","batch":"b94c3c70","supersedes":true}
+{"ts":"2026-10-03T21:08:21.521Z","actor":"agent-yi","branch":"collect/yi-blender","action":"submit","key":"blender/joyoung_2673079","from":"draft","to":"intake","batch":"b94c3c70","supersedes":true}
+{"ts":"2026-10-03T21:08:21.529Z","actor":"agent-yi","branch":"collect/yi-blender","action":"submit","key":"blender/midea_1109741","from":"draft","to":"intake","batch":"b94c3c70","supersedes":true}
+{"ts":"2026-10-03T21:08:21.536Z","actor":"agent-yi","branch":"collect/yi-blender","action":"submit","key":"blender/midea_2558979","from":"draft","to":"intake","batch":"b94c3c70","supersedes":true}
+{"ts":"2026-10-03T21:08:21.545Z","actor":"agent-yi","branch":"collect/yi-blender","action":"submit","key":"blender/midea_2644019","from":"draft","to":"intake","batch":"b94c3c70","supersedes":true}
+{"ts":"2026-10-03T21:08:21.552Z","actor":"agent-yi","branch":"collect/yi-blender","action":"submit","key":"blender/midea_2688659","from":"draft","to":"intake","batch":"b94c3c70","supersedes":true}
+{"ts":"2026-10-03T21:08:21.560Z","actor":"agent-yi","branch":"collect/yi-blender","action":"submit","key":"blender/bear_2596739","from":"draft","to":"intake","batch":"b94c3c70","supersedes":true}
+{"ts":"2026-10-03T21:08:21.567Z","actor":"agent-yi","branch":"collect/yi-blender","action":"submit","key":"blender/bear_1657367","from":"draft","to":"intake","batch":"b94c3c70","supersedes":true}
+{"ts":"2026-10-03T21:08:21.575Z","actor":"agent-yi","branch":"collect/yi-blender","action":"submit","key":"blender/bear_1889127","from":"draft","to":"intake","batch":"b94c3c70","supersedes":true}
+{"ts":"2026-10-03T21:08:21.582Z","actor":"agent-yi","branch":"collect/yi-blender","action":"submit","key":"blender/bear_2768319","from":"draft","to":"intake","batch":"b94c3c70","supersedes":true}
+{"ts":"2026-10-03T21:08:21.590Z","actor":"agent-yi","branch":"collect/yi-blender","action":"submit","key":"blender/bear_2558919","from":"draft","to":"intake","batch":"b94c3c70","supersedes":true}
