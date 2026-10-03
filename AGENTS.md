@@ -130,7 +130,7 @@
 - 会话开头先 `gh pr list` / `gh issue list` 认领任务，再 `npm run flow:status` 看分区现状、`npm run flow:workers` 看谁占了哪个工作台（防互相踩）。
 - **gh 开工自检**：报 command not found → 进程启动早于安装，**重启客户端**即可（临时可用全路径
   `"C:\Program Files\GitHub CLI\gh.exe"`）；报未登录 → 凭据在 Windows 凭据管理器、应自动可用。
-  都排不掉时在 cutover issue 报告（详解见 `docs/proposals/P2切换清单与待用户事项_2026-10-03.md` §8.6）。
+  都排不掉时在 issue 报告；凭据失效（401）时请用户跑一次 `gh auth login`（浏览器一次性授权，之后自动管理）。
 - **编排方义务**：给子 Agent 注入其 worktree 的绝对路径，**提示词里不出现主仓路径**——这是唯一被实测确认发生过的越界写入向量。
 
 **多工作者并行（A×N / B×N，2026-10-03 起）**
