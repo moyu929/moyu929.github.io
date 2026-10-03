@@ -1,0 +1,44 @@
+{
+  "id": "frig_pro_508",
+  "name": "米家冰箱Pro 508L",
+  "model_code": "BCD-508WFSSMPDIN",
+  "miot_model": "查不到",
+  "door_type": "十字门",
+  "official_price": 4469,
+  "second_hand": "—",
+  "total_vol": 508,
+  "fridge_vol": 294,
+  "freezer_vol": 176,
+  "energy": "1级",
+  "power_use": 0.81,
+  "cooling": "风冷",
+  "sterilize": "全域离子净化4.0",
+  "noise": "31dB",
+  "size": "792×597×1925mm",
+  "year": null,
+  "pros": [
+    "十字四门",
+    "双系统防串味",
+    "自动制冰",
+    "全域离子净化4.0",
+    "低噪31dB"
+  ],
+  "cons": [
+    "价格高"
+  ],
+  "tags": [
+    "十字门"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=10050189",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=4999，energy=1级，size=792×597×1925mm，cooling=风冷，noise=31dB，sterilize=全域离子净化4.0，fridge_vol=294，freezer_vol=176，var_vol=38，power_use=0.81；2026-10-04 补全 model_code=BCD-508WFSSMPDIN、total_vol=508（来源：小米商城商品页能效标识图「规格型号」与官方商品名，冷藏294+冷冻176+变温38=508 一致）；2026-10-04 撰写 pros/cons（只引用已入库参数与商城官方文案，未引入参数表外数值）；注：详情页能效标识分两批次——批次一(GB 12021.2-2015)综合耗电0.81、批次二(GB 12021.2-2025)0.79，分仓容积一致，商城关键参数取0.81",
+  "updated_at": "2026-10-04",
+  "img": "frig_pro_508.webp",
+  "brand": "小米",
+  "ref_price": 4999,
+  "var_vol": 38
+}
