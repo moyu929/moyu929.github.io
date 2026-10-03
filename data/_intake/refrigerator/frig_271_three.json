@@ -1,0 +1,44 @@
+{
+  "id": "frig_271_three",
+  "name": "米家冰箱 271L 三门",
+  "model_code": "BCD-271WTMP",
+  "miot_model": "查不到",
+  "door_type": "三门",
+  "official_price": 1599,
+  "second_hand": "—",
+  "total_vol": 271,
+  "fridge_vol": 151,
+  "freezer_vol": 85,
+  "energy": "1级",
+  "power_use": 0.59,
+  "cooling": "风冷无霜(单系统)",
+  "sterilize": "银离子抗菌",
+  "noise": "36dB",
+  "size": "560×600×1810mm",
+  "year": null,
+  "pros": [
+    "三门三温区",
+    "变温室35L",
+    "风冷无霜",
+    "一级能效",
+    "银离子抗菌"
+  ],
+  "cons": [
+    "单循环制冷"
+  ],
+  "tags": [
+    "三门"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230804107",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=1899，energy=1级，size=560×600×1810mm，cooling=风冷无霜，noise=36dB，sterilize=银离子抗菌，fridge_vol=151，freezer_vol=85，var_vol=35，power_use=0.59；2026-10-04 补全 model_code=BCD-271WTMP、total_vol=271（来源：小米商城商品页详情「产品参数」图，冷藏151+冷冻85+变温35=271 一致，能效标识图同证）；cooling 括注「单系统」取自商城关键参数「制冷系统」；2026-10-04 撰写 pros/cons（只引用已入库参数与商城官方文案）",
+  "updated_at": "2026-10-04",
+  "img": "frig_271_three.webp",
+  "brand": "小米",
+  "ref_price": 1899,
+  "var_vol": 35
+}
