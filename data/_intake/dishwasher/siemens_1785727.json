@@ -1,0 +1,36 @@
+{
+  "id": "siemens_1785727",
+  "name": "西门子SN67ZX00CC",
+  "brand": "西门子",
+  "model_code": "SN67ZX00CC",
+  "type": "嵌入式",
+  "official_price": "查不到",
+  "ref_price": 19999,
+  "year": "查不到",
+  "pros": [
+    "15套大容量",
+    "晶蕾烘干",
+    "热交换烘干"
+  ],
+  "cons": [
+    "售价近2万元，定位高端"
+  ],
+  "tags": [
+    "西门子"
+  ],
+  "capacity": 15,
+  "dry": "晶蕾烘干, 热交换",
+  "sterilize": "查不到",
+  "power": 2400,
+  "size": "550×815×598mm",
+  "weight": 46,
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/xiwanji/siemens/1785727_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：嵌入式（依据：型号段位 SN67（西门子/博世洗碗机型号编码惯例））；2026-10-03 回填型号：原「查不到」，产品名「西门子SN67ZX00CC」中的型号串为 SN67ZX00CC（来源与产品名同源的第三方规格站）；2026-10-04 补全订正：power '2400W'→2400（schema 数值型归一），weight '46Kg'→46（schema 数值型归一），capacity '15套'→15（schema 数值型归一），water_eff '10L' 剔除：单位为 L，是单次耗水量而非水效等级（疑第三方字段错位），原值留档，待权威来源后再录，撰写pros 3条（依据：已入库参数），撰写cons 1条",
+  "updated_at": "2026-10-04",
+  "water_eff": "查不到"
+}
