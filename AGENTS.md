@@ -21,7 +21,7 @@
 | 角色 | 职责 | 常态可改范围 |
 | --- | --- | --- |
 | **采集 Agent（A）** | 在草稿区收录新产品、起草订正稿；完成后 `flow:submit` 提交待审 | `data/_draft/`、`public/images/`、`schema.json`、`categories.json`、`data/_sources/`、`scripts/`、`src/` |
-| **审核修正 Agent（B）** | **产品级生命周期的唯一操作者**：认领待入库数据、召回复审已入库数据，在修正区核验修正后 `flow:publish` 入库 | `data/_review/`、`data/<品类>/products.json`（经 flow:publish，或经 library-io 的批量工具）、`docs/audit/` |
+| **审核修正 Agent（B）** | **产品级生命周期操作者**（角色唯一；**多 B 并行时按品类分工，见 §3.6**）：认领待入库数据、召回复审已入库数据，在修正区核验修正后 `flow:publish` 入库 | `data/_review/`、`data/<品类>/products.json`（经 flow:publish，或经 library-io 的批量工具）、`docs/audit/` |
 | **用户** | 下达指令；指派角色；裁决退回 / 剔除争议；下达结构冻结 | — |
 
 - 同一个 Agent 可以轮换承担 A / B 角色；**具体由用户指派**（一般看哪方空闲）。
@@ -117,7 +117,7 @@
 | 角色 | 工作位置 | 动作 | 硬边界 |
 | --- | --- | --- | --- |
 | **采集 A** | 编排方注入的 worktree（如 `../wt-collect-01`），分支 `collect/<任务号>-<品类>` | 分区流程 → `flow:submit` → 推分支 → 开 PR | 只开 PR；不碰 `main`；不进他人的 worktree |
-| **修正 B** | 主目录（其会话无法固定 cwd），按需切分支 | `gh pr checkout <PR>` → `flow:claim` → 核验修正 → `flow:publish` → 推回 → 请用户合并 | 不得直推 `main` |
+| **修正 B** | 单 B：主目录切分支；**多 B：各自 worktree（`../wt-review-<NN>`，见下「多工作者并行」）** | `gh pr checkout <PR>` → `flow:claim` → 核验修正 → `flow:publish` → 推回 → 请用户合并 | 不得直推 `main` |
 | **用户** | GitHub 网页 | 批准 merge、裁决冲突与口径、决定剔除 | merge 权只在用户 |
 
 - **PR 合并 = 上线时刻**：合并前站点展示上一个已发布版本；`recall` 不再立即下架。
@@ -129,10 +129,28 @@
   都排不掉时在 cutover issue 报告（详解见 `docs/proposals/P2切换清单与待用户事项_2026-10-03.md` §8.6）。
 - **编排方义务**：给子 Agent 注入其 worktree 的绝对路径，**提示词里不出现主仓路径**——这是唯一被实测确认发生过的越界写入向量。
 
+**多工作者并行（A×N / B×N，2026-10-03 起）**
+
+每个工作者一个**独立 worktree**（各自的文件系统副本）：跨工作者的冲突推迟到 PR 合并时，
+由 `merge=union`（journal）与**一行一款**（库文件）自动解决——因此**任务分配规则是唯一的额外约束**：
+
+| 事项 | 规则 |
+| --- | --- |
+| **品类是分配单元** | 同一品类同一时刻**至多一个采集方 + 一个修正方**；不同品类天然互不冲突（产品文件与 `products.json` 都按品类分隔）。 |
+| **共享文件串行** | `data/categories.json`、`data/<品类>/schema.json`、`data/_sources/**` 的修改**不与数据批次混在同一次 PR**；同一时刻只由一个工作者改（由编排方串行安排）。 |
+| **id 约定** | `<品类前缀>_<品牌>_<型号>`；`submit` 前先查库内与待入库区是否已有同产品，避免「同物不同 id」。 |
+| **防双领** | `claim` 在修正区原子创建 `<id>.json.claiming` 占位——同一文件任一时刻只有一个认领者；重复认领会显示原认领人。 |
+| **禁止共用工作目录** | 每个工作者只在**自己的** worktree 里跑命令。同一目录被两个会话共用会互相踩分支（2026-10-03 实际发生：一个会话切分支，另一个会话的未提交改动被带着走）。 |
+
+- worktree 命名：采集 `wt-collect-<NN>`、修正 `wt-review-<NN>`、编排 `wt-orch-<NN>`；各自从最新 `main` 出发。
+- **B 的目录形态**：客户端支持「按命令指定工作目录」的，直接在 `wt-review-<NN>` 里干活；不支持的，
+  按批次**开子会话、由编排方注入 worktree 路径**（与 A 同一模式）。
+
 **新建 worktree 的引导清单**（每新建一个目录跑一遍）：
 
 ```bash
-git worktree add ../wt-collect-01 -b collect/01-air-purifier
+git worktree add ../wt-collect-01 -b collect/01-air-purifier   # 采集方
+git worktree add ../wt-review-01  -b review/<批次号>            # 修正方（多 B 并行时）
 cd ../wt-collect-01
 npm run flow:status     # 自检。不需要 npm install（flow/validate/lint 只用 node 内置模块）
 npm run hooks:install   # 启用提交闸门（core.hooksPath 是本机配置，每个 worktree 各需一次）
