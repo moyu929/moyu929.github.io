@@ -60,6 +60,40 @@ function sleepSync(ms) {
 }
 
 /**
+ * 批量写库脚本的操作者名（留痕用）：
+ * `FLOW_ACTOR` 环境变量优先，否则取当前脚本文件名（如 mi-store.mjs）。
+ * 只给**批量工具**用；flow:* 的流转有自己的 journal 条目，不要用它（见 saveLibrary 的 actor 说明）。
+ */
+export function scriptActor() {
+  return process.env.FLOW_ACTOR || path.basename(process.argv[1] ?? '') || 'unknown'
+}
+
+/**
+ * 批量写库留痕（方案 P1-1 第三要素）。
+ *
+ * 为什么必须有：B 用批量工具重写整品类（如 classify-facets 一次 517 条）时，
+ * 产品级流转日志里**一条记录都没有** —— `flow:log` 出现盲区，只能靠 git log 兜底，
+ * 而 git log 说不出「谁在什么时候用哪个脚本改了哪一品类的多少条」。
+ *
+ * 粒度是**一次写入一条**（不逐产品）：批量工具改的是整个品类，逐条写会把 journal 冲爆。
+ */
+function journalBatchWrite(file, products, actor) {
+  try {
+    const cat = path.basename(path.dirname(file))
+    const journal = path.join(path.dirname(path.dirname(path.resolve(file))), '_flow', 'journal.jsonl')
+    fs.mkdirSync(path.dirname(journal), { recursive: true })
+    fs.appendFileSync(
+      journal,
+      `${JSON.stringify({ ts: new Date().toISOString(), actor, action: 'batch-write', key: `${cat}/products.json`, count: products.length })}\n`,
+      'utf8',
+    )
+  } catch {
+    // 留痕失败不应影响写入本身（写入已经成功）；但要让调用者知道
+    console.error(`⚠ 写库留痕失败（数据已写入）：${file}`)
+  }
+}
+
+/**
  * 写入库文件。
  *
  * 两类失败严格分开：
@@ -69,10 +103,12 @@ function sleepSync(ms) {
  *
  * @param {string} file
  * @param {any[]} products
- * @param {{ expectHash?: string|null, retries?: number }} options
+ * @param {{ expectHash?: string|null, retries?: number, actor?: string|null }} options
  *   expectHash：loadLibrary() 返回的 hash；调用方必须原样传回，否则拒绝写入
+ *   actor：**批量工具必须传**（用 scriptActor()）→ 写入成功后向 journal 追加一条
+ *     `batch-write` 粗粒度留痕。flow:* 流转不传（它自己有 publish/recall 等条目，传了会重复记）。
  */
-export function saveLibrary(file, products, { expectHash = null, retries = 5 } = {}) {
+export function saveLibrary(file, products, { expectHash = null, retries = 5, actor = null } = {}) {
   const text = serializeLibrary(products)
 
   const currentHash = fs.existsSync(file) ? hashText(fs.readFileSync(file, 'utf8')) : null
@@ -92,6 +128,7 @@ export function saveLibrary(file, products, { expectHash = null, retries = 5 } =
     try {
       fs.mkdirSync(path.dirname(file), { recursive: true })
       fs.writeFileSync(file, text, 'utf8')
+      if (actor) journalBatchWrite(file, products, actor)
       return text
     } catch (e) {
       if (!RETRYABLE.has(e.code)) throw e

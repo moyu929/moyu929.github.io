@@ -28,6 +28,7 @@ import json
 import os
 import sys
 import time
+from datetime import datetime, timezone
 
 # 库文件当前格式：'compact'（整数组一行）/ 'per-line'（一行一款，便于 git 按行合并）。
 # 与 Node 侧 library-io.mjs 的 FORMAT 必须保持一致。
@@ -77,11 +78,45 @@ def load(path):
     return {'products': json.loads(text), 'hash': hash_text(text), 'exists': True}
 
 
-def save(path, products, expect_hash=None, retries=5):
+def script_actor():
+    """批量写库脚本的操作者名（留痕用）：FLOW_ACTOR 优先，否则取脚本文件名。
+
+    只给**批量工具**用（见 save 的 actor 参数说明）。
+    """
+    return os.environ.get('FLOW_ACTOR') or os.path.basename(sys.argv[0] or '') or 'unknown'
+
+
+def _journal_batch_write(path, products, actor):
+    """批量写库留痕（方案 P1-1 第三要素）：一次写入记一条，不逐产品。
+
+    为什么必须有：批量工具重写整品类（如 classify-facets 一次 517 条）时，
+    产品级流转日志里一条记录都没有 —— `flow:log` 出现盲区，只能说"git log 兜底"，
+    而 git log 说不出「谁在什么时候用哪个脚本改了哪一品类的多少条」。
+    """
+    try:
+        journal = os.path.join(
+            os.path.dirname(os.path.dirname(os.path.abspath(path))), '_flow', 'journal.jsonl'
+        )
+        cat = os.path.basename(os.path.dirname(path))
+        os.makedirs(os.path.dirname(journal), exist_ok=True)
+        ts = datetime.now(timezone.utc).isoformat(timespec='milliseconds').replace('+00:00', 'Z')
+        entry = {'ts': ts, 'actor': actor, 'action': 'batch-write',
+                 'key': '%s/products.json' % cat, 'count': len(products)}
+        with open(journal, 'a', encoding='utf-8', newline='\n') as f:
+            f.write(json.dumps(entry, ensure_ascii=False, separators=(',', ':')) + '\n')
+    except OSError:
+        # 留痕失败不影响写入本身（写入已经成功），但要让调用者看见
+        sys.stderr.write('⚠ 写库留痕失败（数据已写入）：%s\n' % path)
+
+
+def save(path, products, expect_hash=None, retries=5, actor=None):
     """写入库文件。
 
     两类失败严格分开：指纹不一致 → 抛 LibraryConflict（立刻失败、不重试）；
     文件锁类 OSError → 有限次退避重试。共用重试路径会让守卫被重试架空。
+
+    actor：**批量工具必须传**（用 script_actor()）→ 写入成功后向 journal 追加一条
+      `batch-write` 粗粒度留痕。flow:* 流转不传（它自己有 publish/recall 等条目）。
     """
     text = serialize_library(products)
 
@@ -100,6 +135,8 @@ def save(path, products, expect_hash=None, retries=5):
             os.makedirs(os.path.dirname(path), exist_ok=True)
             with open(path, 'w', encoding='utf-8', newline='\n') as f:
                 f.write(text)
+            if actor:
+                _journal_batch_write(path, products, actor)
             return text
         except OSError as e:
             errno = e.errno or getattr(e, 'winerror', None) or 0
@@ -113,15 +150,15 @@ def save(path, products, expect_hash=None, retries=5):
     raise last
 
 
-def save_products(path, mutate):
+def save_products(path, mutate, actor=None):
     """便捷封装：载入 → 交给 mutate(products) 改 → 带指纹写回。
 
     典型用法（把"读-改-写"三步收敛到一处，避免各处自己重复实现而漏掉守卫）：
-        library_io.save_products(pp, lambda ps: ps.append(new_item))
+        library_io.save_products(pp, lambda ps: ps.append(new_item), actor=script_actor())
     """
     lib = load(path)
     mutate(lib['products'])
-    return save(path, lib['products'], expect_hash=lib['hash'])
+    return save(path, lib['products'], expect_hash=lib['hash'], actor=actor)
 
 
 if __name__ == '__main__':

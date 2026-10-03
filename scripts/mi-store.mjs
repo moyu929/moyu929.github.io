@@ -20,7 +20,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import process from 'node:process'
-import { loadLibrary, saveLibrary } from './lib/library-io.mjs'
+import { loadLibrary, saveLibrary, scriptActor } from './lib/library-io.mjs'
 
 const ROOT = path.resolve(import.meta.dirname, '..')
 const CACHE = path.join(ROOT, 'data', '_cache')
@@ -133,7 +133,7 @@ export function applyPatches(patch) {
     }
     if (!hit) continue
     try {
-      saveLibrary(file, lib.products, { expectHash: lib.hash })
+      saveLibrary(file, lib.products, { expectHash: lib.hash, actor: scriptActor() })
     } catch (e) {
       errors.push(`${cat}：写库被拒绝 —— ${e.message}`)
       continue

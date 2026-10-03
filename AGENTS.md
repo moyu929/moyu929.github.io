@@ -21,7 +21,7 @@
 | 角色 | 职责 | 常态可改范围 |
 | --- | --- | --- |
 | **采集 Agent（A）** | 在草稿区收录新产品、起草订正稿；完成后 `flow:submit` 提交待审 | `data/_draft/`、`public/images/`、`schema.json`、`categories.json`、`data/_sources/`、`scripts/`、`src/` |
-| **审核修正 Agent（B）** | **唯一写库者**：认领待入库数据、召回复审已入库数据，在修正区核验修正后 `flow:publish` 入库 | `data/_review/`、`data/<品类>/products.json`（仅经 flow:publish）、`docs/audit/` |
+| **审核修正 Agent（B）** | **产品级生命周期的唯一操作者**：认领待入库数据、召回复审已入库数据，在修正区核验修正后 `flow:publish` 入库 | `data/_review/`、`data/<品类>/products.json`（经 flow:publish，或经 library-io 的批量工具）、`docs/audit/` |
 | **用户** | 下达指令；指派角色；裁决退回 / 剔除争议；下达结构冻结 | — |
 
 - 同一个 Agent 可以轮换承担 A / B 角色；**具体由用户指派**（一般看哪方空闲）。
@@ -42,7 +42,20 @@
 | **草稿区** | `data/_draft/<品类>/<id>.json` | A 收录中的数据（半成品，随意增删改） | 只有 A |
 | **待入库区** | `data/_intake/<品类>/<id>.json` | A 已收录完成、等待 B 认领的交接队列 | A 经 `flow:submit` 放入；B 经 `flow:claim` 取走 |
 | **修正区** | `data/_review/<品类>/<id>.json` | B 正在核验/修正的数据（新认领的 + 召回复审的） | 只有 B |
-| **已入库区** | `data/<品类>/products.json` | 线上站点的唯一数据源（当前可信的数据） | 只有 B，且只能经 `flow:publish` 写入 |
+| **已入库区** | `data/<品类>/products.json` | 线上站点的唯一数据源（当前可信的数据） | 只有 B，且只能经 `flow:publish` 或**同一写入规范的批量工具**（见下） |
+
+**库写入是两层规则**（P1-1 落地后的现实，2026-10-03 起）：
+
+1. **写入动作一律经 `scripts/lib/library-io.mjs` / `library_io.py`** —— 这两个实现提供
+   规范序列化（一行一款、整值浮点归一、非 ASCII 不转义）+ 写前指纹校验（拒绝覆盖别人刚改过的库）
+   + 文件锁退避重试 + 批量留痕（`actor` → journal 的 `batch-write` 条目）。
+   任何人不得自己 `writeFileSync` / `write_text` 写 `products.json`。
+2. **产品级生命周期操作走 `flow:*`**（提交/认领/召回/入库/退回/剔除）；
+   **批量工具**（`mi:apply`、`img:webp`、`miot:match --apply`、`classify-facets`、`import-brands`）
+   经同一规范**直写**库——这是合法且被守卫保护的路径，不是绕过。
+   批量工具必须传 `actor`（用 `scriptActor()` / `script_actor()`），否则 `flow:log` 会出现盲区。
+
+⚠️ 别把「B 是唯一操作者」理解成「只有 `flow:publish` 能写库」：批量工具同样是写库者，只是**必须走同一规范**。
 
 分区文件与流转日志**大部分入库**——它们是各 Agent 之间的共享状态，不入库对方就看不见。
 例外是**草稿区**（`data/_draft/`）：它是采集方的私有工作台，按定义无人需要看见，自 2026-10-03 起
@@ -128,9 +141,13 @@
   它是**本地防线**，真正的门是 PR 上的 CI。每个 clone / worktree 各需启用一次（`core.hooksPath` 是本机配置）。
 - **改数据的提交必须写明来源与核验方式**，例如：
   `data: 补录洗地机 5 Pro 参数（来源：太平洋规格表 + 小米商城在售价）`。
+- **批量工具写库的提交**：提交信息**建议**同样带 `flow` 标记（如 `data: flow:batch mi:apply heater 12 款（来源：小米商城规格页）`）。
+  注意提交闸门**只拦 `_intake` / `_review` 的分区文件**，库文件本身不在拦截范围 —— 这是有意的，
+  否则每次订正数据都会被拦。批量工具会在 journal 里留一条 `batch-write`（含脚本名与条数），
+  写清 `flow` 标记能让「提交信息 ↔ 流转日志」一一对上。
 - **不要用 `git add -A` / `git add .`**：显式列出路径。共享工作树里 `-A` 会扫走别人未提交的分区文件
   （2026-10-03 实测发生过：两份文档被扫进他人提交，提交信息与内容不符）。
-- 推送前跑 **`npm run check`**（= `validate` + `audit:check`）；有 error 不得推送。
+- 推送前跑 **`npm run check`**（= `validate` + `lint` + `audit:check`）；有 error 不得推送。
 - 只推 `main` 触发部署；**不 force push `main`**；**不修改 git 配置**。
 - 改动了审核标注字段的提交，在信息里点出「已更新核查状态/来源」。
 
@@ -143,10 +160,10 @@
 | `data/_draft/**` | **只有 A** | 草稿区：收录中的半成品。**不入库**（见 3.1），备份靠「能过校验就 submit」 |
 | `data/_intake/**` | A 放入、B 取走（仅经 flow 命令） | 待入库区：交接队列，禁止共编 |
 | `data/_review/**` | **只有 B** | 修正区：核验修正中的数据 |
-| `data/<品类>/products.json` | **只有 B**，仅经 `flow:publish` | 已入库区：线上唯一数据源 |
+| `data/<品类>/products.json` | **只有 B 经 `flow:publish`**，或经 library-io 的批量工具 | 已入库区：线上唯一数据源（写入一律经 `library-io`，见 3.1） |
 | `data/<品类>/schema.json` | A | 共享基础设施；改前看 3.4 的注意项 |
 | `data/categories.json` | A | 品类清单与首页顺序 |
-| `data/_flow/journal.jsonl` | flow 命令追加，任何人不手改 | 流转日志（append-only，共享事实） |
+| `data/_flow/journal.jsonl` | flow 命令与 library-io 追加，任何人不手改 | 流转日志（append-only，共享事实）。两类条目：`flow:*` 的流转、批量工具的 `batch-write` |
 | `data/_sources/**` | A 写，B 读 | 溯源、补丁、图片与抓取清单 |
 | `data/_cache/**` | 任何人生成 | 抓取缓存，**已 gitignore**，不入库 |
 | `data/_locks/**` | **只有 B** | 审核快照锁（结构冻结用）；A 只读 |

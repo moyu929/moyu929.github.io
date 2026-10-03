@@ -74,12 +74,14 @@ def load_json(p):
 
 
 def write_products(cat, prods, expect_hash):
-    """写库（唯一允许的方式）：规范序列化 + 写前指纹校验。
+    """写库（唯一允许的方式）：规范序列化 + 写前指纹校验 + 留痕。
 
     expect_hash 是脚本开头载入时的指纹；若中途有别的写入者改过库，library_io 会
     抛 LibraryConflict 拒绝覆盖，而不是静默丢掉对方的改动（方案 P1-1）。
+    留痕（actor）让 flow:log 能看到"谁在什么时候用哪个脚本改了哪个品类多少条"。
     """
-    library_io.save(DATA / cat / "products.json", prods, expect_hash=expect_hash)
+    library_io.save(DATA / cat / "products.json", prods, expect_hash=expect_hash,
+                    actor=library_io.script_actor())
 
 
 # ---------------------------------------------------------------- 抓取

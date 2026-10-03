@@ -256,8 +256,11 @@ skills/                              技能定义（客户端无关；各客户�
 
 **库文件的写入只有一套规范**：`scripts/lib/library-io.mjs`（Node）与 `scripts/lib/library_io.py`（Python）——
 规范序列化（一行一款、整值浮点归一、非 ASCII 不转义）+ 写前指纹校验（拒绝覆盖别人刚改过的库）+
-文件锁退避重试。**新增写库脚本必须走这两个实现**，不要自己 `writeFileSync` / `write_text`
-（`npm run selftest` 会断言两侧序列化逐字节相同）。
+文件锁退避重试 + 批量留痕。**新增写库脚本必须走这两个实现**，不要自己 `writeFileSync` / `write_text`
+（`npm run selftest` 会断言两侧序列化逐字节相同）。**批量工具还要传 `actor`**
+（`scriptActor()` / `script_actor()`），否则 `flow:log` 里看不到这次批量改动（只有一条写入一条留痕，
+不逐产品）。两条规则的分工：产品级的提交/认领/召回/入库走 `flow:*` 命令；批量重写（补参数、归类、
+回写图片、回填型号）走批量工具直写库——后者同样合法，但必须走同一规范并留痕。
 
 ## 维护速查
 

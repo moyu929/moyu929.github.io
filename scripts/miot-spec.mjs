@@ -21,7 +21,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import process from 'node:process'
-import { loadLibrary, saveLibrary } from './lib/library-io.mjs'
+import { loadLibrary, saveLibrary, scriptActor } from './lib/library-io.mjs'
 
 const ROOT = path.resolve(import.meta.dirname, '..')
 const CACHE = path.join(ROOT, 'data', '_cache')
@@ -321,7 +321,7 @@ function cmdMatch(args) {
     }
     if (apply && changed) {
       // 库写入统一走 lib/library-io.mjs：规范序列化 + 写前指纹守卫（方案 P1-1）
-      saveLibrary(file, prods, { expectHash: lib.hash })
+      saveLibrary(file, prods, { expectHash: lib.hash, actor: scriptActor() })
     }
   }
   fs.writeFileSync(path.join(CACHE, 'miot-match.json'), JSON.stringify(report, null, 1), 'utf8')

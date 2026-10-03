@@ -139,7 +139,7 @@ def main(argv) -> int:
             if apply_img(p, cid):
                 hit += 1
         if hit:
-            library_io.save(pf, lib["products"], expect_hash=lib["hash"])
+            library_io.save(pf, lib["products"], expect_hash=lib["hash"], actor=library_io.script_actor())
             changed += hit
     print(f"回写 img 字段 {changed} 处")
 

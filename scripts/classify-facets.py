@@ -601,7 +601,7 @@ def main():
                 unresolved[cid].append(p['id'])
         if changed:
             # 写前指纹守卫：期间若有别的写入者改过库，会抛 LibraryConflict 而不是静默覆盖
-            library_io.save(pp, ps, expect_hash=lib['hash'])
+            library_io.save(pp, ps, expect_hash=lib['hash'], actor=library_io.script_actor())
         done += changed
         print('%-18s 新归类 %3d  仍未解 %3d' % (cid, changed, len(unresolved[cid])))
 

@@ -16,7 +16,7 @@ import { execFileSync } from 'node:child_process'
 import fs from 'node:fs'
 import path from 'node:path'
 import process from 'node:process'
-import { serializeLibrary } from './lib/library-io.mjs'
+import { loadLibrary, saveLibrary, serializeLibrary } from './lib/library-io.mjs'
 
 const ROOT = path.resolve(import.meta.dirname, '..')
 const TMP = path.join(ROOT, '.flow-test')
@@ -263,6 +263,52 @@ function tRecallRestoresPosition() {
   )
 }
 
+function tBatchTrail() {
+  console.log('\n[P1-1 第三要素] 批量写库留痕（actor → journal 的 batch-write）')
+  const file = path.join(DATA, 'testcat', 'products.json')
+  const journalFile = path.join(DATA, '_flow', 'journal.jsonl')
+  const readLines = () => fs.readFileSync(journalFile, 'utf8').split('\n').filter(Boolean)
+  const before = readLines().length
+
+  const lib = loadLibrary(file)
+  saveLibrary(file, lib.products, { expectHash: lib.hash, actor: 'classify-facets.py' })
+  const lines = readLines()
+  check('传 actor → 追加一条留痕', lines.length === before + 1, `${before} → ${lines.length}`)
+  const entry = JSON.parse(lines[lines.length - 1])
+  check(
+    '条目含 action/key/count/actor',
+    entry.action === 'batch-write' &&
+      entry.key === 'testcat/products.json' &&
+      entry.count === lib.products.length &&
+      entry.actor === 'classify-facets.py',
+    JSON.stringify(entry),
+  )
+
+  const lib2 = loadLibrary(file)
+  saveLibrary(file, lib2.products, { expectHash: lib2.hash })
+  check('不传 actor → 不追加（flow:* 自有条目，避免重复记）', readLines().length === lines.length, `${lines.length} → ${readLines().length}`)
+
+  // Python 侧实现也要能留痕（classify-facets / import-brands / shrink-images 都是 Python）
+  const pyCode = [
+    'import sys, json',
+    `sys.path.insert(0, ${JSON.stringify(path.join(ROOT, 'scripts', 'lib'))})`,
+    'import library_io as L',
+    `f = ${JSON.stringify(file)}`,
+    'lib = L.load(f)',
+    "L.save(f, lib['products'], expect_hash=lib['hash'], actor=L.script_actor())",
+  ].join('\n')
+  const beforePy = readLines().length
+  execFileSync('python', ['-c', pyCode], { encoding: 'utf8', env: { ...process.env, FLOW_ACTOR: 'py-tool' } })
+  const afterPy = readLines()
+  check('Python 侧传 actor → 同样追加留痕', afterPy.length === beforePy + 1, `${beforePy} → ${afterPy.length}`)
+  const pyEntry = JSON.parse(afterPy[afterPy.length - 1])
+  check(
+    'Python 留痕的 actor/action/key 正确（FLOW_ACTOR 优先于脚本名）',
+    pyEntry.actor === 'py-tool' && pyEntry.action === 'batch-write' && pyEntry.key === 'testcat/products.json' && /Z$/.test(pyEntry.ts),
+    JSON.stringify(pyEntry),
+  )
+}
+
 function tStatusFilters() {
   console.log('\n[P0-6/7/10] status 归属视图与过滤')
   // 先放一款在待入库区，让"提交人"断言基于确定的状态（而不是靠 journal 尾部的偶然命中）
@@ -365,6 +411,7 @@ async function main() {
   await tConflict()
   tRecallReturnDrop()
   tRecallRestoresPosition()
+  tBatchTrail()
   tStatusFilters()
   tUnclassified()
   tPruneEmptyDirs()

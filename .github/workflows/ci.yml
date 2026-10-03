@@ -27,6 +27,12 @@ jobs:
           node-version: 20
           cache: npm
 
+      # selftest 会用 `python` 调 Python 侧的库序列化器（跨语言一致性断言）。
+      # runner 镜像不保证 `python` 别名存在，钉一个版本消除镜像漂移（setup-python 同时提供 python / python3）。
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
       - run: npm ci
 
       - name: 数据校验（schema / 字段 / 图片存在性）
