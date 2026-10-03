@@ -1,0 +1,30 @@
+{
+  "id": "deerma_1119207",
+  "name": "德尔玛DEM-LU620",
+  "brand": "德尔玛",
+  "model_code": "DEM-LU620",
+  "type": "超声波",
+  "official_price": "查不到",
+  "ref_price": 499,
+  "year": "查不到",
+  "pros": [],
+  "cons": [],
+  "tags": [
+    "德尔玛"
+  ],
+  "humid_rate": "320ml/h",
+  "tank": 6.5,
+  "runtime": "查不到",
+  "noise": "≤38dB",
+  "power": "30W",
+  "sterilize": "查不到",
+  "size": "查不到",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/humidifier/deerma/1119207_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：超声波（依据：加湿量 320.0 ml/h、功率 30.0W、带水箱（超声波机型特征））；2026-10-03 回填型号：原「查不到」，产品名「德尔玛DEM-LU620」中的型号串为 DEM-LU620（来源与产品名同源的第三方规格站）；2026-10-04 回填参数（来源：太平洋规格表 verify_url）：tank=6.5（水箱容积=6.5L）",
+  "updated_at": "2026-10-04"
+}

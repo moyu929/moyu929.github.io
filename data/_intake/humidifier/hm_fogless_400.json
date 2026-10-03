@@ -1,0 +1,41 @@
+{
+  "id": "hm_fogless_400",
+  "name": "米家无雾加湿器3 400mL/h",
+  "model_code": "查不到",
+  "miot_model": "xiaomi.humidifier.4lite",
+  "type": "无雾冷蒸发",
+  "official_price": 319,
+  "second_hand": "—",
+  "humid_rate": 400,
+  "tank": null,
+  "runtime": null,
+  "noise": 29.4,
+  "power": null,
+  "sterilize": "3D抗菌滤芯",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+    "29.4dB最安静档",
+    "3D抗菌滤芯"
+  ],
+  "cons": [
+    "加湿量偏小"
+  ],
+  "tags": [
+    "无雾",
+    "轻音",
+    "入门"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城",
+    "米家产品库(miot-spec)"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230804540",
+  "change_log": "2026-10-01 经米家产品库(miot-spec)交叉印证存在性并补入协议型号；2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：official_price=319，ref_price=399",
+  "updated_at": "2026-10-04",
+  "img": "hm_fogless_400.webp",
+  "brand": "小米",
+  "ref_price": 399
+}

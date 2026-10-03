@@ -1,0 +1,34 @@
+{
+  "id": "fan_handheld",
+  "name": "米家手持风扇",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "台扇/桌面",
+  "official_price": 199,
+  "second_hand": "—",
+  "power": null,
+  "airflow": null,
+  "speeds": "查不到",
+  "noise": null,
+  "throw_dist": null,
+  "battery": "查不到",
+  "swing": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [],
+  "cons": [],
+  "tags": [
+    "台扇/桌面"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=10050224",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：official_price=199，ref_price=249",
+  "updated_at": "2026-10-04",
+  "img": "fan_handheld.webp",
+  "brand": "小米",
+  "ref_price": 249
+}

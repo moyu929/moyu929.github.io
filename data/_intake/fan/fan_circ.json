@@ -1,0 +1,34 @@
+{
+  "id": "fan_circ",
+  "name": "米家循环扇",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "循环扇",
+  "official_price": 299,
+  "second_hand": "—",
+  "power": null,
+  "airflow": null,
+  "speeds": "查不到",
+  "noise": null,
+  "throw_dist": null,
+  "battery": "查不到",
+  "swing": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [],
+  "cons": [],
+  "tags": [
+    "循环扇"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230801703",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：official_price=299，ref_price=349",
+  "updated_at": "2026-10-04",
+  "img": "fan_circ.webp",
+  "brand": "小米",
+  "ref_price": 349
+}

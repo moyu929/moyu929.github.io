@@ -1,0 +1,27 @@
+{
+  "id": "aucma_637917",
+  "name": "澳柯玛NY22H625(Y)电热油汀",
+  "brand": "澳柯玛",
+  "model_code": "NY22H625(Y)",
+  "type": "油汀",
+  "official_price": "查不到",
+  "ref_price": 499,
+  "year": "查不到",
+  "pros": [],
+  "cons": [],
+  "tags": [
+    "澳柯玛"
+  ],
+  "power": "2200W",
+  "coverage": "19-25平方米",
+  "gear": "3档",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/heater/aucma/637917_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（3 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：油汀（依据：名称或加热方式含油汀）；2026-10-03 回填型号：原「查不到」，产品名「澳柯玛NY22H625(Y)电热油汀」中的型号串为 NY22H625(Y)（来源与产品名同源的第三方规格站）；2026-10-04 回填参数（来源：太平洋规格表 verify_url）：size=600×182×590mm（产品尺寸=600×182×590mm）",
+  "updated_at": "2026-10-04",
+  "size": "600×182×590mm"
+}
