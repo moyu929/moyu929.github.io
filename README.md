@@ -30,6 +30,10 @@ npm run build      # 构建到 dist/
 npm run preview    # 预览构建产物
 ```
 
+> `check` 只跑不依赖 `node_modules` 的项（未 `npm install` 的 worktree 也能跑）；
+> `typecheck` 与 `build` 需要依赖，**只在 CI 把关**——改了 `src/**` 或类型定义时，类型错误只会在 CI 暴露，
+> 想本地提前发现就先 `npm install` 再跑 `npm run typecheck`。
+
 ## 目录结构
 
 ```
