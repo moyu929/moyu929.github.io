@@ -1,0 +1,43 @@
+{
+  "id": "wash_zone_pro14",
+  "name": "米家三筒洗衣机 健康洗Pro 14kg",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "多筒/迷你",
+  "official_price": 4705,
+  "second_hand": "—",
+  "wash_cap": 14,
+  "dry_cap": null,
+  "wash_ratio": 1.32,
+  "spin_rpm": 1400,
+  "energy": "1级",
+  "sterilize": "除菌除螨",
+  "smart": "支持智能互联",
+  "noise": "洗涤52dB",
+  "size": "598×597×850mm",
+  "year": null,
+  "pros": [
+    "三筒分区洗护",
+    "14kg大容量",
+    "洗净比1.32",
+    "直驱变频电机",
+    "除菌除螨"
+  ],
+  "cons": [
+    "无烘干功能"
+  ],
+  "tags": [
+    "多筒/迷你"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230809239",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=4999，wash_cap=14，size=598×597×850mm，energy=一级，wash_ratio=1.32，sterilize=除菌除螨，noise=洗涤52dB，spin_rpm=1400，smart=支持智能互联；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：能效「一级」统一为库内口径「1级」",
+  "updated_at": "2026-10-04",
+  "img": "wash_zone_pro14.webp",
+  "brand": "小米",
+  "ref_price": 4999
+}

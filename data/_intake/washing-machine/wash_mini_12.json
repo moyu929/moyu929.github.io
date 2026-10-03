@@ -1,0 +1,42 @@
+{
+  "id": "wash_mini_12",
+  "name": "米家洗衣机 迷你洗 洗烘 1.2kg",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "多筒/迷你",
+  "official_price": 1881,
+  "second_hand": "—",
+  "wash_cap": 1.2,
+  "dry_cap": 0.5,
+  "wash_ratio": 1.03,
+  "spin_rpm": 800,
+  "energy": "1级",
+  "sterilize": "查不到",
+  "smart": "支持智能互联",
+  "noise": "洗涤47dB",
+  "size": "328×452×461mm",
+  "year": null,
+  "pros": [
+    "1.2kg迷你洗烘",
+    "机身仅328mm宽",
+    "变频电机",
+    "洗涤噪音47dB"
+  ],
+  "cons": [
+    "直排式烘干"
+  ],
+  "tags": [
+    "多筒/迷你"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230804592",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=2199，wash_cap=1.2，dry_cap=0.5，size=328×452×461mm，energy=一级，wash_ratio=1.03，noise=洗涤47dB，spin_rpm=800，smart=支持智能互联；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：能效「一级」统一为库内口径「1级」",
+  "updated_at": "2026-10-04",
+  "img": "wash_mini_12.webp",
+  "brand": "小米",
+  "ref_price": 2199
+}
