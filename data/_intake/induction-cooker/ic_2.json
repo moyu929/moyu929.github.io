@@ -1,0 +1,42 @@
+{
+  "id": "ic_2",
+  "name": "米家电磁炉 2",
+  "model_code": "查不到",
+  "miot_model": "chunmi.ihcooker.v2",
+  "type": "常规",
+  "official_price": 279,
+  "second_hand": "—",
+  "power": 2100,
+  "gear": "99档火力",
+  "panel": "查不到",
+  "preset": "NFC智能食谱",
+  "app": "支持NFC/米家",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+    "2100W爆炒功率",
+    "99档火力精准调节",
+    "OLED旋钮显示",
+    "双环火力加热",
+    "NFC智能食谱"
+  ],
+  "cons": [
+    "圆形面板对锅具底部尺寸有要求"
+  ],
+  "tags": [
+    "常规"
+  ],
+  "verify_status": "已核验（多源）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "新浪",
+    "搜狐",
+    "米家产品库(miot-spec)"
+  ],
+  "verify_url": "https://k.sina.com.cn/article_1823348853_6cae187502000woy8.html",
+  "change_log": "2026-10-01 经米家产品库(miot-spec)交叉印证存在性并补入协议型号；2026-10-01 补入参数：2100W、99 档火力、OLED 旋钮、NFC 智能食谱；2026-10-04 补全：ref_price=299（商城 API market_price）（来源：小米商城）",
+  "updated_at": "2026-10-04",
+  "img": "ic_2.webp",
+  "brand": "小米",
+  "ref_price": 299
+}

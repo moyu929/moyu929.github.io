@@ -1,0 +1,34 @@
+{
+  "id": "galanz_517602",
+  "name": "格兰仕CH2047",
+  "brand": "格兰仕",
+  "model_code": "CH2047",
+  "type": "常规",
+  "official_price": 185,
+  "ref_price": 179,
+  "year": "查不到",
+  "pros": [
+    "185 元超低门槛，预算首选",
+    "黑色微晶面板，耐高温易清洁",
+    "350×290mm 标准面板，通用锅具适配好"
+  ],
+  "cons": [
+    "2000W 功率低于本品类主流，爆炒火力受限"
+  ],
+  "tags": [
+    "格兰仕"
+  ],
+  "power": 2000,
+  "gear": "查不到",
+  "panel": "黑色微晶面板",
+  "size": "350×290×65mm",
+  "verify_status": "已核验（多源）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "ZOL中关村在线",
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/induction_cooker/galanz/517602_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：常规（依据：无超薄或青春特征）；2026-10-03 回填型号：原「查不到」，产品名「格兰仕CH2047」中的型号串为 CH2047（来源与产品名同源的第三方规格站）；2026-10-04 补全：official_price=185（ZOL 参考报价 https://detail.zol.com.cn/induction_cooker/index312011.shtml）（来源：ZOL中关村在线）；功率/尺寸与库内太平洋数据双源印证一致（来源：ZOL中关村在线）；格式订正：功率「2000W」→ 2000（schema number 归一）；补全卖点（依据：库内参数，未引入新数值）",
+  "updated_at": "2026-10-04"
+}
