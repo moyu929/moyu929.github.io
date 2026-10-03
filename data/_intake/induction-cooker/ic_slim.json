@@ -30,8 +30,8 @@
     "小米商城（官方产品图）",
     "米家产品库(miot-spec)"
   ],
-  "verify_url": "查不到",
-  "change_log": "2026-10-01 经米家产品库(miot-spec)交叉印证存在性并补入协议型号；2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 补全：补全卖点（依据：库内 type/miot_model/价格参数，未引入新数值）",
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230800979",
+  "change_log": "2026-10-01 经米家产品库(miot-spec)交叉印证存在性并补入协议型号；2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 补全：补全卖点（依据：库内 type/miot_model/价格参数，未引入新数值）；2026-10-04 补全：verify_url=官方商城商品页（product_id 经商城搜索页枚举核实，商品名与库内一致）",
   "updated_at": "2026-10-04",
   "img": "ic_slim.webp",
   "brand": "小米"

@@ -28,8 +28,8 @@
   "verify_source": [
     "小米商城（官方产品图）"
   ],
-  "verify_url": "查不到",
-  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 补全：ref_price=199（商城 API market_price）（来源：小米商城）；补全卖点（价位依据库内价格，白色外观取自商城在售 SKU 标题，未引入新数值）（来源：小米商城）",
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230802508",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 补全：ref_price=199（商城 API market_price）（来源：小米商城）；补全卖点（价位依据库内价格，白色外观取自商城在售 SKU 标题，未引入新数值）（来源：小米商城）；2026-10-04 补全：verify_url=官方商城商品页（product_id 经商城搜索页枚举核实，商品名与库内一致）",
   "updated_at": "2026-10-04",
   "img": "ic_n1.webp",
   "brand": "小米",
