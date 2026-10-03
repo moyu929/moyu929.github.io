@@ -284,7 +284,7 @@ npm run check                          # = validate + lint + audit:check，推�
 - **提交闸门**：`npm run hooks:install`（每个 clone / worktree 各一次）后，含
   `data/_intake` / `data/_review` 文件的提交必须带 `flow` 标记。草稿区 `data/_draft/` 不再入库。
 
-配套命令：`npm run selftest`（47 条断言，在隔离副本上跑，不碰真实数据）、
+配套命令：`npm run selftest`（52 条断言，在隔离副本上跑，不碰真实数据）、
 `npm run lint`（重复型号 / 重复产品名）。
 
 ## 目录速览

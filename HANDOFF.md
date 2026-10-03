@@ -42,7 +42,7 @@
 4. **提交闸门**：`npm run hooks:install`（**每个 clone / worktree 各一次**）启用后，
    含 `data/_intake/**` 或 `data/_review/**` 的提交必须带 `flow` 标记，否则被拒。
    它挡的是「顺手 `git add -A` 把别人的半成品捎带进自己的提交」。合并提交放行。
-5. **两个新命令**：`npm run selftest`（47 条断言，在 `.flow-test/` 隔离副本上跑，不碰真实数据，
+5. **两个新命令**：`npm run selftest`（52 条断言，在 `.flow-test/` 隔离副本上跑，不碰真实数据，
    改 `scripts/` 后跑一次）、`npm run lint`（重复型号 / 重复产品名；已并入 `npm run check`）。
 
 另外：**草稿区 `data/_draft/` 自此不入 git**（私有工作台）。备份靠一条纪律换：
