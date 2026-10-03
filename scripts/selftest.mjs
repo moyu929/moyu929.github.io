@@ -160,6 +160,22 @@ function tClaim() {
 
   const r4 = run(['claim', '--from', 'nobody-here', '--by', 'reviewer'], { expectFail: true })
   check('无可认领时报错退出', r4.code === 1)
+
+  // 多修正方防双领占位（`.claiming` 原子创建：同一文件任一时刻只有一个认领者）
+  writeJson(zonePath('draft', 'testcat/a4'), mkProduct('a4'))
+  run(['submit', 'testcat/a4', '--by', 'collect-z'])
+  const a4Sentinel = `${zonePath('review', 'testcat/a4')}.claiming`
+  fs.mkdirSync(path.dirname(a4Sentinel), { recursive: true })
+  fs.writeFileSync(a4Sentinel, 'reviewer-2\n', { flag: 'wx' }) // 模拟另一个修正方正在认领
+  const r5 = run(['claim', 'testcat/a4', '--by', 'reviewer'], { expectFail: true })
+  check('占位存在时认领被拒（防双领）', r5.code === 1 && /已被其他修正方认领/.test(r5.out), r5.out.slice(-300))
+  check('被拒时数据仍在待入库区', exists(zonePath('intake', 'testcat/a4')))
+  fs.rmSync(a4Sentinel, { force: true }) // 模拟对方放弃（或残留被人工清理）
+  const r6 = run(['claim', 'testcat/a4', '--by', 'reviewer'])
+  check('占位清除后可正常认领', r6.code === 0 && exists(zonePath('review', 'testcat/a4')))
+  check('认领成功后占位被清理（不泄漏）', !exists(a4Sentinel))
+  const r7 = run(['claim', 'testcat/a4', '--by', 'reviewer-2'])
+  check('已认领后重复认领 → 幂等跳过，并显示认领人', r7.code === 0 && /已在修正区（认领人：reviewer @/.test(r7.out), r7.out.slice(-200))
 }
 
 function tPublish() {
@@ -309,6 +325,14 @@ function tBatchTrail() {
   )
 }
 
+function tWorkers() {
+  console.log('\n[多工作者] 工作者视图（flow:workers，只读）')
+  const r = run(['workers'])
+  check('命令可运行且列出至少一个工作台', r.code === 0 && /◆ /.test(r.out), r.out.slice(0, 300))
+  check('每个工作台都显示分支与改动', /分支 /.test(r.out) && /改动 /.test(r.out))
+  check('结尾说明「一人一个 worktree」的前提', /一个 worktree/.test(r.out), r.out.slice(-300))
+}
+
 function tStatusFilters() {
   console.log('\n[P0-6/7/10] status 归属视图与过滤')
   // 先放一款在待入库区，让"提交人"断言基于确定的状态（而不是靠 journal 尾部的偶然命中）
@@ -413,6 +437,7 @@ async function main() {
   tRecallRestoresPosition()
   tBatchTrail()
   tStatusFilters()
+  tWorkers()
   tUnclassified()
   tPruneEmptyDirs()
   tCrossLanguage()
