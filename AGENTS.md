@@ -124,6 +124,9 @@
 - **一个 PR = 一个批次**（一波采集 / 一批召回修正），不是一个产品一个 PR。PR 描述用 `.github/pull_request_template.md`。
 - 分支命名：`collect/<任务号>-<品类>` / `review/<批次号>` / `feat/<主题>` / `fix/<主题>`。
 - 会话开头先 `gh pr list` / `gh issue list` 认领任务，再 `npm run flow:status` 看分区现状。
+- **gh 开工自检**：报 command not found → 进程启动早于安装，**重启客户端**即可（临时可用全路径
+  `"C:\Program Files\GitHub CLI\gh.exe"`）；报未登录 → 凭据在 Windows 凭据管理器、应自动可用。
+  都排不掉时在 cutover issue 报告（详解见 `docs/proposals/P2切换清单与待用户事项_2026-10-03.md` §8.6）。
 - **编排方义务**：给子 Agent 注入其 worktree 的绝对路径，**提示词里不出现主仓路径**——这是唯一被实测确认发生过的越界写入向量。
 
 **新建 worktree 的引导清单**（每新建一个目录跑一遍）：
