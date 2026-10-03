@@ -1,0 +1,40 @@
+{
+  "id": "midea_1445697",
+  "name": "美的AMS150E-SJ",
+  "brand": "美的",
+  "model_code": "AMS150E-SJ",
+  "tier": "入门",
+  "official_price": "查不到",
+  "ref_price": 2799,
+  "year": "查不到",
+  "pros": [
+    "入门价位",
+    "颗粒物CADR 170",
+    "体积小巧"
+  ],
+  "cons": [
+    "颗粒物CADR 170偏低",
+    "适用面积仅20㎡",
+    "噪音参数查不到",
+    "滤芯价格查不到"
+  ],
+  "tags": [
+    "美的"
+  ],
+  "area": "20㎡",
+  "cadr_pm": 170,
+  "cadr_hcho": 100,
+  "power": "查不到",
+  "noise": "查不到",
+  "filter_life": "查不到",
+  "wifi": "查不到",
+  "size": "255×255×851mm",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/jinghuaqi/midea/1445697_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：入门（依据：颗粒物 CADR 170.0 m³/h）；2026-10-03 回填型号：原「查不到」，产品名「美的AMS150E-SJ」中的型号串为 AMS150E-SJ（来源与产品名同源的第三方规格站）；2026-10-04 数值字段归一：cadr_pm '170立方米/小时'->170，cadr_hcho '100立方米/小时'->100（schema 已声明单位，由字段渲染，不再把单位写进值）；2026-10-04 补 pros/cons（依据本行已入库参数推导，未引入参数表以外的数值）",
+  "updated_at": "2026-10-04"
+}

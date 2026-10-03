@@ -1,0 +1,52 @@
+{
+  "id": "5_pro",
+  "name": "米家空气净化器 5 Pro",
+  "tier": "高端",
+  "official_price": 1999,
+  "second_hand": "1500-2000",
+  "filter_price": "约399",
+  "filter_life": "10-12月",
+  "cadr_pm": 1050,
+  "cadr_hcho": 720,
+  "area": "56-96㎡",
+  "noise": "32-65dB",
+  "power": "50W",
+  "wifi": "✅",
+  "sensor": "六大高精(PM1/PM2.5/粉尘/甲醛/温湿度)",
+  "display": "彩屏(曲线显示)",
+  "filter_layers": "双风机系统(H12)",
+  "size": "320×320×785mm",
+  "weight": "11.2kg",
+  "cert": "母婴级/医护级/除过敏原",
+  "year": 2025,
+  "month": 5,
+  "pros": [
+    "双风机",
+    "体积紧凑",
+    "除醛强",
+    "功耗低"
+  ],
+  "cons": [
+    "最大档噪音偏大"
+  ],
+  "tags": [
+    "中大户型",
+    "除醛",
+    "省电"
+  ],
+  "miot_model": "xiaomi.airp.va5",
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城",
+    "米家产品库(miot-spec)"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230803302",
+  "change_log": "2026-10-01 经米家产品库(miot-spec)交叉印证存在性并补入协议型号；2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：official_price=1999，ref_price=2999，area=96㎡，cadr_pm_real=1050m³/h，cadr_hcho_real=720m³/h；2026-10-04 守卫还原：cadr_pm_real=1050.0 与额定列 1050.0 同值，不重复写；cadr_hcho_real=720.0 与额定列 720.0 同值，不重复写；area=96.0 已在原值 '56-96㎡' 内，不覆盖区间",
+  "updated_at": "2026-10-04",
+  "img": "5_pro.webp",
+  "brand": "小米",
+  "ref_price": 2999,
+  "cadr_pm_real": null,
+  "cadr_hcho_real": null
+}
