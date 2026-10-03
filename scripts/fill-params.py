@@ -32,7 +32,7 @@ def dp(rel):
 
 
 sys.stdout.reconfigure(encoding='utf-8')
-D = '2026-10-03'
+D = '2026-10-04'
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
 
@@ -65,6 +65,13 @@ FIELD_MAP = {
     'fan_power':   ['风扇功率'],
     'yield':       ['出汁率', '出浆率'],
     'gear':        ['档位', '可选档位', '火力档位'],
+    # —— 洗衣机（2026-10-04 补；注意脱水容量≠烘干容量，前者不入库）
+    'wash_cap':    ['洗涤容量'],
+    'dry_cap':     ['烘干容量'],
+    'wash_ratio':  ['洗净比'],
+    'spin_rpm':    ['甩干脱水速度', '脱水速度', '脱水转速', '最高转速'],
+    'sterilize':   ['抗菌类型', '除菌方式'],
+    'year':        ['上市时间'],
 }
 
 # 字段级异常阈值：超出即判第三方错标，丢弃
@@ -78,11 +85,17 @@ THRESHOLD = {
     'tank':      (0.1, 10),
     'flux':      (0.05, 10),     # 通量 t/h 或 L/min
     'runtime':   (5, 600),       # 续航 5~600min
+    'wash_cap':  (0.3, 20),      # 洗涤容量 0.3~20kg（迷你洗 0.3kg 起）
+    'dry_cap':   (0.3, 15),      # 烘干容量 0.3~15kg
+    'wash_ratio': (0.5, 2.5),    # 洗净比国标一级 ≥1.03，留余量
+    'spin_rpm':  (400, 2200),    # 脱水转速 400~2200r/min
+    'year':      (2000, 2027),   # 上市时间
 }
 
 # text 类字段：值保留原文（尺寸「1084×232×232mm」不能只取第一个数字，
 # 那会丢掉尺寸信息），但仍做阈值校验以剔除第三方错标值。
-TEXT_FIELDS = {'size', 'heating', 'backlight', 'open_size', 'resolution'}
+# （2026-10-04 补 sterilize：抗菌类型是纯文本（「银离子除菌」），无数值可言）
+TEXT_FIELDS = {'size', 'heating', 'backlight', 'open_size', 'resolution', 'sterilize'}
 
 # 单位归一：把第三方写法换成 schema 声明的单位。系数都是确定的换算，不是猜测。
 # 单位归一：把第三方的中文单位写法换成 schema 声明的单位。
@@ -158,10 +171,22 @@ def pick(field, specs):
     for name in FIELD_MAP.get(field, []):
         if name in specs:
             raw = specs[name]
+            # 复合噪音（「52/69dB」= 洗涤/脱水）：每段数值都要过阈值，保留完整原文
+            if field == 'noise' and '/' in raw:
+                parts = re.findall(r'\d+(?:\.\d+)?', raw)
+                lo, hi = THRESHOLD.get('noise', (None, None))
+                if not parts or (lo is not None and
+                                 not all(lo <= float(x) <= hi for x in parts)):
+                    return None, '%s=%s 剔除：复合噪音数值越界' % (name, raw)
+                return normalize(raw), '%s=%s' % (name, raw)
             ok, val = acceptable(field, raw)
             if not ok:
+                # 纯文本值（如抗菌类型「银离子除菌」）无数值可言，不算错标
+                if field in TEXT_FIELDS and '无法解析数值' in str(val):
+                    return normalize(raw), '%s=%s' % (name, raw)
                 return None, '%s=%s 剔除：%s' % (name, raw, val)
-            if field in TEXT_FIELDS:
+            if field in TEXT_FIELDS or field == 'noise':
+                # 噪音保留原文（库内口径是「洗涤52dB」「52/69dB」这类文本）
                 return normalize(raw), '%s=%s' % (name, raw)
             # number 字段：整数不带小数点，避免 '40.0' 这种噪声
             n = num_of(val)
@@ -218,6 +243,36 @@ def read_lib(cid):
     return {p['id']: p for p in json.load(open(dp('data/%s/products.json' % cid), encoding='utf-8'))}
 
 
+def cached_specs(url):
+    """优先读本地缓存，命中就不联网。
+
+    2026-10-04 实测 pconline 对本机直连直接重置（curl exit 56），
+    而此前抓过的规格都在 data/_cache/ 里 —— 同一个 URL 的同一张表，读缓存与现抓等价。
+    缓存名两种约定并存：
+      pconline-<品类目录>-<品牌>-<id>.json（import-brands.py）
+      pconline-<品类id>-<id>.json         （pconline-specs.py）
+    """
+    m = re.search(r'g\.pconline\.com\.cn/product/([^/]+)/([^/]+)/(\d+)_detail', url)
+    if m:
+        names = ['pconline-%s-%s-%s.json' % m.groups(),
+                 'pconline-%s-%s.json' % (m.group(1), m.group(3))]
+    else:
+        m2 = re.search(r'g\.pconline\.com\.cn/product/([^/]+)/(\d+)_detail', url)
+        if not m2:
+            return None
+        names = ['pconline-%s-%s.json' % m2.groups()]
+    for n in names:
+        f = dp('data/_cache/%s' % n)
+        if os.path.exists(f):
+            try:
+                d = json.load(open(f, encoding='utf-8'))
+                if isinstance(d, dict) and d:
+                    return d
+            except Exception:
+                pass
+    return None
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--dry', action='store_true')
@@ -258,7 +313,9 @@ def main():
 
     def job(t):
         cid, pid, url, holes = t
-        specs = fetch_specs(url)
+        specs = cached_specs(url)
+        if specs is None:
+            specs = fetch_specs(url)
         done[0] += 1
         if done[0] % 50 == 0:
             print('  %d/%d' % (done[0], len(targets)), flush=True)
