@@ -1665,3 +1665,10 @@
 {"ts":"2026-10-02T17:44:59.959Z","actor":"collect-dw","action":"submit","key":"dishwasher/hisense_13_emb","from":"draft","to":"intake"}
 {"ts":"2026-10-02T17:44:59.966Z","actor":"collect-dw","action":"submit","key":"dishwasher/vatti_15_free","from":"draft","to":"intake"}
 {"ts":"2026-10-02T17:44:59.974Z","actor":"collect-dw","action":"submit","key":"dishwasher/vatti_15_emb","from":"draft","to":"intake"}
+{"ts":"2026-10-03T08:35:11.529Z","actor":"1095365435","branch":"main","action":"claim","key":"dishwasher/fangtai_13_free","from":"intake","to":"review","batch":"85e7dfab","submitActor":"collect-dw"}
+{"ts":"2026-10-03T08:35:11.540Z","actor":"1095365435","branch":"main","action":"claim","key":"dishwasher/fangtai_15_emb","from":"intake","to":"review","batch":"85e7dfab","submitActor":"collect-dw"}
+{"ts":"2026-10-03T08:35:11.550Z","actor":"1095365435","branch":"main","action":"claim","key":"dishwasher/hisense_13_emb","from":"intake","to":"review","batch":"85e7dfab","submitActor":"collect-dw"}
+{"ts":"2026-10-03T08:35:11.561Z","actor":"1095365435","branch":"main","action":"claim","key":"dishwasher/hisense_15_free","from":"intake","to":"review","batch":"85e7dfab","submitActor":"collect-dw"}
+{"ts":"2026-10-03T08:35:11.569Z","actor":"1095365435","branch":"main","action":"claim","key":"dishwasher/vatti_15_emb","from":"intake","to":"review","batch":"85e7dfab","submitActor":"collect-dw"}
+{"ts":"2026-10-03T08:35:11.580Z","actor":"1095365435","branch":"main","action":"claim","key":"dishwasher/vatti_15_free","from":"intake","to":"review","batch":"85e7dfab","submitActor":"collect-dw"}
+{"ts":"2026-10-03T00:00:00.000Z","actor":"claude-code","action":"note","key":"dishwasher/*","note":"上方 6 条 actor=1095365435 的 claim 记录是 P0-7 actor 兜底功能的验证测试，文件已用 git checkout 还原到 _intake/dishwasher，状态与测试前一致。journal 为 append-only 共享事实，故保留这些记录而不删除。"}

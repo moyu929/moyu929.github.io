@@ -108,6 +108,8 @@ def save(path, products, expect_hash=None, retries=5):
             last = e
             if i < retries:
                 time.sleep(0.04 * (2 ** i))
+    # retries >= 0 时循环至少执行一次，故 last 必已被赋值为某个 OSError
+    assert last is not None, 'retries >= 0 时循环必然执行，last 不会被跳过'
     raise last
 
 
@@ -124,6 +126,15 @@ def save_products(path, mutate):
 
 if __name__ == '__main__':
     # 手工自检：把 stdin 的 JSON 规范化后打到 stdout（供跨语言一致性对比）
+    #
+    # stdin 也必须重配编码：Windows 上 sys.stdin 默认跟随控制台代码页（cp936/gbk），
+    # 管道喂进来的 UTF-8 字节会被按错误编码解码，产生代理对字符
+    # （UnicodeEncodeError: surrogates not allowed）。只配 stdout 不够。
     # newline='\n' 是必须的：否则 Windows 上会把 \n 翻成 \r\n，跨语言字节比对会假失败
+    for _stream in (sys.stdin, sys.stdout):
+        try:
+            _stream.reconfigure(encoding='utf-8')
+        except (AttributeError, ValueError):
+            pass
     sys.stdout.reconfigure(encoding='utf-8', newline='\n')
-    sys.stdout.write(serialize_library(json.load(sys.stdin)))
+    sys.stdout.write(serialize_library(json.loads(sys.stdin.buffer.read().decode('utf-8'))))

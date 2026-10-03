@@ -149,8 +149,27 @@ function gitOut(argv) {
  * 每个命令开头打印「在哪操作、谁在操作」。
  * 作用：隔离是软的（Agent 可能在工作目录之外读写），挡不住误操作，但可以让它**当场可见**。
  */
+/**
+ * `--by` 缺省时的 actor 兜底。
+ *
+ * actor 是自述字段（方案 P0-7：每次操作都自证），但 journal 是共享事实——
+ * 记成 `unknown` 会让「谁做的」在事后不可查，尤其 `flow:claim --from <某人>`
+ * 这种批量路径：它按提交人筛选，但记录的是**当前操作者**，两者不是一回事。
+ * 兜底顺序：git user.email（取 @ 前）→ 环境变量 FLOW_ACTOR → 'unknown'。
+ */
+function resolveActorFallback() {
+  const email = gitOut(['config', 'user.email'])
+  if (email) {
+    const at = String(email).indexOf('@')
+    if (at > 0) return String(email).slice(0, at)
+  }
+  const env = process.env.FLOW_ACTOR
+  if (typeof env === 'string' && env.trim()) return env.trim()
+  return 'unknown'
+}
+
 function attest(args) {
-  const by = typeof args.by === 'string' ? args.by : 'unknown'
+  const by = typeof args.by === 'string' ? args.by : resolveActorFallback()
   const branch = gitOut(['rev-parse', '--abbrev-ref', 'HEAD'])
   const rel = path.relative(ROOT, DATA) || '.'
   console.log(`操作自证：数据 ${rel}/；分支 ${branch ?? '（非 git 仓库）'}；actor ${by}`)
@@ -436,6 +455,15 @@ function cmdClaim(args, at) {
     if (!keys.length) {
       console.error(`✗ 待入库区没有「${args.from}」提交的产品（用 flow:status 看现状）`)
       process.exit(1)
+    }
+    // --from 筛的是「谁提交的」，--by 记的是「谁认领的」。后者缺了会让这条
+    // 认领记录无法追溯操作者，而 P0-6 的整个目的就是让归属可见。
+    if (typeof args.by !== 'string') {
+      console.warn(
+        `⚠ 未指定 --by：本次认领会记为 actor=${resolveActorFallback()}` +
+          `（兜底值，非"${args.from}"本人）。\n` +
+          `  --from 筛提交人、--by 记操作者，两者含义不同；建议显式传 --by <你的名字>。\n`,
+      )
     }
     console.log(`按提交人认领：${args.from} → ${keys.length} 款\n`)
   } else {
