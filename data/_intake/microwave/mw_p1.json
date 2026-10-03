@@ -1,0 +1,48 @@
+{
+  "id": "mw_p1",
+  "name": "米家智能微波炉 P1",
+  "model_code": "查不到",
+  "miot_model": "xiaomi.microwave.cm20l",
+  "type": "微波炉",
+  "official_price": 649,
+  "second_hand": "—",
+  "capacity": null,
+  "mw_power": 800,
+  "grill_power": null,
+  "input_power": null,
+  "heating": "智能变频微波",
+  "control": "触控式",
+  "noise": null,
+  "energy": "1级",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+    "800W 智能变频，热效率 60%",
+    "一级能效",
+    "5 挡火力 + 3 类专项解冻",
+    "微波除菌率 99.99%",
+    "支持米家 App 与小爱同学"
+  ],
+  "cons": [
+    "无烧烤功能"
+  ],
+  "tags": [
+    "微波炉"
+  ],
+  "verify_status": "已核验（多源）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "IT之家",
+    "什么值得买",
+    "小米商城",
+    "新浪",
+    "百度百科",
+    "米家产品库(miot-spec)"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230802829",
+  "change_log": "2026-10-01 经米家产品库(miot-spec)交叉印证存在性并补入协议型号；2026-10-01 经官方/权威来源核对并补入参数（补丁 2026-10-01-heater-kettle-microwave.json）；2026-10-04 补全 verify_url=https://www.mi.com/shop/buy/detail?product_id=1230802829（来源：小米商城商品页（product_id 来自官方搜索缓存））",
+  "updated_at": "2026-10-04",
+  "img": "mw_p1.webp",
+  "brand": "小米",
+  "ref_price": 699
+}
