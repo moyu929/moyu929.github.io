@@ -1,0 +1,37 @@
+{
+  "id": "midea_1900987",
+  "name": "美的GX1000S",
+  "brand": "美的",
+  "model_code": "GX1000S",
+  "type": "独嵌两用",
+  "official_price": "查不到",
+  "ref_price": 8599,
+  "year": "查不到",
+  "pros": [
+    "16套大容量",
+    "独嵌两用，安装灵活",
+    "热风烘干",
+    "高温除菌"
+  ],
+  "cons": [
+    "净重51kg，搬运安装费力"
+  ],
+  "tags": [
+    "美的"
+  ],
+  "capacity": 16,
+  "dry": "热风烘干",
+  "sterilize": "高温",
+  "power": 1828,
+  "size": "600×570×775mm",
+  "weight": 51,
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/xiwanji/midea/1900987_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-03 回填型号：原「查不到」，产品名「美的GX1000S」中的型号串为 GX1000S（来源与产品名同源的第三方规格站）；2026-10-04 补全订正：power '1828W'→1828（schema 数值型归一），weight '51Kg'→51（schema 数值型归一），capacity '16套'→16（schema 数值型归一），撰写pros 4条（依据：已入库参数），撰写cons 1条",
+  "updated_at": "2026-10-04",
+  "water_eff": "查不到"
+}

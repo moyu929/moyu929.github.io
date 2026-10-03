@@ -1,0 +1,36 @@
+{
+  "id": "robam_1781587",
+  "name": "老板W776-S1",
+  "brand": "老板",
+  "model_code": "W776-S1",
+  "type": "嵌入式",
+  "official_price": "查不到",
+  "ref_price": 16999,
+  "year": "查不到",
+  "pros": [
+    "15套大容量",
+    "热风烘干",
+    "高温除菌"
+  ],
+  "cons": [
+    "售价近1.7万元，定位高端"
+  ],
+  "tags": [
+    "老板"
+  ],
+  "capacity": 15,
+  "dry": "热风烘干",
+  "sterilize": "高温",
+  "power": 1720,
+  "size": "598×555×758mm",
+  "weight": 37,
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/xiwanji/robam/1781587_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-03 回填型号：原「查不到」，产品名「老板W776-S1」中的型号串为 W776-S1（来源与产品名同源的第三方规格站）；2026-10-04 补全订正：power '1720W'→1720（schema 数值型归一），weight '37Kg'→37（schema 数值型归一），capacity '15套'→15（schema 数值型归一），撰写pros 3条（依据：已入库参数），撰写cons 1条",
+  "updated_at": "2026-10-04",
+  "water_eff": "查不到"
+}

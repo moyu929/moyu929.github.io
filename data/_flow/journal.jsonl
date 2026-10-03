@@ -1804,3 +1804,44 @@
 {"ts":"2026-10-03T15:58:45.675Z","actor":"claude-code","branch":"chore/drop-commercial","action":"recall","key":"dehumidifier/deye_641658","from":"library","to":"review","batch":"3135588d","reason":"工业除湿机（380V 三相电 / 230kg / 480L·D），按 2026-10-03 口径仅收家用","index":6,"fingerprint":"a31960527a32"}
 {"ts":"2026-10-03T15:58:46.051Z","actor":"claude-code","branch":"chore/drop-commercial","action":"drop","key":"dehumidifier/deye_641660","from":"review","to":null,"batch":"0a5e0873","reason":"2026-10-03 用户裁决：仅收录家用家电。第三方规格标注「工业除湿机」","fingerprint":"f27667a34001"}
 {"ts":"2026-10-03T15:58:46.061Z","actor":"claude-code","branch":"chore/drop-commercial","action":"drop","key":"dehumidifier/deye_641658","from":"review","to":null,"batch":"0a5e0873","reason":"2026-10-03 用户裁决：仅收录家用家电。第三方规格标注「工业除湿机」","fingerprint":"a31960527a32"}
+{"ts":"2026-10-03T18:34:00.128Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/dw_emb_20","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.139Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/dw_n1_16","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.149Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/dw_p1_16","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.157Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/dw_p20_18","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.167Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/dw_p2_16","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.176Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/dw_pro_18","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.185Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/dw_s10_16","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.193Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/dw_s20_16","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.202Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/dw_s2_13","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.211Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/dw_table_5s2","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.219Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/dw_table_6s10","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.227Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/haier_1150128","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.236Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/haier_1789727","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.243Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/haier_1790347","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.252Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/haier_1960247","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.260Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/haier_2081347","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.267Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/haier_2575819","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.275Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/midea_1329367","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.284Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/midea_1784147","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.292Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/midea_1784207","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.300Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/midea_1784407","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.308Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/midea_1900987","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.316Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/midea_1960207","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.323Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/panasonic_1157469","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.331Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/panasonic_1787087","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.339Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/panasonic_1787127","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.347Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/panasonic_1787147","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.355Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/panasonic_1787167","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.363Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/panasonic_1787267","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.370Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/robam_1545847","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.379Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/robam_1781467","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.387Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/robam_1781487","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.396Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/robam_1781547","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.404Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/robam_1781587","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.412Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/robam_2779659","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.420Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/siemens_1703647","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.429Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/siemens_1785527","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.436Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/siemens_1785568","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.444Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/siemens_1785707","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.453Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/siemens_1785727","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T18:34:00.461Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/siemens_2575079","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
