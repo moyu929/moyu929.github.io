@@ -1,0 +1,40 @@
+{
+  "id": "dyson_2051287",
+  "name": "戴森BP04",
+  "brand": "戴森",
+  "model_code": "BP04",
+  "tier": "中端",
+  "official_price": "查不到",
+  "ref_price": 7185,
+  "year": "查不到",
+  "pros": [
+    "适用100㎡",
+    "甲醛CADR 50",
+    "功耗220W"
+  ],
+  "cons": [
+    "颗粒物CADR 300偏低",
+    "尺寸查不到",
+    "噪音参数查不到",
+    "滤芯价格查不到"
+  ],
+  "tags": [
+    "戴森"
+  ],
+  "area": "100㎡",
+  "cadr_pm": 300,
+  "cadr_hcho": 50,
+  "power": "220W",
+  "noise": "查不到",
+  "filter_life": "查不到",
+  "wifi": "查不到",
+  "size": "查不到",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/jinghuaqi/dyson/2051287_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：中端（依据：颗粒物 CADR 300.0 m³/h）；2026-10-03 回填型号：原「查不到」，产品名「戴森BP04」中的型号串为 BP04（来源与产品名同源的第三方规格站）；2026-10-04 数值字段归一：cadr_pm '300m3/h'->300，cadr_hcho '50m3/h'->50（schema 已声明单位，由字段渲染，不再把单位写进值）；2026-10-04 补 pros/cons（依据本行已入库参数推导，未引入参数表以外的数值）",
+  "updated_at": "2026-10-04"
+}

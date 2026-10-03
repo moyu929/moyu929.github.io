@@ -1,0 +1,51 @@
+{
+  "id": "6",
+  "name": "米家空气净化器 6",
+  "tier": "中端",
+  "official_price": 1399,
+  "second_hand": "700-1100",
+  "filter_price": "约299(双滤芯)",
+  "filter_life": "8-12月",
+  "cadr_pm": 700,
+  "cadr_hcho": 500,
+  "area": "84㎡",
+  "noise": "29-63dB",
+  "power": "53W",
+  "wifi": "✅",
+  "sensor": "六大高精(PM1/PM2.5/粉尘/甲醛/温湿度)",
+  "display": "LCD彩屏",
+  "filter_layers": "双滤芯架构(H12)",
+  "size": "280×280×713mm",
+  "weight": "7.6kg",
+  "cert": "母婴/医护/除过敏原",
+  "year": 2026,
+  "month": 6,
+  "pros": [
+    "双滤芯3倍除醛",
+    "超静音",
+    "顶部可置物",
+    "万向轮"
+  ],
+  "cons": [
+    "适用面积中等"
+  ],
+  "tags": [
+    "中户型",
+    "静音",
+    "除醛"
+  ],
+  "miot_model": "查不到",
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230807875",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-01 来源链接订正：原 verify_url（product_id=1230805895）经小米商城官方 API 核对实为「空气净化器 6 Pro」，与本条产品不符，属错挂；已置「查不到」，待找到本条正确官方链接后回填；2026-10-04 小米官方商城 API 回填（product_id=1230807875，商城名 '米家空气净化器 6 白色'）：official_price=1399，ref_price=1799，cadr_pm_real=812m³/h，cadr_hcho_real=610m³/h（未写入：area=84.0 已在原值 '84㎡' 内，不覆盖区间）",
+  "updated_at": "2026-10-04",
+  "img": "6.webp",
+  "brand": "小米",
+  "ref_price": 1799,
+  "cadr_pm_real": "812m³/h",
+  "cadr_hcho_real": "610m³/h"
+}

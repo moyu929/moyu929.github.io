@@ -1,0 +1,40 @@
+{
+  "id": "midea_1587267",
+  "name": "美的KJ800G-H Pro",
+  "brand": "美的",
+  "model_code": "KJ800G-H Pro",
+  "tier": "旗舰",
+  "official_price": "查不到",
+  "ref_price": 4699,
+  "year": "查不到",
+  "pros": [
+    "颗粒物CADR 800",
+    "甲醛CADR 400",
+    "适用96㎡",
+    "Pro版本"
+  ],
+  "cons": [
+    "噪音参数查不到",
+    "滤芯价格查不到",
+    "整机高度仅710mm"
+  ],
+  "tags": [
+    "美的"
+  ],
+  "area": "96㎡",
+  "cadr_pm": 800,
+  "cadr_hcho": 400,
+  "power": "60W",
+  "noise": "查不到",
+  "filter_life": "查不到",
+  "wifi": "查不到",
+  "size": "360×360×710mm",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/jinghuaqi/midea/1587267_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（3 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：旗舰（依据：颗粒物 CADR 800.0 m³/h（≥800））；2026-10-03 回填型号：原「查不到」，产品名「美的KJ800G-H Pro」中的型号串为 KJ800G-H Pro（来源与产品名同源的第三方规格站）；2026-10-04 数值字段归一：cadr_pm '800m3/h'->800，cadr_hcho '400m3/h'->400（schema 已声明单位，由字段渲染，不再把单位写进值）；2026-10-04 补 pros/cons（依据本行已入库参数推导，未引入参数表以外的数值）",
+  "updated_at": "2026-10-04"
+}

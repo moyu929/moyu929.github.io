@@ -23,6 +23,8 @@
     "miot:search": "node scripts/miot-spec.mjs search",
     "miot:match": "node scripts/miot-spec.mjs match",
     "pconline:specs": "python scripts/pconline-specs.py",
+    "fill:params": "python scripts/fill-params.py",
+    "fill:mi": "python scripts/fill-mi-official.py",
     "audit:snapshot": "node scripts/audit-lock.mjs snapshot",
     "audit:check": "node scripts/audit-lock.mjs check",
     "audit:status": "node scripts/audit-lock.mjs status",

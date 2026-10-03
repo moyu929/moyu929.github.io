@@ -1,0 +1,39 @@
+{
+  "id": "dreame_2581359",
+  "name": "追觅PM10",
+  "brand": "追觅",
+  "model_code": "PM10",
+  "tier": "中端",
+  "official_price": "查不到",
+  "ref_price": 6999,
+  "year": "查不到",
+  "pros": [
+    "颗粒物CADR 300",
+    "适用81-100㎡"
+  ],
+  "cons": [
+    "尺寸查不到",
+    "噪音参数查不到",
+    "滤芯价格查不到",
+    "参考价6999偏高"
+  ],
+  "tags": [
+    "追觅"
+  ],
+  "area": "81-100㎡",
+  "cadr_pm": 300,
+  "cadr_hcho": 165,
+  "power": "查不到",
+  "noise": "查不到",
+  "filter_life": "查不到",
+  "wifi": "查不到",
+  "size": "查不到",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/jinghuaqi/dreame/2581359_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（3 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 数据清洗：CADR 值中的 HTML 实体 m&#179;/h 还原为 m³/h（抓取时未解码实体）；2026-10-01 副分组归类：中端（依据：颗粒物 CADR 300.0 m³/h）；2026-10-03 回填型号：原「查不到」，产品名「追觅PM10」中的型号串为 PM10（来源与产品名同源的第三方规格站）；2026-10-04 数值字段归一：cadr_pm '300m³/h'->300，cadr_hcho '165m³/h'->165（schema 已声明单位，由字段渲染，不再把单位写进值）；2026-10-04 补 pros/cons（依据本行已入库参数推导，未引入参数表以外的数值）",
+  "updated_at": "2026-10-04"
+}

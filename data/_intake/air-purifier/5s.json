@@ -1,0 +1,50 @@
+{
+  "id": "5s",
+  "name": "米家空气净化器 5S",
+  "tier": "中端",
+  "official_price": 1099,
+  "second_hand": "800-1200",
+  "filter_price": "约269",
+  "filter_life": "10-12月",
+  "cadr_pm": 540,
+  "cadr_hcho": 255,
+  "area": "36-62㎡",
+  "noise": "30.4-65dB",
+  "power": "40W",
+  "wifi": "✅",
+  "sensor": "甲醛+PM2.5+粉尘+PM10过敏原+温湿度",
+  "display": "彩屏(甲醛数显)",
+  "filter_layers": "H13(初效+抗菌+HEPA+除醛+活性炭+UV)",
+  "size": "275×275×680mm",
+  "weight": "6.8kg",
+  "cert": "医护/母婴",
+  "year": 2024,
+  "month": 8,
+  "pros": [
+    "甲醛数显",
+    "除醛96.95%",
+    "紫外UVC",
+    "负离子"
+  ],
+  "cons": [
+    "适用面积偏小"
+  ],
+  "tags": [
+    "甲醛数显",
+    "中小户型",
+    "除过敏原"
+  ],
+  "miot_model": "xiaomi.airp.va3",
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城",
+    "米家产品库(miot-spec)"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230801779",
+  "change_log": "2026-10-01 经米家产品库(miot-spec)交叉印证存在性并补入协议型号；2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：official_price=1099，ref_price=1699，area=62㎡，cadr_pm=540，cadr_hcho=255；2026-10-04 守卫还原：area=62.0 已在原值 '36-62㎡' 内，不覆盖区间",
+  "updated_at": "2026-10-04",
+  "img": "5s.webp",
+  "brand": "小米",
+  "ref_price": 1699
+}

@@ -1,0 +1,54 @@
+{
+  "id": "6_dual",
+  "name": "米家空气净化器 6 双芯除醛",
+  "tier": "高端",
+  "official_price": 1549,
+  "second_hand": "1000-1100",
+  "filter_price": "299元/只×2",
+  "filter_life": "6-12月",
+  "cadr_pm": 949,
+  "cadr_hcho": 700,
+  "area": "96㎡",
+  "noise": "31.6-67dB",
+  "power": "61W",
+  "wifi": "✅",
+  "sensor": "PM1+粉尘+PM2.5+温湿度+固态甲醛",
+  "display": "LCD彩屏(PM2.5)",
+  "filter_layers": "双滤芯+6重净化+UVC",
+  "size": "290×290×760mm",
+  "weight": "9.7kg",
+  "cert": "母婴级/一级能效",
+  "year": 2026,
+  "month": 9,
+  "pros": [
+    "双芯除醛CADR700",
+    "颗粒物949",
+    "UVC杀菌",
+    "轻音",
+    "6大传感"
+  ],
+  "cons": [
+    "双芯耗材贵",
+    "新品二手未明"
+  ],
+  "tags": [
+    "双芯除醛",
+    "新房",
+    "大户型"
+  ],
+  "miot_model": "xiaomi.airp.mp6",
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城",
+    "米家产品库(miot-spec)"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230805259",
+  "change_log": "2026-10-01 经米家产品库(miot-spec)交叉印证存在性并补入协议型号；2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：official_price=1549，ref_price=2599，area=96㎡，cadr_pm_real=949m³/h，cadr_hcho_real=700m³/h；2026-10-04 守卫还原：cadr_pm_real=949.0 与额定列 949.0 同值，不重复写；cadr_hcho_real=700.0 与额定列 700.0 同值，不重复写",
+  "updated_at": "2026-10-04",
+  "img": "6_dual.webp",
+  "brand": "小米",
+  "ref_price": 2599,
+  "cadr_pm_real": null,
+  "cadr_hcho_real": null
+}
