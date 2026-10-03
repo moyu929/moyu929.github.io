@@ -12,11 +12,17 @@
   "noise": null,
   "throw_dist": null,
   "battery": "查不到",
-  "swing": "查不到",
+  "swing": "左右自动摇头",
   "size": "查不到",
   "year": null,
-  "pros": [],
-  "cons": [],
+  "pros": [
+    "2分钟整屋循环",
+    "整机一级能效，省电",
+    "左右自动摇头送风"
+  ],
+  "cons": [
+    "额定功率、输出风量与噪音未公开"
+  ],
   "tags": [
     "循环扇"
   ],
@@ -26,7 +32,7 @@
     "小米商城"
   ],
   "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230801703",
-  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：official_price=299，ref_price=349",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：official_price=299，ref_price=349；2026-10-04 A2 路补录：pros（3 条），cons（1 条），swing=左右自动摇头。依据：小米商城 API product_desc：2分钟整屋循环丨整机一级能效丨左右自动摇头送风",
   "updated_at": "2026-10-04",
   "img": "fan_circ.webp",
   "brand": "小米",

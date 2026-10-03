@@ -15,8 +15,14 @@
   "swing": "查不到",
   "size": "查不到",
   "year": null,
-  "pros": [],
-  "cons": [],
+  "pros": [
+    "温湿度智能控风",
+    "超广域空气循环",
+    "落地式大范围送风"
+  ],
+  "cons": [
+    "额定功率、输出风量与噪音未公开"
+  ],
   "tags": [
     "循环扇"
   ],
@@ -26,7 +32,7 @@
     "小米商城"
   ],
   "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1221400011",
-  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：official_price=399，ref_price=499",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：official_price=399，ref_price=499；2026-10-04 A2 路补录：pros（3 条），cons（1 条）。依据：小米商城 API product_desc：智能温湿度控风，超广域空气循环",
   "updated_at": "2026-10-04",
   "img": "fan_circ_floor.webp",
   "brand": "小米",

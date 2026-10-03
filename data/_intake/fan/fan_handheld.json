@@ -8,15 +8,22 @@
   "second_hand": "—",
   "power": null,
   "airflow": null,
-  "speeds": "查不到",
+  "speeds": "100挡无级调速",
   "noise": null,
   "throw_dist": null,
-  "battery": "查不到",
+  "battery": "内置电池，续航40小时",
   "swing": "查不到",
   "size": "查不到",
   "year": null,
-  "pros": [],
-  "cons": [],
+  "pros": [
+    "100挡无级调速",
+    "40小时超长续航",
+    "5m超远距送风",
+    "手持便携"
+  ],
+  "cons": [
+    "额定功率与噪音未公开"
+  ],
   "tags": [
     "台扇/桌面"
   ],
@@ -26,7 +33,7 @@
     "小米商城"
   ],
   "verify_url": "https://www.mi.com/shop/buy/detail?product_id=10050224",
-  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：official_price=199，ref_price=249",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：official_price=199，ref_price=249；2026-10-04 A2 路补录：pros（4 条），cons（1 条），speeds=100挡无级调速，battery=内置电池，续航40小时。依据：小米商城 API product_desc：250m³/h 强劲风量|5m 超远距送风|100挡无级调速|40小时超长续航（官方风量口径为 m³/h，本站 airflow 字段为 m³/min，口径不同不做换算，airflow 留空）",
   "updated_at": "2026-10-04",
   "img": "fan_handheld.webp",
   "brand": "小米",

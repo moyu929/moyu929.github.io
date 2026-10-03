@@ -11,12 +11,19 @@
   "speeds": "查不到",
   "noise": null,
   "throw_dist": null,
-  "battery": "查不到",
-  "swing": "查不到",
+  "battery": "支持Type-C移动充电",
+  "swing": "3D自动摇头",
   "size": "查不到",
   "year": null,
-  "pros": [],
-  "cons": [],
+  "pros": [
+    "3D自动摇头，送风覆盖广",
+    "4步拆装，宿舍可收纳",
+    "支持Type-C移动充电",
+    "2分钟整屋循环"
+  ],
+  "cons": [
+    "额定功率与噪音未公开"
+  ],
   "tags": [
     "循环扇"
   ],
@@ -26,7 +33,7 @@
     "小米商城"
   ],
   "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230806490",
-  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：official_price=499，ref_price=599",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：official_price=499，ref_price=599；2026-10-04 A2 路补录：pros（4 条），cons（1 条），swing=3D自动摇头，battery=支持Type-C移动充电。依据：小米商城 API product_desc：3D自动摇头｜4步拆装轻松收纳｜支持Type-C移动充电｜2分钟整屋循环",
   "updated_at": "2026-10-04",
   "img": "fan_circ_pro.webp",
   "brand": "小米",

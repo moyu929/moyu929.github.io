@@ -15,8 +15,15 @@
   "swing": "查不到",
   "size": "查不到",
   "year": null,
-  "pros": [],
-  "cons": [],
+  "pros": [
+    "DIY自然风",
+    "环抱式柔和送风",
+    "儿童安全防护",
+    "小爱语音控制"
+  ],
+  "cons": [
+    "额定功率、输出风量与噪音未公开"
+  ],
   "tags": [
     "塔扇"
   ],
@@ -26,7 +33,7 @@
     "小米商城"
   ],
   "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230800008",
-  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：official_price=319，ref_price=349",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：official_price=319，ref_price=349；2026-10-04 A2 路补录：pros（4 条），cons（1 条）。依据：小米商城 API product_desc：DIY自然风 | 环抱式柔和送风 | 儿童安全防护 | 小爱语音控制",
   "updated_at": "2026-10-04",
   "img": "fan_tower2.webp",
   "brand": "小米",

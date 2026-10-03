@@ -15,8 +15,16 @@
   "swing": "查不到",
   "size": "查不到",
   "year": null,
-  "pros": [],
-  "cons": [],
+  "pros": [
+    "冬夏两用，取暖与送风一体",
+    "3秒速热",
+    "直流变频电机",
+    "触控条操作",
+    "多重安全保护"
+  ],
+  "cons": [
+    "官方未公布额定功率与输出风量"
+  ],
   "tags": [
     "冷风扇/两季扇"
   ],
@@ -26,7 +34,7 @@
     "小米商城"
   ],
   "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1214400047",
-  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：official_price=799，ref_price=899",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：official_price=799，ref_price=899；2026-10-04 A2 路补录：pros（5 条），cons（1 条）。依据：小米商城 API product_desc：冬夏两用 | 3秒速热 | 直流变频电机 | 触控条 | 圆柱机身设计 | 多重安全保护",
   "updated_at": "2026-10-04",
   "img": "fan_season.webp",
   "brand": "小米",
