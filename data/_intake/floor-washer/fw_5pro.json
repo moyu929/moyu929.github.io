@@ -1,0 +1,44 @@
+{
+  "id": "fw_5pro",
+  "name": "米家无线洗地机 5 Pro",
+  "model_code": "F302",
+  "miot_model": "查不到",
+  "series": "5 代",
+  "official_price": 1999,
+  "second_hand": "查不到",
+  "motor": "查不到",
+  "battery": 4000,
+  "charge": "3.5h",
+  "runtime": "40min",
+  "noise": 45,
+  "clean_tank": "1000ml",
+  "dirty_tank": "700ml",
+  "weight": 6.1,
+  "size": "查不到",
+  "year": "查不到",
+  "pros": [
+    "噪音仅 45dB",
+    "1000ml 净水箱",
+    "40min 续航"
+  ],
+  "cons": [
+    "充电 3.5h 偏长",
+    "官方价 1999 元偏高"
+  ],
+  "tags": [
+    "无线洗地机"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网",
+    "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=10050233",
+  "change_log": "2026-10-01 建条：参数取自太平洋电脑网规格表（6 项），价格与图片取自小米商城在售目录；2026-10-01 水箱容量订正：原 clean=700ml/dirty=1000ml 为太平洋规格表清水/污水互换；据官方 class_parameters 订正为净水 1000ml / 污水 700ml；2026-10-04 官方商城 API 回填：ref_price=2599，clean_tank=1000ml，dirty_tank=700ml，weight=6.1，runtime=40min，battery=4000；2026-10-04：verify_url 补为小米商城商品页（product_id=10050233），按已入库参数补 pros/cons（不引入新数值）",
+  "updated_at": "2026-10-04",
+  "img": "fw_5pro.webp",
+  "brand": "小米",
+  "facet_group": "大容量(≥1000ml)",
+  "ref_price": 2599
+}

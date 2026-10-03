@@ -1,0 +1,40 @@
+{
+  "id": "mova_2694019",
+  "name": "Mova 2.0 Pro",
+  "brand": "MOVA",
+  "model_code": "查不到",
+  "series": "未归类",
+  "official_price": "查不到",
+  "ref_price": 2999,
+  "year": "查不到",
+  "pros": [
+    "3.8kg 全场最轻",
+    "890ml 净水箱",
+    "无刷电机"
+  ],
+  "cons": [
+    "30min 续航全场最短",
+    "噪音查不到"
+  ],
+  "tags": [
+    "MOVA"
+  ],
+  "motor": "无刷电机",
+  "battery": "查不到",
+  "charge": "查不到",
+  "runtime": "30min",
+  "noise": "查不到",
+  "clean_tank": "890ml",
+  "dirty_tank": "600ml",
+  "weight": "3.8kg",
+  "size": "查不到",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-01",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/cleaning_machine/mova/2694019_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（3 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-04：按已入库参数补 pros/cons（不引入新数值）",
+  "updated_at": "2026-10-04",
+  "facet_group": "中容量(800-999ml)"
+}
