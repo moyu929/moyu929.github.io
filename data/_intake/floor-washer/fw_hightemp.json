@@ -1,0 +1,41 @@
+{
+  "id": "fw_hightemp",
+  "name": "米家高温无线洗地机",
+  "model_code": "查不到",
+  "miot_model": "szkj.mop.mjhvc1",
+  "series": "初代与衍生",
+  "official_price": "查不到",
+  "second_hand": "查不到",
+  "motor": "查不到",
+  "battery": "查不到",
+  "charge": "查不到",
+  "runtime": "查不到",
+  "noise": "查不到",
+  "clean_tank": "查不到",
+  "dirty_tank": "查不到",
+  "weight": 5.2,
+  "size": "350×380×480mm",
+  "year": "查不到",
+  "pros": [
+    "高温洗地机型",
+    "5.2kg 整机"
+  ],
+  "cons": [
+    "吸力/续航/水箱容量官方均查不到"
+  ],
+  "tags": [
+    "无线洗地机"
+  ],
+  "verify_status": "已核验（多源）",
+  "verify_date": "2026-10-01",
+  "verify_source": [
+    "太平洋电脑网",
+    "米家产品库(miot-spec)"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/cleaning_machine/mijia/1443427_detail.html",
+  "change_log": "2026-10-01 经米家产品库(miot-spec)交叉印证存在性并补入协议型号；2026-10-01 建条：参数取自太平洋电脑网规格表（3 项），价格与图片取自小米商城在售目录；2026-10-04：按已入库参数补 pros/cons（不引入新数值）",
+  "updated_at": "2026-10-04",
+  "img": null,
+  "brand": "小米",
+  "facet_group": "未归类"
+}

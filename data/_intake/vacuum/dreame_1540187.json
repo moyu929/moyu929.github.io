@@ -1,0 +1,38 @@
+{
+  "id": "dreame_1540187",
+  "name": "追觅V12",
+  "brand": "追觅",
+  "model_code": "V12",
+  "tier": "主流",
+  "official_price": "查不到",
+  "ref_price": 2099,
+  "year": "查不到",
+  "pros": [
+    "72dB(A) 为追觅系最低噪音",
+    "90min 续航",
+    "1.65kg 轻量"
+  ],
+  "cons": [
+    "0.5L 尘杯容量一般",
+    "尘杯集尘需手动倒灰"
+  ],
+  "tags": [
+    "追觅"
+  ],
+  "suction_aw": "查不到",
+  "power": "550W",
+  "dust_cup": "0.5L",
+  "runtime": "90分钟",
+  "noise": "72dB(A)",
+  "weight": "1.65kg",
+  "filter": "尘杯集尘",
+  "size": "1226×200mm",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-03",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/vacuum_cleaner/dreame/1540187_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：主流（依据：参考价 2099 元）；2026-10-03 回填型号：原「查不到」，产品名「追觅V12」中的型号串为 V12（来源与产品名同源的第三方规格站）；2026-10-04：按已入库参数补 pros/cons（不引入新数值）",
+  "updated_at": "2026-10-04"
+}

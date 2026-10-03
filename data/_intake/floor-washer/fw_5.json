@@ -1,0 +1,46 @@
+{
+  "id": "fw_5",
+  "name": "米家无线洗地机 5",
+  "model_code": "F303",
+  "miot_model": "查不到",
+  "series": "5 代",
+  "official_price": 1399,
+  "second_hand": "查不到",
+  "motor": "无刷电机",
+  "battery": 4000,
+  "charge": "3小时以上",
+  "runtime": "45min",
+  "noise": 74,
+  "clean_tank": "1000ml",
+  "dirty_tank": "700ml",
+  "weight": 5.1,
+  "size": "267×265×1140mm",
+  "year": "查不到",
+  "pros": [
+    "1000ml 大净水箱",
+    "45min 续航",
+    "噪音 74dB 较低",
+    "1399 元价位"
+  ],
+  "cons": [
+    "充电 3 小时以上偏长",
+    "脏水箱 700ml 偏小"
+  ],
+  "tags": [
+    "无线洗地机",
+    "无刷电机"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网",
+    "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230808418",
+  "change_log": "2026-10-01 建条：参数取自太平洋电脑网规格表（8 项），价格与图片取自小米商城在售目录；2026-10-04 官方商城 API 回填：ref_price=1699，clean_tank=1000ml，dirty_tank=700ml，weight=5.1，runtime=45min，battery=4000；2026-10-04：verify_url 补为小米商城商品页（product_id=1230808418），按已入库参数补 pros/cons（不引入新数值）",
+  "updated_at": "2026-10-04",
+  "img": "fw_5.webp",
+  "brand": "小米",
+  "facet_group": "大容量(≥1000ml)",
+  "ref_price": 1699
+}
