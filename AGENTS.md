@@ -12,7 +12,7 @@
 
 ## 1. 一句话规则
 
-**先认清自己在哪个区：采集方只写 `data/_draft/`，审核修正方只写 `data/_review/`，上线数据只能经 `flow:publish` 进入 `products.json`；动手前先跑 `npm run flow:status`。**
+**先认清自己在哪个区：采集方只写 `data/_draft/`，审核修正方只写 `data/_review/`，上线数据只能经 `flow:publish` 进入 `products.json`；动手前先跑 `npm run flow:status`。改动一律走分支 + PR，不直推 `main`（§3.6）。**
 
 ---
 
@@ -110,6 +110,37 @@
 
 线上数据有错、等不了完整流程时：B 一次做完 `recall → 改 → publish`（几个命令几十秒），提交信息写明「紧急订正」。**不存在**绕过分区直接改库的通道——紧急的是时效，不是流程。
 
+### 3.6 分支协作协议（2026-10-03 起）
+
+分区仍是数据形态的载体，但**传输与合并交给 git 原生机制**：各方在自己的 worktree / 分支上干活、推分支、开 PR，**用户合并 PR 即上线**。
+
+| 角色 | 工作位置 | 动作 | 硬边界 |
+| --- | --- | --- | --- |
+| **采集 A** | 编排方注入的 worktree（如 `../wt-collect-01`），分支 `collect/<任务号>-<品类>` | 分区流程 → `flow:submit` → 推分支 → 开 PR | 只开 PR；不碰 `main`；不进他人的 worktree |
+| **修正 B** | 主目录（其会话无法固定 cwd），按需切分支 | `gh pr checkout <PR>` → `flow:claim` → 核验修正 → `flow:publish` → 推回 → 请用户合并 | 不得直推 `main` |
+| **用户** | GitHub 网页 | 批准 merge、裁决冲突与口径、决定剔除 | merge 权只在用户 |
+
+- **PR 合并 = 上线时刻**：合并前站点展示上一个已发布版本；`recall` 不再立即下架。
+- **一个 PR = 一个批次**（一波采集 / 一批召回修正），不是一个产品一个 PR。PR 描述用 `.github/pull_request_template.md`。
+- 分支命名：`collect/<任务号>-<品类>` / `review/<批次号>` / `feat/<主题>` / `fix/<主题>`。
+- 会话开头先 `gh pr list` / `gh issue list` 认领任务，再 `npm run flow:status` 看分区现状。
+- **编排方义务**：给子 Agent 注入其 worktree 的绝对路径，**提示词里不出现主仓路径**——这是唯一被实测确认发生过的越界写入向量。
+
+**新建 worktree 的引导清单**（每新建一个目录跑一遍）：
+
+```bash
+git worktree add ../wt-collect-01 -b collect/01-air-purifier
+cd ../wt-collect-01
+npm run flow:status     # 自检。不需要 npm install（flow/validate/lint 只用 node 内置模块）
+npm run hooks:install   # 启用提交闸门（core.hooksPath 是本机配置，每个 worktree 各需一次）
+```
+
+- `AGENTS.md`、`HANDOFF.md`、`skills/**`、`docs/**`、钩子脚本**都随 worktree 到位**，无需手工播种。
+- `data/_cache/**` 与 `node_modules/` **不随 worktree 走**：数据类工作都不需要；只有爬取类脚本用 `_cache`，用到时从主仓复制（2.7MB）。
+- ⚠️ **worktree 目录必须位于该客户端允许写入的范围内**。实测：目录在仓库之外时会被客户端沙箱拦（写入与删除均失败），需在「设置 → 权限与批准 → 自定义配置」把父目录加入允许列表。
+
+**会话纪律（重要）**：客户端项目记忆按**项目路径**派生——在 worktree 这个新路径里开会话，等于另一个项目，读不到主目录的会话历史与记忆。因此**凡需跨会话保留的决定，必须写回仓库文件**（`AGENTS.md` / `HANDOFF.md` / `docs/` / issue），不能只留在对话或客户端记忆里。
+
 ---
 
 ## 4. 快照锁（降级为结构冻结工具）
@@ -148,7 +179,7 @@
 - **不要用 `git add -A` / `git add .`**：显式列出路径。共享工作树里 `-A` 会扫走别人未提交的分区文件
   （2026-10-03 实测发生过：两份文档被扫进他人提交，提交信息与内容不符）。
 - 推送前跑 **`npm run check`**（= `validate` + `lint` + `audit:check`）；有 error 不得推送。
-- 只推 `main` 触发部署；**不 force push `main`**；**不修改 git 配置**。
+- **改动一律走分支 + PR，不直推 `main`**（§3.6）：合并 PR 才触发部署；不 force push；不修改 git 配置。
 - 改动了审核标注字段的提交，在信息里点出「已更新核查状态/来源」。
 
 ---
