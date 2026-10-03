@@ -494,7 +494,7 @@ function cmdClaim(args, at) {
     const submitActor = idx.lastSubmit.get(key)?.actor ?? null
     if (!fs.existsSync(src)) {
       if (fs.existsSync(dst)) {
-        col.skip(key, '已在修正区（本批已认领）')
+        col.skip(key, `已在修正区（认领人：${describeClaim(idx, key)}）`)
         continue
       }
       col.fail(key, '待入库区没有这个文件（可能已被撤回或他人认领，git pull 后用 flow:status 确认）')
@@ -512,7 +512,29 @@ function cmdClaim(args, at) {
     const inLib = libraryIndex(key) >= 0
     const isSelf = submitActor && submitActor === at.by
     if (isSelf) selfReview++
-    moveFile(src, dst)
+    // 防双领占位：原子创建（flag 'wx'）成功者才有权搬文件。
+    // 多修正方各自 worktree 时走不到互斥（各写各的文件系统副本）；它兜的是"两个 worker
+    // 意外共用同一工作区"这类协议外形态。占位在搬移成功/失败后都必须清理。
+    const sentinel = `${dst}.claiming`
+    ensureDir(path.dirname(sentinel))
+    try {
+      fs.writeFileSync(sentinel, `${at.by}\n`, { flag: 'wx' })
+    } catch (e) {
+      if (e.code === 'EEXIST') {
+        col.fail(
+          key,
+          `已被其他修正方认领（修正区存在 .claiming 占位：${path.relative(DATA, sentinel)}；` +
+            `若确认对方已不在处理，删除该占位后重跑）`,
+        )
+        continue
+      }
+      throw e
+    }
+    try {
+      moveFile(src, dst)
+    } finally {
+      fs.rmSync(sentinel, { force: true })
+    }
     journal({
       actor: at.by,
       branch: at.branch,
