@@ -1,0 +1,40 @@
+{
+  "id": "rc_fast_34l",
+  "name": "米家快煮电饭煲 3L/4L",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "底盘加热",
+  "official_price": 269,
+  "second_hand": "—",
+  "capacity": null,
+  "power": null,
+  "inner_pot": "查不到",
+  "pressure": "查不到",
+  "appoint": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+    "主打超快煮，节省时间",
+    "厚质不粘内胆",
+    "玻璃面板设计",
+    "269 元起定价亲民"
+  ],
+  "cons": [
+    "底盘加热，非 IH",
+    "3L/4L 双档参数有差异，按需选购"
+  ],
+  "tags": [
+    "底盘加热"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230800191",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 补全：ref_price=299，补写卖点 4 条 pros / 2 条 cons（来源：商城API（market_price=299）；小米商城商品页文案（product_id=1230800191））；2026-10-04 跳过说明：系列条目（3L/4L）：尺寸/型号/功率随档位不同，不取单档值（3L 档太平洋型号 MFB07M 与 4L 档不同）",
+  "updated_at": "2026-10-04",
+  "img": "rc_fast_34l.webp",
+  "brand": "小米",
+  "ref_price": 299
+}

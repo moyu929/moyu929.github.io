@@ -1,0 +1,38 @@
+{
+  "id": "panasonic_589196",
+  "name": "松下SR-SPZ183",
+  "brand": "松下",
+  "model_code": "SR-SPZ183",
+  "type": "IH电磁",
+  "official_price": 12999,
+  "ref_price": 9799,
+  "year": "查不到",
+  "pros": [
+    "IH电磁加热，1400W 高功率",
+    "5L 大容量，多人家庭适用",
+    "钻石黄金内锅",
+    "支持预约"
+  ],
+  "cons": [
+    "定价近万元，预算门槛高",
+    "机身较重，挪动不便"
+  ],
+  "tags": [
+    "松下"
+  ],
+  "capacity": "5",
+  "power": "1400W",
+  "inner_pot": "钻石黄金内锅",
+  "pressure": "查不到",
+  "size": "292×365×267mm",
+  "verify_status": "已核验（多源）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "中关村在线",
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/rice_cooker/panasonic/589196_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：底盘加热（依据：无 IH 特征）；2026-10-03 回填型号：原「查不到」，产品名「松下SR-SPZ183」中的型号串为 SR-SPZ183（来源与产品名同源的第三方规格站）；2026-10-04 补全：official_price=12999，appoint=支持，订正 type=IH电磁，补写卖点 4 条 pros / 2 条 cons（来源：ZOL https://detail.zol.com.cn/rice_cooker/index880621.shtml（当前零售价 12999；功率 1400W/尺寸 292*365*267mm/重量 8.9kg 与太平洋完全一致，多源互证））；2026-10-04 订正加热方式 底盘加热→IH电磁（太平洋规格表「IH加热」；ZOL 参数页同证 1400W 功率量级）",
+  "updated_at": "2026-10-04",
+  "appoint": "支持"
+}
