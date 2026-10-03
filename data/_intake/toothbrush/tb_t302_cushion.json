@@ -4,7 +4,7 @@
   "model_code": "查不到",
   "miot_model": "查不到",
   "tier": "进阶",
-  "official_price": null,
+  "official_price": 149,
   "second_hand": "—",
   "freq": null,
   "modes": "查不到",
@@ -27,7 +27,7 @@
     "小米商城"
   ],
   "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230809531",
-  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 补 pros（来源：已入库参数推导）",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 补 pros（来源：已入库参数推导）；2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：official_price=149",
   "updated_at": "2026-10-04",
   "img": "tb_t302_cushion.webp",
   "brand": "小米"
