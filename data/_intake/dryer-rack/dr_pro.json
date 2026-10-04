@@ -1,0 +1,43 @@
+{
+  "id": "dr_pro",
+  "name": "米家智能晾衣机 Pro",
+  "model_code": "B501CN",
+  "miot_model": "xiaomi.airer.pro3",
+  "type": "电动晾衣机",
+  "official_price": 1116,
+  "second_hand": "—",
+  "load": "35kg",
+  "length": "最大 2.2m",
+  "light": "支持（照明 22W）",
+  "dry": "不支持",
+  "app": "米家 APP，小爱语音",
+  "size": "1250×460×98mm",
+  "year": null,
+  "pros": [
+    "9.8cm 超薄机身，嵌入吊顶如吸顶灯",
+    "晾杆最大 2.2m",
+    "升降高度可自定义",
+    "可与洗衣机联动自动下降"
+  ],
+  "cons": [
+    "单杆晾晒量有限"
+  ],
+  "tags": [
+    "电动晾衣机"
+  ],
+  "verify_status": "已核验（多源）",
+  "verify_date": "2026-10-05",
+  "verify_source": [
+    "百度百科",
+    "IT之家",
+    "新浪",
+    "米家产品库(miot-spec)",
+    "小米商城",
+    "米家官方说明书"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230801771",
+  "change_log": "2026-10-01 经米家产品库(miot-spec)交叉印证存在性并补入协议型号；2026-10-01 经官方/权威来源核对并补入参数（补丁 2026-10-01-dryerrack-footspa-coffee.json）；2026-10-05 补全：model_code=B501CN、load=35kg、light=照明 22W、size=1250×460×98mm（米家官方说明书铭牌）；length 订正：原「最大 1.1m」实为说明书「升降行程 1.1m」，晾杆最大长度按商城关键参数「晾杆最大长度 2200mm」订正为最大 2.2m；dry=不支持（商城「烘干功能 不支持」）；app=米家 APP/小爱语音（商城「智能控制」+说明书）；size 原营销语「9.8cm 超薄机身」替换为官方铭牌尺寸（厚度 98mm 与 9.8cm 自洽）；pros 同步订正晾杆值；verify_url=商城商品页（来源：米家官方说明书 PDF[接入页 xiaomi.airer.pro3 下发]、小米商城商品页）",
+  "updated_at": "2026-10-05",
+  "img": "dr_pro.webp",
+  "brand": "小米"
+}

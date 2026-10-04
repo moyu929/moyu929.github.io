@@ -5120,3 +5120,9 @@
 {"ts":"2026-10-04T13:27:21.818Z","actor":"1095365435","branch":"tidy/round2","action":"publish","key":"water-purifier/wp_prefilter_pro","from":"review","to":"library","batch":"714ef41e","supersedes":true}
 {"ts":"2026-10-04T13:27:21.835Z","actor":"1095365435","branch":"tidy/round2","action":"publish","key":"water-purifier/wp_rich2","from":"review","to":"library","batch":"714ef41e","supersedes":true}
 {"ts":"2026-10-04T13:27:21.852Z","actor":"1095365435","branch":"tidy/round2","action":"publish","key":"water-purifier/wp_s1_1000","from":"review","to":"library","batch":"714ef41e","supersedes":true}
+{"ts":"2026-10-04T14:46:47.141Z","actor":"collect-A","branch":"collect/yi-dryer-rack","action":"submit","key":"dryer-rack/dr_3","from":"draft","to":"intake","batch":"74c84915","supersedes":true}
+{"ts":"2026-10-04T14:46:47.153Z","actor":"collect-A","branch":"collect/yi-dryer-rack","action":"submit","key":"dryer-rack/dr_2pro","from":"draft","to":"intake","batch":"74c84915","supersedes":true}
+{"ts":"2026-10-04T14:46:47.162Z","actor":"collect-A","branch":"collect/yi-dryer-rack","action":"submit","key":"dryer-rack/dr_pro","from":"draft","to":"intake","batch":"74c84915","supersedes":true}
+{"ts":"2026-10-04T14:46:47.171Z","actor":"collect-A","branch":"collect/yi-dryer-rack","action":"submit","key":"dryer-rack/dr_3c","from":"draft","to":"intake","batch":"74c84915","supersedes":true}
+{"ts":"2026-10-04T14:46:47.182Z","actor":"collect-A","branch":"collect/yi-dryer-rack","action":"submit","key":"dryer-rack/dr_dual2","from":"draft","to":"intake","batch":"74c84915","supersedes":true}
+{"ts":"2026-10-04T14:46:47.191Z","actor":"collect-A","branch":"collect/yi-dryer-rack","action":"submit","key":"dryer-rack/dr_invisible","from":"draft","to":"intake","batch":"74c84915","supersedes":true}

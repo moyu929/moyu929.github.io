@@ -1,0 +1,40 @@
+{
+  "id": "dr_3c",
+  "name": "米家智能晾衣机 3C",
+  "model_code": "MJLYJ6R7",
+  "miot_model": "xiaomi.airer.0005",
+  "type": "电动晾衣机",
+  "official_price": 1352,
+  "second_hand": "—",
+  "load": "35kg",
+  "length": "最大 1.95m",
+  "light": "支持（柔光照明 28W）",
+  "dry": "查不到",
+  "app": "米家 APP，小爱语音",
+  "size": "1185×450×93mm",
+  "year": null,
+  "pros": [
+    "额定承重 35kg",
+    "柔光照明（照明 28W）",
+    "晾杆最大 1.95m",
+    "米家 APP / 小爱语音"
+  ],
+  "cons": [
+    "收缩厚度 93mm，对吊顶空间有要求"
+  ],
+  "tags": [
+    "电动晾衣机"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-05",
+  "verify_source": [
+    "小米商城（官方产品图）",
+    "小米商城",
+    "米家官方说明书"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230808813",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-05 补全：model_code=MJLYJ6R7、load=35kg、length=最大 1.95m（说明书使用图示）、light=柔光照明 28W、size=1185×450×93mm（米家官方说明书铭牌）；app=米家 APP/小爱语音（说明书+官方接入页 withMiHome=1/withAi=1）；miot_model=xiaomi.airer.0005（官方接入页返回名称「米家智能晾衣机3C 柔光版」，与商城在售 SKU 及库内参考价 1352 元一致，即现售 3C 款）；pros/cons 按已入库参数补写；verify_url=商城商品页（来源：米家官方说明书 PDF[接入页 xiaomi.airer.0005 下发]、小米商城商品页）；dry 保持查不到：说明书全文无烘干/风干记载，商城关键参数缺失，宁缺勿错",
+  "updated_at": "2026-10-05",
+  "img": "dr_3c.webp",
+  "brand": "小米"
+}
