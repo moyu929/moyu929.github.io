@@ -1,0 +1,34 @@
+{
+  "id": "supor_2254659",
+  "name": "苏泊尔SY-60FC25Q",
+  "brand": "苏泊尔",
+  "model_code": "SY-60FC25Q",
+  "tier": "大容量",
+  "official_price": "查不到",
+  "ref_price": 899,
+  "year": "查不到",
+  "pros": [
+    "6L 大容量",
+    "双胆配置",
+    "电脑式控制",
+    "参考价 899 元，6L 档位中价格适中"
+  ],
+  "cons": [
+    "900W 功率偏小，加热偏慢",
+    "内胆材质未公开标注"
+  ],
+  "tags": [
+    "苏泊尔"
+  ],
+  "capacity": 6,
+  "power": 900,
+  "inner_pot": "查不到",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/pressure_cooker/supor/2254659_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：大容量（依据：标称容量 6.0L）；2026-10-03 回填型号：原「查不到」，产品名「苏泊尔SY-60FC25Q」中的型号串为 SY-60FC25Q（来源与产品名同源的第三方规格站）；2026-10-04 补全 pros/cons（只引用已入库参数、已采集规格表行与官方文案，未引入参数表外数值）；2026-10-04 格式订正：capacity 6L→6，power 900W→900（schema 声明 number，值不变，便于排序）",
+  "updated_at": "2026-10-04"
+}

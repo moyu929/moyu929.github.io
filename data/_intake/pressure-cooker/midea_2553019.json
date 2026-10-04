@@ -1,0 +1,34 @@
+{
+  "id": "midea_2553019",
+  "name": "美的MY-C6330G",
+  "brand": "美的",
+  "model_code": "MY-C6330G",
+  "tier": "大容量",
+  "official_price": "查不到",
+  "ref_price": 699,
+  "year": "查不到",
+  "pros": [
+    "6L 大容量一锅多用",
+    "精钢内胆结实耐用",
+    "配件带蒸笼，可上蒸下煮",
+    "按键式操作上手快"
+  ],
+  "cons": [
+    "1000W 功率一般，加热速度平平"
+  ],
+  "tags": [
+    "美的"
+  ],
+  "capacity": 6,
+  "power": 1000,
+  "inner_pot": "精钢",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/pressure_cooker/midea/2553019_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（3 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：大容量（依据：标称容量 6.0L）；2026-10-03 回填型号：原「查不到」，产品名「美的MY-C6330G」中的型号串为 MY-C6330G（来源与产品名同源的第三方规格站）；2026-10-04 回填参数（来源：太平洋规格表 verify_url）：size=316×284×319mm（产品尺寸=316×284×319mm）；2026-10-04 补全 pros/cons（只引用已入库参数、已采集规格表行与官方文案，未引入参数表外数值）；2026-10-04 格式订正：capacity 6L→6，power 1000W→1000（schema 声明 number，值不变，便于排序）",
+  "updated_at": "2026-10-04",
+  "size": "316×284×319mm"
+}
