@@ -1,0 +1,40 @@
+{
+  "id": "wd_pro",
+  "name": "米家即热饮水机 Pro",
+  "model_code": "MSYSJ04MH",
+  "miot_model": "查不到",
+  "type": "即热",
+  "official_price": 399,
+  "second_hand": "—",
+  "temp": "四档预设温度",
+  "volume": "3秒即热出水",
+  "tank": "2.8L（可拆卸）",
+  "filter": "查不到",
+  "power": "2100W",
+  "size": "312×106×280mm",
+  "year": 2026,
+  "pros": [
+    "3秒即热出水",
+    "四档预设温度",
+    "可拆卸 2.8L 水箱",
+    "水箱内胆/加热体/水路核心部件可拆洗"
+  ],
+  "cons": [
+    "水箱小于 S1 的 3L"
+  ],
+  "tags": [
+    "即热"
+  ],
+  "verify_status": "已核验（多源）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "IT之家",
+    "太平洋电脑网",
+    "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230808764",
+  "change_log": "2026-10-01 经官方/权威来源核对并补入参数（补丁 2026-10-01-water-dispenser.json）；2026-10-04 补全：model_code=MSYSJ04MH，power=2100W，size=312×106×280mm（来源：太平洋电脑网米家规格页 https://g.pconline.com.cn/product/water_dispenser/mijia/3000022_detail.html）；2026-10-04 verify_url 补小米商城商品页（API 核对商品名与价格一致）",
+  "updated_at": "2026-10-04",
+  "img": "wd_pro.webp",
+  "brand": "小米"
+}

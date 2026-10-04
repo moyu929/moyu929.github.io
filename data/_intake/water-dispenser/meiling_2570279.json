@@ -1,0 +1,33 @@
+{
+  "id": "meiling_2570279",
+  "name": "美菱MYG-335",
+  "brand": "美菱",
+  "model_code": "MYG-335",
+  "type": "管线",
+  "official_price": "查不到",
+  "ref_price": 799,
+  "year": "查不到",
+  "pros": [
+    "壁挂式安装",
+    "2000W 加热功率",
+    "约158mm 薄机身"
+  ],
+  "cons": [
+    "管线机需外接净水水源"
+  ],
+  "tags": [
+    "美菱"
+  ],
+  "power": "2000W",
+  "tank": "查不到",
+  "volume": "查不到",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/water_dispenser/meiling/2570279_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（1 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：管线（依据：第三方产品类型=管线机）；2026-10-03 回填型号：原「查不到」，产品名「美菱MYG-335」中的型号串为 MYG-335（来源与产品名同源的第三方规格站）；2026-10-04 回填参数（来源：太平洋规格表 verify_url）：size=340×280×158mm（外形尺寸=340×280×158mm）；2026-10-04 裸卡补卖点 pros/cons（只引用已入库参数与商城/官方文案，未引入参数表外数值）",
+  "updated_at": "2026-10-04",
+  "size": "340×280×158mm"
+}

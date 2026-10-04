@@ -1,0 +1,41 @@
+{
+  "id": "wd_portable",
+  "name": "米家便携即热饮水机",
+  "model_code": "MJBXJRYSJ01",
+  "miot_model": "查不到",
+  "type": "即热",
+  "official_price": 249,
+  "second_hand": "—",
+  "temp": "45-95℃可调",
+  "volume": "查不到",
+  "tank": "查不到",
+  "filter": "查不到",
+  "power": "2000W",
+  "size": "80×80×214mm",
+  "year": 2024,
+  "pros": [
+    "保温杯大小，随行便携",
+    "速热出水，无需久等",
+    "45-95℃ 水温可调"
+  ],
+  "cons": [
+    "依赖瓶装/桶装水水源",
+    "2000W 功率较高，出行需确认供电条件"
+  ],
+  "tags": [
+    "即热"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "凤凰网科技",
+    "太平洋电脑网",
+    "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230803041",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=299；2026-10-04 补全：model_code=MJBXJRYSJ01，power=2000W，size=80×80×214mm，temp=45-95℃可调（来源：太平洋电脑网米家规格页 https://g.pconline.com.cn/product/water_dispenser/mijia/2430639_detail.html）；2026-10-04 year=2024（来源：凤凰网科技 2024-11-01 预售报道（249元）——开售报道弱源）；2026-10-04 裸卡补卖点 pros/cons（只引用已入库参数与商城/官方文案，未引入参数表外数值）",
+  "updated_at": "2026-10-04",
+  "img": "wd_portable.webp",
+  "brand": "小米",
+  "ref_price": 299
+}

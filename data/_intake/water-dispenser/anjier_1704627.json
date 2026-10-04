@@ -1,0 +1,32 @@
+{
+  "id": "anjier_1704627",
+  "name": "安吉尔Y3316BK-G b",
+  "brand": "安吉尔",
+  "model_code": "Y3316BK-G",
+  "type": "管线",
+  "official_price": "查不到",
+  "ref_price": 1998,
+  "year": "查不到",
+  "pros": [
+    "壁挂式安装，不占台面",
+    "约180mm 薄机身"
+  ],
+  "cons": [
+    "需配净水器（要求净化水水源）"
+  ],
+  "tags": [
+    "安吉尔"
+  ],
+  "power": "查不到",
+  "tank": "查不到",
+  "volume": "查不到",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/water_dispenser/anjier/1704627_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（0 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：管线（依据：第三方产品类型=管线机）；2026-10-03 回填型号：原「查不到」，产品名「安吉尔Y3316BK-G b」中的型号串为 Y3316BK-G（来源与产品名同源的第三方规格站）；2026-10-04 回填参数（来源：太平洋规格表 verify_url）：size=393×293×180mm（外形尺寸=393×293×180mm）；2026-10-04 裸卡补卖点 pros/cons（只引用已入库参数与商城/官方文案，未引入参数表外数值）",
+  "updated_at": "2026-10-04",
+  "size": "393×293×180mm"
+}
