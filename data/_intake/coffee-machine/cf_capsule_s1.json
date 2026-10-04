@@ -1,0 +1,40 @@
+{
+  "id": "cf_capsule_s1",
+  "name": "米家胶囊咖啡机 S1",
+  "model_code": "CMC001",
+  "miot_model": "查不到",
+  "type": "胶囊",
+  "official_price": 499,
+  "second_hand": "—",
+  "pressure": "20Bar",
+  "tank": "约650mL",
+  "capsule": "ULKA 高压水泵 + 双驱动控温",
+  "milk": "查不到",
+  "power": 1250,
+  "size": "查不到",
+  "year": 2025,
+  "pros": [
+    "20Bar ULKA高压水泵",
+    "1250W速热，25秒快速预热",
+    "NTC+PID精准控温",
+    "磁吸挂架可收纳20个胶囊"
+  ],
+  "cons": [
+    "水箱约650mL，连续出杯需频繁加水"
+  ],
+  "tags": [
+    "胶囊"
+  ],
+  "verify_status": "已核验（多源）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "百度百科",
+    "太平洋电脑网",
+    "IT之家"
+  ],
+  "verify_url": "https://baike.baidu.com/item/米家胶囊咖啡机S1/65431806",
+  "change_log": "2026-10-01 补入参数：CMC001、20Bar ULKA、1250W、650mL、25 秒预热；2026-10-04 补全：上市年份=2025（来源：IT之家/网易 2025-02-24 报道有品上架并 2-27 开售，报道价 499 元与商城在售价一致；媒体仅作弱源）",
+  "updated_at": "2026-10-04",
+  "img": "cf_capsule_s1.webp",
+  "brand": "小米"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "cf_espresso_pro",
+  "name": "米家智能意式半自动咖啡机 Pro",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "半自动",
+  "official_price": 4999,
+  "second_hand": "—",
+  "pressure": "查不到",
+  "tank": "查不到",
+  "capsule": "查不到",
+  "milk": "支持打奶（集磨豆/萃取/打奶一体）",
+  "power": 2200,
+  "size": "查不到",
+  "year": 2026,
+  "pros": [
+    "集成磨豆、萃取、打奶一体",
+    "0.1g 落粉精准称重免配秤",
+    "等离子防飞粉设计",
+    "TFT 旋转彩屏一旋一按",
+    "胡桃木牛角手柄"
+  ],
+  "cons": [
+    "官方指导价 4999 元，门槛较高"
+  ],
+  "tags": [
+    "半自动"
+  ],
+  "verify_status": "已核验（多源）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "IT之家",
+    "小米商城",
+    "新浪",
+    "百度百科"
+  ],
+  "verify_url": "查不到",
+  "change_log": "2026-10-01 经官方/权威来源核对并补入参数（补丁 2026-10-01-dryerrack-footspa-coffee.json）；2026-10-04 官方商城 API 回填：ref_price=4999",
+  "updated_at": "2026-10-04",
+  "img": "cf_espresso_pro.webp",
+  "brand": "小米",
+  "ref_price": 4999
+}
