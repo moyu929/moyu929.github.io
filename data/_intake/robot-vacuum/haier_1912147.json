@@ -1,0 +1,37 @@
+{
+  "id": "haier_1912147",
+  "name": "海尔全能仿生扫拖机器人H11 MAX",
+  "brand": "海尔",
+  "model_code": "查不到",
+  "tier": "全能基站",
+  "official_price": "查不到",
+  "ref_price": 3590,
+  "year": "查不到",
+  "pros": [
+    "尘袋 + 尘盒双集尘",
+    "3L 清 + 2.8L 污 水箱"
+  ],
+  "cons": [
+    "噪音 66.8dB(A) 偏高",
+    "吸力查不到"
+  ],
+  "tags": [
+    "海尔"
+  ],
+  "suction": "查不到",
+  "base_func": "尘袋，尘盒",
+  "navigation": "查不到",
+  "water_tank": "清水箱3L，污水箱约2.8L",
+  "battery": "查不到",
+  "noise": "66.8dB(A)",
+  "power": "45W",
+  "size": "350×350×100mm",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-01",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/sweepingrobot/haier/1912147_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：全能基站（依据：名称或集尘方式含基站）；2026-10-04：按已入库参数补 pros/cons（不引入新数值）",
+  "updated_at": "2026-10-04"
+}

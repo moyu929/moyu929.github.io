@@ -1,0 +1,38 @@
+{
+  "id": "karcher_529021",
+  "name": "德国凯驰B 60W",
+  "brand": "卡赫",
+  "model_code": "60W",
+  "tier": "旗舰",
+  "official_price": "查不到",
+  "ref_price": 78000,
+  "year": "查不到",
+  "pros": [
+    "60W 机型定位（大功率档）"
+  ],
+  "cons": [
+    "整机 89kg，超出家用吸尘器常规量级",
+    "参考价 78000 元属商用设备价位",
+    "其余参数均查不到",
+    "疑似商用机型，建议复核收录范围"
+  ],
+  "tags": [
+    "卡赫"
+  ],
+  "suction_aw": "查不到",
+  "power": "查不到",
+  "dust_cup": "查不到",
+  "runtime": "查不到",
+  "noise": "查不到",
+  "weight": "89kg",
+  "filter": "查不到",
+  "size": "查不到",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-03",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/vacuum_cleaner/karcher/529021_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（1 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：旗舰（依据：参考价 78000 元（≥4000））；2026-10-03 回填型号：原「查不到」，产品名「德国凯驰B 60W」中的型号串为 60W（来源与产品名同源的第三方规格站）；2026-10-04：按已入库参数补 pros/cons（不引入新数值）",
+  "updated_at": "2026-10-04"
+}
