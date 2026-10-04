@@ -1,0 +1,33 @@
+{
+  "id": "galanz_624437",
+  "name": "格兰仕L2",
+  "brand": "格兰仕",
+  "model_code": "查不到",
+  "type": "常规",
+  "official_price": "查不到",
+  "ref_price": 298,
+  "year": "查不到",
+  "pros": [
+    "2200W 大火力",
+    "41mm 纤薄机身，收纳友好",
+    "黑色微晶面板耐高温"
+  ],
+  "cons": [
+    "入门定位，预设菜单等配置公开信息有限"
+  ],
+  "tags": [
+    "格兰仕"
+  ],
+  "power": 2200,
+  "gear": "查不到",
+  "panel": "黑色微晶面板",
+  "size": "350×290×41mm",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/induction_cooker/galanz/624437_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：常规（依据：无超薄或青春特征）；2026-10-04 补全：格式订正：功率「2200W」→ 2200（schema number 归一）；补全卖点（依据：库内参数，未引入新数值）",
+  "updated_at": "2026-10-04"
+}
