@@ -1,0 +1,41 @@
+{
+  "id": "hm_fogless_1200",
+  "name": "米家无雾加湿器3 1200",
+  "model_code": "CJSJSQ03XY",
+  "miot_model": "查不到",
+  "type": "无雾冷蒸发",
+  "official_price": 899,
+  "second_hand": "—",
+  "humid_rate": 1200,
+  "tank": 6,
+  "runtime": 14,
+  "noise": 60,
+  "power": 20,
+  "sterilize": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+    "1200mL/h大加湿量",
+    "6L大水箱续航14小时",
+    "功率仅20W"
+  ],
+  "cons": [
+    "噪音标称≤60dB偏高"
+  ],
+  "tags": [
+    "无雾",
+    "大水箱"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城",
+    "小米商城（官方产品图）"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230801367",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 A2 路补录：补官方商城链接，ref_price=1499。依据：小米商城 API",
+  "updated_at": "2026-10-04",
+  "img": "hm_fogless_1200.webp",
+  "brand": "小米",
+  "ref_price": 1499
+}

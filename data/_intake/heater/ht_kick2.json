@@ -1,0 +1,44 @@
+{
+  "id": "ht_kick2",
+  "name": "米家石墨烯踢脚线电暖器 2",
+  "model_code": "TJXDNQ08ZM",
+  "miot_model": "xiaomi.heater.ma7s",
+  "type": "踢脚线",
+  "official_price": 399,
+  "second_hand": "—",
+  "power": 2200,
+  "coverage": "11-15㎡",
+  "gear": "2档",
+  "material": "石墨烯加热",
+  "safety": "倾倒保护+恒温+定时关机",
+  "ipx": "IPX4",
+  "size": "1025×134×197.5mm",
+  "year": null,
+  "pros": [
+    "2200W大功率",
+    "5秒即开即热",
+    "石墨烯发热体",
+    "IPX4防水",
+    "米家APP操控"
+  ],
+  "cons": [
+    "机身较长1025mm，墙角需留位置"
+  ],
+  "tags": [
+    "踢脚线"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网",
+    "小米商城",
+    "小米社区",
+    "米家产品库(miot-spec)"
+  ],
+  "verify_url": "https://product.pconline.com.cn/heater/mijia/1934527_detail.html",
+  "change_log": "2026-10-01 经米家产品库(miot-spec)交叉印证存在性并补入协议型号；2026-10-01 补入参数：型号 TJXDNQ08ZM、2200W、11-15㎡、IPX4、2档、4.2kg；2026-10-04 官方商城 API 回填：official_price=399，ref_price=449",
+  "updated_at": "2026-10-04",
+  "img": "ht_kick2.webp",
+  "brand": "小米",
+  "ref_price": 449
+}

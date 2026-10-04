@@ -1,0 +1,40 @@
+{
+  "id": "fan_batt_floor",
+  "name": "米家智能直流变频循环落地扇 电池版",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "落地扇",
+  "official_price": 599,
+  "second_hand": "—",
+  "power": null,
+  "airflow": null,
+  "speeds": "查不到",
+  "noise": null,
+  "throw_dist": null,
+  "battery": "查不到",
+  "swing": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+    "电池版，可脱离插座使用",
+    "温湿度感应控风",
+    "全自动循环风",
+    "AI语音控制"
+  ],
+  "cons": [
+    "内置电池款，售价高于同系列有线落地扇"
+  ],
+  "tags": [
+    "落地扇"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230800090",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 A2 路补录：pros（4 条），cons（1 条）。依据：小米商城 API product_desc：全自动循环风｜温湿度感应控风 ｜AI语音控制",
+  "updated_at": "2026-10-04",
+  "img": "fan_batt_floor.webp",
+  "brand": "小米"
+}

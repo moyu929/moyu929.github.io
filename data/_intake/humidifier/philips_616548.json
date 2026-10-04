@@ -1,0 +1,37 @@
+{
+  "id": "philips_616548",
+  "name": "飞利浦HU5931/00",
+  "brand": "飞利浦",
+  "model_code": "HU5931/00",
+  "type": "无雾冷蒸发",
+  "official_price": "查不到",
+  "ref_price": 2599,
+  "year": "查不到",
+  "pros": [
+    "600mL/h加湿量",
+    "无雾冷蒸发",
+    "6-16W低功率"
+  ],
+  "cons": [
+    "噪音区间33-59dB跨度过大",
+    "参考价2599元，加湿器中偏高"
+  ],
+  "tags": [
+    "飞利浦"
+  ],
+  "humid_rate": "600ml/h",
+  "tank": 4,
+  "runtime": "查不到",
+  "noise": "33-59dB",
+  "power": "6-16W",
+  "sterilize": "查不到",
+  "size": "460×446×275mm",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/humidifier/philips/616548_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：无雾冷蒸发（依据：加湿量 600.0 ml/h（≥600 且带水箱，属蒸发式））；2026-10-03 回填型号：原「查不到」，产品名「飞利浦HU5931/00」中的型号串为 HU5931/00（来源与产品名同源的第三方规格站）；2026-10-04 回填参数（来源：太平洋规格表 verify_url）：tank=4（水箱容积=4L）；2026-10-04 A2 路补录：pros（3 条），cons（2 条）。依据：库内已入库参数（humid_rate/noise/power/size/type）",
+  "updated_at": "2026-10-04"
+}
