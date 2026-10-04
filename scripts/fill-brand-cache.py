@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""从竞品缓存（brand-*.json / pconline-*.json）回填丙路品类的空字段。
+"""从非小米品牌缓存（brand-*.json / pconline-*.json）回填丙路品类的空字段。
 
 ## 为什么要这个脚本（以及 fill-params.py 为什么跑不出东西）
 
@@ -17,7 +17,7 @@ schema** 校验后再写：schema 里没有的字段一律跳过，所以同一�
 
 ## 写法
 
-- 匹配：`product.id` 里含缓存条目的 `id`（竞品 id 形如 `sony_2617099`、`tcl_2986362`）。
+- 匹配：`product.id` 里含缓存条目的 `id`（非小米品牌产品 id 形如 `sony_2617099`、`tcl_2986362`）。
 - 只填**空值**（`null` / `""` / `查不到` / `—`），已有值不覆盖。
 - 单位守卫：年份要 4 位且落在 2000–2027；价格 49–999999；浴霸风暖功率 <500W 判错标
   （HANDOFF §0.3 记录的第三方系统性错标）；尺寸串必须含数字与 `×` 或 `mm`。
@@ -202,7 +202,7 @@ def main():
             total["n"] += 1
             total["f"] += len(fill)
 
-    print(f"\n竞品缓存回填{'（--dry 未写文件）' if args.dry else ''}："
+    print(f"\n非小米品牌缓存回填{'（--dry 未写文件）' if args.dry else ''}："
           f"{total['n']} 款 / {total['f']} 个字段\n")
     cmds = []
     for cat, items in sorted(plans.items()):

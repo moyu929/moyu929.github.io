@@ -57,7 +57,7 @@
     },
     {
       "key": "official_price",
-      "label": "官方价",
+      "label": "参考价",
       "type": "number",
       "prefix": "¥",
       "card": "chip",

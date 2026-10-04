@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""A2 路：竞品补源——中关村在线（ZOL）产品库。
+"""A2 路：非小米品牌补源——中关村在线（ZOL）产品库。
 
 为什么不用 `scripts/fetch-facet-evidence.py` 里的 `zol_lookup`：它走
 `search.zol.com.cn/s/all.php?kword=<型号>`，那是**全站搜索**，实测对本品类
@@ -107,7 +107,7 @@ def param_url(index_url):
 
 
 def targets(cats):
-    """待查的竞品（只取非小米系）→ [(cid, id, brand, model_code)]。"""
+    """待查的非小米品牌产品→ [(cid, id, brand, model_code)]。"""
     out = []
     for cid in cats:
         pf = dp('data/%s/products.json' % cid)

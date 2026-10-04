@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""为尚未归类的竞品补抓 pconline 规格表，落到 data/_cache/brand-<目录>-extra.json。
+"""为尚未归类的非小米品牌补抓 pconline 规格表，落到 data/_cache/brand-<目录>-extra.json。
 
 只抓取分类判定需要的字段，不改 products.json；抓完重跑 classify-facets.py 即可。
 """
@@ -70,7 +70,7 @@ def fetch_specs(url):
 
 
 def main():
-    # 收集所有未归类竞品的 (品类, id, url)
+    # 收集所有未归类的非小米品牌产品的 (品类, id, url)
     todo = []
     for f in sorted(glob.glob(dp('data/*/schema.json'))):
         cid = os.path.dirname(f).replace('\\', '/').split('/')[-1]

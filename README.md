@@ -66,8 +66,8 @@ scripts/
 ├─ mi-store-enumerate.py     同一流水线的 Python 版枚举入口（只装了 Python Playwright 时用）
 ├─ miot-spec.mjs             MIoT 型号库抓取与匹配
 ├─ pconline-specs.py         太平洋规格表抓取
-├─ classify-facets.py        竞品副分组批量归类
-├─ fetch-evidence-2.py       为未归类竞品补抓分类证据（幂等可重跑）
+├─ classify-facets.py        非小米品牌产品的副分组批量归类
+├─ fetch-evidence-2.py       为未归类的非小米品牌补抓分类证据（幂等可重跑）
 └─ shrink-images.py          图片转 ≤320px WebP
 ```
 
@@ -219,9 +219,9 @@ npm run mi:apply -- data/_sources/patches/xxx.json              # 写入字段�
 npm run miot:crawl                     # 抓 home.miot-spec.com 型号库（分页/并发，缓存 + 日志）
 npm run miot:match                     # 按官方名精确匹配，补 miot_model 字段
 npm run pconline:specs                 # 抓太平洋规格表（清单：data/_sources/pconline-targets.json）
-python scripts/import-brands.py        # 从太平洋批量导入竞品（清单：data/_sources/brand-targets.json）
-python scripts/classify-facets.py      # 竞品副分组批量归类（无依据的保持「未归类」）
-python scripts/fetch-evidence-2.py     # 为未归类的竞品补抓分类证据（幂等可重跑）
+python scripts/import-brands.py        # 从太平洋批量导入非小米品牌（清单：data/_sources/brand-targets.json）
+python scripts/classify-facets.py      # 非小米品牌副分组批量归类（无依据的保持「未归类」）
+python scripts/fetch-evidence-2.py     # 为未归类的非小米品牌补抓分类证据（幂等可重跑）
 ```
 
 - 枚举结果缓存在 `data/_cache/`（已 gitignore），可反复复查。
