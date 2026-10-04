@@ -1,0 +1,43 @@
+{
+  "id": "wd_max",
+  "name": "米家即热饮水机 Max",
+  "model_code": "MYI001",
+  "miot_model": "查不到",
+  "type": "即热",
+  "official_price": 1999,
+  "second_hand": "—",
+  "temp": "5段水温可调",
+  "volume": "查不到",
+  "tank": "双水箱独立",
+  "filter": "查不到",
+  "power": "2100W",
+  "size": "查不到",
+  "year": 2026,
+  "pros": [
+    "即热、制冷、制冰、净饮多合一",
+    "双水箱独立系统",
+    "5段水温可调",
+    "支持UV杀菌"
+  ],
+  "cons": [
+    "售价较高",
+    "功能多、机身大，需预留摆放空间"
+  ],
+  "tags": [
+    "即热"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "IT之家",
+    "中关村在线",
+    "太平洋电脑网",
+    "小米商城（官方产品图）",
+    "新浪科技"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230808126",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 补全：model_code=MYI001，power=2100W（来源：太平洋电脑网米家规格页 https://g.pconline.com.cn/product/water_dispenser/mijia/2940931_detail.html）；2026-10-04 verify_url 补小米商城商品页（API 核对商品名与价格一致）；2026-10-04 year=2026（来源：IT之家报道小米5月25日推出并开售；新浪2026-06-01报道其开启众筹（众筹价1799元）——开售报道弱源）；2026-10-04 补全：tank=双水箱独立，temp=5段水温可调（来源：中关村在线商品页官方口径文案：双水箱独立系统/5段水温调控/UV杀菌/RO过滤）；2026-10-04 裸卡补卖点 pros/cons（只引用已入库参数与商城/官方文案，未引入参数表外数值）",
+  "updated_at": "2026-10-04",
+  "img": "wd_max.webp",
+  "brand": "小米"
+}

@@ -1,0 +1,40 @@
+{
+  "id": "wd_s1",
+  "name": "米家即热饮水机 S1",
+  "model_code": "MSYSJ03MH",
+  "miot_model": "查不到",
+  "type": "即热",
+  "official_price": 249,
+  "second_hand": "—",
+  "temp": "1°C 精准调温",
+  "volume": "查不到",
+  "tank": "3L",
+  "filter": "查不到",
+  "power": "2100W",
+  "size": "312×106×280mm",
+  "year": 2023,
+  "pros": [
+    "3L 独立水箱",
+    "1°C 精准调温",
+    "复合精瓷加热"
+  ],
+  "cons": [
+    "查不到额定功率"
+  ],
+  "tags": [
+    "即热"
+  ],
+  "verify_status": "已核验（多源）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "IT之家",
+    "太平洋电脑网",
+    "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230809539",
+  "change_log": "2026-10-01 经官方/权威来源核对并补入参数（补丁 2026-10-01-water-dispenser.json）；2026-10-04 官方商城 API 回填：ref_price=249；2026-10-04 补全：model_code=MSYSJ03MH，power=2100W，size=312×106×280mm（来源：太平洋电脑网米家规格页 https://g.pconline.com.cn/product/water_dispenser/mijia/2037047_detail.html）；2026-10-04 verify_url 补小米商城商品页（API 核对商品名与价格一致）；2026-10-04 剔除 ref_price=249（与 official_price 重复，无信息量）；2026-10-04 year=2023（来源：IT之家 2023-12-05 上架开售报道（到手价249元）——开售报道弱源）",
+  "updated_at": "2026-10-04",
+  "img": "wd_s1.webp",
+  "brand": "小米",
+  "ref_price": null
+}
