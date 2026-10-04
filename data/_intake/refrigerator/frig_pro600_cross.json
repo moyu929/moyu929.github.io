@@ -1,0 +1,44 @@
+{
+  "id": "frig_pro600_cross",
+  "name": "米家冰箱Pro 600L 十字 自动制冰",
+  "model_code": "BCD-600WKMPDIN",
+  "miot_model": "查不到",
+  "door_type": "十字门",
+  "official_price": 4469,
+  "second_hand": "—",
+  "total_vol": 600,
+  "fridge_vol": 339,
+  "freezer_vol": 225,
+  "energy": "1级",
+  "power_use": 0.93,
+  "cooling": "风冷",
+  "sterilize": "全链路抗菌",
+  "noise": "35dB",
+  "size": "852×675×1912mm",
+  "year": null,
+  "pros": [
+    "600L大容量",
+    "自动制冰",
+    "双系统防串味",
+    "全链路抗菌",
+    "十字四门"
+  ],
+  "cons": [
+    "价格高"
+  ],
+  "tags": [
+    "十字门"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230808521",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=4999；2026-10-04 补全参数（来源：小米商城商品页详情图「产品参数」表与能效标识图）：model_code=BCD-600WKMPDIN、total_vol=600、fridge_vol=339、freezer_vol=225、var_vol=36、energy=1级（图原文「新国标1级」）、power_use=0.93、cooling=风冷、noise=35dB、size=852×675×1912mm、sterilize=全链路抗菌（官方商品文案）；339+225+36=600 一致；「双系统」取自官方商品文案与详情页说明；2026-10-04 撰写 pros/cons（只引用已入库参数与商城官方文案）",
+  "updated_at": "2026-10-04",
+  "img": "frig_pro600_cross.webp",
+  "brand": "小米",
+  "ref_price": 4999,
+  "var_vol": 36
+}
