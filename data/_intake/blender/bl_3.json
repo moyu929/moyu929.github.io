@@ -1,0 +1,42 @@
+{
+  "id": "bl_3",
+  "name": "米家破壁机 3",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "破壁机",
+  "official_price": 389,
+  "second_hand": "—",
+  "capacity": 1.5,
+  "power": 400,
+  "noise_down": "13重降噪(空转45dB/制浆51dB)",
+  "heat": "有(陶瓷油不粘发热盘)",
+  "speed": "35000转/分",
+  "size": "215×164×401mm",
+  "year": 2026,
+  "pros": [
+    "可拆洗刀座(IPX9)",
+    "13重降噪",
+    "双层8叶精钢刀",
+    "OLED触控+APP"
+  ],
+  "cons": [
+    "容量1.5L，热饮上限1000mL"
+  ],
+  "tags": [
+    "破壁机"
+  ],
+  "verify_status": "已核验（多源）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "IT之家",
+    "小米商城",
+    "新浪",
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://finance.sina.cn/tech/2026-09-08/detail-inirapyy9203736.d.html",
+  "change_log": "2026-10-01 补入参数：1.5L、35000rpm、13重降噪(45/51dB)、IPX9 可拆刀座；2026-10-04 官方商城 API 回填：ref_price=399；2026-10-04 补全：搅拌 400W、尺寸 215×164×401mm（来源：太平洋电脑网规格页 2991602，商品名与现价 389 元一致）；year=2026（来源：IT之家（新浪转载）2026-09-08 开售报道，首发 389 元与商城一致，商城在售页标注新品）",
+  "updated_at": "2026-10-04",
+  "img": "bl_3.webp",
+  "brand": "小米",
+  "ref_price": 399
+}

@@ -1,0 +1,41 @@
+{
+  "id": "bl_s1",
+  "name": "米家智能轻音破壁料理机 S1",
+  "model_code": "查不到",
+  "miot_model": "xiaomi.juicer.cms1",
+  "type": "破壁机",
+  "official_price": 379,
+  "second_hand": "—",
+  "capacity": null,
+  "power": null,
+  "noise_down": "轻音罩",
+  "heat": "查不到",
+  "speed": "查不到",
+  "size": "查不到",
+  "year": 2023,
+  "pros": [
+    "轻音罩降噪设计（轻音定位）",
+    "已接入米家生态，支持智能控制",
+    "379 元轻音破壁定位"
+  ],
+  "cons": [
+    "核心参数（容量/功率）官方未完整公开"
+  ],
+  "tags": [
+    "破壁机"
+  ],
+  "verify_status": "已核验（多源）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城",
+    "小米商城（官方产品图）",
+    "米家产品库(miot-spec)",
+    "驱动之家"
+  ],
+  "verify_url": "查不到",
+  "change_log": "2026-10-01 经米家产品库(miot-spec)交叉印证存在性并补入协议型号；2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=399；2026-10-04 补全：year=2023（来源：驱动之家 2023-12-29 上架报道，报道价 379 元与商城一致；S1 与 2023 年 pinlo 平台「米家智能轻音破壁料理机」为不同型号，已核对 miot 型号区分）；2026-10-04 卖点编写（依据：已入库参数 noise_down/miot_model/official_price，未引入参数表外数值）",
+  "updated_at": "2026-10-04",
+  "img": "bl_s1.webp",
+  "brand": "小米",
+  "ref_price": 399
+}
