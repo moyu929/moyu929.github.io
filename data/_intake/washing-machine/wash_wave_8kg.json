@@ -1,0 +1,41 @@
+{
+  "id": "wash_wave_8kg",
+  "name": "米家洗衣机 超净洗 波轮 8kg",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "波轮",
+  "official_price": 669,
+  "second_hand": "—",
+  "wash_cap": 8,
+  "dry_cap": null,
+  "wash_ratio": 0.9,
+  "spin_rpm": null,
+  "energy": "1级",
+  "sterilize": "查不到",
+  "smart": "查不到",
+  "noise": "查不到",
+  "size": "515×525×845mm",
+  "year": null,
+  "pros": [
+    "价格实惠",
+    "8kg波轮",
+    "一级能效"
+  ],
+  "cons": [
+    "定频电机"
+  ],
+  "tags": [
+    "波轮"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230804458",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=799，wash_cap=8，size=515×525×845mm，energy=一级，wash_ratio=0.9；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：能效「一级」统一为库内口径「1级」",
+  "updated_at": "2026-10-04",
+  "img": "wash_wave_8kg.webp",
+  "brand": "小米",
+  "ref_price": 799
+}

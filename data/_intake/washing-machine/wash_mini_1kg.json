@@ -1,0 +1,41 @@
+{
+  "id": "wash_mini_1kg",
+  "name": "米家洗衣机 迷你双区洗烘 1kg",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "多筒/迷你",
+  "official_price": 1499,
+  "second_hand": "—",
+  "wash_cap": 1,
+  "dry_cap": 0.4,
+  "wash_ratio": null,
+  "spin_rpm": 760,
+  "energy": "查不到",
+  "sterilize": "查不到",
+  "smart": "支持智能互联",
+  "noise": "洗涤43dB",
+  "size": "530×371×410mm",
+  "year": null,
+  "pros": [
+    "1kg洗0.4kg烘双区",
+    "洗涤噪音43dB",
+    "机身小巧（530×371×410mm）"
+  ],
+  "cons": [
+    "定频电机"
+  ],
+  "tags": [
+    "多筒/迷你"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230807256",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=1999，wash_cap=1，dry_cap=0.4，size=530×371×410mm，noise=洗涤43dB，spin_rpm=760，smart=支持智能互联；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）",
+  "updated_at": "2026-10-04",
+  "img": "wash_mini_1kg.webp",
+  "brand": "小米",
+  "ref_price": 1999
+}
