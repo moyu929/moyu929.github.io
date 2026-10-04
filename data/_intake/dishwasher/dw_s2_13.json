@@ -1,0 +1,43 @@
+{
+  "id": "dw_s2_13",
+  "name": "米家智能嵌入式洗碗机 13套 S2（2022款）",
+  "model_code": "WQP13-02",
+  "miot_model": "查不到",
+  "type": "嵌入式",
+  "official_price": 2599,
+  "second_hand": "—",
+  "capacity": 13,
+  "volume": null,
+  "water_eff": "查不到",
+  "dry": "查不到",
+  "sterilize": "高温除菌",
+  "store": "7天长效抑菌存储",
+  "power": null,
+  "size": "595×525×600mm",
+  "weight": null,
+  "year": 2022,
+  "pros": [
+    "可灶下嵌入式安装",
+    "13套容量适配3-5口之家"
+  ],
+  "cons": [
+    "容量小于16/20套"
+  ],
+  "tags": [
+    "嵌入式",
+    "灶下安装",
+    "2022"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城（官方产品图）",
+    "小米商城"
+  ],
+  "verify_url": "查不到",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 补全订正：ref_price=3499（商城API划线价 market_price），size 与库内值一致（595×525×600mm），商城API交叉印证，sterilize=高温除菌（商城「洗涤方式」概括），store=7天长效抑菌存储（商城「功能」），official_price=2599 与商城API现价一致，交叉印证",
+  "updated_at": "2026-10-04",
+  "img": "dw_s2_13.webp",
+  "brand": "小米",
+  "ref_price": 3499
+}

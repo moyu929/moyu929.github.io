@@ -1,0 +1,40 @@
+{
+  "id": "dw_pro_18",
+  "name": "米家智能洗碗机 Pro 嵌入式 18套",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "嵌入式",
+  "official_price": 5609,
+  "second_hand": "—",
+  "capacity": 18,
+  "volume": null,
+  "water_eff": "查不到",
+  "dry": "查不到",
+  "sterilize": "查不到",
+  "store": "查不到",
+  "power": null,
+  "size": "查不到",
+  "weight": null,
+  "year": null,
+  "pros": [
+    "18套大容量",
+    "Pro 系列旗舰机型"
+  ],
+  "cons": [
+    "参考价近7000元，定位高端"
+  ],
+  "tags": [
+    "嵌入式"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=10050184",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 补全订正：ref_price=6999（商城API划线价 market_price），official_price=5609 与商城API现价一致，交叉印证，撰写pros 2条（依据：已入库参数+商城关键参数），撰写cons 1条",
+  "updated_at": "2026-10-04",
+  "img": "dw_pro_18.webp",
+  "brand": "小米",
+  "ref_price": 6999
+}
