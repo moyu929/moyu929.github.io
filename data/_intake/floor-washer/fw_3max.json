@@ -1,0 +1,46 @@
+{
+  "id": "fw_3max",
+  "name": "米家无线洗地机3 Max",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "series": "3 代",
+  "official_price": 1499,
+  "second_hand": "查不到",
+  "motor": "无刷电机",
+  "battery": 4000,
+  "charge": "查不到",
+  "runtime": "40（洗地）min\n50（吸尘）min",
+  "noise": 76,
+  "clean_tank": "800ml",
+  "dirty_tank": "700ml",
+  "weight": 8.7,
+  "size": "265×230×1104mm",
+  "year": "查不到",
+  "pros": [
+    "无刷电机",
+    "4000mAh 电池",
+    "洗地 40min / 吸尘 50min 双模式",
+    "800ml 净 + 700ml 污 双水箱"
+  ],
+  "cons": [
+    "噪音 76dB 偏高",
+    "官方价 1499 元高于同门 5 代"
+  ],
+  "tags": [
+    "无线洗地机",
+    "无刷电机"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网",
+    "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230802139",
+  "change_log": "2026-10-01 建条：参数取自太平洋电脑网规格表（8 项），价格与图片取自小米商城在售目录；2026-10-01 型号清理：原写「3 Max」为产品名非型号代码；线索指向 D301 但仅见于 ZOL 比价库商户标题，单源不足，按宁缺勿错置「查不到」；2026-10-04 官方商城 API 回填：ref_price=2999，clean_tank=800ml，dirty_tank=700ml，weight=8.7，runtime=40（洗地）min\n50（吸尘）min，battery=4000；2026-10-04：verify_url 补为小米商城商品页（product_id=1230802139），按已入库参数补 pros/cons（不引入新数值）",
+  "updated_at": "2026-10-04",
+  "img": "fw_3max.webp",
+  "brand": "小米",
+  "facet_group": "中容量(800-999ml)",
+  "ref_price": 2999
+}

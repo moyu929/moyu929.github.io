@@ -1,0 +1,40 @@
+{
+  "id": "vc_4c",
+  "name": "米家无线吸尘器 4 C",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "tier": "入门",
+  "official_price": 699,
+  "second_hand": "—",
+  "suction_aw": null,
+  "vacuum": null,
+  "power": null,
+  "dust_cup": null,
+  "runtime": null,
+  "noise": null,
+  "weight": null,
+  "filter": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+    "699 元入门价位"
+  ],
+  "cons": [
+    "商城未公布吸力/尘杯/续航等关键参数",
+    "重量与噪音查不到"
+  ],
+  "tags": [
+    "入门"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230807748",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：official_price=699，ref_price=799；2026-10-04：按已入库参数补 pros/cons（不引入新数值）",
+  "updated_at": "2026-10-04",
+  "img": "vc_4c.webp",
+  "brand": "小米",
+  "ref_price": 799
+}

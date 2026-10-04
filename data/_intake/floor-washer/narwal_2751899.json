@@ -1,0 +1,39 @@
+{
+  "id": "narwal_2751899",
+  "name": "云鲸洗地机S3 Max Island水箱版",
+  "brand": "云鲸",
+  "model_code": "查不到",
+  "series": "未归类",
+  "official_price": "查不到",
+  "ref_price": 3299,
+  "year": "查不到",
+  "pros": [
+    "噪音仅 45dB",
+    "4.4kg 较同款上下水版更轻",
+    "参考价 3299 元较低"
+  ],
+  "cons": [
+    "需手动加水换水"
+  ],
+  "tags": [
+    "云鲸"
+  ],
+  "motor": "锂电池",
+  "battery": "4000mAh",
+  "charge": "查不到",
+  "runtime": "60min",
+  "noise": "45dB",
+  "clean_tank": "850ml",
+  "dirty_tank": "720ml",
+  "weight": "4.4kg",
+  "size": "273×249×1162mm",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-01",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/cleaning_machine/narwal/2751899_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（5 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-04：按已入库参数补 pros/cons（不引入新数值）",
+  "updated_at": "2026-10-04",
+  "facet_group": "中容量(800-999ml)"
+}

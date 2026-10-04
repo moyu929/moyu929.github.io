@@ -1,0 +1,40 @@
+{
+  "id": "tineco_2560599",
+  "name": "添可芙万Artist40 Pro艺术家(FW29120ECN)",
+  "brand": "添可",
+  "model_code": "FW29120ECN",
+  "series": "未归类",
+  "official_price": "查不到",
+  "ref_price": 4250,
+  "year": "查不到",
+  "pros": [
+    "75min 超长续航",
+    "无刷电机",
+    "参考价 4250 元为添可系最低"
+  ],
+  "cons": [
+    "噪音 78dB 偏高",
+    "电池容量查不到"
+  ],
+  "tags": [
+    "添可"
+  ],
+  "motor": "无刷电机",
+  "battery": "查不到",
+  "charge": "查不到",
+  "runtime": "75min",
+  "noise": "78dB",
+  "clean_tank": "查不到",
+  "dirty_tank": "查不到",
+  "weight": "查不到",
+  "size": "查不到",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-01",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/cleaning_machine/tineco/2560599_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（3 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-04：按已入库参数补 pros/cons（不引入新数值）",
+  "updated_at": "2026-10-04",
+  "facet_group": "未归类"
+}
