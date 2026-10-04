@@ -1,0 +1,33 @@
+{
+  "id": "panasonic_1341767",
+  "name": "松下DS-AT2021CW",
+  "brand": "松下",
+  "model_code": "DS-AT2021CW",
+  "type": "油汀",
+  "official_price": "查不到",
+  "ref_price": 2269,
+  "year": "查不到",
+  "pros": [
+    "2000W功率",
+    "21-30㎡大适用面积",
+    "油汀式低温均热"
+  ],
+  "cons": [
+    "参考价2269元，油汀中偏高",
+    "档位未公开"
+  ],
+  "tags": [
+    "松下"
+  ],
+  "power": "2000W",
+  "coverage": "21-30平方米",
+  "gear": "查不到",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/heater/panasonic/1341767_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：油汀（依据：第三方产品类型=欧式快热炉）；2026-10-03 回填型号：原「查不到」，产品名「松下DS-AT2021CW」中的型号串为 DS-AT2021CW（来源与产品名同源的第三方规格站）；2026-10-04 A2 路补录：pros（3 条），cons（2 条）。依据：库内已入库参数（power/coverage/type）",
+  "updated_at": "2026-10-04"
+}

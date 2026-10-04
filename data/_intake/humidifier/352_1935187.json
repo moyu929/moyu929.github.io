@@ -1,0 +1,37 @@
+{
+  "id": "352_1935187",
+  "name": "352 H300",
+  "brand": "352",
+  "model_code": "H300",
+  "type": "无雾冷蒸发",
+  "official_price": "查不到",
+  "ref_price": 4199,
+  "year": "查不到",
+  "pros": [
+    "2500mL/h超大加湿量",
+    "35.4dB低噪",
+    "落地立式（350×350×825mm）"
+  ],
+  "cons": [
+    "85W功率在加湿器中偏高",
+    "参考价4199元，定位高端"
+  ],
+  "tags": [
+    "352"
+  ],
+  "humid_rate": "2500ml/h",
+  "tank": 10,
+  "runtime": "查不到",
+  "noise": "35.4db",
+  "power": "85W",
+  "sterilize": "查不到",
+  "size": "350×350×825mm",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/humidifier/352/1935187_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：无雾冷蒸发（依据：加湿量 2500.0 ml/h（≥600 且带水箱，属蒸发式））；2026-10-03 回填型号：原「查不到」，产品名「352 H300」中的型号串为 H300（来源与产品名同源的第三方规格站）；2026-10-04 回填参数（来源：太平洋规格表 verify_url）：tank=10（水箱容积=10L）；2026-10-04 A2 路补录：pros（3 条），cons（2 条）。依据：库内已入库参数（humid_rate/noise/power/size/type）",
+  "updated_at": "2026-10-04"
+}

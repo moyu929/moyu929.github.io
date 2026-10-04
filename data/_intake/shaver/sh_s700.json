@@ -1,0 +1,40 @@
+{
+  "id": "sh_s700",
+  "name": "米家电动剃须刀 S700",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "tier": "旗舰",
+  "official_price": 399,
+  "second_hand": "—",
+  "blades": "全向浮动3刀头(陶瓷刀片)",
+  "waterproof": "查不到",
+  "runtime": "60min",
+  "charge": "直驱无刷马达",
+  "wet_dry": "查不到",
+  "size": "62.8x164.9mm",
+  "year": null,
+  "pros": [
+    "全向浮动3刀头",
+    "陶瓷刀片耐酸碱不易氧化",
+    "刀头转速",
+    "胡须密度监测"
+  ],
+  "cons": [
+    "价格高于S系列"
+  ],
+  "tags": [
+    "旗舰"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "中关村在线",
+    "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/buy/detail?product_id=13414",
+  "change_log": "2026-10-01 补入参数：全向浮动 3 刀头、陶瓷刀片、3500 转/分；2026-10-04 官方商城 API 回填：official_price=399，ref_price=439，runtime=60min，size=62.8x164.9mm",
+  "updated_at": "2026-10-04",
+  "img": "sh_s700.webp",
+  "brand": "小米",
+  "ref_price": 439
+}

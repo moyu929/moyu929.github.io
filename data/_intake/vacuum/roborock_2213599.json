@@ -1,0 +1,38 @@
+{
+  "id": "roborock_2213599",
+  "name": "石头手持无线吸尘器H5",
+  "brand": "石头",
+  "model_code": "查不到",
+  "tier": "入门",
+  "official_price": "查不到",
+  "ref_price": 999,
+  "year": "查不到",
+  "pros": [
+    "500W 额定功率",
+    "0.56L 尘杯",
+    "参考价 999 元较低"
+  ],
+  "cons": [
+    "续航与噪音查不到",
+    "吸力查不到"
+  ],
+  "tags": [
+    "石头"
+  ],
+  "suction_aw": "查不到",
+  "power": "500W",
+  "dust_cup": "0.56L",
+  "runtime": "查不到",
+  "noise": "查不到",
+  "weight": "查不到",
+  "filter": "尘盒/尘桶",
+  "size": "1135×250×243mm",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-01",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/vacuum_cleaner/roborock/2213599_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（1 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：入门（依据：参考价 999 元）；2026-10-04：按已入库参数补 pros/cons（不引入新数值）",
+  "updated_at": "2026-10-04"
+}

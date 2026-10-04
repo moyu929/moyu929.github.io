@@ -1,0 +1,39 @@
+{
+  "id": "haier_2506839",
+  "name": "海尔75Q60C",
+  "brand": "海尔",
+  "model_code": "75Q60C",
+  "series": "未归类",
+  "official_price": 5999,
+  "ref_price": 5999,
+  "year": "查不到",
+  "pros": [
+    "75 英寸大屏",
+    "4GB+64GB 内存",
+    "144Hz 刷新"
+  ],
+  "cons": [
+    "144Hz 刷新偏低",
+    "HDMI 仅 2 个",
+    "2024 年上市较早"
+  ],
+  "tags": [
+    "海尔"
+  ],
+  "size_inch": "75英寸",
+  "refresh": "144Hz",
+  "resolution": "查不到",
+  "size": "含底座：约1667×330×1018mm 不含底座：约1667×83×984mm",
+  "backlight": "查不到",
+  "mem": "查不到",
+  "hdmi": "2个",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/lcd_tv/haier/2506839_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-03 回填型号：原「查不到」，产品名「海尔75Q60C」中的型号串为 75Q60C（来源与产品名同源的第三方规格站）；2026-10-04 补 official_price（来源：太平洋电脑网）；2026-10-04 补 pros、cons（由已入库参数推导，不引入新数值）",
+  "updated_at": "2026-10-04",
+  "facet_group": "大(75-84\")"
+}

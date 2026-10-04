@@ -1,0 +1,37 @@
+{
+  "id": "sony_2193939",
+  "name": "索尼电视8系 77英寸",
+  "brand": "索尼",
+  "model_code": "查不到",
+  "series": "未归类",
+  "official_price": 26999,
+  "ref_price": 26999,
+  "year": "查不到",
+  "pros": [
+    "77 英寸大屏",
+    "OLED 面板背光",
+    "3840×2160 分辨率"
+  ],
+  "cons": [
+    "2024 年上市较早"
+  ],
+  "tags": [
+    "索尼"
+  ],
+  "size_inch": "77英寸",
+  "refresh": "查不到",
+  "resolution": "查不到",
+  "size": "查不到",
+  "backlight": "查不到",
+  "mem": "查不到",
+  "hdmi": "查不到",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/lcd_tv/sony/2193939_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（1 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-04 补 official_price（来源：太平洋电脑网）；2026-10-04 补 pros、cons（由已入库参数推导，不引入新数值）",
+  "updated_at": "2026-10-04",
+  "facet_group": "大(75-84\")"
+}

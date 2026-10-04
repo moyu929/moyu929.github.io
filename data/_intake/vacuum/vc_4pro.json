@@ -1,0 +1,45 @@
+{
+  "id": "vc_4pro",
+  "name": "米家无线吸尘器 4 Pro",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "tier": "旗舰",
+  "official_price": 1499,
+  "second_hand": "—",
+  "suction_aw": null,
+  "vacuum": null,
+  "power": null,
+  "dust_cup": null,
+  "runtime": null,
+  "noise": null,
+  "weight": null,
+  "filter": "查不到",
+  "size": "查不到",
+  "year": 2026,
+  "pros": [
+    "双风道自动集尘底座",
+    "12万转无刷电机",
+    "蓝光探尘 + 双滚刷",
+    "五层精密过滤",
+    "可拆卸电池"
+  ],
+  "cons": [
+    "集尘底座需额外占地"
+  ],
+  "tags": [
+    "旗舰"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "什么值得买",
+    "小米商城",
+    "百度百科"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230808088",
+  "change_log": "2026-10-01 经官方/权威来源核对并补入参数（补丁 2026-10-01-vacuum-4series.json）；2026-10-04 官方商城 API 回填：official_price=1499，ref_price=1999；2026-10-04：verify_url 补为小米商城商品页（product_id=1230808088）",
+  "updated_at": "2026-10-04",
+  "img": "vc_4pro.webp",
+  "brand": "小米",
+  "ref_price": 1999
+}

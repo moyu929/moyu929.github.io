@@ -1,0 +1,37 @@
+{
+  "id": "midea_1769327",
+  "name": "美的CF50BD/N7-DP5",
+  "brand": "美的",
+  "model_code": "CF50BD/N7-DP5",
+  "tier": "大除湿量(40L+)",
+  "official_price": "查不到",
+  "ref_price": 1939,
+  "year": "查不到",
+  "pros": [
+    "50L/天大除湿量",
+    "参考价1939元，除湿量/价格比突出"
+  ],
+  "cons": [
+    "800W功率与52dB噪音在大除湿量机型里偏高",
+    "水箱容量未公开"
+  ],
+  "tags": [
+    "美的"
+  ],
+  "dehumid": "50L",
+  "area": "查不到",
+  "noise": "52dB",
+  "power": "800W",
+  "tank": "查不到",
+  "compressor": "查不到",
+  "purify": "查不到",
+  "size": "查不到",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/chushiji/midea/1769327_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（3 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：大除湿量(40L+)（依据：日除湿量 50.0L/天）；2026-10-03 回填型号：原「查不到」，产品名「美的CF50BD/N7-DP5」中的型号串为 CF50BD/N7-DP5（来源与产品名同源的第三方规格站）；2026-10-04 A2 路补录：pros（2 条），cons（2 条）。依据：库内已入库参数（dehumid/power/noise/tier）",
+  "updated_at": "2026-10-04"
+}

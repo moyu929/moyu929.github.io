@@ -1,0 +1,43 @@
+{
+  "id": "wd_pipe_ice",
+  "name": "米家即热管线机 制冰版",
+  "model_code": "MG001-I",
+  "miot_model": "查不到",
+  "type": "管线",
+  "official_price": 2999,
+  "second_hand": "—",
+  "temp": "查不到",
+  "volume": "查不到",
+  "tank": "查不到",
+  "filter": "查不到",
+  "power": "2100W",
+  "size": "517×329×424mm",
+  "year": 2026,
+  "pros": [
+    "即热+制冷+制冰多合一",
+    "变频制冷系统",
+    "UV抑菌",
+    "2100W 额定功率"
+  ],
+  "cons": [
+    "售价较高",
+    "机身尺寸大，需预留台面/餐边柜空间"
+  ],
+  "tags": [
+    "管线"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "什么值得买",
+    "太平洋电脑网",
+    "小米商城",
+    "小米商城（官方产品图）"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230808263",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=3299；2026-10-04 补全：model_code=MG001-I，power=2100W，size=517×329×424mm（来源：太平洋电脑网米家规格页 https://g.pconline.com.cn/product/water_dispenser/mijia/2940911_detail.html）；2026-10-04 verify_url 补小米商城商品页（API 核对商品名与价格一致）；2026-10-04 year=2026（来源：什么值得买 2026-06-15 首销报道（型号 MG001-I，首发约2969元）——开售报道弱源）；2026-10-04 裸卡补卖点 pros/cons（只引用已入库参数与商城/官方文案，未引入参数表外数值）",
+  "updated_at": "2026-10-04",
+  "img": "wd_pipe_ice.webp",
+  "brand": "小米",
+  "ref_price": 3299
+}

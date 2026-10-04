@@ -1,0 +1,37 @@
+{
+  "id": "dyson_1642847",
+  "name": "戴森G5 Detect Fluffy",
+  "brand": "戴森",
+  "model_code": "查不到",
+  "tier": "旗舰",
+  "official_price": "查不到",
+  "ref_price": 5999,
+  "year": "查不到",
+  "pros": [
+    "752W 大额定功率",
+    "长达 70min 续航"
+  ],
+  "cons": [
+    "84dB(A) 噪音为戴森系最高",
+    "0.77L 尘杯容量一般"
+  ],
+  "tags": [
+    "戴森"
+  ],
+  "suction_aw": "查不到",
+  "power": "752W",
+  "dust_cup": "0.77L",
+  "runtime": "高达70分钟",
+  "noise": "84dB(A)",
+  "weight": "2.3kg",
+  "filter": "尘杯集尘",
+  "size": "1213×276×250mm",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-01",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/vacuum_cleaner/dyson/1642847_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：旗舰（依据：参考价 5999 元（≥4000））；2026-10-04：按已入库参数补 pros/cons（不引入新数值）",
+  "updated_at": "2026-10-04"
+}

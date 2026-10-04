@@ -1,0 +1,39 @@
+{
+  "id": "stone_2815411",
+  "name": "石头自清洁扫拖机器人G30S Pro 智能上下水版",
+  "brand": "石头",
+  "model_code": "查不到",
+  "tier": "全能上下水",
+  "official_price": "查不到",
+  "ref_price": 7057,
+  "year": "查不到",
+  "pros": [
+    "35000Pa 吸力",
+    "上下水免手倒",
+    "主机 79.8mm 薄",
+    "基站 300×440mm 占地小"
+  ],
+  "cons": [
+    "噪音 64dB 偏高",
+    "水箱仅 70ml 需频繁补水"
+  ],
+  "tags": [
+    "石头"
+  ],
+  "suction": "35000Pa",
+  "base_func": "尘盒/尘桶",
+  "navigation": "查不到",
+  "water_tank": "70ml",
+  "battery": "查不到",
+  "noise": "64dB",
+  "power": "65W",
+  "size": "基站：300×440×409mm；扫地机器人：353×350×79.8mm",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-01",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/sweepingrobot/stone/2815411_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（5 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：全能上下水（依据：名称含上下水）；2026-10-04：按已入库参数补 pros/cons（不引入新数值）；2026-10-04：按已入库参数补 pros/cons（不引入新数值）",
+  "updated_at": "2026-10-04"
+}

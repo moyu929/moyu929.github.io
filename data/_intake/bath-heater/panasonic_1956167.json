@@ -1,0 +1,36 @@
+{
+  "id": "panasonic_1956167",
+  "name": "松下FV-54BDT1C",
+  "brand": "松下",
+  "model_code": "FV-54BDT1C",
+  "series": "未归类",
+  "official_price": 4599,
+  "ref_price": 4599,
+  "year": "查不到",
+  "pros": [
+    "2650W 风暖功率",
+    "适配300×600吊顶"
+  ],
+  "cons": [],
+  "tags": [
+    "松下"
+  ],
+  "heat_power": "2650W",
+  "light_power": "查不到",
+  "fan_power": "查不到",
+  "vent_power": "查不到",
+  "control": "未归类",
+  "open_size": "300×600mm",
+  "weight": "查不到",
+  "voltage": "220V/50Hz",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/yuba/panasonic/1956167_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（1 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-03 回填型号：原「查不到」，产品名「松下FV-54BDT1C」中的型号串为 FV-54BDT1C（来源与产品名同源的第三方规格站）；2026-10-04 补 official_price、warm_mode（来源：太平洋电脑网）；2026-10-04 补 pros（由已入库参数推导，不引入新数值）",
+  "updated_at": "2026-10-04",
+  "facet_group": "中功率(2400-2799W)",
+  "warm_mode": "风暖"
+}

@@ -1,0 +1,40 @@
+{
+  "id": "dreame_1797707",
+  "name": "追觅M13 S",
+  "brand": "追觅",
+  "model_code": "查不到",
+  "series": "未归类",
+  "official_price": "查不到",
+  "ref_price": 4199,
+  "year": "查不到",
+  "pros": [
+    "吸尘 75min 长续航",
+    "900ml 大净水箱",
+    "无刷电机"
+  ],
+  "cons": [
+    "噪音 78dB 偏高",
+    "充电时间查不到"
+  ],
+  "tags": [
+    "追觅"
+  ],
+  "motor": "无刷电机",
+  "battery": "5000mAh",
+  "charge": "查不到",
+  "runtime": "洗涤模式40min，吸尘模式75min",
+  "noise": "78dB",
+  "clean_tank": "900ml",
+  "dirty_tank": "700ml",
+  "weight": "6kg",
+  "size": "1120×322×340mm",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-01",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/cleaning_machine/dreame/1797707_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-04：按已入库参数补 pros/cons（不引入新数值）",
+  "updated_at": "2026-10-04",
+  "facet_group": "中容量(800-999ml)"
+}

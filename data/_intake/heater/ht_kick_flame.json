@@ -1,0 +1,43 @@
+{
+  "id": "ht_kick_flame",
+  "name": "米家石墨烯踢脚线电暖器 仿真火焰版",
+  "model_code": "查不到",
+  "miot_model": "zhimi.heater.ma6",
+  "type": "踢脚线",
+  "official_price": 1299,
+  "second_hand": "—",
+  "power": null,
+  "coverage": "查不到",
+  "gear": "查不到",
+  "material": "石墨烯",
+  "safety": "查不到",
+  "ipx": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+    "双核石墨烯发热体，速热更快",
+    "智能变频恒温，制热稳定",
+    "仿真火焰视觉效果",
+    "自带加湿功能",
+    "悬浮式外观不占地面"
+  ],
+  "cons": [
+    "官方未公布额定功率与适用面积"
+  ],
+  "tags": [
+    "踢脚线"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城",
+    "小米商城（官方产品图）",
+    "米家产品库(miot-spec)"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1224200046",
+  "change_log": "2026-10-01 经米家产品库(miot-spec)交叉印证存在性并补入协议型号；2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：official_price=1299，ref_price=1599；2026-10-04 A2 路补录：补官方商城链接，pros（5 条），cons（1 条）。依据：小米商城 API product_desc：加湿+火焰效果 | 悬浮外观 | 双核石墨烯速热 | 智能变频恒温",
+  "updated_at": "2026-10-04",
+  "img": "ht_kick_flame.webp",
+  "brand": "小米",
+  "ref_price": 1599
+}

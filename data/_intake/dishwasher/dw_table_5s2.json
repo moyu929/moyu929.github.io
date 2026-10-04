@@ -1,0 +1,42 @@
+{
+  "id": "dw_table_5s2",
+  "name": "米家智能台式洗碗机 5套 S2",
+  "model_code": "查不到",
+  "miot_model": "xiaomi.dishwasher.s2",
+  "type": "台式",
+  "official_price": 1699,
+  "second_hand": "—",
+  "capacity": 5,
+  "volume": null,
+  "water_eff": "查不到",
+  "dry": "查不到",
+  "sterilize": "高温除菌",
+  "store": "查不到",
+  "power": null,
+  "size": "550×350×598mm",
+  "weight": null,
+  "year": null,
+  "pros": [
+    "台式免安装，免开孔无需改造橱柜",
+    "5套容量，适合1-2口人的小家庭",
+    "高温洗涤除菌"
+  ],
+  "cons": [
+    "5套容量较小，餐具多时需分批洗"
+  ],
+  "tags": [
+    "台式"
+  ],
+  "verify_status": "已核验（多源）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城",
+    "米家产品库(miot-spec)"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230802095",
+  "change_log": "2026-10-01 经米家产品库(miot-spec)交叉印证存在性并补入协议型号；2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 补全订正：ref_price=1999（商城API划线价 market_price），size=550×350×598mm（商城「产品尺寸」归一为宽×深×高；原值：宽550x高598x深350mmmm），capacity=5（商城「套数」），sterilize=高温除菌（商城「洗涤方式」概括），official_price=1699 与商城API现价一致，交叉印证，撰写pros 3条（依据：已入库参数+商城关键参数），撰写cons 1条",
+  "updated_at": "2026-10-04",
+  "img": "dw_table_5s2.webp",
+  "brand": "小米",
+  "ref_price": 1999
+}

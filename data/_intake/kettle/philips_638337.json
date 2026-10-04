@@ -1,0 +1,34 @@
+{
+  "id": "philips_638337",
+  "name": "飞利浦HD9328/08电热水壶",
+  "brand": "飞利浦",
+  "model_code": "HD9328/08",
+  "type": "电水壶",
+  "official_price": 699,
+  "ref_price": 699,
+  "year": "查不到",
+  "pros": [
+    "1.7L 容量",
+    "1800W 功率"
+  ],
+  "cons": [
+    "塑料壶身"
+  ],
+  "tags": [
+    "飞利浦"
+  ],
+  "capacity": "1.7L",
+  "power": "1800W",
+  "material": "塑料",
+  "temp_ctrl": "查不到",
+  "size": "查不到",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/electric_kettle/philips/638337_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（1 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：电水壶（依据：容量 1.7L）；2026-10-03 回填型号：原「查不到」，产品名「飞利浦HD9328/08电热水壶」中的型号串为 HD9328/08（来源与产品名同源的第三方规格站）；2026-10-04 补 official_price、pros、cons（来源：太平洋电脑网）",
+  "updated_at": "2026-10-04",
+  "smart": "查不到"
+}

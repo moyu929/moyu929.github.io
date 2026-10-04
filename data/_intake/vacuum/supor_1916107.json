@@ -1,0 +1,40 @@
+{
+  "id": "supor_1916107",
+  "name": "苏泊尔VCS63X-C11",
+  "brand": "苏泊尔",
+  "model_code": "VCS63X-C11",
+  "tier": "入门",
+  "official_price": "查不到",
+  "ref_price": 949,
+  "year": "查不到",
+  "pros": [
+    "0.55L 尘杯",
+    "25kPa 真空度",
+    "参考价 949 元较低"
+  ],
+  "cons": [
+    "3.1kg 为全场最重",
+    "82dB(A) 噪音高",
+    "续航查不到"
+  ],
+  "tags": [
+    "苏泊尔"
+  ],
+  "suction_aw": "查不到",
+  "power": "350W",
+  "dust_cup": "0.55L",
+  "runtime": "查不到",
+  "noise": "82dB(A)",
+  "weight": "3.1kg",
+  "filter": "尘杯集尘",
+  "size": "查不到",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/vacuum_cleaner/supor/1916107_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（3 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：入门（依据：参考价 949 元）；2026-10-03 回填型号：原「查不到」，产品名「苏泊尔VCS63X-C11」中的型号串为 VCS63X-C11（来源与产品名同源的第三方规格站）；2026-10-04 回填参数（来源：太平洋规格表 verify_url）：vacuum=25（真空度=25kPa）；2026-10-04：按已入库参数补 pros/cons（不引入新数值）",
+  "updated_at": "2026-10-04",
+  "vacuum": 25
+}

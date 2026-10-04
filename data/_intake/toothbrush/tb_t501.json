@@ -1,0 +1,33 @@
+{
+  "id": "tb_t501",
+  "name": "米家声波电动牙刷 T501",
+  "model_code": "查不到",
+  "miot_model": "soocare.toothbrush.1501",
+  "tier": "旗舰",
+  "official_price": 249,
+  "second_hand": "—",
+  "freq": null,
+  "modes": "查不到",
+  "motor": "查不到",
+  "battery_days": null,
+  "charge": "查不到",
+  "waterproof": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [],
+  "cons": [],
+  "tags": [
+    "旗舰"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城",
+    "米家产品库(miot-spec)"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230800358",
+  "change_log": "2026-10-01 经米家产品库(miot-spec)交叉印证存在性并补入协议型号；2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：official_price=249",
+  "updated_at": "2026-10-04",
+  "img": "tb_t501.webp",
+  "brand": "小米"
+}

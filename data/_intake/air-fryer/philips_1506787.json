@@ -1,0 +1,34 @@
+{
+  "id": "philips_1506787",
+  "name": "飞利浦HD9270/81",
+  "brand": "飞利浦",
+  "model_code": "HD9270/81",
+  "type": "经典炸锅",
+  "official_price": 1499,
+  "ref_price": 1399,
+  "year": "查不到",
+  "pros": [
+    "6.2L大容量，适合多人家庭",
+    "2000W大火力，升温快",
+    "不粘涂层炸篮，方便清洁"
+  ],
+  "cons": [
+    "经典款无可视窗"
+  ],
+  "tags": [
+    "飞利浦"
+  ],
+  "capacity": 6.2,
+  "power": 2000,
+  "basket": "不粘涂层",
+  "verify_status": "已核验（多源）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "中关村在线",
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/airfryer/philips/1506787_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（3 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：经典炸锅（依据：无蒸烤或可视特征）；2026-10-03 回填型号：原「查不到」，产品名「飞利浦HD9270/81」中的型号串为 HD9270/81（来源与产品名同源的第三方规格站）；2026-10-04 回填参数（来源：太平洋规格表 verify_url）：size=403×315×307mm（产品尺寸=403×315×307mm）；2026-10-04 补全：capacity格式订正：6.2L→6.2；power格式订正：2000W→2000；official_price=1499（来源：ZOL参考报价 https://detail.zol.com.cn/AirFryer/index1400550.shtml）；补卖点/缺点（只引用已入库参数与商城在售价）",
+  "updated_at": "2026-10-04",
+  "size": "403×315×307mm"
+}

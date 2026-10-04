@@ -1,0 +1,41 @@
+{
+  "id": "fw_1",
+  "name": "米家无线洗地机",
+  "model_code": "B302CN/B302CN-JZ",
+  "miot_model": "查不到",
+  "series": "初代与衍生",
+  "official_price": "查不到",
+  "second_hand": "查不到",
+  "motor": "查不到",
+  "battery": "查不到",
+  "charge": "查不到",
+  "runtime": "查不到",
+  "noise": "查不到",
+  "clean_tank": "查不到",
+  "dirty_tank": "查不到",
+  "weight": 5.4,
+  "size": "250×250×1100mm",
+  "year": "查不到",
+  "pros": [
+    "5.4kg 整机",
+    "初代无绳结构"
+  ],
+  "cons": [
+    "吸力/续航/水箱容量官方均查不到",
+    "未标噪音与充电时间"
+  ],
+  "tags": [
+    "无线洗地机"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-01",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/cleaning_machine/mijia/1551607_detail.html",
+  "change_log": "2026-10-01 建条：参数取自太平洋电脑网规格表（3 项），价格与图片取自小米商城在售目录；2026-10-04：按已入库参数补 pros/cons（不引入新数值）",
+  "updated_at": "2026-10-04",
+  "img": null,
+  "brand": "小米",
+  "facet_group": "未归类"
+}

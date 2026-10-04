@@ -1,0 +1,41 @@
+{
+  "id": "wd_desk_nfc",
+  "name": "米家台式净饮机 NFC",
+  "model_code": "MRH142b",
+  "miot_model": "查不到",
+  "type": "冷热",
+  "official_price": 1269,
+  "second_hand": "—",
+  "temp": "查不到",
+  "volume": "查不到",
+  "tank": "查不到",
+  "filter": "滤芯×2",
+  "power": "2150W",
+  "size": "182×427×409mm",
+  "year": 2025,
+  "pros": [
+    "RO 反渗透净饮一体，市政自来水可直接制水",
+    "水效，废水更少",
+    "厚膜速热",
+    "RO滤芯长效，换芯频次低"
+  ],
+  "cons": [
+    "滤芯为耗材，长期使用有换芯成本"
+  ],
+  "tags": [
+    "冷热"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "IT之家",
+    "太平洋电脑网",
+    "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230805253",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=1999；2026-10-04 补全：model_code=MRH142b，power=2150W，size=182×427×409mm，filter=滤芯×2（来源：太平洋电脑网米家规格页 https://g.pconline.com.cn/product/water_dispenser/mijia/2771739_detail.html）；2026-10-04 year=2025（来源：IT之家 2025-10-16 开售报道（首发价1799元）——开售报道弱源）；2026-10-04 裸卡补卖点 pros/cons（只引用已入库参数与商城/官方文案，未引入参数表外数值）",
+  "updated_at": "2026-10-04",
+  "img": "wd_desk_nfc.webp",
+  "brand": "小米",
+  "ref_price": 1999
+}

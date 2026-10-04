@@ -1,0 +1,37 @@
+{
+  "id": "352_1228687",
+  "name": "352 Skin",
+  "brand": "352",
+  "model_code": "查不到",
+  "type": "超声波",
+  "official_price": "查不到",
+  "ref_price": 1599,
+  "year": "查不到",
+  "pros": [
+    "280mL/h加湿量",
+    "12W低功率",
+    "机身小巧（380×185×420mm）"
+  ],
+  "cons": [
+    "55dB噪音偏高",
+    "型号代码未公开，规格来源暂无法回溯到型号页"
+  ],
+  "tags": [
+    "352"
+  ],
+  "humid_rate": "280ml/h",
+  "tank": 5.3,
+  "runtime": "查不到",
+  "noise": "55dB",
+  "power": "12W",
+  "sterilize": "查不到",
+  "size": "380×185×420mm",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/humidifier/352/1228687_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：超声波（依据：加湿量 280.0 ml/h、功率 12.0W、带水箱（超声波机型特征））；2026-10-04 回填参数（来源：太平洋规格表 verify_url）：tank=5.3（水箱容积=5.3L）；2026-10-04 A2 路补录：pros（3 条），cons（2 条）。依据：库内已入库参数（humid_rate/noise/power/size/type）",
+  "updated_at": "2026-10-04"
+}

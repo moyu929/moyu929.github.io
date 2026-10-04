@@ -1,0 +1,35 @@
+{
+  "id": "panasonic_1787087",
+  "name": "松下NP-DW3K1KD",
+  "brand": "松下",
+  "model_code": "NP-DW3K1KD",
+  "type": "未归类",
+  "official_price": "查不到",
+  "ref_price": 15999,
+  "year": "查不到",
+  "pros": [
+    "15套大容量",
+    "热风烘干"
+  ],
+  "cons": [
+    "售价过万，定位高端"
+  ],
+  "tags": [
+    "松下"
+  ],
+  "capacity": 15,
+  "dry": "热风烘干",
+  "sterilize": "查不到",
+  "power": 1870,
+  "size": "600×805×600mm",
+  "weight": 45,
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/xiwanji/panasonic/1787087_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-03 回填型号：原「查不到」，产品名「松下NP-DW3K1KD」中的型号串为 NP-DW3K1KD（来源与产品名同源的第三方规格站）；2026-10-04 补全订正：power '1870W'→1870（schema 数值型归一），weight '45Kg'→45（schema 数值型归一），capacity '15套'→15（schema 数值型归一），water_eff '11.9L' 剔除：单位为 L，是单次耗水量而非水效等级（疑第三方字段错位），原值留档，待权威来源后再录，撰写pros 2条（依据：已入库参数），撰写cons 1条",
+  "updated_at": "2026-10-04",
+  "water_eff": "查不到"
+}

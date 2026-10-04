@@ -1,0 +1,36 @@
+{
+  "id": "wh_ele_pro",
+  "name": "米家智能电热水器 Pro",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "电热",
+  "official_price": 2299,
+  "second_hand": "—",
+  "capacity": "查不到",
+  "power": "查不到",
+  "energy": "查不到",
+  "constant": "查不到",
+  "app": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+    "60L 容量",
+    "无需燃气管道"
+  ],
+  "cons": [
+    "储水式需预热"
+  ],
+  "tags": [
+    "电热"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城（官方产品图）"
+  ],
+  "verify_url": "查不到",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 补 pros、cons（由已入库参数推导，不引入新数值）",
+  "updated_at": "2026-10-04",
+  "img": "wh_ele_pro.webp",
+  "brand": "小米"
+}

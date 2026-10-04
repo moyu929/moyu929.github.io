@@ -1,0 +1,35 @@
+{
+  "id": "galanz_560540",
+  "name": "格兰仕C2193A",
+  "brand": "格兰仕",
+  "model_code": "C2193A",
+  "type": "常规",
+  "official_price": 299,
+  "ref_price": 399,
+  "year": "查不到",
+  "pros": [
+    "2100W 火力，9 档火力调节",
+    "黑色微晶面板，耐高温易清洁",
+    "299 元到手价亲民",
+    "渠道标配汤锅，开锅即用"
+  ],
+  "cons": [
+    "2100W 功率低于本品类主流，猛火场景略保守"
+  ],
+  "tags": [
+    "格兰仕"
+  ],
+  "power": 2100,
+  "gear": "9档",
+  "panel": "黑色微晶面板",
+  "size": "查不到",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "ZOL中关村在线",
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/induction_cooker/galanz/560540_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：常规（依据：无超薄或青春特征）；2026-10-03 回填型号：原「查不到」，产品名「格兰仕C2193A」中的型号串为 C2193A（来源与产品名同源的第三方规格站）；2026-10-04 补全：official_price=299（ZOL 参考报价 https://detail.zol.com.cn/induction_cooker/index312999.shtml）（来源：ZOL中关村在线）；gear=9档（ZOL 参数页「其它性能：火力档位」）（来源：ZOL中关村在线）；ZOL「机身尺寸 372×197×403mm」不采：电磁炉高度 403mm 不合理，疑第三方错标（尺寸维持查不到）（来源：ZOL中关村在线）；功率与库内太平洋数据双源一致（来源：ZOL中关村在线）；格式订正：功率「2100W」→ 2100（schema number 归一）；补全卖点（依据：库内参数与 ZOL 包装清单文案，未引入参数表外数值）",
+  "updated_at": "2026-10-04"
+}

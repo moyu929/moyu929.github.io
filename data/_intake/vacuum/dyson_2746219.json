@@ -1,0 +1,39 @@
+{
+  "id": "dyson_2746219",
+  "name": "戴森V16 Piston Animal Nautik",
+  "brand": "戴森",
+  "model_code": "V16",
+  "tier": "旗舰",
+  "official_price": "查不到",
+  "ref_price": 7499,
+  "year": "查不到",
+  "pros": [
+    "1.89L 超大尘杯",
+    "70min 长续航",
+    "2.2kg 机身",
+    "吸尘/洗地双形态"
+  ],
+  "cons": [
+    "75dB(A) 噪音偏高",
+    "额定功率与吸入功率查不到"
+  ],
+  "tags": [
+    "戴森"
+  ],
+  "suction_aw": "查不到",
+  "power": "查不到",
+  "dust_cup": "1.89L",
+  "runtime": "70分钟",
+  "noise": "75dB(A)",
+  "weight": "2.2kg",
+  "filter": "尘杯集尘",
+  "size": "1298×250×259mm(吸尘)/1250×250×259mm(洗地)",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-03",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/vacuum_cleaner/dyson/2746219_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：旗舰（依据：参考价 7499 元（≥4000））；2026-10-03 回填型号：原「查不到」，产品名「戴森V16 Piston Animal Nautik」中的型号串为 V16（来源与产品名同源的第三方规格站）；2026-10-04：按已入库参数补 pros/cons（不引入新数值）",
+  "updated_at": "2026-10-04"
+}

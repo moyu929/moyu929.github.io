@@ -1,0 +1,45 @@
+{
+  "id": "fw_4",
+  "name": "米家无线洗地机4",
+  "model_code": "E303",
+  "miot_model": "查不到",
+  "series": "4 代",
+  "official_price": 1249,
+  "second_hand": "查不到",
+  "motor": "无刷电机",
+  "battery": 4000,
+  "charge": "3h",
+  "runtime": "40min",
+  "noise": 76,
+  "clean_tank": "1000ml",
+  "dirty_tank": "700ml",
+  "weight": 5.16,
+  "size": "344×316×1200mm",
+  "year": "查不到",
+  "pros": [
+    "无刷电机",
+    "40min 续航",
+    "1000ml 净水箱",
+    "1249 元价位"
+  ],
+  "cons": [
+    "噪音 76dB 偏高"
+  ],
+  "tags": [
+    "无线洗地机",
+    "无刷电机"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网",
+    "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230804508",
+  "change_log": "2026-10-01 建条：参数取自太平洋电脑网规格表（10 项），价格与图片取自小米商城在售目录；2026-10-04 官方商城 API 回填：ref_price=1699，clean_tank=1000ml，dirty_tank=700ml，weight=5.16，battery=4000，runtime=40min；2026-10-04：verify_url 补为小米商城商品页（product_id=1230804508），按已入库参数补 pros/cons（不引入新数值）",
+  "updated_at": "2026-10-04",
+  "img": "fw_4.webp",
+  "brand": "小米",
+  "facet_group": "大容量(≥1000ml)",
+  "ref_price": 1699
+}

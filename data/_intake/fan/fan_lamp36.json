@@ -1,0 +1,42 @@
+{
+  "id": "fan_lamp36",
+  "name": "米家风扇灯 36英寸",
+  "model_code": "查不到",
+  "miot_model": "xiaomi.light.cfan01",
+  "type": "风扇灯",
+  "official_price": 569,
+  "second_hand": "—",
+  "power": null,
+  "airflow": null,
+  "speeds": "查不到",
+  "noise": null,
+  "throw_dist": null,
+  "battery": "查不到",
+  "swing": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+    "风扇与灯一体（36英寸）",
+    "全光谱灯珠",
+    "澎湃智联生态",
+    "广域柔风"
+  ],
+  "cons": [
+    "安装需预留吊顶与电路位置"
+  ],
+  "tags": [
+    "风扇灯"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城",
+    "米家产品库(miot-spec)"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230803706",
+  "change_log": "2026-10-01 经米家产品库(miot-spec)交叉印证存在性并补入协议型号；2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：official_price=569，ref_price=599；2026-10-04 A2 路补录：pros（4 条），cons（1 条）。依据：小米商城 API product_desc：米家定制全光谱灯珠…静谧柔风广域开启，澎湃风量…小米澎湃智联",
+  "updated_at": "2026-10-04",
+  "img": "fan_lamp36.webp",
+  "brand": "小米",
+  "ref_price": 599
+}

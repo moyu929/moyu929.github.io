@@ -1,0 +1,42 @@
+{
+  "id": "fw_2c",
+  "name": "米家无线洗地机2C",
+  "model_code": "C305",
+  "miot_model": "查不到",
+  "series": "2 代",
+  "official_price": "查不到",
+  "second_hand": "查不到",
+  "motor": "查不到",
+  "battery": 2500,
+  "charge": "查不到",
+  "runtime": "30min",
+  "noise": 78,
+  "clean_tank": "740ml",
+  "dirty_tank": "550ml",
+  "weight": "查不到",
+  "size": "270×260×1093mm",
+  "year": "查不到",
+  "pros": [
+    "2500mAh 电池",
+    "30min 续航",
+    "740ml 净 + 550ml 污 双水箱"
+  ],
+  "cons": [
+    "噪音 78dB 偏高",
+    "电池 2500mAh 偏小"
+  ],
+  "tags": [
+    "无线洗地机"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-01",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/cleaning_machine/mijia/1976467_detail.html",
+  "change_log": "2026-10-01 建条：参数取自太平洋电脑网规格表（7 项），价格与图片取自小米商城在售目录；2026-10-04：按已入库参数补 pros/cons（不引入新数值）；2026-10-04：按已入库参数补 pros/cons（不引入新数值）",
+  "updated_at": "2026-10-04",
+  "img": null,
+  "brand": "小米",
+  "facet_group": "小容量(<800ml)"
+}

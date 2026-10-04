@@ -1,0 +1,41 @@
+{
+  "id": "fan_circ_desk",
+  "name": "米家直流变频台式循环扇",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "循环扇",
+  "official_price": 279,
+  "second_hand": "—",
+  "power": null,
+  "airflow": null,
+  "speeds": "查不到",
+  "noise": null,
+  "throw_dist": null,
+  "battery": "支持Type-C移动供电",
+  "swing": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+    "智能立体送风",
+    "循环整屋",
+    "支持Type-C移动供电",
+    "台式桌面摆放"
+  ],
+  "cons": [
+    "额定功率与噪音未公开"
+  ],
+  "tags": [
+    "循环扇"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230803624",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：official_price=279，ref_price=349；2026-10-04 A2 路补录：pros（4 条），cons（1 条），battery=支持Type-C移动供电。依据：小米商城 API product_desc：支持Type-C移动供电丨智能立体送风丨3分钟循环整屋",
+  "updated_at": "2026-10-04",
+  "img": "fan_circ_desk.webp",
+  "brand": "小米",
+  "ref_price": 349
+}

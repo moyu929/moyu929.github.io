@@ -1,0 +1,38 @@
+{
+  "id": "philips_1457363",
+  "name": "飞利浦FC6729",
+  "brand": "飞利浦",
+  "model_code": "FC6729",
+  "tier": "旗舰",
+  "official_price": "查不到",
+  "ref_price": 5008,
+  "year": "查不到",
+  "pros": [
+    "50min 续航",
+    "0.4L 尘杯"
+  ],
+  "cons": [
+    "100W 额定功率偏低",
+    "80dB(A) 噪音偏高",
+    "重量与尺寸查不到"
+  ],
+  "tags": [
+    "飞利浦"
+  ],
+  "suction_aw": "查不到",
+  "power": "100W",
+  "dust_cup": "0.4L",
+  "runtime": "50分钟",
+  "noise": "80dB(A)",
+  "weight": "查不到",
+  "filter": "尘杯集尘",
+  "size": "查不到",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-03",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/vacuum_cleaner/philips/1457363_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：旗舰（依据：参考价 5008 元（≥4000））；2026-10-03 回填型号：原「查不到」，产品名「飞利浦FC6729」中的型号串为 FC6729（来源与产品名同源的第三方规格站）；2026-10-04：按已入库参数补 pros/cons（不引入新数值）",
+  "updated_at": "2026-10-04"
+}

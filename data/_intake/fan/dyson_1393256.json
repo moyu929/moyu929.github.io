@@ -1,0 +1,33 @@
+{
+  "id": "dyson_1393256",
+  "name": "戴森TP09",
+  "brand": "戴森",
+  "model_code": "TP09",
+  "type": "塔扇",
+  "official_price": "查不到",
+  "ref_price": 5490,
+  "year": "查不到",
+  "pros": [
+    "戴森无叶塔扇气流技术"
+  ],
+  "cons": [
+    "档位、额定功率、噪音与输出风量均未公开",
+    "参考价5490元偏高"
+  ],
+  "tags": [
+    "戴森"
+  ],
+  "power": "查不到",
+  "speeds": "查不到",
+  "noise": "查不到",
+  "swing": "查不到",
+  "size": "查不到",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/fan/dyson/1393256_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（0 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：塔扇（依据：第三方产品类型=塔扇）；2026-10-03 回填型号：原「查不到」，产品名「戴森TP09」中的型号串为 TP09（来源与产品名同源的第三方规格站）；2026-10-04 A2 路补录：pros（1 条），cons（2 条）。依据：库内已入库参数（type）",
+  "updated_at": "2026-10-04"
+}

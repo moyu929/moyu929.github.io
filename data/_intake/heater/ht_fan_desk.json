@@ -1,0 +1,41 @@
+{
+  "id": "ht_fan_desk",
+  "name": "米家桌面暖风机",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "暖风机",
+  "official_price": 129,
+  "second_hand": "—",
+  "power": null,
+  "coverage": "查不到",
+  "gear": "查不到",
+  "material": "V-0级防火材质",
+  "safety": "倾倒保护、双重热保护",
+  "ipx": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+    "PTC陶瓷发热，即开即热",
+    "广角柔风，体感不燥",
+    "Mini轻巧桌面机身",
+    "倾倒保护＋双重热保护",
+    "V-0级防火材质"
+  ],
+  "cons": [
+    "官方未公布额定功率与适用面积"
+  ],
+  "tags": [
+    "暖风机"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城",
+    "小米商城（官方产品图）"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1203800023",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：official_price=129；2026-10-04 A2 路补录：补官方商城链接，pros（5 条），cons（1 条），material=V-0级防火材质，safety=倾倒保护、双重热保护。依据：小米商城 API product_desc：PTC即开即热 / 广角柔风 / Mini轻巧身材 / 倾倒保护 / 双重热保护 / V-0级防火材质",
+  "updated_at": "2026-10-04",
+  "img": "ht_fan_desk.webp",
+  "brand": "小米"
+}

@@ -1,0 +1,40 @@
+{
+  "id": "dreame_2006287",
+  "name": "追觅全屋清洁大师H13 Pro Plus Chorus",
+  "brand": "追觅",
+  "model_code": "查不到",
+  "series": "未归类",
+  "official_price": "查不到",
+  "ref_price": 3899,
+  "year": "查不到",
+  "pros": [
+    "洗地 40min / 吸尘 60min 双模式",
+    "900ml 大净水箱",
+    "参考价 3899 元较低"
+  ],
+  "cons": [
+    "噪音与重量查不到",
+    "4000mAh 电池偏小"
+  ],
+  "tags": [
+    "追觅"
+  ],
+  "motor": "查不到",
+  "battery": "4000mAh",
+  "charge": "查不到",
+  "runtime": "洗地：约40min，吸尘：约60min",
+  "noise": "查不到",
+  "clean_tank": "900ml",
+  "dirty_tank": "700ml",
+  "weight": "查不到",
+  "size": "查不到",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-01",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/cleaning_machine/dreame/2006287_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-04：按已入库参数补 pros/cons（不引入新数值）；2026-10-04：按已入库参数补 pros/cons（不引入新数值）",
+  "updated_at": "2026-10-04",
+  "facet_group": "中容量(800-999ml)"
+}

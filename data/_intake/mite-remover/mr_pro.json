@@ -1,0 +1,40 @@
+{
+  "id": "mr_pro",
+  "name": "米家除螨仪 Pro",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "tier": "Pro",
+  "official_price": 329,
+  "second_hand": "—",
+  "suction": "14kPa",
+  "power": null,
+  "uv": "查不到",
+  "heat": "查不到",
+  "filter": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+    "14kPa大吸力",
+    "LED智能屏显，档位与余量可视",
+    "可视化胶囊尘杯，尘量直观"
+  ],
+  "cons": [
+    "官方未公布额定功率、UV/热风与滤芯参数",
+    "官方卖点文案未提及拍打与UV/热风烘干，除螨手段少于 2 / 2 Pro"
+  ],
+  "tags": [
+    "Pro"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城",
+    "小米商城（官方产品图）"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1224500319",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：official_price=329；2026-10-04 A2 路补录：补官方商城链接，ref_price=399，pros（3 条），cons（2 条），suction=14kPa。依据：小米商城 API product_desc：LED智能屏显丨14kPa大吸力丨可视化胶囊尘杯",
+  "updated_at": "2026-10-04",
+  "img": "mr_pro.webp",
+  "brand": "小米",
+  "ref_price": 399
+}

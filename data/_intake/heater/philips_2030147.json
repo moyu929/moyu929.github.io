@@ -1,0 +1,32 @@
+{
+  "id": "philips_2030147",
+  "name": "飞利浦AHR4146ZS",
+  "brand": "飞利浦",
+  "model_code": "AHR4146ZS",
+  "type": "油汀",
+  "official_price": "查不到",
+  "ref_price": 1999,
+  "year": "查不到",
+  "pros": [
+    "21-25㎡适用面积",
+    "3档调温",
+    "油汀式低温均热"
+  ],
+  "cons": [
+    "额定功率未公开"
+  ],
+  "tags": [
+    "飞利浦"
+  ],
+  "power": "查不到",
+  "coverage": "21-25平方米",
+  "gear": "3档",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/heater/philips/2030147_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：油汀（依据：第三方产品类型=欧式快热炉）；2026-10-03 回填型号：原「查不到」，产品名「飞利浦AHR4146ZS」中的型号串为 AHR4146ZS（来源与产品名同源的第三方规格站）；2026-10-04 A2 路补录：pros（3 条），cons（1 条）。依据：库内已入库参数（coverage/gear/type）",
+  "updated_at": "2026-10-04"
+}

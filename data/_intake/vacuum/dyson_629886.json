@@ -1,0 +1,38 @@
+{
+  "id": "dyson_629886",
+  "name": "戴森V8 Absolute",
+  "brand": "戴森",
+  "model_code": "查不到",
+  "tier": "旗舰",
+  "official_price": "查不到",
+  "ref_price": 5880,
+  "year": "查不到",
+  "pros": [
+    "参考价 5880 元为戴森系最低"
+  ],
+  "cons": [
+    "40min 续航为戴森系最短",
+    "噪音 81dB 以上",
+    "尘杯 1L 以下",
+    "2.63kg 为戴森系最重"
+  ],
+  "tags": [
+    "戴森"
+  ],
+  "suction_aw": "查不到",
+  "power": "425W/400W",
+  "dust_cup": "1L以下",
+  "runtime": "40分钟",
+  "noise": "81db以上",
+  "weight": "2.63kg",
+  "filter": "尘盒/尘桶",
+  "size": "210×1243×250mm",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-01",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/vacuum_cleaner/dyson/629886_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：旗舰（依据：参考价 5880 元（≥4000））；2026-10-04：按已入库参数补 pros/cons（不引入新数值）",
+  "updated_at": "2026-10-04"
+}

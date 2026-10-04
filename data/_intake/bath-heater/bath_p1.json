@@ -1,0 +1,40 @@
+{
+  "id": "bath_p1",
+  "name": "米家智能浴霸P1",
+  "model_code": "查不到",
+  "miot_model": "xiaomi.bhf_light.na2",
+  "series": "P 系列",
+  "official_price": 1399,
+  "second_hand": "查不到",
+  "warm_mode": "风暖",
+  "heat_power": "查不到",
+  "light_power": 24,
+  "fan_power": "查不到",
+  "vent_power": "查不到",
+  "control": "查不到",
+  "open_size": "300×600mm",
+  "weight": 6.8,
+  "voltage": "220V/50Hz",
+  "year": "查不到",
+  "pros": [
+    "适配300×600吊顶",
+    "24W 照明功率"
+  ],
+  "cons": [],
+  "tags": [
+    "风暖"
+  ],
+  "verify_status": "已核验（多源）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城",
+    "太平洋电脑网",
+    "米家产品库(miot-spec)"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/yuba/mijia/2629079_detail.html",
+  "change_log": "2026-10-01 经米家产品库(miot-spec)交叉印证存在性并补入协议型号；2026-10-01 建条：参数取自太平洋电脑网规格表（5 项），价格与图片取自小米商城在售目录；2026-10-04 补 pros（由已入库参数推导，不引入新数值）",
+  "updated_at": "2026-10-04",
+  "img": "bath_p1.webp",
+  "brand": "小米",
+  "facet_group": "未归类"
+}

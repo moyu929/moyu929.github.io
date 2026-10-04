@@ -1,0 +1,43 @@
+{
+  "id": "vc_4max",
+  "name": "米家无线吸尘器 4 Max",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "tier": "旗舰",
+  "official_price": 1999,
+  "second_hand": "—",
+  "suction_aw": null,
+  "vacuum": 27000,
+  "power": 800,
+  "dust_cup": null,
+  "runtime": null,
+  "noise": null,
+  "weight": null,
+  "filter": "查不到",
+  "size": "查不到",
+  "year": 2026,
+  "pros": [
+    "全自动集尘基站（免倒尘）",
+    "高速无刷电机",
+    "27000Pa真空吸力"
+  ],
+  "cons": [
+    "吸入功率两处来源冲突未定，暂未录入"
+  ],
+  "tags": [
+    "旗舰"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "什么值得买",
+    "小米商城",
+    "百度百科"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230808090",
+  "change_log": "2026-10-01 经官方/权威来源核对并补入参数（补丁 2026-10-01-vacuum-4series.json）；2026-10-04 官方商城 API 回填：official_price=1999，ref_price=2599；2026-10-04：verify_url 补为小米商城商品页（product_id=1230808090）",
+  "updated_at": "2026-10-04",
+  "img": "vc_4max.webp",
+  "brand": "小米",
+  "ref_price": 2599
+}
