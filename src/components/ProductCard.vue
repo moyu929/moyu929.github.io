@@ -20,6 +20,17 @@ const props = defineProps<{
 
 const emit = defineEmits<{ toggleCompare: [id: string] }>()
 
+/** 「查不到」类占位值的统一判定：空值不该在卡片上占位显示 */
+function isBlank(value: unknown): boolean {
+  if (value === null || value === undefined) return true
+  if (typeof value === 'string') {
+    const t = value.trim()
+    return t === '' || t === '查不到' || t === '—' || t === '-'
+  }
+  if (Array.isArray(value)) return value.length === 0
+  return false
+}
+
 const fieldsBySlot = computed(() => {
   const slots = { title: [], chip: [], grid: [], tag: [] } as Record<
     'title' | 'chip' | 'grid' | 'tag',
@@ -30,6 +41,18 @@ const fieldsBySlot = computed(() => {
   }
   return slots
 })
+
+/** 只保留该产品真有值的槽位字段。
+ *
+ *  之前 chip 与 grid 是无条件渲染的，于是 646 款无价的卡片显示「官方价 查不到」、
+ *  1028 款显示「二手价 查不到」—— 占位文字比缺字段更抢眼。
+ *  tag 槽不参与：tags 为空时本就不该出现，缺省行为一致。 */
+const filledChips = computed(() =>
+  fieldsBySlot.value.chip.filter((f) => !isBlank(props.product[f.key])),
+)
+const filledGrid = computed(() =>
+  fieldsBySlot.value.grid.filter((f) => !isBlank(props.product[f.key])),
+)
 
 /** 网格参数值：year 字段若有月份则附加「N月」 */
 function valueWithMonth(field: typeof props.schema.fields[number], p: Product): string {
@@ -108,14 +131,14 @@ const cardStyle = computed(() => {
           >{{ groupName }}</span>
         </div>
 
-        <div class="chips">
-          <span v-for="f in fieldsBySlot.chip" :key="f.key" class="chip">
+        <div v-if="filledChips.length" class="chips">
+          <span v-for="f in filledChips" :key="f.key" class="chip">
             {{ f.label }} <b>{{ formatValue(f, product) }}</b>
           </span>
         </div>
 
-        <dl class="params">
-          <template v-for="f in fieldsBySlot.grid" :key="f.key">
+        <dl v-if="filledGrid.length" class="params">
+          <template v-for="f in filledGrid" :key="f.key">
             <dt>{{ f.label }}</dt>
             <dd>{{ valueWithMonth(f, product) }}</dd>
           </template>
