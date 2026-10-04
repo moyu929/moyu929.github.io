@@ -1,0 +1,43 @@
+{
+  "id": "rc_p1_3l",
+  "name": "米家智能IH电饭煲 P1 3L",
+  "model_code": "MFB17AM",
+  "miot_model": "xiaomi.cooker.cmihp3",
+  "type": "压力IH",
+  "official_price": 679,
+  "second_hand": "—",
+  "capacity": 3,
+  "power": 1130,
+  "inner_pot": "0氟涂层钛内胆",
+  "pressure": "3D压力",
+  "appoint": "支持",
+  "size": "302.5×252.5×221mm",
+  "year": null,
+  "pros": [
+    "0氟涂层钛内胆",
+    "3D压力",
+    "IH立体加热",
+    "App互联与云食谱"
+  ],
+  "cons": [
+    "3L容量不适合大家庭"
+  ],
+  "tags": [
+    "压力IH",
+    "3L",
+    "健康内胆"
+  ],
+  "verify_status": "已核验（多源）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网",
+    "小米商城",
+    "米家产品库(miot-spec)"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230803767",
+  "change_log": "2026-10-01 经米家产品库(miot-spec)交叉印证存在性并补入协议型号；2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 补全：power=1130，size=302.5×252.5×221mm，model_code=MFB17AM，ref_price=799（来源：太平洋/https://g.pconline.com.cn/product/rice_cooker/xiaomi/2605939_detail.html（型号栏为「P1 3L(MFB17AM)」，取括号内型号，商品页标题同证））",
+  "updated_at": "2026-10-04",
+  "img": "rc_p1_3l.webp",
+  "brand": "小米",
+  "ref_price": 799
+}
