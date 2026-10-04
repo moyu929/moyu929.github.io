@@ -1,0 +1,33 @@
+{
+  "id": "supor_2662059",
+  "name": "苏泊尔SY-50FC525Q",
+  "brand": "苏泊尔",
+  "model_code": "SY-50FC525Q",
+  "tier": "大容量",
+  "official_price": "查不到",
+  "ref_price": 1099,
+  "year": "查不到",
+  "pros": [
+    "2000W 功率充沛",
+    "陶晶内胆不糊底",
+    "触控式＋数码显示，操作直观",
+    "双胆配置"
+  ],
+  "cons": [
+    "参考价 1099 元偏高"
+  ],
+  "tags": [
+    "苏泊尔"
+  ],
+  "capacity": 5,
+  "power": 2000,
+  "inner_pot": "陶晶",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/pressure_cooker/supor/2662059_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（3 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：大容量（依据：标称容量 5.0L）；2026-10-03 回填型号：原「查不到」，产品名「苏泊尔SY-50FC525Q」中的型号串为 SY-50FC525Q（来源与产品名同源的第三方规格站）；2026-10-04 补全 pros/cons（只引用已入库参数、已采集规格表行与官方文案，未引入参数表外数值）；2026-10-04 格式订正：capacity 5L→5，power 2000W→2000（schema 声明 number，值不变，便于排序）",
+  "updated_at": "2026-10-04"
+}
