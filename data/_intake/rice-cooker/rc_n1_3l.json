@@ -1,0 +1,41 @@
+{
+  "id": "rc_n1_3l",
+  "name": "米家电饭煲 N1 3L",
+  "model_code": "MFB13A0",
+  "miot_model": "查不到",
+  "type": "底盘加热",
+  "official_price": 159,
+  "second_hand": "—",
+  "capacity": 3,
+  "power": 650,
+  "inner_pot": "不粘内胆",
+  "pressure": "无",
+  "appoint": "支持",
+  "size": "243×296×202mm",
+  "year": null,
+  "pros": [
+    "¥159最低门槛",
+    "3L适合1-2人",
+    "节能版"
+  ],
+  "cons": [
+    "底盘加热"
+  ],
+  "tags": [
+    "底盘加热",
+    "3L",
+    "性价比"
+  ],
+  "verify_status": "已核验（多源）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网",
+    "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230802283",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 补全：size=243×296×202mm，power=650，model_code=MFB13A0，ref_price=169（来源：太平洋/https://g.pconline.com.cn/product/rice_cooker/xiaomi/2290599_detail.html；商城API（market_price=169；现价 159 与太平洋参考价 159 互证））",
+  "updated_at": "2026-10-04",
+  "img": "rc_n1_3l.webp",
+  "brand": "小米",
+  "ref_price": 169
+}
