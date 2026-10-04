@@ -1,0 +1,28 @@
+{
+  "id": "midea_2515699",
+  "name": "美的MK-SP50E-20FPro",
+  "brand": "美的",
+  "model_code": "MK-SP50E-20FPro",
+  "type": "养生壶",
+  "official_price": "查不到",
+  "ref_price": 589,
+  "year": "查不到",
+  "pros": [],
+  "cons": [],
+  "tags": [
+    "美的"
+  ],
+  "capacity": "5L",
+  "power": "1600W",
+  "material": "查不到",
+  "temp_ctrl": "查不到",
+  "size": "查不到",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/electric_kettle/midea/2515699_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（0 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：养生壶（依据：容量 5.0L（≥3L 属养生壶区间））；2026-10-03 回填型号：原「查不到」，产品名「美的MK-SP50E-20FPro」中的型号串为 MK-SP50E-20FPro（来源与产品名同源的第三方规格站）；2026-10-04 补 capacity、power（来源：太平洋电脑网）",
+  "updated_at": "2026-10-04"
+}

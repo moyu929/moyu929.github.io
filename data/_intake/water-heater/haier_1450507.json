@@ -1,0 +1,33 @@
+{
+  "id": "haier_1450507",
+  "name": "海尔ES50H-Cooper5(U1)",
+  "brand": "海尔",
+  "model_code": "ES50H-Cooper5(U1)",
+  "type": "电热",
+  "official_price": 3899,
+  "ref_price": 3899,
+  "year": "查不到",
+  "pros": [
+    "50L 容量",
+    "一级能效",
+    "5000W 速热"
+  ],
+  "cons": [
+    "5000W 需专线"
+  ],
+  "tags": [
+    "海尔"
+  ],
+  "capacity": "50L",
+  "power": "5000W",
+  "energy": "一级能效",
+  "size": "800×530×295mm",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/water_heater/haier/1450507_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：电热（依据：第三方产品类型=即热式）；2026-10-03 回填型号：原「查不到」，产品名「海尔ES50H-Cooper5(U1)」中的型号串为 ES50H-Cooper5(U1)（来源与产品名同源的第三方规格站）；2026-10-04 补 official_price（来源：太平洋电脑网）；2026-10-04 补 pros、cons（由已入库参数推导，不引入新数值）",
+  "updated_at": "2026-10-04"
+}

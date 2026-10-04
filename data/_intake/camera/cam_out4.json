@@ -1,0 +1,33 @@
+{
+  "id": "cam_out4",
+  "name": "小米智能室外摄像机 4C",
+  "model_code": "查不到",
+  "miot_model": "xiaomi.camera.cw301",
+  "type": "室外",
+  "official_price": 339,
+  "second_hand": "—",
+  "resolution": "查不到",
+  "fov": "查不到",
+  "night": "查不到",
+  "ai": "查不到",
+  "store": "查不到",
+  "power": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [],
+  "cons": [],
+  "tags": [
+    "室外"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城（官方产品图）",
+    "米家产品库(miot-spec)"
+  ],
+  "verify_url": "查不到",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 补 miot_model（来源：米家产品库(miot-spec)）",
+  "updated_at": "2026-10-04",
+  "img": "cam_out4.webp",
+  "brand": "小米"
+}

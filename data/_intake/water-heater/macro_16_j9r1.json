@@ -1,0 +1,37 @@
+{
+  "id": "macro_16_j9r1",
+  "name": "万家乐JSQ30-16J9R1(F)",
+  "brand": "万家乐",
+  "model_code": "JSQ30-16J9R1(F)",
+  "type": "燃气",
+  "official_price": 2294,
+  "ref_price": "查不到",
+  "second_hand": "—",
+  "capacity": "16L",
+  "power": "热负荷 30kW；电功率 30W",
+  "energy": "二级能效",
+  "constant": "查不到",
+  "app": "查不到",
+  "size": "525×340×159mm",
+  "year": "查不到",
+  "pros": [
+    "16L 升数",
+    "热负荷 30kW"
+  ],
+  "cons": [
+    "能效为二级",
+    "需燃气管道与强排条件"
+  ],
+  "tags": [
+    "万家乐"
+  ],
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/gas_water/wanjiale/2679739_detail.html",
+  "change_log": "2026-10-03 建条：品牌型号与参数取自太平洋电脑网规格表；official_price 记太平洋参考价 ¥2294；点火方式为全自动连续脉冲点火（未单独成字段）；副分组归类：燃气（依据：型号含 JSQ 燃气热水器国标前缀）；2026-10-04 补 pros、cons（由已入库参数推导，不引入新数值）",
+  "updated_at": "2026-10-04",
+  "img": null
+}

@@ -1,0 +1,35 @@
+{
+  "id": "cam_call",
+  "name": "小米智能摄像机 视频通话版",
+  "model_code": "查不到",
+  "miot_model": "chuangmi.camera.086ac1",
+  "type": "母婴/通话",
+  "official_price": 319,
+  "second_hand": "—",
+  "resolution": "查不到",
+  "fov": "查不到",
+  "night": "查不到",
+  "ai": "查不到",
+  "store": "查不到",
+  "power": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+    "视频通话功能"
+  ],
+  "cons": [],
+  "tags": [
+    "母婴/通话"
+  ],
+  "verify_status": "已核验（多源）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城（官方产品图）",
+    "米家产品库(miot-spec)"
+  ],
+  "verify_url": "查不到",
+  "change_log": "2026-10-01 经米家产品库(miot-spec)交叉印证存在性并补入协议型号；2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 补 pros（来源：已入库参数推导）",
+  "updated_at": "2026-10-04",
+  "img": "cam_call.webp",
+  "brand": "小米"
+}

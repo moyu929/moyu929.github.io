@@ -1,0 +1,37 @@
+{
+  "id": "vanward_16_v6pro",
+  "name": "万和JSQ30-16V6 PRO",
+  "brand": "万和",
+  "model_code": "JSQ30-16V6 PRO",
+  "type": "燃气",
+  "official_price": 1614,
+  "ref_price": "查不到",
+  "second_hand": "—",
+  "capacity": "16L",
+  "power": "热负荷 30kW；电功率 42W",
+  "energy": "二级能效",
+  "constant": "查不到",
+  "app": "APP操控",
+  "size": "560×345×173mm",
+  "year": "查不到",
+  "pros": [
+    "16L 升数",
+    "支持 APP 操控"
+  ],
+  "cons": [
+    "能效为二级",
+    "需燃气管道与强排条件"
+  ],
+  "tags": [
+    "万和"
+  ],
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/gas_water/vanward/2703779_detail.html",
+  "change_log": "2026-10-03 建条：品牌型号与参数取自太平洋电脑网规格表；official_price 记太平洋参考价 ¥1614；规格表控制方式「触控式，APP操控」，APP操控记入 app；副分组归类：燃气（依据：型号含 JSQ 燃气热水器国标前缀）；2026-10-04 补 pros、cons（由已入库参数推导，不引入新数值）",
+  "updated_at": "2026-10-04",
+  "img": null
+}

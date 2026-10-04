@@ -1,0 +1,38 @@
+{
+  "id": "panasonic_638199",
+  "name": "松下FV-RB20TS1",
+  "brand": "松下",
+  "model_code": "FV-RB20TS1",
+  "series": "未归类",
+  "official_price": 3299,
+  "ref_price": 3299,
+  "year": "查不到",
+  "pros": [
+    "2100W 风暖功率",
+    "25W 换气功率",
+    "照明强弱两档"
+  ],
+  "cons": [
+    "2100W 取暖功率偏低"
+  ],
+  "tags": [
+    "松下"
+  ],
+  "heat_power": "2100W",
+  "light_power": "11.5(强档)/4.5(弱档)",
+  "fan_power": "查不到",
+  "vent_power": "25W",
+  "control": "查不到",
+  "open_size": "300×600",
+  "weight": "8.6kg",
+  "voltage": "220V",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/yuba/panasonic/638199_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（6 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-03 回填型号：原「查不到」，产品名「松下FV-RB20TS1」中的型号串为 FV-RB20TS1（来源与产品名同源的第三方规格站）；2026-10-04 补 official_price（来源：太平洋电脑网）；2026-10-04 补 pros、cons（由已入库参数推导，不引入新数值）",
+  "updated_at": "2026-10-04",
+  "facet_group": "低功率(<2400W)"
+}

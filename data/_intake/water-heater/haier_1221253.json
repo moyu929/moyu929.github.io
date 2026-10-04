@@ -1,0 +1,33 @@
+{
+  "id": "haier_1221253",
+  "name": "海尔ES80H-PLUS5A",
+  "brand": "海尔",
+  "model_code": "ES80H-PLUS5A",
+  "type": "电热",
+  "official_price": 5199,
+  "ref_price": 5199,
+  "year": "查不到",
+  "pros": [
+    "80L 大容量",
+    "一级能效",
+    "3000W 加热"
+  ],
+  "cons": [
+    "机身长 835mm"
+  ],
+  "tags": [
+    "海尔"
+  ],
+  "capacity": "80L",
+  "power": "3000W",
+  "energy": "一级能效",
+  "size": "835×540×465mm",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/water_heater/haier/1221253_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：电热（依据：第三方产品类型=储水式）；2026-10-03 回填型号：原「查不到」，产品名「海尔ES80H-PLUS5A」中的型号串为 ES80H-PLUS5A（来源与产品名同源的第三方规格站）；2026-10-04 补 official_price（来源：太平洋电脑网）；2026-10-04 补 pros、cons（由已入库参数推导，不引入新数值）",
+  "updated_at": "2026-10-04"
+}
