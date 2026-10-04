@@ -1,0 +1,49 @@
+{
+  "id": "acsens_cab_3p",
+  "name": "米家空调 新风Pro 人感双出风 立式3匹",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "柜机",
+  "official_price": 8599,
+  "second_hand": "—",
+  "pishu": "3匹",
+  "energy": "一级(APF5.01)",
+  "area": "30-40㎡",
+  "cool_cap": 7320,
+  "heat_cap": 9850,
+  "cool_power": null,
+  "airflow": null,
+  "fresh_air": null,
+  "noise": "查不到",
+  "size_indoor": "查不到",
+  "size_outdoor": "查不到",
+  "weight": "查不到",
+  "year": null,
+  "month": null,
+  "pros": [
+    "新风Pro",
+    "人感双出风",
+    "制冷量7320W",
+    "一级能效APF5.01"
+  ],
+  "cons": [
+    "柜机占地大",
+    "噪音参数查不到",
+    "循环风量未标"
+  ],
+  "tags": [
+    "柜机"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城",
+    "小米商城（官方产品图）"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230803798",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 小米官方商城 API 回填（product_id=1230803798，商城名 '新风Pro 人感双出风 立式3匹超一级能效 米家空调'）：official_price=8599，ref_price=9999，pishu=3匹，energy=一级(APF5.01)，area=30-40㎡，cool_cap=7320，heat_cap=9850；2026-10-04 补 pros/cons（依据本行已入库参数推导，未引入参数表以外的数值）",
+  "updated_at": "2026-10-04",
+  "img": "acsens_cab_3p.webp",
+  "brand": "小米",
+  "ref_price": 9999
+}
