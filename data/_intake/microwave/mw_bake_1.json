@@ -1,0 +1,40 @@
+{
+  "id": "mw_bake_1",
+  "name": "米家智能微烤一体机",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "微烤一体",
+  "official_price": 549,
+  "second_hand": "—",
+  "capacity": null,
+  "mw_power": null,
+  "grill_power": null,
+  "input_power": null,
+  "heating": "查不到",
+  "control": "查不到",
+  "noise": null,
+  "energy": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+    "微烤一体，一台两用",
+    "米家智能互联",
+    "入门价位友好"
+  ],
+  "cons": [
+    "容量与功率等参数官方公开有限"
+  ],
+  "tags": [
+    "微烤一体"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1203100006",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 补写卖点 pros 3 条 / cons 1 条（依据：已入库参数与官方规格页文案，未引入参数表外数值）",
+  "updated_at": "2026-10-04",
+  "img": "mw_bake_1.webp",
+  "brand": "小米"
+}
