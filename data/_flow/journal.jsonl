@@ -2723,3 +2723,9 @@
 {"ts":"2026-10-03T18:34:00.444Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/siemens_1785707","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
 {"ts":"2026-10-03T18:34:00.453Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/siemens_1785727","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
 {"ts":"2026-10-03T18:34:00.461Z","actor":"yi","branch":"collect/yi-dishwasher","action":"submit","key":"dishwasher/siemens_2575079","from":"draft","to":"intake","batch":"978f16a2","supersedes":true}
+{"ts":"2026-10-03T19:07:13.172Z","actor":"agent-A-yi","branch":"collect/yi-refrigerator","action":"submit","key":"refrigerator/frig_pro_508","from":"draft","to":"intake","batch":"198e52e0","supersedes":true}
+{"ts":"2026-10-03T19:07:13.183Z","actor":"agent-A-yi","branch":"collect/yi-refrigerator","action":"submit","key":"refrigerator/frig_271_three","from":"draft","to":"intake","batch":"198e52e0","supersedes":true}
+{"ts":"2026-10-03T19:07:13.192Z","actor":"agent-A-yi","branch":"collect/yi-refrigerator","action":"submit","key":"refrigerator/frig_256_three","from":"draft","to":"intake","batch":"198e52e0","supersedes":true}
+{"ts":"2026-10-03T19:07:13.201Z","actor":"agent-A-yi","branch":"collect/yi-refrigerator","action":"submit","key":"refrigerator/frig_425_cross","from":"draft","to":"intake","batch":"198e52e0","supersedes":true}
+{"ts":"2026-10-03T19:07:13.210Z","actor":"agent-A-yi","branch":"collect/yi-refrigerator","action":"submit","key":"refrigerator/frig_pro600_cross","from":"draft","to":"intake","batch":"198e52e0","supersedes":true}
+{"ts":"2026-10-03T19:07:13.220Z","actor":"agent-A-yi","branch":"collect/yi-refrigerator","action":"submit","key":"refrigerator/frig_561_side","from":"draft","to":"intake","batch":"198e52e0","supersedes":true}
