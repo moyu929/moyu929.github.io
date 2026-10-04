@@ -1,0 +1,40 @@
+{
+  "id": "fan_pro_floor",
+  "name": "米家直流变频落地扇 Pro",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "落地扇",
+  "official_price": 399,
+  "second_hand": "—",
+  "power": null,
+  "airflow": null,
+  "speeds": "查不到",
+  "noise": null,
+  "throw_dist": null,
+  "battery": "可充电宝供电",
+  "swing": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+    "可充电宝供电",
+    "自然风送风，体感舒适",
+    "机身可收纳"
+  ],
+  "cons": [
+    "额定功率、输出风量与噪音未公开"
+  ],
+  "tags": [
+    "落地扇"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230802062",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：official_price=399，ref_price=499；2026-10-04 A2 路补录：pros（3 条），cons（1 条），battery=可充电宝供电。依据：小米商城 API product_desc：收纳自如丨尽享舒适自然风丨可充电宝供电",
+  "updated_at": "2026-10-04",
+  "img": "fan_pro_floor.webp",
+  "brand": "小米",
+  "ref_price": 499
+}

@@ -1,0 +1,42 @@
+{
+  "id": "dh_13",
+  "name": "米家智能除湿机 13L",
+  "model_code": "查不到",
+  "miot_model": "xiaomi.derh.13l",
+  "tier": "小除湿量(≤20L)",
+  "official_price": 729,
+  "second_hand": "—",
+  "dehumid": 13,
+  "tank": null,
+  "power": null,
+  "noise": null,
+  "compressor": "查不到",
+  "purify": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+    "13L适合小空间",
+    "噪音较低",
+    "支持米家APP智能控制"
+  ],
+  "cons": [
+    "除湿量小,不适合大面积"
+  ],
+  "tags": [
+    "小除湿量",
+    "静音",
+    "13L"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城",
+    "米家产品库(miot-spec)"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230801436",
+  "change_log": "2026-10-01 经米家产品库(miot-spec)交叉印证存在性并补入协议型号；2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：official_price=729，ref_price=799",
+  "updated_at": "2026-10-04",
+  "img": "dh_13.webp",
+  "brand": "小米",
+  "ref_price": 799
+}

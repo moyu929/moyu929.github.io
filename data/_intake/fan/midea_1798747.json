@@ -1,0 +1,34 @@
+{
+  "id": "midea_1798747",
+  "name": "美的FGD24WDJ",
+  "brand": "美的",
+  "model_code": "FGD24WDJ",
+  "type": "循环扇",
+  "official_price": "查不到",
+  "ref_price": 999,
+  "year": "查不到",
+  "pros": [
+    "12档风速调节",
+    "上下左右四向摇头"
+  ],
+  "cons": [
+    "63dB噪音明显偏高"
+  ],
+  "tags": [
+    "美的"
+  ],
+  "power": 32,
+  "speeds": "12档",
+  "noise": "63dB",
+  "swing": "上下左右摇头",
+  "size": "查不到",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/fan/midea/1798747_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（1 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：循环扇（依据：第三方产品类型=落地扇,空气循环扇）；2026-10-03 回填型号：原「查不到」，产品名「美的FGD24WDJ」中的型号串为 FGD24WDJ（来源与产品名同源的第三方规格站）；2026-10-04 A2 路补录：pros（2 条），cons（1 条），power=32。依据：库内已入库参数（speeds/noise/swing/type）；ZOL 参数页 https://detail.zol.com.cn/1420/1419196/param.shtml：{\"power\": 32}",
+  "updated_at": "2026-10-04",
+  "airflow": "查不到"
+}

@@ -1,0 +1,41 @@
+{
+  "id": "ht_fan_g",
+  "name": "米家石墨烯暖风机",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "暖风机",
+  "official_price": 299,
+  "second_hand": "—",
+  "power": 2000,
+  "coverage": "查不到",
+  "gear": "4档",
+  "material": "石墨烯",
+  "safety": "查不到",
+  "ipx": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+    "2000W大功率",
+    "热风/暖风/自然风四种模式",
+    "石墨烯喷涂发热体",
+    "智能恒温"
+  ],
+  "cons": [
+    "官方未公布适用面积"
+  ],
+  "tags": [
+    "暖风机"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城",
+    "小米商城（官方产品图）"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230800847",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：official_price=299，ref_price=349；2026-10-04 A2 路补录：补官方商城链接，pros（4 条），cons（1 条），power=2000，gear=4档。依据：小米商城 API product_desc：2000W功率｜智能恒温，热风，暖风，自然风四种模式｜石墨烯喷涂",
+  "updated_at": "2026-10-04",
+  "img": "ht_fan_g.webp",
+  "brand": "小米",
+  "ref_price": 349
+}
