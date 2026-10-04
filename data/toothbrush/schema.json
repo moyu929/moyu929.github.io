@@ -69,8 +69,7 @@
       "key": "second_hand",
       "label": "二手价",
       "type": "text",
-      "card": "chip",
-      "compare": true
+      "card": "chip"
     },
     {
       "key": "freq",

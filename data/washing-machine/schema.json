@@ -95,7 +95,6 @@
       "label": "二手价",
       "type": "text",
       "card": "chip",
-      "compare": true,
       "stat": true
     },
     {
