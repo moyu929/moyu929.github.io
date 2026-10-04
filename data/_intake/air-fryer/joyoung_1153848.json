@@ -1,0 +1,30 @@
+{
+  "id": "joyoung_1153848",
+  "name": "九阳KL-32I92",
+  "brand": "九阳",
+  "model_code": "KL-32I92",
+  "type": "经典炸锅",
+  "official_price": "查不到",
+  "ref_price": 549,
+  "year": "查不到",
+  "pros": [
+    "九阳经典炸锅机型"
+  ],
+  "cons": [
+    "容量、功率等关键参数查不到"
+  ],
+  "tags": [
+    "九阳"
+  ],
+  "capacity": "查不到",
+  "power": "查不到",
+  "basket": "查不到",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/airfryer/joyoung/1153848_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（0 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：经典炸锅（依据：无蒸烤或可视特征）；2026-10-03 回填型号：原「查不到」，产品名「九阳KL-32I92」中的型号串为 KL-32I92（来源与产品名同源的第三方规格站）；2026-10-04 补全：补卖点/缺点（只引用已入库参数与商城在售价）",
+  "updated_at": "2026-10-04"
+}
