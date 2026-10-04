@@ -1,0 +1,44 @@
+{
+  "id": "dw_s20_16",
+  "name": "米家智能嵌入式洗碗机 S20 16套",
+  "model_code": "查不到",
+  "miot_model": "xiaomi.dishwasher.wqp16",
+  "type": "嵌入式",
+  "official_price": 3300,
+  "second_hand": "—",
+  "capacity": 16,
+  "volume": null,
+  "water_eff": "查不到",
+  "dry": "查不到",
+  "sterilize": "高温除菌",
+  "store": "查不到",
+  "power": null,
+  "size": "598×570×700mm",
+  "weight": null,
+  "year": null,
+  "pros": [
+    "16套大容量",
+    "石墨烯四重智烘系统",
+    "75℃高温洗涤除菌",
+    "一级能效",
+    "700mm矮身设计，可灶下安装"
+  ],
+  "cons": [
+    "需装修时预留嵌入式橱柜空间"
+  ],
+  "tags": [
+    "嵌入式"
+  ],
+  "verify_status": "已核验（多源）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城",
+    "米家产品库(miot-spec)"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230804628",
+  "change_log": "2026-10-01 经米家产品库(miot-spec)交叉印证存在性并补入协议型号；2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 补全订正：ref_price=4499（商城API划线价 market_price），size=598×570×700mm（商城「产品尺寸」归一为宽×深×高；原值：宽598x高700x深570mmmm），sterilize=高温除菌（商城「洗涤方式」概括），official_price=3300 与商城API现价一致，交叉印证，撰写pros 5条（依据：已入库参数+商城关键参数），撰写cons 1条",
+  "updated_at": "2026-10-04",
+  "img": "dw_s20_16.webp",
+  "brand": "小米",
+  "ref_price": 4499
+}
