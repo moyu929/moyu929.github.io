@@ -1,0 +1,31 @@
+{
+  "id": "jmgo_1090713",
+  "name": "坚果SC",
+  "brand": "坚果",
+  "model_code": "查不到",
+  "type": "旗舰家用",
+  "official_price": 9998,
+  "ref_price": 9998,
+  "year": "查不到",
+  "pros": [],
+  "cons": [],
+  "tags": [
+    "坚果"
+  ],
+  "brightness": "2000流明",
+  "resolution": "1080P",
+  "dmd": "0.47英寸DMD",
+  "throw_ratio": "0.233:1",
+  "focus": "电动对焦",
+  "keystone": "查不到",
+  "weight": "查不到",
+  "size": "416×310×100mm",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/projector/jmgo/1090713_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（1 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：旗舰家用（依据：参考价 9998 元）；2026-10-04 补 official_price、size、resolution、dmd、focus、throw_ratio（来源：太平洋电脑网）",
+  "updated_at": "2026-10-04"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "hisense_2632599",
+  "name": "海信85UX",
+  "brand": "海信",
+  "model_code": "85UX",
+  "series": "未归类",
+  "official_price": 27999,
+  "ref_price": 27999,
+  "year": "查不到",
+  "pros": [
+    "85 英寸大屏",
+    "8GB+128GB 内存",
+    "Mini LED 背光"
+  ],
+  "cons": [
+    "165Hz 刷新偏低",
+    "HDMI 仅 3 个"
+  ],
+  "tags": [
+    "海信"
+  ],
+  "size_inch": "85英寸",
+  "refresh": "165Hz",
+  "resolution": "查不到",
+  "size": "不含底座：1939×1091×40mm",
+  "backlight": "查不到",
+  "mem": "查不到",
+  "hdmi": "3个",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/lcd_tv/hisense/2632599_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-03 回填型号：原「查不到」，产品名「海信85UX」中的型号串为 85UX（来源与产品名同源的第三方规格站）；2026-10-04 补 official_price（来源：太平洋电脑网）；2026-10-04 补 pros、cons（由已入库参数推导，不引入新数值）",
+  "updated_at": "2026-10-04",
+  "facet_group": "超大(85-97\")"
+}

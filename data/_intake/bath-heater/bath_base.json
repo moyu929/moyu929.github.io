@@ -1,0 +1,41 @@
+{
+  "id": "bath_base",
+  "name": "米家智能浴霸",
+  "model_code": "查不到",
+  "miot_model": "topwit.bhf_light.htw02",
+  "series": "初代款",
+  "official_price": 529,
+  "second_hand": "查不到",
+  "warm_mode": "查不到",
+  "heat_power": 2400,
+  "light_power": 19,
+  "fan_power": 48,
+  "vent_power": 41,
+  "control": "查不到",
+  "open_size": "查不到",
+  "weight": "查不到",
+  "voltage": "220V,50Hz",
+  "year": "查不到",
+  "pros": [
+    "2400W 风暖功率",
+    "48W 吹风功率",
+    "41W 换气功率"
+  ],
+  "cons": [],
+  "tags": [
+    "智能浴霸"
+  ],
+  "verify_status": "已核验（多源）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城",
+    "太平洋电脑网",
+    "米家产品库(miot-spec)"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/yuba/mijia/1759727_detail.html",
+  "change_log": "2026-10-01 经米家产品库(miot-spec)交叉印证存在性并补入协议型号；2026-10-01 建条：参数取自太平洋电脑网规格表（5 项），价格与图片取自小米商城在售目录；2026-10-04 补 pros（由已入库参数推导，不引入新数值）",
+  "updated_at": "2026-10-04",
+  "img": "bath_base.webp",
+  "brand": "小米",
+  "facet_group": "中功率(2400-2799W)"
+}

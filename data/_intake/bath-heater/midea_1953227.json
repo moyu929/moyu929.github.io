@@ -1,0 +1,37 @@
+{
+  "id": "midea_1953227",
+  "name": "美的MY-S5X28-Y4P",
+  "brand": "美的",
+  "model_code": "MY-S5X28-Y4P",
+  "series": "未归类",
+  "official_price": 1299,
+  "ref_price": 1299,
+  "year": "查不到",
+  "pros": [
+    "2800W 风暖功率",
+    "45W 吹风功率",
+    "45W 换气功率"
+  ],
+  "cons": [],
+  "tags": [
+    "美的"
+  ],
+  "heat_power": "2800W",
+  "light_power": "18W",
+  "fan_power": "45W",
+  "vent_power": "45W",
+  "control": "未归类",
+  "open_size": "查不到",
+  "weight": "查不到",
+  "voltage": "220V/50Hz",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/yuba/midea/1953227_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（1 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-03 回填型号：原「查不到」，产品名「美的MY-S5X28-Y4P」中的型号串为 MY-S5X28-Y4P（来源与产品名同源的第三方规格站）；2026-10-04 补 official_price、warm_mode（来源：太平洋电脑网）；2026-10-04 补 pros（由已入库参数推导，不引入新数值）",
+  "updated_at": "2026-10-04",
+  "facet_group": "高功率(≥2800W)",
+  "warm_mode": "风暖"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "kt_bottle_pro",
+  "name": "米家智能电热水瓶 Pro 5L",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "电水壶",
+  "official_price": 699,
+  "second_hand": "—",
+  "capacity": 5,
+  "power": null,
+  "material": "查不到",
+  "temp_ctrl": "查不到",
+  "smart": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [],
+  "cons": [],
+  "tags": [
+    "电水壶"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230808370",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 补 official_price（来源：小米商城）",
+  "updated_at": "2026-10-04",
+  "img": "kt_bottle_pro.webp",
+  "brand": "小米"
+}

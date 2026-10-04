@@ -1,0 +1,33 @@
+{
+  "id": "rinnai_1039594",
+  "name": "林内RUS-16E55CWNF 16L",
+  "brand": "林内",
+  "model_code": "RUS-16E55CWNF",
+  "type": "燃气",
+  "official_price": 4380,
+  "ref_price": 4380,
+  "year": "查不到",
+  "pros": [
+    "16L 升数",
+    "机身厚仅 144mm"
+  ],
+  "cons": [
+    "能效为二级",
+    "需燃气管道与强排条件"
+  ],
+  "tags": [
+    "林内"
+  ],
+  "capacity": "查不到",
+  "power": "60W",
+  "energy": "二级",
+  "size": "查不到",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/water_heater/rinnai/1039594_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（0 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：燃气（依据：型号含 RUS/JSQ（燃气热水器国标前缀））；2026-10-03 回填型号：原「查不到」，产品名「林内RUS-16E55CWNF 16L」中的型号串为 RUS-16E55CWNF（来源与产品名同源的第三方规格站）；2026-10-04 补 official_price（来源：太平洋电脑网）；2026-10-04 补 pros、cons（由已入库参数推导，不引入新数值）",
+  "updated_at": "2026-10-04"
+}

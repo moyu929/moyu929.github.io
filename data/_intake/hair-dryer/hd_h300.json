@@ -1,0 +1,35 @@
+{
+  "id": "hd_h300",
+  "name": "米家负离子速干吹风机 H300",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "tier": "入门",
+  "official_price": 99,
+  "second_hand": "—",
+  "power": null,
+  "speed": "查不到",
+  "motor": "查不到",
+  "anion": "负离子",
+  "temp_ctrl": "查不到",
+  "weight": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+    "负离子护发",
+    "速干设计"
+  ],
+  "cons": [],
+  "tags": [
+    "入门"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城（官方产品图）"
+  ],
+  "verify_url": "查不到",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 补 pros（来源：已入库参数推导）",
+  "updated_at": "2026-10-04",
+  "img": "hd_h300.webp",
+  "brand": "小米"
+}

@@ -1,0 +1,37 @@
+{
+  "id": "skyworth_2975422",
+  "name": "创维壁纸电视Q9H 100英寸(100Q9H)",
+  "brand": "创维",
+  "model_code": "100Q9H",
+  "series": "未归类",
+  "official_price": 35999,
+  "ref_price": 35999,
+  "year": "查不到",
+  "pros": [
+    "100 英寸大屏",
+    "480Hz 高刷新",
+    "机身厚 27mm"
+  ],
+  "cons": [
+    "售价 35999 元最高"
+  ],
+  "tags": [
+    "创维"
+  ],
+  "size_inch": "100英寸",
+  "refresh": "480Hz",
+  "resolution": "查不到",
+  "size": "不含底座：2228×1273×27mm",
+  "backlight": "查不到",
+  "mem": "查不到",
+  "hdmi": "查不到",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/lcd_tv/skyworth/2975422_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（3 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-04 补 official_price（来源：太平洋电脑网）；2026-10-04 补 pros、cons（由已入库参数推导，不引入新数值）",
+  "updated_at": "2026-10-04",
+  "facet_group": "百吋巨幕(≥98\")"
+}
