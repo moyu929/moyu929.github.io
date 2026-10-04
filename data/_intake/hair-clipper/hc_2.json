@@ -1,0 +1,46 @@
+{
+  "id": "hc_2",
+  "name": "米家理发器 2",
+  "model_code": "MJGHHC2LF",
+  "miot_model": "查不到",
+  "type": "成人款",
+  "official_price": 129,
+  "second_hand": "—",
+  "runtime": "180min（强劲模式）",
+  "blades": "陶瓷动刀+粉末冶金定刀（真空DLC/石墨烯双涂层）",
+  "waterproof": "IPX7全身水洗",
+  "display": "智能数码显示；19段长度（刀头5档微调0.5-1.7mm+配梳14档2-28mm）",
+  "power": "Type-C充电（5V/1A），额定3.7V/3W，充电约2.5h",
+  "size": "47x48x182mm（不含修剪梳），净重约271g",
+  "year": 2023,
+  "pros": [
+    "陶瓷动刀+双涂层定刀耐磨不易升温",
+    "19段长度调节",
+    "智能防夹发（恒压系统）",
+    "IPX7全身水洗",
+    "180min长续航",
+    "智能数码电量显示",
+    "Type-C充电"
+  ],
+  "cons": [
+    "仅两挡控速",
+    "充电约2.5小时"
+  ],
+  "tags": [
+    "成人款"
+  ],
+  "verify_status": "已核验（多源）",
+  "verify_date": "2026-10-05",
+  "verify_source": [
+    "中关村在线",
+    "小米商城",
+    "小米商城（官方产品图）",
+    "小米香港官网",
+    "快科技/新浪科技"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230800707",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-05 补全：型号/续航/刀头/防水/显示/供电/尺寸/年份/pros/cons/来源链接（来源：小米商城商品页与自营文案；小米香港官网规格页 MJGHHC2LF：额定3.7V/3W、IPX7、180min、47x48x182mm；中关村在线同型号页；快科技/新浪科技 2023-08-11 发布报道互证；miot-spec 检索无收录故 miot_model 维持查不到）（来源：https://www.mi.com/hk/product/xiaomi-hair-clipper-2/specs/；https://detail.zol.com.cn/Daily-care/index2101747.shtml；https://finance.sina.com.cn/tech/mobile/n/n/2023-08-11/doc-imzftwam6381885.shtml）",
+  "updated_at": "2026-10-05",
+  "img": "hc_2.webp",
+  "brand": "小米"
+}

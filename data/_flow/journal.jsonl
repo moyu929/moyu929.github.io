@@ -5120,3 +5120,6 @@
 {"ts":"2026-10-04T13:27:21.818Z","actor":"1095365435","branch":"tidy/round2","action":"publish","key":"water-purifier/wp_prefilter_pro","from":"review","to":"library","batch":"714ef41e","supersedes":true}
 {"ts":"2026-10-04T13:27:21.835Z","actor":"1095365435","branch":"tidy/round2","action":"publish","key":"water-purifier/wp_rich2","from":"review","to":"library","batch":"714ef41e","supersedes":true}
 {"ts":"2026-10-04T13:27:21.852Z","actor":"1095365435","branch":"tidy/round2","action":"publish","key":"water-purifier/wp_s1_1000","from":"review","to":"library","batch":"714ef41e","supersedes":true}
+{"ts":"2026-10-04T15:01:16.728Z","actor":"collect-A-yi","branch":"collect/yi-hair-clipper","action":"submit","key":"hair-clipper/hc_2","from":"draft","to":"intake","batch":"17b1c2bc","supersedes":true}
+{"ts":"2026-10-04T15:01:16.739Z","actor":"collect-A-yi","branch":"collect/yi-hair-clipper","action":"submit","key":"hair-clipper/hc_2_set","from":"draft","to":"intake","batch":"17b1c2bc","supersedes":true}
+{"ts":"2026-10-04T15:01:16.748Z","actor":"collect-A-yi","branch":"collect/yi-hair-clipper","action":"submit","key":"hair-clipper/hc_kids","from":"draft","to":"intake","batch":"17b1c2bc","supersedes":true}
