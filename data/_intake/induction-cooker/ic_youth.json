@@ -1,0 +1,39 @@
+{
+  "id": "ic_youth",
+  "name": "米家电磁炉青春版",
+  "model_code": "DCL02CM",
+  "miot_model": "查不到",
+  "type": "青春版",
+  "official_price": 179,
+  "second_hand": "—",
+  "power": 2100,
+  "gear": "查不到",
+  "panel": "查不到",
+  "preset": "查不到",
+  "app": "查不到",
+  "size": "280×265×75mm",
+  "year": null,
+  "pros": [
+    "2100W 标准火力，爆炒火锅都够用",
+    "179 元入门价位",
+    "机身 280×265×75mm，小台面友好"
+  ],
+  "cons": [
+    "与电磁炉 N1 同为 179 元，两者按外观偏好选择即可"
+  ],
+  "tags": [
+    "青春版"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "ZOL中关村在线",
+    "小米商城（官方产品图）"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1222600046",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 补全：ref_price=199（商城 API market_price）（来源：小米商城）；power=2100、size=280×265×75mm、model_code=DCL02CM（ZOL「米家电磁炉青春版 DCL02CM」参数页，商品名与库内完全一致）（来源：ZOL中关村在线）；2026-10-04 补全：verify_url=官方商城商品页（product_id 经商城搜索页枚举核实，商品名与库内一致）",
+  "updated_at": "2026-10-04",
+  "img": "ic_youth.webp",
+  "brand": "小米",
+  "ref_price": 199
+}
