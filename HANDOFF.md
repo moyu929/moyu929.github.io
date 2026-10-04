@@ -101,7 +101,7 @@ scripts/lib/product-check.mjs        校验规则库（validate 与 flow 复用�
 5. **禁止编造 / 估算**：查不到写 `"查不到"` 或 `"—"`；不换算、不补零（校验提示「排序沉底」属已知）。
 6. **额定 vs 实测双口径**：两者都有时拆两列，不可混用。
 7. 去重先按**型号代码**再按名称；海外版判据 = 大陆官方渠道检索不到 + 可确认面向海外/港台。
-8. **竞品副分组**：竞品要落进 `schema.facets[0]`；没有分类依据的保持「未归类」，不猜。
+8. **副分组归类**：各品牌产品都要落进 `schema.facets[0]`；没有分类依据的保持「未归类」，不猜。
 
 ---
 
@@ -128,12 +128,12 @@ npm run mi:apply -- data/_sources/patches/xxx.json   # 写字段补丁
 
 1. **零售型号代码（`model_code`）大量缺失**——逐款查官方规格页 / 说明书 PDF / 铭牌补全。
    ⚠ `miot_model`（协议型号）**不能替代**零售型号代码。
-2. **部分产品无图**——多为已停产型号与竞品（`img: null`），符合规范；有官方图时按流水线补。
+2. **部分产品无图**——多为已停产型号与非小米品牌产品（`img: null`），符合规范；有官方图时按流水线补。
 3. **缺失技术字段按品类分批补**——每项登记来源到 `data/_sources/provenance.json`；补前
    `npm run flow:status --category <品类>` 确认没有在修产品（schema 是共享基础设施）。
-4. **竞品副分组仍有「未归类」条目**——`npm run flow:status --unclassified` 查看；没有依据的不猜。
+4. **副分组仍有「未归类」条目**——`npm run flow:status --unclassified` 查看；没有依据的不猜。
 5. **无 `verify_url` 的已核验记录需补参数级溯源**——部分 `verify_source` 只证明图片来源，不证明参数来源。
-6. **竞品 provenance 未逐条登记**（`data/_sources/provenance.json`）。
+6. **非小米品牌 provenance 未逐条登记**（`data/_sources/provenance.json`）。
 7. **价格口径未统一**：`official_price`（采集时点官方商城价）与 `ref_price`（第三方报价）语义不同，不可混用
    （排序与统计已用 `priceOf()` 回退）。
 8. **《型号漏收录初筛报告》**里的候选（15kg 分区洗烘、430L/610L/216L 冰箱、蓝氧智投等）未获官方目录证实，

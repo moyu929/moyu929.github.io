@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""为「副分组未归类」的竞品批量补抓分类证据（只读 products.json，不改数据）。
+"""为「副分组未归类」的非小米品牌批量补抓分类证据（只读 products.json，不改数据）。
 
 背景：classify-facets.py 靠 pconline 缓存里的少数几个分类字段判定副分组，
 字段缺失时保持「未归类」。本脚本对每条未归类产品补抓两路证据：
@@ -15,7 +15,7 @@
 默认写到 data/_cache/facet-evidence/（该目录已 gitignore，只作抓取缓存）。
 
 用法：
-    python scripts/fetch-facet-evidence.py                 # 抓全部未归类竞品
+    python scripts/fetch-facet-evidence.py                 # 抓全部未归类的非小米品牌产品
     python scripts/fetch-facet-evidence.py heater kettle    # 只抓指定品类
     python scripts/fetch-facet-evidence.py --out D:/tmp/fe.json --workers 6
 """

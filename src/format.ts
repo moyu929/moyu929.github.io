@@ -3,7 +3,7 @@ import type { FieldDef, Product } from './types'
 /**
  * 判断字符串值是否自带单位。
  *
- * 竞品数据多来自第三方规格站，常把单位写进值里（「85英寸」「4000mAh」「16套」），
+ * 非小米品牌数据多来自第三方规格站，常把单位写进值里（「85英寸」「4000mAh」「16套」），
  * 而 schema 又声明了 unit。两者相加会渲染成「85英寸英寸」，所以先探测再决定是否追加。
  *
  * 只认「值里出现了单位写法」这个事实，不试图解析单位边界 —— 单位串本身
@@ -62,7 +62,7 @@ export function numberOf(product: Product, key: string): number | null {
  * 缺失时回退 ref_price（参考价）。
  *
  * 原因：非小米品牌往往没有可核验的官方商城在售价，只有权威第三方规格站给的参考价，
- * 而竞品在多数品类里占多数。若只认 official_price，这些产品会在默认排序里全部沉底、
+ * 而非小米品牌在多数品类里占多数。若只认 official_price，这些产品会在默认排序里全部沉底、
  * 顶部均价与区间也只剩小米部分 —— 相当于把多品牌横评又变回小米单品牌榜。
  */
 export function priceOf(product: Product): number | null {

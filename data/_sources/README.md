@@ -22,7 +22,7 @@
 ## provenance.json — 逐条溯源
 
 记录每个产品的数据来自哪些来源、链接与核验时间。`verify_status` 的判定依据要能落到这里
-（或 `patches/*.json` 的 `_来源`）。当前竞品条目尚未逐条登记，见 `HANDOFF.md` 未完成清单第 6 条。
+（或 `patches/*.json` 的 `_来源`）。当前非小米品牌条目尚未逐条登记，见 `HANDOFF.md` 未完成清单第 6 条。
 
 ## patches/ — 字段补丁留档
 
@@ -39,7 +39,7 @@
 
 ## 抓取清单（两个）
 
-- `brand-targets.json`：`scripts/import-brands.py` 的竞品批量导入清单。
+- `brand-targets.json`：`scripts/import-brands.py` 的非小米品牌批量导入清单。
 - `pconline-targets.json`：`scripts/pconline-specs.py` 的太平洋规格页抓取清单
   （结果落 `data/_cache/pconline-*.json`）。
 

@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-"""给竞品按 facet 分类。
+"""给非小米品牌产品按 facet 分类。
 
 依据优先级：pconline 缓存的「产品类型/安装方式/加热方式」字段 > 国标型号正则 > 参数阈值 > 价格分档。
 每个赋值都写进 change_log 便于复核；没有依据的保持「未归类」，不猜。
 
-用法：python scripts/classify-facets.py           # 只处理尚未归类的竞品
+用法：python scripts/classify-facets.py           # 只处理尚未归类的非小米品牌产品
 """
 import json, glob, os, re, sys, collections
 
@@ -92,7 +92,7 @@ def load_cache(pc):
 def load_evidence():
     """读 data/_cache/facet-evidence/evidence.json。
 
-    这是为「仍未归类的竞品」补抓的证据：逐条含太平洋规格与 ZOL 参数页。
+    这是为「仍未归类的非小米品牌产品」补抓的证据：逐条含太平洋规格与 ZOL 参数页。
     与 load_cache 的字段名不同源，这里统一摊平成 {品类: {产品id: {字段: 值}}}，
     字段名加前缀区分来源（p_ = pconline，z_ = zol），供 by_kw 一起匹配。
     """
@@ -348,7 +348,7 @@ def rule_humidifier(p, sp):
 
 def rule_waterpur(p, sp):
     t = str(field(sp, '安装方式') or '')
-    # 安装方式是竞品唯一稳定给出的分类维度（第三方普遍不标双出水/单出水）
+    # 安装方式是非小米品牌唯一稳定给出的分类维度（第三方普遍不标双出水/单出水）
     if '厨下' in t:
         return '厨下式', '第三方安装方式=%s' % t
     if '壁挂' in t:
@@ -483,7 +483,7 @@ def rule_microwave2(p, sp):
 
 
 def rule_bathheater(p, sp):
-    """浴霸副分组：按取暖功率档位。竞品第三方规格普遍不给控制方式，
+    """浴霸副分组：按取暖功率档位。非小米品牌的第三方规格普遍不给控制方式，
     但灯暖/风暖/额定功率是稳定字段，也是浴霸的核心选购维度。"""
     for f in ('heat_power', '额定功率', '灯暖功率', '风暖功率', '取暖功率', '总功率'):
         v = num(field(p, f))
@@ -509,7 +509,7 @@ def rule_bathheater(p, sp):
 
 
 def rule_tv(p, sp):
-    """电视副分组改为「尺寸段」——原 series 是小米 S 系列命名，竞品无法归入。"""
+    """电视副分组改为「尺寸段」——原 series 是小米 S 系列命名，其他品牌无法归入。"""
     v = num(p.get('size_inch'))
     if v is None:
         return None
@@ -525,7 +525,7 @@ def rule_tv(p, sp):
 
 
 def rule_floorwasher(p, sp):
-    """洗地机副分组改为「清水箱容量」——原 series 是米家代际，竞品无法归入。"""
+    """洗地机副分组改为「清水箱容量」——原 series 是米家代际，其他品牌无法归入。"""
     v = num(field(sp, 'clean_tank', '净水箱容量'))
     if v is None:
         return None

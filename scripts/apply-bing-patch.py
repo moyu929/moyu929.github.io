@@ -74,7 +74,7 @@ PROSCONS = {
     "massage-gun/mg_h3":       {"pros": ["热敷功能"], "cons": []},
     "garment-steamer/gs_boost": {"pros": ["增压蒸汽"], "cons": []},
 
-    # —— C2：kettle 竞品（cons 只保留有明确否定依据的）——
+    # —— C2：kettle 非小米品牌（cons 只保留有明确否定依据的）——
     "kettle/midea_638749":      {"pros": ["1.9L 容量", "1800W 功率", "304 不锈钢材质"], "cons": []},
     "kettle/midea_2515919":     {"pros": ["5L 容量", "1600W 功率", "支持控温"], "cons": []},
     "kettle/supor_2520819":     {"pros": ["5L 容量", "316L 不锈钢材质", "1200W 功率"], "cons": []},

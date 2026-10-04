@@ -6,7 +6,7 @@
 「类别:欧式快热炉」「全自动意式咖啡机」这类分类口径，比正文页更好挖。
 
 用法：
-    python scripts/batch-model-search.py                 # 全部未归类竞品
+    python scripts/batch-model-search.py                 # 全部未归类的非小米品牌产品
     python scripts/batch-model-search.py heater kettle   # 指定品类
     python scripts/batch-model-search.py --engine baidu
 """

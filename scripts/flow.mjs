@@ -793,7 +793,8 @@ function cmdUnclassified() {
   let total = 0
   let mi = 0
   console.log('未归类产品（schema.facets[0] 取值为「未归类」）：')
-  console.log('口径：主清单只列**竞品**（与 classify-facets.py 的处理范围一致），小米自有的另计。')
+  console.log('口径：主清单只列**非小米品牌**（与 classify-facets.py 的处理范围一致），小米自有的另计。')
+  console.log('说明：区分两者只是为了分派来源（小米走官方商城 API，其他走第三方规格站），不代表地位差异 —— 各品牌在站内同等收录、同等展示。')
   for (const catId of cats) {
     const schema = readJson(path.join(DATA, catId, 'schema.json'))
     const facetKey = schema?.facets?.[0]?.key
@@ -807,7 +808,7 @@ function cmdUnclassified() {
     console.log(`  ${catId}（${facetKey}）：${hit.length} 款`)
     for (const p of hit) console.log(`      · ${catId}/${p.id}  ${p.name ?? ''}（${p.brand ?? '?'}）`)
   }
-  console.log(`\n合计 ${total} 款竞品未归类${mi ? `（另有 ${mi} 款小米自有产品同为「未归类」）` : ''}。`)
+  console.log(`\n合计 ${total} 款非小米品牌未归类${mi ? `（另有 ${mi} 款小米自有产品同为「未归类」）` : ''}。`)
   console.log('建议按品类分批立 issue（标签：数据缺陷 + 品类名）供采集方认领。')
 }
 

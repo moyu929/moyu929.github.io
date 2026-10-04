@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""为仍未归类的竞品补抓证据，追加进 data/_cache/facet-evidence/evidence.json。
+"""为仍未归类的非小米品牌产品补抓证据，追加进 data/_cache/facet-evidence/evidence.json。
 
 比 fetch-facet-evidence.py 更宽：不再只抓分类字段，而是把整张规格表的
 字段名与值都留下来（限定白名单，避免把包装清单之类的噪声也存进来）。

@@ -77,7 +77,7 @@ export function checkProduct(catId, schema, p) {
     if (v === undefined || v === null) continue
 
     // number 字段的字符串值只要能解析出数字就是合法的带单位值
-    // （竞品数据常把单位写进值里：「85英寸」「4000mAh」「16套」「4L(4-5人)」）。
+    // （非小米品牌数据常把单位写进值里：「85英寸」「4000mAh」「16套」「4L(4-5人)」）。
     // 展示层 formatValue 会识别并跳过重复的单位追加，排序时 numberOf 也能解析。
     // 只有连数字都解析不出的（纯文字说明）才告警，因为那种排序时真的会沉底。
     if (field.type === 'number' && typeof v !== 'number' && !Number.isFinite(parseFloatLoose(v))) {

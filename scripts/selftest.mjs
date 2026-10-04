@@ -354,10 +354,10 @@ function tUnclassified() {
   console.log('\n[P0-6⑤] 未归类清单')
   const lib = readJson(path.join(DATA, 'testcat', 'products.json'))
   lib[0].tier = '未归类' // 小米自有 → 应只进"另有 N 款"的计数
-  lib.push(mkProduct('rival1', { brand: '美的', tier: '未归类' })) // 竞品 → 应进主清单
+  lib.push(mkProduct('rival1', { brand: '美的', tier: '未归类' })) // 非小米品牌 → 应进主清单
   writeJson(path.join(DATA, 'testcat', 'products.json'), lib)
   const r = run(['status', '--unclassified'])
-  check('主清单列出竞品未归类', /未归类产品/.test(r.out) && /testcat\/rival1/.test(r.out), r.out.slice(-400))
+  check('主清单列出非小米品牌未归类', /未归类产品/.test(r.out) && /testcat\/rival1/.test(r.out), r.out.slice(-400))
   check('小米自有的单独计数', /另有 1 款小米自有产品/.test(r.out), r.out.slice(-200))
 }
 
