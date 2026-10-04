@@ -1,0 +1,40 @@
+{
+  "id": "haier_1587787",
+  "name": "海尔KJ680F-H600AU1",
+  "brand": "海尔",
+  "model_code": "KJ680F-H600AU1",
+  "tier": "高端",
+  "official_price": "查不到",
+  "ref_price": 2899,
+  "year": "查不到",
+  "pros": [
+    "甲醛CADR 666.7",
+    "适用81㎡",
+    "功耗60W",
+    "体积小巧"
+  ],
+  "cons": [
+    "颗粒物CADR低于甲醛CADR",
+    "噪音参数查不到",
+    "滤芯价格查不到"
+  ],
+  "tags": [
+    "海尔"
+  ],
+  "area": "81㎡",
+  "cadr_pm": 548.5,
+  "cadr_hcho": 666.7,
+  "power": "60W",
+  "noise": "查不到",
+  "filter_life": "查不到",
+  "wifi": "查不到",
+  "size": "320×320×690mm",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/jinghuaqi/haier/1587787_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（5 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：高端（依据：颗粒物 CADR 548.5 m³/h）；2026-10-03 回填型号：原「查不到」，产品名「海尔KJ680F-H600AU1」中的型号串为 KJ680F-H600AU1（来源与产品名同源的第三方规格站）；2026-10-04 数值字段归一：cadr_pm '548.5m3/h'->548.5，cadr_hcho '666.7m3/h'->666.7（schema 已声明单位，由字段渲染，不再把单位写进值）；2026-10-04 补 pros/cons（依据本行已入库参数推导，未引入参数表以外的数值）",
+  "updated_at": "2026-10-04"
+}

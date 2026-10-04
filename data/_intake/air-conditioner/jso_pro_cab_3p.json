@@ -1,0 +1,46 @@
+{
+  "id": "jso_pro_cab_3p",
+  "name": "米家空调 巨省电Pro 立式大3匹（2025款）",
+  "model_code": "72LW-NA10/N2A1(W)",
+  "miot_model": "查不到",
+  "type": "柜机",
+  "official_price": 5099,
+  "second_hand": "—",
+  "pishu": "大3匹",
+  "energy": "一级(APF5.01)",
+  "area": "约40㎡",
+  "cool_cap": 7360,
+  "heat_cap": 10400,
+  "cool_power": 1930,
+  "airflow": 1752,
+  "noise": "内42-46 / 外54dB",
+  "size_indoor": "346×1863×434mm",
+  "size_outdoor": "943×670×396mm",
+  "weight": "内33.5 / 外40kg",
+  "year": 2025,
+  "pros": [
+    "大3匹强冷",
+    "循环风量1752",
+    "超一级能效"
+  ],
+  "cons": [
+    "柜机占地大"
+  ],
+  "tags": [
+    "巨省电Pro",
+    "客厅",
+    "柜机"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+    "小米商城",
+    "小米商城（官方产品图）"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230806650",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-01 型号标注复核：现值「72LW-NA10/N2A1(W)」疑似缺机型类别前缀（立式柜机国标格式为 KFR-72LW/…，挂机为 KFR-35GW/…），但本轮小米官网规格页与可检索来源均未闭环该型号全码，按宁缺勿错保留原值不猜测补全，后续拿到官方规格页或说明书再订正；2026-10-01 前缀复核（撤回此前标注）：经核实小米 2022 年后机型的官方零售型号一律不带 KFR- 前缀，太平洋规格表「型号」行与苏宁/京东商品标题均为裸码，本条写法与原文一致，无需补全，撤回「疑似缺前缀待复核」标注；2026-10-04 小米官方商城 API 回填（product_id=1230806650，商城名 '巨省电Pro 立式大3匹  超一级能效 米家空调'）：official_price=5099，ref_price=7699",
+  "updated_at": "2026-10-04",
+  "img": "jso_pro_cab_3p.webp",
+  "brand": "小米",
+  "ref_price": 7699
+}
