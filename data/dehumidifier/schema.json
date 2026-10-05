@@ -162,7 +162,6 @@
       "label": "上市",
       "unit": "年",
       "type": "number",
-      "card": "grid",
       "compare": true,
       "sortable": true
     },
