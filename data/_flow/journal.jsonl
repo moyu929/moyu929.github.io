@@ -5198,3 +5198,6 @@
 {"ts":"2026-10-05T07:09:21.960Z","actor":"1095365435","branch":"probe/sources","action":"publish","key":"fan/gree_2243939","from":"review","to":"library","batch":"663d784e","supersedes":true}
 {"ts":"2026-10-05T07:09:21.975Z","actor":"1095365435","branch":"probe/sources","action":"publish","key":"heater/gree_1462587","from":"review","to":"library","batch":"663d784e","supersedes":true}
 {"ts":"2026-10-05T07:09:21.995Z","actor":"1095365435","branch":"probe/sources","action":"publish","key":"washing-machine/midea_2923371","from":"review","to":"library","batch":"663d784e","supersedes":true}
+{"ts":"2026-10-04T15:01:16.728Z","actor":"collect-A-yi","branch":"collect/yi-hair-clipper","action":"submit","key":"hair-clipper/hc_2","from":"draft","to":"intake","batch":"17b1c2bc","supersedes":true}
+{"ts":"2026-10-04T15:01:16.739Z","actor":"collect-A-yi","branch":"collect/yi-hair-clipper","action":"submit","key":"hair-clipper/hc_2_set","from":"draft","to":"intake","batch":"17b1c2bc","supersedes":true}
+{"ts":"2026-10-04T15:01:16.748Z","actor":"collect-A-yi","branch":"collect/yi-hair-clipper","action":"submit","key":"hair-clipper/hc_kids","from":"draft","to":"intake","batch":"17b1c2bc","supersedes":true}

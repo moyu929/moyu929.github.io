@@ -1,0 +1,46 @@
+{
+  "id": "hc_2_set",
+  "name": "米家理发器 2 套装版",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "套装版",
+  "official_price": 169,
+  "second_hand": "—",
+  "runtime": "180min（强劲模式）",
+  "blades": "陶瓷动刀+粉末冶金定刀（双涂层），另含碳化钛涂层精修刀头、雕刻刀头",
+  "waterproof": "IPX7全身水洗",
+  "display": "智能数码显示；19段长度（刀头5档微调+配梳14档2-28mm）",
+  "power": "Type-C充电，额定3.7V/3W，充电约2.5h",
+  "size": "47x48x182mm（不含修剪梳），净重约271g",
+  "year": 2026,
+  "pros": [
+    "一机多用：理发+精修+雕刻三刀头",
+    "含2-14mm与16-28mm可调配梳",
+    "附围布、海绵、润滑油等全套配件",
+    "IPX7全身水洗",
+    "19段长度调节",
+    "180min长续航",
+    "智能数码显示"
+  ],
+  "cons": [
+    "套装参考价高于单机版（169元 vs 129元）",
+    "仅两挡控速"
+  ],
+  "tags": [
+    "套装版"
+  ],
+  "verify_status": "已核验（多源）",
+  "verify_date": "2026-10-05",
+  "verify_source": [
+    "IT之家",
+    "小米商城",
+    "小米商城（官方产品图）",
+    "小米有品",
+    "小米香港官网"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230807248",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-05 补全：续航/刀头/防水/显示/供电/尺寸/年份/pros/cons/来源链接（来源：IT之家 2026-04-14 开售报道：套装版=普通版+碳化钛涂层精修/雕刻刀头，附2-14mm/16-28mm配梳及围布等，机身19段/两挡/IPX7/数码显示；小米有品官方页 gid=183232 深锖色 169元 与商城同 SKU；机身与单机版同机（MJGHHC2LF），续航/供电/尺寸自小米香港官网规格页沿承；无独立公开型号代码，model_code 维持查不到）（来源：https://www.ithome.com/0/939/058.htm；https://www.xiaomiyoupin.com/detail?gid=183232；https://www.mi.com/hk/product/xiaomi-hair-clipper-2/specs/）",
+  "updated_at": "2026-10-05",
+  "img": "hc_2_set.webp",
+  "brand": "小米"
+}
