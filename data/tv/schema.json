@@ -155,7 +155,6 @@
       "label": "上市",
       "type": "number",
       "unit": "年",
-      "card": "grid",
       "compare": true,
       "sortable": true
     },
