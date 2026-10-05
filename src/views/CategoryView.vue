@@ -51,6 +51,11 @@ watch(
       data.value = await loadCategory(id)
       // 副分组维度的选项值各品类不同，切品类后旧的选中项多半已失效
       for (const key of Object.keys(activeFacets.value)) setFacet(key, '全部')
+      // 首页「按品牌」入口带 ?brand= 预选主分组；仅在 schema 的品牌序列里确有该品牌时生效
+      const brand = typeof route.query.brand === 'string' ? route.query.brand : ''
+      if (brand && data.value.schema.groupBy.order.includes(brand)) {
+        activeGroup.value = brand
+      }
       // 数据加载后重新设置滚动监听
       requestAnimationFrame(() => setupReveal())
     } catch (e) {
