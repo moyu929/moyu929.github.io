@@ -10,6 +10,7 @@ import { RouterLink } from 'vue-router'
 import { categoryGroups, loadCategory } from '../data'
 import type { CategoryGroup } from '../types'
 import thumbs from 'virtual:category-thumbs'
+import brandLogos from 'virtual:brand-logos'
 import { useScrollReveal } from '../useScrollReveal'
 
 const { setup: setupReveal } = useScrollReveal()
@@ -23,6 +24,8 @@ const viewMode = ref<ViewMode>(
 )
 watch(viewMode, (m) => {
   localStorage.setItem(VIEW_MODE_KEY, m)
+  navQuery.value = ''
+  panelQuery.value = ''
   if (m === 'brand') void ensureBrandIndex()
   requestAnimationFrame(() => setupReveal())
 })
@@ -51,26 +54,74 @@ function pad2(n: number) {
 /**
  * 键盘可达性：左右/上下方向键在导航项间移动。
  * 用 roving tabindex 让整列只有一个可 Tab 项，方向键负责在其余项间移动。
+ * ids 是**过滤后**列表对应的 DOM id——方向键移动与焦点跟随都按过滤后的顺序走。
  */
-function onNavKeydown(e: KeyboardEvent, index: number, total: number, select: (i: number) => void) {
+function onNavKeydown(e: KeyboardEvent, index: number, ids: string[], select: (i: number) => void) {
   const delta = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key]
   if (delta === undefined) return
   e.preventDefault()
-  const next = Math.min(Math.max(index + delta, 0), total - 1)
+  const next = Math.min(Math.max(index + delta, 0), ids.length - 1)
   select(next)
-  // 焦点跟着走，否则键盘用户按完方向键焦点还留在原处
+  // 焦点跟着走，否则键盘用户按完方向键焦点还留在原处（focus 会自动把滚动容器滚到可见）
   requestAnimationFrame(() => {
-    document
-      .querySelector<HTMLElement>(`#nav-${viewMode.value === 'scene' ? categoryGroups[next].id : `b${next}`}`)
-      ?.focus()
+    document.querySelector<HTMLElement>(`#${ids[next]}`)?.focus()
   })
 }
 
+/** 过滤后导航项的 DOM id 序列（键盘导航的焦点跟随用） */
+const navSceneIds = computed(() => filteredGroups.value.map((g) => `group-${g.id}`))
+const navBrandIds = computed(() => filteredBrands.value.map((_, i) => `nav-b${i}`))
+
 function selectGroup(id: string) {
   activeId.value = id
+  panelQuery.value = '' // 换组后按旧查询过滤新组多半得到空列表，清掉
   // 换组后右侧是新内容，重新挂一次滚动揭示
   requestAnimationFrame(() => setupReveal())
 }
+
+// ---------------------------------------------------------------- 栏内筛选
+
+/** 各栏顶部搜索：左栏筛导航项（场景组 / 品牌），右栏筛品类卡 */
+const navQuery = ref('')
+const panelQuery = ref('')
+
+const norm = (s: string) => s.trim().toLowerCase()
+
+/** 场景组：组名不匹配但组内品类名匹配时也保留该组 */
+const filteredGroups = computed(() => {
+  const q = norm(navQuery.value)
+  if (!q) return categoryGroups
+  return categoryGroups.filter(
+    (g) =>
+      g.name.toLowerCase().includes(q) ||
+      g.categories.some((c) => c.name.toLowerCase().includes(q)),
+  )
+})
+
+const filteredBrands = computed(() => {
+  const q = norm(navQuery.value)
+  if (!brandEntries.value) return []
+  if (!q) return brandEntries.value
+  return brandEntries.value.filter((b) => b.brand.toLowerCase().includes(q))
+})
+
+const visibleSceneCats = computed(() => {
+  const q = norm(panelQuery.value)
+  const cats = activeGroup.value?.categories ?? []
+  if (!q) return cats
+  return cats.filter(
+    (c) => c.name.toLowerCase().includes(q) || (c.description ?? '').toLowerCase().includes(q),
+  )
+})
+
+const visibleBrandCats = computed(() => {
+  const q = norm(panelQuery.value)
+  const cats = activeBrandEntry.value?.cats ?? []
+  if (!q) return cats
+  return cats.filter(
+    (e) => e.cat.name.toLowerCase().includes(q) || (e.cat.description ?? '').toLowerCase().includes(q),
+  )
+})
 
 // ---------------------------------------------------------------- 品牌视图
 
@@ -143,6 +194,7 @@ async function ensureBrandIndex() {
 
 function selectBrand(brand: string) {
   activeBrand.value = brand
+  panelQuery.value = ''
   requestAnimationFrame(() => setupReveal())
 }
 
@@ -194,13 +246,22 @@ onBeforeUnmount(() => {})
       </div>
     </div>
 
-    <!-- 一级品类（或品牌）导航 + 该组品类 -->
+    <!-- 一级品类（或品牌）导航 + 该组品类；桌面端两栏各自限高内滚 -->
     <main id="main" class="container browse">
       <!-- 场景视图 -->
       <nav v-if="viewMode === 'scene'" class="groups" aria-label="一级品类">
-        <p class="groups-label">按使用场景</p>
+        <div class="groups-head">
+          <p class="groups-label">按使用场景</p>
+          <input
+            v-model="navQuery"
+            type="search"
+            class="nav-search"
+            placeholder="筛选场景"
+            aria-label="筛选场景"
+          />
+        </div>
         <ul class="group-list">
-          <li v-for="(g, i) in categoryGroups" :key="g.id">
+          <li v-for="g in filteredGroups" :key="g.id">
             <button
               :id="`group-${g.id}`"
               type="button"
@@ -209,9 +270,9 @@ onBeforeUnmount(() => {})
               :aria-current="g.id === activeId ? 'true' : undefined"
               :tabindex="g.id === activeId ? 0 : -1"
               @click="selectGroup(g.id)"
-              @keydown="onNavKeydown($event, i, categoryGroups.length, (n) => selectGroup(categoryGroups[n].id))"
+              @keydown="onNavKeydown($event, filteredGroups.indexOf(g), navSceneIds, (n) => selectGroup(filteredGroups[n].id))"
             >
-              <span class="group-index" aria-hidden="true">{{ pad2(i + 1) }}</span>
+              <span class="group-index" aria-hidden="true">{{ pad2(categoryGroups.indexOf(g) + 1) }}</span>
               <span class="group-text">
                 <span class="group-name">{{ g.name }}</span>
                 <span class="group-count">{{ counts[g.id] }} 个品类</span>
@@ -219,94 +280,36 @@ onBeforeUnmount(() => {})
             </button>
           </li>
         </ul>
+        <p v-if="!filteredGroups.length" class="nav-empty">无匹配场景</p>
       </nav>
 
       <section v-if="viewMode === 'scene' && activeGroup" class="cat-panel" :aria-labelledby="`group-${activeGroup.id}`">
         <header class="cat-head">
-          <h2>{{ activeGroup.name }}</h2>
-          <p>{{ activeGroup.description }}</p>
+          <div class="cat-titles">
+            <h2>{{ activeGroup.name }}</h2>
+            <p>{{ activeGroup.description }}</p>
+          </div>
+          <input
+            v-model="panelQuery"
+            type="search"
+            class="nav-search"
+            placeholder="筛选品类"
+            aria-label="筛选品类"
+          />
         </header>
 
-        <div class="grid">
-          <RouterLink
-            v-for="c in activeGroup.categories"
-            :key="c.id"
-            class="card reveal"
-            :to="`/${c.id}`"
-          >
-            <span class="card-thumb" aria-hidden="true">
-              <img
-                v-if="thumbs[c.id]"
-                :src="thumbs[c.id]"
-                alt=""
-                width="320"
-                height="320"
-                loading="lazy"
-                decoding="async"
-              />
-              <svg v-else viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-                <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
-                <line x1="12" y1="22.08" x2="12" y2="12" />
-              </svg>
-            </span>
-            <span class="card-text">
-              <h3>{{ c.name }}</h3>
-              <p>{{ c.description }}</p>
-            </span>
-            <span class="card-arrow" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M9 18l6-6-6-6" />
-              </svg>
-            </span>
-          </RouterLink>
-        </div>
-      </section>
-
-      <!-- 品牌视图 -->
-      <nav v-if="viewMode === 'brand'" class="groups" aria-label="品牌">
-        <p class="groups-label">按品牌</p>
-        <ul class="group-list">
-          <li v-for="(b, i) in brandEntries ?? []" :key="b.brand">
-            <button
-              :id="`nav-b${i}`"
-              type="button"
-              class="group-item"
-              :class="{ active: b.brand === activeBrand }"
-              :aria-current="b.brand === activeBrand ? 'true' : undefined"
-              :tabindex="b.brand === activeBrand ? 0 : -1"
-              @click="selectBrand(b.brand)"
-              @keydown="onNavKeydown($event, i, brandEntries?.length ?? 0, (n) => selectBrand(brandEntries![n].brand))"
-            >
-              <span class="group-index" aria-hidden="true">{{ pad2(i + 1) }}</span>
-              <span class="group-text">
-                <span class="group-name">{{ b.brand }}</span>
-                <span class="group-count">{{ b.total }} 款</span>
-              </span>
-            </button>
-          </li>
-        </ul>
-      </nav>
-
-      <section v-if="viewMode === 'brand'" class="cat-panel" :aria-label="`品牌：${activeBrand}`">
-        <p v-if="brandLoading || !activeBrandEntry" class="panel-loading">正在统计各品牌的产品…</p>
-        <template v-else>
-          <header class="cat-head">
-            <h2>{{ activeBrandEntry.brand }}</h2>
-            <p>{{ activeBrandEntry.cats.length }} 个品类 · {{ activeBrandEntry.total }} 款产品</p>
-          </header>
-
+        <div class="panel-scroll">
           <div class="grid">
             <RouterLink
-              v-for="e in activeBrandEntry.cats"
-              :key="e.cat.id"
+              v-for="c in visibleSceneCats"
+              :key="c.id"
               class="card reveal"
-              :to="{ path: `/${e.cat.id}`, query: { brand: activeBrandEntry.brand } }"
+              :to="`/${c.id}`"
             >
               <span class="card-thumb" aria-hidden="true">
                 <img
-                  v-if="thumbs[e.cat.id]"
-                  :src="thumbs[e.cat.id]"
+                  v-if="thumbs[c.id]"
+                  :src="thumbs[c.id]"
                   alt=""
                   width="320"
                   height="320"
@@ -320,16 +323,119 @@ onBeforeUnmount(() => {})
                 </svg>
               </span>
               <span class="card-text">
-                <h3>{{ e.cat.name }}</h3>
-                <p>{{ e.cat.description }}</p>
+                <h3>{{ c.name }}</h3>
+                <p>{{ c.description }}</p>
               </span>
-              <span class="card-count">{{ e.count }} 款</span>
               <span class="card-arrow" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M9 18l6-6-6-6" />
                 </svg>
               </span>
             </RouterLink>
+          </div>
+          <p v-if="!visibleSceneCats.length" class="nav-empty">无匹配品类</p>
+        </div>
+      </section>
+
+      <!-- 品牌视图 -->
+      <nav v-if="viewMode === 'brand'" class="groups" aria-label="品牌">
+        <div class="groups-head">
+          <p class="groups-label">按品牌</p>
+          <input
+            v-model="navQuery"
+            type="search"
+            class="nav-search"
+            placeholder="筛选品牌"
+            aria-label="筛选品牌"
+          />
+        </div>
+        <ul class="group-list">
+          <li v-for="(b, i) in filteredBrands" :key="b.brand">
+            <button
+              :id="`nav-b${i}`"
+              type="button"
+              class="group-item"
+              :class="{ active: b.brand === activeBrand }"
+              :aria-current="b.brand === activeBrand ? 'true' : undefined"
+              :tabindex="b.brand === activeBrand ? 0 : -1"
+              @click="selectBrand(b.brand)"
+              @keydown="onNavKeydown($event, i, navBrandIds, (n) => selectBrand(filteredBrands[n].brand))"
+            >
+              <img
+                v-if="brandLogos[b.brand]"
+                class="brand-avatar"
+                :src="brandLogos[b.brand]"
+                :alt="b.brand"
+                width="44"
+                height="44"
+                loading="lazy"
+                decoding="async"
+              />
+              <span v-else class="group-index brand-initial" aria-hidden="true">{{ b.brand.slice(0, 1) }}</span>
+              <span class="group-text">
+                <span class="group-name">{{ b.brand }}</span>
+                <span class="group-count">{{ b.total }} 款</span>
+              </span>
+            </button>
+          </li>
+        </ul>
+        <p v-if="brandEntries && !filteredBrands.length" class="nav-empty">无匹配品牌</p>
+      </nav>
+
+      <section v-if="viewMode === 'brand'" class="cat-panel" :aria-label="`品牌：${activeBrand}`">
+        <p v-if="brandLoading || !activeBrandEntry" class="panel-loading">正在统计各品牌的产品…</p>
+        <template v-else>
+          <header class="cat-head">
+            <div class="cat-titles">
+              <h2>{{ activeBrandEntry.brand }}</h2>
+              <p>{{ activeBrandEntry.cats.length }} 个品类 · {{ activeBrandEntry.total }} 款产品</p>
+            </div>
+            <input
+              v-model="panelQuery"
+              type="search"
+              class="nav-search"
+              placeholder="筛选品类"
+              aria-label="筛选品类"
+            />
+          </header>
+
+          <div class="panel-scroll">
+            <div class="grid">
+              <RouterLink
+                v-for="e in visibleBrandCats"
+                :key="e.cat.id"
+                class="card reveal"
+                :to="{ path: `/${e.cat.id}`, query: { brand: activeBrandEntry.brand } }"
+              >
+                <span class="card-thumb" aria-hidden="true">
+                  <img
+                    v-if="thumbs[e.cat.id]"
+                    :src="thumbs[e.cat.id]"
+                    alt=""
+                    width="320"
+                    height="320"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <svg v-else viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                    <line x1="12" y1="22.08" x2="12" y2="12" />
+                  </svg>
+                </span>
+                <span class="card-text">
+                  <h3>{{ e.cat.name }}</h3>
+                  <p>{{ e.cat.description }}</p>
+                </span>
+                <span class="card-count">{{ e.count }} 款</span>
+                <span class="card-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 18l6-6-6-6" />
+                  </svg>
+                </span>
+              </RouterLink>
+            </div>
+            <p v-if="!visibleBrandCats.length" class="nav-empty">无匹配品类</p>
           </div>
         </template>
       </section>
@@ -482,6 +588,76 @@ onBeforeUnmount(() => {})
   margin-bottom: 10px;
 }
 
+/* ---- 栏头：label + 栏内筛选框（滚动时固定，不随列表滚走） ---- */
+.groups-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.groups-head .groups-label {
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+
+.nav-search {
+  width: 108px;
+  padding: 5px 9px;
+  font: inherit;
+  font-size: 12px;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xs);
+  outline: none;
+  transition:
+    border-color var(--dur-fast) var(--ease-smooth),
+    background var(--dur-fast) var(--ease-smooth);
+}
+
+.nav-search::placeholder {
+  color: var(--text-faint);
+}
+
+.nav-search:focus-visible {
+  border-color: var(--border-brand);
+  outline: 2px solid var(--brand);
+  outline-offset: 1px;
+}
+
+.nav-empty {
+  padding: 8px 2px;
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+/* 品牌导航项的 logo：public/images/brands/<品牌名>.<ext>（透明背景），
+   构建期扫描、放入即生效；无 logo 时 fallback 为品牌首字头像 */
+.brand-avatar {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xs);
+  background: var(--surface);
+  object-fit: cover;
+  transition: border-color var(--dur-fast) var(--ease-smooth);
+}
+
+.group-item.active .brand-avatar {
+  border-color: var(--brand);
+}
+
+/* 首字头像：与 logo 同尺寸同框，字体小一点防止顶框 */
+.brand-initial {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
 .group-list {
   display: flex;
   gap: 6px;
@@ -585,11 +761,22 @@ onBeforeUnmount(() => {})
 
 .cat-head {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 10px;
   padding-bottom: 12px;
   margin-bottom: 14px;
   border-bottom: 1px solid var(--border);
+}
+
+.cat-titles {
+  min-width: 0;
+  flex: 1;
+}
+
+/* 右栏搜索框略宽（品类名比品牌名长） */
+.cat-head .nav-search {
+  flex-shrink: 0;
+  width: 128px;
 }
 
 .cat-head h2 {
@@ -741,7 +928,10 @@ onBeforeUnmount(() => {})
   }
 }
 
-/* ---- 宽屏：左导航固定竖排 ---- */
+/* ---- 宽屏：左导航固定竖排，两栏各自限高内滚 ----
+   左栏 60 个品牌、右栏 40 张品类卡都超出视口：整页滚动会互相遮挡，
+   所以两栏都以「栏头固定 + 列表内滚」的方式约束在视口高度内，
+   点左栏低处的品牌时右栏面板原地不动。 */
 @media (min-width: 900px) {
   .browse {
     grid-template-columns: 218px minmax(0, 1fr);
@@ -752,18 +942,63 @@ onBeforeUnmount(() => {})
   .groups {
     position: sticky;
     top: calc(var(--header-h) + 20px);
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - var(--header-h) - 96px);
   }
 
   .group-list {
     flex-direction: column;
-    overflow: visible;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 0;
     gap: 2px;
+    padding-right: 2px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+
+  .group-list::-webkit-scrollbar {
+    display: block;
+    width: 6px;
+  }
+
+  .group-list::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 3px;
   }
 
   .group-item {
     width: 100%;
     min-width: 0;
     border-radius: var(--radius-xs);
+  }
+
+  .cat-panel {
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - var(--header-h) - 96px);
+  }
+
+  .cat-head {
+    flex-shrink: 0;
+  }
+
+  .panel-scroll {
+    overflow-y: auto;
+    min-height: 0;
+    padding-right: 4px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+
+  .panel-scroll::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .panel-scroll::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 3px;
   }
 }
 
