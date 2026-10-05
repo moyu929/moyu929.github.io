@@ -340,8 +340,9 @@ def main():
                 continue
             if not pid:
                 continue
-            targets.append((cid, p['id'], pid, (keys, types, p.get('name'), how,
-                                                p.get('official_price'))))
+            targets.append((cid, p['id'], pid,
+                            (keys, types, p.get('name'), how,
+                             p.get('official_price'), p.get('verify_url'))))
     if args.report:
         miss = [t for t in targets if not t[2]]
         print('小米产品 %d 款，其中 %d 款反查不到 product_id' % (len(targets), len(miss)))
@@ -359,7 +360,7 @@ def main():
 
     def job(t):
         cid, prod, pid, extra = t
-        keys, types, _name, _how, _cur = extra
+        keys, types, _name, _how, _cur, _cur_url = extra
         d = fetch(pid)
         done[0] += 1
         if done[0] % 25 == 0:
@@ -380,6 +381,12 @@ def main():
         if gname and _name and ACCESSORY_RE.search(gname) and not ACCESSORY_RE.search(str(_name)):
             return (cid, prod, None)
         fills = {}
+        # verify_url 回写：product_id 已经定位到了，链接是确定推导出来的，
+        # 不写回去等于白定位 —— 173 款小米产品的 verify_url 长期是「查不到」，
+        # 后续任何复核都要重新枚举一遍。
+        if 'verify_url' in keys and blank(_cur_url):
+            fills['verify_url'] = ('https://www.mi.com/shop/buy/detail?product_id=%s' % pid,
+                                   'product_id=%s' % pid)
         # 价格：price 现价 -> official_price，market_price 划线价 -> ref_price
         now = num_of(gi.get('price') or '')
         mkt = num_of(gi.get('market_price') or '')
