@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, onMounted, onBeforeUnmount } from 'vue'
+import { computed, ref, watch, onMounted, onBeforeUnmount } from 'vue'
 import type { CategorySchema, Product, FieldDef } from '../types'
 import { formatValue, tagsOf, numberOf } from '../format'
 import { imageUrl } from '../data'
@@ -14,7 +14,7 @@ const props = defineProps<{
 
 const emit = defineEmits<{ toggleCompare: [id: string] }>()
 
-useScrollReveal()
+const { setup: setupReveal } = useScrollReveal()
 
 /** 卡片上展示的字段（与 ProductCard 的 grid slot 一致） */
 const gridFields = computed(() => props.schema.fields.filter((f) => f.card === 'grid'))
@@ -38,6 +38,17 @@ const yearGroups = computed(() => {
   return Array.from(buckets.entries())
     .sort((a, b) => factor * (b[0] - a[0]))
     .map(([year, items]) => ({ year, products: sortByMonth(items, factor) }))
+})
+
+/**
+ * 年份组挂了 .reveal 滚动揭示；筛选/排序/换向都会重建年份组——
+ * Vue 按 g.year 复用 DOM，保留下来的年份组带着 .revealed 不受影响，
+ * 但**新出现的年份组是全新节点**，没人观察它就永远停在 opacity:0：
+ * 卡片隐形却仍在文档流里（悬浮栏能触发，画面只剩时间轴线）。
+ * 所以列表内容一变就要把新的 .reveal 元素重新交给观察器。
+ */
+watch(yearGroups, () => {
+  requestAnimationFrame(() => setupReveal())
 })
 
 /**
