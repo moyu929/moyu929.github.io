@@ -9,6 +9,7 @@ import { computed, onMounted, onBeforeUnmount, ref, watch } from 'vue'
 import { RouterLink } from 'vue-router'
 import { categoryGroups, loadCategory } from '../data'
 import type { CategoryGroup } from '../types'
+import thumbs from 'virtual:category-thumbs'
 import { useScrollReveal } from '../useScrollReveal'
 
 const { setup: setupReveal } = useScrollReveal()
@@ -233,8 +234,26 @@ onBeforeUnmount(() => {})
             class="card reveal"
             :to="`/${c.id}`"
           >
-            <h3>{{ c.name }}</h3>
-            <p>{{ c.description }}</p>
+            <span class="card-thumb" aria-hidden="true">
+              <img
+                v-if="thumbs[c.id]"
+                :src="thumbs[c.id]"
+                alt=""
+                width="320"
+                height="320"
+                loading="lazy"
+                decoding="async"
+              />
+              <svg v-else viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                <line x1="12" y1="22.08" x2="12" y2="12" />
+              </svg>
+            </span>
+            <span class="card-text">
+              <h3>{{ c.name }}</h3>
+              <p>{{ c.description }}</p>
+            </span>
             <span class="card-arrow" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M9 18l6-6-6-6" />
@@ -284,8 +303,26 @@ onBeforeUnmount(() => {})
               class="card reveal"
               :to="{ path: `/${e.cat.id}`, query: { brand: activeBrandEntry.brand } }"
             >
-              <h3>{{ e.cat.name }}</h3>
-              <p>{{ e.cat.description }}</p>
+              <span class="card-thumb" aria-hidden="true">
+                <img
+                  v-if="thumbs[e.cat.id]"
+                  :src="thumbs[e.cat.id]"
+                  alt=""
+                  width="320"
+                  height="320"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <svg v-else viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                  <line x1="12" y1="22.08" x2="12" y2="12" />
+                </svg>
+              </span>
+              <span class="card-text">
+                <h3>{{ e.cat.name }}</h3>
+                <p>{{ e.cat.description }}</p>
+              </span>
               <span class="card-count">{{ e.count }} 款</span>
               <span class="card-arrow" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
@@ -574,11 +611,14 @@ onBeforeUnmount(() => {})
 }
 
 /* 品类卡：靠底色与内边距分层，不靠边框+阴影堆叠。
-   卡片数量多（一屏十几个），阴影一多就全是噪音。 */
+   卡片数量多（一屏十几个），阴影一多就全是噪音。
+   左侧缩略图 + 右侧文字两列，用户不读字也能靠图找到品类。 */
 .card {
   position: relative;
-  display: block;
-  padding: 13px 34px 13px 14px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 11px 34px 11px 11px;
   border: 1px solid var(--border-soft);
   border-radius: var(--radius-sm);
   background: var(--surface);
@@ -598,6 +638,37 @@ onBeforeUnmount(() => {})
 
 .card:active {
   transform: translateY(0);
+}
+
+/* 品类缩略图：与产品卡（ProductCard .thumb）同款视觉，等比缩小 */
+.card-thumb {
+  width: 45px;
+  height: 54px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--surface-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-thumb svg {
+  width: 20px;
+  height: 20px;
+  color: var(--text-faint);
+  opacity: 0.4;
+}
+
+/* 文本列：h3 + 描述，压缩到缩略图右侧 */
+.card-text {
+  min-width: 0;
 }
 
 .card h3 {
