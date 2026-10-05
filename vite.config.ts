@@ -59,9 +59,40 @@ function categoryThumbs() {
   }
 }
 
+/**
+ * 构建期生成「品牌 → logo 图」映射，虚拟模块 `virtual:brand-logos`。
+ *
+ * 约定：把品牌 logo（透明背景 PNG/WebP/SVG）放进 `public/images/brands/`，
+ * 文件名 = 品牌名（如 `美的.webp`、`海尔.png`），构建即自动出现在品牌导航。
+ * 目录为空时映射为空对象，前端 fallback 到品牌首字头像。
+ */
+function brandLogos() {
+  return {
+    name: 'virtual-brand-logos',
+    resolveId(id: string) {
+      if (id === 'virtual:brand-logos') return '\0virtual:brand-logos'
+    },
+    load(id: string) {
+      if (id !== '\0virtual:brand-logos') return
+      const dir = fileURLToPath(new URL('./public/images/brands', import.meta.url))
+      const logos: Record<string, string> = {}
+      try {
+        for (const f of readdirSync(dir)) {
+          const ext = f.lastIndexOf('.')
+          if (ext <= 0) continue
+          logos[f.slice(0, ext)] = `${BASE}images/brands/${f}`
+        }
+      } catch {
+        // 目录不存在 = 还没有任何 logo，映射为空即可
+      }
+      return `export default ${JSON.stringify(logos)}`
+    },
+  }
+}
+
 export default defineConfig({
   base: BASE,
-  plugins: [vue(), spaFallback(), categoryThumbs()],
+  plugins: [vue(), spaFallback(), categoryThumbs(), brandLogos()],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),

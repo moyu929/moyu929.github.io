@@ -5,3 +5,9 @@ declare module 'virtual:category-thumbs' {
   const thumbs: Record<string, string>
   export default thumbs
 }
+
+declare module 'virtual:brand-logos' {
+  /** 品牌名 → logo 图 URL（public/images/brands/<品牌名>.<ext>，构建期扫描） */
+  const logos: Record<string, string>
+  export default logos
+}
