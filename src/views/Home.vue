@@ -1,15 +1,34 @@
 <script setup lang="ts">
 /**
- * 首页：一级品类分组导航。
- * 左侧竖排一级品类（环境与空气 / 厨房大家电 / …），右侧展示该组下的具体品类。
+ * 首页：一级品类分组导航（默认）与品牌导航两种浏览方式。
+ * 左侧竖排导航（一级品类 / 品牌），右侧展示该组下的具体品类。
  * 分组比品类更稳定，新增品类只需改 categories.json，不必动这里的结构。
+ * 品牌视图的「哪个品牌在哪些品类里有几款」按需异步统计（首次切换才加载全部产品）。
  */
-import { computed, onMounted, onBeforeUnmount, ref } from 'vue'
+import { computed, onMounted, onBeforeUnmount, ref, watch } from 'vue'
 import { RouterLink } from 'vue-router'
-import { categoryGroups } from '../data'
+import { categoryGroups, loadCategory } from '../data'
+import type { CategoryGroup } from '../types'
 import { useScrollReveal } from '../useScrollReveal'
 
 const { setup: setupReveal } = useScrollReveal()
+
+type ViewMode = 'scene' | 'brand'
+const VIEW_MODE_KEY = 'home.viewMode'
+
+/** 浏览方式：使用场景（默认）/ 品牌。记住用户上次的选择 */
+const viewMode = ref<ViewMode>(
+  localStorage.getItem(VIEW_MODE_KEY) === 'brand' ? 'brand' : 'scene',
+)
+watch(viewMode, (m) => {
+  localStorage.setItem(VIEW_MODE_KEY, m)
+  if (m === 'brand') void ensureBrandIndex()
+  requestAnimationFrame(() => setupReveal())
+})
+
+function switchMode(m: ViewMode) {
+  viewMode.value = m
+}
 
 /** 选中的一级品类 id；默认第一个，保证首屏右侧不是空白 */
 const activeId = ref(categoryGroups[0]?.id ?? '')
@@ -29,18 +48,20 @@ function pad2(n: number) {
 }
 
 /**
- * 键盘可达性：左右/上下方向键在分组间移动。
+ * 键盘可达性：左右/上下方向键在导航项间移动。
  * 用 roving tabindex 让整列只有一个可 Tab 项，方向键负责在其余项间移动。
  */
-function onGroupKeydown(e: KeyboardEvent, index: number) {
+function onNavKeydown(e: KeyboardEvent, index: number, total: number, select: (i: number) => void) {
   const delta = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key]
   if (delta === undefined) return
   e.preventDefault()
-  const next = Math.min(Math.max(index + delta, 0), categoryGroups.length - 1)
-  selectGroup(categoryGroups[next].id)
+  const next = Math.min(Math.max(index + delta, 0), total - 1)
+  select(next)
   // 焦点跟着走，否则键盘用户按完方向键焦点还留在原处
   requestAnimationFrame(() => {
-    document.querySelector<HTMLElement>(`#group-${categoryGroups[next].id}`)?.focus()
+    document
+      .querySelector<HTMLElement>(`#nav-${viewMode.value === 'scene' ? categoryGroups[next].id : `b${next}`}`)
+      ?.focus()
   })
 }
 
@@ -50,8 +71,79 @@ function selectGroup(id: string) {
   requestAnimationFrame(() => setupReveal())
 }
 
+// ---------------------------------------------------------------- 品牌视图
+
+interface BrandCatEntry {
+  cat: CategoryGroup['categories'][number]
+  count: number
+}
+interface BrandEntry {
+  brand: string
+  total: number
+  cats: BrandCatEntry[]
+}
+
+/** 品牌 → 各品类产品数。首次切到品牌视图才统计（要读全部品类的产品），之后缓存 */
+const brandEntries = ref<BrandEntry[] | null>(null)
+const brandLoading = ref(false)
+const activeBrand = ref('')
+
+const activeBrandEntry = computed(
+  () => brandEntries.value?.find((b) => b.brand === activeBrand.value) ?? null,
+)
+
+async function ensureBrandIndex() {
+  if (brandEntries.value || brandLoading.value) return
+  brandLoading.value = true
+  try {
+    const catIds = categoryGroups.flatMap((g) => g.categories.map((c) => c.id))
+    const catById = new Map(categoryGroups.flatMap((g) => g.categories.map((c) => [c.id, c])))
+    const datas = await Promise.all(catIds.map((id) => loadCategory(id).catch(() => null)))
+    const byBrand = new Map<string, Map<string, number>>()
+    catIds.forEach((id, i) => {
+      const d = datas[i]
+      if (!d) return
+      for (const p of d.products) {
+        const brand = String(p.brand ?? '').trim()
+        if (!brand || brand === '查不到') continue
+        let cats = byBrand.get(brand)
+        if (!cats) byBrand.set(brand, (cats = new Map()))
+        cats.set(id, (cats.get(id) ?? 0) + 1)
+      }
+    })
+    const entries: BrandEntry[] = [...byBrand.entries()].map(([brand, cats]) => ({
+      brand,
+      total: [...cats.values()].reduce((a, b) => a + b, 0),
+      cats: [...cats.entries()]
+        .map(([id, count]) => ({ cat: catById.get(id)!, count }))
+        .filter((e) => e.cat)
+        // 品类按目录顺序排，和场景视图里的排布一致
+        .sort(
+          (a, b) =>
+            catIds.indexOf(a.cat.id) - catIds.indexOf(b.cat.id),
+        ),
+    }))
+    // 品牌按产品总数降序，同数按名称（品牌中立，不做小米优先）
+    entries.sort(
+      (a, b) => b.total - a.total || a.brand.localeCompare(b.brand, 'zh-Hans-CN'),
+    )
+    brandEntries.value = entries
+    if (!entries.find((b) => b.brand === activeBrand.value)) {
+      activeBrand.value = entries[0]?.brand ?? ''
+    }
+  } finally {
+    brandLoading.value = false
+  }
+}
+
+function selectBrand(brand: string) {
+  activeBrand.value = brand
+  requestAnimationFrame(() => setupReveal())
+}
+
 onMounted(() => {
   requestAnimationFrame(() => setupReveal())
+  if (viewMode.value === 'brand') void ensureBrandIndex()
 })
 
 onBeforeUnmount(() => {})
@@ -73,9 +165,34 @@ onBeforeUnmount(() => {})
       </div>
     </header>
 
-    <!-- 一级品类导航 + 该组品类 -->
+    <!-- 浏览方式切换：使用场景（默认）/ 品牌 -->
+    <div class="container mode-row">
+      <div class="mode-switch" role="group" aria-label="浏览方式">
+        <button
+          type="button"
+          class="mode-btn"
+          :class="{ active: viewMode === 'scene' }"
+          :aria-pressed="viewMode === 'scene'"
+          @click="switchMode('scene')"
+        >
+          按使用场景
+        </button>
+        <button
+          type="button"
+          class="mode-btn"
+          :class="{ active: viewMode === 'brand' }"
+          :aria-pressed="viewMode === 'brand'"
+          @click="switchMode('brand')"
+        >
+          按品牌
+        </button>
+      </div>
+    </div>
+
+    <!-- 一级品类（或品牌）导航 + 该组品类 -->
     <main id="main" class="container browse">
-      <nav class="groups" aria-label="一级品类">
+      <!-- 场景视图 -->
+      <nav v-if="viewMode === 'scene'" class="groups" aria-label="一级品类">
         <p class="groups-label">按使用场景</p>
         <ul class="group-list">
           <li v-for="(g, i) in categoryGroups" :key="g.id">
@@ -87,7 +204,7 @@ onBeforeUnmount(() => {})
               :aria-current="g.id === activeId ? 'true' : undefined"
               :tabindex="g.id === activeId ? 0 : -1"
               @click="selectGroup(g.id)"
-              @keydown="onGroupKeydown($event, i)"
+              @keydown="onNavKeydown($event, i, categoryGroups.length, (n) => selectGroup(categoryGroups[n].id))"
             >
               <span class="group-index" aria-hidden="true">{{ pad2(i + 1) }}</span>
               <span class="group-text">
@@ -99,11 +216,7 @@ onBeforeUnmount(() => {})
         </ul>
       </nav>
 
-      <section
-        v-if="activeGroup"
-        class="cat-panel"
-        :aria-labelledby="`group-${activeGroup.id}`"
-      >
+      <section v-if="viewMode === 'scene' && activeGroup" class="cat-panel" :aria-labelledby="`group-${activeGroup.id}`">
         <header class="cat-head">
           <h2>{{ activeGroup.name }}</h2>
           <p>{{ activeGroup.description }}</p>
@@ -125,6 +238,59 @@ onBeforeUnmount(() => {})
             </span>
           </RouterLink>
         </div>
+      </section>
+
+      <!-- 品牌视图 -->
+      <nav v-if="viewMode === 'brand'" class="groups" aria-label="品牌">
+        <p class="groups-label">按品牌</p>
+        <ul class="group-list">
+          <li v-for="(b, i) in brandEntries ?? []" :key="b.brand">
+            <button
+              :id="`nav-b${i}`"
+              type="button"
+              class="group-item"
+              :class="{ active: b.brand === activeBrand }"
+              :aria-current="b.brand === activeBrand ? 'true' : undefined"
+              :tabindex="b.brand === activeBrand ? 0 : -1"
+              @click="selectBrand(b.brand)"
+              @keydown="onNavKeydown($event, i, brandEntries?.length ?? 0, (n) => selectBrand(brandEntries![n].brand))"
+            >
+              <span class="group-index" aria-hidden="true">{{ pad2(i + 1) }}</span>
+              <span class="group-text">
+                <span class="group-name">{{ b.brand }}</span>
+                <span class="group-count">{{ b.total }} 款</span>
+              </span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <section v-if="viewMode === 'brand'" class="cat-panel" :aria-label="`品牌：${activeBrand}`">
+        <p v-if="brandLoading || !activeBrandEntry" class="panel-loading">正在统计各品牌的产品…</p>
+        <template v-else>
+          <header class="cat-head">
+            <h2>{{ activeBrandEntry.brand }}</h2>
+            <p>{{ activeBrandEntry.cats.length }} 个品类 · {{ activeBrandEntry.total }} 款产品</p>
+          </header>
+
+          <div class="grid">
+            <RouterLink
+              v-for="e in activeBrandEntry.cats"
+              :key="e.cat.id"
+              class="card reveal"
+              :to="{ path: `/${e.cat.id}`, query: { brand: activeBrandEntry.brand } }"
+            >
+              <h3>{{ e.cat.name }}</h3>
+              <p>{{ e.cat.description }}</p>
+              <span class="card-count">{{ e.count }} 款</span>
+              <span class="card-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </span>
+            </RouterLink>
+          </div>
+        </template>
       </section>
     </main>
   </div>
@@ -201,6 +367,55 @@ onBeforeUnmount(() => {})
   margin-inline: auto;
   animation: titleIn 0.6s var(--ease-out) both;
   animation-delay: 0.16s;
+}
+
+/* ============================================================
+   浏览方式切换：分段控件
+   ============================================================ */
+.mode-row {
+  display: flex;
+  justify-content: center;
+  padding-block: 22px 0;
+}
+
+.mode-switch {
+  display: inline-flex;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+
+.mode-btn {
+  padding: 6px 16px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-xs);
+  background: transparent;
+  color: var(--text-muted);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 550;
+  cursor: pointer;
+  transition:
+    background var(--dur-fast) var(--ease-smooth),
+    color var(--dur-fast) var(--ease-smooth),
+    border-color var(--dur-fast) var(--ease-smooth);
+}
+
+.mode-btn:hover {
+  color: var(--text);
+}
+
+.mode-btn.active {
+  background: var(--brand-surface);
+  border-color: var(--border-brand);
+  color: var(--brand);
+}
+
+.mode-btn:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
 }
 
 /* ============================================================
@@ -397,6 +612,23 @@ onBeforeUnmount(() => {})
   -webkit-line-clamp: 2;
   line-clamp: 2;
   -webkit-box-orient: vertical;
+}
+
+/* 品牌视图卡片右下的品类内产品数 */
+.card-count {
+  position: absolute;
+  right: 13px;
+  bottom: 11px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+}
+
+.panel-loading {
+  padding: 28px 2px;
+  font-size: 13px;
+  color: var(--text-faint);
 }
 
 .card-arrow {
