@@ -101,6 +101,12 @@ KEY_MAP = {
     '净水容量': 'clean_tank', '清水箱容量': 'clean_tank', '净水箱容量': 'clean_tank',
     '污水容量': 'dirty_tank', '污水箱容量': 'dirty_tank', '回收箱容量': 'dirty_tank',
     '主机重量': 'weight', '滚刷类型': 'brush', '洗地介质': 'media',
+    # —— 晾衣机 2026-10-05 实测商城写法（Pro / 2Pro 的 class_parameters）
+    '最大承重量': 'load', '额定承重': 'load', '承重': 'load',
+    '晾杆最大长度': 'length', '晾杆长度': 'length',
+    '灯光': 'light', '照明': 'light',
+    '烘干功能': 'dry', '风干/烘干': 'dry', '风干烘干': 'dry',
+    '智能控制': 'app', 'APP控制': 'app', '智能互联': 'app',
 }
 
 # `is_page_show` 为真的条目是商城摆在「关键参数」栏的；下面这几个是同一份
@@ -133,8 +139,10 @@ def product_id_of(p):
 
 def norm(s):
     """商品名归一：去掉营销后缀、空白与全角符号，让「米家空气净化器 5 Pro」
-    和商城文案「米家空气净化器 5 Pro 599元 起」能对上。"""
-    s = re.sub(r'[\d]+\s*元.*$', '', str(s or ''))
+    和商城文案「米家空气净化器 5 Pro 599元 起」能对上。
+    价格带小数（如 1881.18元）时 [\d]+\s*元 会在小数点前断开残留「1881」，
+    因此把小数点一并吃掉（2026-10-05 晾衣机批次实测）。"""
+    s = re.sub(r'[\d.]+\s*元.*$', '', str(s or ''))
     return re.sub(r'[\s　（）()·、,，/]', '', s)
 
 
@@ -153,7 +161,7 @@ def norm_soft(s):
     （「米家无线吸尘器4」是「米家无线吸尘器4 Pro / 4 Max」的前缀，
     包含式匹配会把 Pro/Max 的价格写到 4 头上）。
     """
-    s = re.sub(r'[\d]+\s*元.*$', '', str(s or ''))
+    s = re.sub(r'[\d.]+\s*元.*$', '', str(s or ''))
     s = re.sub(r'[（(]\s*(19|20)\d{2}\s*款?\s*[)）]', '', s)
     s = COLOR_TOKENS.sub('', s)
     return re.sub(r'[\s　（）()·、,，/]', '', s)

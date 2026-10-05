@@ -1,0 +1,42 @@
+{
+  "id": "dr_3",
+  "name": "米家智能晾衣机 3",
+  "model_code": "MJLYJ5W2",
+  "miot_model": "xiaomi.airer.0003",
+  "type": "电动晾衣机",
+  "official_price": 1646,
+  "second_hand": "—",
+  "load": "35kg",
+  "length": "最大 2.2m",
+  "light": "支持（照明 36W）",
+  "dry": "查不到",
+  "app": "米家 APP，小爱语音",
+  "size": "1345×450×98mm（收缩状态）",
+  "year": 2026,
+  "pros": [
+    "额定承重 35kg",
+    "升降行程 1.3m",
+    "4 分区晾晒（平铺/小件/被罩大件）",
+    "运行噪音 ≤55dB(A)"
+  ],
+  "cons": [
+    "收缩厚度 98mm，对吊顶空间有要求"
+  ],
+  "tags": [
+    "电动晾衣机"
+  ],
+  "verify_status": "已核验（多源）",
+  "verify_date": "2026-10-05",
+  "verify_source": [
+    "百度百科",
+    "IT之家",
+    "新浪",
+    "小米商城",
+    "米家官方说明书"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230807412",
+  "change_log": "2026-10-01 经官方/权威来源核对并补入参数（补丁 2026-10-01-dryerrack-footspa-coffee.json）；2026-10-05 补全：length=最大 2.2m（说明书使用章节图示标注晾杆 2.2m）、app=米家 APP/小爱语音（说明书「连接米家APP后可通过米家APP调节灯光亮度与色温」；官方接入页 xiaomi.airer.0003 withMiHome=1/withAi=1）、miot_model=xiaomi.airer.0003（官方接入页精确返回名称「米家智能晾衣机 3」）、verify_url=商城商品页（来源：米家官方说明书 PDF[接入页 xiaomi.airer.0003 下发]，铭牌型号 MJLYJ5W2 与库内一致；小米商城商品页）",
+  "updated_at": "2026-10-05",
+  "img": "dr_3.webp",
+  "brand": "小米"
+}

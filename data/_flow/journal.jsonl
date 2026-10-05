@@ -5201,3 +5201,9 @@
 {"ts":"2026-10-04T15:01:16.728Z","actor":"collect-A-yi","branch":"collect/yi-hair-clipper","action":"submit","key":"hair-clipper/hc_2","from":"draft","to":"intake","batch":"17b1c2bc","supersedes":true}
 {"ts":"2026-10-04T15:01:16.739Z","actor":"collect-A-yi","branch":"collect/yi-hair-clipper","action":"submit","key":"hair-clipper/hc_2_set","from":"draft","to":"intake","batch":"17b1c2bc","supersedes":true}
 {"ts":"2026-10-04T15:01:16.748Z","actor":"collect-A-yi","branch":"collect/yi-hair-clipper","action":"submit","key":"hair-clipper/hc_kids","from":"draft","to":"intake","batch":"17b1c2bc","supersedes":true}
+{"ts":"2026-10-04T14:46:47.141Z","actor":"collect-A","branch":"collect/yi-dryer-rack","action":"submit","key":"dryer-rack/dr_3","from":"draft","to":"intake","batch":"74c84915","supersedes":true}
+{"ts":"2026-10-04T14:46:47.153Z","actor":"collect-A","branch":"collect/yi-dryer-rack","action":"submit","key":"dryer-rack/dr_2pro","from":"draft","to":"intake","batch":"74c84915","supersedes":true}
+{"ts":"2026-10-04T14:46:47.162Z","actor":"collect-A","branch":"collect/yi-dryer-rack","action":"submit","key":"dryer-rack/dr_pro","from":"draft","to":"intake","batch":"74c84915","supersedes":true}
+{"ts":"2026-10-04T14:46:47.171Z","actor":"collect-A","branch":"collect/yi-dryer-rack","action":"submit","key":"dryer-rack/dr_3c","from":"draft","to":"intake","batch":"74c84915","supersedes":true}
+{"ts":"2026-10-04T14:46:47.182Z","actor":"collect-A","branch":"collect/yi-dryer-rack","action":"submit","key":"dryer-rack/dr_dual2","from":"draft","to":"intake","batch":"74c84915","supersedes":true}
+{"ts":"2026-10-04T14:46:47.191Z","actor":"collect-A","branch":"collect/yi-dryer-rack","action":"submit","key":"dryer-rack/dr_invisible","from":"draft","to":"intake","batch":"74c84915","supersedes":true}

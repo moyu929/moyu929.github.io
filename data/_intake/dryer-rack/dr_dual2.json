@@ -1,0 +1,43 @@
+{
+  "id": "dr_dual2",
+  "name": "米家智能双控晾衣机 2",
+  "model_code": "MJLYJ6ND",
+  "miot_model": "xiaomi.airer.0004",
+  "type": "电动晾衣机",
+  "official_price": 1881.18,
+  "second_hand": "—",
+  "load": "40kg",
+  "length": "2m（双杆）",
+  "light": "支持（照明 50W）",
+  "dry": "查不到",
+  "app": "米家 APP，小爱语音",
+  "size": "1200×400×70mm",
+  "year": null,
+  "pros": [
+    "额定承重 40kg（单杆 20kg）",
+    "双杆各 2m",
+    "双控电动升降（两杆可分别控制）",
+    "照明 50W",
+    "米家 APP / 小爱语音"
+  ],
+  "cons": [
+    "官方资料未见风干/烘干记载"
+  ],
+  "tags": [
+    "电动晾衣机"
+  ],
+  "verify_status": "已核验（多源）",
+  "verify_date": "2026-10-05",
+  "verify_source": [
+    "百度百科",
+    "IT之家",
+    "新浪",
+    "小米商城",
+    "米家官方说明书"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230809201",
+  "change_log": "2026-10-01 经官方/权威来源核对并补入参数（补丁 2026-10-01-dryerrack-footspa-coffee.json）；2026-10-05 补全：model_code=MJLYJ6ND、size=1200×400×70mm、light=照明 50W（米家官方说明书铭牌）；load 订正：35kg→40kg（说明书「额定承重40kg，单根晾杆承重20kg」；原 35kg 系媒体对上一代双控的记载）；length=2m（双杆）（说明书使用章节图示标注 2m，并替换 cons 中「查不到晾杆长度」）；app=米家 APP/小爱语音（说明书+官方接入页 xiaomi.airer.0004 withMiHome=1/withAi=1）；miot_model=xiaomi.airer.0004（官方接入页精确返回「米家智能双控晾衣机 2」）；pros 重写：剔除无法溯源到本代的「波浪型晾杆」；verify_url=商城商品页（来源：米家官方说明书 PDF[接入页 xiaomi.airer.0004 下发]、小米商城商品页）",
+  "updated_at": "2026-10-05",
+  "img": "dr_dual2.webp",
+  "brand": "小米"
+}

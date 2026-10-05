@@ -1,0 +1,41 @@
+{
+  "id": "dr_invisible",
+  "name": "米家智能隐形晾衣机 单杆",
+  "model_code": "MJLYJ5SN",
+  "miot_model": "xiaomi.airer.lyj3qr",
+  "type": "隐形晾衣机",
+  "official_price": 1175,
+  "second_hand": "—",
+  "load": "30kg",
+  "length": "2.0m（单杆）",
+  "light": "线性灯（照明 36W）",
+  "dry": "查不到",
+  "app": "米家 APP，小爱语音",
+  "size": "2066×100×118mm",
+  "year": null,
+  "pros": [
+    "隐形嵌入吊顶",
+    "分体快拆结构不伤吊顶",
+    "线性灯照明",
+    "额定承重 30kg"
+  ],
+  "cons": [
+    "单杆晾晒量小于双杆款"
+  ],
+  "tags": [
+    "隐形晾衣机"
+  ],
+  "verify_status": "已核验（多源）",
+  "verify_date": "2026-10-05",
+  "verify_source": [
+    "IT之家",
+    "太平洋科技",
+    "小米商城",
+    "米家官方说明书"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230805816",
+  "change_log": "2026-10-01 补入参数：双杆 2.4 米、72W 线性灯、分体快拆结构；2026-10-05 补全：model_code=MJLYJ5SN、load=30kg、size=2066×100×118mm、light=线性灯（照明 36W，说明书照明功率）（米家官方说明书铭牌，接入页 xiaomi.airer.lyj3qr 下发）；app=米家 APP/小爱语音（说明书+官方接入页 withMiHome=1/withAi=1）；miot_model=xiaomi.airer.lyj3qr（miot-spec 与官方接入页同名「米家智能隐形晾衣机 单杆2米」）；length=2.0m（单杆）保持：产品名与说明书安装孔距 1959mm 自洽；pros 增补承重；verify_url 改为商城商品页（原 IT之家报道链接见历史 change_log；来源：米家官方说明书、小米商城商品页）",
+  "updated_at": "2026-10-05",
+  "img": "dr_invisible.webp",
+  "brand": "小米"
+}
