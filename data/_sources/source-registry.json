@@ -1,0 +1,675 @@
+{
+  "_说明": "数据来源注册表。站点**能否连通**以 scripts/probe-sources.py 的实测为准，不凭印象登记。本文件入库，供溯源与后续接入参考。\n\n⚠️ 2026-10-05 重要提醒：`status`/`verdict` 记的是**能否连通**，**不等于能否解析出规格表**。实测反例：科沃斯 / 添可 / 石头官方站 HTTP 200，但商品页是 SPA，抽 0 个规格字段。判定可用性请用 `scripts/probe-specs.py`（判据是实测抽到的规格字段数 ≥ 5，且必须探**商品详情页**，首页探了必然 0）。",
+  "_探测口径": "每站连续 3 次请求（间隔 1s），记录 HTTP 码 / 下载字节 / 是否服务端渲染出规格表；首次可抓而后段劣化判 rate-limited，命中人机验证判 blocked。",
+  "updated": "2026-10-04",
+  "probeCommand": "python scripts/probe-sources.py",
+  "discoverCommand": "python scripts/discover-sources.py [--github]",
+  "tiers": {
+    "official": {
+      "rank": 1,
+      "name": "品牌官方",
+      "rule": "最高优先级。官方商城 / 官网规格页 / 官方说明书 PDF。冲突时以本档为准。",
+      "canDefineValue": true
+    },
+    "third": {
+      "rank": 2,
+      "name": "权威第三方",
+      "rule": "有编辑团队的商业规格站（ZOL / 太平洋 / 苏宁 / 京东 / IT168 / 天极）。用于补齐官方未公开字段；同一数值需至少两处相互印证。",
+      "canDefineValue": true
+    },
+    "community": {
+      "rank": 3,
+      "name": "社区 / 个人维护数据库",
+      "rule": "爱好者或社区维护的型号库、设备库、开源数据集（含 home.miot-spec.com）。价值在于**线索**与**型号清单补全**，不得单独定值；若该站自己标注了原始出处，必须回溯到那个出处取证，而不是引用它的数值。",
+      "canDefineValue": false
+    },
+    "media": {
+      "rank": 4,
+      "name": "一般媒体（含 AI 聚合）",
+      "rule": "只能印证，不能单独定值。至少两家彼此独立的媒体一致、且不涉及安全/电气额定/医疗健康时，可作补充值，verify_status 不得高于「已核验（多源）」。转载与同源不算多源印证。",
+      "canDefineValue": false
+    },
+    "verify": {
+      "rank": 5,
+      "name": "权威核验",
+      "rule": "能效备案 / CCC 认证等官方登记库。用于核验型号存在性、能效等级、家商用判定，不用于取常规参数。",
+      "canDefineValue": false
+    }
+  },
+  "sources": [
+    {
+      "id": "mi",
+      "name": "小米商城 / 官方 API",
+      "tier": "official",
+      "url": "https://www.mi.com/",
+      "urlPattern": "api2.order.mi.com/product/view?product_id=<id>&version=2（必须带 Referer: https://www.mi.com/）",
+      "status": "active",
+      "inUse": true,
+      "probe": {
+        "verdict": "ok",
+        "codes": [
+          200,
+          200
+        ],
+        "specRendered": false,
+        "date": "2026-10-04"
+      },
+      "use": "小米系产品的名称 / 价格 / 规格 / 官方图",
+      "risk": "官方 API 不带 Referer 会返回「请求来源不合法」；站内搜索接口已失效，不能用它找 product_id"
+    },
+    {
+      "id": "pconline",
+      "name": "太平洋产品报价",
+      "tier": "third",
+      "url": "https://g.pconline.com.cn/product/<品类目录>/mijia/",
+      "urlPattern": "型号页 <id>.html，规格页 <id>_detail.html",
+      "status": "active",
+      "inUse": true,
+      "probe": {
+        "verdict": "ok",
+        "codes": [
+          200,
+          200
+        ],
+        "specRendered": true,
+        "date": "2026-10-04"
+      },
+      "use": "竞品规格表主力来源（当前 617/618 款竞品只此一家）",
+      "risk": "单点依赖，改版或限流即全站停摆；有系统性错标（功率差 100 倍、L/ml 混用、型号栏塞产品名），必须逐字段过异常阈值"
+    },
+    {
+      "id": "zol",
+      "name": "中关村在线 ZOL",
+      "tier": "third",
+      "url": "https://search.zol.com.cn/s/all.php?kword=<型号>",
+      "urlPattern": "规格页 detail.zol.com.cn/<cat>/<proId>/param.shtml",
+      "status": "active",
+      "inUse": "partial",
+      "probe": {
+        "verdict": "ok",
+        "codes": [
+          200,
+          200,
+          200
+        ],
+        "specRendered": true,
+        "date": "2026-10-04"
+      },
+      "use": "参数表含「产品类型 / 安装方式」等分类栏，太平洋不给分类时顶上；可与太平洋互证",
+      "risk": "⚠️ 2026-10-04 实测：ZOL 的 search.zol.com.cn/s/all.php 是**全站搜索**，用空调型号 KFR-35GW-N1A1 去搜返回的是手机/CPU/显卡卡片（搜索页抓到 32981 字符、10 张卡片，全不相关），**按型号定位商品页这条路目前不通**。scripts/zol-specs.py 已建好（复用 fetch-facet-evidence.py 的 zol_lookup 并带 --debug），但命中率 0，需先解决站内品类搜索入口。注意：fetch-facet-evidence.py 现有用法是拿**产品名/型号**去搜，命中率同样受此影响"
+    },
+    {
+      "id": "suning",
+      "name": "苏宁易购",
+      "tier": "third",
+      "url": "https://search.suning.com/<品类>/",
+      "urlPattern": "商品页 product.suning.com/…（待实测确认规格区渲染方式）",
+      "status": "candidate",
+      "inUse": false,
+      "probe": {
+        "verdict": "ok",
+        "codes": [
+          200,
+          200,
+          200
+        ],
+        "specRendered": true,
+        "date": "2026-10-04"
+      },
+      "use": "家电覆盖全，自营商品页有规格表；有望成为太平洋之外的第二家互证来源",
+      "risk": "仅首页/搜索页实测通过，商品规格页尚未验证"
+    },
+    {
+      "id": "it168",
+      "name": "IT168 产品库",
+      "tier": "third",
+      "url": "https://product.it168.com/",
+      "urlPattern": null,
+      "status": "candidate",
+      "inUse": false,
+      "probe": {
+        "verdict": "ok",
+        "codes": [
+          200,
+          200,
+          200
+        ],
+        "specRendered": true,
+        "date": "2026-10-04"
+      },
+      "use": "老牌 IT 媒体产品库，服务端渲染，规格页可直接解析",
+      "risk": "3C 强、家电覆盖需实测"
+    },
+    {
+      "id": "yesky",
+      "name": "天极网产品库",
+      "tier": "third",
+      "url": "https://product.yesky.com/",
+      "urlPattern": null,
+      "status": "candidate",
+      "inUse": false,
+      "probe": {
+        "verdict": "ok",
+        "codes": [
+          200,
+          200,
+          200
+        ],
+        "specRendered": true,
+        "date": "2026-10-04"
+      },
+      "use": "同 IT168，作为第三家互证候选",
+      "risk": "站点更新频率低，老型号可能比新型号全"
+    },
+    {
+      "id": "jd",
+      "name": "京东",
+      "tier": "third",
+      "url": "https://search.jd.com/Search?keyword=<型号>",
+      "urlPattern": "商品页 item.jd.com/<sku>.html",
+      "status": "candidate",
+      "inUse": false,
+      "probe": {
+        "verdict": "ok",
+        "codes": [
+          200,
+          200,
+          200
+        ],
+        "specRendered": false,
+        "date": "2026-10-04"
+      },
+      "use": "覆盖最广的 SKU 与价格口径参考",
+      "risk": "搜索页未渲染规格区；商品页与价格接口风控较强，接入成本高，优先级排在 ZOL / 苏宁之后"
+    },
+    {
+      "id": "gome",
+      "name": "国美",
+      "tier": "third",
+      "url": "https://www.gome.com.cn/",
+      "urlPattern": "item.gome.com.cn/…",
+      "status": "candidate",
+      "inUse": false,
+      "probe": {
+        "verdict": "ok",
+        "codes": [
+          200,
+          200,
+          200
+        ],
+        "specRendered": false,
+        "date": "2026-10-04"
+      },
+      "use": "家电起家，可作补漏来源",
+      "risk": "首页实测无规格区渲染，需先探商品页"
+    },
+    {
+      "id": "ea3w",
+      "name": "万维家电网",
+      "tier": "third",
+      "url": "https://www.ea3w.com/",
+      "urlPattern": null,
+      "status": "candidate",
+      "inUse": false,
+      "probe": {
+        "verdict": "ok",
+        "codes": [
+          200,
+          200,
+          200
+        ],
+        "specRendered": false,
+        "date": "2026-10-04"
+      },
+      "use": "家电垂直站，有产品库",
+      "risk": "站点活跃度需人工确认"
+    },
+    {
+      "id": "cheaa",
+      "name": "中国家电网",
+      "tier": "media",
+      "url": "https://www.cheaa.com/",
+      "urlPattern": null,
+      "status": "candidate",
+      "inUse": false,
+      "probe": {
+        "verdict": "ok",
+        "codes": [
+          200,
+          200,
+          200
+        ],
+        "specRendered": false,
+        "date": "2026-10-04"
+      },
+      "use": "行业资讯，新品发布与品类线索；按媒体档处理（只能印证）",
+      "risk": "无结构化规格表"
+    },
+    {
+      "id": "manmanbuy",
+      "name": "慢慢买",
+      "tier": "third",
+      "url": "https://www.manmanbuy.com/",
+      "urlPattern": null,
+      "status": "blocked",
+      "inUse": false,
+      "probe": {
+        "verdict": "blocked",
+        "codes": [
+          200,
+          200,
+          200
+        ],
+        "specRendered": false,
+        "date": "2026-10-04"
+      },
+      "use": "历史价格口径参考",
+      "risk": "返回 200 但命中风控特征（人机验证），实测不可用"
+    },
+    {
+      "id": "midea",
+      "name": "美的",
+      "tier": "official",
+      "url": "https://www.midea.cn/",
+      "urlPattern": null,
+      "status": "candidate",
+      "inUse": false,
+      "probe": {
+        "verdict": "ok",
+        "codes": [
+          200,
+          200,
+          200
+        ],
+        "specRendered": false,
+        "date": "2026-10-04"
+      },
+      "use": "美的系产品官方规格（本站大品牌之一）",
+      "risk": "需先探到规格页 / 说明书入口"
+    },
+    {
+      "id": "gree",
+      "name": "格力",
+      "tier": "official",
+      "url": "https://www.gree.com/",
+      "urlPattern": null,
+      "status": "candidate",
+      "inUse": false,
+      "probe": {
+        "verdict": "ok",
+        "codes": [
+          200,
+          200,
+          200
+        ],
+        "specRendered": false,
+        "date": "2026-10-04"
+      },
+      "use": "格力空调官方规格与型号核实",
+      "risk": "空调型号核实可替代第三方错标"
+    },
+    {
+      "id": "tcl",
+      "name": "TCL",
+      "tier": "official",
+      "url": "https://www.tcl.com/",
+      "urlPattern": null,
+      "status": "candidate",
+      "inUse": false,
+      "probe": {
+        "verdict": "ok",
+        "codes": [
+          200,
+          200,
+          200
+        ],
+        "specRendered": true,
+        "date": "2026-10-04"
+      },
+      "use": "TCL 电视 / 空调官方规格",
+      "risk": "首页即命中规格关键词，商品页可期"
+    },
+    {
+      "id": "hisense",
+      "name": "海信",
+      "tier": "official",
+      "url": "https://www.hisense.com/",
+      "urlPattern": null,
+      "status": "candidate",
+      "inUse": false,
+      "probe": {
+        "verdict": "ok",
+        "codes": [
+          200,
+          200,
+          200
+        ],
+        "specRendered": false,
+        "date": "2026-10-04"
+      },
+      "use": "海信电视 / 冰箱 / 空调官方规格",
+      "risk": null
+    },
+    {
+      "id": "robam",
+      "name": "老板电器",
+      "tier": "official",
+      "url": "https://www.robam.com/",
+      "urlPattern": null,
+      "status": "candidate",
+      "inUse": false,
+      "probe": {
+        "verdict": "ok",
+        "codes": [
+          200,
+          200,
+          200
+        ],
+        "specRendered": false,
+        "date": "2026-10-04"
+      },
+      "use": "厨电官方规格",
+      "risk": null
+    },
+    {
+      "id": "supor",
+      "name": "苏泊尔",
+      "tier": "official",
+      "url": "https://www.supor.com/",
+      "urlPattern": null,
+      "status": "candidate",
+      "inUse": false,
+      "probe": {
+        "verdict": "ok",
+        "codes": [
+          200,
+          200,
+          200
+        ],
+        "specRendered": false,
+        "date": "2026-10-04"
+      },
+      "use": "厨房小家电官方规格",
+      "risk": null
+    },
+    {
+      "id": "joyoung",
+      "name": "九阳",
+      "tier": "official",
+      "url": "https://www.joyoung.com/",
+      "urlPattern": null,
+      "status": "candidate",
+      "inUse": false,
+      "probe": {
+        "verdict": "ok",
+        "codes": [
+          200,
+          200,
+          200
+        ],
+        "specRendered": false,
+        "date": "2026-10-04"
+      },
+      "use": "厨房小家电官方规格",
+      "risk": null
+    },
+    {
+      "id": "philips",
+      "name": "飞利浦中国",
+      "tier": "official",
+      "url": "https://www.philips.com.cn/",
+      "urlPattern": null,
+      "status": "candidate",
+      "inUse": false,
+      "probe": {
+        "verdict": "ok",
+        "codes": [
+          200,
+          200,
+          200
+        ],
+        "specRendered": true,
+        "date": "2026-10-04"
+      },
+      "use": "个护与家电官方规格 + 说明书 PDF",
+      "risk": null
+    },
+    {
+      "id": "ecovacs",
+      "name": "科沃斯",
+      "tier": "official",
+      "url": "https://www.ecovacs.cn/",
+      "urlPattern": null,
+      "status": "candidate",
+      "inUse": false,
+      "probe": {
+        "verdict": "ok",
+        "codes": [
+          200,
+          200,
+          200
+        ],
+        "specRendered": false,
+        "date": "2026-10-04"
+      },
+      "use": "扫地机器人官方规格",
+      "risk": null
+    },
+    {
+      "id": "roborock",
+      "name": "石头科技",
+      "tier": "official",
+      "url": "https://www.roborock.com/",
+      "urlPattern": null,
+      "status": "candidate",
+      "inUse": false,
+      "probe": {
+        "verdict": "ok",
+        "codes": [
+          200,
+          200,
+          200
+        ],
+        "specRendered": false,
+        "date": "2026-10-04"
+      },
+      "use": "扫地机器人 / 洗地机官方规格",
+      "risk": null
+    },
+    {
+      "id": "tineco",
+      "name": "添可",
+      "tier": "official",
+      "url": "https://www.tineco.com/",
+      "urlPattern": null,
+      "status": "candidate",
+      "inUse": false,
+      "probe": {
+        "verdict": "ok",
+        "codes": [
+          200,
+          200,
+          200
+        ],
+        "specRendered": false,
+        "date": "2026-10-04"
+      },
+      "use": "洗地机官方规格",
+      "risk": null
+    },
+    {
+      "id": "haier",
+      "name": "海尔",
+      "tier": "official",
+      "url": "https://www.haier.com/",
+      "urlPattern": null,
+      "status": "unknown",
+      "inUse": false,
+      "probe": {
+        "verdict": "empty",
+        "codes": [
+          302,
+          302,
+          302
+        ],
+        "specRendered": false,
+        "date": "2026-10-04"
+      },
+      "use": "冰箱 / 洗衣机官方规格",
+      "risk": "稳定 302，需确认跳转目标（可能是地域或语言分流）后重测"
+    },
+    {
+      "id": "dreame",
+      "name": "追觅",
+      "tier": "official",
+      "url": "https://www.dreame.cn/",
+      "urlPattern": null,
+      "status": "unknown",
+      "inUse": false,
+      "probe": {
+        "verdict": "empty",
+        "codes": [
+          0,
+          0,
+          0
+        ],
+        "specRendered": false,
+        "date": "2026-10-04"
+      },
+      "use": "清洁电器官方规格",
+      "risk": "三次请求均无响应（超时或域名不通），域名可能需要更正"
+    },
+    {
+      "id": "panasonic",
+      "name": "松下中国",
+      "tier": "official",
+      "url": "https://www.panasonic.com/cn/",
+      "urlPattern": null,
+      "status": "blocked",
+      "inUse": false,
+      "probe": {
+        "verdict": "blocked",
+        "codes": [
+          403,
+          403,
+          403
+        ],
+        "specRendered": false,
+        "date": "2026-10-04"
+      },
+      "use": "官方说明书 PDF（额定值最权威）",
+      "risk": "稳定 403，桌面 UA 直连被拒；若要用需换入口（如支持页域名）"
+    },
+    {
+      "id": "dyson",
+      "name": "戴森中国",
+      "tier": "official",
+      "url": "https://www.dyson.cn/",
+      "urlPattern": null,
+      "status": "blocked",
+      "inUse": false,
+      "probe": {
+        "verdict": "blocked",
+        "codes": [
+          200,
+          200,
+          200
+        ],
+        "specRendered": false,
+        "date": "2026-10-04"
+      },
+      "use": "吹风机 / 净化器官方规格",
+      "risk": "返回 200 但命中人机验证特征，实测不可抓"
+    },
+    {
+      "id": "miot-spec",
+      "name": "home.miot-spec.com",
+      "tier": "community",
+      "url": "https://home.miot-spec.com/s/<关键词>",
+      "urlPattern": "翻页 ?page=N，每页 50 条；数据在 <script data-page=\"app\"> 的 JSON 里",
+      "status": "active",
+      "inUse": true,
+      "probe": {
+        "verdict": "ok",
+        "codes": [
+          200,
+          200
+        ],
+        "specRendered": false,
+        "date": "2026-10-04"
+      },
+      "use": "核对型号是否存在 / 型号代码 / 是否海外版 / 固件能力项",
+      "risk": "单次请求约 3.5s，需并发 + 增量落盘；verified_time 是协议认证时间不是上市时间；收录不完整，缺失不能否定型号存在；miot_model 与零售型号代码不是一回事"
+    },
+    {
+      "id": "smzdm",
+      "name": "什么值得买",
+      "tier": "media",
+      "url": "https://www.smzdm.com/",
+      "urlPattern": null,
+      "status": "active",
+      "inUse": true,
+      "probe": {
+        "verdict": "ok",
+        "codes": [
+          200,
+          200
+        ],
+        "specRendered": false,
+        "date": "2026-10-04"
+      },
+      "use": "媒体印证（不得单独定值）",
+      "risk": "大量转载与 AI 聚合内容，同源不算多源印证"
+    },
+    {
+      "id": "energylabel",
+      "name": "中国能效标识网",
+      "tier": "verify",
+      "url": "https://www.energylabel.cn/",
+      "urlPattern": null,
+      "status": "unknown",
+      "inUse": false,
+      "probe": {
+        "verdict": "empty",
+        "codes": [
+          0,
+          0,
+          0
+        ],
+        "specRendered": false,
+        "date": "2026-10-04"
+      },
+      "use": "能效备案：型号 + 能效等级，可作型号存在性与家/商用判定的硬证据",
+      "risk": "三次请求无响应，域名很可能不对，需先确认正确入口再评估"
+    },
+    {
+      "id": "cnca",
+      "name": "全国认证认可信息公共服务平台",
+      "tier": "verify",
+      "url": "https://cx.cnca.cn/",
+      "urlPattern": null,
+      "status": "blocked",
+      "inUse": false,
+      "probe": {
+        "verdict": "blocked",
+        "codes": [
+          521,
+          521,
+          521
+        ],
+        "specRendered": false,
+        "date": "2026-10-04"
+      },
+      "use": "CCC 证书查询：核对型号与制造商",
+      "risk": "521（源站拒绝），需浏览器环境或换入口"
+    }
+  ],
+  "findings": [
+    "结构化参数来源实际只有太平洋一家独立流水线；竞品 617/618 款的 verify_source 全是「太平洋电脑网」，单点依赖成立——太平洋一旦限流或改版，竞品采集即停摆。",
+    "实测可新增的第三方规格站（服务端渲染、连续 3 次请求不劣化）：ZOL、苏宁、IT168、天极网，其中 ZOL 已有解析器（fetch-facet-evidence.py 的 zol_lookup），成本最低。",
+    "⚠️ 但「站点可抓」不等于「能按型号定位到商品页」：ZOL 全站搜索对家电型号返回无关品类（实测 KFR-35GW-N1A1 → 手机/CPU/显卡），苏宁搜索页是纯 JS 渲染（无商品列表），Bing site: 查询也定位不到 ZOL 商品页。落地第二来源必须先解决 URL 发现层（站内品类搜索入口，或「搜索引擎定位 + 抓规格页」两段式）。",
+    "品牌官方站 15 家实测：11 家可直连（美的、格力、TCL、海信、老板、苏泊尔、九阳、飞利浦、科沃斯、石头、添可），松下 403、戴森人机验证、海尔 302、追觅无响应。",
+    "「个人 / 社区数据站」自动发现的两条路产出都有限：通用搜索引擎结果被电商/黄页/广告域名占满（15 组检索词、575 条域名命中，有效候选近零）；GitHub 检索到的多是米家设备**控制**库（mijia-api、esphome-miot），不是参数数据集。这类站点更适合由人工提供域名后逐个探测接入。",
+    "权威核验一路基本不可用：能效标识网域名不通、CCC 平台 521。型号存在性目前仍只能靠 miot-spec 与品牌官网交叉确认。"
+  ]
+}
