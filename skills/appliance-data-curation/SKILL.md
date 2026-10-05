@@ -305,6 +305,37 @@ skills/                              技能定义（客户端无关；各客户�
   GPU 可用时装 `onnxruntime-directml` 自动加速，约 0.02s/张）。带文案的营销图与主体
   满幅的照片会被守卫自动跳过，保持原图。
 
+### 图片与品牌 logo 资产管线（2026-10-06 固化）
+
+收录新产品 / 新品牌时的资产动作，全部脚本幂等可增量重跑：
+
+```
+产品图：mi:images 下载原图(data/_cache/img-raw/)
+        → npm run img:webp     （≤320px WebP 入 public/images/<品类>/，回写 img 字段）
+        → npm run img:alpha    （rembg 主体提取 → 透明背景；守卫拦误抠/满幅图）
+品牌 logo（新品牌进 TABLE 一行后）：
+        → python scripts/fetch-brand-logos.py [--only <品牌>]
+```
+
+**品牌 logo**：落在 `public/images/brands/<品牌名>.png|svg`（文件名逐字=品牌名），构建期
+`virtual:brand-logos` 自动扫描，首页品牌导航即显示；拿不到时前端 fallback 品牌首字头像，
+后续拿到图放进目录即自动生效。`fetch-brand-logos.py` 内置五路来源（按可靠性排序）：
+
+1. **维基数据 P154**（logo image 声明）→ `Special:FilePath?width=480` 渲染下载。
+   ⚠ 别用 Wikipedia pageimages——那是总部大楼/产品照，「小米」词条甚至是谷物（公司词条叫「小米公司」）。
+2. **官网**：`apple-touch-icon` 约定路径 → 首页 `<link>` 声明 → header `<img>` 含 logo 的标签。
+   ⚠ 部分 CDN 校验 Referer（德尔玛），下载 0B 时带 `-e <官网首页>` 重试。
+3. **iTunes Search API** 官方 App 图标（artworkUrl512 → 22% 圆角遮罩透明化，App 图标本身
+   是实底方图，与「橙色 Mi 方块」同形态）。⚠ **错牌甄别是硬要求**：sellerName/trackName
+   必须含品牌 token 或其注册公司 token——实战错牌案例：「小熊油耗」「DOUDOUBEAR」「小熊备忘录」
+   （同名不同司）、「海信爱家」（集团 App 冒充子品牌容声）、icon.horse 的灰色首字母占位图。
+   宁可 fallback 不可错牌。
+4. **icon.horse**：默认关闭（`--allow-icon-horse` 打开），无 favicon 站会生成占位图，产物必须目检。
+5. 全失败 → 首字头像；后续供图放 `brands/` 目录即可。
+
+已覆盖 48/52 品牌（缺小熊/欧井/艾美特/容声/美菱，均为 JS 壳站/拒爬/无独立 App）。
+新品牌收录时：在脚本 `TABLE` 加一行（词条名/域名/App 搜索词/甄别 token）→ 跑脚本。
+
 ## 第三方来源工具与已知坑
 
 ### `home.miot-spec.com`（型号库，仅作交叉印证）
