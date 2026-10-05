@@ -62,6 +62,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--only', help='只处理该品类目录')
     ap.add_argument('--dry', action='store_true', help='只统计，不写入')
+    ap.add_argument('--renormalize', action='store_true',
+                    help='对已透明的图跳过推理，直接按 alpha 重算包围盒并重新居中归一'
+                         '（修「主体贴边」：rembg 软雾/离群噪点会把原始 getbbox 撑大）')
     ap.add_argument('--sheet', type=int, default=0, help='输出 N 张样本联络表（目检用）')
     ap.add_argument('--model', default='u2net', help='rembg 模型名（默认 u2net）')
     ap.add_argument('--provider', default='auto', choices=['auto', 'cuda', 'dml', 'cpu'],
@@ -70,6 +73,20 @@ def main():
 
     from rembg import remove, new_session
     from PIL import Image, ImageDraw
+
+    def subject_bbox(im):
+        """主体包围盒：alpha 硬阈值化后再取——rembg 输出的主体外围常带半透明软雾，
+        原始 getbbox() 会被雾/离群噪点撑大，导致主体在画布上偏离居中。"""
+        solid = im.getchannel('A').point(lambda v: 255 if v > 127 else 0)
+        return solid.getbbox()
+
+    def recanvas(rgba, bbox):
+        subject = rgba.crop(bbox)
+        side = max(subject.size)
+        pad = int(side * (1 / FILL - 1) / 2)
+        square = Image.new('RGBA', (side + pad * 2, side + pad * 2), (0, 0, 0, 0))
+        square.paste(subject, (pad, pad), subject)
+        return square.resize((TARGET, TARGET), Image.LANCZOS)
 
     def pick_providers():
         import onnxruntime as ort
@@ -106,11 +123,29 @@ def main():
             continue
 
         if has_alpha(img):
-            skipped.append((f, '已是透明背景'))
+            if not args.renormalize:
+                skipped.append((f, '已是透明背景'))
+                continue
+            rgba = img.convert('RGBA')
+            bbox = subject_bbox(rgba)
+            if not bbox:
+                continue
+            canvas = recanvas(rgba, bbox)
+            if args.dry:
+                continue
+            buf = io.BytesIO()
+            canvas.save(buf, 'WEBP', quality=QUALITY, method=6)
+            f.write_bytes(buf.getvalue())
+            done.append((f, 'renormalize'))
+            continue
+        elif args.renormalize:
+            # renormalize 的语义是「只重整已透明的图」——保留原图（无 alpha 的满幅/营销图）
+            # 严禁在此被 rembg 重抠（2026-10-06 实测：营销图被抠成透明主体）
+            kept.append((f, '保留原图（renormalize 不触碰无 alpha 的图）'))
             continue
 
         rgba = remove(img.convert('RGBA'), session=session)
-        bbox = rgba.getchannel('A').getbbox()
+        bbox = subject_bbox(rgba)
         if not bbox:
             kept.append((f, '未检出主体'))
             continue
@@ -122,12 +157,7 @@ def main():
             kept.append((f, f'几乎满幅（{frac:.0%}），疑似未抠动'))
             continue
 
-        subject = rgba.crop(bbox)
-        side = max(subject.size)
-        pad = int(side * (1 / FILL - 1) / 2)
-        square = Image.new('RGBA', (side + pad * 2, side + pad * 2), (0, 0, 0, 0))
-        square.paste(subject, (pad, pad), subject)
-        canvas = square.resize((TARGET, TARGET), Image.LANCZOS)
+        canvas = recanvas(rgba, bbox)
 
         if args.dry:
             done.append((f, f'{frac:.0%}'))

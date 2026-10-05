@@ -105,6 +105,13 @@ const filteredBrands = computed(() => {
   return brandEntries.value.filter((b) => b.brand.toLowerCase().includes(q))
 })
 
+/** 品牌 → 目录序号（导航编号用；过滤视图里编号仍保持目录原序） */
+const brandOrder = computed(() => {
+  const m = new Map<string, number>()
+  ;(brandEntries.value ?? []).forEach((b, i) => m.set(b.brand, i))
+  return m
+})
+
 const visibleSceneCats = computed(() => {
   const q = norm(panelQuery.value)
   const cats = activeGroup.value?.categories ?? []
@@ -361,17 +368,17 @@ onBeforeUnmount(() => {})
               @click="selectBrand(b.brand)"
               @keydown="onNavKeydown($event, i, navBrandIds, (n) => selectBrand(filteredBrands[n].brand))"
             >
-              <img
-                v-if="brandLogos[b.brand]"
-                class="brand-avatar"
-                :src="brandLogos[b.brand]"
-                :alt="b.brand"
-                width="44"
-                height="44"
-                loading="lazy"
-                decoding="async"
-              />
-              <span v-else class="group-index brand-initial" aria-hidden="true">{{ b.brand.slice(0, 1) }}</span>
+              <span class="group-index" aria-hidden="true">{{ pad2((brandOrder.get(b.brand) ?? 0) + 1) }}</span>
+              <span class="brand-logo" aria-hidden="true">
+                <img
+                  v-if="brandLogos[b.brand]"
+                  :src="brandLogos[b.brand]"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span v-else class="brand-initial">{{ b.brand.slice(0, 1) }}</span>
+              </span>
               <span class="group-text">
                 <span class="group-name">{{ b.brand }}</span>
                 <span class="group-count">{{ b.total }} 款</span>
@@ -633,25 +640,34 @@ onBeforeUnmount(() => {})
   color: var(--text-faint);
 }
 
-/* 品牌导航项的 logo：public/images/brands/<品牌名>.<ext>（透明背景），
-   构建期扫描、放入即生效；无 logo 时 fallback 为品牌首字头像 */
-.brand-avatar {
-  width: 22px;
-  height: 22px;
+/* 品牌导航：序号 + logo 槽 + 名称。logo 槽固定尺寸、图 contain 完整显示
+   （字标 logo 160×26 这类横条在方形 cover 框里会被裁得只剩一条缝）；
+   选中态不加任何 logo 描边。 */
+.brand-logo {
+  width: 52px;
+  height: 20px;
   flex-shrink: 0;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-xs);
-  background: var(--surface);
-  object-fit: cover;
-  transition: border-color var(--dur-fast) var(--ease-smooth);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.group-item.active .brand-avatar {
-  border-color: var(--brand);
+.brand-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
-/* 首字头像：与 logo 同尺寸同框，字体小一点防止顶框 */
+/* 首字头像（fallback）：与 logo 同槽居中的小方块 */
 .brand-initial {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-xs);
+  background: var(--surface-alt);
   font-family: var(--font-display);
   font-size: 11px;
   font-weight: 600;
@@ -663,12 +679,6 @@ onBeforeUnmount(() => {})
   gap: 6px;
   overflow-x: auto;
   padding-bottom: 4px;
-  scrollbar-width: none;
-  list-style: none;
-}
-
-.group-list::-webkit-scrollbar {
-  display: none;
 }
 
 /* 分组项：编号 + 名称，像规格手册的目录 */
@@ -954,18 +964,6 @@ onBeforeUnmount(() => {})
     min-height: 0;
     gap: 2px;
     padding-right: 2px;
-    scrollbar-width: thin;
-    scrollbar-color: var(--border) transparent;
-  }
-
-  .group-list::-webkit-scrollbar {
-    display: block;
-    width: 6px;
-  }
-
-  .group-list::-webkit-scrollbar-thumb {
-    background: var(--border);
-    border-radius: 3px;
   }
 
   .group-item {
@@ -988,17 +986,6 @@ onBeforeUnmount(() => {})
     overflow-y: auto;
     min-height: 0;
     padding-right: 4px;
-    scrollbar-width: thin;
-    scrollbar-color: var(--border) transparent;
-  }
-
-  .panel-scroll::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  .panel-scroll::-webkit-scrollbar-thumb {
-    background: var(--border);
-    border-radius: 3px;
   }
 }
 

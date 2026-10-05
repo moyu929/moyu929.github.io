@@ -583,14 +583,6 @@ function valueWithMonth(field: FieldDef, p: Product): string {
   overflow-y: auto;
   overflow-x: hidden;
   overscroll-behavior: contain;
-  scrollbar-width: thin;
-  scrollbar-color: var(--text-faint) transparent;
-}
-
-/* Vue Transition 动画类 */
-.pop-enter-active {
-  transition: opacity 0.15s var(--ease-out), transform 0.15s var(--ease-spring);
-}
 .pop-leave-active {
   transition: opacity 0.1s var(--ease-out);
 }
@@ -600,20 +592,6 @@ function valueWithMonth(field: FieldDef, p: Product): string {
 }
 .pop-leave-to {
   opacity: 0;
-}
-
-.detail-pop::-webkit-scrollbar {
-  width: 5px;
-}
-
-.detail-pop::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.detail-pop::-webkit-scrollbar-thumb {
-  background: var(--text-faint);
-  border-radius: 3px;
-  opacity: 0.3;
 }
 
 /* 桥接间隙：防止鼠标从卡片移到弹窗时丢失悬停 */
@@ -847,5 +825,6 @@ function valueWithMonth(field: FieldDef, p: Product): string {
     left: 24px;
     transform: none;
   }
+}
 }
 </style>

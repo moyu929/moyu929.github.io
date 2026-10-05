@@ -205,7 +205,6 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKeydown))
   pointer-events: none;
 }
 
-
 .head h2 {
   position: relative;
   display: flex;
@@ -255,27 +254,6 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKeydown))
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   /* 细滚动条（抽屉内独立滚动容器） */
-  scrollbar-width: thin;
-  scrollbar-color: rgba(120, 120, 130, 0.4) transparent;
-}
-
-.body::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-
-.body::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.body::-webkit-scrollbar-thumb {
-  background: rgba(120, 120, 130, 0.4);
-  border-radius: 3px;
-}
-
-.body::-webkit-scrollbar-thumb:hover {
-  background: var(--brand);
-}
 
 .cmp {
   border-collapse: collapse;
@@ -551,5 +529,6 @@ onBeforeUnmount(() => document.removeEventListener('keydown', onKeydown))
     width: 90px;
     height: 76px;
   }
+}
 }
 </style>

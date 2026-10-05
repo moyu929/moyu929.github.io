@@ -178,18 +178,6 @@ function sortIcon(key: string) {
   flex: 0 1 auto;
   min-width: 0;
   overflow-x: auto;
-  scrollbar-width: none;
-  /* 排序项可以横向滚，不把搜索框挤扁 */
-  scroll-snap-type: x proximity;
-}
-
-.sorts::-webkit-scrollbar {
-  display: none;
-}
-
-.sorts::-webkit-scrollbar {
-  display: none;
-}
 
 .sort-btn {
   display: inline-flex;
@@ -318,4 +306,5 @@ function sortIcon(key: string) {
   box-shadow: var(--shadow-brand);
 }
 
+}
 </style>
