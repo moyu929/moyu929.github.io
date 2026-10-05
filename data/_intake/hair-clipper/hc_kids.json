@@ -1,0 +1,43 @@
+{
+  "id": "hc_kids",
+  "name": "米家理发器 儿童版",
+  "model_code": "MJGHHC3LF",
+  "miot_model": "查不到",
+  "type": "儿童款",
+  "official_price": 129,
+  "second_hand": "—",
+  "runtime": "60min",
+  "blades": "陶瓷动刀（R型圆珠保护刀头）",
+  "waterproof": "IPX7全身水洗",
+  "display": "3款可拆卸配梳（鬓角梳/3-6mm/9-12mm）",
+  "power": "查不到",
+  "size": "查不到",
+  "year": 2024,
+  "pros": [
+    "理吸合一：边剃边吸",
+    "磁吸式储发仓快拆快装",
+    "R型圆珠刀头保护头皮",
+    "IPX7全身水洗",
+    "3款可拆卸配梳"
+  ],
+  "cons": [
+    "续航60分钟短于成人款（180min）",
+    "配梳选择少于成人款（19段长度）"
+  ],
+  "tags": [
+    "儿童款"
+  ],
+  "verify_status": "已核验（多源）",
+  "verify_date": "2026-10-05",
+  "verify_source": [
+    "京东",
+    "小米商城",
+    "小米商城（官方产品图）",
+    "快科技/新浪科技"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230803167",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-05 补全：型号/续航/刀头/防水/显示/年份/pros/cons/来源链接（来源：快科技/新浪科技 2024-11-08 开售报道：60min续航、陶瓷动刀R型圆珠刀头、IPX7全身防水、3款配梳、2024-11-08小米商城/京东开售129元；京东自营条目标题含型号 MJGHHC3LF 并互证60min/全身水洗；小米商城自营文案「理吸合一/磁吸式储发仓/保护型刀头/3款可拆卸配梳」；miot-spec 检索无收录故 miot_model 维持查不到；充电时长1.5h与主机重194g仅快科技单一媒体来源，按规范不定值，power/size 维持查不到）（来源：https://finance.sina.com.cn/tech/roll/2024-11-08/doc-incvixhn3849383.shtml）",
+  "updated_at": "2026-10-05",
+  "img": "hc_kids.webp",
+  "brand": "小米"
+}
