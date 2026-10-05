@@ -72,9 +72,27 @@ def decode(b):
 # ---------------------------------------------------------------- 服务端渲染
 
 def parse_html_specs(t):
-    """从 HTML 抽 {参数名: 值}。两条路径：标签相邻、以及「键：值」文本。"""
+    """从 HTML 抽 {参数名: 值}。三条路径：标签相邻、「键：值」文本、以及
+    苏宁式的「键被单独包一层标签」版式。
+
+    2026-10-04 修正：原先只有两条路径，把苏宁判成了「只抽到 1 个字段」的假阴性，
+    而苏宁恰好是本轮唯一带 `上市时间（月）` 的来源 —— 工具误报会让人直接把它丢掉。
+    苏宁详情页的参数区有三种版式，原来的正则一个都匹配不上：
+        <li><b>品牌</b>：海尔(Haier)</li>
+        <td class="name">…<span>产品尺寸</span></td><td class="val">830*594*1900毫米</td>
+        <th><span>能效等级</span></th><td>1级</td>
+    共同点是**键与值之间隔着闭合标签**，所以 `>键</th>` 这种「键自带闭合标签」的写法匹配不到。
+    """
     out = {}
-    for m in re.finditer(r'>([^<>]{2,16})</(?:dt|th|td|label|strong)>', t):
+    # 带 \s* 的容错版式：cheaa 的 <td> 里塞了十来个制表符再写键名，
+    # 不容错的话 `[^<>]{2,16}` 的 16 字预算会被空白吃光，抽到的键全是空串。
+    for m in re.finditer(r'<t[dh][^>]*>\s*([^<>]{2,20}?)\s*</t[dh]>\s*'
+                         r'<td[^>]*>\s*(.*?)\s*</td>', t, re.S):
+        k = m.group(1).strip()
+        v = re.sub(r'<[^>]+>', '', htmlmod.unescape(m.group(2))).strip()
+        if k and v and k not in out and v not in ('-', '—'):
+            out[k] = v
+    for m in re.finditer(r'>([^<>]{2,16})</(?:dt|th|td|label|strong|b|span)>', t):
         k = m.group(1).strip()
         if not k or k in out:
             continue
@@ -83,6 +101,18 @@ def parse_html_specs(t):
             val = htmlmod.unescape(v.group(1)).strip()
             if val and val not in ('-', '—'):
                 out[k] = val
+    # 苏宁版式一：<li><b>键</b>：值</li>
+    for m in re.finditer(r'<li[^>]*>\s*<b>([^<]{2,24})</b>\s*[:：]\s*([^<]{1,60})', t):
+        k, v = m.group(1).strip(), m.group(2).strip()
+        if k not in out and v and v not in ('-', '—'):
+            out[k] = v
+    # 苏宁版式二：<td class="name">…<span>键</span></td><td class="val">值</td>
+    for m in re.finditer(r'<td[^>]*class="name"[^>]*>.*?<span>([^<]{2,24})</span>'
+                         r'.*?</td>\s*<td[^>]*class="val"[^>]*>(.*?)</td>', t, re.S):
+        k = m.group(1).strip()
+        v = re.sub(r'<[^>]+>', '', htmlmod.unescape(m.group(2))).strip()
+        if k not in out and v and v not in ('-', '—'):
+            out[k] = v
     for m in re.finditer(r'([一-龥A-Za-z][一-龥A-Za-z0-9（）()]{1,14})\s*[:：]\s*'
                          r'([^\s<>|]{1,40})', t):
         k, v = m.group(1).strip(), m.group(2).strip()
@@ -129,8 +159,11 @@ def score(specs):
 
 def probe_http(url, timeout=20):
     try:
+        # --compressed 是必需的，不是优化项：detail.cheaa.com 无论客户端是否声明
+        # Accept-Encoding 都回 gzip，不让 curl 解压就会把二进制当文本解，抽出 0 个字段 ——
+        # 表现为「连通但不可用」的假阴性。
         r = subprocess.run(
-            ['curl', '-sL', '-m', str(timeout), '-A', UA,
+            ['curl', '-sL', '--compressed', '-m', str(timeout), '-A', UA,
              '-H', 'Accept-Language: zh-CN,zh;q=0.9', url],
             capture_output=True)
         return decode(r.stdout), r.returncode
@@ -243,7 +276,11 @@ CANDIDATES = {
         ('国美', 'https://www.gome.com.cn/'),
         ('慢慢买', 'https://www.manmanbuy.com/'),
         ('什么值得买', 'https://www.smzdm.com/'),
-        ('中国能效标识网', 'http://www.energylabelrecord.com/'),
+        # 2026-10-04 实测移除：中国能效标识网 www.energylabelrecord.com 连 DNS 都不解析
+        # （curl: (6) Could not resolve host）；裸域 energylabelrecord.com 虽解析到
+        # 182.92.236.194，但 https 握手失败、http 只回 nginx 404，站点已下线且无备用域名。
+        ('中国家电网产品库', 'https://detail.cheaa.com/air-condition/index1982527.html'),
+        ('苏宁易购', 'https://product.suning.com/0010342220/12440110157.html'),
         ('京东商品', 'https://item.jd.com/'),
     ],
 }
