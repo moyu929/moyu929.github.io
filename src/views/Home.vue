@@ -131,6 +131,10 @@ async function ensureBrandIndex() {
     if (!entries.find((b) => b.brand === activeBrand.value)) {
       activeBrand.value = entries[0]?.brand ?? ''
     }
+    // 品牌索引是异步的：此前面板一直是「加载中」占位，卡片此刻才首次渲染。
+    // viewMode watcher 里的那次 setupReveal 跑在占位态，抓不到任何 .reveal 节点；
+    // 不在数据到位后重挂观察器，40 张卡片就会永远停在 opacity:0（面板看似空白）。
+    requestAnimationFrame(() => setupReveal())
   } finally {
     brandLoading.value = false
   }
