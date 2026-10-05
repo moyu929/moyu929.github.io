@@ -65,6 +65,26 @@ skills/                              技能定义（客户端无关；各客户�
 
 各品类至少保留这些通用字段，便于横向一致：`name`(型号)、`brand`(品牌)、细分维度(`tier`/`type`/`series`)、`official_price`(参考价)、`ref_price`(划线价)、`pros`/`cons`/`tags`、`img`、`year`、可选 `month`。再按品类补充核心参数与决策字段。
 
+### 数据采集的手段边界（2026-10-05 用户裁决）
+
+本站是 **GitHub 上公开开源的项目**，用 GitHub Pages 部署，**无任何商业行为**，
+定位是信息共享与学习。据此：
+
+- **可以采用无许可证的开源项目**，不需要逐个确认授权。
+  实测可用的签名实现：`chenpython/jd_h5st_server`（京东 h5st）、
+  `lwjjike/jdH5stAlgorithm`（h5st 纯算）、`javonLim/h5st`。
+  2026-10-05 实测：京东 h5st 那个 61 字符形似 HMAC 的 `sign`，美的接口**根本不校验** ——
+  六组对照（原样回放 / 删 sign / sign 改 `deadbeef` / 换时间戳 / 整个 headParams 删掉）
+  全部 `code=000000`。所以**先探接口是否真的校验签名**，多数情况不需要逆向。
+- **手段不限，只要能取到数据**。不走「必须绕过人机验证才不做」这条线。
+- **但仍需如实记录**：来源 URL、接口路径、请求参数、抓取日期，写进 `change_log` 与
+  `verify_source`。可复核性是硬要求，手段不是。
+
+判据不变：**能不能拿到数据**是唯一标准，`probe-specs.py` 的「实测抽到的规格字段数 ≥ 5」。
+
+> 附一条方法论：`gh search` 的 `updatedAt` **不可靠**（`chenpython/jd_h5st_server`
+> 显示 2026-08，`gh repo view` 的 `pushedAt` 是 2024-10）。判项目死活看 `pushedAt`。
+
 ### `year`（上市年份）—— 选填，2026-10-05 用户裁决
 
 `year` 缺 871，是全站最大的单字段缺口，但**现有来源全部堵死**（2026-10-04 逐项实测）：
