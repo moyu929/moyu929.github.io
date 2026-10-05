@@ -666,9 +666,11 @@ onBeforeUnmount(() => {})
   opacity: 0.4;
 }
 
-/* 文本列：h3 + 描述，压缩到缩略图右侧 */
+/* 文本列：h3 + 描述，压缩到缩略图右侧；
+   右侧让开 20px 给「N 款」角标，避免长描述与角标贴字 */
 .card-text {
   min-width: 0;
+  padding-right: 20px;
 }
 
 .card h3 {
