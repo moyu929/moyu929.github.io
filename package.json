@@ -38,7 +38,8 @@
     "flow:drop": "node scripts/flow.mjs drop",
     "flow:status": "node scripts/flow.mjs status",
     "flow:log": "node scripts/flow.mjs log",
-    "flow:workers": "node scripts/flow.mjs workers"
+    "flow:workers": "node scripts/flow.mjs workers",
+    "img:alpha": "python scripts/remove-bg.py"
   },
   "dependencies": {
     "vue": "^3.5.18",

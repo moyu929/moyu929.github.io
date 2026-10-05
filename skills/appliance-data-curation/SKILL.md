@@ -282,6 +282,7 @@ skills/                              技能定义（客户端无关；各客户�
 | `npm run mi:specs -- <规格页URL...>` | 抓官方规格页并解析成 `{参数名: 值}`，**纯 HTTP** | 无 |
 | `npm run mi:images` | 按 `data/_sources/images.json` 下载官方**原图**到 `data/_cache/img-raw/`（不入库） | 无 |
 | `npm run img:webp` | 把原图转成 **≤320px WebP** 写入 `public/images/` 并回写 `img` 字段 | Python + Pillow |
+| `npm run img:alpha` | 产品图**主体提取**（rembg 去背景 → 透明 WebP，原地替换；幂等，已透明的跳过；守卫拦截误抠/满幅图并保留原图） | Python + rembg + onnxruntime |
 | `npm run mi:apply -- <patch.json>` | 把字段补丁按 `品类/产品id` 精确定位写入 `products.json` | 无 |
 | `npm run miot:crawl` | 按品类整库抓取 `home.miot-spec.com`（分页/并发 4/增量缓存到 `data/_cache/miot-*.json`，日志 `miot-crawl.log`） | 无 |
 | `npm run miot:search -- <关键词...>` | 只抓该站首页结果，快速看型号 | 无 |
@@ -299,7 +300,10 @@ skills/                              技能定义（客户端无关；各客户�
 - **回写必须锚定对象边界**：`mi:apply` 会校验「id 与目标字段之间不得再出现 `"id"`」，越界直接报错；不要用「从 id 向后找第一个 `"img": null`」这类正则，目标本身已有图时会写到下一个产品上。
 - **补丁文件留档**：每次写入的 `patch.json` 放进 `data/_sources/patches/`，文件内用 `_来源` 记录每条数据的出处，便于后续复核。
 - **图片**：站上统一存 **≤320px WebP**（文件名 = 产品 id，`img` 字段就是它）。
-  尺寸依据是最大展示位 96×112 CSS px × DPR 3；原图先落 `data/_cache/img-raw/`，用 `npm run img:webp` 转换入库。
+  尺寸依据是最大展示位 96×112 CSS px × DPR 3；原图先落 `data/_cache/img-raw/`，用 `npm run img:webp` 转换入库。  图片**背景应为透明**（2026-10-05 起）：白底/黑底产品图在明暗两套主题下会与主题色冲突，
+  `img:webp` 之后跑一次 `npm run img:alpha` 抠主体（首次运行会下载 u2net 模型约 176MB；
+  GPU 可用时装 `onnxruntime-directml` 自动加速，约 0.02s/张）。带文案的营销图与主体
+  满幅的照片会被守卫自动跳过，保持原图。
 
 ## 第三方来源工具与已知坑
 
