@@ -15,9 +15,15 @@ virtual:brand-logos 自动拾取，首页品牌导航即出 logo。拿不到的�
      ⚠ 错牌甄别是硬要求：sellerName/trackName 必须含品牌 token 或其注册公司 token。
      实战错牌案例：「小熊油耗」「DOUDOUBEAR」「小熊备忘录」（同名不同司）、
      「海信爱家」（集团 App 冒充子品牌）——宁可 fallback 不可错牌。
-  D. icon.horse（<domain> 直出 256px）——⚠ 会为无 favicon 的站生成灰色首字母
+  D. cn.bing 图片搜索：服务端首屏嵌原图直链（murl），对小品牌最有效
+     （容声/美菱第一张即官方方标）。候选混杂，**不自动入位**：跑完生成候选联络表
+     （data/_cache/brand-logos/bing-candidates/<品牌>/candidates.png），人工目检后
+     `python scripts/fetch-brand-logos.py --pick <品牌>:<序号>` 入位（自动圆角遮罩）。
+  E. icon.horse（<domain> 直出 256px）——⚠ 会为无 favicon 的站生成灰色首字母
      占位图，必须经 --allow-icon-horse 显式打开，产物要过占位检测。
-  E. 全失败 → fallback 首字头像（前端行为，脚本只记录）。
+  F. 全失败 → fallback 首字头像（前端行为，脚本只记录）。
+  实测覆盖：48 → 51/52（D 路线补齐容声/美菱，官网真域名修正后补齐小熊/艾美特；
+  仅欧井——站点挂、无 App、搜索引擎无命中）。
 
 规范化处理（入位前统一执行）：
   · SVG 原样入位（浏览器原生渲染，透明由源文件保证）
@@ -247,8 +253,8 @@ def via_iconhorse(brand, domains, work):
 
 # ---------------------------------------------------------------- 规范化处理
 
-def normalize(brand, src, is_app_icon=False):
-    """SVG 原样入位；位图 RGBA + 四角白底清除 + ≤160px；App 图标加 22% 圆角遮罩。
+def normalize(brand, src, is_app_icon=False, rounded=False):
+    """SVG 原样入位；位图 RGBA + 四角白底清除 + ≤160px；App 图标/实底方标加 22% 圆角遮罩。
     非图片内容（站点返回 HTML 错误页存成 .bin 的情况）抛 ValueError 由上层跳路线。
     返回 (后缀, 说明)。"""
     head = src.read_bytes()[:12]
@@ -272,7 +278,7 @@ def normalize(brand, src, is_app_icon=False):
     if max(im.size) > MAX:
         r = MAX / max(im.size)
         im = im.resize((round(im.width * r), round(im.height * r)), Image.LANCZOS)
-    if is_app_icon:
+    if is_app_icon or rounded:
         mask = Image.new('L', im.size, 0)
         ImageDraw.Draw(mask).rounded_rectangle(
             [0, 0, im.width - 1, im.height - 1], radius=int(min(im.size) * 0.22), fill=255)
@@ -281,17 +287,84 @@ def normalize(brand, src, is_app_icon=False):
     return 'png', f'{im.size}'
 
 
+def via_bing(brand, work):
+    """cn.bing 图片搜索：服务端渲染首屏里嵌原图直链（murl 字段）。
+    实战对小品牌最有效（容声/美菱第一张即官方方标），但候选混杂（商品图/歧义词图），
+    **不自动入位**——下载候选 + 生成联络表，人工目检后用 --pick 入位。
+    返回 None（main 据此提示候选表路径）。"""
+    q = f'{brand} logo'
+    url = f'https://cn.bing.com/images/search?q={urllib.parse.quote(q)}&first=1'
+    html = curl(url) or b''
+    text = html.decode('utf-8', errors='replace')
+    murls = re.findall(r'murl&quot;:&quot;(.*?)&quot;', text) or re.findall(r'murl":"(.*?)"', text)
+    cand_dir = work / 'bing-candidates' / brand
+    cand_dir.mkdir(parents=True, exist_ok=True)
+    for old in cand_dir.glob('*'):
+        old.unlink()
+    got = 0
+    for i, u in enumerate(murls):
+        if got >= 6:
+            break
+        u = u.replace('\\u002f', '/').replace('\\/', '/')
+        out = cand_dir / f'{got}.bin'
+        if curl(u, out=out):
+            try:
+                from PIL import Image
+                im = Image.open(out)
+                im.load()
+                if min(im.size) < 40:
+                    out.unlink()
+                    continue
+                got += 1
+            except Exception:
+                out.unlink(missing_ok=True)
+        time.sleep(0.1)
+    if not got:
+        return None
+    # 候选联络表（深色底）
+    from PIL import Image, ImageDraw
+    files = sorted(cand_dir.glob('*.bin'))[:got]
+    tw, th = 150, 130
+    sheet = Image.new('RGB', (tw * len(files), th), (245, 245, 245))
+    d = ImageDraw.Draw(sheet)
+    for c, f in enumerate(files):
+        try:
+            im = Image.open(f).convert('RGBA')
+            im.thumbnail((130, 92), Image.LANCZOS)
+            tile = Image.new('RGBA', (136, 96), (200, 203, 210, 255))
+            tile.paste(im, ((136 - im.width) // 2, (96 - im.height) // 2), im)
+            sheet.paste(tile.convert('RGB'), (c * tw + 7, 22))
+        except Exception:
+            continue
+        d.text((c * tw + 7, 4), f'#{c}', fill=(0, 0, 0))
+    sheet.save(cand_dir / 'candidates.png')
+    return None, f'候选表 {cand_dir / "candidates.png"}（{got} 张，人工目检后 --pick {brand}:<序号> 入位）'
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--only', help='只处理指定品牌（可逗号分隔）')
     ap.add_argument('--force', action='store_true', help='已有 logo 也重取')
     ap.add_argument('--allow-icon-horse', action='store_true',
                     help='启用路线 D（会为无 favicon 站生成首字母占位图，产物必须目检）')
+    ap.add_argument('--pick', metavar='品牌:序号',
+                    help='人工目检 bing 候选后入位：把 bing-candidates/<品牌>/ 第 N 张（0 基）规范化入位')
     args = ap.parse_args()
 
     DST.mkdir(parents=True, exist_ok=True)
     CACHE = ROOT / 'data' / '_cache' / 'brand-logos'
     CACHE.mkdir(parents=True, exist_ok=True)
+
+    if args.pick:
+        brand, n = args.pick.rsplit(':', 1)
+        cand = CACHE / 'bing-candidates' / brand / f'{int(n)}.bin'
+        if not cand.exists():
+            print(f'✗ 候选不存在：{cand}（先跑一次本脚本生成候选表）')
+            sys.exit(1)
+        ext, info = normalize(brand, cand, rounded=True)
+        print(f'✓ {brand} ← bing 候选 #{n} → {brand}.{ext} {info}')
+        return
+
     only = set(args.only.split(',')) if args.only else None
 
     report = {}
@@ -303,11 +376,12 @@ def main():
                 report[brand] = 'skip(已有)'
                 continue
         hit = None
-        for name, fn, kw in [
-            ('P154', via_p154, {}),
-            ('site', via_site, {}),
-            ('iTunes', via_itunes, {'is_app_icon': True}),
-            ('icon.horse', via_iconhorse, {}),
+        for name, fn in [
+            ('P154', via_p154),
+            ('site', via_site),
+            ('iTunes', via_itunes),
+            ('bing', via_bing),
+            ('icon.horse', via_iconhorse),
         ]:
             if name == 'icon.horse' and not args.allow_icon_horse:
                 continue
@@ -315,19 +389,27 @@ def main():
                 continue
             got = None
             try:
-                if name != 'iTunes':
-                    got = fn(brand, titles if name == 'P154' else domains, CACHE)
+                if name == 'P154':
+                    got = fn(brand, titles, CACHE)
+                elif name in ('site', 'icon.horse', 'bing'):
+                    got = fn(brand, domains, CACHE)
                 else:
                     got = fn(brand, itunes_terms, token, CACHE)
                 if got:
                     src, how = got
-                    ext, info = normalize(brand, src, is_app_icon=(name == 'iTunes'))
-                    hit = f'{name}: {how} → {ext} {info}'
+                    if src is not None:
+                        ext, info = normalize(brand, src, is_app_icon=(name == 'iTunes'))
+                        hit = f'{name}: {how} → {ext} {info}'
+                    else:
+                        # bing 路线：只产出候选表，等待人工 --pick
+                        hit = f'{how}'
+                        break
             except Exception as e:
                 # 单路线失败（坏响应/解码失败）继续下一路线
-                report_note = f'{name} 失败: {e}'
-                print(f'  · {brand} {report_note}', flush=True)
+                print(f'  · {brand} {name} 失败: {e}', flush=True)
                 got = None
+            if hit:
+                break
         report[brand] = hit or 'MISS(前端 fallback 首字头像)'
         print(f'{brand:10s} {report[brand]}', flush=True)
 
