@@ -1,0 +1,46 @@
+{
+  "id": "aux_aeg28_15p",
+  "name": "奥克斯KFR-35GW/BpR3AEG28(B1)",
+  "model_code": "KFR-35GW/BpR3AEG28(B1)",
+  "brand": "奥克斯",
+  "type": "挂机",
+  "official_price": 2499,
+  "ref_price": 2499,
+  "second_hand": "—",
+  "pishu": "1.5匹",
+  "energy": "新一级(APF5.32)",
+  "area": "15-23㎡",
+  "cool_cap": 3510,
+  "heat_cap": 4900,
+  "cool_power": 900,
+  "airflow": 800,
+  "fresh_air": null,
+  "noise": "内≤37-41 / 外≤37-52dB",
+  "size_indoor": "826×318×218mm",
+  "size_outdoor": "709×536×280mm",
+  "weight": "内9 / 外22kg",
+  "year": 2025,
+  "month": 3,
+  "pros": [
+    "新一级能效(APF5.32)",
+    "循环风量800",
+    "外机紧凑"
+  ],
+  "cons": [
+    "制热量4900W同匹数偏低"
+  ],
+  "tags": [
+    "挂机",
+    "卧室",
+    "新一级"
+  ],
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/air_condition/aux/2673939_detail.html",
+  "change_log": "2026-10-03 建条：按太平洋电脑网规格表录入参数（上市2025年3月，在售报价¥2499记入官方价与参考价）；系列名未获可靠来源（媒体仅以型号称呼），name按型号命名；外机尺寸709×536×280mm已对照原始页面复核非解析错误；噪音值带「≤」前缀按规格表原样保留；2026-10-07 补产品图（来源：太平洋产品报价详情页（g.pconline.com.cn））",
+  "updated_at": "2026-10-07",
+  "img": "aux_aeg28_15p.webp"
+}

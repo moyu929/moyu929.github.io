@@ -1,0 +1,42 @@
+{
+  "id": "hisense_1538127",
+  "name": "海信HF-170LW/TS06SZJD",
+  "brand": "海信",
+  "model_code": "HF-170LW/TS06SZJD",
+  "type": "柜机",
+  "official_price": "查不到",
+  "ref_price": 38000,
+  "year": "查不到",
+  "pros": [
+    "制冷量17000W",
+    "适用60-80㎡",
+    "大空间柜机"
+  ],
+  "cons": [
+    "二级能效",
+    "噪音57dB",
+    "参考价38000最高",
+    "制热量查不到"
+  ],
+  "tags": [
+    "海信"
+  ],
+  "area": "60-80㎡",
+  "energy": "2级",
+  "cool_cap": 17000,
+  "heat_cap": "查不到",
+  "cool_power": "查不到",
+  "airflow": "查不到",
+  "noise": "57dB",
+  "size_indoor": "760×1875×610mm",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/air_condition/hisense/1538127_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（5 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：柜机（依据：空调类型=立式空调 或型号含 72LW）；2026-10-03 回填型号：原「查不到」，产品名「海信HF-170LW/TS06SZJD」中的型号串为 HF-170LW/TS06SZJD（来源与产品名同源的第三方规格站）；2026-10-04 数值字段归一：cool_cap '17000W'->17000（schema 已声明单位，由字段渲染，不再把单位写进值）；2026-10-04 pishu 补为「查不到」（制冷功率亦无值，不留缺字段）；2026-10-04 补 pros/cons（依据本行已入库参数推导，未引入参数表以外的数值）；2026-10-07 补产品图（来源：太平洋产品报价详情页（g.pconline.com.cn））",
+  "updated_at": "2026-10-07",
+  "pishu": "查不到",
+  "img": "hisense_1538127.webp"
+}

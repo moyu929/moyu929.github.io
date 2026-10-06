@@ -1,0 +1,35 @@
+{
+  "id": "supor_2072247",
+  "name": "苏泊尔SF40HC2928",
+  "brand": "苏泊尔",
+  "model_code": "SF40HC2928",
+  "type": "IH电磁",
+  "official_price": "查不到",
+  "ref_price": 1299,
+  "year": "查不到",
+  "pros": [
+    "IH电磁加热，1450W 大火力",
+    "4L 容量（4-5人）",
+    "铜铝合金内胆"
+  ],
+  "cons": [
+    "预约/压力参数未公开"
+  ],
+  "tags": [
+    "苏泊尔"
+  ],
+  "capacity": "4L(4-5人)",
+  "power": "1450W",
+  "inner_pot": "铜铝合金",
+  "pressure": "查不到",
+  "size": "260×334×240mm",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/rice_cooker/supor/2072247_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：IH电磁（依据：名称或加热方式含 IH）；2026-10-03 回填型号：原「查不到」，产品名「苏泊尔SF40HC2928」中的型号串为 SF40HC2928（来源与产品名同源的第三方规格站）；2026-10-04 补全：size=260×334×240mm，inner_pot=铜铝合金，补写卖点 3 条 pros / 1 条 cons（来源：太平洋/https://g.pconline.com.cn/product/rice_cooker/2072247_detail.html（2026-10-04 直连复抓））；2026-10-07 补产品图（来源：太平洋产品报价详情页（g.pconline.com.cn））",
+  "updated_at": "2026-10-07",
+  "img": "supor_2072247.webp"
+}

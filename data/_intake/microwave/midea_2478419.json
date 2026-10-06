@@ -1,0 +1,35 @@
+{
+  "id": "midea_2478419",
+  "name": "美的G3E Pro",
+  "brand": "美的",
+  "model_code": "G3E Pro",
+  "type": "微烤一体",
+  "official_price": "查不到",
+  "ref_price": 3999,
+  "year": "查不到",
+  "pros": [
+    "台式免安装，摆放灵活",
+    "石墨烯热管导热高效",
+    "微蒸烤多功能合一",
+    "23L容量适合小家庭"
+  ],
+  "cons": [
+    "容量较小，不适合大批量烘焙"
+  ],
+  "tags": [
+    "美的"
+  ],
+  "capacity": 23,
+  "power": "查不到",
+  "size": "462×478×338mm",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/oven/midea/2478419_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（0 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：微烤一体（依据：第三方产品类型=蒸烤一体机）；2026-10-03 回填型号：原「查不到」，产品名「美的G3E Pro」中的型号串为 G3E Pro（来源与产品名同源的第三方规格站）；2026-10-04 补写卖点 pros 4 条 / cons 1 条（依据：已入库参数与官方规格页文案，未引入参数表外数值）；2026-10-07 补产品图（来源：太平洋产品报价详情页（g.pconline.com.cn））",
+  "updated_at": "2026-10-07",
+  "input_power": 1600,
+  "img": "midea_2478419.webp"
+}

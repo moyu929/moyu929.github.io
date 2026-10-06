@@ -1,0 +1,40 @@
+{
+  "id": "mw_oven_23",
+  "name": "米家微波炉烤箱一体机 23L",
+  "model_code": "WK001",
+  "miot_model": "查不到",
+  "type": "微烤一体",
+  "official_price": null,
+  "second_hand": "—",
+  "capacity": 23,
+  "mw_power": 800,
+  "grill_power": 1000,
+  "input_power": null,
+  "heating": "平板式加热底盘",
+  "control": "查不到",
+  "noise": null,
+  "energy": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+    "23L大容量",
+    "微波+烧烤二合一",
+    "平板式无转盘更易清洁",
+    "1000W烧烤功率"
+  ],
+  "cons": [
+    "价格查不到"
+  ],
+  "tags": [
+    "微烤一体",
+    "23L"
+  ],
+  "verify_status": "待核验",
+  "verify_date": "2026-10-07",
+  "verify_source": [],
+  "verify_url": "查不到",
+  "change_log": "早期录入，来源未逐条记录，待按官方规格页/说明书核验；2026-10-07 补产品图（来源：小米商城官方API（api2.order.mi.com））",
+  "updated_at": "2026-10-07",
+  "img": "mw_oven_23.webp",
+  "brand": "小米"
+}
