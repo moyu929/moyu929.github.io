@@ -1,0 +1,32 @@
+{
+ "id": "jmgo_1090710",
+ "name": "坚果S1",
+ "brand": "坚果",
+ "model_code": "查不到",
+ "type": "旗舰家用",
+ "official_price": 25999,
+ "ref_price": 25999,
+ "year": "查不到",
+ "pros": [],
+ "cons": [],
+ "tags": [
+  "坚果"
+ ],
+ "brightness": "3000流明",
+ "resolution": "1080P",
+ "dmd": "0.65英寸DMD",
+ "throw_ratio": "0.25:1",
+ "focus": "自动对焦",
+ "keystone": "垂直±40°",
+ "weight": "13kg",
+ "size": "查不到",
+ "verify_status": "已核验（第三方）",
+ "verify_date": "2026-10-07",
+ "verify_source": [
+  "太平洋电脑网"
+ ],
+ "verify_url": "https://g.pconline.com.cn/product/projector/jmgo/1090710_detail.html",
+ "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（1 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：旗舰家用（依据：参考价 25999 元）；2026-10-04 补 official_price、resolution、dmd、keystone、focus、throw_ratio（来源：太平洋电脑网）；2026-10-07 补产品图（来源：京东商品页（jd.com））",
+ "updated_at": "2026-10-07",
+ "img": "jmgo_1090710.webp"
+}

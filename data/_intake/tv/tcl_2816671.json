@@ -1,0 +1,35 @@
+{
+ "id": "tcl_2816671",
+ "name": "TCL 98Z11L",
+ "brand": "TCL",
+ "model_code": "98Z11L",
+ "series": "未归类",
+ "official_price": 16999,
+ "ref_price": 16999,
+ "year": "查不到",
+ "pros": [
+  "98英寸 英寸大屏",
+  "288Hz 刷新"
+ ],
+ "cons": [],
+ "tags": [
+  "TCL"
+ ],
+ "size_inch": "98英寸",
+ "refresh": "288Hz",
+ "resolution": "查不到",
+ "size": "含底座：2180×420×1280mm不含底座：2180×44.5×1250mm",
+ "backlight": "查不到",
+ "mem": "查不到",
+ "hdmi": "4个",
+ "verify_status": "已核验（第三方）",
+ "verify_date": "2026-10-07",
+ "verify_source": [
+  "太平洋电脑网"
+ ],
+ "verify_url": "https://g.pconline.com.cn/product/lcd_tv/tcl/2816671_detail.html",
+ "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-03 回填型号：原「查不到」，产品名「TCL 98Z11L」中的型号串为 98Z11L（来源与产品名同源的第三方规格站）；2026-10-04 补 official_price（来源：太平洋电脑网）；2026-10-04 补 pros（由已入库参数推导，不引入新数值）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）；2026-10-07 补产品图（来源：太平洋产品报价详情页（g.pconline.com.cn））",
+ "updated_at": "2026-10-07",
+ "facet_group": "百吋巨幕(≥98\")",
+ "img": "tcl_2816671.webp"
+}

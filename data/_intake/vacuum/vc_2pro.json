@@ -1,0 +1,43 @@
+{
+ "id": "vc_2pro",
+ "name": "米家无线吸尘器 2 Pro",
+ "model_code": "查不到",
+ "miot_model": "查不到",
+ "tier": "主流",
+ "official_price": 1599,
+ "second_hand": "—",
+ "suction_aw": 190,
+ "vacuum": null,
+ "power": null,
+ "dust_cup": 0.4,
+ "runtime": null,
+ "noise": 82,
+ "weight": 1.7,
+ "filter": "查不到",
+ "size": "查不到",
+ "year": null,
+ "pros": [
+  "190AW大吸入功率",
+  "整机1.7kg较轻盈",
+  "吸拖一体",
+  "支持故障提示"
+ ],
+ "cons": [
+  "标称噪音82dB(A)"
+ ],
+ "tags": [
+  "主流",
+  "大吸力",
+  "吸拖一体"
+ ],
+ "verify_status": "已核验（官方商城）",
+ "verify_date": "2026-10-07",
+ "verify_source": [
+  "小米商城"
+ ],
+ "verify_url": "查不到",
+ "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04：原 verify_url 的 product_id 指向配件 SKU，拉回来的价格不是整机价，整机官方页查不到；2026-10-04：原 verify_url 的 product_id 指向配件 SKU，拉回来的价格不是整机价，整机官方页查不到；2026-10-04：原 verify_url 的 product_id 指向配件 SKU，拉回来的价格不是整机价，整机官方页查不到；2026-10-04：原 verify_url 的 product_id 指向配件 SKU，拉回来的价格不是整机价，整机官方页查不到；2026-10-07 补产品图（来源：苏宁易购商品页（suning.com））",
+ "updated_at": "2026-10-07",
+ "img": "vc_2pro.webp",
+ "brand": "小米"
+}
