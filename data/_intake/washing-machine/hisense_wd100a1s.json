@@ -1,0 +1,38 @@
+{
+ "id": "hisense_wd100a1s",
+ "name": "海信WD100A1S",
+ "brand": "海信",
+ "model_code": "WD100A1S",
+ "type": "滚筒洗烘一体",
+ "official_price": 1528,
+ "ref_price": 1528,
+ "wash_cap": "10kg",
+ "dry_cap": "7kg",
+ "wash_ratio": "1.28",
+ "spin_rpm": "查不到",
+ "energy": "1级",
+ "sterilize": "巴氏除菌螨/高温除菌",
+ "smart": "电脑控制",
+ "noise": "查不到",
+ "size": "595×550×845mm",
+ "year": "查不到",
+ "pros": [
+  "1级 能效",
+  "10kg 大容量",
+  "烘干 7kg"
+ ],
+ "cons": [],
+ "tags": [
+  "海信",
+  "洗烘一体"
+ ],
+ "verify_status": "已核验（第三方）",
+ "verify_date": "2026-10-07",
+ "verify_source": [
+  "中关村在线"
+ ],
+ "verify_url": "https://detail.zol.com.cn/1978/2176692/param.shtml",
+ "change_log": "2026-10-03 建条：参数取自中关村在线参数页（滚筒式洗烘一体，洗10kg/烘7kg/洗净比1.28/1级能效/巴氏除菌螨+高温除菌/耗电0.84千瓦时）；官方价与参考价取ZOL参考价1528（ZOL报价页同价）；脱水转速ZOL未列，记查不到；副分组归类：滚筒洗烘一体（依据：ZOL产品类别=滚筒式，洗烘一体）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）；2026-10-07 补产品图（来源：2e.zol-img.com.cn）",
+ "updated_at": "2026-10-07",
+ "img": "hisense_wd100a1s.webp"
+}
