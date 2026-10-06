@@ -1,0 +1,39 @@
+{
+  "id": "fan_bplds04dm",
+  "name": "米家直流变频落地扇 BPLDS04DM",
+  "model_code": "BPLDS04DM",
+  "miot_model": "查不到",
+  "type": "落地扇",
+  "official_price": 229,
+  "second_hand": "—",
+  "power": 15,
+  "airflow": null,
+  "speeds": "100档",
+  "noise": null,
+  "throw_dist": 14,
+  "battery": "无(需插电)",
+  "swing": "上下左右摇头",
+  "size": "扇叶直径270mm",
+  "year": null,
+  "pros": [
+    "台地两用",
+    "14米最远送风",
+    "24小时定时",
+    "¥229入门价"
+  ],
+  "cons": [
+    "扇叶直径270mm小巧,覆盖有限"
+  ],
+  "tags": [
+    "落地扇",
+    "台地两用"
+  ],
+  "verify_status": "待核验",
+  "verify_date": "2026-10-07",
+  "verify_source": [],
+  "verify_url": "查不到",
+  "change_log": "早期录入，来源未逐条记录，待按官方规格页/说明书核验；2026-10-07 补产品图（来源：中关村在线详情页（detail.zol.com.cn））",
+  "updated_at": "2026-10-07",
+  "img": "fan_bplds04dm.webp",
+  "brand": "小米"
+}

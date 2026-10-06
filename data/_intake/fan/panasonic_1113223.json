@@ -1,0 +1,34 @@
+{
+  "id": "panasonic_1113223",
+  "name": "松下F-CM339C",
+  "brand": "松下",
+  "model_code": "F-CM339C",
+  "type": "落地扇",
+  "official_price": "查不到",
+  "ref_price": 1568,
+  "year": "查不到",
+  "pros": [
+    "落地式家用"
+  ],
+  "cons": [
+    "档位、额定功率、噪音与输出风量均未公开",
+    "参考价1568元，落地扇中偏高"
+  ],
+  "tags": [
+    "松下"
+  ],
+  "power": "查不到",
+  "speeds": "查不到",
+  "noise": "查不到",
+  "swing": "查不到",
+  "size": "查不到",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/fan/panasonic/1113223_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（0 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：落地扇（依据：第三方产品类型=落地扇）；2026-10-03 回填型号：原「查不到」，产品名「松下F-CM339C」中的型号串为 F-CM339C（来源与产品名同源的第三方规格站）；2026-10-04 A2 路补录：pros（1 条），cons（2 条）。依据：库内已入库参数（type）；2026-10-07 补产品图（来源：太平洋产品报价详情页（g.pconline.com.cn））",
+  "updated_at": "2026-10-07",
+  "img": "panasonic_1113223.webp"
+}
