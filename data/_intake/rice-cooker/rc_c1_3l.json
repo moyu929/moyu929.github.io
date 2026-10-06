@@ -1,0 +1,40 @@
+{
+  "id": "rc_c1_3l",
+  "name": "米家电饭煲 C1 3L",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "底盘加热",
+  "official_price": 149,
+  "second_hand": "—",
+  "capacity": 3,
+  "power": 650,
+  "inner_pot": "不粘内胆",
+  "pressure": "无",
+  "appoint": "24小时预约",
+  "size": "325×224×202mm",
+  "year": 2019,
+  "pros": [
+    "650W大功率",
+    "热水快饭",
+    "一键调节加热时间",
+    "24种模式"
+  ],
+  "cons": [
+    "底盘加热,米饭口感一般"
+  ],
+  "tags": [
+    "底盘加热",
+    "3L",
+    "2019"
+  ],
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+    "中关村在线"
+  ],
+  "verify_url": "https://detail.zol.com.cn/rice_cooker/index1303035.shtml",
+  "change_log": "早期录入，来源未逐条记录，待按官方规格页/说明书核验；2026-10-04 补全：size=325×224×202mm（来源：ZOL https://detail.zol.com.cn/rice_cooker/index1303035.shtml（库内功率 650W 与 ZOL 参数页一致，互证））；2026-10-07 补产品图（来源：中关村在线详情页（detail.zol.com.cn））",
+  "updated_at": "2026-10-07",
+  "img": "rc_c1_3l.webp",
+  "brand": "小米"
+}

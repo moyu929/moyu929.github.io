@@ -1,0 +1,38 @@
+{
+  "id": "joyoung_1900287",
+  "name": "九阳F40TD-F555",
+  "brand": "九阳",
+  "model_code": "F40TD-F555",
+  "type": "IH电磁",
+  "official_price": "查不到",
+  "ref_price": 499,
+  "year": "查不到",
+  "pros": [
+    "IH电磁加热，1200W 大火力",
+    "土灶铁釜内胆",
+    "支持预约",
+    "4L 容量（4-5人）",
+    "定价亲民"
+  ],
+  "cons": [
+    "压力参数未公开"
+  ],
+  "tags": [
+    "九阳"
+  ],
+  "capacity": "4L(4-5人)",
+  "power": "1200W",
+  "inner_pot": "土灶铁釜内胆",
+  "pressure": "查不到",
+  "size": "342×272×240mm",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/rice_cooker/joyoung/1900287_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：IH电磁（依据：名称或加热方式含 IH）；2026-10-03 回填型号：原「查不到」，产品名「九阳F40TD-F555」中的型号串为 F40TD-F555（来源与产品名同源的第三方规格站）；2026-10-04 补全：appoint=支持，补写卖点 5 条 pros / 1 条 cons（来源：太平洋/https://g.pconline.com.cn/product/rice_cooker/1900287_detail.html（预约定时煮饭=支持））；2026-10-07 补产品图（来源：太平洋产品报价详情页（g.pconline.com.cn））",
+  "updated_at": "2026-10-07",
+  "appoint": "支持",
+  "img": "joyoung_1900287.webp"
+}

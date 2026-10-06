@@ -1,0 +1,32 @@
+{
+  "id": "robam_1823487",
+  "name": "老板WZKQS-36-CQ9363A",
+  "brand": "老板",
+  "model_code": "WZKQS-36-CQ9363A",
+  "type": "微烤一体",
+  "official_price": "查不到",
+  "ref_price": 6999,
+  "year": "查不到",
+  "pros": [
+    "蒸烤炸一体多功能",
+    "标配炸烤网架与玻璃烤盘",
+    "嵌入式安装"
+  ],
+  "cons": [
+    "机械控温精度一般"
+  ],
+  "tags": [
+    "老板"
+  ],
+  "power": "查不到",
+  "size": "595×455×535mm",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/oven/robam/1823487_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（0 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：微烤一体（依据：第三方产品类型=嵌入式蒸烤一体机）；2026-10-03 回填型号：原「查不到」，产品名「老板WZKQS-36-CQ9363A」中的型号串为 WZKQS-36-CQ9363A（来源与产品名同源的第三方规格站）；2026-10-04 补写卖点 pros 3 条 / cons 1 条（依据：已入库参数与官方规格页文案，未引入参数表外数值）；2026-10-04 剔除 capacity=41（理由：pconline 41L 与老板命名 WZKQS-36（疑指 36L）矛盾，且与官网 CQ38-i7 容积完全相同，疑复制粘贴错标）；2026-10-04 剔除 input_power=2950（理由：pconline 2950W 与官网 CQ38-i7 额定功率完全相同，疑复制粘贴错标）；2026-10-07 补产品图（来源：太平洋产品报价详情页（g.pconline.com.cn））",
+  "updated_at": "2026-10-07",
+  "img": "robam_1823487.webp"
+}

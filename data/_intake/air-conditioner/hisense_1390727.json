@@ -1,0 +1,41 @@
+{
+  "id": "hisense_1390727",
+  "name": "海信KFR-72GW/G860D-X1",
+  "brand": "海信",
+  "model_code": "KFR-72GW/G860D-X1",
+  "type": "挂机",
+  "official_price": "查不到",
+  "ref_price": 8799,
+  "year": "查不到",
+  "pros": [
+    "一级能效",
+    "挂机省空间",
+    "低至24dB",
+    "循环风量1350m³/h"
+  ],
+  "cons": [
+    "适用面积查不到",
+    "噪音上限47dB"
+  ],
+  "tags": [
+    "海信"
+  ],
+  "area": "查不到",
+  "energy": "1级",
+  "cool_cap": 7250,
+  "heat_cap": 9600,
+  "cool_power": "查不到",
+  "airflow": 1350,
+  "noise": "24/44/47dB",
+  "size_indoor": "1221×318×235mm",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/air_condition/hisense/1390727_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（7 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：挂机（依据：空调类型=挂式空调 或型号含 GW）；2026-10-03 回填型号：原「查不到」，产品名「海信KFR-72GW/G860D-X1」中的型号串为 KFR-72GW/G860D-X1（来源与产品名同源的第三方规格站）；2026-10-04 字段归位：制冷功率 cool_power 原记「3.0P」（匹数误入 W 列），移至 pishu=3.匹，制冷功率回填「查不到」；2026-10-04 字段归位：制冷功率 cool_power 原记「3.0P」（匹数误入 W 列），移至 pishu=3.匹，制冷功率回填「查不到」；2026-10-04 数值字段归一：cool_cap '7250(900-8800)'->7250，heat_cap '9600(900-11500)'->9600，airflow '1350m3/h'->1350（schema 已声明单位，由字段渲染，不再把单位写进值）；2026-10-04 字段归位：制冷功率 cool_power 原记「3.0P」（匹数误入 W 列），移至 pishu=3匹，制冷功率回填「查不到」；2026-10-04 补 pros/cons（依据本行已入库参数推导，未引入参数表以外的数值）；2026-10-07 补产品图（来源：太平洋产品报价详情页（g.pconline.com.cn））",
+  "updated_at": "2026-10-07",
+  "pishu": "3匹",
+  "img": "hisense_1390727.webp"
+}
