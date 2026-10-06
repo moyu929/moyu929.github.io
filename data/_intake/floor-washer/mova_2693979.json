@@ -1,0 +1,41 @@
+{
+  "id": "mova_2693979",
+  "name": "Mova 大未3.0 Pro",
+  "brand": "MOVA",
+  "model_code": "查不到",
+  "series": "未归类",
+  "official_price": "查不到",
+  "ref_price": 3499,
+  "year": "查不到",
+  "pros": [
+    "4kg 轻量",
+    "无刷电机"
+  ],
+  "cons": [
+    "600ml 净水箱为全场最小",
+    "35min 续航偏短",
+    "噪音查不到"
+  ],
+  "tags": [
+    "MOVA"
+  ],
+  "motor": "无刷电机",
+  "battery": "查不到",
+  "charge": "查不到",
+  "runtime": "35min",
+  "noise": "查不到",
+  "clean_tank": "600ml",
+  "dirty_tank": "500ml",
+  "weight": "4kg",
+  "size": "查不到",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/cleaning_machine/mova/2693979_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（3 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-04：按已入库参数补 pros/cons（不引入新数值）；2026-10-07 补产品图（来源：太平洋产品报价详情页（g.pconline.com.cn））",
+  "updated_at": "2026-10-07",
+  "facet_group": "小容量(<800ml)",
+  "img": "mova_2693979.webp"
+}

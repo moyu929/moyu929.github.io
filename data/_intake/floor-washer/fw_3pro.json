@@ -1,0 +1,42 @@
+{
+  "id": "fw_3pro",
+  "name": "米家无线洗地机3 Pro",
+  "model_code": "D302",
+  "miot_model": "查不到",
+  "series": "3 代",
+  "official_price": "查不到",
+  "second_hand": "查不到",
+  "motor": "查不到",
+  "battery": "查不到",
+  "charge": "查不到",
+  "runtime": "20-30分钟",
+  "noise": 76,
+  "clean_tank": "800ml",
+  "dirty_tank": "700ml",
+  "weight": 8.73,
+  "size": "265×230×1100mm",
+  "year": "查不到",
+  "pros": [
+    "800ml 净 + 700ml 污 双水箱",
+    "20-30 分钟续航"
+  ],
+  "cons": [
+    "整机 8.73kg 偏重",
+    "噪音 76dB 偏高",
+    "电池容量查不到"
+  ],
+  "tags": [
+    "无线洗地机"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/cleaning_machine/mijia/2171039_detail.html",
+  "change_log": "2026-10-01 建条：参数取自太平洋电脑网规格表（7 项），价格与图片取自小米商城在售目录；2026-10-01 型号栏清洗：原「3Pro（D302）」混入产品名，改为纯型号代码 D302；2026-10-04：按已入库参数补 pros/cons（不引入新数值）；2026-10-07 补产品图（来源：太平洋产品报价详情页（g.pconline.com.cn））",
+  "updated_at": "2026-10-07",
+  "img": "fw_3pro.webp",
+  "brand": "小米",
+  "facet_group": "中容量(800-999ml)"
+}

@@ -1,0 +1,41 @@
+{
+  "id": "narwal_2290419",
+  "name": "云鲸智能洗地机F1冠军版",
+  "brand": "云鲸",
+  "model_code": "查不到",
+  "series": "未归类",
+  "official_price": "查不到",
+  "ref_price": 2199,
+  "year": "查不到",
+  "pros": [
+    "4.13kg 全场最轻",
+    "噪音 46dB 较低",
+    "参考价 2199 元较低"
+  ],
+  "cons": [
+    "790ml 净水箱偏小",
+    "电机与电池容量查不到"
+  ],
+  "tags": [
+    "云鲸"
+  ],
+  "motor": "查不到",
+  "battery": "查不到",
+  "charge": "查不到",
+  "runtime": "55min",
+  "noise": "46dB",
+  "clean_tank": "790ml",
+  "dirty_tank": "670ml",
+  "weight": "4.13kg",
+  "size": "251×273×1163mm",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/cleaning_machine/narwal/2290419_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（3 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-04：按已入库参数补 pros/cons（不引入新数值）；2026-10-07 补产品图（来源：太平洋产品报价详情页（g.pconline.com.cn））",
+  "updated_at": "2026-10-07",
+  "facet_group": "小容量(<800ml)",
+  "img": "narwal_2290419.webp"
+}

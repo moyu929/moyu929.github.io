@@ -1,0 +1,39 @@
+{
+  "id": "fw_2lite",
+  "name": "米家无线洗地机2 Lite",
+  "model_code": "C301",
+  "miot_model": "查不到",
+  "series": "2 代",
+  "official_price": "查不到",
+  "second_hand": "查不到",
+  "motor": "查不到",
+  "battery": "查不到",
+  "charge": "查不到",
+  "runtime": "查不到",
+  "noise": "查不到",
+  "clean_tank": "查不到",
+  "dirty_tank": "查不到",
+  "weight": 4.2,
+  "size": "查不到",
+  "year": "查不到",
+  "pros": [
+    "4.2kg 轻量"
+  ],
+  "cons": [
+    "吸力/续航/水箱容量/尺寸官方均查不到"
+  ],
+  "tags": [
+    "无线洗地机"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/cleaning_machine/mijia/1762407_detail.html",
+  "change_log": "2026-10-01 建条：参数取自太平洋电脑网规格表（2 项），价格与图片取自小米商城在售目录；2026-10-04：按已入库参数补 pros/cons（不引入新数值）；2026-10-07 补产品图（来源：太平洋产品报价详情页（g.pconline.com.cn））",
+  "updated_at": "2026-10-07",
+  "img": "fw_2lite.webp",
+  "brand": "小米",
+  "facet_group": "未归类"
+}

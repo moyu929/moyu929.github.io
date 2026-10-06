@@ -1,0 +1,41 @@
+{
+  "id": "tineco_2560739",
+  "name": "添可芙万Artist70艺术家(SW29010ECN)",
+  "brand": "添可",
+  "model_code": "SW29010ECN",
+  "series": "未归类",
+  "official_price": "查不到",
+  "ref_price": 4950,
+  "year": "查不到",
+  "pros": [
+    "6250mAh 大电池",
+    "75min 超长续航",
+    "无刷电机"
+  ],
+  "cons": [
+    "噪音 78dB 偏高",
+    "充电约 3.5h 偏长"
+  ],
+  "tags": [
+    "添可"
+  ],
+  "motor": "无刷电机",
+  "battery": "6250mAh",
+  "charge": "约3.5h",
+  "runtime": "75min",
+  "noise": "78dB",
+  "clean_tank": "查不到",
+  "dirty_tank": "查不到",
+  "weight": "查不到",
+  "size": "查不到",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/cleaning_machine/tineco/2560739_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（5 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-04：按已入库参数补 pros/cons（不引入新数值）；2026-10-07 补产品图（来源：太平洋产品报价详情页（g.pconline.com.cn））",
+  "updated_at": "2026-10-07",
+  "facet_group": "未归类",
+  "img": "tineco_2560739.webp"
+}
