@@ -1,0 +1,36 @@
+{
+  "id": "kt_cook_mjysh",
+  "name": "米家多功能电煮壶",
+  "model_code": "MJYSH01YM",
+  "miot_model": "查不到",
+  "type": "电煮壶",
+  "official_price": null,
+  "second_hand": "—",
+  "capacity": 1.5,
+  "power": 1000,
+  "material": "查不到",
+  "temp_ctrl": "查不到",
+  "smart": "WiFi(米家APP)",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+    "1.5L可煮面煮粥",
+    "1000W功率",
+    "支持WiFi智能联动"
+  ],
+  "cons": [
+    "价格查不到"
+  ],
+  "tags": [
+    "电煮壶",
+    "WiFi"
+  ],
+  "verify_status": "待核验",
+  "verify_date": "2026-10-07",
+  "verify_source": [],
+  "verify_url": "查不到",
+  "change_log": "早期录入，来源未逐条记录，待按官方规格页/说明书核验；2026-10-07 补产品图（来源：360图片搜索（标题核验），原始图 2c.zol-img.com.cn）",
+  "updated_at": "2026-10-07",
+  "img": "kt_cook_mjysh.webp",
+  "brand": "小米"
+}

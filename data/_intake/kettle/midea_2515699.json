@@ -1,0 +1,30 @@
+{
+  "id": "midea_2515699",
+  "name": "美的MK-SP50E-20FPro",
+  "brand": "美的",
+  "model_code": "MK-SP50E-20FPro",
+  "type": "养生壶",
+  "official_price": "查不到",
+  "ref_price": 589,
+  "year": "查不到",
+  "pros": [],
+  "cons": [],
+  "tags": [
+    "美的"
+  ],
+  "capacity": "5L",
+  "power": "1600W",
+  "material": "查不到",
+  "temp_ctrl": "查不到",
+  "size": "346×234×377mm",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+    "太平洋电脑网",
+    "美的官方商城"
+  ],
+  "verify_url": "https://www.midea.cn/#/detail?skuId=20521",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（0 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：养生壶（依据：容量 5.0L（≥3L 属养生壶区间））；2026-10-03 回填型号：原「查不到」，产品名「美的MK-SP50E-20FPro」中的型号串为 MK-SP50E-20FPro（来源与产品名同源的第三方规格站）；2026-10-04 补 capacity、power（来源：太平洋电脑网）；2026-10-05 美的官方商城补参（skuId=20521，型号已逐字核对）：size=346×234×377mm（productPacking Length×Width×Height=346/234/377（已排除 indoorPacking 包装尺寸））；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）；2026-10-07 补产品图（来源：美的商城API（oss-accelerate-ga.midea.com））",
+  "updated_at": "2026-10-07",
+  "img": "midea_2515699.webp"
+}
