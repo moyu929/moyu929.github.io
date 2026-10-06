@@ -1,0 +1,39 @@
+{
+ "id": "gree_1628427",
+ "name": "格力XQG100-RBD1401Ea1",
+ "brand": "格力",
+ "model_code": "XQG100-RBD1401Ea1",
+ "type": "滚筒洗烘一体",
+ "official_price": "查不到",
+ "ref_price": 15999,
+ "year": "查不到",
+ "pros": [
+  "10kg洗6kg烘",
+  "1400转高速脱水",
+  "一级能效"
+ ],
+ "cons": [
+  "烘干容量仅6kg",
+  "定价较高"
+ ],
+ "tags": [
+  "格力"
+ ],
+ "wash_cap": 10,
+ "dry_cap": 6,
+ "wash_ratio": 1.08,
+ "spin_rpm": 1400,
+ "energy": "1级",
+ "noise": "查不到",
+ "size": "644×596×986mm",
+ "smart": "查不到",
+ "verify_status": "已核验（第三方）",
+ "verify_date": "2026-10-07",
+ "verify_source": [
+  "太平洋电脑网"
+ ],
+ "verify_url": "https://g.pconline.com.cn/product/washer/gree/1628427_detail.html",
+ "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（3 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=烘洗一体变频）；2026-10-03 回填型号：原「查不到」，产品名「格力XQG100-RBD1401Ea1」中的型号串为 XQG100-RBD1401Ea1（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=10、spin_rpm=1400、dry_cap=6、wash_ratio=1.08，值本身不变，单位由 schema 渲染）；2026-10-07 补产品图（来源：img0.baidu.com）",
+ "updated_at": "2026-10-07",
+ "img": "gree_1628427.webp"
+}
