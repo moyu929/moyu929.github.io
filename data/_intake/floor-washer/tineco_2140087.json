@@ -1,0 +1,41 @@
+{
+  "id": "tineco_2140087",
+  "name": "添可芙万Station Pro",
+  "brand": "添可",
+  "model_code": "查不到",
+  "series": "未归类",
+  "official_price": "查不到",
+  "ref_price": 4990,
+  "year": "查不到",
+  "pros": [
+    "850ml 净水箱",
+    "4000mAh 电池",
+    "充电时间查不到但续航未标"
+  ],
+  "cons": [
+    "噪音上限 78dB(A) 偏高",
+    "官方在售形态与本站条目对应关系待复核"
+  ],
+  "tags": [
+    "添可"
+  ],
+  "motor": "查不到",
+  "battery": "4000mAh",
+  "charge": "查不到",
+  "runtime": "查不到",
+  "noise": "≤78dB(A)",
+  "clean_tank": "850ml",
+  "dirty_tank": "720ml",
+  "weight": "查不到",
+  "size": "311×462×1260mm",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/cleaning_machine/tineco/2140087_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（3 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-04：按已入库参数补 pros/cons（不引入新数值）；2026-10-07 补产品图（来源：太平洋产品报价详情页（g.pconline.com.cn））",
+  "updated_at": "2026-10-07",
+  "facet_group": "中容量(800-999ml)",
+  "img": "tineco_2140087.webp"
+}

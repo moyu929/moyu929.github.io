@@ -1,0 +1,41 @@
+{
+  "id": "roborock_2980462",
+  "name": "石头A30 Pro Steam 2.0 5合1版",
+  "brand": "石头",
+  "model_code": "查不到",
+  "series": "未归类",
+  "official_price": "查不到",
+  "ref_price": 4835,
+  "year": "查不到",
+  "pros": [
+    "105min 全场最长续航",
+    "7300mAh 大电池",
+    "噪音 45dB",
+    "1000+100ml 双清水箱"
+  ],
+  "cons": [
+    "整站 352×600×1162mm 占地最大"
+  ],
+  "tags": [
+    "石头"
+  ],
+  "motor": "查不到",
+  "battery": "7300mAh",
+  "charge": "3.5h",
+  "runtime": "105min",
+  "noise": "45dB",
+  "clean_tank": "1000ml+100ml",
+  "dirty_tank": "720ml",
+  "weight": "5.8kg",
+  "size": "352×600×1162mm",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/cleaning_machine/roborock/2980462_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（5 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-04：按已入库参数补 pros/cons（不引入新数值）；2026-10-07 补产品图（来源：太平洋产品报价详情页（g.pconline.com.cn））",
+  "updated_at": "2026-10-07",
+  "facet_group": "大容量(≥1000ml)",
+  "img": "roborock_2980462.webp"
+}
