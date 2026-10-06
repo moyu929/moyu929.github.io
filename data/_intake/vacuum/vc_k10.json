@@ -1,0 +1,40 @@
+{
+ "id": "vc_k10",
+ "name": "米家手持无线吸尘器 K10",
+ "model_code": "查不到",
+ "miot_model": "查不到",
+ "tier": "主流",
+ "official_price": 1399,
+ "second_hand": "—",
+ "suction_aw": 150,
+ "vacuum": 16,
+ "power": 450,
+ "dust_cup": 0.5,
+ "runtime": null,
+ "noise": null,
+ "weight": null,
+ "filter": "HEPA过滤网",
+ "size": "查不到",
+ "year": 2020,
+ "pros": [
+  "150AW吸力",
+  "0.5L大尘杯",
+  "标配电动除螨刷"
+ ],
+ "cons": [
+  "真空度低于K10 Pro"
+ ],
+ "tags": [
+  "主流",
+  "除螨",
+  "2020"
+ ],
+ "verify_status": "待核验",
+ "verify_date": "2026-10-07",
+ "verify_source": [],
+ "verify_url": "查不到",
+ "change_log": "早期录入，来源未逐条记录，待按官方规格页/说明书核验；2026-10-07 补产品图（来源：苏宁易购商品页（suning.com））",
+ "updated_at": "2026-10-07",
+ "img": "vc_k10.webp",
+ "brand": "小米"
+}

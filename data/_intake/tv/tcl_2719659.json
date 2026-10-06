@@ -1,0 +1,38 @@
+{
+ "id": "tcl_2719659",
+ "name": "TCL 85J9L",
+ "brand": "TCL",
+ "model_code": "85J9L",
+ "series": "未归类",
+ "official_price": 11599,
+ "ref_price": 11599,
+ "year": "查不到",
+ "pros": [
+  "85 英寸大屏",
+  "QD-Mini LED 背光",
+  "HDMI 4 个"
+ ],
+ "cons": [
+  "2024 年上市较早"
+ ],
+ "tags": [
+  "TCL"
+ ],
+ "size_inch": "85英寸",
+ "refresh": "288Hz",
+ "resolution": "查不到",
+ "size": "含底座：1889×高1163×374mm不含底座：1889×1088×57.9mm",
+ "backlight": "查不到",
+ "mem": "查不到",
+ "hdmi": "4个",
+ "verify_status": "已核验（第三方）",
+ "verify_date": "2026-10-07",
+ "verify_source": [
+  "太平洋电脑网"
+ ],
+ "verify_url": "https://g.pconline.com.cn/product/lcd_tv/tcl/2719659_detail.html",
+ "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-03 回填型号：原「查不到」，产品名「TCL 85J9L」中的型号串为 85J9L（来源与产品名同源的第三方规格站）；2026-10-04 补 official_price（来源：太平洋电脑网）；2026-10-04 补 pros、cons（由已入库参数推导，不引入新数值）；2026-10-07 补产品图（来源：太平洋产品报价详情页（g.pconline.com.cn））",
+ "updated_at": "2026-10-07",
+ "facet_group": "超大(85-97\")",
+ "img": "tcl_2719659.webp"
+}

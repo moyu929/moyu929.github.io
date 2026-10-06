@@ -1,0 +1,39 @@
+{
+ "id": "vc_lite",
+ "name": "米家无线吸尘器 Lite",
+ "model_code": "查不到",
+ "miot_model": "查不到",
+ "tier": "入门",
+ "official_price": 499,
+ "second_hand": "—",
+ "suction_aw": null,
+ "vacuum": 17,
+ "power": 220,
+ "dust_cup": 0.5,
+ "runtime": null,
+ "noise": null,
+ "weight": null,
+ "filter": "查不到",
+ "size": "查不到",
+ "year": null,
+ "pros": [
+  "¥499最低门槛",
+  "0.5L尘杯",
+  "标配除螨刷"
+ ],
+ "cons": [
+  "吸力与续航为入门水平"
+ ],
+ "tags": [
+  "入门",
+  "性价比"
+ ],
+ "verify_status": "待核验",
+ "verify_date": "2026-10-07",
+ "verify_source": [],
+ "verify_url": "查不到",
+ "change_log": "早期录入，来源未逐条记录，待按官方规格页/说明书核验；2026-10-07 补产品图（来源：太平洋产品报价详情页（g.pconline.com.cn））",
+ "updated_at": "2026-10-07",
+ "img": "vc_lite.webp",
+ "brand": "小米"
+}
