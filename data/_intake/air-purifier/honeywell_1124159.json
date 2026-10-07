@@ -1,0 +1,40 @@
+{
+  "id": "honeywell_1124159",
+  "name": "霍尼韦尔KJ810G93W",
+  "brand": "霍尼韦尔",
+  "model_code": "KJ810G93W",
+  "tier": "旗舰",
+  "official_price": "查不到",
+  "ref_price": 16999,
+  "year": "查不到",
+  "pros": [
+    "颗粒物CADR 833",
+    "大容量立式"
+  ],
+  "cons": [
+    "参考价16999最高",
+    "甲醛CADR查不到",
+    "适用面积查不到",
+    "滤芯价格查不到"
+  ],
+  "tags": [
+    "霍尼韦尔"
+  ],
+  "area": "查不到",
+  "cadr_pm": 833,
+  "cadr_hcho": "查不到",
+  "power": "查不到",
+  "noise": "查不到",
+  "filter_life": "查不到",
+  "wifi": "查不到",
+  "size": "420×420×1260mm",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/jinghuaqi/honeywell/1124159_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：旗舰（依据：颗粒物 CADR 833.0 m³/h（≥800））；2026-10-03 回填型号：原「查不到」，产品名「霍尼韦尔KJ810G93W」中的型号串为 KJ810G93W（来源与产品名同源的第三方规格站）；2026-10-04 数值字段归一：cadr_pm '833m3/h'->833（schema 已声明单位，由字段渲染，不再把单位写进值）；2026-10-04 补 pros/cons（依据本行已入库参数推导，未引入参数表以外的数值）；2026-10-07 补产品图（来源：太平洋产品报价详情页（g.pconline.com.cn））",
+  "updated_at": "2026-10-07",
+  "img": "honeywell_1124159.webp"
+}

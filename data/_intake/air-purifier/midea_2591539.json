@@ -1,0 +1,42 @@
+{
+  "id": "midea_2591539",
+  "name": "美的KJ1000G-T1000 Pro",
+  "brand": "美的",
+  "model_code": "KJ1000G-T1000 Pro",
+  "tier": "高端",
+  "official_price": "查不到",
+  "ref_price": 3999,
+  "year": "查不到",
+  "pros": [
+    "适用150㎡",
+    "卧式横置机型",
+    "功耗92W",
+    "Pro版本"
+  ],
+  "cons": [
+    "颗粒物CADR查不到",
+    "噪音参数查不到",
+    "滤芯价格查不到"
+  ],
+  "tags": [
+    "美的"
+  ],
+  "area": "＜150㎡",
+  "cadr_pm": "查不到",
+  "cadr_hcho": "850",
+  "power": "92W",
+  "noise": "查不到",
+  "filter_life": "查不到",
+  "wifi": "查不到",
+  "size": "1016×385×392mm",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+    "太平洋电脑网",
+    "美的官方商城"
+  ],
+  "verify_url": "https://www.midea.cn/#/detail?skuId=41573",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（3 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：高端（依据：参考价 3999 元）；2026-10-03 回填型号：原「查不到」，产品名「美的KJ1000G-T1000 Pro」中的型号串为 KJ1000G-T1000 Pro（来源与产品名同源的第三方规格站）；2026-10-04 补 pros/cons（依据本行已入库参数推导，未引入参数表以外的数值）；2026-10-05 美的官方商城补参（skuId=41573，型号已逐字核对）：weight=15.5kg（productPacking.netWeight=15.5（已排除 grossWeight 毛重）），cadr_hcho=850（甲醛CADR值=850）；2026-10-07 补产品图（来源：美的商城官方API（midea.cn））",
+  "updated_at": "2026-10-07",
+  "img": "midea_2591539.webp"
+}

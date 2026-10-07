@@ -1,0 +1,33 @@
+{
+  "id": "bear_1466067",
+  "name": "小熊DNQ-A18N5",
+  "brand": "小熊",
+  "model_code": "DNQ-A18N5",
+  "type": "暖风机",
+  "official_price": "查不到",
+  "ref_price": 299,
+  "year": "查不到",
+  "pros": [
+    "3档调温",
+    "参考价299元，小熊暖风机最低价位"
+  ],
+  "cons": [
+    "适用面积仅5㎡以下，取暖范围小",
+    "额定功率未公开"
+  ],
+  "tags": [
+    "小熊"
+  ],
+  "power": "查不到",
+  "coverage": "5㎡以下",
+  "gear": "3档",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/heater/bear/1466067_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：暖风机（依据：第三方产品类型=暖风机）；2026-10-03 回填型号：原「查不到」，产品名「小熊DNQ-A18N5」中的型号串为 DNQ-A18N5（来源与产品名同源的第三方规格站）；2026-10-04 A2 路补录：pros（2 条），cons（2 条）。依据：库内已入库参数（coverage/gear/type）；2026-10-07 补产品图（来源：太平洋产品报价详情页（g.pconline.com.cn））",
+  "updated_at": "2026-10-07",
+  "img": "bear_1466067.webp"
+}
