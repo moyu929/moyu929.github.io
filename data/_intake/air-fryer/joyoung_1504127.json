@@ -1,0 +1,35 @@
+{
+  "id": "joyoung_1504127",
+  "name": "九阳KL65-VF562",
+  "brand": "九阳",
+  "model_code": "KL65-VF562",
+  "type": "经典炸锅",
+  "official_price": 599,
+  "ref_price": 599,
+  "year": "查不到",
+  "pros": [
+    "6.5L大容量，适合多人家庭",
+    "最高200℃高温烘烤"
+  ],
+  "cons": [
+    "1400W功率在6.5L容量下偏低"
+  ],
+  "tags": [
+    "九阳"
+  ],
+  "capacity": 6.5,
+  "power": 1400,
+  "basket": "不粘涂层",
+  "verify_status": "已核验（多源）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+    "中关村在线",
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/airfryer/joyoung/1504127_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（3 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：经典炸锅（依据：无蒸烤或可视特征）；2026-10-03 回填型号：原「查不到」，产品名「九阳KL65-VF562」中的型号串为 KL65-VF562（来源与产品名同源的第三方规格站）；2026-10-04 回填参数（来源：太平洋规格表 verify_url）：size=275×300×290mm（产品尺寸=275×300×290mm）；2026-10-04 补全：capacity格式订正：6.5L→6.5；power格式订正：1400W→1400；official_price=599（来源：ZOL参考报价 https://detail.zol.com.cn/AirFryer/index1418981.shtml）；temp_max=200（来源：ZOL参数页「烹饪温度」上限）；补卖点/缺点（只引用已入库参数与商城在售价）；2026-10-04 补全：剔除size冲突值「275×300×290mm」（两家第三方互斥：太平洋 275×300×290mm vs ZOL 337×305×287mm，宁缺勿错）；2026-10-07 补产品图（来源：360图片搜索（标题核验），原始图 m.360buyimg.com）",
+  "updated_at": "2026-10-07",
+  "size": "查不到",
+  "temp_max": 200,
+  "img": "joyoung_1504127.webp"
+}
