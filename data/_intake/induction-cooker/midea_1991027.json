@@ -1,0 +1,33 @@
+{
+  "id": "midea_1991027",
+  "name": "美的MC-22RC02",
+  "brand": "美的",
+  "model_code": "MC-22RC02",
+  "type": "常规",
+  "official_price": "查不到",
+  "ref_price": 649,
+  "year": "查不到",
+  "pros": [
+    "2200W 主流大火力",
+    "一体面板好清洁"
+  ],
+  "cons": [
+    "机身宽 416mm，为本品类最大之一，收纳占地"
+  ],
+  "tags": [
+    "美的"
+  ],
+  "power": 2200,
+  "gear": "查不到",
+  "panel": "一体面板",
+  "size": "416×316.5×58mm",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/induction_cooker/midea/1991027_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：常规（依据：无超薄或青春特征）；2026-10-03 回填型号：原「查不到」，产品名「美的MC-22RC02」中的型号串为 MC-22RC02（来源与产品名同源的第三方规格站）；2026-10-04 补全：格式订正：功率「2200W」→ 2200（schema number 归一）；补全卖点（依据：库内参数，未引入新数值）；2026-10-07 补产品图（来源：太平洋产品报价详情页（g.pconline.com.cn））",
+  "updated_at": "2026-10-07",
+  "img": "midea_1991027.webp"
+}

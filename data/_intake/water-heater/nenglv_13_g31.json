@@ -1,0 +1,37 @@
+{
+  "id": "nenglv_13_g31",
+  "name": "能率JSQ25-G31",
+  "brand": "能率",
+  "model_code": "JSQ25-G31",
+  "type": "燃气",
+  "official_price": 3399,
+  "ref_price": "查不到",
+  "second_hand": "—",
+  "capacity": "13L",
+  "power": "热负荷 25kW",
+  "energy": "二级能效",
+  "constant": "查不到",
+  "app": "语音控制",
+  "size": "559×350×170mm",
+  "year": "查不到",
+  "pros": [
+    "13L 升数",
+    "支持语音控制"
+  ],
+  "cons": [
+    "能效为二级",
+    "需燃气管道与强排条件"
+  ],
+  "tags": [
+    "能率"
+  ],
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/gas_water/noritz/2703799_detail.html",
+  "change_log": "2026-10-03 建条：品牌型号与参数取自太平洋电脑网规格表；official_price 记太平洋参考价 ¥3399；规格表控制方式「触控式，语音控制」，语音控制记入 app；规格表无额定电功率行，未录；产品重量 12.1kg（无对应字段未录）；副分组归类：燃气（依据：型号含 JSQ 燃气热水器国标前缀）；2026-10-04 补 pros、cons（由已入库参数推导，不引入新数值）；2026-10-07 补产品图（来源：太平洋产品报价详情页（g.pconline.com.cn））",
+  "updated_at": "2026-10-07",
+  "img": "nenglv_13_g31.webp"
+}

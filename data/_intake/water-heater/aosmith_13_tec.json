@@ -1,0 +1,37 @@
+{
+  "id": "aosmith_13_tec",
+  "name": "A.O.史密斯JSQ26-TEC",
+  "brand": "A.O.史密斯",
+  "model_code": "JSQ26-TEC",
+  "type": "燃气",
+  "official_price": 1979,
+  "ref_price": "查不到",
+  "second_hand": "—",
+  "capacity": "13L",
+  "power": "热负荷 25.5kW",
+  "energy": "二级能效",
+  "constant": "查不到",
+  "app": "查不到",
+  "size": "550×360×145mm",
+  "year": "查不到",
+  "pros": [
+    "13L 升数",
+    "热负荷 25.5kW"
+  ],
+  "cons": [
+    "能效为二级",
+    "需燃气管道与强排条件"
+  ],
+  "tags": [
+    "A.O.史密斯"
+  ],
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/gas_water/aosmith/2656640_detail.html",
+  "change_log": "2026-10-03 建条：品牌型号与参数取自太平洋电脑网规格表；official_price 记太平洋参考价 ¥1979；热负荷源值 25.5kW（型号代码作 26，四舍五入相符）；规格表无额定电功率行，未录；副分组归类：燃气（依据：型号含 JSQ 燃气热水器国标前缀）；2026-10-04 补 pros、cons（由已入库参数推导，不引入新数值）；2026-10-07 补产品图（来源：太平洋产品报价详情页（g.pconline.com.cn））",
+  "updated_at": "2026-10-07",
+  "img": "aosmith_13_tec.webp"
+}

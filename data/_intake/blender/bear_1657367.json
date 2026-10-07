@@ -1,0 +1,36 @@
+{
+  "id": "bear_1657367",
+  "name": "小熊PBJ-B06K8",
+  "brand": "小熊",
+  "model_code": "PBJ-B06K8",
+  "type": "破壁机",
+  "official_price": 469,
+  "ref_price": 499,
+  "year": "查不到",
+  "pros": [
+    "25000转/分 电机",
+    "机身小巧（205×180×185mm）"
+  ],
+  "cons": [
+    "搅拌 400W，破壁能力有限",
+    "容量 1L 偏小"
+  ],
+  "tags": [
+    "小熊"
+  ],
+  "capacity": 1,
+  "power": 400,
+  "heat": "600W",
+  "speed": "25000转/分",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+    "太平洋电脑网",
+    "中关村在线"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/juicer/bear/1657367_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（3 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：破壁机（依据：第三方产品类型=破壁机）；2026-10-03 回填型号：原「查不到」，产品名「小熊PBJ-B06K8」中的型号串为 PBJ-B06K8（来源与产品名同源的第三方规格站）；2026-10-04 回填参数（来源：太平洋规格表 verify_url）：size=205×180×185mm（产品尺寸=205×180×185mm）；2026-10-04 补全：official_price=469（来源：中关村在线商品页当前参考报价 https://detail.zol.com.cn/Wall-breaking-machine/index1405963.shtml；ZOL 商品名与库内型号一致，参数表与本库太平洋来源参数互证）；2026-10-04 补全：speed=25000转/分（来源：中关村在线参数页电机转速，r/min 归一为转/分）；2026-10-04 格式订正：capacity「1000」->1、power「400W」->400（schema 为 number：容量按破壁机口径归一到 L，其中无单位写法 1750/1000 为 ml 口径——SP60S/SP909S 经 ZOL 参数页 1.75L 互证、PBJ-B06K8 经 ZOL 1L 互证；功率剥掉 W 单位，数值不变）；2026-10-04 卖点编写（依据：已入库参数 + 太平洋规格表功能/材质清单，未引入参数表外数值）；2026-10-07 补产品图（来源：太平洋产品报价详情页（g.pconline.com.cn））",
+  "updated_at": "2026-10-07",
+  "size": "205×180×185mm",
+  "img": "bear_1657367.webp"
+}
