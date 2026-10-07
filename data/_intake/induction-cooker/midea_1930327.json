@@ -1,0 +1,35 @@
+{
+  "id": "midea_1930327",
+  "name": "美的MC-22RB01",
+  "brand": "美的",
+  "model_code": "MC-22RB01",
+  "type": "常规",
+  "official_price": 599,
+  "ref_price": 499,
+  "year": "查不到",
+  "pros": [
+    "2200W 火力，8 档火力调节",
+    "一体面板无缝清洁",
+    "350×280mm 机身适中，台面友好"
+  ],
+  "cons": [
+    "当前渠道价 599 元，同级 2200W 机型里有更便宜的选项"
+  ],
+  "tags": [
+    "美的"
+  ],
+  "power": 2200,
+  "gear": "8档",
+  "panel": "一体面板",
+  "size": "350×280×53mm",
+  "verify_status": "已核验（多源）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+    "ZOL中关村在线",
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/induction_cooker/midea/1930327_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：常规（依据：无超薄或青春特征）；2026-10-03 回填型号：原「查不到」，产品名「美的MC-22RB01」中的型号串为 MC-22RB01（来源与产品名同源的第三方规格站）；2026-10-04 补全：official_price=599（ZOL 参考报价 https://detail.zol.com.cn/induction_cooker/index1599099.shtml）（来源：ZOL中关村在线）；gear=8档（ZOL 参数页「火力档位」）（来源：ZOL中关村在线）；功率/尺寸/型号与库内太平洋数据双源印证一致（来源：ZOL中关村在线）；格式订正：功率「2200W」→ 2200（schema number 归一）；补全卖点（依据：库内参数，未引入新数值）；2026-10-07 补产品图（来源：太平洋产品报价详情页（g.pconline.com.cn））",
+  "updated_at": "2026-10-07",
+  "img": "midea_1930327.webp"
+}

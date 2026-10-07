@@ -1,0 +1,34 @@
+{
+  "id": "supor_1924247",
+  "name": "苏泊尔C22-ID 39",
+  "brand": "苏泊尔",
+  "model_code": "C22-ID",
+  "type": "常规",
+  "official_price": "查不到",
+  "ref_price": 399,
+  "year": "查不到",
+  "pros": [
+    "2200W 大火力",
+    "一体面板易清洁",
+    "399 元参考价，中端价位"
+  ],
+  "cons": [
+    "整机尺寸无公开数据，下单前需与商家确认台面适配"
+  ],
+  "tags": [
+    "苏泊尔"
+  ],
+  "power": 2200,
+  "gear": "查不到",
+  "panel": "一体面板",
+  "size": "查不到",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/induction_cooker/supor/1924247_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：常规（依据：无超薄或青春特征）；2026-10-03 回填型号：原「查不到」，产品名「苏泊尔C22-ID 39」中的型号串为 C22-ID（来源与产品名同源的第三方规格站）；2026-10-04 补全：格式订正：功率「2200W」→ 2200（schema number 归一）；补全卖点（依据：库内参数，未引入新数值）；2026-10-07 补产品图（来源：太平洋产品报价详情页（g.pconline.com.cn））",
+  "updated_at": "2026-10-07",
+  "img": "supor_1924247.webp"
+}
