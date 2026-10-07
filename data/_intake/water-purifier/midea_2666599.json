@@ -1,0 +1,31 @@
+{
+  "id": "midea_2666599",
+  "name": "美的JLB3799T-RO",
+  "brand": "美的",
+  "model_code": "JLB3799T-RO",
+  "type": "单出水",
+  "official_price": 4599,
+  "ref_price": 4599,
+  "year": "查不到",
+  "pros": [],
+  "cons": [],
+  "tags": [
+    "美的"
+  ],
+  "flux": "0.26t/h",
+  "pure_flow": "查不到",
+  "water_rate": "查不到",
+  "rated_vol": "查不到",
+  "size": "400×280×440mm",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+    "太平洋电脑网",
+    "美的官方商城"
+  ],
+  "verify_url": "https://www.midea.cn/#/detail?skuId=64112",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（1 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：单出水（依据：第三方安装方式=台式）；2026-10-03 回填型号：原「查不到」，产品名「美的JLB3799T-RO」中的型号串为 JLB3799T-RO（来源与产品名同源的第三方规格站）；2026-10-04 补 official_price（来源：太平洋电脑网）；2026-10-05 美的官方商城补参（skuId=64112，型号已逐字核对）：size=400×280×440mm（productPacking Length×Width×Height=400/280/440（已排除 indoorPacking 包装尺寸）），sterilize=紫外杀菌（清洁杀菌方式=紫外杀菌）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）；2026-10-07 补产品图（来源：美的商城API）",
+  "updated_at": "2026-10-07",
+  "sterilize": "紫外杀菌",
+  "img": "midea_2666599.webp"
+}

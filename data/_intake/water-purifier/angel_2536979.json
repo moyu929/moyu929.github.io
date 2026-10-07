@@ -1,0 +1,31 @@
+{
+  "id": "angel_2536979",
+  "name": "安吉尔AHR2910-0820K1D b",
+  "brand": "安吉尔",
+  "model_code": "AHR2910-0820K1D",
+  "type": "未归类",
+  "official_price": 4999,
+  "ref_price": 4999,
+  "year": "查不到",
+  "pros": [],
+  "cons": [],
+  "tags": [
+    "安吉尔"
+  ],
+  "flux": "查不到",
+  "pure_flow": "查不到",
+  "water_rate": "查不到",
+  "rated_vol": "查不到",
+  "size": "查不到",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/water_purifier/angel/2536979_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（0 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-03 回填型号：原「查不到」，产品名「安吉尔AHR2910-0820K1D b」中的型号串为 AHR2910-0820K1D（来源与产品名同源的第三方规格站）；2026-10-04 补 official_price（来源：太平洋电脑网）；2026-10-07 补产品图（来源：百度图片搜索（标题核验））",
+  "updated_at": "2026-10-07",
+  "ro_life": "查不到",
+  "sterilize": "查不到",
+  "img": "angel_2536979.webp"
+}

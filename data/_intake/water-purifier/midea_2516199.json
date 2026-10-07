@@ -1,0 +1,32 @@
+{
+  "id": "midea_2516199",
+  "name": "美的JD3766T-RO",
+  "brand": "美的",
+  "model_code": "JD3766T-RO",
+  "type": "单出水",
+  "official_price": 4999,
+  "ref_price": 4999,
+  "year": "查不到",
+  "pros": [],
+  "cons": [],
+  "tags": [
+    "美的"
+  ],
+  "flux": "0.2升/分",
+  "pure_flow": "查不到",
+  "water_rate": "查不到",
+  "rated_vol": "查不到",
+  "size": "419×306×457mm",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+    "太平洋电脑网",
+    "美的官方商城"
+  ],
+  "verify_url": "https://www.midea.cn/#/detail?skuId=42084",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（1 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：单出水（依据：第三方安装方式=台式）；2026-10-03 回填型号：原「查不到」，产品名「美的JD3766T-RO」中的型号串为 JD3766T-RO（来源与产品名同源的第三方规格站）；2026-10-04 补 official_price（来源：太平洋电脑网）；2026-10-05 美的官方商城补参（skuId=42084，型号已逐字核对）：size=419×306×457mm（productPacking Length×Width×Height=419/306/457（已排除 indoorPacking 包装尺寸））；2026-10-07 补产品图（来源：美的商城API）",
+  "updated_at": "2026-10-07",
+  "ro_life": "查不到",
+  "sterilize": "查不到",
+  "img": "midea_2516199.webp"
+}
