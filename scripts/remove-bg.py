@@ -61,6 +61,10 @@ def has_alpha(img):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--only', help='只处理该品类目录')
+    ap.add_argument('--drafts-only', action='store_true',
+                    help='只处理 data/_draft/ 里当期订正稿对应的产品图——防止把守卫'
+                         '保留原图的存量文件（历史批次抠图失败、人工裁定保留的）重新'
+                         '送进 rembg（2026-10-07 批次实测教训；幂等，可安全重跑）')
     ap.add_argument('--dry', action='store_true', help='只统计，不写入')
     ap.add_argument('--sheet', type=int, default=0, help='输出 N 张样本联络表（目检用）')
     ap.add_argument('--model', default='u2net', help='rembg 模型名（默认 u2net）')
@@ -88,6 +92,12 @@ def main():
     files = sorted(IMG_ROOT.glob('*/*.webp'))
     if args.only:
         files = [f for f in files if f.parent.name == args.only]
+    if args.drafts_only:
+        # 当期订正稿集合：<品类>/<id>.json。不在集合里的一律不碰——
+        # 包括历史批次「守卫拦截后人工保留原图」的存量文件。
+        draft_ids = {f'{f.parent.name}/{f.stem}'
+                     for f in (ROOT / 'data' / '_draft').glob('*/*.json')}
+        files = [f for f in files if f'{f.parent.name}/{f.stem}' in draft_ids]
     if not files:
         print('没有找到图片')
         return
