@@ -1,29 +1,1162 @@
 [
-{"id":"frig_560_french","name":"米家冰箱Pro 微冰鲜双系统 法式平嵌560L（2025款）","model_code":"BCD-560WFSGPDIN","miot_model":"midjd.fridge.bf52s","door_type":"法式多门","official_price":7499,"second_hand":"—","total_vol":560,"fridge_vol":360,"freezer_vol":200,"energy":"1级","power_use":0.74,"cooling":"风冷(双系统)","sterilize":"全域离子净化2.0(99.999%除菌)","noise":"31dB","size":"892×600×1912mm","year":2025,"pros":["法式四门","双系统0串味","自动制冰","低噪31dB"],"cons":["价格高"],"tags":["法式多门","旗舰","2025"],"verify_status":"待核验","verify_date":"2026-10-01","verify_source":["米家产品库(miot-spec)"],"verify_url":"查不到","change_log":"2026-10-01 补入官方产品图（小米 CDN，经米家产品库(miot-spec)）；2026-10-01 经米家产品库(miot-spec)交叉印证存在性并补入协议型号；早期录入，来源未逐条记录，待按官方规格页/说明书核验","updated_at":"2026-10-01","img":"frig_560_french.webp","brand":"小米"},
-{"id":"frig_508_cross","name":"米家冰箱 分储鲜Pro 十字508L（2024款）","model_code":"BCD-508WTGBI","miot_model":"midjd.fridge.bs39z","door_type":"十字门","official_price":3999,"second_hand":"—","total_vol":508,"fridge_vol":296,"freezer_vol":183,"energy":"1级","power_use":0.93,"cooling":"风冷(双系统)","sterilize":"风道内置离子发生器(正负离子)","noise":"35dB","size":"854×600×1912mm","year":2024,"pros":["十字四门","双系统","变温29L"],"cons":["—"],"tags":["十字门","双系统","2024"],"verify_status":"待核验","verify_date":"2026-10-01","verify_source":["米家产品库(miot-spec)"],"verify_url":"查不到","change_log":"2026-10-01 补入官方产品图（小米 CDN，经米家产品库(miot-spec)）；2026-10-01 经米家产品库(miot-spec)交叉印证存在性并补入协议型号；早期录入，来源未逐条记录，待按官方规格页/说明书核验；2026-10-01 补充：总容积与冷藏/冷冻之和存在差额（应为变温室），但未查到权威来源确认具体数值，按禁止估算原则 var_vol 留空不填","updated_at":"2026-10-01","img":"frig_508_cross.webp","brand":"小米"},
-{"id":"frig_508_ultra","name":"米家冰箱Pro 至尊版 十字508L（2025款）","model_code":"BCD-508WFSGPDIN","miot_model":"查不到","door_type":"十字门","official_price":4699,"second_hand":"—","total_vol":508,"fridge_vol":297,"freezer_vol":176,"energy":"1级","power_use":0.81,"cooling":"风冷(双系统)","sterilize":"全域离子净化4.0","noise":"31dB","size":"792×597×1925mm","year":2025,"pros":["全域离子净化4.0","双系统","可选配自动制冰","变温室35L"],"cons":["价格高"],"tags":["十字门","至尊版","2025"],"verify_status":"待核验","verify_date":"2026-10-07","verify_source":["太平洋电脑网"],"verify_url":"查不到","change_log":"早期录入，来源未逐条记录，待按官方规格页/说明书核验；2026-10-01 型号订正：原「BCD-508WSSGPDIN」查无此物（WSSGPDIN 为不存在的字母组合），系 BCD-508WFSGPDIN 的字母次序记反。据太平洋规格表（508/冷藏297/冷冻176/变温35 与本条逐项吻合）订正为 BCD-508WFSGPDIN；2026-10-01 新增 var_vol 字段，按太平洋规格表回填变温室容积 35L；2026-10-07 补产品图（来源：cached）","updated_at":"2026-10-07","img":"frig_508_ultra.webp","brand":"小米","var_vol":35},
-{"id":"frig_606_cross","name":"米家冰箱Pro 双系统 十字606L（2024款）","model_code":"BCD-606WKMPDN","miot_model":"查不到","door_type":"十字门","official_price":3499,"second_hand":"—","total_vol":606,"fridge_vol":345,"freezer_vol":225,"energy":"1级","power_use":0.95,"cooling":"风冷","sterilize":"全域银离子抗菌净味/水分子筛保鲜","noise":"36dB","size":"910×690×1902mm","year":2024,"pros":["606L大容量","双系统","独立三档变温"],"cons":["—"],"tags":["十字门","大容量","2024"],"verify_status":"已核验（官方商城）","verify_date":"2026-10-01","verify_source":["小米商城（官方产品图）","太平洋电脑网"],"verify_url":"查不到","change_log":"2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-01 分仓容积订正：原冷藏432/冷冻174（合计恰为606，无变温区）与产品实际结构矛盾。据太平洋规格表（BCD-606WKMPDN：总606/冷藏345/冷冻225/变温36）订正，并新增 var_vol 字段承载变温室容积","updated_at":"2026-10-01","img":"frig_606_cross.webp","brand":"小米","var_vol":36},
-{"id":"frig_603_cross","name":"米家冰箱 十字对开门603L 冰晶岩（2023款）","model_code":"BCD-603WGSA","miot_model":"midjd.fridge.603a","door_type":"十字门","official_price":2999,"second_hand":"—","total_vol":603,"fridge_vol":396,"freezer_vol":101,"energy":"一级","power_use":0.99,"cooling":"风冷","sterilize":"动态离子除菌(99.93%)","noise":"36dB","size":"830×690×1910mm","year":2023,"pros":["变温106L宽幅","动态离子除菌"],"cons":["—"],"tags":["十字门","宽幅变温","2023"],"verify_status":"待核验","verify_date":"2026-10-01","verify_source":["米家产品库(miot-spec)"],"verify_url":"查不到","change_log":"2026-10-01 补入官方产品图（小米 CDN，经米家产品库(miot-spec)）；2026-10-01 经米家产品库(miot-spec)交叉印证存在性并补入协议型号；早期录入，来源未逐条记录，待按官方规格页/说明书核验；2026-10-01 补充：总容积与冷藏/冷冻之和存在差额（应为变温室），但未查到权威来源确认具体数值，按禁止估算原则 var_vol 留空不填","updated_at":"2026-10-01","img":"frig_603_cross.webp","brand":"小米"},
-{"id":"frig_636_side","name":"米家冰箱 对开636L（2023款）","model_code":"BCD-636WKMP","miot_model":"查不到","door_type":"对开门","official_price":1899,"second_hand":"—","total_vol":636,"fridge_vol":394,"freezer_vol":242,"energy":"一级","power_use":0.95,"cooling":"风冷(双循环)","sterilize":"全域抗菌净味","noise":"34dB","size":"910×715×1770mm","year":2023,"pros":["636L大容量","性价比高"],"cons":["无变温室"],"tags":["对开门","大容量","2023"],"verify_status":"已核验（官方商城）","verify_date":"2026-10-01","verify_source":["小米商城（官方产品图）"],"verify_url":"查不到","change_log":"2026-10-01 按小米商城在售目录核对名称/价格/图片","updated_at":"2026-10-01","img":"frig_636_side.webp","brand":"小米"},
-{"id":"frig_186_two","name":"米家冰箱 186L两门风冷（2020款）","model_code":"BCD-186WMD","miot_model":"查不到","door_type":"两门","official_price":999,"second_hand":"—","total_vol":186,"fridge_vol":120,"freezer_vol":66,"energy":"2级","power_use":0.58,"cooling":"风冷无霜","sterilize":"离子抗菌(99.9%)","noise":"38dB","size":"525×610×1620mm","year":2020,"pros":["两门小容量","风冷无霜","价格实惠"],"cons":["容量小"],"tags":["两门","小户型","2020"],"verify_status":"待核验","verify_date":"2026-10-07","verify_source":[],"verify_url":"查不到","change_log":"早期录入，来源未逐条记录，待按官方规格页/说明书核验；2026-10-07 补产品图（来源：cached）","updated_at":"2026-10-07","img":"frig_186_two.webp","brand":"小米"},
-{"id":"frig_210_three","name":"米家冰箱 三门210L（2020款）","model_code":"BCD-210WMSDMJ01","miot_model":"查不到","door_type":"三门","official_price":1199,"second_hand":"—","total_vol":210,"fridge_vol":116,"freezer_vol":94,"energy":"3级","power_use":0.78,"cooling":"风冷","sterilize":"查不到","noise":"39dB","size":"554×630×1717mm","year":2020,"pros":["三门三温区","中门变温32L"],"cons":["能效3级"],"tags":["三门","变温","2020"],"verify_status":"待核验","verify_date":"—","verify_source":[],"verify_url":"查不到","change_log":"早期录入，来源未逐条记录，待按官方规格页/说明书核验；2026-10-01 型号复核：BCD-210WMSDMJ01 存在且与本条对应（什么值得买百科与苏宁自营双源一致），但太平洋未收录此款，非三源印证","updated_at":"2026-10-01","img":null,"brand":"小米"},
-{"id":"frig_pro_508","name":"米家冰箱Pro 508L","model_code":"BCD-508WFSSMPDIN","miot_model":"查不到","door_type":"十字门","official_price":4469,"second_hand":"—","total_vol":508,"fridge_vol":294,"freezer_vol":176,"energy":"1级","power_use":0.81,"cooling":"风冷","sterilize":"全域离子净化4.0","noise":"31dB","size":"792×597×1925mm","year":null,"pros":["十字四门","双系统防串味","自动制冰","全域离子净化4.0","低噪31dB"],"cons":["价格高"],"tags":["十字门"],"verify_status":"已核验（官方商城）","verify_date":"2026-10-04","verify_source":["小米商城"],"verify_url":"https://www.mi.com/shop/buy/detail?product_id=10050189","change_log":"2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=4999，energy=1级，size=792×597×1925mm，cooling=风冷，noise=31dB，sterilize=全域离子净化4.0，fridge_vol=294，freezer_vol=176，var_vol=38，power_use=0.81；2026-10-04 补全 model_code=BCD-508WFSSMPDIN、total_vol=508（来源：小米商城商品页能效标识图「规格型号」与官方商品名，冷藏294+冷冻176+变温38=508 一致）；2026-10-04 撰写 pros/cons（只引用已入库参数与商城官方文案，未引入参数表外数值）；注：详情页能效标识分两批次——批次一(GB 12021.2-2015)综合耗电0.81、批次二(GB 12021.2-2025)0.79，分仓容积一致，商城关键参数取0.81；2026-10-04 官方商城 API 回填：ref_price=4999，energy=1级，noise=31dB；2026-10-04 官方商城 API 回填：ref_price=4999，energy=1级，noise=31dB","updated_at":"2026-10-04","img":"frig_pro_508.webp","brand":"小米","ref_price":4999,"var_vol":38},
-{"id":"frig_271_three","name":"米家冰箱 271L 三门","model_code":"BCD-271WTMP","miot_model":"查不到","door_type":"三门","official_price":1599,"second_hand":"—","total_vol":271,"fridge_vol":151,"freezer_vol":85,"energy":"1级","power_use":0.59,"cooling":"风冷无霜(单系统)","sterilize":"银离子抗菌","noise":"36dB","size":"560×600×1810mm","year":null,"pros":["三门三温区","变温室35L","风冷无霜","一级能效","银离子抗菌"],"cons":["单循环制冷"],"tags":["三门"],"verify_status":"已核验（官方商城）","verify_date":"2026-10-04","verify_source":["小米商城"],"verify_url":"https://www.mi.com/shop/buy/detail?product_id=1230804107","change_log":"2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=1899，energy=1级，size=560×600×1810mm，cooling=风冷无霜，noise=36dB，sterilize=银离子抗菌，fridge_vol=151，freezer_vol=85，var_vol=35，power_use=0.59；2026-10-04 补全 model_code=BCD-271WTMP、total_vol=271（来源：小米商城商品页详情「产品参数」图，冷藏151+冷冻85+变温35=271 一致，能效标识图同证）；cooling 括注「单系统」取自商城关键参数「制冷系统」；2026-10-04 撰写 pros/cons（只引用已入库参数与商城官方文案）；2026-10-04 官方商城 API 回填：ref_price=1899，energy=1级，noise=36dB；2026-10-04 官方商城 API 回填：ref_price=1899，energy=1级，noise=36dB","updated_at":"2026-10-04","img":"frig_271_three.webp","brand":"小米","ref_price":1899,"var_vol":35},
-{"id":"frig_256_three","name":"米家冰箱 256L 三门","model_code":"BCD-256WMSA01","miot_model":"查不到","door_type":"三门","official_price":1299,"second_hand":"—","total_vol":256,"fridge_vol":136,"freezer_vol":85,"energy":"1级","power_use":0.59,"cooling":"风冷无霜(单系统)","sterilize":"银离子抗菌","noise":"36dB","size":"560×600×1745mm","year":null,"pros":["三门三温区","变温室35L","风冷无霜","一级能效","银离子抗菌"],"cons":["单循环制冷"],"tags":["三门"],"verify_status":"已核验（官方商城）","verify_date":"2026-10-04","verify_source":["小米商城"],"verify_url":"https://www.mi.com/shop/buy/detail?product_id=1230803930","change_log":"2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=1899，energy=1级，size=560×600×1745mm，cooling=风冷无霜，noise=36dB，sterilize=银离子抗菌，fridge_vol=136，freezer_vol=85，var_vol=35，power_use=0.59；2026-10-04 补全 model_code=BCD-256WMSA01、total_vol=256（来源：小米商城商品页详情「产品参数」图与能效标识图「规格型号」，冷藏136+冷冻85+变温35=256 一致）；cooling 括注「单系统」取自商城关键参数「制冷系统」；2026-10-04 撰写 pros/cons（只引用已入库参数与商城官方文案）；2026-10-04 官方商城 API 回填：ref_price=1899，energy=1级，noise=36dB；2026-10-04 官方商城 API 回填：ref_price=1899，energy=1级，noise=36dB","updated_at":"2026-10-04","img":"frig_256_three.webp","brand":"小米","ref_price":1899,"var_vol":35},
-{"id":"frig_425_cross","name":"米家冰箱 425L 十字","model_code":"MC-425WSSMPN","miot_model":"查不到","door_type":"十字门","official_price":2352,"second_hand":"—","total_vol":425,"fridge_vol":215,"freezer_vol":155,"energy":"1级","power_use":0.82,"cooling":"风冷","sterilize":"全域离子净化","noise":"34dB","size":"702×597×1850mm","year":null,"pros":["十字四门","全域离子净化","变温室55L","一级能效","597mm深易嵌入"],"cons":["综合耗电偏高"],"tags":["十字门"],"verify_status":"已核验（官方商城）","verify_date":"2026-10-04","verify_source":["小米商城"],"verify_url":"https://www.mi.com/shop/buy/detail?product_id=1230809121","change_log":"2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=2699；2026-10-04 补全参数（来源：小米商城商品页详情图「产品参数」表与中国能效标识图，两图互证）：model_code=MC-425WSSMPN（产品参数「产品型号」与能效标识「规格型号」一致），total_vol=425、fridge_vol=215、freezer_vol=155（图原文「三星」级室容积，按冷冻室收录）、var_vol=55、energy=1级（图原文「新1级」）、power_use=0.82、cooling=风冷、noise=34dB、size=702×597×1850mm、sterilize=全域离子净化（官方商品名）；215+155+55=425 一致；2026-10-04 撰写 pros/cons（只引用已入库参数与商城官方文案）；2026-10-04 官方商城 API 回填：ref_price=2699；2026-10-04 官方商城 API 回填：ref_price=2699","updated_at":"2026-10-04","img":"frig_425_cross.webp","brand":"小米","ref_price":2699,"var_vol":55},
-{"id":"frig_pro_600","name":"米家冰箱Pro 600L 十字","model_code":"查不到","miot_model":"查不到","door_type":"十字门","official_price":4469,"second_hand":"—","total_vol":null,"fridge_vol":null,"freezer_vol":null,"energy":"查不到","power_use":null,"cooling":"查不到","sterilize":"查不到","noise":"查不到","size":"查不到","year":null,"pros":[],"cons":[],"tags":["十字门"],"verify_status":"已核验（官方商城）","verify_date":"2026-10-01","verify_source":["小米商城"],"verify_url":"查不到","change_log":"2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-01 来源链接订正：原 verify_url（product_id=1230808521）经小米商城官方 API 核对实为「米家冰箱Pro 600L十字 自动制冰」，与本条产品不符，属错挂；已置「查不到」，待找到本条正确官方链接后回填","updated_at":"2026-10-01","img":"frig_pro_600.webp","brand":"小米"},
-{"id":"frig_pro600_cross","name":"米家冰箱Pro 600L 十字 自动制冰","model_code":"BCD-600WKMPDIN","miot_model":"查不到","door_type":"十字门","official_price":4469,"second_hand":"—","total_vol":600,"fridge_vol":339,"freezer_vol":225,"energy":"1级","power_use":0.93,"cooling":"风冷","sterilize":"全链路抗菌","noise":"35dB","size":"852×675×1912mm","year":null,"pros":["600L大容量","自动制冰","双系统防串味","全链路抗菌","十字四门"],"cons":["价格高"],"tags":["十字门"],"verify_status":"已核验（官方商城）","verify_date":"2026-10-04","verify_source":["小米商城"],"verify_url":"https://www.mi.com/shop/buy/detail?product_id=1230808521","change_log":"2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=4999；2026-10-04 补全参数（来源：小米商城商品页详情图「产品参数」表与能效标识图）：model_code=BCD-600WKMPDIN、total_vol=600、fridge_vol=339、freezer_vol=225、var_vol=36、energy=1级（图原文「新国标1级」）、power_use=0.93、cooling=风冷、noise=35dB、size=852×675×1912mm、sterilize=全链路抗菌（官方商品文案）；339+225+36=600 一致；「双系统」取自官方商品文案与详情页说明；2026-10-04 撰写 pros/cons（只引用已入库参数与商城官方文案）；2026-10-04 官方商城 API 回填：ref_price=4999；2026-10-04 官方商城 API 回填：ref_price=4999","updated_at":"2026-10-04","img":"frig_pro600_cross.webp","brand":"小米","ref_price":4999,"var_vol":36},
-{"id":"frig_561_side","name":"米家冰箱 561L 对开","model_code":"BCD-561WKMP","miot_model":"查不到","door_type":"对开门","official_price":1949,"second_hand":"—","total_vol":561,"fridge_vol":351,"freezer_vol":210,"energy":"1级","power_use":0.83,"cooling":"风冷(单系统)","sterilize":"全域离子净化系统","noise":"34dB","size":"910×650×1770mm","year":null,"pros":["561L大容量","全域离子净化","冷冻室210L","一级能效"],"cons":["无变温室","单循环制冷"],"tags":["对开门"],"verify_status":"已核验（官方商城）","verify_date":"2026-10-04","verify_source":["小米商城"],"verify_url":"https://www.mi.com/shop/buy/detail?product_id=1230807982","change_log":"2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=2499，energy=1级，size=910×650×1770mm，cooling=风冷，noise=34dB，sterilize=全域离子净化系统，fridge_vol=351，freezer_vol=210，power_use=0.83；2026-10-04 补全 model_code=BCD-561WKMP、total_vol=561（来源：小米商城商品页详情「产品参数」图与能效标识图「规格型号」，冷藏351+冷冻210=561 一致，无变温室）；cooling 括注「单系统」取自商城关键参数「制冷系统」；2026-10-04 撰写 pros/cons（只引用已入库参数与商城官方文案）；2026-10-04 官方商城 API 回填：ref_price=2499，energy=1级，noise=34dB；2026-10-04 官方商城 API 回填：ref_price=2499，energy=1级，noise=34dB","updated_at":"2026-10-04","img":"frig_561_side.webp","brand":"小米","ref_price":2499},
-{"id":"haier_560_cross","name":"海尔BCD-560WGHTD1BWLU1","model_code":"BCD-560WGHTD1BWLU1","brand":"海尔","door_type":"十字门","official_price":6999,"ref_price":7580,"second_hand":"—","total_vol":560,"fridge_vol":324,"freezer_vol":197,"var_vol":39,"energy":"1级","power_use":0.98,"cooling":"风冷","sterilize":"查不到","noise":"31dB","size":"830×594×1925mm","year":2026,"pros":["十字四门","低噪31dB","594mm超薄零嵌","变温39L","全空间保鲜"],"cons":["—"],"tags":["十字门","零嵌","2026"],"verify_status":"已核验（多源）","verify_date":"2026-10-07","verify_source":["海尔官网","太平洋电脑网","京东"],"verify_url":"https://www.haier.com/cooling/20260717_293236.shtml","change_log":"2026-10-03 建条：参数取自海尔官网产品页，并经太平洋电脑网规格表逐项印证（560=冷藏324+冷冻197+变温39、31dB、830×594×1925、1级 全部一致），判「已核验（多源）」；official_price 6999 取海尔官网参考价，ref_price 7580 为太平洋参考报价（京东同价）；门型十字门（官网「十字对开门」+太平洋一致）；上市 2026 年（太平洋上市时间+京东2026新款标签）；「全空间保鲜/零嵌/双系统」为京东自营商品名卖点，双系统暂未获第二来源印证故只入标签不入参数；2026-10-07 补产品图（来源：cached）","updated_at":"2026-10-07","img":"haier_560_cross.webp"},
-{"id":"haier_560_french","name":"海尔BCD-560WGHFD1BWLU1","model_code":"BCD-560WGHFD1BWLU1","brand":"海尔","door_type":"法式多门","official_price":6999,"ref_price":8999,"second_hand":"—","total_vol":560,"fridge_vol":320,"freezer_vol":201,"var_vol":39,"energy":"1级","power_use":0.98,"cooling":"风冷(双循环)","sterilize":"查不到","noise":"31dB","size":"830×590×1925mm","year":2026,"pros":["法式多门","低噪31dB","590mm超薄零嵌","变温39L","双循环"],"cons":["价格高"],"tags":["法式多门","零嵌","2026"],"verify_status":"已核验（多源）","verify_date":"2026-10-07","verify_source":["海尔官网","太平洋电脑网","京东"],"verify_url":"https://www.haier.com/cooling/20260601_291492.shtml","change_log":"2026-10-03 建条：参数取自海尔官网产品页，并经太平洋电脑网规格表印证（560=冷藏320+冷冻201+变温39、31dB、1级 一致），判「已核验（多源）」；深度官网 590mm 与太平洋 594mm 不一致，以官网（权威）为准记 590，差异已记录；official_price 6999 取海尔官网参考价，ref_price 8999 为太平洋参考报价；门型法式多门：官网「多门」+京东自营商品名「560L法式多门」+太平洋「多开门」；上市 2026 年（京东2026新款标签）；与同系列十字门款 BCD-560WGHTD1BWLU1 为两款不同产品（门体结构与分仓不同）；2026-10-07 补产品图（来源：cached）","updated_at":"2026-10-07","img":"haier_560_french.webp"},
-{"id":"hisense_511_cross","name":"海信BCD-511E3SCNKD","model_code":"BCD-511E3SCNKD","brand":"海信","door_type":"十字门","official_price":3005,"second_hand":"—","total_vol":511,"fridge_vol":259,"freezer_vol":218,"var_vol":34,"energy":"1级","power_use":1.07,"cooling":"风冷","sterilize":"查不到","noise":"35dB","size":"790×598.5×1925mm","year":2026,"pros":["十字四门","598.5mm超薄平嵌","变温34L","冷冻218L大冻区"],"cons":["综合耗电偏高"],"tags":["十字门","超薄平嵌","2026"],"verify_status":"已核验（第三方）","verify_date":"2026-10-03","verify_source":["太平洋电脑网"],"verify_url":"https://product.pconline.com.cn/icebox/hisense/2941771_detail.html","change_log":"2026-10-03 建条：参数取自太平洋电脑网规格表（总511=冷藏259+冷冻218+变温34，逐项吻合）；official_price 3005 为太平洋参考报价；门型十字门（太平洋「十字对开门」）；深度 598.5mm 照录来源原值；上市时间 2026 年（太平洋）","updated_at":"2026-10-03","img":null},
-{"id":"hisense_570_cross","name":"海信TR-570S3SCQGX","model_code":"TR-570S3SCQGX","brand":"海信","door_type":"十字门","official_price":4799,"second_hand":"—","total_vol":570,"fridge_vol":369,"freezer_vol":201,"energy":"1级","power_use":1.1,"cooling":"风冷(双循环)","sterilize":"查不到","noise":"35dB","size":"790×649×1925mm","year":null,"pros":["570L大容量","十字四门","双循环","玻璃面板"],"cons":["综合耗电偏高"],"tags":["十字门","大容量","双循环"],"verify_status":"已核验（第三方）","verify_date":"2026-10-07","verify_source":["太平洋电脑网"],"verify_url":"https://product.pconline.com.cn/icebox/hisense/2922131_detail.html","change_log":"2026-10-03 建条：参数取自太平洋电脑网规格表（总570=冷藏369+冷冻201，无变温区记录，var_vol 留空不填）；official_price 4799 为太平洋参考报价；门型十字门（太平洋「十字对开门」）；上市年份来源未标注，year 留空；2026-10-07 补产品图（来源：cached）","updated_at":"2026-10-07","img":"hisense_570_cross.webp"},
-{"id":"midea_502_cross","name":"美的MR-519WUSPZE","model_code":"MR-519WUSPZE","brand":"美的","door_type":"十字门","official_price":5678.4,"second_hand":"—","total_vol":502,"fridge_vol":289,"freezer_vol":182,"var_vol":31,"energy":"1级","power_use":0.76,"cooling":"风冷","sterilize":"查不到","noise":"30dB","size":"792×600×1910mm","year":2026,"pros":["十字四门","600mm超薄平嵌","低噪30dB","变温31L","一级能效"],"cons":["—"],"tags":["十字门","超薄平嵌","2026"],"verify_status":"已核验（第三方）","verify_date":"2026-10-07","verify_source":["太平洋电脑网","美的官方商城"],"verify_url":"https://www.midea.cn/#/detail?skuId=195371","change_log":"2026-10-03 建条：参数取自太平洋电脑网规格表（总502=冷藏289+冷冻182+变温31，逐项吻合）；official_price 5678.4 为太平洋参考报价（媒体渠道价 3000-6000 波动大且互相矛盾，未采信）；门型十字门（太平洋「十字对开门」）；上市时间 2026 年（太平洋）；警惕：同系近名型号 MR-519WUFPZE（法式）与本品（十字）为两款，勿混淆；2026-10-05 美的官方商城补参（skuId=195371，型号已逐字核对）：ref_price=5499（originPrice=549900 分 → 划线价）；2026-10-07 补产品图（来源：cached）","updated_at":"2026-10-07","img":"midea_502_cross.webp","ref_price":"5499"},
-{"id":"midea_522_french","name":"美的BCD-522WUFGPZM(X)","model_code":"BCD-522WUFGPZM(X)","brand":"美的","door_type":"法式多门","official_price":7499,"second_hand":"—","total_vol":522,"fridge_vol":350,"freezer_vol":172,"energy":"1级","power_use":0.99,"cooling":"风冷","sterilize":"查不到","noise":"35dB","size":"833×600×1910mm","year":null,"pros":["法式多门","600mm纯平全嵌","双系统","钢化玻璃面板"],"cons":["价格高"],"tags":["法式多门","超薄全嵌"],"verify_status":"已核验（第三方）","verify_date":"2026-10-07","verify_source":["太平洋电脑网","京东"],"verify_url":"https://product.pconline.com.cn/icebox/midea/2636099_detail.html","change_log":"2026-10-03 建条：参数取自太平洋电脑网规格表（总522=冷藏350+冷冻172，无变温区记录，var_vol 留空不填）；official_price 7499 取什么值得买百科收录价（太平洋未挂报价，京东在售）；门型：太平洋「多开门」+京东自营商品名「60cm薄纯平全嵌法式多门」定为法式多门，600mm 深（尺寸833×600×1910 印证）；「双系统急速制冰」为京东自营商品名卖点、未入参数表，仅保留双系统；上市年份未核实，year 留空；2026-10-07 补产品图（来源：cached）","updated_at":"2026-10-07","img":"midea_522_french.webp"},
-{"id":"ronshen_560_cross","name":"容声BCD-560N40CQGAX","model_code":"BCD-560N40CQGAX","brand":"容声","door_type":"十字门","official_price":3920,"second_hand":"—","total_vol":560,"fridge_vol":327,"freezer_vol":200,"var_vol":33,"energy":"1级","power_use":0.99,"cooling":"风冷(双循环)","sterilize":"查不到","noise":"33/35dB","size":"790×649×1925mm","year":2026,"pros":["十字四门","双循环","玻璃面板","变温33L"],"cons":["—"],"tags":["十字门","2026"],"verify_status":"已核验（第三方）","verify_date":"2026-10-03","verify_source":["太平洋电脑网"],"verify_url":"https://product.pconline.com.cn/icebox/rongsheng/2974322_detail.html","change_log":"2026-10-03 建条：参数取自太平洋电脑网规格表（总560=冷藏327+冷冻200+变温33，逐项吻合）；official_price 3920 为太平洋参考报价；门型十字门（太平洋「十字对开门」）；噪音「33/35dB」为来源原值照录；上市时间 2026 年（太平洋）；注意与近名型号 BCD-560N40FQGAX 为两款不同产品","updated_at":"2026-10-03","img":null},
-{"id":"ronshen_601_cross","name":"容声BCD-601D30CNGBZ","model_code":"BCD-601D30CNGBZ","brand":"容声","door_type":"十字门","official_price":5999,"second_hand":"—","total_vol":601,"fridge_vol":356,"freezer_vol":209,"var_vol":36,"energy":"1级","power_use":0.96,"cooling":"风冷","sterilize":"查不到","noise":"37dB","size":"911×650×1912mm","year":null,"pros":["601L大容量","十字四门","变温36L","双变频"],"cons":["—"],"tags":["十字门","大容量"],"verify_status":"已核验（第三方）","verify_date":"2026-10-03","verify_source":["太平洋电脑网"],"verify_url":"https://product.pconline.com.cn/icebox/rongsheng/2921651_detail.html","change_log":"2026-10-03 建条：参数取自太平洋电脑网规格表（总601=冷藏356+冷冻209+变温36，逐项吻合）；official_price 5999 为太平洋参考报价；门型十字门（太平洋「十字对开门」）；上市年份来源未标注，year 留空","updated_at":"2026-10-03","img":null},
-{"id":"siemens_502_cross","name":"西门子BCD-502W(KC89BVA58C)","model_code":"KC89BVA58C","brand":"西门子","door_type":"十字门","official_price":11656,"second_hand":"—","total_vol":502,"fridge_vol":292,"freezer_vol":181,"var_vol":29,"energy":"1级","power_use":1.07,"cooling":"风冷(双循环)","sterilize":"双倍超氧除菌净味","noise":"35dB","size":"842×594×1925mm","year":null,"pros":["十字四门","双循环","自动制冰","超氧除菌净味","594mm超薄零嵌"],"cons":["价格高","综合耗电偏高"],"tags":["十字门","零嵌","制冰"],"verify_status":"已核验（第三方）","verify_date":"2026-10-03","verify_source":["太平洋电脑网","苏宁易购","什么值得买"],"verify_url":"https://product.pconline.com.cn/icebox/siemens/2922191_detail.html","change_log":"2026-10-03 建条：参数取自太平洋电脑网规格表；变温室 29L 为总502-冷藏292-冷冻181 差额推算，并经什么值得买收录参数（292/181/29）印证；门型十字门（太平洋「十字对开门」+苏宁自营商品名「十字门」）；「自动制冰/双倍超氧锁鲜杀菌」取苏宁、京东自营商品名（两处零售渠道一致），未入参数表；official_price 11656 为太平洋参考报价，京东券后价约 7784 为促销价不采信；上市年份来源冲突（淘宝用户称2025-10、苏宁标2026-01），year 留空待核","updated_at":"2026-10-03","img":null},
-{"id":"siemens_602_french","name":"西门子BCD-602W(KF97JPV50C)","model_code":"KF97JPV50C","brand":"西门子","door_type":"法式多门","official_price":15990,"second_hand":"—","total_vol":602,"fridge_vol":350,"freezer_vol":170,"energy":"1级","power_use":1.03,"cooling":"风冷(双循环)","sterilize":"查不到","noise":"32dB","size":"906×736×1911mm","year":null,"pros":["法式多门","602L旗舰大容量","零度生物保鲜","低噪32dB"],"cons":["价格高"],"tags":["法式多门","旗舰","零度保鲜"],"verify_status":"已核验（多源）","verify_date":"2026-10-07","verify_source":["太平洋电脑网","中关村在线"],"verify_url":"https://product.pconline.com.cn/icebox/siemens/2922231_detail.html","change_log":"2026-10-03 建条：参数取自太平洋电脑网规格表，经中关村在线产品页交叉印证（602L/一级能效/风冷/参考价15990 一致）；冷藏350+冷冻170=520 与总容积差 82L 疑为零度保鲜/变温区，无权威来源标明，var_vol 不填；门型法式多门：太平洋「多开门」+ZOL「多门」+苏宁「对开多门」+商品实拍图（上部冷藏对开+下部双抽屉）判定；「零度生物保鲜」取苏宁商品名；official_price 15990 为太平洋/ZOL 参考报价（京东同价）；上市年份未核实，year 留空；2026-10-07 补产品图（来源：cached）","updated_at":"2026-10-07","img":"siemens_602_french.webp"},
-{"id":"tcl_455_cross","name":"TCL R455T9-UQB","model_code":"R455T9-UQB","brand":"TCL","door_type":"十字门","official_price":3292,"second_hand":"—","total_vol":455,"fridge_vol":309,"freezer_vol":67,"var_vol":79,"energy":"1级","power_use":0.73,"cooling":"风冷(双循环)","sterilize":"查不到","noise":"35dB","size":"833×580×1900mm","year":null,"pros":["580mm超薄零嵌","自动制冰","双循环","变温79L","低耗电0.73"],"cons":["—"],"tags":["十字门","超薄零嵌","制冰"],"verify_status":"已核验（第三方）","verify_date":"2026-10-03","verify_source":["太平洋电脑网","京东"],"verify_url":"https://product.pconline.com.cn/icebox/tcl/2549299_detail.html","change_log":"2026-10-03 建条：参数取自太平洋电脑网规格表（总455=冷藏309+冷冻67+变温79，逐项吻合）；门型十字门（太平洋「十字对开门」+京东自营商品名「十字四开门」）；official_price 3292 取京东日常零售价（什么值得买价格记录 3282–3293；天极产品库参考价 3799 系官方指导价口径，未采信）；「58cm超薄零嵌/全自动制冰」取京东自营商品名并与尺寸 833×580×1900 印证；上市年份未核实，year 留空","updated_at":"2026-10-03","img":null},
-{"id":"tcl_601_cross","name":"TCL R601T9N-UQS","model_code":"R601T9N-UQS","brand":"TCL","door_type":"十字门","official_price":4699,"second_hand":"—","total_vol":601,"fridge_vol":341,"freezer_vol":236,"var_vol":24,"energy":"1级","power_use":0.99,"cooling":"风冷","sterilize":"查不到","noise":"35dB","size":"890×594×1900mm","year":2026,"pros":["601L大容量","594mm超薄","十字四门","变温24L"],"cons":["—"],"tags":["十字门","大容量","2026"],"verify_status":"已核验（第三方）","verify_date":"2026-10-07","verify_source":["太平洋电脑网"],"verify_url":"https://product.pconline.com.cn/icebox/tcl/2879291_detail.html","change_log":"2026-10-03 建条：参数取自太平洋电脑网规格表（总601=冷藏341+冷冻236+变温24，逐项吻合）；official_price 4699 为太平洋参考报价；门型十字门（太平洋「十字对开门」）；上市时间 2026 年（太平洋）；2026-10-07 补产品图（来源：cached）","updated_at":"2026-10-07","img":"tcl_601_cross.webp"}
+ {
+  "id": "frig_560_french",
+  "name": "米家冰箱Pro 微冰鲜双系统 法式平嵌560L（2025款）",
+  "model_code": "BCD-560WFSGPDIN",
+  "miot_model": "midjd.fridge.bf52s",
+  "door_type": "法式多门",
+  "official_price": 7499,
+  "second_hand": "—",
+  "total_vol": 560,
+  "fridge_vol": 360,
+  "freezer_vol": 200,
+  "energy": "1级",
+  "power_use": 0.74,
+  "cooling": "风冷(双系统)",
+  "sterilize": "全域离子净化2.0(99.999%除菌)",
+  "noise": "31dB",
+  "size": "892×600×1912mm",
+  "year": 2025,
+  "pros": [
+   "法式四门",
+   "双系统0串味",
+   "自动制冰",
+   "低噪31dB"
+  ],
+  "cons": [
+   "价格高"
+  ],
+  "tags": [
+   "法式多门",
+   "旗舰",
+   "2025"
+  ],
+  "verify_status": "待核验",
+  "verify_date": "2026-10-01",
+  "verify_source": [
+   "米家产品库(miot-spec)"
+  ],
+  "verify_url": "查不到",
+  "change_log": "2026-10-01 补入官方产品图（小米 CDN，经米家产品库(miot-spec)）；2026-10-01 经米家产品库(miot-spec)交叉印证存在性并补入协议型号；早期录入，来源未逐条记录，待按官方规格页/说明书核验",
+  "updated_at": "2026-10-01",
+  "img": "frig_560_french.webp",
+  "brand": "小米"
+ },
+ {
+  "id": "frig_508_cross",
+  "name": "米家冰箱 分储鲜Pro 十字508L（2024款）",
+  "model_code": "BCD-508WTGBI",
+  "miot_model": "midjd.fridge.bs39z",
+  "door_type": "十字门",
+  "official_price": 3999,
+  "second_hand": "—",
+  "total_vol": 508,
+  "fridge_vol": 296,
+  "freezer_vol": 183,
+  "energy": "1级",
+  "power_use": 0.93,
+  "cooling": "风冷(双系统)",
+  "sterilize": "风道内置离子发生器(正负离子)",
+  "noise": "35dB",
+  "size": "854×600×1912mm",
+  "year": 2024,
+  "pros": [
+   "十字四门",
+   "双系统",
+   "变温29L"
+  ],
+  "cons": [
+   "—"
+  ],
+  "tags": [
+   "十字门",
+   "双系统",
+   "2024"
+  ],
+  "verify_status": "待核验",
+  "verify_date": "2026-10-01",
+  "verify_source": [
+   "米家产品库(miot-spec)"
+  ],
+  "verify_url": "查不到",
+  "change_log": "2026-10-01 补入官方产品图（小米 CDN，经米家产品库(miot-spec)）；2026-10-01 经米家产品库(miot-spec)交叉印证存在性并补入协议型号；早期录入，来源未逐条记录，待按官方规格页/说明书核验；2026-10-01 补充：总容积与冷藏/冷冻之和存在差额（应为变温室），但未查到权威来源确认具体数值，按禁止估算原则 var_vol 留空不填",
+  "updated_at": "2026-10-01",
+  "img": "frig_508_cross.webp",
+  "brand": "小米"
+ },
+ {
+  "id": "frig_508_ultra",
+  "name": "米家冰箱Pro 至尊版 十字508L（2025款）",
+  "model_code": "BCD-508WFSGPDIN",
+  "miot_model": "查不到",
+  "door_type": "十字门",
+  "official_price": 4699,
+  "second_hand": "—",
+  "total_vol": 508,
+  "fridge_vol": 297,
+  "freezer_vol": 176,
+  "energy": "1级",
+  "power_use": 0.81,
+  "cooling": "风冷(双系统)",
+  "sterilize": "全域离子净化4.0",
+  "noise": "31dB",
+  "size": "792×597×1925mm",
+  "year": 2025,
+  "pros": [
+   "全域离子净化4.0",
+   "双系统",
+   "可选配自动制冰",
+   "变温室35L"
+  ],
+  "cons": [
+   "价格高"
+  ],
+  "tags": [
+   "十字门",
+   "至尊版",
+   "2025"
+  ],
+  "verify_status": "待核验",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "查不到",
+  "change_log": "早期录入，来源未逐条记录，待按官方规格页/说明书核验；2026-10-01 型号订正：原「BCD-508WSSGPDIN」查无此物（WSSGPDIN 为不存在的字母组合），系 BCD-508WFSGPDIN 的字母次序记反。据太平洋规格表（508/冷藏297/冷冻176/变温35 与本条逐项吻合）订正为 BCD-508WFSGPDIN；2026-10-01 新增 var_vol 字段，按太平洋规格表回填变温室容积 35L；2026-10-07 补产品图（来源：cached）",
+  "updated_at": "2026-10-07",
+  "img": "frig_508_ultra.webp",
+  "brand": "小米",
+  "var_vol": 35
+ },
+ {
+  "id": "frig_606_cross",
+  "name": "米家冰箱Pro 双系统 十字606L（2024款）",
+  "model_code": "BCD-606WKMPDN",
+  "miot_model": "查不到",
+  "door_type": "十字门",
+  "official_price": 3499,
+  "second_hand": "—",
+  "total_vol": 606,
+  "fridge_vol": 345,
+  "freezer_vol": 225,
+  "energy": "1级",
+  "power_use": 0.95,
+  "cooling": "风冷",
+  "sterilize": "全域银离子抗菌净味/水分子筛保鲜",
+  "noise": "36dB",
+  "size": "910×690×1902mm",
+  "year": 2024,
+  "pros": [
+   "606L大容量",
+   "双系统",
+   "独立三档变温"
+  ],
+  "cons": [
+   "—"
+  ],
+  "tags": [
+   "十字门",
+   "大容量",
+   "2024"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-01",
+  "verify_source": [
+   "小米商城（官方产品图）",
+   "太平洋电脑网"
+  ],
+  "verify_url": "查不到",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-01 分仓容积订正：原冷藏432/冷冻174（合计恰为606，无变温区）与产品实际结构矛盾。据太平洋规格表（BCD-606WKMPDN：总606/冷藏345/冷冻225/变温36）订正，并新增 var_vol 字段承载变温室容积",
+  "updated_at": "2026-10-01",
+  "img": "frig_606_cross.webp",
+  "brand": "小米",
+  "var_vol": 36
+ },
+ {
+  "id": "frig_603_cross",
+  "name": "米家冰箱 十字对开门603L 冰晶岩（2023款）",
+  "model_code": "BCD-603WGSA",
+  "miot_model": "midjd.fridge.603a",
+  "door_type": "十字门",
+  "official_price": 2999,
+  "second_hand": "—",
+  "total_vol": 603,
+  "fridge_vol": 396,
+  "freezer_vol": 101,
+  "energy": "一级",
+  "power_use": 0.99,
+  "cooling": "风冷",
+  "sterilize": "动态离子除菌(99.93%)",
+  "noise": "36dB",
+  "size": "830×690×1910mm",
+  "year": 2023,
+  "pros": [
+   "变温106L宽幅",
+   "动态离子除菌"
+  ],
+  "cons": [
+   "—"
+  ],
+  "tags": [
+   "十字门",
+   "宽幅变温",
+   "2023"
+  ],
+  "verify_status": "待核验",
+  "verify_date": "2026-10-01",
+  "verify_source": [
+   "米家产品库(miot-spec)"
+  ],
+  "verify_url": "查不到",
+  "change_log": "2026-10-01 补入官方产品图（小米 CDN，经米家产品库(miot-spec)）；2026-10-01 经米家产品库(miot-spec)交叉印证存在性并补入协议型号；早期录入，来源未逐条记录，待按官方规格页/说明书核验；2026-10-01 补充：总容积与冷藏/冷冻之和存在差额（应为变温室），但未查到权威来源确认具体数值，按禁止估算原则 var_vol 留空不填",
+  "updated_at": "2026-10-01",
+  "img": "frig_603_cross.webp",
+  "brand": "小米"
+ },
+ {
+  "id": "frig_636_side",
+  "name": "米家冰箱 对开636L（2023款）",
+  "model_code": "BCD-636WKMP",
+  "miot_model": "查不到",
+  "door_type": "对开门",
+  "official_price": 1899,
+  "second_hand": "—",
+  "total_vol": 636,
+  "fridge_vol": 394,
+  "freezer_vol": 242,
+  "energy": "一级",
+  "power_use": 0.95,
+  "cooling": "风冷(双循环)",
+  "sterilize": "全域抗菌净味",
+  "noise": "34dB",
+  "size": "910×715×1770mm",
+  "year": 2023,
+  "pros": [
+   "636L大容量",
+   "性价比高"
+  ],
+  "cons": [
+   "无变温室"
+  ],
+  "tags": [
+   "对开门",
+   "大容量",
+   "2023"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-01",
+  "verify_source": [
+   "小米商城（官方产品图）"
+  ],
+  "verify_url": "查不到",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片",
+  "updated_at": "2026-10-01",
+  "img": "frig_636_side.webp",
+  "brand": "小米"
+ },
+ {
+  "id": "frig_186_two",
+  "name": "米家冰箱 186L两门风冷（2020款）",
+  "model_code": "BCD-186WMD",
+  "miot_model": "查不到",
+  "door_type": "两门",
+  "official_price": 999,
+  "second_hand": "—",
+  "total_vol": 186,
+  "fridge_vol": 120,
+  "freezer_vol": 66,
+  "energy": "2级",
+  "power_use": 0.58,
+  "cooling": "风冷无霜",
+  "sterilize": "离子抗菌(99.9%)",
+  "noise": "38dB",
+  "size": "525×610×1620mm",
+  "year": 2020,
+  "pros": [
+   "两门小容量",
+   "风冷无霜",
+   "价格实惠"
+  ],
+  "cons": [
+   "容量小"
+  ],
+  "tags": [
+   "两门",
+   "小户型",
+   "2020"
+  ],
+  "verify_status": "待核验",
+  "verify_date": "2026-10-07",
+  "verify_source": [],
+  "verify_url": "查不到",
+  "change_log": "早期录入，来源未逐条记录，待按官方规格页/说明书核验；2026-10-07 补产品图（来源：cached）",
+  "updated_at": "2026-10-07",
+  "img": "frig_186_two.webp",
+  "brand": "小米"
+ },
+ {
+  "id": "frig_210_three",
+  "name": "米家冰箱 三门210L（2020款）",
+  "model_code": "BCD-210WMSDMJ01",
+  "miot_model": "查不到",
+  "door_type": "三门",
+  "official_price": 1199,
+  "second_hand": "—",
+  "total_vol": 210,
+  "fridge_vol": 116,
+  "freezer_vol": 94,
+  "energy": "3级",
+  "power_use": 0.78,
+  "cooling": "风冷",
+  "sterilize": "查不到",
+  "noise": "39dB",
+  "size": "554×630×1717mm",
+  "year": 2020,
+  "pros": [
+   "三门三温区",
+   "中门变温32L"
+  ],
+  "cons": [
+   "能效3级"
+  ],
+  "tags": [
+   "三门",
+   "变温",
+   "2020"
+  ],
+  "verify_status": "待核验",
+  "verify_date": "—",
+  "verify_source": [],
+  "verify_url": "查不到",
+  "change_log": "早期录入，来源未逐条记录，待按官方规格页/说明书核验；2026-10-01 型号复核：BCD-210WMSDMJ01 存在且与本条对应（什么值得买百科与苏宁自营双源一致），但太平洋未收录此款，非三源印证",
+  "updated_at": "2026-10-01",
+  "img": null,
+  "brand": "小米"
+ },
+ {
+  "id": "frig_pro_508",
+  "name": "米家冰箱Pro 508L",
+  "model_code": "BCD-508WFSSMPDIN",
+  "miot_model": "查不到",
+  "door_type": "十字门",
+  "official_price": 4469,
+  "second_hand": "—",
+  "total_vol": 508,
+  "fridge_vol": 294,
+  "freezer_vol": 176,
+  "energy": "1级",
+  "power_use": 0.81,
+  "cooling": "风冷",
+  "sterilize": "全域离子净化4.0",
+  "noise": "31dB",
+  "size": "792×597×1925mm",
+  "year": null,
+  "pros": [
+   "十字四门",
+   "双系统防串味",
+   "自动制冰",
+   "全域离子净化4.0",
+   "低噪31dB"
+  ],
+  "cons": [
+   "价格高"
+  ],
+  "tags": [
+   "十字门"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=10050189",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=4999，energy=1级，size=792×597×1925mm，cooling=风冷，noise=31dB，sterilize=全域离子净化4.0，fridge_vol=294，freezer_vol=176，var_vol=38，power_use=0.81；2026-10-04 补全 model_code=BCD-508WFSSMPDIN、total_vol=508（来源：小米商城商品页能效标识图「规格型号」与官方商品名，冷藏294+冷冻176+变温38=508 一致）；2026-10-04 撰写 pros/cons（只引用已入库参数与商城官方文案，未引入参数表外数值）；注：详情页能效标识分两批次——批次一(GB 12021.2-2015)综合耗电0.81、批次二(GB 12021.2-2025)0.79，分仓容积一致，商城关键参数取0.81；2026-10-04 官方商城 API 回填：ref_price=4999，energy=1级，noise=31dB；2026-10-04 官方商城 API 回填：ref_price=4999，energy=1级，noise=31dB",
+  "updated_at": "2026-10-04",
+  "img": "frig_pro_508.webp",
+  "brand": "小米",
+  "ref_price": 4999,
+  "var_vol": 38
+ },
+ {
+  "id": "frig_271_three",
+  "name": "米家冰箱 271L 三门",
+  "model_code": "BCD-271WTMP",
+  "miot_model": "查不到",
+  "door_type": "三门",
+  "official_price": 1599,
+  "second_hand": "—",
+  "total_vol": 271,
+  "fridge_vol": 151,
+  "freezer_vol": 85,
+  "energy": "1级",
+  "power_use": 0.59,
+  "cooling": "风冷无霜(单系统)",
+  "sterilize": "银离子抗菌",
+  "noise": "36dB",
+  "size": "560×600×1810mm",
+  "year": null,
+  "pros": [
+   "三门三温区",
+   "变温室35L",
+   "风冷无霜",
+   "一级能效",
+   "银离子抗菌"
+  ],
+  "cons": [
+   "单循环制冷"
+  ],
+  "tags": [
+   "三门"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230804107",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=1899，energy=1级，size=560×600×1810mm，cooling=风冷无霜，noise=36dB，sterilize=银离子抗菌，fridge_vol=151，freezer_vol=85，var_vol=35，power_use=0.59；2026-10-04 补全 model_code=BCD-271WTMP、total_vol=271（来源：小米商城商品页详情「产品参数」图，冷藏151+冷冻85+变温35=271 一致，能效标识图同证）；cooling 括注「单系统」取自商城关键参数「制冷系统」；2026-10-04 撰写 pros/cons（只引用已入库参数与商城官方文案）；2026-10-04 官方商城 API 回填：ref_price=1899，energy=1级，noise=36dB；2026-10-04 官方商城 API 回填：ref_price=1899，energy=1级，noise=36dB",
+  "updated_at": "2026-10-04",
+  "img": "frig_271_three.webp",
+  "brand": "小米",
+  "ref_price": 1899,
+  "var_vol": 35
+ },
+ {
+  "id": "frig_256_three",
+  "name": "米家冰箱 256L 三门",
+  "model_code": "BCD-256WMSA01",
+  "miot_model": "查不到",
+  "door_type": "三门",
+  "official_price": 1299,
+  "second_hand": "—",
+  "total_vol": 256,
+  "fridge_vol": 136,
+  "freezer_vol": 85,
+  "energy": "1级",
+  "power_use": 0.59,
+  "cooling": "风冷无霜(单系统)",
+  "sterilize": "银离子抗菌",
+  "noise": "36dB",
+  "size": "560×600×1745mm",
+  "year": null,
+  "pros": [
+   "三门三温区",
+   "变温室35L",
+   "风冷无霜",
+   "一级能效",
+   "银离子抗菌"
+  ],
+  "cons": [
+   "单循环制冷"
+  ],
+  "tags": [
+   "三门"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230803930",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=1899，energy=1级，size=560×600×1745mm，cooling=风冷无霜，noise=36dB，sterilize=银离子抗菌，fridge_vol=136，freezer_vol=85，var_vol=35，power_use=0.59；2026-10-04 补全 model_code=BCD-256WMSA01、total_vol=256（来源：小米商城商品页详情「产品参数」图与能效标识图「规格型号」，冷藏136+冷冻85+变温35=256 一致）；cooling 括注「单系统」取自商城关键参数「制冷系统」；2026-10-04 撰写 pros/cons（只引用已入库参数与商城官方文案）；2026-10-04 官方商城 API 回填：ref_price=1899，energy=1级，noise=36dB；2026-10-04 官方商城 API 回填：ref_price=1899，energy=1级，noise=36dB",
+  "updated_at": "2026-10-04",
+  "img": "frig_256_three.webp",
+  "brand": "小米",
+  "ref_price": 1899,
+  "var_vol": 35
+ },
+ {
+  "id": "frig_425_cross",
+  "name": "米家冰箱 425L 十字",
+  "model_code": "MC-425WSSMPN",
+  "miot_model": "查不到",
+  "door_type": "十字门",
+  "official_price": 2352,
+  "second_hand": "—",
+  "total_vol": 425,
+  "fridge_vol": 215,
+  "freezer_vol": 155,
+  "energy": "1级",
+  "power_use": 0.82,
+  "cooling": "风冷",
+  "sterilize": "全域离子净化",
+  "noise": "34dB",
+  "size": "702×597×1850mm",
+  "year": null,
+  "pros": [
+   "十字四门",
+   "全域离子净化",
+   "变温室55L",
+   "一级能效",
+   "597mm深易嵌入"
+  ],
+  "cons": [
+   "综合耗电偏高"
+  ],
+  "tags": [
+   "十字门"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230809121",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=2699；2026-10-04 补全参数（来源：小米商城商品页详情图「产品参数」表与中国能效标识图，两图互证）：model_code=MC-425WSSMPN（产品参数「产品型号」与能效标识「规格型号」一致），total_vol=425、fridge_vol=215、freezer_vol=155（图原文「三星」级室容积，按冷冻室收录）、var_vol=55、energy=1级（图原文「新1级」）、power_use=0.82、cooling=风冷、noise=34dB、size=702×597×1850mm、sterilize=全域离子净化（官方商品名）；215+155+55=425 一致；2026-10-04 撰写 pros/cons（只引用已入库参数与商城官方文案）；2026-10-04 官方商城 API 回填：ref_price=2699；2026-10-04 官方商城 API 回填：ref_price=2699",
+  "updated_at": "2026-10-04",
+  "img": "frig_425_cross.webp",
+  "brand": "小米",
+  "ref_price": 2699,
+  "var_vol": 55
+ },
+ {
+  "id": "frig_pro_600",
+  "name": "米家冰箱Pro 600L 十字",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "door_type": "十字门",
+  "official_price": 4469,
+  "second_hand": "—",
+  "total_vol": null,
+  "fridge_vol": null,
+  "freezer_vol": null,
+  "energy": "查不到",
+  "power_use": null,
+  "cooling": "查不到",
+  "sterilize": "查不到",
+  "noise": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [],
+  "cons": [],
+  "tags": [
+   "十字门"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-01",
+  "verify_source": [
+   "小米商城"
+  ],
+  "verify_url": "查不到",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-01 来源链接订正：原 verify_url（product_id=1230808521）经小米商城官方 API 核对实为「米家冰箱Pro 600L十字 自动制冰」，与本条产品不符，属错挂；已置「查不到」，待找到本条正确官方链接后回填",
+  "updated_at": "2026-10-01",
+  "img": "frig_pro_600.webp",
+  "brand": "小米"
+ },
+ {
+  "id": "frig_pro600_cross",
+  "name": "米家冰箱Pro 600L 十字 自动制冰",
+  "model_code": "BCD-600WKMPDIN",
+  "miot_model": "查不到",
+  "door_type": "十字门",
+  "official_price": 4469,
+  "second_hand": "—",
+  "total_vol": 600,
+  "fridge_vol": 339,
+  "freezer_vol": 225,
+  "energy": "1级",
+  "power_use": 0.93,
+  "cooling": "风冷",
+  "sterilize": "全链路抗菌",
+  "noise": "35dB",
+  "size": "852×675×1912mm",
+  "year": null,
+  "pros": [
+   "600L大容量",
+   "自动制冰",
+   "双系统防串味",
+   "全链路抗菌",
+   "十字四门"
+  ],
+  "cons": [
+   "价格高"
+  ],
+  "tags": [
+   "十字门"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230808521",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=4999；2026-10-04 补全参数（来源：小米商城商品页详情图「产品参数」表与能效标识图）：model_code=BCD-600WKMPDIN、total_vol=600、fridge_vol=339、freezer_vol=225、var_vol=36、energy=1级（图原文「新国标1级」）、power_use=0.93、cooling=风冷、noise=35dB、size=852×675×1912mm、sterilize=全链路抗菌（官方商品文案）；339+225+36=600 一致；「双系统」取自官方商品文案与详情页说明；2026-10-04 撰写 pros/cons（只引用已入库参数与商城官方文案）；2026-10-04 官方商城 API 回填：ref_price=4999；2026-10-04 官方商城 API 回填：ref_price=4999",
+  "updated_at": "2026-10-04",
+  "img": "frig_pro600_cross.webp",
+  "brand": "小米",
+  "ref_price": 4999,
+  "var_vol": 36
+ },
+ {
+  "id": "frig_561_side",
+  "name": "米家冰箱 561L 对开",
+  "model_code": "BCD-561WKMP",
+  "miot_model": "查不到",
+  "door_type": "对开门",
+  "official_price": 1949,
+  "second_hand": "—",
+  "total_vol": 561,
+  "fridge_vol": 351,
+  "freezer_vol": 210,
+  "energy": "1级",
+  "power_use": 0.83,
+  "cooling": "风冷(单系统)",
+  "sterilize": "全域离子净化系统",
+  "noise": "34dB",
+  "size": "910×650×1770mm",
+  "year": null,
+  "pros": [
+   "561L大容量",
+   "全域离子净化",
+   "冷冻室210L",
+   "一级能效"
+  ],
+  "cons": [
+   "无变温室",
+   "单循环制冷"
+  ],
+  "tags": [
+   "对开门"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230807982",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=2499，energy=1级，size=910×650×1770mm，cooling=风冷，noise=34dB，sterilize=全域离子净化系统，fridge_vol=351，freezer_vol=210，power_use=0.83；2026-10-04 补全 model_code=BCD-561WKMP、total_vol=561（来源：小米商城商品页详情「产品参数」图与能效标识图「规格型号」，冷藏351+冷冻210=561 一致，无变温室）；cooling 括注「单系统」取自商城关键参数「制冷系统」；2026-10-04 撰写 pros/cons（只引用已入库参数与商城官方文案）；2026-10-04 官方商城 API 回填：ref_price=2499，energy=1级，noise=34dB；2026-10-04 官方商城 API 回填：ref_price=2499，energy=1级，noise=34dB",
+  "updated_at": "2026-10-04",
+  "img": "frig_561_side.webp",
+  "brand": "小米",
+  "ref_price": 2499
+ },
+ {
+  "id": "haier_560_cross",
+  "name": "海尔BCD-560WGHTD1BWLU1",
+  "model_code": "BCD-560WGHTD1BWLU1",
+  "brand": "海尔",
+  "door_type": "十字门",
+  "official_price": 6999,
+  "ref_price": 7580,
+  "second_hand": "—",
+  "total_vol": 560,
+  "fridge_vol": 324,
+  "freezer_vol": 197,
+  "var_vol": 39,
+  "energy": "1级",
+  "power_use": 0.98,
+  "cooling": "风冷",
+  "sterilize": "查不到",
+  "noise": "31dB",
+  "size": "830×594×1925mm",
+  "year": 2026,
+  "pros": [
+   "十字四门",
+   "低噪31dB",
+   "594mm超薄零嵌",
+   "变温39L",
+   "全空间保鲜"
+  ],
+  "cons": [
+   "—"
+  ],
+  "tags": [
+   "十字门",
+   "零嵌",
+   "2026"
+  ],
+  "verify_status": "已核验（多源）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+   "海尔官网",
+   "太平洋电脑网",
+   "京东"
+  ],
+  "verify_url": "https://www.haier.com/cooling/20260717_293236.shtml",
+  "change_log": "2026-10-03 建条：参数取自海尔官网产品页，并经太平洋电脑网规格表逐项印证（560=冷藏324+冷冻197+变温39、31dB、830×594×1925、1级 全部一致），判「已核验（多源）」；official_price 6999 取海尔官网参考价，ref_price 7580 为太平洋参考报价（京东同价）；门型十字门（官网「十字对开门」+太平洋一致）；上市 2026 年（太平洋上市时间+京东2026新款标签）；「全空间保鲜/零嵌/双系统」为京东自营商品名卖点，双系统暂未获第二来源印证故只入标签不入参数；2026-10-07 补产品图（来源：cached）",
+  "updated_at": "2026-10-07",
+  "img": "haier_560_cross.webp"
+ },
+ {
+  "id": "haier_560_french",
+  "name": "海尔BCD-560WGHFD1BWLU1",
+  "model_code": "BCD-560WGHFD1BWLU1",
+  "brand": "海尔",
+  "door_type": "法式多门",
+  "official_price": 6999,
+  "ref_price": 8999,
+  "second_hand": "—",
+  "total_vol": 560,
+  "fridge_vol": 320,
+  "freezer_vol": 201,
+  "var_vol": 39,
+  "energy": "1级",
+  "power_use": 0.98,
+  "cooling": "风冷(双循环)",
+  "sterilize": "查不到",
+  "noise": "31dB",
+  "size": "830×590×1925mm",
+  "year": 2026,
+  "pros": [
+   "法式多门",
+   "低噪31dB",
+   "590mm超薄零嵌",
+   "变温39L",
+   "双循环"
+  ],
+  "cons": [
+   "价格高"
+  ],
+  "tags": [
+   "法式多门",
+   "零嵌",
+   "2026"
+  ],
+  "verify_status": "已核验（多源）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+   "海尔官网",
+   "太平洋电脑网",
+   "京东"
+  ],
+  "verify_url": "https://www.haier.com/cooling/20260601_291492.shtml",
+  "change_log": "2026-10-03 建条：参数取自海尔官网产品页，并经太平洋电脑网规格表印证（560=冷藏320+冷冻201+变温39、31dB、1级 一致），判「已核验（多源）」；深度官网 590mm 与太平洋 594mm 不一致，以官网（权威）为准记 590，差异已记录；official_price 6999 取海尔官网参考价，ref_price 8999 为太平洋参考报价；门型法式多门：官网「多门」+京东自营商品名「560L法式多门」+太平洋「多开门」；上市 2026 年（京东2026新款标签）；与同系列十字门款 BCD-560WGHTD1BWLU1 为两款不同产品（门体结构与分仓不同）；2026-10-07 补产品图（来源：cached）",
+  "updated_at": "2026-10-07",
+  "img": "haier_560_french.webp"
+ },
+ {
+  "id": "hisense_511_cross",
+  "name": "海信BCD-511E3SCNKD",
+  "model_code": "BCD-511E3SCNKD",
+  "brand": "海信",
+  "door_type": "十字门",
+  "official_price": 3005,
+  "second_hand": "—",
+  "total_vol": 511,
+  "fridge_vol": 259,
+  "freezer_vol": 218,
+  "var_vol": 34,
+  "energy": "1级",
+  "power_use": 1.07,
+  "cooling": "风冷",
+  "sterilize": "查不到",
+  "noise": "35dB",
+  "size": "790×598.5×1925mm",
+  "year": 2026,
+  "pros": [
+   "十字四门",
+   "598.5mm超薄平嵌",
+   "变温34L",
+   "冷冻218L大冻区"
+  ],
+  "cons": [
+   "综合耗电偏高"
+  ],
+  "tags": [
+   "十字门",
+   "超薄平嵌",
+   "2026"
+  ],
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-03",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://product.pconline.com.cn/icebox/hisense/2941771_detail.html",
+  "change_log": "2026-10-03 建条：参数取自太平洋电脑网规格表（总511=冷藏259+冷冻218+变温34，逐项吻合）；official_price 3005 为太平洋参考报价；门型十字门（太平洋「十字对开门」）；深度 598.5mm 照录来源原值；上市时间 2026 年（太平洋）",
+  "updated_at": "2026-10-03",
+  "img": null
+ },
+ {
+  "id": "hisense_570_cross",
+  "name": "海信TR-570S3SCQGX",
+  "model_code": "TR-570S3SCQGX",
+  "brand": "海信",
+  "door_type": "十字门",
+  "official_price": 4799,
+  "second_hand": "—",
+  "total_vol": 570,
+  "fridge_vol": 369,
+  "freezer_vol": 201,
+  "energy": "1级",
+  "power_use": 1.1,
+  "cooling": "风冷(双循环)",
+  "sterilize": "查不到",
+  "noise": "35dB",
+  "size": "790×649×1925mm",
+  "year": null,
+  "pros": [
+   "570L大容量",
+   "十字四门",
+   "双循环",
+   "玻璃面板"
+  ],
+  "cons": [
+   "综合耗电偏高"
+  ],
+  "tags": [
+   "十字门",
+   "大容量",
+   "双循环"
+  ],
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://product.pconline.com.cn/icebox/hisense/2922131_detail.html",
+  "change_log": "2026-10-03 建条：参数取自太平洋电脑网规格表（总570=冷藏369+冷冻201，无变温区记录，var_vol 留空不填）；official_price 4799 为太平洋参考报价；门型十字门（太平洋「十字对开门」）；上市年份来源未标注，year 留空；2026-10-07 补产品图（来源：cached）",
+  "updated_at": "2026-10-07",
+  "img": "hisense_570_cross.webp"
+ },
+ {
+  "id": "midea_502_cross",
+  "name": "美的MR-519WUSPZE",
+  "model_code": "MR-519WUSPZE",
+  "brand": "美的",
+  "door_type": "十字门",
+  "official_price": 5678.4,
+  "second_hand": "—",
+  "total_vol": 502,
+  "fridge_vol": 289,
+  "freezer_vol": 182,
+  "var_vol": 31,
+  "energy": "1级",
+  "power_use": 0.76,
+  "cooling": "风冷",
+  "sterilize": "查不到",
+  "noise": "30dB",
+  "size": "792×600×1910mm",
+  "year": 2026,
+  "pros": [
+   "十字四门",
+   "600mm超薄平嵌",
+   "低噪30dB",
+   "变温31L",
+   "一级能效"
+  ],
+  "cons": [
+   "—"
+  ],
+  "tags": [
+   "十字门",
+   "超薄平嵌",
+   "2026"
+  ],
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+   "太平洋电脑网",
+   "美的官方商城"
+  ],
+  "verify_url": "https://www.midea.cn/#/detail?skuId=195371",
+  "change_log": "2026-10-03 建条：参数取自太平洋电脑网规格表（总502=冷藏289+冷冻182+变温31，逐项吻合）；official_price 5678.4 为太平洋参考报价（媒体渠道价 3000-6000 波动大且互相矛盾，未采信）；门型十字门（太平洋「十字对开门」）；上市时间 2026 年（太平洋）；警惕：同系近名型号 MR-519WUFPZE（法式）与本品（十字）为两款，勿混淆；2026-10-05 美的官方商城补参（skuId=195371，型号已逐字核对）：ref_price=5499（originPrice=549900 分 → 划线价）；2026-10-07 补产品图（来源：cached）",
+  "updated_at": "2026-10-07",
+  "img": "midea_502_cross.webp",
+  "ref_price": "5499"
+ },
+ {
+  "id": "midea_522_french",
+  "name": "美的BCD-522WUFGPZM(X)",
+  "model_code": "BCD-522WUFGPZM(X)",
+  "brand": "美的",
+  "door_type": "法式多门",
+  "official_price": 7499,
+  "second_hand": "—",
+  "total_vol": 522,
+  "fridge_vol": 350,
+  "freezer_vol": 172,
+  "energy": "1级",
+  "power_use": 0.99,
+  "cooling": "风冷",
+  "sterilize": "查不到",
+  "noise": "35dB",
+  "size": "833×600×1910mm",
+  "year": null,
+  "pros": [
+   "法式多门",
+   "600mm纯平全嵌",
+   "双系统",
+   "钢化玻璃面板"
+  ],
+  "cons": [
+   "价格高"
+  ],
+  "tags": [
+   "法式多门",
+   "超薄全嵌"
+  ],
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+   "太平洋电脑网",
+   "京东"
+  ],
+  "verify_url": "https://product.pconline.com.cn/icebox/midea/2636099_detail.html",
+  "change_log": "2026-10-03 建条：参数取自太平洋电脑网规格表（总522=冷藏350+冷冻172，无变温区记录，var_vol 留空不填）；official_price 7499 取什么值得买百科收录价（太平洋未挂报价，京东在售）；门型：太平洋「多开门」+京东自营商品名「60cm薄纯平全嵌法式多门」定为法式多门，600mm 深（尺寸833×600×1910 印证）；「双系统急速制冰」为京东自营商品名卖点、未入参数表，仅保留双系统；上市年份未核实，year 留空；2026-10-07 补产品图（来源：cached）",
+  "updated_at": "2026-10-07",
+  "img": "midea_522_french.webp"
+ },
+ {
+  "id": "ronshen_560_cross",
+  "name": "容声BCD-560N40CQGAX",
+  "model_code": "BCD-560N40CQGAX",
+  "brand": "容声",
+  "door_type": "十字门",
+  "official_price": 3920,
+  "second_hand": "—",
+  "total_vol": 560,
+  "fridge_vol": 327,
+  "freezer_vol": 200,
+  "var_vol": 33,
+  "energy": "1级",
+  "power_use": 0.99,
+  "cooling": "风冷(双循环)",
+  "sterilize": "查不到",
+  "noise": "33/35dB",
+  "size": "790×649×1925mm",
+  "year": 2026,
+  "pros": [
+   "十字四门",
+   "双循环",
+   "玻璃面板",
+   "变温33L"
+  ],
+  "cons": [
+   "—"
+  ],
+  "tags": [
+   "十字门",
+   "2026"
+  ],
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-03",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://product.pconline.com.cn/icebox/rongsheng/2974322_detail.html",
+  "change_log": "2026-10-03 建条：参数取自太平洋电脑网规格表（总560=冷藏327+冷冻200+变温33，逐项吻合）；official_price 3920 为太平洋参考报价；门型十字门（太平洋「十字对开门」）；噪音「33/35dB」为来源原值照录；上市时间 2026 年（太平洋）；注意与近名型号 BCD-560N40FQGAX 为两款不同产品",
+  "updated_at": "2026-10-03",
+  "img": null
+ },
+ {
+  "id": "ronshen_601_cross",
+  "name": "容声BCD-601D30CNGBZ",
+  "model_code": "BCD-601D30CNGBZ",
+  "brand": "容声",
+  "door_type": "十字门",
+  "official_price": 5999,
+  "second_hand": "—",
+  "total_vol": 601,
+  "fridge_vol": 356,
+  "freezer_vol": 209,
+  "var_vol": 36,
+  "energy": "1级",
+  "power_use": 0.96,
+  "cooling": "风冷",
+  "sterilize": "查不到",
+  "noise": "37dB",
+  "size": "911×650×1912mm",
+  "year": null,
+  "pros": [
+   "601L大容量",
+   "十字四门",
+   "变温36L",
+   "双变频"
+  ],
+  "cons": [
+   "—"
+  ],
+  "tags": [
+   "十字门",
+   "大容量"
+  ],
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-03",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://product.pconline.com.cn/icebox/rongsheng/2921651_detail.html",
+  "change_log": "2026-10-03 建条：参数取自太平洋电脑网规格表（总601=冷藏356+冷冻209+变温36，逐项吻合）；official_price 5999 为太平洋参考报价；门型十字门（太平洋「十字对开门」）；上市年份来源未标注，year 留空",
+  "updated_at": "2026-10-03",
+  "img": null
+ },
+ {
+  "id": "siemens_502_cross",
+  "name": "西门子BCD-502W(KC89BVA58C)",
+  "model_code": "KC89BVA58C",
+  "brand": "西门子",
+  "door_type": "十字门",
+  "official_price": 11656,
+  "second_hand": "—",
+  "total_vol": 502,
+  "fridge_vol": 292,
+  "freezer_vol": 181,
+  "var_vol": 29,
+  "energy": "1级",
+  "power_use": 1.07,
+  "cooling": "风冷(双循环)",
+  "sterilize": "双倍超氧除菌净味",
+  "noise": "35dB",
+  "size": "842×594×1925mm",
+  "year": null,
+  "pros": [
+   "十字四门",
+   "双循环",
+   "自动制冰",
+   "超氧除菌净味",
+   "594mm超薄零嵌"
+  ],
+  "cons": [
+   "价格高",
+   "综合耗电偏高"
+  ],
+  "tags": [
+   "十字门",
+   "零嵌",
+   "制冰"
+  ],
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-03",
+  "verify_source": [
+   "太平洋电脑网",
+   "苏宁易购",
+   "什么值得买"
+  ],
+  "verify_url": "https://product.pconline.com.cn/icebox/siemens/2922191_detail.html",
+  "change_log": "2026-10-03 建条：参数取自太平洋电脑网规格表；变温室 29L 为总502-冷藏292-冷冻181 差额推算，并经什么值得买收录参数（292/181/29）印证；门型十字门（太平洋「十字对开门」+苏宁自营商品名「十字门」）；「自动制冰/双倍超氧锁鲜杀菌」取苏宁、京东自营商品名（两处零售渠道一致），未入参数表；official_price 11656 为太平洋参考报价，京东券后价约 7784 为促销价不采信；上市年份来源冲突（淘宝用户称2025-10、苏宁标2026-01），year 留空待核",
+  "updated_at": "2026-10-03",
+  "img": null
+ },
+ {
+  "id": "siemens_602_french",
+  "name": "西门子BCD-602W(KF97JPV50C)",
+  "model_code": "KF97JPV50C",
+  "brand": "西门子",
+  "door_type": "法式多门",
+  "official_price": 15990,
+  "second_hand": "—",
+  "total_vol": 602,
+  "fridge_vol": 350,
+  "freezer_vol": 170,
+  "energy": "1级",
+  "power_use": 1.03,
+  "cooling": "风冷(双循环)",
+  "sterilize": "查不到",
+  "noise": "32dB",
+  "size": "906×736×1911mm",
+  "year": null,
+  "pros": [
+   "法式多门",
+   "602L旗舰大容量",
+   "零度生物保鲜",
+   "低噪32dB"
+  ],
+  "cons": [
+   "价格高"
+  ],
+  "tags": [
+   "法式多门",
+   "旗舰",
+   "零度保鲜"
+  ],
+  "verify_status": "已核验（多源）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+   "太平洋电脑网",
+   "中关村在线"
+  ],
+  "verify_url": "https://product.pconline.com.cn/icebox/siemens/2922231_detail.html",
+  "change_log": "2026-10-03 建条：参数取自太平洋电脑网规格表，经中关村在线产品页交叉印证（602L/一级能效/风冷/参考价15990 一致）；冷藏350+冷冻170=520 与总容积差 82L 疑为零度保鲜/变温区，无权威来源标明，var_vol 不填；门型法式多门：太平洋「多开门」+ZOL「多门」+苏宁「对开多门」+商品实拍图（上部冷藏对开+下部双抽屉）判定；「零度生物保鲜」取苏宁商品名；official_price 15990 为太平洋/ZOL 参考报价（京东同价）；上市年份未核实，year 留空；2026-10-07 补产品图（来源：cached）",
+  "updated_at": "2026-10-07",
+  "img": "siemens_602_french.webp"
+ },
+ {
+  "id": "tcl_455_cross",
+  "name": "TCL R455T9-UQB",
+  "model_code": "R455T9-UQB",
+  "brand": "TCL",
+  "door_type": "十字门",
+  "official_price": 3292,
+  "second_hand": "—",
+  "total_vol": 455,
+  "fridge_vol": 309,
+  "freezer_vol": 67,
+  "var_vol": 79,
+  "energy": "1级",
+  "power_use": 0.73,
+  "cooling": "风冷(双循环)",
+  "sterilize": "查不到",
+  "noise": "35dB",
+  "size": "833×580×1900mm",
+  "year": null,
+  "pros": [
+   "580mm超薄零嵌",
+   "自动制冰",
+   "双循环",
+   "变温79L",
+   "低耗电0.73"
+  ],
+  "cons": [
+   "—"
+  ],
+  "tags": [
+   "十字门",
+   "超薄零嵌",
+   "制冰"
+  ],
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-03",
+  "verify_source": [
+   "太平洋电脑网",
+   "京东"
+  ],
+  "verify_url": "https://product.pconline.com.cn/icebox/tcl/2549299_detail.html",
+  "change_log": "2026-10-03 建条：参数取自太平洋电脑网规格表（总455=冷藏309+冷冻67+变温79，逐项吻合）；门型十字门（太平洋「十字对开门」+京东自营商品名「十字四开门」）；official_price 3292 取京东日常零售价（什么值得买价格记录 3282–3293；天极产品库参考价 3799 系官方指导价口径，未采信）；「58cm超薄零嵌/全自动制冰」取京东自营商品名并与尺寸 833×580×1900 印证；上市年份未核实，year 留空",
+  "updated_at": "2026-10-03",
+  "img": null
+ },
+ {
+  "id": "tcl_601_cross",
+  "name": "TCL R601T9N-UQS",
+  "model_code": "R601T9N-UQS",
+  "brand": "TCL",
+  "door_type": "十字门",
+  "official_price": 4699,
+  "second_hand": "—",
+  "total_vol": 601,
+  "fridge_vol": 341,
+  "freezer_vol": 236,
+  "var_vol": 24,
+  "energy": "1级",
+  "power_use": 0.99,
+  "cooling": "风冷",
+  "sterilize": "查不到",
+  "noise": "35dB",
+  "size": "890×594×1900mm",
+  "year": 2026,
+  "pros": [
+   "601L大容量",
+   "594mm超薄",
+   "十字四门",
+   "变温24L"
+  ],
+  "cons": [
+   "—"
+  ],
+  "tags": [
+   "十字门",
+   "大容量",
+   "2026"
+  ],
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://product.pconline.com.cn/icebox/tcl/2879291_detail.html",
+  "change_log": "2026-10-03 建条：参数取自太平洋电脑网规格表（总601=冷藏341+冷冻236+变温24，逐项吻合）；official_price 4699 为太平洋参考报价；门型十字门（太平洋「十字对开门」）；上市时间 2026 年（太平洋）；2026-10-07 补产品图（来源：cached）",
+  "updated_at": "2026-10-07",
+  "img": "tcl_601_cross.webp"
+ }
 ]
