@@ -1,0 +1,40 @@
+{
+  "id": "haier_1084868",
+  "name": "海尔KJ600F-HCA",
+  "brand": "海尔",
+  "model_code": "KJ600F-HCA",
+  "tier": "旗舰",
+  "official_price": "查不到",
+  "ref_price": 5999,
+  "year": "查不到",
+  "pros": [
+    "功耗80W",
+    "窄身立式"
+  ],
+  "cons": [
+    "颗粒物CADR查不到",
+    "适用面积查不到",
+    "噪音参数查不到",
+    "滤芯价格查不到"
+  ],
+  "tags": [
+    "海尔"
+  ],
+  "area": "查不到",
+  "cadr_pm": "查不到",
+  "cadr_hcho": "查不到",
+  "power": "80W",
+  "noise": "查不到",
+  "filter_life": "查不到",
+  "wifi": "查不到",
+  "size": "439×220×735mm",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/jinghuaqi/haier/1084868_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：旗舰（依据：参考价 5999 元）；2026-10-03 回填型号：原「查不到」，产品名「海尔KJ600F-HCA」中的型号串为 KJ600F-HCA（来源与产品名同源的第三方规格站）；2026-10-04 补 pros/cons（依据本行已入库参数推导，未引入参数表以外的数值）；2026-10-07 补产品图（来源：太平洋产品报价详情页（g.pconline.com.cn））",
+  "updated_at": "2026-10-07",
+  "img": "haier_1084868.webp"
+}

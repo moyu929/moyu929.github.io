@@ -1,0 +1,38 @@
+{
+  "id": "tcl_568968",
+  "name": "TCL DEN500P",
+  "brand": "TCL",
+  "model_code": "DEN500P",
+  "tier": "大除湿量(40L+)",
+  "official_price": "查不到",
+  "ref_price": 3499,
+  "year": "查不到",
+  "pros": [
+    "41-50升/天除湿量",
+    "覆盖60㎡以上大面积",
+    "参考价3499元"
+  ],
+  "cons": [
+    "噪音与水箱容量未公开"
+  ],
+  "tags": [
+    "TCL"
+  ],
+  "dehumid": "41-50升/天",
+  "area": "60㎡以上",
+  "noise": "查不到",
+  "power": "480W",
+  "tank": "查不到",
+  "compressor": "查不到",
+  "purify": "查不到",
+  "size": "查不到",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/chushiji/tcl/568968_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（3 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：大除湿量(40L+)（依据：日除湿量 41.0L/天）；2026-10-03 回填型号：原「查不到」，产品名「TCL DEN500P」中的型号串为 DEN500P（来源与产品名同源的第三方规格站）；2026-10-04 A2 路补录：pros（3 条），cons（1 条）。依据：库内已入库参数（dehumid/area/power/tier）；2026-10-07 补产品图（来源：太平洋产品报价详情页（g.pconline.com.cn））",
+  "updated_at": "2026-10-07",
+  "img": "tcl_568968.webp"
+}

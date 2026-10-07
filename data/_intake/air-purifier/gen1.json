@@ -1,0 +1,49 @@
+{
+  "id": "gen1",
+  "name": "小米空气净化器 1代",
+  "tier": "停产",
+  "official_price": 899,
+  "second_hand": "150-250",
+  "filter_price": "149元",
+  "filter_life": "3-6月",
+  "cadr_pm": 406,
+  "cadr_hcho": "—",
+  "area": "28.4-48.7㎡",
+  "noise": "查不到",
+  "power": "1.5-75W",
+  "wifi": "✅",
+  "sensor": "夏普红外颗粒物传感",
+  "display": "无屏(三色指示灯)",
+  "filter_layers": "360°桶形3层(初效+H11 HEPA+活性炭)",
+  "size": "260×260×735mm",
+  "weight": "8kg",
+  "cert": "已停产",
+  "year": 2014,
+  "month": 12,
+  "pros": [
+    "小米首款净化器",
+    "双风机四通道",
+    "CADR 406性能强",
+    "打破行业暴利"
+  ],
+  "cons": [
+    "噪音参数查不到",
+    "功耗较高",
+    "体积大重",
+    "无显示屏"
+  ],
+  "tags": [
+    "首代",
+    "双风机",
+    "已停产"
+  ],
+  "miot_model": "查不到",
+  "verify_status": "待核验",
+  "verify_date": "2026-10-07",
+  "verify_source": [],
+  "verify_url": "查不到",
+  "change_log": "早期录入，来源未逐条记录，待按官方规格页/说明书核验；2026-10-07 补产品图（来源：中关村在线详情页（detail.zol.com.cn））",
+  "updated_at": "2026-10-07",
+  "img": "gen1.webp",
+  "brand": "小米"
+}

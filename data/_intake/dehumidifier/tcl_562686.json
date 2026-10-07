@@ -1,0 +1,39 @@
+{
+  "id": "tcl_562686",
+  "name": "TCL DH400P",
+  "brand": "TCL",
+  "model_code": "DH400P",
+  "tier": "中除湿量(20-30L)",
+  "official_price": "查不到",
+  "ref_price": 2699,
+  "year": "查不到",
+  "pros": [
+    "31-40升/天除湿量",
+    "覆盖60㎡以上大面积",
+    "参考价2699元"
+  ],
+  "cons": [
+    "噪音与水箱容量未公开",
+    "与同库 TCL DH-400P 参数高度重合，需核对是否同一硬件的不同渠道型号"
+  ],
+  "tags": [
+    "TCL"
+  ],
+  "dehumid": "31-40升/天",
+  "area": "60㎡以上",
+  "noise": "查不到",
+  "power": "500W",
+  "tank": "查不到",
+  "compressor": "查不到",
+  "purify": "查不到",
+  "size": "查不到",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/chushiji/tcl/562686_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（3 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：中除湿量(20-30L)（依据：日除湿量 31.0L/天）；2026-10-03 回填型号：原「查不到」，产品名「TCL DH400P」中的型号串为 DH400P（来源与产品名同源的第三方规格站）；2026-10-04 A2 路补录：pros（3 条），cons（2 条）。依据：库内已入库参数（dehumid/area/power/tier）；2026-10-07 补产品图（来源：太平洋产品报价详情页（g.pconline.com.cn））",
+  "updated_at": "2026-10-07",
+  "img": "tcl_562686.webp"
+}
