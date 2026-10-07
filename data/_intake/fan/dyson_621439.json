@@ -1,0 +1,34 @@
+{
+  "id": "dyson_621439",
+  "name": "戴森AM08",
+  "brand": "戴森",
+  "model_code": "AM08",
+  "type": "未归类",
+  "official_price": "查不到",
+  "ref_price": 3790,
+  "year": "查不到",
+  "pros": [
+    "参考价3790元，戴森入门价位"
+  ],
+  "cons": [
+    "品类未归类（type 为未归类），需回看产品页确认形态",
+    "档位、额定功率、噪音与输出风量均未公开"
+  ],
+  "tags": [
+    "戴森"
+  ],
+  "power": "查不到",
+  "speeds": "查不到",
+  "noise": "查不到",
+  "swing": "查不到",
+  "size": "查不到",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/fan/dyson/621439_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（0 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-03 回填型号：原「查不到」，产品名「戴森AM08」中的型号串为 AM08（来源与产品名同源的第三方规格站）；2026-10-04 A2 路补录：pros（1 条），cons（2 条）。依据：库内已入库参数（type=未归类）；2026-10-07 补产品图（来源：太平洋产品报价详情页（g.pconline.com.cn））",
+  "updated_at": "2026-10-07",
+  "img": "dyson_621439.webp"
+}

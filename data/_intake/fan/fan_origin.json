@@ -1,0 +1,42 @@
+{
+  "id": "fan_origin",
+  "name": "米家直流变频落地扇",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "落地扇",
+  "official_price": 292,
+  "second_hand": "—",
+  "power": 20,
+  "airflow": null,
+  "speeds": "100档",
+  "noise": null,
+  "throw_dist": null,
+  "battery": "无(需插电)",
+  "swing": "120°左右摇头",
+  "size": "查不到",
+  "year": 2020,
+  "pros": [
+    "直流电机",
+    "100档调速",
+    "支持AI语音",
+    "7羽叶设计"
+  ],
+  "cons": [
+    "输出风量<20m³/min,低于1X"
+  ],
+  "tags": [
+    "落地扇",
+    "自然风",
+    "2020"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+    "小米商城"
+  ],
+  "verify_url": "查不到",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-01 来源链接订正：原 verify_url（product_id=1230802062）经小米商城官方 API 核对实为「米家直流变频落地扇 Pro」，与本条产品不符，属错挂；已置「查不到」，待找到本条正确官方链接后回填；2026-10-07 补产品图（来源：中关村在线详情页（detail.zol.com.cn））",
+  "updated_at": "2026-10-07",
+  "img": "fan_origin.webp",
+  "brand": "小米"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "opple_1221559",
+  "name": "欧普22-JC-01854",
+  "brand": "欧普",
+  "model_code": "22-JC-01854",
+  "series": "未归类",
+  "official_price": 1799,
+  "ref_price": 1799,
+  "year": "查不到",
+  "pros": [
+    "15W 照明",
+    "35W 换气",
+    "风暖"
+  ],
+  "cons": [],
+  "tags": [
+    "欧普"
+  ],
+  "heat_power": "查不到",
+  "light_power": "15W",
+  "fan_power": "查不到",
+  "vent_power": "35W",
+  "control": "查不到",
+  "open_size": "300×600mm",
+  "weight": "查不到",
+  "voltage": "220V/50Hz，2485W",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/yuba/opple/1221559_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（0 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-03 回填型号：原「查不到」，产品名「欧普22-JC-01854」中的型号串为 22-JC-01854（来源与产品名同源的第三方规格站）；2026-10-04 补 official_price、warm_mode（来源：太平洋电脑网）；2026-10-04 补 pros（由已入库参数推导，不引入新数值）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）；2026-10-07 补产品图（来源：太平洋产品报价详情页（g.pconline.com.cn））",
+  "updated_at": "2026-10-07",
+  "facet_group": "未归类",
+  "warm_mode": "风暖",
+  "img": "opple_1221559.webp"
+}
