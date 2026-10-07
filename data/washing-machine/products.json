@@ -1,69 +1,2511 @@
 [
-{"id":"wash_dry_10","name":"米家互联网洗烘一体机 10kg（2019款）","model_code":"XHQG100MJ01","miot_model":"查不到","type":"滚筒洗烘一体","official_price":2999,"second_hand":"—","wash_cap":10,"dry_cap":6,"wash_ratio":null,"spin_rpm":1400,"energy":"1级","sterilize":"高温洗除菌","smart":"米家APP/小爱同学","noise":"洗涤62/甩干72dB","size":"598×650×850mm","year":2019,"pros":["直驱洗烘一体","10kg大容量","米家互联"],"cons":["已下架","烘干容量仅6kg"],"tags":["洗烘一体","经典","2019"],"verify_status":"待核验","verify_date":"—","verify_source":[],"verify_url":"查不到","change_log":"早期录入，来源未逐条记录，待按官方规格页/说明书核验","updated_at":"2026-10-01","img":null,"brand":"小米"},
-{"id":"wash_dry_102s","name":"米家互联网直驱洗烘一体机 10kg（2021款）","model_code":"XHQG100MJ102S","miot_model":"查不到","type":"滚筒洗烘一体","official_price":2999,"second_hand":"—","wash_cap":10,"dry_cap":7,"wash_ratio":1.08,"spin_rpm":1400,"energy":"1级","sterilize":"巴氏除菌/高温除螨/微蒸空气洗","smart":"米家APP/DD直驱","noise":"洗涤50dB","size":"595×680×850mm","year":2021,"pros":["DD直驱变频","洗净比1.08","微蒸空气洗"],"cons":["已下架"],"tags":["洗烘一体","直驱","2021"],"verify_status":"待核验","verify_date":"—","verify_source":["苏宁自营"],"verify_url":"查不到","change_log":"早期录入，来源未逐条记录，待按官方规格页/说明书核验；2026-10-01 型号前缀订正：原「XQG100MJ102S」的 XQG 前缀对应滚筒洗衣机（洗脱一体），本条为直驱洗烘一体机，XHQG 才是洗烘一体前缀（与 2019 款 XHQG100MJ01、2024 款 XHQG100MJ108 同类一致）。据苏宁商品标题订正为 XHQG100MJ102S","updated_at":"2026-10-01","img":null,"brand":"小米"},
-{"id":"wash_dry_108","name":"米家超净洗滚筒洗烘一体 10kg（2024款）","model_code":"XHQG100MJ108","miot_model":"查不到","type":"滚筒洗烘一体","official_price":2899,"second_hand":"—","wash_cap":10,"dry_cap":7,"wash_ratio":1.1,"spin_rpm":1200,"energy":"1级","sterilize":"蒸汽除菌螨(99.999%除菌/100%除螨)","smart":"米家APP","noise":"洗涤50-55dB","size":"598×570×850mm(超薄全嵌)","year":2024,"pros":["超薄全嵌","蒸汽除菌螨","洗净比1.1"],"cons":["最高转速1200较低"],"tags":["洗烘一体","超薄","2024"],"verify_status":"待核验","verify_date":"—","verify_source":[],"verify_url":"查不到","change_log":"早期录入，来源未逐条记录，待按官方规格页/说明书核验","updated_at":"2026-10-01","img":null,"brand":"小米"},
-{"id":"wash_set_pro","name":"米家洗烘套装Pro 蓝氧洗 热泵烘 10kg+10kg（2025款）","model_code":"XQG100MJ109(洗)+H100MJ105(烘)","miot_model":"查不到","type":"洗烘套装","official_price":6469,"second_hand":"—","wash_cap":10,"dry_cap":10,"wash_ratio":1.2,"spin_rpm":1200,"energy":"1级","sterilize":"蓝氧护衣洗(低温杀菌/防串色/净白)","smart":"米家APP/洗烘联动","noise":"查不到","size":"查不到","year":2025,"pros":["热泵烘干10kg","蓝氧护衣洗","洗烘联动省时省电"],"cons":["套装价格高"],"tags":["洗烘套装","热泵","2025"],"verify_status":"已核验（官方商城）","verify_date":"2026-10-07","verify_source":["小米商城"],"verify_url":"https://www.mi.com/shop/buy/detail?product_id=1230803598","change_log":"早期录入，来源未逐条记录，待按官方规格页/说明书核验；2026-10-04 官方商城 API 回填：ref_price=7098；2026-10-04 官方商城 API 回填：verify_url=https://www.mi.com/shop/buy/detail?product_id=1230803598，ref_price=7098；2026-10-07 补产品图（来源：cdn.cnbj1.fds.api.mi-img.com）","updated_at":"2026-10-07","img":"wash_set_pro.webp","brand":"小米","ref_price":7098},
-{"id":"wave_zunxiang","name":"米家波轮洗衣机 尊享版 10kg（2021款）","model_code":"查不到","miot_model":"查不到","type":"波轮","official_price":1999,"second_hand":"—","wash_cap":10,"dry_cap":null,"wash_ratio":null,"spin_rpm":700,"energy":"1级","sterilize":"纳米银离子除菌","smart":"洗衣液智能投放/DD直驱/全屋互联","noise":"洗涤62/甩干72dB","size":"564×583×973mm","year":2021,"pros":["智能投放","DD直驱","银离子除菌"],"cons":["已停产"],"tags":["波轮","智能投放","2021"],"verify_status":"待核验","verify_date":"—","verify_source":[],"verify_url":"查不到","change_log":"早期录入，来源未逐条记录，待按官方规格页/说明书核验","updated_at":"2026-10-01","img":null,"brand":"小米"},
-{"id":"wave_pro_229","name":"米家波轮洗衣机 Pro 10kg（2025款）","model_code":"XQB100MJ229","miot_model":"查不到","type":"波轮","official_price":1099,"second_hand":"—","wash_cap":10,"dry_cap":null,"wash_ratio":1.28,"spin_rpm":680,"energy":"1级","sterilize":"除螨/桶自洁","smart":"直驱变频电机","noise":"查不到","size":"内桶Φ432mm/整机543×553×888mm","year":2025,"pros":["高洗净比1.28","直驱变频","10kg大容量"],"cons":["转速偏低"],"tags":["波轮","高洗净比","2025"],"verify_status":"已核验（官方商城）","verify_date":"2026-10-01","verify_source":["小米商城（官方产品图）"],"verify_url":"查不到","change_log":"2026-10-01 按小米商城在售目录核对名称/价格/图片","updated_at":"2026-10-01","img":"wave_pro_229.webp","brand":"小米"},
-{"id":"wave_104","name":"米家波轮洗衣机 10kg（2024款）","model_code":"XQB100MJ104","miot_model":"mibx2.washer.v6rm","type":"波轮","official_price":849,"second_hand":"—","wash_cap":10,"dry_cap":null,"wash_ratio":0.8,"spin_rpm":700,"energy":"三级","sterilize":"潮汐除螨洗/健康桶自洁","smart":"非智能","noise":"洗涤50dB","size":"560×610×920mm","year":2024,"pros":["价格实惠","10kg大容量"],"cons":["非智能","非变频"],"tags":["波轮","性价比","2024"],"verify_status":"已核验（官方商城）","verify_date":"2026-10-04","verify_source":["小米商城","米家产品库(miot-spec)"],"verify_url":"查不到","change_log":"2026-10-01 补入官方产品图（小米 CDN，经米家产品库(miot-spec)）；2026-10-01 经米家产品库(miot-spec)交叉印证存在性并补入协议型号；早期录入，来源未逐条记录，待按官方规格页/说明书核验；2026-10-04 官方商城 API 回填：ref_price=1099，wash_cap=10，energy=三级，wash_ratio=0.8，spin_rpm=700","updated_at":"2026-10-04","img":"wave_104.webp","brand":"小米","ref_price":1099},
-{"id":"wash_clean","name":"米家洗衣机 超净洗 滚筒","model_code":"查不到","miot_model":"查不到","type":"滚筒洗烘一体","official_price":1099,"second_hand":"—","wash_cap":null,"dry_cap":null,"wash_ratio":null,"spin_rpm":null,"energy":"查不到","sterilize":"查不到","smart":"查不到","noise":"查不到","size":"查不到","year":null,"pros":["超净洗系列","价格实惠"],"cons":[],"tags":["滚筒洗烘一体"],"verify_status":"已核验（官方商城）","verify_date":"2026-10-04","verify_source":["小米商城"],"verify_url":"https://www.mi.com/shop/buy/detail?product_id=10050186","change_log":"2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）","updated_at":"2026-10-04","img":"wash_clean.webp","brand":"小米"},
-{"id":"wash_zone_pro14","name":"米家三筒洗衣机 健康洗Pro 14kg","model_code":"查不到","miot_model":"查不到","type":"多筒/迷你","official_price":4705,"second_hand":"—","wash_cap":14,"dry_cap":null,"wash_ratio":1.32,"spin_rpm":1400,"energy":"一级级","sterilize":"除菌除螨","smart":"支持智能互联","noise":"洗涤52dB","size":"598×597×850mm","year":null,"pros":["三筒分区洗护","14kg大容量","洗净比1.32","直驱变频电机","除菌除螨"],"cons":["无烘干功能"],"tags":["多筒/迷你"],"verify_status":"已核验（官方商城）","verify_date":"2026-10-04","verify_source":["小米商城"],"verify_url":"https://www.mi.com/shop/buy/detail?product_id=1230809239","change_log":"2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=4999，wash_cap=14，size=598×597×850mm，energy=一级，wash_ratio=1.32，sterilize=除菌除螨，noise=洗涤52dB，spin_rpm=1400，smart=支持智能互联；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：能效「一级」统一为库内口径「1级」；2026-10-04 官方商城 API 回填：ref_price=4999，wash_cap=14，energy=一级级，wash_ratio=1.32，sterilize=除菌除螨，spin_rpm=1400；2026-10-04 官方商城 API 回填：ref_price=4999，wash_cap=14，energy=一级级，wash_ratio=1.32，sterilize=除菌除螨，spin_rpm=1400","updated_at":"2026-10-04","img":"wash_zone_pro14.webp","brand":"小米","ref_price":4999},
-{"id":"wash_zone_pro14_dry","name":"米家三筒洗衣机 健康洗Pro 洗烘 14kg","model_code":"查不到","miot_model":"查不到","type":"多筒/迷你","official_price":5881,"second_hand":"—","wash_cap":14,"dry_cap":9,"wash_ratio":1.32,"spin_rpm":1400,"energy":"一级级","sterilize":"除菌除螨","smart":"支持智能互联","noise":"洗涤52dB","size":"598×597×850mm","year":null,"pros":["三筒分区洗护","14kg洗9kg烘","洗净比1.32","直驱变频电机","除菌除螨"],"cons":["冷凝烘干非热泵"],"tags":["多筒/迷你"],"verify_status":"已核验（官方商城）","verify_date":"2026-10-04","verify_source":["小米商城"],"verify_url":"https://www.mi.com/shop/buy/detail?product_id=1230809238","change_log":"2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=5999，wash_cap=14，dry_cap=9，size=598×597×850mm，energy=一级，wash_ratio=1.32，sterilize=除菌除螨，noise=洗涤52dB，spin_rpm=1400，smart=支持智能互联；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：能效「一级」统一为库内口径「1级」；2026-10-04 官方商城 API 回填：ref_price=5999，wash_cap=14，dry_cap=9，energy=一级级，wash_ratio=1.32，sterilize=除菌除螨，spin_rpm=1400；2026-10-04 官方商城 API 回填：ref_price=5999，wash_cap=14，dry_cap=9，energy=一级级，wash_ratio=1.32，sterilize=除菌除螨，spin_rpm=1400","updated_at":"2026-10-04","img":"wash_zone_pro14_dry.webp","brand":"小米","ref_price":5999},
-{"id":"wash_electro_12d","name":"米家洗衣机Pro 超电解新风 洗烘 12kg","model_code":"查不到","miot_model":"查不到","type":"滚筒洗烘一体","official_price":4099,"second_hand":"—","wash_cap":12,"dry_cap":9,"wash_ratio":1.3,"spin_rpm":1400,"energy":"一级级","sterilize":"查不到","smart":"支持智能互联","noise":"洗涤50dB","size":"598×620×850mm","year":null,"pros":["超电解新风","12kg洗9kg烘","洗净比1.3","直驱变频电机"],"cons":["冷凝烘干非热泵"],"tags":["滚筒洗烘一体"],"verify_status":"已核验（官方商城）","verify_date":"2026-10-04","verify_source":["小米商城"],"verify_url":"https://www.mi.com/shop/buy/detail?product_id=1230809036","change_log":"2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=4999，wash_cap=12，dry_cap=9，size=598×620×850mm，energy=一级，wash_ratio=1.3，noise=洗涤50dB，spin_rpm=1400，smart=支持智能互联；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：能效「一级」统一为库内口径「1级」；2026-10-04 官方商城 API 回填：ref_price=4999，wash_cap=12，dry_cap=9，energy=一级级，wash_ratio=1.3，spin_rpm=1400；2026-10-04 官方商城 API 回填：ref_price=4999，wash_cap=12，dry_cap=9，energy=一级级，wash_ratio=1.3，spin_rpm=1400","updated_at":"2026-10-04","img":"wash_electro_12d.webp","brand":"小米","ref_price":4999},
-{"id":"wash_electro_12","name":"米家洗衣机Pro 超电解新风 滚筒 12kg","model_code":"查不到","miot_model":"查不到","type":"滚筒洗烘一体","official_price":3499,"second_hand":"—","wash_cap":12,"dry_cap":null,"wash_ratio":1.3,"spin_rpm":1400,"energy":"一级级","sterilize":"查不到","smart":"支持智能互联","noise":"洗涤50dB","size":"598×620×850mm","year":null,"pros":["超电解新风","12kg滚筒","洗净比1.3","直驱变频电机"],"cons":["无烘干功能"],"tags":["滚筒洗烘一体"],"verify_status":"已核验（官方商城）","verify_date":"2026-10-04","verify_source":["小米商城"],"verify_url":"https://www.mi.com/shop/buy/detail?product_id=1230809037","change_log":"2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=4399，wash_cap=12，size=598×620×850mm，energy=一级，wash_ratio=1.3，noise=洗涤50dB，spin_rpm=1400，smart=支持智能互联；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：能效「一级」统一为库内口径「1级」；2026-10-04 官方商城 API 回填：ref_price=4399，wash_cap=12，energy=一级级，wash_ratio=1.3，spin_rpm=1400；2026-10-04 官方商城 API 回填：ref_price=4399，wash_cap=12，energy=一级级，wash_ratio=1.3，spin_rpm=1400","updated_at":"2026-10-04","img":"wash_electro_12.webp","brand":"小米","ref_price":4399},
-{"id":"wash_electro_13d","name":"米家洗衣机Pro 至尊版 超电解智投 洗烘 13kg","model_code":"查不到","miot_model":"查不到","type":"滚筒洗烘一体","official_price":3099,"second_hand":"—","wash_cap":13,"dry_cap":9,"wash_ratio":1.3,"spin_rpm":1200,"energy":"一级级","sterilize":"查不到","smart":"支持智能互联","noise":"洗涤50dB","size":"598×610×850mm","year":null,"pros":["超电解智投","13kg洗9kg烘","洗净比1.3","直驱变频电机"],"cons":["冷凝烘干非热泵"],"tags":["滚筒洗烘一体"],"verify_status":"已核验（官方商城）","verify_date":"2026-10-04","verify_source":["小米商城"],"verify_url":"https://www.mi.com/shop/buy/detail?product_id=1230808094","change_log":"2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=4199，wash_cap=13，dry_cap=9，size=598×610×850mm，energy=一级，wash_ratio=1.3，noise=洗涤50dB，spin_rpm=1200，smart=支持智能互联；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：能效「一级」统一为库内口径「1级」；2026-10-04 官方商城 API 回填：ref_price=4199，wash_cap=13，dry_cap=9，energy=一级级，wash_ratio=1.3，spin_rpm=1200；2026-10-04 官方商城 API 回填：ref_price=4199，wash_cap=13，dry_cap=9，energy=一级级，wash_ratio=1.3，spin_rpm=1200","updated_at":"2026-10-04","img":"wash_electro_13d.webp","brand":"小米","ref_price":4199},
-{"id":"wash_mini_dry5","name":"米家洗衣机 迷你双筒 洗烘 5kg","model_code":"查不到","miot_model":"查不到","type":"多筒/迷你","official_price":3175,"second_hand":"—","wash_cap":5,"dry_cap":3,"wash_ratio":1.1,"spin_rpm":1200,"energy":"一级级","sterilize":"查不到","smart":"支持智能互联","noise":"洗涤50dB","size":"598×574×478mm","year":null,"pros":["双筒洗烘5kg","5kg洗3kg烘","直驱变频电机","一级能效"],"cons":["直排烘干"],"tags":["多筒/迷你"],"verify_status":"已核验（官方商城）","verify_date":"2026-10-04","verify_source":["小米商城"],"verify_url":"https://www.mi.com/shop/buy/detail?product_id=1230808972","change_log":"2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=3499，wash_cap=5，dry_cap=3，size=598×574×478mm，energy=一级，wash_ratio=1.1，noise=洗涤50dB，spin_rpm=1200，smart=支持智能互联；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：能效「一级」统一为库内口径「1级」；2026-10-04 官方商城 API 回填：ref_price=3499，wash_cap=5，dry_cap=3，energy=一级级，wash_ratio=1.1，spin_rpm=1200；2026-10-04 官方商城 API 回填：ref_price=3499，wash_cap=5，dry_cap=3，energy=一级级，wash_ratio=1.1，spin_rpm=1200","updated_at":"2026-10-04","img":"wash_mini_dry5.webp","brand":"小米","ref_price":3499},
-{"id":"wash_mini_1kg","name":"米家洗衣机 迷你双区洗烘 1kg","model_code":"查不到","miot_model":"查不到","type":"多筒/迷你","official_price":1499,"second_hand":"—","wash_cap":1,"dry_cap":0.4,"wash_ratio":null,"spin_rpm":760,"energy":"/级","sterilize":"查不到","smart":"支持智能互联","noise":"洗涤43dB","size":"530×371×410mm","year":null,"pros":["1kg洗0.4kg烘双区","洗涤噪音43dB","机身小巧（530×371×410mm）"],"cons":["定频电机"],"tags":["多筒/迷你"],"verify_status":"已核验（官方商城）","verify_date":"2026-10-04","verify_source":["小米商城"],"verify_url":"https://www.mi.com/shop/buy/detail?product_id=1230807256","change_log":"2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=1999，wash_cap=1，dry_cap=0.4，size=530×371×410mm，noise=洗涤43dB，spin_rpm=760，smart=支持智能互联；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 官方商城 API 回填：ref_price=1999，wash_cap=1，dry_cap=0.4，energy=/级，spin_rpm=760；2026-10-04 官方商城 API 回填：ref_price=1999，wash_cap=1，dry_cap=0.4，energy=/级，spin_rpm=760","updated_at":"2026-10-04","img":"wash_mini_1kg.webp","brand":"小米","ref_price":1999},
-{"id":"wash_mini_12","name":"米家洗衣机 迷你洗 洗烘 1.2kg","model_code":"查不到","miot_model":"查不到","type":"多筒/迷你","official_price":1881,"second_hand":"—","wash_cap":1.2,"dry_cap":0.5,"wash_ratio":1.03,"spin_rpm":800,"energy":"一级","sterilize":"查不到","smart":"支持智能互联","noise":"洗涤47dB","size":"328×452×461mm","year":null,"pros":["1.2kg迷你洗烘","机身仅328mm宽","变频电机","洗涤噪音47dB"],"cons":["直排式烘干"],"tags":["多筒/迷你"],"verify_status":"已核验（官方商城）","verify_date":"2026-10-04","verify_source":["小米商城"],"verify_url":"https://www.mi.com/shop/buy/detail?product_id=1230804592","change_log":"2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=2199，wash_cap=1.2，dry_cap=0.5，size=328×452×461mm，energy=一级，wash_ratio=1.03，noise=洗涤47dB，spin_rpm=800，smart=支持智能互联；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：能效「一级」统一为库内口径「1级」；2026-10-04 官方商城 API 回填：ref_price=2199，wash_cap=1.2，dry_cap=0.5，energy=一级，wash_ratio=1.03，spin_rpm=800；2026-10-04 官方商城 API 回填：ref_price=2199，wash_cap=1.2，dry_cap=0.5，energy=一级，wash_ratio=1.03，spin_rpm=800","updated_at":"2026-10-04","img":"wash_mini_12.webp","brand":"小米","ref_price":2199},
-{"id":"wash_3drum_11","name":"米家洗衣机 健康洗 三筒 11kg","model_code":"查不到","miot_model":"查不到","type":"多筒/迷你","official_price":4116,"second_hand":"—","wash_cap":null,"dry_cap":null,"wash_ratio":null,"spin_rpm":null,"energy":"查不到","sterilize":"查不到","smart":"查不到","noise":"查不到","size":"查不到","year":null,"pros":["三筒分区洗护","健康洗系列"],"cons":[],"tags":["多筒/迷你"],"verify_status":"已核验（官方商城）","verify_date":"2026-10-04","verify_source":["小米商城"],"verify_url":"https://www.mi.com/shop/buy/detail?product_id=1230809581","change_log":"2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=4999；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 官方商城 API 回填：ref_price=4999；2026-10-04 官方商城 API 回填：ref_price=4999","updated_at":"2026-10-04","img":"wash_3drum_11.webp","brand":"小米","ref_price":4999},
-{"id":"wash_3set_5_12a","name":"米家三筒套装 三洗双烘 5kg+12kg","model_code":"查不到","miot_model":"查不到","type":"洗烘套装","official_price":6469,"second_hand":"—","wash_cap":null,"dry_cap":null,"wash_ratio":null,"spin_rpm":null,"energy":"查不到","sterilize":"查不到","smart":"查不到","noise":"查不到","size":"查不到","year":null,"pros":["三筒分区洗护","双烘配置"],"cons":[],"tags":["洗烘套装"],"verify_status":"已核验（官方商城）","verify_date":"2026-10-04","verify_source":["小米商城"],"verify_url":"https://www.mi.com/shop/buy/detail?product_id=1230809093","change_log":"2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=7898；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 官方商城 API 回填：ref_price=7898；2026-10-04 官方商城 API 回填：ref_price=7898","updated_at":"2026-10-04","img":"wash_3set_5_12a.webp","brand":"小米","ref_price":7898},
-{"id":"wash_3set_5_12b","name":"米家三筒套装 三洗三烘 5kg+12kg 大筒冷凝烘","model_code":"查不到","miot_model":"查不到","type":"洗烘套装","official_price":7057,"second_hand":"—","wash_cap":null,"dry_cap":null,"wash_ratio":null,"spin_rpm":null,"energy":"查不到","sterilize":"查不到","smart":"查不到","noise":"查不到","size":"查不到","year":null,"pros":["三筒分区洗护","三烘配置（大筒冷凝烘）"],"cons":["冷凝烘干非热泵"],"tags":["洗烘套装"],"verify_status":"已核验（官方商城）","verify_date":"2026-10-04","verify_source":["小米商城"],"verify_url":"https://www.mi.com/shop/buy/detail?product_id=1230809092","change_log":"2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=8498；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 官方商城 API 回填：ref_price=8498；2026-10-04 官方商城 API 回填：ref_price=8498","updated_at":"2026-10-04","img":"wash_3set_5_12b.webp","brand":"小米","ref_price":8498},
-{"id":"wash_3set_5_13","name":"米家三筒套装 三洗三烘 5kg+13kg 大筒热泵烘","model_code":"查不到","miot_model":"查不到","type":"洗烘套装","official_price":9057,"second_hand":"—","wash_cap":null,"dry_cap":null,"wash_ratio":null,"spin_rpm":null,"energy":"查不到","sterilize":"查不到","smart":"查不到","noise":"查不到","size":"查不到","year":null,"pros":["三筒分区洗护","热泵烘干"],"cons":[],"tags":["洗烘套装"],"verify_status":"已核验（官方商城）","verify_date":"2026-10-04","verify_source":["小米商城"],"verify_url":"https://www.mi.com/shop/buy/detail?product_id=1230809609","change_log":"2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=9998；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 官方商城 API 回填：ref_price=9998；2026-10-04 官方商城 API 回填：ref_price=9998","updated_at":"2026-10-04","img":"wash_3set_5_13.webp","brand":"小米","ref_price":9998},
-{"id":"wash_care_pro13","name":"米家洗衣机 护衣洗Pro 至尊版 热泵洗烘 13kg","model_code":"查不到","miot_model":"查不到","type":"滚筒洗烘一体","official_price":5881,"second_hand":"—","wash_cap":13,"dry_cap":9,"wash_ratio":1.3,"spin_rpm":1400,"energy":"一级级","sterilize":"除菌除螨","smart":"支持智能互联","noise":"洗涤48dB","size":"598×620×850mm","year":null,"pros":["一级级 能效","除菌除螨 除菌"],"cons":[],"tags":["滚筒洗烘一体"],"verify_status":"已核验（官方商城）","verify_date":"2026-10-04","verify_source":["小米商城"],"verify_url":"https://www.mi.com/shop/buy/detail?product_id=1230809271","change_log":"2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=6499，wash_cap=13，dry_cap=9，size=598×620×850mm，energy=一级，wash_ratio=1.3，sterilize=除菌除螨，noise=洗涤48dB，spin_rpm=1400，smart=支持智能互联；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：能效「一级」统一为库内口径「1级」；2026-10-04 官方商城 API 回填：ref_price=6499，wash_cap=13，dry_cap=9，energy=一级级，wash_ratio=1.3，sterilize=除菌除螨，spin_rpm=1400；2026-10-04 官方商城 API 回填：ref_price=6499，wash_cap=13，dry_cap=9，energy=一级级，wash_ratio=1.3，sterilize=除菌除螨，spin_rpm=1400；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）","updated_at":"2026-10-05","img":"wash_care_pro13.webp","brand":"小米","ref_price":6499},
-{"id":"wash_set_3zone","name":"米家洗烘套装Pro 三区洗 热泵烘 10kg+12kg","model_code":"查不到","miot_model":"查不到","type":"洗烘套装","official_price":9410,"second_hand":"—","wash_cap":null,"dry_cap":null,"wash_ratio":null,"spin_rpm":null,"energy":"查不到","sterilize":"查不到","smart":"查不到","noise":"查不到","size":"查不到","year":null,"pros":["三区洗护","热泵烘干"],"cons":[],"tags":["洗烘套装"],"verify_status":"已核验（官方商城）","verify_date":"2026-10-04","verify_source":["小米商城"],"verify_url":"https://www.mi.com/shop/buy/detail?product_id=1230804984","change_log":"2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=10999；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 官方商城 API 回填：ref_price=10999；2026-10-04 官方商城 API 回填：ref_price=10999","updated_at":"2026-10-04","img":"wash_set_3zone.webp","brand":"小米","ref_price":10999},
-{"id":"wash_set_3zone_mini","name":"米家洗烘套装Pro 三区洗 热泵烘 10kg+12kg 小筒烘","model_code":"查不到","miot_model":"查不到","type":"洗烘套装","official_price":10499,"second_hand":"—","wash_cap":null,"dry_cap":null,"wash_ratio":null,"spin_rpm":null,"energy":"查不到","sterilize":"查不到","smart":"查不到","noise":"查不到","size":"查不到","year":null,"pros":["三区洗护","热泵烘干"],"cons":[],"tags":["洗烘套装"],"verify_status":"已核验（官方商城）","verify_date":"2026-10-04","verify_source":["小米商城"],"verify_url":"https://www.mi.com/shop/buy/detail?product_id=1230805497","change_log":"2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=11499；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 官方商城 API 回填：ref_price=11499；2026-10-04 官方商城 API 回填：ref_price=11499","updated_at":"2026-10-04","img":"wash_set_3zone_mini.webp","brand":"小米","ref_price":11499},
-{"id":"wash_set_electro_10","name":"米家洗烘套装Pro 超电解智投 热泵烘 10kg+10kg","model_code":"查不到","miot_model":"查不到","type":"洗烘套装","official_price":5881,"second_hand":"—","wash_cap":null,"dry_cap":null,"wash_ratio":null,"spin_rpm":null,"energy":"查不到","sterilize":"查不到","smart":"查不到","noise":"查不到","size":"查不到","year":null,"pros":["超电解智投","热泵烘干","10kg+10kg洗烘套装"],"cons":[],"tags":["洗烘套装"],"verify_status":"已核验（官方商城）","verify_date":"2026-10-04","verify_source":["小米商城"],"verify_url":"https://www.mi.com/shop/buy/detail?product_id=1230808503","change_log":"2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=7298；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 官方商城 API 回填：ref_price=7298；2026-10-04 官方商城 API 回填：ref_price=7298","updated_at":"2026-10-04","img":"wash_set_electro_10.webp","brand":"小米","ref_price":7298},
-{"id":"wash_set_electro_12","name":"米家洗烘套装Pro 超电解智投 热泵烘 12kg+12kg","model_code":"查不到","miot_model":"查不到","type":"洗烘套装","official_price":7645,"second_hand":"—","wash_cap":null,"dry_cap":null,"wash_ratio":null,"spin_rpm":null,"energy":"查不到","sterilize":"查不到","smart":"查不到","noise":"查不到","size":"查不到","year":null,"pros":["超电解智投","热泵烘干"],"cons":[],"tags":["洗烘套装"],"verify_status":"已核验（官方商城）","verify_date":"2026-10-04","verify_source":["小米商城"],"verify_url":"https://www.mi.com/shop/buy/detail?product_id=1230805771","change_log":"2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=10298；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 官方商城 API 回填：ref_price=10298；2026-10-04 官方商城 API 回填：ref_price=10298","updated_at":"2026-10-04","img":"wash_set_electro_12.webp","brand":"小米","ref_price":10298},
-{"id":"wash_mini_3kg","name":"米家洗衣机 迷你洗 3KG","model_code":"查不到","miot_model":"查不到","type":"多筒/迷你","official_price":599,"second_hand":"—","wash_cap":null,"dry_cap":null,"wash_ratio":null,"spin_rpm":null,"energy":"查不到","sterilize":"查不到","smart":"查不到","noise":"查不到","size":"查不到","year":null,"pros":["迷你容量","价格实惠"],"cons":[],"tags":["多筒/迷你"],"verify_status":"已核验（官方商城）","verify_date":"2026-10-04","verify_source":["小米商城"],"verify_url":"https://www.mi.com/shop/buy/detail?product_id=10050193","change_log":"2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）","updated_at":"2026-10-04","img":"wash_mini_3kg.webp","brand":"小米"},
-{"id":"wash_wave_8kg","name":"米家洗衣机 超净洗 波轮 8kg","model_code":"查不到","miot_model":"查不到","type":"波轮","official_price":669,"second_hand":"—","wash_cap":8,"dry_cap":null,"wash_ratio":0.9,"spin_rpm":null,"energy":"一级","sterilize":"查不到","smart":"查不到","noise":"查不到","size":"515×525×845mm","year":null,"pros":["价格实惠","8kg波轮","一级能效"],"cons":["定频电机"],"tags":["波轮"],"verify_status":"已核验（官方商城）","verify_date":"2026-10-04","verify_source":["小米商城"],"verify_url":"https://www.mi.com/shop/buy/detail?product_id=1230804458","change_log":"2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=799，wash_cap=8，size=515×525×845mm，energy=一级，wash_ratio=0.9；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：能效「一级」统一为库内口径「1级」；2026-10-04 官方商城 API 回填：ref_price=799，wash_cap=8，energy=一级，wash_ratio=0.9；2026-10-04 官方商城 API 回填：ref_price=799，wash_cap=8，energy=一级，wash_ratio=0.9","updated_at":"2026-10-04","img":"wash_wave_8kg.webp","brand":"小米","ref_price":799},
-{"id":"wash_drum_8kg","name":"米家洗衣机 滚筒 8kg","model_code":"查不到","miot_model":"查不到","type":"滚筒洗烘一体","official_price":999,"second_hand":"—","wash_cap":null,"dry_cap":null,"wash_ratio":null,"spin_rpm":null,"energy":"查不到","sterilize":"查不到","smart":"查不到","noise":"查不到","size":"查不到","year":null,"pros":["价格实惠"],"cons":[],"tags":["滚筒洗烘一体"],"verify_status":"已核验（官方商城）","verify_date":"2026-10-04","verify_source":["小米商城"],"verify_url":"https://www.mi.com/shop/buy/detail?product_id=1230809197","change_log":"2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=1199；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 官方商城 API 回填：ref_price=1199；2026-10-04 官方商城 API 回填：ref_price=1199","updated_at":"2026-10-04","img":"wash_drum_8kg.webp","brand":"小米","ref_price":1199},
-{"id":"haier_2848931","name":"海尔GA120-STF583HU1","brand":"海尔","model_code":"GA120-STF583HU1","type":"滚筒洗烘一体","official_price":"查不到","ref_price":11110,"year":"查不到","pros":["紫外线除菌 除菌"],"cons":[],"tags":["海尔"],"wash_cap":"查不到","dry_cap":10,"wash_ratio":"查不到","spin_rpm":"查不到","energy":"查不到","noise":"查不到","size":"613×595×850mm","smart":"电脑控制","verify_status":"已核验（第三方）","verify_date":"2026-10-04","verify_source":["太平洋电脑网"],"verify_url":"https://g.pconline.com.cn/product/washer/haier/2848931_detail.html","change_log":"2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=干衣机变频）；2026-10-03 回填型号：原「查不到」，产品名「海尔GA120-STF583HU1」中的型号串为 GA120-STF583HU1（来源与产品名同源的第三方规格站）；2026-10-04 回填参数（来源：太平洋规格表 verify_url）：sterilize=紫外线除菌（抗菌类型=紫外线除菌）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（dry_cap=10，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）","updated_at":"2026-10-05","sterilize":"紫外线除菌"},
-{"id":"haier_2922891","name":"海尔XQG100-ABLEU70D1U1","brand":"海尔","model_code":"XQG100-ABLEU70D1U1","type":"滚筒洗烘一体","official_price":"查不到","ref_price":9198,"year":"查不到","pros":["洗净比1.28","10kg洗6kg烘","1400转高速脱水","一级能效"],"cons":["烘干容量仅6kg"],"tags":["海尔"],"wash_cap":10,"dry_cap":6,"wash_ratio":1.28,"spin_rpm":1400,"energy":"1级","noise":"查不到","size":"850×595×553mm","smart":"电脑控制","verify_status":"已核验（第三方）","verify_date":"2026-10-04","verify_source":["太平洋电脑网"],"verify_url":"https://g.pconline.com.cn/product/washer/haier/2922891_detail.html","change_log":"2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=烘洗一体变频）；2026-10-03 回填型号：原「查不到」，产品名「海尔XQG100-ABLEU70D1U1」中的型号串为 XQG100-ABLEU70D1U1（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=10、spin_rpm=1400、dry_cap=6、wash_ratio=1.28，值本身不变，单位由 schema 渲染）","updated_at":"2026-10-04"},
-{"id":"haier_2866711","name":"海尔XQG120-BLEG71CLU1","brand":"海尔","model_code":"XQG120-BLEG71CLU1","type":"滚筒洗烘一体","official_price":"查不到","ref_price":8999,"year":"查不到","pros":["1级 能效"],"cons":[],"tags":["海尔"],"wash_cap":12,"dry_cap":"查不到","wash_ratio":1.34,"spin_rpm":1400,"energy":"1级","noise":"查不到","size":"850×595×590mm","smart":"电脑控制","verify_status":"已核验（第三方）","verify_date":"2026-10-07","verify_source":["太平洋电脑网"],"verify_url":"https://g.pconline.com.cn/product/washer/haier/2866711_detail.html","change_log":"2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=滚筒式变频）；2026-10-03 回填型号：原「查不到」，产品名「海尔XQG120-BLEG71CLU1」中的型号串为 XQG120-BLEG71CLU1（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=12、spin_rpm=1400、wash_ratio=1.34，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）；2026-10-07 补产品图（来源：t14.baidu.com）","updated_at":"2026-10-07","img":"haier_2866711.webp"},
-{"id":"haier_2988562","name":"海尔XQG100-BLEG7AD5U1","brand":"海尔","model_code":"XQG100-BLEG7AD5U1","type":"滚筒洗烘一体","official_price":"查不到","ref_price":6616,"year":2026,"pros":["1级 能效"],"cons":[],"tags":["海尔"],"wash_cap":10,"dry_cap":"查不到","wash_ratio":1.36,"spin_rpm":1400,"energy":"1级","noise":"查不到","size":"850×595×537mm","smart":"电脑控制","verify_status":"已核验（第三方）","verify_date":"2026-10-04","verify_source":["太平洋电脑网"],"verify_url":"https://g.pconline.com.cn/product/washer/haier/2988562_detail.html","change_log":"2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=滚筒式变频）；2026-10-03 回填型号：原「查不到」，产品名「海尔XQG100-BLEG7AD5U1」中的型号串为 XQG100-BLEG7AD5U1（来源与产品名同源的第三方规格站）；2026-10-04 回填参数（来源：太平洋规格表 verify_url）：year=2026（上市时间=2026年）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=10、spin_rpm=1400、wash_ratio=1.36，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）","updated_at":"2026-10-05"},
-{"id":"haier_2598359","name":"海尔XQG100-HBLEG583HU1","brand":"海尔","model_code":"XQG100-HBLEG583HU1","type":"滚筒洗烘一体","official_price":"查不到","ref_price":4799,"year":"查不到","pros":["1级 能效"],"cons":[],"tags":["海尔"],"wash_cap":10,"dry_cap":7,"wash_ratio":1.21,"spin_rpm":1400,"energy":"1级","noise":"52/69dB","size":"595×570×850mm","smart":"app控制","verify_status":"已核验（第三方）","verify_date":"2026-10-04","verify_source":["太平洋电脑网"],"verify_url":"https://g.pconline.com.cn/product/washer/haier/2598359_detail.html","change_log":"2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=滚筒式变频）；2026-10-03 回填型号：原「查不到」，产品名「海尔XQG100-HBLEG583HU1」中的型号串为 XQG100-HBLEG583HU1（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=10、spin_rpm=1400、dry_cap=7、wash_ratio=1.21，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）","updated_at":"2026-10-05"},
-{"id":"haier_2614499","name":"海尔XQG100-BLDE566WH","brand":"海尔","model_code":"XQG100-BLDE566WH","type":"滚筒洗烘一体","official_price":"查不到","ref_price":4599,"year":"查不到","pros":["1级 能效"],"cons":[],"tags":["海尔"],"wash_cap":10,"dry_cap":"查不到","wash_ratio":1.12,"spin_rpm":1400,"energy":"1级","noise":"52/69dB","size":"595×537×850mm","smart":"查不到","verify_status":"已核验（第三方）","verify_date":"2026-10-04","verify_source":["太平洋电脑网"],"verify_url":"https://g.pconline.com.cn/product/washer/haier/2614499_detail.html","change_log":"2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（3 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=滚筒式变频）；2026-10-03 回填型号：原「查不到」，产品名「海尔XQG100-BLDE566WH」中的型号串为 XQG100-BLDE566WH（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=10、spin_rpm=1400、wash_ratio=1.12，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）","updated_at":"2026-10-05"},
-{"id":"midea_2988682","name":"美的MDH12F10","brand":"美的","model_code":"MDH12F10","type":"滚筒洗烘一体","official_price":"查不到","ref_price":6534,"year":2026,"pros":["1级 能效"],"cons":[],"tags":["美的"],"wash_cap":12,"dry_cap":9,"wash_ratio":1.32,"spin_rpm":1400,"energy":"1级","noise":"查不到","size":"595×600×850mm","smart":"电脑控制","verify_status":"已核验（第三方）","verify_date":"2026-10-07","verify_source":["太平洋电脑网"],"verify_url":"https://g.pconline.com.cn/product/washer/midea/2988682_detail.html","change_log":"2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=烘洗一体变频）；2026-10-03 回填型号：原「查不到」，产品名「美的MDH12F10」中的型号串为 MDH12F10（来源与产品名同源的第三方规格站）；2026-10-04 回填参数（来源：太平洋规格表 verify_url）：year=2026（上市时间=2026年）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=12、spin_rpm=1400、dry_cap=9、wash_ratio=1.32，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）；2026-10-07 补产品图（来源：oss-accelerate-ga.midea.com）","updated_at":"2026-10-07","img":"midea_2988682.webp"},
-{"id":"midea_2731339","name":"美的MD11DDEX","brand":"美的","model_code":"MD11DDEX","type":"滚筒洗烘一体","official_price":"查不到","ref_price":4999,"year":"查不到","pros":["1级 能效"],"cons":[],"tags":["美的"],"wash_cap":11,"dry_cap":7.5,"wash_ratio":1.28,"spin_rpm":1400,"energy":"1级","noise":"查不到","size":"600×595×850mm","smart":"电脑控制","verify_status":"已核验（第三方）","verify_date":"2026-10-07","verify_source":["太平洋电脑网","美的官方商城"],"verify_url":"https://www.midea.cn/#/detail?skuId=100181","change_log":"2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（3 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=烘洗一体变频）；2026-10-03 回填型号：原「查不到」，产品名「美的MD11DDEX」中的型号串为 MD11DDEX（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=11、spin_rpm=1400、dry_cap=7.5、wash_ratio=1.28，值本身不变，单位由 schema 渲染）；2026-10-05 美的官方商城补参（skuId=100181，型号已逐字核对）：size=600×595×850mm（productPacking Length×Width×Height=600/595/850（已排除 indoorPacking 包装尺寸））；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）；2026-10-07 补产品图（来源：dsdcp.smartmidea.net）","updated_at":"2026-10-07","img":"midea_2731339.webp"},
-{"id":"midea_2923351","name":"美的MD12F1","brand":"美的","model_code":"MD12F1","type":"滚筒洗烘一体","official_price":"查不到","ref_price":4573,"year":"查不到","pros":["1级 能效"],"cons":[],"tags":["美的"],"wash_cap":12,"dry_cap":9,"wash_ratio":1.36,"spin_rpm":1200,"energy":"1级","noise":"查不到","size":"595×599×850mm","smart":"电脑控制","verify_status":"已核验（第三方）","verify_date":"2026-10-04","verify_source":["太平洋电脑网"],"verify_url":"https://g.pconline.com.cn/product/washer/midea/2923351_detail.html","change_log":"2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=烘洗一体变频）；2026-10-03 回填型号：原「查不到」，产品名「美的MD12F1」中的型号串为 MD12F1（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=12、spin_rpm=1200、dry_cap=9、wash_ratio=1.36，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）","updated_at":"2026-10-05"},
-{"id":"midea_2923371","name":"美的MG12F2","brand":"美的","model_code":"MG12F2","type":"滚筒洗烘一体","official_price":"查不到","ref_price":4443,"year":2026,"pros":["1级 能效"],"cons":[],"tags":["美的"],"wash_cap":12,"dry_cap":"查不到","wash_ratio":1.36,"spin_rpm":1200,"energy":"1级","noise":"查不到","size":"595×599×850mm","smart":"电脑控制","verify_status":"已核验（第三方）","verify_date":"2026-10-05","verify_source":["太平洋电脑网","苏宁易购"],"verify_url":"https://product.suning.com/0010358481/12451932140.html","change_log":"2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=滚筒式变频）；2026-10-03 回填型号：原「查不到」，产品名「美的MG12F2」中的型号串为 MG12F2（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=12、spin_rpm=1200、wash_ratio=1.36，值本身不变，单位由 schema 渲染）；2026-10-05 苏宁易购补参：year=2026（上市时间（月）=2026-04）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）","updated_at":"2026-10-05"},
-{"id":"midea_2744939","name":"美的MG12S30T","brand":"美的","model_code":"MG12S30T","type":"滚筒洗烘一体","official_price":"查不到","ref_price":3299,"year":"查不到","pros":["1级 能效"],"cons":[],"tags":["美的"],"wash_cap":12,"dry_cap":"查不到","wash_ratio":1.15,"spin_rpm":1200,"energy":"1级","noise":"查不到","size":"850×595×599mm","smart":"电脑控制","verify_status":"已核验（第三方）","verify_date":"2026-10-04","verify_source":["太平洋电脑网"],"verify_url":"https://g.pconline.com.cn/product/washer/midea/2744939_detail.html","change_log":"2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=滚筒式变频）；2026-10-03 回填型号：原「查不到」，产品名「美的MG12S30T」中的型号串为 MG12S30T（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=12、spin_rpm=1200、wash_ratio=1.15，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）","updated_at":"2026-10-05"},
-{"id":"midea_2732379","name":"美的MD10S10T","brand":"美的","model_code":"MD10S10T","type":"滚筒洗烘一体","official_price":"查不到","ref_price":3199,"year":"查不到","pros":["1级 能效"],"cons":[],"tags":["美的"],"wash_cap":10,"dry_cap":7,"wash_ratio":1.15,"spin_rpm":1400,"energy":"1级","noise":"查不到","size":"595×565×850mm","smart":"电脑控制","verify_status":"已核验（第三方）","verify_date":"2026-10-07","verify_source":["太平洋电脑网"],"verify_url":"https://g.pconline.com.cn/product/washer/midea/2732379_detail.html","change_log":"2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=烘洗一体变频）；2026-10-03 回填型号：原「查不到」，产品名「美的MD10S10T」中的型号串为 MD10S10T（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=10、spin_rpm=1400、dry_cap=7、wash_ratio=1.15，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）；2026-10-07 补产品图（来源：t14.baidu.com）","updated_at":"2026-10-07","img":"midea_2732379.webp"},
-{"id":"siemens_2742399","name":"西门子WQ56U4D10W","brand":"西门子","model_code":"WQ56U4D10W","type":"滚筒洗烘一体","official_price":"查不到","ref_price":10353,"year":"查不到","pros":["高温除菌 除菌"],"cons":[],"tags":["西门子"],"wash_cap":"查不到","dry_cap":10,"wash_ratio":"查不到","spin_rpm":"查不到","energy":"查不到","noise":"查不到","size":"641×597×842mm","smart":"电脑控制","verify_status":"已核验（第三方）","verify_date":"2026-10-04","verify_source":["太平洋电脑网"],"verify_url":"https://g.pconline.com.cn/product/washer/siemens/2742399_detail.html","change_log":"2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=干衣机变频）；2026-10-03 回填型号：原「查不到」，产品名「西门子WQ56U4D10W」中的型号串为 WQ56U4D10W（来源与产品名同源的第三方规格站）；2026-10-04 回填参数（来源：太平洋规格表 verify_url）：sterilize=高温除菌（抗菌类型=高温除菌）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（dry_cap=10，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）","updated_at":"2026-10-05","sterilize":"高温除菌"},
-{"id":"siemens_2734459","name":"西门子XQG100-WG54C5C80W","brand":"西门子","model_code":"XQG100-WG54C5C80W","type":"滚筒洗烘一体","official_price":"查不到","ref_price":8990,"year":"查不到","pros":["1级 能效"],"cons":[],"tags":["西门子"],"wash_cap":10,"dry_cap":"查不到","wash_ratio":1.1,"spin_rpm":1400,"energy":"1级","noise":"查不到","size":"598×590×848mm","smart":"电脑控制","verify_status":"已核验（第三方）","verify_date":"2026-10-04","verify_source":["太平洋电脑网"],"verify_url":"https://g.pconline.com.cn/product/washer/siemens/2734459_detail.html","change_log":"2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=滚筒式变频）；2026-10-03 回填型号：原「查不到」，产品名「西门子XQG100-WG54C5C80W」中的型号串为 XQG100-WG54C5C80W（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=10、spin_rpm=1400、wash_ratio=1.1，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）","updated_at":"2026-10-05"},
-{"id":"siemens_2867591","name":"西门子WG54F7F20W","brand":"西门子","model_code":"WG54F7F20W","type":"滚筒洗烘一体","official_price":"查不到","ref_price":8790,"year":"查不到","pros":["1级 能效"],"cons":[],"tags":["西门子"],"wash_cap":10,"dry_cap":"查不到","wash_ratio":1.1,"spin_rpm":1200,"energy":"1级","noise":"查不到","size":"598×600×848mm","smart":"电脑控制","verify_status":"已核验（第三方）","verify_date":"2026-10-04","verify_source":["太平洋电脑网"],"verify_url":"https://g.pconline.com.cn/product/washer/siemens/2867591_detail.html","change_log":"2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=滚筒式变频）；2026-10-03 回填型号：原「查不到」，产品名「西门子WG54F7F20W」中的型号串为 WG54F7F20W（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=10、spin_rpm=1200、wash_ratio=1.1，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）","updated_at":"2026-10-05"},
-{"id":"siemens_2742419","name":"西门子WQ55K7U80W","brand":"西门子","model_code":"WQ55K7U80W","type":"滚筒洗烘一体","official_price":"查不到","ref_price":8590,"year":"查不到","pros":["高温除菌 除菌"],"cons":[],"tags":["西门子"],"wash_cap":"查不到","dry_cap":10,"wash_ratio":"查不到","spin_rpm":"查不到","energy":"查不到","noise":"查不到","size":"613×598×842mm","smart":"电脑控制","verify_status":"已核验（第三方）","verify_date":"2026-10-07","verify_source":["太平洋电脑网"],"verify_url":"https://g.pconline.com.cn/product/washer/siemens/2742419_detail.html","change_log":"2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=干衣机变频）；2026-10-03 回填型号：原「查不到」，产品名「西门子WQ55K7U80W」中的型号串为 WQ55K7U80W（来源与产品名同源的第三方规格站）；2026-10-04 回填参数（来源：太平洋规格表 verify_url）：sterilize=高温除菌（抗菌类型=高温除菌）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（dry_cap=10，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）；2026-10-07 补产品图（来源：t14.baidu.com）","updated_at":"2026-10-07","sterilize":"高温除菌","img":"siemens_2742419.webp"},
-{"id":"siemens_2867531","name":"西门子XQG100-WN54K7G00W","brand":"西门子","model_code":"XQG100-WN54K7G00W","type":"滚筒洗烘一体","official_price":"查不到","ref_price":8461,"year":"查不到","pros":["1级 能效"],"cons":[],"tags":["西门子"],"wash_cap":10,"dry_cap":7,"wash_ratio":1.1,"spin_rpm":1400,"energy":"1级","noise":"查不到","size":"848×598×590mm","smart":"电脑控制","verify_status":"已核验（第三方）","verify_date":"2026-10-04","verify_source":["太平洋电脑网"],"verify_url":"https://g.pconline.com.cn/product/washer/siemens/2867531_detail.html","change_log":"2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=烘洗一体变频）；2026-10-03 回填型号：原「查不到」，产品名「西门子XQG100-WN54K7G00W」中的型号串为 XQG100-WN54K7G00W（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=10、spin_rpm=1400、dry_cap=7、wash_ratio=1.1，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）","updated_at":"2026-10-05"},
-{"id":"siemens_2742379","name":"西门子WQ55A2D10W","brand":"西门子","model_code":"WQ55A2D10W","type":"滚筒洗烘一体","official_price":"查不到","ref_price":7499,"year":"查不到","pros":["高温除菌 除菌"],"cons":[],"tags":["西门子"],"wash_cap":"查不到","dry_cap":10,"wash_ratio":"查不到","spin_rpm":"查不到","energy":"查不到","noise":"查不到","size":"613×598×842mm","smart":"电脑控制","verify_status":"已核验（第三方）","verify_date":"2026-10-04","verify_source":["太平洋电脑网"],"verify_url":"https://g.pconline.com.cn/product/washer/siemens/2742379_detail.html","change_log":"2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=干衣机变频）；2026-10-03 回填型号：原「查不到」，产品名「西门子WQ55A2D10W」中的型号串为 WQ55A2D10W（来源与产品名同源的第三方规格站）；2026-10-04 回填参数（来源：太平洋规格表 verify_url）：sterilize=高温除菌（抗菌类型=高温除菌）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（dry_cap=10，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）","updated_at":"2026-10-05","sterilize":"高温除菌"},
-{"id":"panasonic_2734819","name":"松下XQG120-X1K7","brand":"松下","model_code":"XQG120-X1K7","type":"滚筒洗烘一体","official_price":"查不到","ref_price":8499,"year":"查不到","pros":["1级 能效"],"cons":[],"tags":["松下"],"wash_cap":12,"dry_cap":"查不到","wash_ratio":1.11,"spin_rpm":1200,"energy":"1级","noise":"查不到","size":"596×635×845mm","smart":"电脑控制","verify_status":"已核验（第三方）","verify_date":"2026-10-04","verify_source":["太平洋电脑网"],"verify_url":"https://g.pconline.com.cn/product/washer/panasonic/2734819_detail.html","change_log":"2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=滚筒式变频）；2026-10-03 回填型号：原「查不到」，产品名「松下XQG120-X1K7」中的型号串为 XQG120-X1K7（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=12、spin_rpm=1200、wash_ratio=1.11，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）","updated_at":"2026-10-05"},
-{"id":"panasonic_2992282","name":"松下XQG100-S26Q","brand":"松下","model_code":"XQG100-S26Q","type":"滚筒洗烘一体","official_price":"查不到","ref_price":8475,"year":2026,"pros":["1级 能效"],"cons":[],"tags":["松下"],"wash_cap":10,"dry_cap":"查不到","wash_ratio":1.12,"spin_rpm":1500,"energy":"1级","noise":"查不到","size":"600×505×845mm","smart":"电脑控制","verify_status":"已核验（第三方）","verify_date":"2026-10-04","verify_source":["太平洋电脑网"],"verify_url":"https://g.pconline.com.cn/product/washer/panasonic/2992282_detail.html","change_log":"2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=滚筒式变频）；2026-10-03 回填型号：原「查不到」，产品名「松下XQG100-S26Q」中的型号串为 XQG100-S26Q（来源与产品名同源的第三方规格站）；2026-10-04 回填参数（来源：太平洋规格表 verify_url）：year=2026（上市时间=2026年）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=10、spin_rpm=1500、wash_ratio=1.12，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）","updated_at":"2026-10-05"},
-{"id":"panasonic_2992662","name":"绝对是次世代的洗衣机 松下ALPHA独家深度评测","brand":"松下","model_code":"查不到","type":"滚筒洗烘一体","official_price":"查不到","ref_price":8475,"year":"查不到","pros":["1级 能效"],"cons":[],"tags":["松下"],"wash_cap":12,"dry_cap":"查不到","wash_ratio":1.38,"spin_rpm":1400,"energy":"1级","noise":"查不到","size":"596×600×845mm","smart":"电脑控制","verify_status":"已核验（第三方）","verify_date":"2026-10-07","verify_source":["太平洋电脑网"],"verify_url":"https://g.pconline.com.cn/product/washer/panasonic/2992662_detail.html","change_log":"2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（6 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=12、spin_rpm=1400、wash_ratio=1.38，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）；2026-10-07 补产品图（来源：img1.baidu.com）","updated_at":"2026-10-07","img":"panasonic_2992662.webp"},
-{"id":"panasonic_2664639","name":"松下XQG100-M2ND1","brand":"松下","model_code":"XQG100-M2ND1","type":"滚筒洗烘一体","official_price":"查不到","ref_price":7399,"year":"查不到","pros":["1级 能效"],"cons":[],"tags":["松下"],"wash_cap":10,"dry_cap":7,"wash_ratio":1.12,"spin_rpm":1500,"energy":"1级","noise":"查不到","size":"600×505×845mm","smart":"app控制","verify_status":"已核验（第三方）","verify_date":"2026-10-07","verify_source":["太平洋电脑网"],"verify_url":"https://g.pconline.com.cn/product/washer/panasonic/2664639_detail.html","change_log":"2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=滚筒式变频）；2026-10-03 回填型号：原「查不到」，产品名「松下XQG100-M2ND1」中的型号串为 XQG100-M2ND1（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=10、spin_rpm=1500、dry_cap=7、wash_ratio=1.12，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）；2026-10-07 补产品图（来源：img1.baidu.com）","updated_at":"2026-10-07","img":"panasonic_2664639.webp"},
-{"id":"panasonic_2664599","name":"松下XQG100-M2Q1","brand":"松下","model_code":"XQG100-M2Q1","type":"滚筒洗烘一体","official_price":"查不到","ref_price":6699,"year":"查不到","pros":["1级 能效"],"cons":[],"tags":["松下"],"wash_cap":10,"dry_cap":"查不到","wash_ratio":1.12,"spin_rpm":1500,"energy":"1级","noise":"查不到","size":"600×505×845mm","smart":"查不到","verify_status":"已核验（第三方）","verify_date":"2026-10-04","verify_source":["太平洋电脑网"],"verify_url":"https://g.pconline.com.cn/product/washer/panasonic/2664599_detail.html","change_log":"2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（3 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=滚筒式变频）；2026-10-03 回填型号：原「查不到」，产品名「松下XQG100-M2Q1」中的型号串为 XQG100-M2Q1（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=10、spin_rpm=1500、wash_ratio=1.12，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）","updated_at":"2026-10-05"},
-{"id":"panasonic_2748519","name":"松下XQG100-SA1GM","brand":"松下","model_code":"XQG100-SA1GM","type":"滚筒洗烘一体","official_price":"查不到","ref_price":6499,"year":"查不到","pros":["1级 能效","银离子除菌 除菌"],"cons":[],"tags":["松下"],"wash_cap":10,"dry_cap":7,"wash_ratio":1.1,"spin_rpm":1200,"energy":"1级","noise":"查不到","size":"596×506×845mm","smart":"电脑控制","verify_status":"已核验（第三方）","verify_date":"2026-10-04","verify_source":["太平洋电脑网"],"verify_url":"https://g.pconline.com.cn/product/washer/panasonic/2748519_detail.html","change_log":"2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=烘洗一体变频）；2026-10-03 回填型号：原「查不到」，产品名「松下XQG100-SA1GM」中的型号串为 XQG100-SA1GM（来源与产品名同源的第三方规格站）；2026-10-04 回填参数（来源：太平洋规格表 verify_url）：sterilize=银离子除菌（抗菌类型=银离子除菌）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=10、spin_rpm=1200、dry_cap=7、wash_ratio=1.1，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）","updated_at":"2026-10-05","sterilize":"银离子除菌"},
-{"id":"gree_2794611","name":"格力XQG100-RBD1401Eb1","brand":"格力","model_code":"XQG100-RBD1401Eb1","type":"滚筒洗烘一体","official_price":"查不到","ref_price":18999,"year":"查不到","pros":["银离子除菌","10kg洗6kg烘","1400转高速脱水","一级能效"],"cons":["烘干容量仅6kg","定价较高"],"tags":["格力"],"wash_cap":10,"dry_cap":6,"wash_ratio":1.1,"spin_rpm":1400,"energy":"1级","noise":"查不到","size":"596×604×986mm","smart":"电脑控制","verify_status":"已核验（第三方）","verify_date":"2026-10-04","verify_source":["太平洋电脑网"],"verify_url":"https://g.pconline.com.cn/product/washer/gree/2794611_detail.html","change_log":"2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=烘洗一体变频）；2026-10-03 回填型号：原「查不到」，产品名「格力XQG100-RBD1401Eb1」中的型号串为 XQG100-RBD1401Eb1（来源与产品名同源的第三方规格站）；2026-10-04 回填参数（来源：太平洋规格表 verify_url）：sterilize=银离子除菌（抗菌类型=银离子除菌）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=10、spin_rpm=1400、dry_cap=6、wash_ratio=1.1，值本身不变，单位由 schema 渲染）","updated_at":"2026-10-04","sterilize":"银离子除菌"},
-{"id":"gree_1628427","name":"格力XQG100-RBD1401Ea1","brand":"格力","model_code":"XQG100-RBD1401Ea1","type":"滚筒洗烘一体","official_price":"查不到","ref_price":15999,"year":"查不到","pros":["10kg洗6kg烘","1400转高速脱水","一级能效"],"cons":["烘干容量仅6kg","定价较高"],"tags":["格力"],"wash_cap":10,"dry_cap":6,"wash_ratio":1.08,"spin_rpm":1400,"energy":"1级","noise":"查不到","size":"644×596×986mm","smart":"查不到","verify_status":"已核验（第三方）","verify_date":"2026-10-07","verify_source":["太平洋电脑网"],"verify_url":"https://g.pconline.com.cn/product/washer/gree/1628427_detail.html","change_log":"2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（3 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=烘洗一体变频）；2026-10-03 回填型号：原「查不到」，产品名「格力XQG100-RBD1401Ea1」中的型号串为 XQG100-RBD1401Ea1（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=10、spin_rpm=1400、dry_cap=6、wash_ratio=1.08，值本身不变，单位由 schema 渲染）；2026-10-07 补产品图（来源：img0.baidu.com）","updated_at":"2026-10-07","img":"gree_1628427.webp"},
-{"id":"gree_1811387","name":"格力XQG100-RBKD1401Aa1","brand":"格力","model_code":"XQG100-RBKD1401Aa1","type":"滚筒洗烘一体","official_price":"查不到","ref_price":14999,"year":"查不到","pros":["10kg洗6kg烘","1400转高速脱水","一级能效"],"cons":["烘干容量仅6kg","定价较高"],"tags":["格力"],"wash_cap":10,"dry_cap":6,"wash_ratio":1.1,"spin_rpm":1400,"energy":"1级","noise":"查不到","size":"690×596×850mm","smart":"电脑控制","verify_status":"已核验（第三方）","verify_date":"2026-10-04","verify_source":["太平洋电脑网"],"verify_url":"https://g.pconline.com.cn/product/washer/gree/1811387_detail.html","change_log":"2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=滚筒式变频）；2026-10-03 回填型号：原「查不到」，产品名「格力XQG100-RBKD1401Aa1」中的型号串为 XQG100-RBKD1401Aa1（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=10、spin_rpm=1400、dry_cap=6、wash_ratio=1.1，值本身不变，单位由 schema 渲染）","updated_at":"2026-10-04"},
-{"id":"gree_2760499","name":"格力XQG100-RBKD1401Ac1","brand":"格力","model_code":"XQG100-RBKD1401Ac1","type":"滚筒洗烘一体","official_price":"查不到","ref_price":9999,"year":"查不到","pros":["银离子除菌","10kg洗6kg烘","1400转高速脱水","一级能效"],"cons":["烘干容量仅6kg"],"tags":["格力"],"wash_cap":10,"dry_cap":6,"wash_ratio":1.1,"spin_rpm":1400,"energy":"1级","noise":"查不到","size":"690×596×850mm","smart":"电脑控制","verify_status":"已核验（第三方）","verify_date":"2026-10-04","verify_source":["太平洋电脑网"],"verify_url":"https://g.pconline.com.cn/product/washer/gree/2760499_detail.html","change_log":"2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=烘洗一体变频）；2026-10-03 回填型号：原「查不到」，产品名「格力XQG100-RBKD1401Ac1」中的型号串为 XQG100-RBKD1401Ac1（来源与产品名同源的第三方规格站）；2026-10-04 回填参数（来源：太平洋规格表 verify_url）：sterilize=银离子除菌（抗菌类型=银离子除菌）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=10、spin_rpm=1400、dry_cap=6、wash_ratio=1.1，值本身不变，单位由 schema 渲染）","updated_at":"2026-10-04","sterilize":"银离子除菌"},
-{"id":"gree_2747959","name":"格力XQG100-RBKD1401Ad1","brand":"格力","model_code":"XQG100-RBKD1401Ad1","type":"滚筒洗烘一体","official_price":"查不到","ref_price":9399,"year":"查不到","pros":["洗净比1.2","10kg洗6kg烘","1400转高速脱水","一级能效"],"cons":["烘干容量仅6kg"],"tags":["格力"],"wash_cap":10,"dry_cap":6,"wash_ratio":1.2,"spin_rpm":1400,"energy":"1级","noise":"查不到","size":"596×660×850mm","smart":"电脑控制","verify_status":"已核验（第三方）","verify_date":"2026-10-04","verify_source":["太平洋电脑网"],"verify_url":"https://g.pconline.com.cn/product/washer/gree/2747959_detail.html","change_log":"2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=烘洗一体变频）；2026-10-03 回填型号：原「查不到」，产品名「格力XQG100-RBKD1401Ad1」中的型号串为 XQG100-RBKD1401Ad1（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=10、spin_rpm=1400、dry_cap=6、wash_ratio=1.2，值本身不变，单位由 schema 渲染）","updated_at":"2026-10-04"},
-{"id":"gree_2614239","name":"格力XQG100-DWD1401Fa1","brand":"格力","model_code":"XQG100-DWD1401Fa1","type":"滚筒洗烘一体","official_price":"查不到","ref_price":6999,"year":"查不到","pros":["1级 能效"],"cons":[],"tags":["格力"],"wash_cap":10,"dry_cap":7,"wash_ratio":1.12,"spin_rpm":1400,"energy":"1级","noise":"查不到","size":"610×596×850mm","smart":"查不到","verify_status":"已核验（第三方）","verify_date":"2026-10-07","verify_source":["太平洋电脑网"],"verify_url":"https://g.pconline.com.cn/product/washer/gree/2614239_detail.html","change_log":"2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（3 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=滚筒式变频）；2026-10-03 回填型号：原「查不到」，产品名「格力XQG100-DWD1401Fa1」中的型号串为 XQG100-DWD1401Fa1（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=10、spin_rpm=1400、dry_cap=7、wash_ratio=1.12，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）；2026-10-07 补产品图（来源：t15.baidu.com）","updated_at":"2026-10-07","img":"gree_2614239.webp"},
-{"id":"hisense_wd100a1s","name":"海信WD100A1S","brand":"海信","model_code":"WD100A1S","type":"滚筒洗烘一体","official_price":1528,"ref_price":1528,"wash_cap":"10kg","dry_cap":"7kg","wash_ratio":"1.28","spin_rpm":"查不到","energy":"1级","sterilize":"巴氏除菌螨/高温除菌","smart":"电脑控制","noise":"查不到","size":"595×550×845mm","year":"查不到","pros":["1级 能效","10kg 大容量","烘干 7kg"],"cons":[],"tags":["海信","洗烘一体"],"verify_status":"已核验（第三方）","verify_date":"2026-10-07","verify_source":["中关村在线"],"verify_url":"https://detail.zol.com.cn/1978/2176692/param.shtml","change_log":"2026-10-03 建条：参数取自中关村在线参数页（滚筒式洗烘一体，洗10kg/烘7kg/洗净比1.28/1级能效/巴氏除菌螨+高温除菌/耗电0.84千瓦时）；官方价与参考价取ZOL参考价1528（ZOL报价页同价）；脱水转速ZOL未列，记查不到；副分组归类：滚筒洗烘一体（依据：ZOL产品类别=滚筒式，洗烘一体）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）；2026-10-07 补产品图（来源：2e.zol-img.com.cn）","updated_at":"2026-10-07","img":"hisense_wd100a1s.webp"},
-{"id":"hisense_wd100e3q6","name":"海信WD100E3Q-6","brand":"海信","model_code":"WD100E3Q-6","type":"滚筒洗烘一体","official_price":4299,"ref_price":4299,"wash_cap":"10kg","dry_cap":"7kg","wash_ratio":"1.15","spin_rpm":"1400rpm","energy":"1级","smart":"电脑控制","noise":"查不到","size":"595×590×845mm","year":"查不到","pros":["1级 能效","10kg 大容量","烘干 7kg"],"cons":[],"tags":["海信","洗烘一体"],"verify_status":"已核验（第三方）","verify_date":"2026-10-03","verify_source":["太平洋电脑网"],"verify_url":"https://g.pconline.com.cn/product/washer/hisense/2760519_detail.html","change_log":"2026-10-03 建条：参数取自太平洋电脑网规格表（烘洗一体，洗10kg/烘7kg/洗净比1.15/1400rpm/1级能效）；官方价与参考价取太平洋参考价4299；副分组归类：滚筒洗烘一体（依据：第三方类型=烘洗一体）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）","updated_at":"2026-10-05","img":null},
-{"id":"hisense_wd100m2q6","name":"海信WD100M2Q-6","brand":"海信","model_code":"WD100M2Q-6","type":"滚筒洗烘一体","official_price":3599,"ref_price":3599,"wash_cap":"10kg","dry_cap":"7kg","wash_ratio":"1.15","spin_rpm":"1400rpm","energy":"1级","smart":"电脑控制","noise":"查不到","size":"595×500×845mm","year":"查不到","pros":["1级 能效","10kg 大容量","烘干 7kg"],"cons":[],"tags":["海信","洗烘一体"],"verify_status":"已核验（多源）","verify_date":"2026-10-03","verify_source":["太平洋电脑网","中关村在线"],"verify_url":"https://g.pconline.com.cn/product/washer/hisense/2600079_detail.html","change_log":"2026-10-03 建条：参数取自太平洋电脑网规格表并与中关村在线参数页交叉印证（洗10kg/烘7kg/洗净比1.15/1400rpm/1级能效/上排水/尺寸595×500×845mm 两源一致；直驱变频与智能投放取ZOL）；官方价与参考价取太平洋参考价3599（ZOL报价同价）；ZOL尺寸栏单位误作mmmm，已按两源一致值录入手；副分组归类：滚筒洗烘一体（依据：第三方烘干容量7kg+ZOL产品类别=洗烘一体）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）","updated_at":"2026-10-05","img":null},
-{"id":"littleswan_tb10v28dt","name":"小天鹅TB10V28DT","brand":"小天鹅","model_code":"TB10V28DT","type":"波轮","official_price":1175,"ref_price":1175,"wash_cap":"10kg","dry_cap":"查不到","wash_ratio":"1.05","spin_rpm":"700rpm","energy":"1级","smart":"电脑控制","noise":"查不到","size":"查不到","year":"查不到","pros":["1级 能效","10kg 大容量"],"cons":[],"tags":["小天鹅","波轮"],"verify_status":"已核验（第三方）","verify_date":"2026-10-03","verify_source":["太平洋电脑网"],"verify_url":"https://g.pconline.com.cn/product/washer/ittleswan/2864251_detail.html","change_log":"2026-10-03 建条：参数取自太平洋电脑网规格表（波轮式，洗10kg/洗净比1.05/700rpm/变频/1级能效）；官方价与参考价取太平洋参考价1175；外型尺寸来源作930×565×550mm，量纲顺序存疑（疑为高×宽×深序），按红线剔除记查不到；无烘干功能，烘干容量记查不到；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）","updated_at":"2026-10-05","img":null},
-{"id":"littleswan_td100v618plus","name":"小天鹅TD100V618PLUS","brand":"小天鹅","model_code":"TD100V618PLUS","type":"滚筒洗烘一体","official_price":3149,"ref_price":3149,"wash_cap":"10kg","dry_cap":"7kg","wash_ratio":"1.1","spin_rpm":"1200rpm","energy":"1级","sterilize":"UV紫光除菌/银离子抗菌","smart":"电脑控制","noise":"查不到","size":"560×595×850mm","year":"查不到","pros":["1级 能效","10kg 大容量","烘干 7kg"],"cons":[],"tags":["小天鹅","洗烘一体"],"verify_status":"已核验（第三方）","verify_date":"2026-10-03","verify_source":["中关村在线"],"verify_url":"https://detail.zol.com.cn/1978/1977239/param.shtml","change_log":"2026-10-03 建条：参数取自中关村在线参数页（滚筒式洗烘一体，洗10kg/烘7kg/洗净比1.1/脱水1200r/min/1级能效/UV紫光除菌/智能投放）；官方价与参考价取ZOL参考价3149；副分组归类：滚筒洗烘一体（依据：ZOL产品类别=滚筒式，洗烘一体）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）","updated_at":"2026-10-05","img":null},
-{"id":"littleswan_tdh12k100","name":"小天鹅TDH12K100","brand":"小天鹅","model_code":"TDH12K100","type":"滚筒洗烘一体","official_price":6534,"ref_price":6534,"wash_cap":"12kg","dry_cap":"9kg","wash_ratio":"1.32","spin_rpm":"1400rpm","energy":"1级","smart":"电脑控制","noise":"查不到","size":"850×595×599mm","year":2026,"pros":["1级 能效","12kg 大容量","烘干 9kg"],"cons":[],"tags":["小天鹅","洗烘一体","水魔方","2026"],"verify_status":"已核验（第三方）","verify_date":"2026-10-03","verify_source":["太平洋电脑网"],"verify_url":"https://g.pconline.com.cn/product/washer/ittleswan/2962450_detail.html","change_log":"2026-10-03 建条：参数取自太平洋电脑网规格表（烘洗一体，洗12kg/烘9kg/洗净比1.32/1400rpm/1级能效/上市2026年）；官方价与参考价取太平洋参考价6534（京东预售同价，媒体印证）；「水魔方」系列名为电商商品标题印证；尺寸按来源原文抄录（疑为高×宽×深序）；副分组归类：滚筒洗烘一体（依据：第三方类型=烘洗一体）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）","updated_at":"2026-10-05","img":null},
-{"id":"tcl_b120v2r","name":"TCL B120V2R","brand":"TCL","model_code":"B120V2R","type":"波轮","official_price":849,"ref_price":849,"wash_cap":"12kg","dry_cap":"查不到","wash_ratio":"0.9","spin_rpm":"680rpm","energy":"1级","smart":"查不到","noise":"查不到","size":"580×590×950mm","year":"查不到","pros":["12kg大容量","八段水位","一级能效"],"cons":["定频电机","洗净比0.9偏低"],"tags":["TCL","波轮"],"verify_status":"已核验（第三方）","verify_date":"2026-10-03","verify_source":["太平洋电脑网"],"verify_url":"https://g.pconline.com.cn/product/washer/tcl/2662459_detail.html","change_log":"2026-10-03 建条：参数取自太平洋电脑网规格表（波轮式，洗12kg/洗净比0.9/680rpm/定频/1级能效/八段水位）；官方价与参考价取太平洋参考价849；无烘干功能，烘干容量记查不到","updated_at":"2026-10-03","img":null},
-{"id":"tcl_g100t7r_hdis","name":"TCL G100T7R-HDIS","brand":"TCL","model_code":"G100T7R-HDIS","type":"滚筒洗烘一体","official_price":4199,"ref_price":4199,"wash_cap":"10kg","dry_cap":"查不到","wash_ratio":"1.31","spin_rpm":"1400rpm","energy":"1级","sterilize":"巴氏除菌","smart":"查不到","noise":"查不到","size":"595×570×850mm","year":"查不到","pros":["1级 能效","巴氏除菌 除菌","10kg 大容量"],"cons":[],"tags":["TCL","洗烘一体","超级筒T7R"],"verify_status":"已核验（第三方）","verify_date":"2026-10-07","verify_source":["太平洋电脑网"],"verify_url":"https://g.pconline.com.cn/product/washer/tcl/2605839_detail.html","change_log":"2026-10-03 建条：参数取自太平洋电脑网规格表（洗10kg/洗净比1.31/1400rpm/1级能效/巴氏除菌）；官方价与参考价取太平洋参考价4199；剔烘干功率=9W一处（疑功率标签错位）；烘干容量来源未列，记查不到；「超级筒T7R」系列名与洗烘一体身份由媒体评测印证（第三方干衣功能=支持+型号后缀HDIS）；副分组归类：滚筒洗烘一体；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）；2026-10-07 补产品图（来源：2e.zol-img.com.cn）","updated_at":"2026-10-07","img":"tcl_g100t7r_hdis.webp"},
-{"id":"tcl_g120t7r_hdi","name":"TCL G120T7R-HDI","brand":"TCL","model_code":"G120T7R-HDI","type":"滚筒洗烘一体","official_price":3699,"ref_price":3699,"wash_cap":"12kg","dry_cap":"9kg","wash_ratio":"1.1","spin_rpm":"1400rpm","energy":"1级","smart":"查不到","noise":"查不到","size":"595×570×850mm","year":"查不到","pros":["1级 能效","12kg 大容量","烘干 9kg"],"cons":[],"tags":["TCL","洗烘一体","超级筒T7R"],"verify_status":"已核验（第三方）","verify_date":"2026-10-03","verify_source":["太平洋电脑网"],"verify_url":"https://g.pconline.com.cn/product/washer/tcl/2598179_detail.html","change_log":"2026-10-03 建条：参数取自太平洋电脑网规格表（洗12kg/烘9kg/洗净比1.1/1400rpm/1级能效）；官方价与参考价取太平洋参考价3699；「超级筒T7R」系列名由媒体评测印证；副分组归类：滚筒洗烘一体（依据：第三方列烘干容量9kg）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）","updated_at":"2026-10-05","img":null}
+ {
+  "id": "wash_dry_10",
+  "name": "米家互联网洗烘一体机 10kg（2019款）",
+  "model_code": "XHQG100MJ01",
+  "miot_model": "查不到",
+  "type": "滚筒洗烘一体",
+  "official_price": 2999,
+  "second_hand": "—",
+  "wash_cap": 10,
+  "dry_cap": 6,
+  "wash_ratio": null,
+  "spin_rpm": 1400,
+  "energy": "1级",
+  "sterilize": "高温洗除菌",
+  "smart": "米家APP/小爱同学",
+  "noise": "洗涤62/甩干72dB",
+  "size": "598×650×850mm",
+  "year": 2019,
+  "pros": [
+   "直驱洗烘一体",
+   "10kg大容量",
+   "米家互联"
+  ],
+  "cons": [
+   "已下架",
+   "烘干容量仅6kg"
+  ],
+  "tags": [
+   "洗烘一体",
+   "经典",
+   "2019"
+  ],
+  "verify_status": "待核验",
+  "verify_date": "—",
+  "verify_source": [],
+  "verify_url": "查不到",
+  "change_log": "早期录入，来源未逐条记录，待按官方规格页/说明书核验",
+  "updated_at": "2026-10-01",
+  "img": null,
+  "brand": "小米"
+ },
+ {
+  "id": "wash_dry_102s",
+  "name": "米家互联网直驱洗烘一体机 10kg（2021款）",
+  "model_code": "XHQG100MJ102S",
+  "miot_model": "查不到",
+  "type": "滚筒洗烘一体",
+  "official_price": 2999,
+  "second_hand": "—",
+  "wash_cap": 10,
+  "dry_cap": 7,
+  "wash_ratio": 1.08,
+  "spin_rpm": 1400,
+  "energy": "1级",
+  "sterilize": "巴氏除菌/高温除螨/微蒸空气洗",
+  "smart": "米家APP/DD直驱",
+  "noise": "洗涤50dB",
+  "size": "595×680×850mm",
+  "year": 2021,
+  "pros": [
+   "DD直驱变频",
+   "洗净比1.08",
+   "微蒸空气洗"
+  ],
+  "cons": [
+   "已下架"
+  ],
+  "tags": [
+   "洗烘一体",
+   "直驱",
+   "2021"
+  ],
+  "verify_status": "待核验",
+  "verify_date": "—",
+  "verify_source": [
+   "苏宁自营"
+  ],
+  "verify_url": "查不到",
+  "change_log": "早期录入，来源未逐条记录，待按官方规格页/说明书核验；2026-10-01 型号前缀订正：原「XQG100MJ102S」的 XQG 前缀对应滚筒洗衣机（洗脱一体），本条为直驱洗烘一体机，XHQG 才是洗烘一体前缀（与 2019 款 XHQG100MJ01、2024 款 XHQG100MJ108 同类一致）。据苏宁商品标题订正为 XHQG100MJ102S",
+  "updated_at": "2026-10-01",
+  "img": null,
+  "brand": "小米"
+ },
+ {
+  "id": "wash_dry_108",
+  "name": "米家超净洗滚筒洗烘一体 10kg（2024款）",
+  "model_code": "XHQG100MJ108",
+  "miot_model": "查不到",
+  "type": "滚筒洗烘一体",
+  "official_price": 2899,
+  "second_hand": "—",
+  "wash_cap": 10,
+  "dry_cap": 7,
+  "wash_ratio": 1.1,
+  "spin_rpm": 1200,
+  "energy": "1级",
+  "sterilize": "蒸汽除菌螨(99.999%除菌/100%除螨)",
+  "smart": "米家APP",
+  "noise": "洗涤50-55dB",
+  "size": "598×570×850mm(超薄全嵌)",
+  "year": 2024,
+  "pros": [
+   "超薄全嵌",
+   "蒸汽除菌螨",
+   "洗净比1.1"
+  ],
+  "cons": [
+   "最高转速1200较低"
+  ],
+  "tags": [
+   "洗烘一体",
+   "超薄",
+   "2024"
+  ],
+  "verify_status": "待核验",
+  "verify_date": "—",
+  "verify_source": [],
+  "verify_url": "查不到",
+  "change_log": "早期录入，来源未逐条记录，待按官方规格页/说明书核验",
+  "updated_at": "2026-10-01",
+  "img": null,
+  "brand": "小米"
+ },
+ {
+  "id": "wash_set_pro",
+  "name": "米家洗烘套装Pro 蓝氧洗 热泵烘 10kg+10kg（2025款）",
+  "model_code": "XQG100MJ109(洗)+H100MJ105(烘)",
+  "miot_model": "查不到",
+  "type": "洗烘套装",
+  "official_price": 6469,
+  "second_hand": "—",
+  "wash_cap": 10,
+  "dry_cap": 10,
+  "wash_ratio": 1.2,
+  "spin_rpm": 1200,
+  "energy": "1级",
+  "sterilize": "蓝氧护衣洗(低温杀菌/防串色/净白)",
+  "smart": "米家APP/洗烘联动",
+  "noise": "查不到",
+  "size": "查不到",
+  "year": 2025,
+  "pros": [
+   "热泵烘干10kg",
+   "蓝氧护衣洗",
+   "洗烘联动省时省电"
+  ],
+  "cons": [
+   "套装价格高"
+  ],
+  "tags": [
+   "洗烘套装",
+   "热泵",
+   "2025"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+   "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230803598",
+  "change_log": "早期录入，来源未逐条记录，待按官方规格页/说明书核验；2026-10-04 官方商城 API 回填：ref_price=7098；2026-10-04 官方商城 API 回填：verify_url=https://www.mi.com/shop/buy/detail?product_id=1230803598，ref_price=7098；2026-10-07 补产品图（来源：cdn.cnbj1.fds.api.mi-img.com）",
+  "updated_at": "2026-10-07",
+  "img": "wash_set_pro.webp",
+  "brand": "小米",
+  "ref_price": 7098
+ },
+ {
+  "id": "wave_zunxiang",
+  "name": "米家波轮洗衣机 尊享版 10kg（2021款）",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "波轮",
+  "official_price": 1999,
+  "second_hand": "—",
+  "wash_cap": 10,
+  "dry_cap": null,
+  "wash_ratio": null,
+  "spin_rpm": 700,
+  "energy": "1级",
+  "sterilize": "纳米银离子除菌",
+  "smart": "洗衣液智能投放/DD直驱/全屋互联",
+  "noise": "洗涤62/甩干72dB",
+  "size": "564×583×973mm",
+  "year": 2021,
+  "pros": [
+   "智能投放",
+   "DD直驱",
+   "银离子除菌"
+  ],
+  "cons": [
+   "已停产"
+  ],
+  "tags": [
+   "波轮",
+   "智能投放",
+   "2021"
+  ],
+  "verify_status": "待核验",
+  "verify_date": "—",
+  "verify_source": [],
+  "verify_url": "查不到",
+  "change_log": "早期录入，来源未逐条记录，待按官方规格页/说明书核验",
+  "updated_at": "2026-10-01",
+  "img": null,
+  "brand": "小米"
+ },
+ {
+  "id": "wave_pro_229",
+  "name": "米家波轮洗衣机 Pro 10kg（2025款）",
+  "model_code": "XQB100MJ229",
+  "miot_model": "查不到",
+  "type": "波轮",
+  "official_price": 1099,
+  "second_hand": "—",
+  "wash_cap": 10,
+  "dry_cap": null,
+  "wash_ratio": 1.28,
+  "spin_rpm": 680,
+  "energy": "1级",
+  "sterilize": "除螨/桶自洁",
+  "smart": "直驱变频电机",
+  "noise": "查不到",
+  "size": "内桶Φ432mm/整机543×553×888mm",
+  "year": 2025,
+  "pros": [
+   "高洗净比1.28",
+   "直驱变频",
+   "10kg大容量"
+  ],
+  "cons": [
+   "转速偏低"
+  ],
+  "tags": [
+   "波轮",
+   "高洗净比",
+   "2025"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-01",
+  "verify_source": [
+   "小米商城（官方产品图）"
+  ],
+  "verify_url": "查不到",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片",
+  "updated_at": "2026-10-01",
+  "img": "wave_pro_229.webp",
+  "brand": "小米"
+ },
+ {
+  "id": "wave_104",
+  "name": "米家波轮洗衣机 10kg（2024款）",
+  "model_code": "XQB100MJ104",
+  "miot_model": "mibx2.washer.v6rm",
+  "type": "波轮",
+  "official_price": 849,
+  "second_hand": "—",
+  "wash_cap": 10,
+  "dry_cap": null,
+  "wash_ratio": 0.8,
+  "spin_rpm": 700,
+  "energy": "三级",
+  "sterilize": "潮汐除螨洗/健康桶自洁",
+  "smart": "非智能",
+  "noise": "洗涤50dB",
+  "size": "560×610×920mm",
+  "year": 2024,
+  "pros": [
+   "价格实惠",
+   "10kg大容量"
+  ],
+  "cons": [
+   "非智能",
+   "非变频"
+  ],
+  "tags": [
+   "波轮",
+   "性价比",
+   "2024"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "小米商城",
+   "米家产品库(miot-spec)"
+  ],
+  "verify_url": "查不到",
+  "change_log": "2026-10-01 补入官方产品图（小米 CDN，经米家产品库(miot-spec)）；2026-10-01 经米家产品库(miot-spec)交叉印证存在性并补入协议型号；早期录入，来源未逐条记录，待按官方规格页/说明书核验；2026-10-04 官方商城 API 回填：ref_price=1099，wash_cap=10，energy=三级，wash_ratio=0.8，spin_rpm=700",
+  "updated_at": "2026-10-04",
+  "img": "wave_104.webp",
+  "brand": "小米",
+  "ref_price": 1099
+ },
+ {
+  "id": "wash_clean",
+  "name": "米家洗衣机 超净洗 滚筒",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "滚筒洗烘一体",
+  "official_price": 1099,
+  "second_hand": "—",
+  "wash_cap": null,
+  "dry_cap": null,
+  "wash_ratio": null,
+  "spin_rpm": null,
+  "energy": "查不到",
+  "sterilize": "查不到",
+  "smart": "查不到",
+  "noise": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+   "超净洗系列",
+   "价格实惠"
+  ],
+  "cons": [],
+  "tags": [
+   "滚筒洗烘一体"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=10050186",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）",
+  "updated_at": "2026-10-04",
+  "img": "wash_clean.webp",
+  "brand": "小米"
+ },
+ {
+  "id": "wash_zone_pro14",
+  "name": "米家三筒洗衣机 健康洗Pro 14kg",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "多筒/迷你",
+  "official_price": 4705,
+  "second_hand": "—",
+  "wash_cap": 14,
+  "dry_cap": null,
+  "wash_ratio": 1.32,
+  "spin_rpm": 1400,
+  "energy": "一级级",
+  "sterilize": "除菌除螨",
+  "smart": "支持智能互联",
+  "noise": "洗涤52dB",
+  "size": "598×597×850mm",
+  "year": null,
+  "pros": [
+   "三筒分区洗护",
+   "14kg大容量",
+   "洗净比1.32",
+   "直驱变频电机",
+   "除菌除螨"
+  ],
+  "cons": [
+   "无烘干功能"
+  ],
+  "tags": [
+   "多筒/迷你"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230809239",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=4999，wash_cap=14，size=598×597×850mm，energy=一级，wash_ratio=1.32，sterilize=除菌除螨，noise=洗涤52dB，spin_rpm=1400，smart=支持智能互联；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：能效「一级」统一为库内口径「1级」；2026-10-04 官方商城 API 回填：ref_price=4999，wash_cap=14，energy=一级级，wash_ratio=1.32，sterilize=除菌除螨，spin_rpm=1400；2026-10-04 官方商城 API 回填：ref_price=4999，wash_cap=14，energy=一级级，wash_ratio=1.32，sterilize=除菌除螨，spin_rpm=1400",
+  "updated_at": "2026-10-04",
+  "img": "wash_zone_pro14.webp",
+  "brand": "小米",
+  "ref_price": 4999
+ },
+ {
+  "id": "wash_zone_pro14_dry",
+  "name": "米家三筒洗衣机 健康洗Pro 洗烘 14kg",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "多筒/迷你",
+  "official_price": 5881,
+  "second_hand": "—",
+  "wash_cap": 14,
+  "dry_cap": 9,
+  "wash_ratio": 1.32,
+  "spin_rpm": 1400,
+  "energy": "一级级",
+  "sterilize": "除菌除螨",
+  "smart": "支持智能互联",
+  "noise": "洗涤52dB",
+  "size": "598×597×850mm",
+  "year": null,
+  "pros": [
+   "三筒分区洗护",
+   "14kg洗9kg烘",
+   "洗净比1.32",
+   "直驱变频电机",
+   "除菌除螨"
+  ],
+  "cons": [
+   "冷凝烘干非热泵"
+  ],
+  "tags": [
+   "多筒/迷你"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230809238",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=5999，wash_cap=14，dry_cap=9，size=598×597×850mm，energy=一级，wash_ratio=1.32，sterilize=除菌除螨，noise=洗涤52dB，spin_rpm=1400，smart=支持智能互联；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：能效「一级」统一为库内口径「1级」；2026-10-04 官方商城 API 回填：ref_price=5999，wash_cap=14，dry_cap=9，energy=一级级，wash_ratio=1.32，sterilize=除菌除螨，spin_rpm=1400；2026-10-04 官方商城 API 回填：ref_price=5999，wash_cap=14，dry_cap=9，energy=一级级，wash_ratio=1.32，sterilize=除菌除螨，spin_rpm=1400",
+  "updated_at": "2026-10-04",
+  "img": "wash_zone_pro14_dry.webp",
+  "brand": "小米",
+  "ref_price": 5999
+ },
+ {
+  "id": "wash_electro_12d",
+  "name": "米家洗衣机Pro 超电解新风 洗烘 12kg",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "滚筒洗烘一体",
+  "official_price": 4099,
+  "second_hand": "—",
+  "wash_cap": 12,
+  "dry_cap": 9,
+  "wash_ratio": 1.3,
+  "spin_rpm": 1400,
+  "energy": "一级级",
+  "sterilize": "查不到",
+  "smart": "支持智能互联",
+  "noise": "洗涤50dB",
+  "size": "598×620×850mm",
+  "year": null,
+  "pros": [
+   "超电解新风",
+   "12kg洗9kg烘",
+   "洗净比1.3",
+   "直驱变频电机"
+  ],
+  "cons": [
+   "冷凝烘干非热泵"
+  ],
+  "tags": [
+   "滚筒洗烘一体"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230809036",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=4999，wash_cap=12，dry_cap=9，size=598×620×850mm，energy=一级，wash_ratio=1.3，noise=洗涤50dB，spin_rpm=1400，smart=支持智能互联；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：能效「一级」统一为库内口径「1级」；2026-10-04 官方商城 API 回填：ref_price=4999，wash_cap=12，dry_cap=9，energy=一级级，wash_ratio=1.3，spin_rpm=1400；2026-10-04 官方商城 API 回填：ref_price=4999，wash_cap=12，dry_cap=9，energy=一级级，wash_ratio=1.3，spin_rpm=1400",
+  "updated_at": "2026-10-04",
+  "img": "wash_electro_12d.webp",
+  "brand": "小米",
+  "ref_price": 4999
+ },
+ {
+  "id": "wash_electro_12",
+  "name": "米家洗衣机Pro 超电解新风 滚筒 12kg",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "滚筒洗烘一体",
+  "official_price": 3499,
+  "second_hand": "—",
+  "wash_cap": 12,
+  "dry_cap": null,
+  "wash_ratio": 1.3,
+  "spin_rpm": 1400,
+  "energy": "一级级",
+  "sterilize": "查不到",
+  "smart": "支持智能互联",
+  "noise": "洗涤50dB",
+  "size": "598×620×850mm",
+  "year": null,
+  "pros": [
+   "超电解新风",
+   "12kg滚筒",
+   "洗净比1.3",
+   "直驱变频电机"
+  ],
+  "cons": [
+   "无烘干功能"
+  ],
+  "tags": [
+   "滚筒洗烘一体"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230809037",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=4399，wash_cap=12，size=598×620×850mm，energy=一级，wash_ratio=1.3，noise=洗涤50dB，spin_rpm=1400，smart=支持智能互联；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：能效「一级」统一为库内口径「1级」；2026-10-04 官方商城 API 回填：ref_price=4399，wash_cap=12，energy=一级级，wash_ratio=1.3，spin_rpm=1400；2026-10-04 官方商城 API 回填：ref_price=4399，wash_cap=12，energy=一级级，wash_ratio=1.3，spin_rpm=1400",
+  "updated_at": "2026-10-04",
+  "img": "wash_electro_12.webp",
+  "brand": "小米",
+  "ref_price": 4399
+ },
+ {
+  "id": "wash_electro_13d",
+  "name": "米家洗衣机Pro 至尊版 超电解智投 洗烘 13kg",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "滚筒洗烘一体",
+  "official_price": 3099,
+  "second_hand": "—",
+  "wash_cap": 13,
+  "dry_cap": 9,
+  "wash_ratio": 1.3,
+  "spin_rpm": 1200,
+  "energy": "一级级",
+  "sterilize": "查不到",
+  "smart": "支持智能互联",
+  "noise": "洗涤50dB",
+  "size": "598×610×850mm",
+  "year": null,
+  "pros": [
+   "超电解智投",
+   "13kg洗9kg烘",
+   "洗净比1.3",
+   "直驱变频电机"
+  ],
+  "cons": [
+   "冷凝烘干非热泵"
+  ],
+  "tags": [
+   "滚筒洗烘一体"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230808094",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=4199，wash_cap=13，dry_cap=9，size=598×610×850mm，energy=一级，wash_ratio=1.3，noise=洗涤50dB，spin_rpm=1200，smart=支持智能互联；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：能效「一级」统一为库内口径「1级」；2026-10-04 官方商城 API 回填：ref_price=4199，wash_cap=13，dry_cap=9，energy=一级级，wash_ratio=1.3，spin_rpm=1200；2026-10-04 官方商城 API 回填：ref_price=4199，wash_cap=13，dry_cap=9，energy=一级级，wash_ratio=1.3，spin_rpm=1200",
+  "updated_at": "2026-10-04",
+  "img": "wash_electro_13d.webp",
+  "brand": "小米",
+  "ref_price": 4199
+ },
+ {
+  "id": "wash_mini_dry5",
+  "name": "米家洗衣机 迷你双筒 洗烘 5kg",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "多筒/迷你",
+  "official_price": 3175,
+  "second_hand": "—",
+  "wash_cap": 5,
+  "dry_cap": 3,
+  "wash_ratio": 1.1,
+  "spin_rpm": 1200,
+  "energy": "一级级",
+  "sterilize": "查不到",
+  "smart": "支持智能互联",
+  "noise": "洗涤50dB",
+  "size": "598×574×478mm",
+  "year": null,
+  "pros": [
+   "双筒洗烘5kg",
+   "5kg洗3kg烘",
+   "直驱变频电机",
+   "一级能效"
+  ],
+  "cons": [
+   "直排烘干"
+  ],
+  "tags": [
+   "多筒/迷你"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230808972",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=3499，wash_cap=5，dry_cap=3，size=598×574×478mm，energy=一级，wash_ratio=1.1，noise=洗涤50dB，spin_rpm=1200，smart=支持智能互联；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：能效「一级」统一为库内口径「1级」；2026-10-04 官方商城 API 回填：ref_price=3499，wash_cap=5，dry_cap=3，energy=一级级，wash_ratio=1.1，spin_rpm=1200；2026-10-04 官方商城 API 回填：ref_price=3499，wash_cap=5，dry_cap=3，energy=一级级，wash_ratio=1.1，spin_rpm=1200",
+  "updated_at": "2026-10-04",
+  "img": "wash_mini_dry5.webp",
+  "brand": "小米",
+  "ref_price": 3499
+ },
+ {
+  "id": "wash_mini_1kg",
+  "name": "米家洗衣机 迷你双区洗烘 1kg",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "多筒/迷你",
+  "official_price": 1499,
+  "second_hand": "—",
+  "wash_cap": 1,
+  "dry_cap": 0.4,
+  "wash_ratio": null,
+  "spin_rpm": 760,
+  "energy": "/级",
+  "sterilize": "查不到",
+  "smart": "支持智能互联",
+  "noise": "洗涤43dB",
+  "size": "530×371×410mm",
+  "year": null,
+  "pros": [
+   "1kg洗0.4kg烘双区",
+   "洗涤噪音43dB",
+   "机身小巧（530×371×410mm）"
+  ],
+  "cons": [
+   "定频电机"
+  ],
+  "tags": [
+   "多筒/迷你"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230807256",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=1999，wash_cap=1，dry_cap=0.4，size=530×371×410mm，noise=洗涤43dB，spin_rpm=760，smart=支持智能互联；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 官方商城 API 回填：ref_price=1999，wash_cap=1，dry_cap=0.4，energy=/级，spin_rpm=760；2026-10-04 官方商城 API 回填：ref_price=1999，wash_cap=1，dry_cap=0.4，energy=/级，spin_rpm=760",
+  "updated_at": "2026-10-04",
+  "img": "wash_mini_1kg.webp",
+  "brand": "小米",
+  "ref_price": 1999
+ },
+ {
+  "id": "wash_mini_12",
+  "name": "米家洗衣机 迷你洗 洗烘 1.2kg",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "多筒/迷你",
+  "official_price": 1881,
+  "second_hand": "—",
+  "wash_cap": 1.2,
+  "dry_cap": 0.5,
+  "wash_ratio": 1.03,
+  "spin_rpm": 800,
+  "energy": "一级",
+  "sterilize": "查不到",
+  "smart": "支持智能互联",
+  "noise": "洗涤47dB",
+  "size": "328×452×461mm",
+  "year": null,
+  "pros": [
+   "1.2kg迷你洗烘",
+   "机身仅328mm宽",
+   "变频电机",
+   "洗涤噪音47dB"
+  ],
+  "cons": [
+   "直排式烘干"
+  ],
+  "tags": [
+   "多筒/迷你"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230804592",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=2199，wash_cap=1.2，dry_cap=0.5，size=328×452×461mm，energy=一级，wash_ratio=1.03，noise=洗涤47dB，spin_rpm=800，smart=支持智能互联；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：能效「一级」统一为库内口径「1级」；2026-10-04 官方商城 API 回填：ref_price=2199，wash_cap=1.2，dry_cap=0.5，energy=一级，wash_ratio=1.03，spin_rpm=800；2026-10-04 官方商城 API 回填：ref_price=2199，wash_cap=1.2，dry_cap=0.5，energy=一级，wash_ratio=1.03，spin_rpm=800",
+  "updated_at": "2026-10-04",
+  "img": "wash_mini_12.webp",
+  "brand": "小米",
+  "ref_price": 2199
+ },
+ {
+  "id": "wash_3drum_11",
+  "name": "米家洗衣机 健康洗 三筒 11kg",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "多筒/迷你",
+  "official_price": 4116,
+  "second_hand": "—",
+  "wash_cap": null,
+  "dry_cap": null,
+  "wash_ratio": null,
+  "spin_rpm": null,
+  "energy": "查不到",
+  "sterilize": "查不到",
+  "smart": "查不到",
+  "noise": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+   "三筒分区洗护",
+   "健康洗系列"
+  ],
+  "cons": [],
+  "tags": [
+   "多筒/迷你"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230809581",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=4999；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 官方商城 API 回填：ref_price=4999；2026-10-04 官方商城 API 回填：ref_price=4999",
+  "updated_at": "2026-10-04",
+  "img": "wash_3drum_11.webp",
+  "brand": "小米",
+  "ref_price": 4999
+ },
+ {
+  "id": "wash_3set_5_12a",
+  "name": "米家三筒套装 三洗双烘 5kg+12kg",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "洗烘套装",
+  "official_price": 6469,
+  "second_hand": "—",
+  "wash_cap": null,
+  "dry_cap": null,
+  "wash_ratio": null,
+  "spin_rpm": null,
+  "energy": "查不到",
+  "sterilize": "查不到",
+  "smart": "查不到",
+  "noise": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+   "三筒分区洗护",
+   "双烘配置"
+  ],
+  "cons": [],
+  "tags": [
+   "洗烘套装"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230809093",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=7898；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 官方商城 API 回填：ref_price=7898；2026-10-04 官方商城 API 回填：ref_price=7898",
+  "updated_at": "2026-10-04",
+  "img": "wash_3set_5_12a.webp",
+  "brand": "小米",
+  "ref_price": 7898
+ },
+ {
+  "id": "wash_3set_5_12b",
+  "name": "米家三筒套装 三洗三烘 5kg+12kg 大筒冷凝烘",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "洗烘套装",
+  "official_price": 7057,
+  "second_hand": "—",
+  "wash_cap": null,
+  "dry_cap": null,
+  "wash_ratio": null,
+  "spin_rpm": null,
+  "energy": "查不到",
+  "sterilize": "查不到",
+  "smart": "查不到",
+  "noise": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+   "三筒分区洗护",
+   "三烘配置（大筒冷凝烘）"
+  ],
+  "cons": [
+   "冷凝烘干非热泵"
+  ],
+  "tags": [
+   "洗烘套装"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230809092",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=8498；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 官方商城 API 回填：ref_price=8498；2026-10-04 官方商城 API 回填：ref_price=8498",
+  "updated_at": "2026-10-04",
+  "img": "wash_3set_5_12b.webp",
+  "brand": "小米",
+  "ref_price": 8498
+ },
+ {
+  "id": "wash_3set_5_13",
+  "name": "米家三筒套装 三洗三烘 5kg+13kg 大筒热泵烘",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "洗烘套装",
+  "official_price": 9057,
+  "second_hand": "—",
+  "wash_cap": null,
+  "dry_cap": null,
+  "wash_ratio": null,
+  "spin_rpm": null,
+  "energy": "查不到",
+  "sterilize": "查不到",
+  "smart": "查不到",
+  "noise": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+   "三筒分区洗护",
+   "热泵烘干"
+  ],
+  "cons": [],
+  "tags": [
+   "洗烘套装"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230809609",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=9998；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 官方商城 API 回填：ref_price=9998；2026-10-04 官方商城 API 回填：ref_price=9998",
+  "updated_at": "2026-10-04",
+  "img": "wash_3set_5_13.webp",
+  "brand": "小米",
+  "ref_price": 9998
+ },
+ {
+  "id": "wash_care_pro13",
+  "name": "米家洗衣机 护衣洗Pro 至尊版 热泵洗烘 13kg",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "滚筒洗烘一体",
+  "official_price": 5881,
+  "second_hand": "—",
+  "wash_cap": 13,
+  "dry_cap": 9,
+  "wash_ratio": 1.3,
+  "spin_rpm": 1400,
+  "energy": "一级级",
+  "sterilize": "除菌除螨",
+  "smart": "支持智能互联",
+  "noise": "洗涤48dB",
+  "size": "598×620×850mm",
+  "year": null,
+  "pros": [
+   "一级级 能效",
+   "除菌除螨 除菌"
+  ],
+  "cons": [],
+  "tags": [
+   "滚筒洗烘一体"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230809271",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=6499，wash_cap=13，dry_cap=9，size=598×620×850mm，energy=一级，wash_ratio=1.3，sterilize=除菌除螨，noise=洗涤48dB，spin_rpm=1400，smart=支持智能互联；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：能效「一级」统一为库内口径「1级」；2026-10-04 官方商城 API 回填：ref_price=6499，wash_cap=13，dry_cap=9，energy=一级级，wash_ratio=1.3，sterilize=除菌除螨，spin_rpm=1400；2026-10-04 官方商城 API 回填：ref_price=6499，wash_cap=13，dry_cap=9，energy=一级级，wash_ratio=1.3，sterilize=除菌除螨，spin_rpm=1400；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）",
+  "updated_at": "2026-10-05",
+  "img": "wash_care_pro13.webp",
+  "brand": "小米",
+  "ref_price": 6499
+ },
+ {
+  "id": "wash_set_3zone",
+  "name": "米家洗烘套装Pro 三区洗 热泵烘 10kg+12kg",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "洗烘套装",
+  "official_price": 9410,
+  "second_hand": "—",
+  "wash_cap": null,
+  "dry_cap": null,
+  "wash_ratio": null,
+  "spin_rpm": null,
+  "energy": "查不到",
+  "sterilize": "查不到",
+  "smart": "查不到",
+  "noise": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+   "三区洗护",
+   "热泵烘干"
+  ],
+  "cons": [],
+  "tags": [
+   "洗烘套装"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230804984",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=10999；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 官方商城 API 回填：ref_price=10999；2026-10-04 官方商城 API 回填：ref_price=10999",
+  "updated_at": "2026-10-04",
+  "img": "wash_set_3zone.webp",
+  "brand": "小米",
+  "ref_price": 10999
+ },
+ {
+  "id": "wash_set_3zone_mini",
+  "name": "米家洗烘套装Pro 三区洗 热泵烘 10kg+12kg 小筒烘",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "洗烘套装",
+  "official_price": 10499,
+  "second_hand": "—",
+  "wash_cap": null,
+  "dry_cap": null,
+  "wash_ratio": null,
+  "spin_rpm": null,
+  "energy": "查不到",
+  "sterilize": "查不到",
+  "smart": "查不到",
+  "noise": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+   "三区洗护",
+   "热泵烘干"
+  ],
+  "cons": [],
+  "tags": [
+   "洗烘套装"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230805497",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=11499；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 官方商城 API 回填：ref_price=11499；2026-10-04 官方商城 API 回填：ref_price=11499",
+  "updated_at": "2026-10-04",
+  "img": "wash_set_3zone_mini.webp",
+  "brand": "小米",
+  "ref_price": 11499
+ },
+ {
+  "id": "wash_set_electro_10",
+  "name": "米家洗烘套装Pro 超电解智投 热泵烘 10kg+10kg",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "洗烘套装",
+  "official_price": 5881,
+  "second_hand": "—",
+  "wash_cap": null,
+  "dry_cap": null,
+  "wash_ratio": null,
+  "spin_rpm": null,
+  "energy": "查不到",
+  "sterilize": "查不到",
+  "smart": "查不到",
+  "noise": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+   "超电解智投",
+   "热泵烘干",
+   "10kg+10kg洗烘套装"
+  ],
+  "cons": [],
+  "tags": [
+   "洗烘套装"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230808503",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=7298；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 官方商城 API 回填：ref_price=7298；2026-10-04 官方商城 API 回填：ref_price=7298",
+  "updated_at": "2026-10-04",
+  "img": "wash_set_electro_10.webp",
+  "brand": "小米",
+  "ref_price": 7298
+ },
+ {
+  "id": "wash_set_electro_12",
+  "name": "米家洗烘套装Pro 超电解智投 热泵烘 12kg+12kg",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "洗烘套装",
+  "official_price": 7645,
+  "second_hand": "—",
+  "wash_cap": null,
+  "dry_cap": null,
+  "wash_ratio": null,
+  "spin_rpm": null,
+  "energy": "查不到",
+  "sterilize": "查不到",
+  "smart": "查不到",
+  "noise": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+   "超电解智投",
+   "热泵烘干"
+  ],
+  "cons": [],
+  "tags": [
+   "洗烘套装"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230805771",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=10298；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 官方商城 API 回填：ref_price=10298；2026-10-04 官方商城 API 回填：ref_price=10298",
+  "updated_at": "2026-10-04",
+  "img": "wash_set_electro_12.webp",
+  "brand": "小米",
+  "ref_price": 10298
+ },
+ {
+  "id": "wash_mini_3kg",
+  "name": "米家洗衣机 迷你洗 3KG",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "多筒/迷你",
+  "official_price": 599,
+  "second_hand": "—",
+  "wash_cap": null,
+  "dry_cap": null,
+  "wash_ratio": null,
+  "spin_rpm": null,
+  "energy": "查不到",
+  "sterilize": "查不到",
+  "smart": "查不到",
+  "noise": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+   "迷你容量",
+   "价格实惠"
+  ],
+  "cons": [],
+  "tags": [
+   "多筒/迷你"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=10050193",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）",
+  "updated_at": "2026-10-04",
+  "img": "wash_mini_3kg.webp",
+  "brand": "小米"
+ },
+ {
+  "id": "wash_wave_8kg",
+  "name": "米家洗衣机 超净洗 波轮 8kg",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "波轮",
+  "official_price": 669,
+  "second_hand": "—",
+  "wash_cap": 8,
+  "dry_cap": null,
+  "wash_ratio": 0.9,
+  "spin_rpm": null,
+  "energy": "一级",
+  "sterilize": "查不到",
+  "smart": "查不到",
+  "noise": "查不到",
+  "size": "515×525×845mm",
+  "year": null,
+  "pros": [
+   "价格实惠",
+   "8kg波轮",
+   "一级能效"
+  ],
+  "cons": [
+   "定频电机"
+  ],
+  "tags": [
+   "波轮"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230804458",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=799，wash_cap=8，size=515×525×845mm，energy=一级，wash_ratio=0.9；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：能效「一级」统一为库内口径「1级」；2026-10-04 官方商城 API 回填：ref_price=799，wash_cap=8，energy=一级，wash_ratio=0.9；2026-10-04 官方商城 API 回填：ref_price=799，wash_cap=8，energy=一级，wash_ratio=0.9",
+  "updated_at": "2026-10-04",
+  "img": "wash_wave_8kg.webp",
+  "brand": "小米",
+  "ref_price": 799
+ },
+ {
+  "id": "wash_drum_8kg",
+  "name": "米家洗衣机 滚筒 8kg",
+  "model_code": "查不到",
+  "miot_model": "查不到",
+  "type": "滚筒洗烘一体",
+  "official_price": 999,
+  "second_hand": "—",
+  "wash_cap": null,
+  "dry_cap": null,
+  "wash_ratio": null,
+  "spin_rpm": null,
+  "energy": "查不到",
+  "sterilize": "查不到",
+  "smart": "查不到",
+  "noise": "查不到",
+  "size": "查不到",
+  "year": null,
+  "pros": [
+   "价格实惠"
+  ],
+  "cons": [],
+  "tags": [
+   "滚筒洗烘一体"
+  ],
+  "verify_status": "已核验（官方商城）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "小米商城"
+  ],
+  "verify_url": "https://www.mi.com/shop/buy/detail?product_id=1230809197",
+  "change_log": "2026-10-01 按小米商城在售目录核对名称/价格/图片；2026-10-04 官方商城 API 回填：ref_price=1199；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 官方商城 API 回填：ref_price=1199；2026-10-04 官方商城 API 回填：ref_price=1199",
+  "updated_at": "2026-10-04",
+  "img": "wash_drum_8kg.webp",
+  "brand": "小米",
+  "ref_price": 1199
+ },
+ {
+  "id": "haier_2848931",
+  "name": "海尔GA120-STF583HU1",
+  "brand": "海尔",
+  "model_code": "GA120-STF583HU1",
+  "type": "滚筒洗烘一体",
+  "official_price": "查不到",
+  "ref_price": 11110,
+  "year": "查不到",
+  "pros": [
+   "紫外线除菌 除菌"
+  ],
+  "cons": [],
+  "tags": [
+   "海尔"
+  ],
+  "wash_cap": "查不到",
+  "dry_cap": 10,
+  "wash_ratio": "查不到",
+  "spin_rpm": "查不到",
+  "energy": "查不到",
+  "noise": "查不到",
+  "size": "613×595×850mm",
+  "smart": "电脑控制",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/washer/haier/2848931_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=干衣机变频）；2026-10-03 回填型号：原「查不到」，产品名「海尔GA120-STF583HU1」中的型号串为 GA120-STF583HU1（来源与产品名同源的第三方规格站）；2026-10-04 回填参数（来源：太平洋规格表 verify_url）：sterilize=紫外线除菌（抗菌类型=紫外线除菌）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（dry_cap=10，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）",
+  "updated_at": "2026-10-05",
+  "sterilize": "紫外线除菌"
+ },
+ {
+  "id": "haier_2922891",
+  "name": "海尔XQG100-ABLEU70D1U1",
+  "brand": "海尔",
+  "model_code": "XQG100-ABLEU70D1U1",
+  "type": "滚筒洗烘一体",
+  "official_price": "查不到",
+  "ref_price": 9198,
+  "year": "查不到",
+  "pros": [
+   "洗净比1.28",
+   "10kg洗6kg烘",
+   "1400转高速脱水",
+   "一级能效"
+  ],
+  "cons": [
+   "烘干容量仅6kg"
+  ],
+  "tags": [
+   "海尔"
+  ],
+  "wash_cap": 10,
+  "dry_cap": 6,
+  "wash_ratio": 1.28,
+  "spin_rpm": 1400,
+  "energy": "1级",
+  "noise": "查不到",
+  "size": "850×595×553mm",
+  "smart": "电脑控制",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/washer/haier/2922891_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=烘洗一体变频）；2026-10-03 回填型号：原「查不到」，产品名「海尔XQG100-ABLEU70D1U1」中的型号串为 XQG100-ABLEU70D1U1（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=10、spin_rpm=1400、dry_cap=6、wash_ratio=1.28，值本身不变，单位由 schema 渲染）",
+  "updated_at": "2026-10-04"
+ },
+ {
+  "id": "haier_2866711",
+  "name": "海尔XQG120-BLEG71CLU1",
+  "brand": "海尔",
+  "model_code": "XQG120-BLEG71CLU1",
+  "type": "滚筒洗烘一体",
+  "official_price": "查不到",
+  "ref_price": 8999,
+  "year": "查不到",
+  "pros": [
+   "1级 能效"
+  ],
+  "cons": [],
+  "tags": [
+   "海尔"
+  ],
+  "wash_cap": 12,
+  "dry_cap": "查不到",
+  "wash_ratio": 1.34,
+  "spin_rpm": 1400,
+  "energy": "1级",
+  "noise": "查不到",
+  "size": "850×595×590mm",
+  "smart": "电脑控制",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/washer/haier/2866711_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=滚筒式变频）；2026-10-03 回填型号：原「查不到」，产品名「海尔XQG120-BLEG71CLU1」中的型号串为 XQG120-BLEG71CLU1（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=12、spin_rpm=1400、wash_ratio=1.34，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）；2026-10-07 补产品图（来源：t14.baidu.com）",
+  "updated_at": "2026-10-07",
+  "img": "haier_2866711.webp"
+ },
+ {
+  "id": "haier_2988562",
+  "name": "海尔XQG100-BLEG7AD5U1",
+  "brand": "海尔",
+  "model_code": "XQG100-BLEG7AD5U1",
+  "type": "滚筒洗烘一体",
+  "official_price": "查不到",
+  "ref_price": 6616,
+  "year": 2026,
+  "pros": [
+   "1级 能效"
+  ],
+  "cons": [],
+  "tags": [
+   "海尔"
+  ],
+  "wash_cap": 10,
+  "dry_cap": "查不到",
+  "wash_ratio": 1.36,
+  "spin_rpm": 1400,
+  "energy": "1级",
+  "noise": "查不到",
+  "size": "850×595×537mm",
+  "smart": "电脑控制",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/washer/haier/2988562_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=滚筒式变频）；2026-10-03 回填型号：原「查不到」，产品名「海尔XQG100-BLEG7AD5U1」中的型号串为 XQG100-BLEG7AD5U1（来源与产品名同源的第三方规格站）；2026-10-04 回填参数（来源：太平洋规格表 verify_url）：year=2026（上市时间=2026年）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=10、spin_rpm=1400、wash_ratio=1.36，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）",
+  "updated_at": "2026-10-05"
+ },
+ {
+  "id": "haier_2598359",
+  "name": "海尔XQG100-HBLEG583HU1",
+  "brand": "海尔",
+  "model_code": "XQG100-HBLEG583HU1",
+  "type": "滚筒洗烘一体",
+  "official_price": "查不到",
+  "ref_price": 4799,
+  "year": "查不到",
+  "pros": [
+   "1级 能效"
+  ],
+  "cons": [],
+  "tags": [
+   "海尔"
+  ],
+  "wash_cap": 10,
+  "dry_cap": 7,
+  "wash_ratio": 1.21,
+  "spin_rpm": 1400,
+  "energy": "1级",
+  "noise": "52/69dB",
+  "size": "595×570×850mm",
+  "smart": "app控制",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/washer/haier/2598359_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=滚筒式变频）；2026-10-03 回填型号：原「查不到」，产品名「海尔XQG100-HBLEG583HU1」中的型号串为 XQG100-HBLEG583HU1（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=10、spin_rpm=1400、dry_cap=7、wash_ratio=1.21，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）",
+  "updated_at": "2026-10-05"
+ },
+ {
+  "id": "haier_2614499",
+  "name": "海尔XQG100-BLDE566WH",
+  "brand": "海尔",
+  "model_code": "XQG100-BLDE566WH",
+  "type": "滚筒洗烘一体",
+  "official_price": "查不到",
+  "ref_price": 4599,
+  "year": "查不到",
+  "pros": [
+   "1级 能效"
+  ],
+  "cons": [],
+  "tags": [
+   "海尔"
+  ],
+  "wash_cap": 10,
+  "dry_cap": "查不到",
+  "wash_ratio": 1.12,
+  "spin_rpm": 1400,
+  "energy": "1级",
+  "noise": "52/69dB",
+  "size": "595×537×850mm",
+  "smart": "查不到",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/washer/haier/2614499_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（3 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=滚筒式变频）；2026-10-03 回填型号：原「查不到」，产品名「海尔XQG100-BLDE566WH」中的型号串为 XQG100-BLDE566WH（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=10、spin_rpm=1400、wash_ratio=1.12，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）",
+  "updated_at": "2026-10-05"
+ },
+ {
+  "id": "midea_2988682",
+  "name": "美的MDH12F10",
+  "brand": "美的",
+  "model_code": "MDH12F10",
+  "type": "滚筒洗烘一体",
+  "official_price": "查不到",
+  "ref_price": 6534,
+  "year": 2026,
+  "pros": [
+   "1级 能效"
+  ],
+  "cons": [],
+  "tags": [
+   "美的"
+  ],
+  "wash_cap": 12,
+  "dry_cap": 9,
+  "wash_ratio": 1.32,
+  "spin_rpm": 1400,
+  "energy": "1级",
+  "noise": "查不到",
+  "size": "595×600×850mm",
+  "smart": "电脑控制",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/washer/midea/2988682_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=烘洗一体变频）；2026-10-03 回填型号：原「查不到」，产品名「美的MDH12F10」中的型号串为 MDH12F10（来源与产品名同源的第三方规格站）；2026-10-04 回填参数（来源：太平洋规格表 verify_url）：year=2026（上市时间=2026年）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=12、spin_rpm=1400、dry_cap=9、wash_ratio=1.32，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）；2026-10-07 补产品图（来源：oss-accelerate-ga.midea.com）",
+  "updated_at": "2026-10-07",
+  "img": "midea_2988682.webp"
+ },
+ {
+  "id": "midea_2731339",
+  "name": "美的MD11DDEX",
+  "brand": "美的",
+  "model_code": "MD11DDEX",
+  "type": "滚筒洗烘一体",
+  "official_price": "查不到",
+  "ref_price": 4999,
+  "year": "查不到",
+  "pros": [
+   "1级 能效"
+  ],
+  "cons": [],
+  "tags": [
+   "美的"
+  ],
+  "wash_cap": 11,
+  "dry_cap": 7.5,
+  "wash_ratio": 1.28,
+  "spin_rpm": 1400,
+  "energy": "1级",
+  "noise": "查不到",
+  "size": "600×595×850mm",
+  "smart": "电脑控制",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+   "太平洋电脑网",
+   "美的官方商城"
+  ],
+  "verify_url": "https://www.midea.cn/#/detail?skuId=100181",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（3 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=烘洗一体变频）；2026-10-03 回填型号：原「查不到」，产品名「美的MD11DDEX」中的型号串为 MD11DDEX（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=11、spin_rpm=1400、dry_cap=7.5、wash_ratio=1.28，值本身不变，单位由 schema 渲染）；2026-10-05 美的官方商城补参（skuId=100181，型号已逐字核对）：size=600×595×850mm（productPacking Length×Width×Height=600/595/850（已排除 indoorPacking 包装尺寸））；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）；2026-10-07 补产品图（来源：dsdcp.smartmidea.net）",
+  "updated_at": "2026-10-07",
+  "img": "midea_2731339.webp"
+ },
+ {
+  "id": "midea_2923351",
+  "name": "美的MD12F1",
+  "brand": "美的",
+  "model_code": "MD12F1",
+  "type": "滚筒洗烘一体",
+  "official_price": "查不到",
+  "ref_price": 4573,
+  "year": "查不到",
+  "pros": [
+   "1级 能效"
+  ],
+  "cons": [],
+  "tags": [
+   "美的"
+  ],
+  "wash_cap": 12,
+  "dry_cap": 9,
+  "wash_ratio": 1.36,
+  "spin_rpm": 1200,
+  "energy": "1级",
+  "noise": "查不到",
+  "size": "595×599×850mm",
+  "smart": "电脑控制",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/washer/midea/2923351_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=烘洗一体变频）；2026-10-03 回填型号：原「查不到」，产品名「美的MD12F1」中的型号串为 MD12F1（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=12、spin_rpm=1200、dry_cap=9、wash_ratio=1.36，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）",
+  "updated_at": "2026-10-05"
+ },
+ {
+  "id": "midea_2923371",
+  "name": "美的MG12F2",
+  "brand": "美的",
+  "model_code": "MG12F2",
+  "type": "滚筒洗烘一体",
+  "official_price": "查不到",
+  "ref_price": 4443,
+  "year": 2026,
+  "pros": [
+   "1级 能效"
+  ],
+  "cons": [],
+  "tags": [
+   "美的"
+  ],
+  "wash_cap": 12,
+  "dry_cap": "查不到",
+  "wash_ratio": 1.36,
+  "spin_rpm": 1200,
+  "energy": "1级",
+  "noise": "查不到",
+  "size": "595×599×850mm",
+  "smart": "电脑控制",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-05",
+  "verify_source": [
+   "太平洋电脑网",
+   "苏宁易购"
+  ],
+  "verify_url": "https://product.suning.com/0010358481/12451932140.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=滚筒式变频）；2026-10-03 回填型号：原「查不到」，产品名「美的MG12F2」中的型号串为 MG12F2（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=12、spin_rpm=1200、wash_ratio=1.36，值本身不变，单位由 schema 渲染）；2026-10-05 苏宁易购补参：year=2026（上市时间（月）=2026-04）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）",
+  "updated_at": "2026-10-05"
+ },
+ {
+  "id": "midea_2744939",
+  "name": "美的MG12S30T",
+  "brand": "美的",
+  "model_code": "MG12S30T",
+  "type": "滚筒洗烘一体",
+  "official_price": "查不到",
+  "ref_price": 3299,
+  "year": "查不到",
+  "pros": [
+   "1级 能效"
+  ],
+  "cons": [],
+  "tags": [
+   "美的"
+  ],
+  "wash_cap": 12,
+  "dry_cap": "查不到",
+  "wash_ratio": 1.15,
+  "spin_rpm": 1200,
+  "energy": "1级",
+  "noise": "查不到",
+  "size": "850×595×599mm",
+  "smart": "电脑控制",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/washer/midea/2744939_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=滚筒式变频）；2026-10-03 回填型号：原「查不到」，产品名「美的MG12S30T」中的型号串为 MG12S30T（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=12、spin_rpm=1200、wash_ratio=1.15，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）",
+  "updated_at": "2026-10-05"
+ },
+ {
+  "id": "midea_2732379",
+  "name": "美的MD10S10T",
+  "brand": "美的",
+  "model_code": "MD10S10T",
+  "type": "滚筒洗烘一体",
+  "official_price": "查不到",
+  "ref_price": 3199,
+  "year": "查不到",
+  "pros": [
+   "1级 能效"
+  ],
+  "cons": [],
+  "tags": [
+   "美的"
+  ],
+  "wash_cap": 10,
+  "dry_cap": 7,
+  "wash_ratio": 1.15,
+  "spin_rpm": 1400,
+  "energy": "1级",
+  "noise": "查不到",
+  "size": "595×565×850mm",
+  "smart": "电脑控制",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/washer/midea/2732379_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=烘洗一体变频）；2026-10-03 回填型号：原「查不到」，产品名「美的MD10S10T」中的型号串为 MD10S10T（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=10、spin_rpm=1400、dry_cap=7、wash_ratio=1.15，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）；2026-10-07 补产品图（来源：t14.baidu.com）",
+  "updated_at": "2026-10-07",
+  "img": "midea_2732379.webp"
+ },
+ {
+  "id": "siemens_2742399",
+  "name": "西门子WQ56U4D10W",
+  "brand": "西门子",
+  "model_code": "WQ56U4D10W",
+  "type": "滚筒洗烘一体",
+  "official_price": "查不到",
+  "ref_price": 10353,
+  "year": "查不到",
+  "pros": [
+   "高温除菌 除菌"
+  ],
+  "cons": [],
+  "tags": [
+   "西门子"
+  ],
+  "wash_cap": "查不到",
+  "dry_cap": 10,
+  "wash_ratio": "查不到",
+  "spin_rpm": "查不到",
+  "energy": "查不到",
+  "noise": "查不到",
+  "size": "641×597×842mm",
+  "smart": "电脑控制",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/washer/siemens/2742399_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=干衣机变频）；2026-10-03 回填型号：原「查不到」，产品名「西门子WQ56U4D10W」中的型号串为 WQ56U4D10W（来源与产品名同源的第三方规格站）；2026-10-04 回填参数（来源：太平洋规格表 verify_url）：sterilize=高温除菌（抗菌类型=高温除菌）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（dry_cap=10，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）",
+  "updated_at": "2026-10-05",
+  "sterilize": "高温除菌"
+ },
+ {
+  "id": "siemens_2734459",
+  "name": "西门子XQG100-WG54C5C80W",
+  "brand": "西门子",
+  "model_code": "XQG100-WG54C5C80W",
+  "type": "滚筒洗烘一体",
+  "official_price": "查不到",
+  "ref_price": 8990,
+  "year": "查不到",
+  "pros": [
+   "1级 能效"
+  ],
+  "cons": [],
+  "tags": [
+   "西门子"
+  ],
+  "wash_cap": 10,
+  "dry_cap": "查不到",
+  "wash_ratio": 1.1,
+  "spin_rpm": 1400,
+  "energy": "1级",
+  "noise": "查不到",
+  "size": "598×590×848mm",
+  "smart": "电脑控制",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/washer/siemens/2734459_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=滚筒式变频）；2026-10-03 回填型号：原「查不到」，产品名「西门子XQG100-WG54C5C80W」中的型号串为 XQG100-WG54C5C80W（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=10、spin_rpm=1400、wash_ratio=1.1，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）",
+  "updated_at": "2026-10-05"
+ },
+ {
+  "id": "siemens_2867591",
+  "name": "西门子WG54F7F20W",
+  "brand": "西门子",
+  "model_code": "WG54F7F20W",
+  "type": "滚筒洗烘一体",
+  "official_price": "查不到",
+  "ref_price": 8790,
+  "year": "查不到",
+  "pros": [
+   "1级 能效"
+  ],
+  "cons": [],
+  "tags": [
+   "西门子"
+  ],
+  "wash_cap": 10,
+  "dry_cap": "查不到",
+  "wash_ratio": 1.1,
+  "spin_rpm": 1200,
+  "energy": "1级",
+  "noise": "查不到",
+  "size": "598×600×848mm",
+  "smart": "电脑控制",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/washer/siemens/2867591_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=滚筒式变频）；2026-10-03 回填型号：原「查不到」，产品名「西门子WG54F7F20W」中的型号串为 WG54F7F20W（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=10、spin_rpm=1200、wash_ratio=1.1，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）",
+  "updated_at": "2026-10-05"
+ },
+ {
+  "id": "siemens_2742419",
+  "name": "西门子WQ55K7U80W",
+  "brand": "西门子",
+  "model_code": "WQ55K7U80W",
+  "type": "滚筒洗烘一体",
+  "official_price": "查不到",
+  "ref_price": 8590,
+  "year": "查不到",
+  "pros": [
+   "高温除菌 除菌"
+  ],
+  "cons": [],
+  "tags": [
+   "西门子"
+  ],
+  "wash_cap": "查不到",
+  "dry_cap": 10,
+  "wash_ratio": "查不到",
+  "spin_rpm": "查不到",
+  "energy": "查不到",
+  "noise": "查不到",
+  "size": "613×598×842mm",
+  "smart": "电脑控制",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/washer/siemens/2742419_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=干衣机变频）；2026-10-03 回填型号：原「查不到」，产品名「西门子WQ55K7U80W」中的型号串为 WQ55K7U80W（来源与产品名同源的第三方规格站）；2026-10-04 回填参数（来源：太平洋规格表 verify_url）：sterilize=高温除菌（抗菌类型=高温除菌）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（dry_cap=10，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）；2026-10-07 补产品图（来源：t14.baidu.com）",
+  "updated_at": "2026-10-07",
+  "sterilize": "高温除菌",
+  "img": "siemens_2742419.webp"
+ },
+ {
+  "id": "siemens_2867531",
+  "name": "西门子XQG100-WN54K7G00W",
+  "brand": "西门子",
+  "model_code": "XQG100-WN54K7G00W",
+  "type": "滚筒洗烘一体",
+  "official_price": "查不到",
+  "ref_price": 8461,
+  "year": "查不到",
+  "pros": [
+   "1级 能效"
+  ],
+  "cons": [],
+  "tags": [
+   "西门子"
+  ],
+  "wash_cap": 10,
+  "dry_cap": 7,
+  "wash_ratio": 1.1,
+  "spin_rpm": 1400,
+  "energy": "1级",
+  "noise": "查不到",
+  "size": "848×598×590mm",
+  "smart": "电脑控制",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/washer/siemens/2867531_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=烘洗一体变频）；2026-10-03 回填型号：原「查不到」，产品名「西门子XQG100-WN54K7G00W」中的型号串为 XQG100-WN54K7G00W（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=10、spin_rpm=1400、dry_cap=7、wash_ratio=1.1，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）",
+  "updated_at": "2026-10-05"
+ },
+ {
+  "id": "siemens_2742379",
+  "name": "西门子WQ55A2D10W",
+  "brand": "西门子",
+  "model_code": "WQ55A2D10W",
+  "type": "滚筒洗烘一体",
+  "official_price": "查不到",
+  "ref_price": 7499,
+  "year": "查不到",
+  "pros": [
+   "高温除菌 除菌"
+  ],
+  "cons": [],
+  "tags": [
+   "西门子"
+  ],
+  "wash_cap": "查不到",
+  "dry_cap": 10,
+  "wash_ratio": "查不到",
+  "spin_rpm": "查不到",
+  "energy": "查不到",
+  "noise": "查不到",
+  "size": "613×598×842mm",
+  "smart": "电脑控制",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/washer/siemens/2742379_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（2 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=干衣机变频）；2026-10-03 回填型号：原「查不到」，产品名「西门子WQ55A2D10W」中的型号串为 WQ55A2D10W（来源与产品名同源的第三方规格站）；2026-10-04 回填参数（来源：太平洋规格表 verify_url）：sterilize=高温除菌（抗菌类型=高温除菌）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（dry_cap=10，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）",
+  "updated_at": "2026-10-05",
+  "sterilize": "高温除菌"
+ },
+ {
+  "id": "panasonic_2734819",
+  "name": "松下XQG120-X1K7",
+  "brand": "松下",
+  "model_code": "XQG120-X1K7",
+  "type": "滚筒洗烘一体",
+  "official_price": "查不到",
+  "ref_price": 8499,
+  "year": "查不到",
+  "pros": [
+   "1级 能效"
+  ],
+  "cons": [],
+  "tags": [
+   "松下"
+  ],
+  "wash_cap": 12,
+  "dry_cap": "查不到",
+  "wash_ratio": 1.11,
+  "spin_rpm": 1200,
+  "energy": "1级",
+  "noise": "查不到",
+  "size": "596×635×845mm",
+  "smart": "电脑控制",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/washer/panasonic/2734819_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=滚筒式变频）；2026-10-03 回填型号：原「查不到」，产品名「松下XQG120-X1K7」中的型号串为 XQG120-X1K7（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=12、spin_rpm=1200、wash_ratio=1.11，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）",
+  "updated_at": "2026-10-05"
+ },
+ {
+  "id": "panasonic_2992282",
+  "name": "松下XQG100-S26Q",
+  "brand": "松下",
+  "model_code": "XQG100-S26Q",
+  "type": "滚筒洗烘一体",
+  "official_price": "查不到",
+  "ref_price": 8475,
+  "year": 2026,
+  "pros": [
+   "1级 能效"
+  ],
+  "cons": [],
+  "tags": [
+   "松下"
+  ],
+  "wash_cap": 10,
+  "dry_cap": "查不到",
+  "wash_ratio": 1.12,
+  "spin_rpm": 1500,
+  "energy": "1级",
+  "noise": "查不到",
+  "size": "600×505×845mm",
+  "smart": "电脑控制",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/washer/panasonic/2992282_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=滚筒式变频）；2026-10-03 回填型号：原「查不到」，产品名「松下XQG100-S26Q」中的型号串为 XQG100-S26Q（来源与产品名同源的第三方规格站）；2026-10-04 回填参数（来源：太平洋规格表 verify_url）：year=2026（上市时间=2026年）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=10、spin_rpm=1500、wash_ratio=1.12，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）",
+  "updated_at": "2026-10-05"
+ },
+ {
+  "id": "panasonic_2992662",
+  "name": "绝对是次世代的洗衣机 松下ALPHA独家深度评测",
+  "brand": "松下",
+  "model_code": "查不到",
+  "type": "滚筒洗烘一体",
+  "official_price": "查不到",
+  "ref_price": 8475,
+  "year": "查不到",
+  "pros": [
+   "1级 能效"
+  ],
+  "cons": [],
+  "tags": [
+   "松下"
+  ],
+  "wash_cap": 12,
+  "dry_cap": "查不到",
+  "wash_ratio": 1.38,
+  "spin_rpm": 1400,
+  "energy": "1级",
+  "noise": "查不到",
+  "size": "596×600×845mm",
+  "smart": "电脑控制",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/washer/panasonic/2992662_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（6 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=12、spin_rpm=1400、wash_ratio=1.38，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）；2026-10-07 补产品图（来源：img1.baidu.com）",
+  "updated_at": "2026-10-07",
+  "img": "panasonic_2992662.webp"
+ },
+ {
+  "id": "panasonic_2664639",
+  "name": "松下XQG100-M2ND1",
+  "brand": "松下",
+  "model_code": "XQG100-M2ND1",
+  "type": "滚筒洗烘一体",
+  "official_price": "查不到",
+  "ref_price": 7399,
+  "year": "查不到",
+  "pros": [
+   "1级 能效"
+  ],
+  "cons": [],
+  "tags": [
+   "松下"
+  ],
+  "wash_cap": 10,
+  "dry_cap": 7,
+  "wash_ratio": 1.12,
+  "spin_rpm": 1500,
+  "energy": "1级",
+  "noise": "查不到",
+  "size": "600×505×845mm",
+  "smart": "app控制",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/washer/panasonic/2664639_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=滚筒式变频）；2026-10-03 回填型号：原「查不到」，产品名「松下XQG100-M2ND1」中的型号串为 XQG100-M2ND1（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=10、spin_rpm=1500、dry_cap=7、wash_ratio=1.12，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）；2026-10-07 补产品图（来源：img1.baidu.com）",
+  "updated_at": "2026-10-07",
+  "img": "panasonic_2664639.webp"
+ },
+ {
+  "id": "panasonic_2664599",
+  "name": "松下XQG100-M2Q1",
+  "brand": "松下",
+  "model_code": "XQG100-M2Q1",
+  "type": "滚筒洗烘一体",
+  "official_price": "查不到",
+  "ref_price": 6699,
+  "year": "查不到",
+  "pros": [
+   "1级 能效"
+  ],
+  "cons": [],
+  "tags": [
+   "松下"
+  ],
+  "wash_cap": 10,
+  "dry_cap": "查不到",
+  "wash_ratio": 1.12,
+  "spin_rpm": 1500,
+  "energy": "1级",
+  "noise": "查不到",
+  "size": "600×505×845mm",
+  "smart": "查不到",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/washer/panasonic/2664599_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（3 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=滚筒式变频）；2026-10-03 回填型号：原「查不到」，产品名「松下XQG100-M2Q1」中的型号串为 XQG100-M2Q1（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=10、spin_rpm=1500、wash_ratio=1.12，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）",
+  "updated_at": "2026-10-05"
+ },
+ {
+  "id": "panasonic_2748519",
+  "name": "松下XQG100-SA1GM",
+  "brand": "松下",
+  "model_code": "XQG100-SA1GM",
+  "type": "滚筒洗烘一体",
+  "official_price": "查不到",
+  "ref_price": 6499,
+  "year": "查不到",
+  "pros": [
+   "1级 能效",
+   "银离子除菌 除菌"
+  ],
+  "cons": [],
+  "tags": [
+   "松下"
+  ],
+  "wash_cap": 10,
+  "dry_cap": 7,
+  "wash_ratio": 1.1,
+  "spin_rpm": 1200,
+  "energy": "1级",
+  "noise": "查不到",
+  "size": "596×506×845mm",
+  "smart": "电脑控制",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/washer/panasonic/2748519_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=烘洗一体变频）；2026-10-03 回填型号：原「查不到」，产品名「松下XQG100-SA1GM」中的型号串为 XQG100-SA1GM（来源与产品名同源的第三方规格站）；2026-10-04 回填参数（来源：太平洋规格表 verify_url）：sterilize=银离子除菌（抗菌类型=银离子除菌）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=10、spin_rpm=1200、dry_cap=7、wash_ratio=1.1，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）",
+  "updated_at": "2026-10-05",
+  "sterilize": "银离子除菌"
+ },
+ {
+  "id": "gree_2794611",
+  "name": "格力XQG100-RBD1401Eb1",
+  "brand": "格力",
+  "model_code": "XQG100-RBD1401Eb1",
+  "type": "滚筒洗烘一体",
+  "official_price": "查不到",
+  "ref_price": 18999,
+  "year": "查不到",
+  "pros": [
+   "银离子除菌",
+   "10kg洗6kg烘",
+   "1400转高速脱水",
+   "一级能效"
+  ],
+  "cons": [
+   "烘干容量仅6kg",
+   "定价较高"
+  ],
+  "tags": [
+   "格力"
+  ],
+  "wash_cap": 10,
+  "dry_cap": 6,
+  "wash_ratio": 1.1,
+  "spin_rpm": 1400,
+  "energy": "1级",
+  "noise": "查不到",
+  "size": "596×604×986mm",
+  "smart": "电脑控制",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/washer/gree/2794611_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=烘洗一体变频）；2026-10-03 回填型号：原「查不到」，产品名「格力XQG100-RBD1401Eb1」中的型号串为 XQG100-RBD1401Eb1（来源与产品名同源的第三方规格站）；2026-10-04 回填参数（来源：太平洋规格表 verify_url）：sterilize=银离子除菌（抗菌类型=银离子除菌）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=10、spin_rpm=1400、dry_cap=6、wash_ratio=1.1，值本身不变，单位由 schema 渲染）",
+  "updated_at": "2026-10-04",
+  "sterilize": "银离子除菌"
+ },
+ {
+  "id": "gree_1628427",
+  "name": "格力XQG100-RBD1401Ea1",
+  "brand": "格力",
+  "model_code": "XQG100-RBD1401Ea1",
+  "type": "滚筒洗烘一体",
+  "official_price": "查不到",
+  "ref_price": 15999,
+  "year": "查不到",
+  "pros": [
+   "10kg洗6kg烘",
+   "1400转高速脱水",
+   "一级能效"
+  ],
+  "cons": [
+   "烘干容量仅6kg",
+   "定价较高"
+  ],
+  "tags": [
+   "格力"
+  ],
+  "wash_cap": 10,
+  "dry_cap": 6,
+  "wash_ratio": 1.08,
+  "spin_rpm": 1400,
+  "energy": "1级",
+  "noise": "查不到",
+  "size": "644×596×986mm",
+  "smart": "查不到",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/washer/gree/1628427_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（3 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=烘洗一体变频）；2026-10-03 回填型号：原「查不到」，产品名「格力XQG100-RBD1401Ea1」中的型号串为 XQG100-RBD1401Ea1（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=10、spin_rpm=1400、dry_cap=6、wash_ratio=1.08，值本身不变，单位由 schema 渲染）；2026-10-07 补产品图（来源：img0.baidu.com）",
+  "updated_at": "2026-10-07",
+  "img": "gree_1628427.webp"
+ },
+ {
+  "id": "gree_1811387",
+  "name": "格力XQG100-RBKD1401Aa1",
+  "brand": "格力",
+  "model_code": "XQG100-RBKD1401Aa1",
+  "type": "滚筒洗烘一体",
+  "official_price": "查不到",
+  "ref_price": 14999,
+  "year": "查不到",
+  "pros": [
+   "10kg洗6kg烘",
+   "1400转高速脱水",
+   "一级能效"
+  ],
+  "cons": [
+   "烘干容量仅6kg",
+   "定价较高"
+  ],
+  "tags": [
+   "格力"
+  ],
+  "wash_cap": 10,
+  "dry_cap": 6,
+  "wash_ratio": 1.1,
+  "spin_rpm": 1400,
+  "energy": "1级",
+  "noise": "查不到",
+  "size": "690×596×850mm",
+  "smart": "电脑控制",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/washer/gree/1811387_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=滚筒式变频）；2026-10-03 回填型号：原「查不到」，产品名「格力XQG100-RBKD1401Aa1」中的型号串为 XQG100-RBKD1401Aa1（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=10、spin_rpm=1400、dry_cap=6、wash_ratio=1.1，值本身不变，单位由 schema 渲染）",
+  "updated_at": "2026-10-04"
+ },
+ {
+  "id": "gree_2760499",
+  "name": "格力XQG100-RBKD1401Ac1",
+  "brand": "格力",
+  "model_code": "XQG100-RBKD1401Ac1",
+  "type": "滚筒洗烘一体",
+  "official_price": "查不到",
+  "ref_price": 9999,
+  "year": "查不到",
+  "pros": [
+   "银离子除菌",
+   "10kg洗6kg烘",
+   "1400转高速脱水",
+   "一级能效"
+  ],
+  "cons": [
+   "烘干容量仅6kg"
+  ],
+  "tags": [
+   "格力"
+  ],
+  "wash_cap": 10,
+  "dry_cap": 6,
+  "wash_ratio": 1.1,
+  "spin_rpm": 1400,
+  "energy": "1级",
+  "noise": "查不到",
+  "size": "690×596×850mm",
+  "smart": "电脑控制",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/washer/gree/2760499_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=烘洗一体变频）；2026-10-03 回填型号：原「查不到」，产品名「格力XQG100-RBKD1401Ac1」中的型号串为 XQG100-RBKD1401Ac1（来源与产品名同源的第三方规格站）；2026-10-04 回填参数（来源：太平洋规格表 verify_url）：sterilize=银离子除菌（抗菌类型=银离子除菌）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=10、spin_rpm=1400、dry_cap=6、wash_ratio=1.1，值本身不变，单位由 schema 渲染）",
+  "updated_at": "2026-10-04",
+  "sterilize": "银离子除菌"
+ },
+ {
+  "id": "gree_2747959",
+  "name": "格力XQG100-RBKD1401Ad1",
+  "brand": "格力",
+  "model_code": "XQG100-RBKD1401Ad1",
+  "type": "滚筒洗烘一体",
+  "official_price": "查不到",
+  "ref_price": 9399,
+  "year": "查不到",
+  "pros": [
+   "洗净比1.2",
+   "10kg洗6kg烘",
+   "1400转高速脱水",
+   "一级能效"
+  ],
+  "cons": [
+   "烘干容量仅6kg"
+  ],
+  "tags": [
+   "格力"
+  ],
+  "wash_cap": 10,
+  "dry_cap": 6,
+  "wash_ratio": 1.2,
+  "spin_rpm": 1400,
+  "energy": "1级",
+  "noise": "查不到",
+  "size": "596×660×850mm",
+  "smart": "电脑控制",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-04",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/washer/gree/2747959_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（4 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=烘洗一体变频）；2026-10-03 回填型号：原「查不到」，产品名「格力XQG100-RBKD1401Ad1」中的型号串为 XQG100-RBKD1401Ad1（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=10、spin_rpm=1400、dry_cap=6、wash_ratio=1.2，值本身不变，单位由 schema 渲染）",
+  "updated_at": "2026-10-04"
+ },
+ {
+  "id": "gree_2614239",
+  "name": "格力XQG100-DWD1401Fa1",
+  "brand": "格力",
+  "model_code": "XQG100-DWD1401Fa1",
+  "type": "滚筒洗烘一体",
+  "official_price": "查不到",
+  "ref_price": 6999,
+  "year": "查不到",
+  "pros": [
+   "1级 能效"
+  ],
+  "cons": [],
+  "tags": [
+   "格力"
+  ],
+  "wash_cap": 10,
+  "dry_cap": 7,
+  "wash_ratio": 1.12,
+  "spin_rpm": 1400,
+  "energy": "1级",
+  "noise": "查不到",
+  "size": "610×596×850mm",
+  "smart": "查不到",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/washer/gree/2614239_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（3 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：滚筒洗烘一体（依据：第三方类型=滚筒式变频）；2026-10-03 回填型号：原「查不到」，产品名「格力XQG100-DWD1401Fa1」中的型号串为 XQG100-DWD1401Fa1（来源与产品名同源的第三方规格站）；2026-10-04 补全：卖点标签（依据：已入库参数与官方商品名/商城文案，未引入新数值）；2026-10-04 订正：容量/转速/洗净比按 schema 规范为纯数字（wash_cap=10、spin_rpm=1400、dry_cap=7、wash_ratio=1.12，值本身不变，单位由 schema 渲染）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）；2026-10-07 补产品图（来源：t15.baidu.com）",
+  "updated_at": "2026-10-07",
+  "img": "gree_2614239.webp"
+ },
+ {
+  "id": "hisense_wd100a1s",
+  "name": "海信WD100A1S",
+  "brand": "海信",
+  "model_code": "WD100A1S",
+  "type": "滚筒洗烘一体",
+  "official_price": 1528,
+  "ref_price": 1528,
+  "wash_cap": "10kg",
+  "dry_cap": "7kg",
+  "wash_ratio": "1.28",
+  "spin_rpm": "查不到",
+  "energy": "1级",
+  "sterilize": "巴氏除菌螨/高温除菌",
+  "smart": "电脑控制",
+  "noise": "查不到",
+  "size": "595×550×845mm",
+  "year": "查不到",
+  "pros": [
+   "1级 能效",
+   "10kg 大容量",
+   "烘干 7kg"
+  ],
+  "cons": [],
+  "tags": [
+   "海信",
+   "洗烘一体"
+  ],
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+   "中关村在线"
+  ],
+  "verify_url": "https://detail.zol.com.cn/1978/2176692/param.shtml",
+  "change_log": "2026-10-03 建条：参数取自中关村在线参数页（滚筒式洗烘一体，洗10kg/烘7kg/洗净比1.28/1级能效/巴氏除菌螨+高温除菌/耗电0.84千瓦时）；官方价与参考价取ZOL参考价1528（ZOL报价页同价）；脱水转速ZOL未列，记查不到；副分组归类：滚筒洗烘一体（依据：ZOL产品类别=滚筒式，洗烘一体）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）；2026-10-07 补产品图（来源：2e.zol-img.com.cn）",
+  "updated_at": "2026-10-07",
+  "img": "hisense_wd100a1s.webp"
+ },
+ {
+  "id": "hisense_wd100e3q6",
+  "name": "海信WD100E3Q-6",
+  "brand": "海信",
+  "model_code": "WD100E3Q-6",
+  "type": "滚筒洗烘一体",
+  "official_price": 4299,
+  "ref_price": 4299,
+  "wash_cap": "10kg",
+  "dry_cap": "7kg",
+  "wash_ratio": "1.15",
+  "spin_rpm": "1400rpm",
+  "energy": "1级",
+  "smart": "电脑控制",
+  "noise": "查不到",
+  "size": "595×590×845mm",
+  "year": "查不到",
+  "pros": [
+   "1级 能效",
+   "10kg 大容量",
+   "烘干 7kg"
+  ],
+  "cons": [],
+  "tags": [
+   "海信",
+   "洗烘一体"
+  ],
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-03",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/washer/hisense/2760519_detail.html",
+  "change_log": "2026-10-03 建条：参数取自太平洋电脑网规格表（烘洗一体，洗10kg/烘7kg/洗净比1.15/1400rpm/1级能效）；官方价与参考价取太平洋参考价4299；副分组归类：滚筒洗烘一体（依据：第三方类型=烘洗一体）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）",
+  "updated_at": "2026-10-05",
+  "img": null
+ },
+ {
+  "id": "hisense_wd100m2q6",
+  "name": "海信WD100M2Q-6",
+  "brand": "海信",
+  "model_code": "WD100M2Q-6",
+  "type": "滚筒洗烘一体",
+  "official_price": 3599,
+  "ref_price": 3599,
+  "wash_cap": "10kg",
+  "dry_cap": "7kg",
+  "wash_ratio": "1.15",
+  "spin_rpm": "1400rpm",
+  "energy": "1级",
+  "smart": "电脑控制",
+  "noise": "查不到",
+  "size": "595×500×845mm",
+  "year": "查不到",
+  "pros": [
+   "1级 能效",
+   "10kg 大容量",
+   "烘干 7kg"
+  ],
+  "cons": [],
+  "tags": [
+   "海信",
+   "洗烘一体"
+  ],
+  "verify_status": "已核验（多源）",
+  "verify_date": "2026-10-03",
+  "verify_source": [
+   "太平洋电脑网",
+   "中关村在线"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/washer/hisense/2600079_detail.html",
+  "change_log": "2026-10-03 建条：参数取自太平洋电脑网规格表并与中关村在线参数页交叉印证（洗10kg/烘7kg/洗净比1.15/1400rpm/1级能效/上排水/尺寸595×500×845mm 两源一致；直驱变频与智能投放取ZOL）；官方价与参考价取太平洋参考价3599（ZOL报价同价）；ZOL尺寸栏单位误作mmmm，已按两源一致值录入手；副分组归类：滚筒洗烘一体（依据：第三方烘干容量7kg+ZOL产品类别=洗烘一体）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）",
+  "updated_at": "2026-10-05",
+  "img": null
+ },
+ {
+  "id": "littleswan_tb10v28dt",
+  "name": "小天鹅TB10V28DT",
+  "brand": "小天鹅",
+  "model_code": "TB10V28DT",
+  "type": "波轮",
+  "official_price": 1175,
+  "ref_price": 1175,
+  "wash_cap": "10kg",
+  "dry_cap": "查不到",
+  "wash_ratio": "1.05",
+  "spin_rpm": "700rpm",
+  "energy": "1级",
+  "smart": "电脑控制",
+  "noise": "查不到",
+  "size": "查不到",
+  "year": "查不到",
+  "pros": [
+   "1级 能效",
+   "10kg 大容量"
+  ],
+  "cons": [],
+  "tags": [
+   "小天鹅",
+   "波轮"
+  ],
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-03",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/washer/ittleswan/2864251_detail.html",
+  "change_log": "2026-10-03 建条：参数取自太平洋电脑网规格表（波轮式，洗10kg/洗净比1.05/700rpm/变频/1级能效）；官方价与参考价取太平洋参考价1175；外型尺寸来源作930×565×550mm，量纲顺序存疑（疑为高×宽×深序），按红线剔除记查不到；无烘干功能，烘干容量记查不到；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）",
+  "updated_at": "2026-10-05",
+  "img": null
+ },
+ {
+  "id": "littleswan_td100v618plus",
+  "name": "小天鹅TD100V618PLUS",
+  "brand": "小天鹅",
+  "model_code": "TD100V618PLUS",
+  "type": "滚筒洗烘一体",
+  "official_price": 3149,
+  "ref_price": 3149,
+  "wash_cap": "10kg",
+  "dry_cap": "7kg",
+  "wash_ratio": "1.1",
+  "spin_rpm": "1200rpm",
+  "energy": "1级",
+  "sterilize": "UV紫光除菌/银离子抗菌",
+  "smart": "电脑控制",
+  "noise": "查不到",
+  "size": "560×595×850mm",
+  "year": "查不到",
+  "pros": [
+   "1级 能效",
+   "10kg 大容量",
+   "烘干 7kg"
+  ],
+  "cons": [],
+  "tags": [
+   "小天鹅",
+   "洗烘一体"
+  ],
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-03",
+  "verify_source": [
+   "中关村在线"
+  ],
+  "verify_url": "https://detail.zol.com.cn/1978/1977239/param.shtml",
+  "change_log": "2026-10-03 建条：参数取自中关村在线参数页（滚筒式洗烘一体，洗10kg/烘7kg/洗净比1.1/脱水1200r/min/1级能效/UV紫光除菌/智能投放）；官方价与参考价取ZOL参考价3149；副分组归类：滚筒洗烘一体（依据：ZOL产品类别=滚筒式，洗烘一体）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）",
+  "updated_at": "2026-10-05",
+  "img": null
+ },
+ {
+  "id": "littleswan_tdh12k100",
+  "name": "小天鹅TDH12K100",
+  "brand": "小天鹅",
+  "model_code": "TDH12K100",
+  "type": "滚筒洗烘一体",
+  "official_price": 6534,
+  "ref_price": 6534,
+  "wash_cap": "12kg",
+  "dry_cap": "9kg",
+  "wash_ratio": "1.32",
+  "spin_rpm": "1400rpm",
+  "energy": "1级",
+  "smart": "电脑控制",
+  "noise": "查不到",
+  "size": "850×595×599mm",
+  "year": 2026,
+  "pros": [
+   "1级 能效",
+   "12kg 大容量",
+   "烘干 9kg"
+  ],
+  "cons": [],
+  "tags": [
+   "小天鹅",
+   "洗烘一体",
+   "水魔方",
+   "2026"
+  ],
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-03",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/washer/ittleswan/2962450_detail.html",
+  "change_log": "2026-10-03 建条：参数取自太平洋电脑网规格表（烘洗一体，洗12kg/烘9kg/洗净比1.32/1400rpm/1级能效/上市2026年）；官方价与参考价取太平洋参考价6534（京东预售同价，媒体印证）；「水魔方」系列名为电商商品标题印证；尺寸按来源原文抄录（疑为高×宽×深序）；副分组归类：滚筒洗烘一体（依据：第三方类型=烘洗一体）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）",
+  "updated_at": "2026-10-05",
+  "img": null
+ },
+ {
+  "id": "tcl_b120v2r",
+  "name": "TCL B120V2R",
+  "brand": "TCL",
+  "model_code": "B120V2R",
+  "type": "波轮",
+  "official_price": 849,
+  "ref_price": 849,
+  "wash_cap": "12kg",
+  "dry_cap": "查不到",
+  "wash_ratio": "0.9",
+  "spin_rpm": "680rpm",
+  "energy": "1级",
+  "smart": "查不到",
+  "noise": "查不到",
+  "size": "580×590×950mm",
+  "year": "查不到",
+  "pros": [
+   "12kg大容量",
+   "八段水位",
+   "一级能效"
+  ],
+  "cons": [
+   "定频电机",
+   "洗净比0.9偏低"
+  ],
+  "tags": [
+   "TCL",
+   "波轮"
+  ],
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-03",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/washer/tcl/2662459_detail.html",
+  "change_log": "2026-10-03 建条：参数取自太平洋电脑网规格表（波轮式，洗12kg/洗净比0.9/680rpm/定频/1级能效/八段水位）；官方价与参考价取太平洋参考价849；无烘干功能，烘干容量记查不到",
+  "updated_at": "2026-10-03",
+  "img": null
+ },
+ {
+  "id": "tcl_g100t7r_hdis",
+  "name": "TCL G100T7R-HDIS",
+  "brand": "TCL",
+  "model_code": "G100T7R-HDIS",
+  "type": "滚筒洗烘一体",
+  "official_price": 4199,
+  "ref_price": 4199,
+  "wash_cap": "10kg",
+  "dry_cap": "查不到",
+  "wash_ratio": "1.31",
+  "spin_rpm": "1400rpm",
+  "energy": "1级",
+  "sterilize": "巴氏除菌",
+  "smart": "查不到",
+  "noise": "查不到",
+  "size": "595×570×850mm",
+  "year": "查不到",
+  "pros": [
+   "1级 能效",
+   "巴氏除菌 除菌",
+   "10kg 大容量"
+  ],
+  "cons": [],
+  "tags": [
+   "TCL",
+   "洗烘一体",
+   "超级筒T7R"
+  ],
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/washer/tcl/2605839_detail.html",
+  "change_log": "2026-10-03 建条：参数取自太平洋电脑网规格表（洗10kg/洗净比1.31/1400rpm/1级能效/巴氏除菌）；官方价与参考价取太平洋参考价4199；剔烘干功率=9W一处（疑功率标签错位）；烘干容量来源未列，记查不到；「超级筒T7R」系列名与洗烘一体身份由媒体评测印证（第三方干衣功能=支持+型号后缀HDIS）；副分组归类：滚筒洗烘一体；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）；2026-10-07 补产品图（来源：2e.zol-img.com.cn）",
+  "updated_at": "2026-10-07",
+  "img": "tcl_g100t7r_hdis.webp"
+ },
+ {
+  "id": "tcl_g120t7r_hdi",
+  "name": "TCL G120T7R-HDI",
+  "brand": "TCL",
+  "model_code": "G120T7R-HDI",
+  "type": "滚筒洗烘一体",
+  "official_price": 3699,
+  "ref_price": 3699,
+  "wash_cap": "12kg",
+  "dry_cap": "9kg",
+  "wash_ratio": "1.1",
+  "spin_rpm": "1400rpm",
+  "energy": "1级",
+  "smart": "查不到",
+  "noise": "查不到",
+  "size": "595×570×850mm",
+  "year": "查不到",
+  "pros": [
+   "1级 能效",
+   "12kg 大容量",
+   "烘干 9kg"
+  ],
+  "cons": [],
+  "tags": [
+   "TCL",
+   "洗烘一体",
+   "超级筒T7R"
+  ],
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-03",
+  "verify_source": [
+   "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/washer/tcl/2598179_detail.html",
+  "change_log": "2026-10-03 建条：参数取自太平洋电脑网规格表（洗12kg/烘9kg/洗净比1.1/1400rpm/1级能效）；官方价与参考价取太平洋参考价3699；「超级筒T7R」系列名由媒体评测印证；副分组归类：滚筒洗烘一体（依据：第三方列烘干容量9kg）；2026-10-05 按本产品已入库参数生成卖点/缺点标签（规则见 scripts/gen-proscons.py，无外部数值）",
+  "updated_at": "2026-10-05",
+  "img": null
+ }
 ]
