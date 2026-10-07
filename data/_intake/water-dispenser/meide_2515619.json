@@ -1,0 +1,35 @@
+{
+  "id": "meide_2515619",
+  "name": "美的MG240-D",
+  "brand": "美的",
+  "model_code": "MG240-D",
+  "type": "管线",
+  "official_price": "查不到",
+  "ref_price": 2399,
+  "year": "查不到",
+  "pros": [
+    "壁挂安装，不占台面",
+    "2100W 大功率速热",
+    "多段控温"
+  ],
+  "cons": [
+    "需搭配净水器使用",
+    "对安装水压有要求"
+  ],
+  "tags": [
+    "美迪"
+  ],
+  "power": "2100W",
+  "tank": "查不到",
+  "volume": "查不到",
+  "verify_status": "已核验（第三方）",
+  "verify_date": "2026-10-07",
+  "verify_source": [
+    "太平洋电脑网"
+  ],
+  "verify_url": "https://g.pconline.com.cn/product/water_dispenser/meide/2515619_detail.html",
+  "change_log": "2026-10-01 建条：品牌型号与参数取自太平洋电脑网规格表（1 项）；第三方报价记入 ref_price，官方价待官方渠道核实；2026-10-01 副分组归类：管线（依据：第三方产品类型=管线机）；2026-10-03 回填型号：原「查不到」，产品名「美的MG240-D」中的型号串为 MG240-D（来源与产品名同源的第三方规格站）；2026-10-04 回填参数（来源：太平洋规格表 verify_url）：size=330×190×415mm（外形尺寸=330×190×415mm）；2026-10-04 裸卡补卖点 pros/cons（只引用已入库参数与商城/官方文案，未引入参数表外数值）；2026-10-04 品牌归属订正：「美迪」是 pconline 给美的饮水机用的品牌 slug（product/water_dispenser/meide/），产品名均为「美的 XXX」，零售商品名牌归属为「美的」；2026-10-07 补产品图（来源：美的官方商城API）",
+  "updated_at": "2026-10-07",
+  "size": "330×190×415mm",
+  "img": "meide_2515619.webp"
+}
