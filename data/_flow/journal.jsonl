@@ -7508,3 +7508,9 @@
 {"ts":"2026-10-29T18:12:45.823Z","actor":"agent-yi","branch":"main","action":"publish","key":"hair-clipper/hc_2","from":"review","to":"library","batch":"8b10ce2f","supersedes":true}
 {"ts":"2026-10-29T18:12:45.830Z","actor":"agent-yi","branch":"main","action":"publish","key":"hair-clipper/hc_2_set","from":"review","to":"library","batch":"8b10ce2f","supersedes":true}
 {"ts":"2026-10-29T18:12:45.838Z","actor":"agent-yi","branch":"main","action":"publish","key":"hair-clipper/hc_kids","from":"review","to":"library","batch":"8b10ce2f","supersedes":true}
+{"ts":"2026-10-29T18:20:38.773Z","actor":"agent-yi","branch":"fix/type-corrections","action":"recall","key":"washing-machine/siemens_2742419","from":"library","to":"review","batch":"9f06aecf","reason":"type 错标：WQ55K7U80W 为热泵干衣机（官方多源证实），库内标为滚筒洗烘一体","index":43,"fingerprint":"58c8eb2f892d"}
+{"ts":"2026-10-29T18:20:39.009Z","actor":"agent-yi","branch":"fix/type-corrections","action":"recall","key":"kettle/midea_2515699","from":"library","to":"review","batch":"e1db9db9","reason":"type 错标：MK-SP50E-20FPro 为电热水瓶 5L（官方 API+苏宁证实），非养生壶","index":18,"fingerprint":"0ab22532f50a"}
+{"ts":"2026-10-29T18:20:39.239Z","actor":"agent-yi","branch":"fix/type-corrections","action":"recall","key":"kettle/midea_2515899","from":"library","to":"review","batch":"78f35591","reason":"type 错标：MK-SP50E-11FPro 为电热水瓶 5L，非养生壶","index":19,"fingerprint":"e38d7222eee7"}
+{"ts":"2026-10-29T18:21:59.583Z","actor":"agent-yi","branch":"fix/type-corrections","action":"publish","key":"washing-machine/siemens_2742419","from":"review","to":"library","batch":"af64b8e6"}
+{"ts":"2026-10-29T18:21:59.603Z","actor":"agent-yi","branch":"fix/type-corrections","action":"publish","key":"kettle/midea_2515699","from":"review","to":"library","batch":"af64b8e6"}
+{"ts":"2026-10-29T18:21:59.617Z","actor":"agent-yi","branch":"fix/type-corrections","action":"publish","key":"kettle/midea_2515899","from":"review","to":"library","batch":"af64b8e6"}
